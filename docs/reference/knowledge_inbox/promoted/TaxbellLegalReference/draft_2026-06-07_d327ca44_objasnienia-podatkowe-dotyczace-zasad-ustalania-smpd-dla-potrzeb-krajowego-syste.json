@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_d327ca44_objasnienia-podatkowe-dotyczace-zasad-ustalania-smpd-dla-potrzeb-krajowego-syste",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Objaśnienia podatkowe dotyczące zasad ustalania SMPD dla potrzeb Krajowego Systemu e-Faktur",
+  "content": "Automated source-discovery draft.\n\nQuery: objaśnienia podatkowe KSeF 2026\nSource: https://ksef.podatki.gov.pl/wyjasnienia/objasnienia-podatkowe-dotyczace-zasad-ustalania-smpd-dla-potrzeb-krajowego-systemu-e-faktur/\nTier: official\nDiscovery confidence: 0.95\n\nObjaśnienia podatkowe KSeF 2026\n\n- Co to: Objaśnienia podatkowe dotyczą zasad ustalania stałego miejsca prowadzenia działalności gospodarczej (SMPD) na terytorium kraju dla potrzeb wystawiania faktur w Krajowym Systemie e-Faktur (KSeF).\n- Kiedy opublikowano: 28 stycznia 2026 r. (publikacja dostępna w dniu 29.01.2026).\n- Gdzie znaleźć: na stronie Ministerstwa Finansów w sekcji Aktualności – ostrzeżenia i wyjaśnienia podatkowe (https://ksef.podatki.gov.pl/wyjasnienia/objasnieni).\n- Cel: wyjaśniają zasady ustalania SMPD w kontekście fakturowania poprzez KSeF.\n- Dodatkowe informacje: dokument dostępny w PDF do pobrania; opracowanie przygotował zespół Portalu Podatkowego.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/wyjasnienia/objasnienia-podatkowe-dotyczace-zasad-ustalania-smpd-dla-potrzeb-krajowego-systemu-e-faktur/",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:12:06.322Z",
+    "discoveryCandidateId": "candidate_311c5c29-e9d",
+    "discoveryQueryId": "generated_TaxbellLegalReference_2202f2b324",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "c11fb9c4dec4d88956e2e9f73691767e7dcef49843a14ba6a881040b6c06e697"
+  },
+  "createdAt": "2026-06-07T03:08:47.670Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.145Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_d327ca44_objasnienia-podatkowe-dotyczace-zasad-ustalania-smpd-dla-potrzeb-krajowego-syste.json"
+}

@@ -1,0 +1,149 @@
+namespace ComarchBetterflyReference
+
+ReferenceDocument(ReferenceDocument): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		sourceType(sourceType): Text
+		documentCategory(documentCategory): Text
+		moduleScope(moduleScope): Text
+		categoryHint(categoryHint): Text
+		versionHint(versionHint): Text
+		lastModified(lastModified): Text
+		localSnapshotPath(localSnapshotPath): Text
+		sourceOrigin(sourceOrigin): Text
+		summary(summary): Text
+			index: TextAndVector
+
+HelpCategory(HelpCategory): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		categorySlug(categorySlug): Text
+			index: Text
+		categoryGroup(categoryGroup): Text
+		moduleScope(moduleScope): Text
+		priorityTier(priorityTier): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ModuleArea(ModuleArea): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		moduleCode(moduleCode): Text
+			index: Text
+		scopeType(scopeType): Text
+		anchorDocumentRefId(anchorDocumentRefId): Text
+		relatedCategories(relatedCategories): Text
+		recommendedFor(recommendedFor): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ApiResource(ApiResource): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		resourceCode(resourceCode): Text
+			index: Text
+		resourceGroup(resourceGroup): Text
+		endpointBase(endpointBase): Text
+			index: Text
+		versionHint(versionHint): Text
+		supportedMethods(supportedMethods): Text
+		authModel(authModel): Text
+		sourceDocumentRefIds(sourceDocumentRefIds): Text
+		exampleEndpoints(exampleEndpoints): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ApiPattern(ApiPattern): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		patternType(patternType): Text
+		httpMethod(httpMethod): Text
+			index: Text
+		endpointPath(endpointPath): Text
+			index: Text
+		versionHint(versionHint): Text
+		useCase(useCase): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		exampleSnippet(exampleSnippet): Text
+		summary(summary): Text
+			index: TextAndVector
+
+LearningGuide(LearningGuide): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		guideType(guideType): Text
+		audience(audience): Text
+		startStep(startStep): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+KnowledgeRoute(KnowledgeRoute): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		routeType(routeType): Text
+		targetKbName(targetKbName): Text
+		targetNamespace(targetNamespace): Text
+		recommendedWhen(recommendedWhen): Text
+		anchorObjects(anchorObjects): Text
+		summary(summary): Text
+			index: TextAndVector
+
+EntryGuide(EntryGuide): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		guideGroup(guideGroup): Text
+		priorityRank(priorityRank): Text
+		userIntent(userIntent): Text
+		primaryDocumentRefId(primaryDocumentRefId): Text
+		secondaryDocumentRefIds(secondaryDocumentRefIds): Text
+		targetKbName(targetKbName): Text
+		targetNamespace(targetNamespace): Text
+		nextStep(nextStep): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+
+Chunk(Chunk): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		sourcePath(sourcePath): Text
+		sectionHeading(sectionHeading): Text
+		sectionOrder(sectionOrder): Text
+		content(content): Text
+			index: TextAndVector

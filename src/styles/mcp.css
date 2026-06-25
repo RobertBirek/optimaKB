@@ -1,0 +1,214 @@
+/* MCP page */
+.mcpPageSection { margin-bottom: 20px; }
+
+.mcpServerCard {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.mcpServerCardScoped { border-left: 3px solid var(--accent); }
+.mcpServerCardDefault { border-left: 3px solid transparent; }
+
+.mcpServerInfo { min-width: 0; }
+
+.mcpServerMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.mcpServerName {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.mcpServerPort {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.mcpServerTags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.mcpServerTags code { font-size: 11px; }
+
+.mcpServerActions {
+  display: flex;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.mcpServerGrid { display: grid; gap: 8px; }
+
+.mcpSectionLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.mcpKbGroupBox {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mcpKbGroupHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--soft);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mcpKbGroupCount { margin-left: auto; font-size: 11px; font-weight: 400; }
+
+.mcpKbGroupItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  padding: 6px 10px;
+}
+
+.mcpKbCheckboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 3px 4px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.mcpKbCheckboxLabelSelected { background: var(--accent); color: #fff; }
+
+.mcpKbCheckbox { accent-color: var(--accent); }
+
+.mcpSummaryPill {
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-weight: 500;
+}
+
+.mcpSummaryPillActive { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+.mcpSummaryPillEmpty { background: var(--bg); border-color: var(--line); color: var(--muted); }
+
+.mcpMiniBtn { font-size: 12px; padding: 3px 8px; }
+.mcpMiniBtnSmall { font-size: 11px; padding: 2px 6px; }
+
+.mcpActionBar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+
+.mcpPageTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mcpPageTitle h2 { margin: 0; }
+
+.mcpSectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mcpModalBody { display: grid; gap: 16px; margin: 12px 0; }
+
+.mcpUserFormGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+.mcpKeyBanner {
+  color: var(--bad);
+  font-weight: bold;
+}
+
+.mcpKeyValue {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.mcpKeyCode {
+  font-size: 14px;
+  padding: 8px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  word-break: break-all;
+}
+
+.mcpKeyMeta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.mcpDetailGrid {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mcpDetailGrid code, .mcpDetailUrl { font-size: 12px; word-break: break-all; }
+
+.mcpDetailWide { grid-column: span 2; }
+
+.mcpDetailWideBorder {
+  grid-column: span 2;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.mcpInfoBlock {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mcpInfoHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--soft);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mcpInfoItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  padding: 6px 10px;
+}
+
+.mcpFormRow { display: grid; grid-template-columns: 1fr 160px; gap: 8px; }
+
+.mcpConnSnippet { margin-bottom: 12px; }
+
+.mcpUserCell { display: flex; gap: 4px; justify-content: flex-end; }
+

@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_e36c4c49_ostrzezenia-i-wyjasnienia-podatkowe-ministerstwo-finansow-portal-gov-pl",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Ostrzeżenia i wyjaśnienia podatkowe - Ministerstwo Finansów - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: objaśnienia podatkowe 2026 nowości\nSource: https://www.gov.pl/web/finanse/ostrzezenia-i-wyjasnienia-podatkowe\nTier: official\nDiscovery confidence: 0.95\n\nOstrzeżenia i wyjaśnienia podatkowe - Ministerstwo Finansów - Portal Gov.pl\n\n## Ostrzeżenia i wyjaśnienia podatkowe\n\nOstrzeżenia i wyjaśnienia podatkowe publikowane przed 20.02.2019 r. są dostępne na archiwalnej stronie Ministerstwa Finansów.\n\nObjaśnienia podatkowe z 9 marca 2026 r. dotyczące stosowania zwolnienia od podatku od towarów i usług dostaw produktów związanych z obronnością lub innych produktów do celów obronnych, dokonywanych w ramach umów wynikających z zamówień wspieranych ze środków instrumentu SAFE\n\nObjaśnienia podatkowe z 28 stycznia 2026 r., dotyczące zasad ustalania stałego miejsca prowadzenia działalności gospodarczej na terytorium kraju dla potrzeb wystawiania faktur przy użyciu Krajowego Systemu e-Faktur\n\nObjaśnienia podatkowe z 9 września 2025 r. w zakresie podatku od przerzuconych dochodów\n\nObjaśnienia podatkowe z 29 sierpnia 2025 r. w zakresie zasad rozliczania na gruncie podatku od towarów i usług transakcji związanych z systemem kaucyjnym\n\nZmiana objaśnień podatkowych Ministra Finansów z dnia 31 stycznia 2019 r. w zakresie prawnie chronionej tajemnicy zawodowej promotora i wspomagającego na gruncie przepisów o schematach podatkowych\n\nObjaśnienia podatkowe z 3 lipca 2025 r. - Stosowanie tzw. klauzuli rzeczywistego właściciela dla celów podatku u źródła\n\nObjaśnienia podatkowe z 30 czerwca 2025 r. - Formy wsparcia przedsięwzięcia termomodernizacyjnego w podatku dochodowym od osób fizycznych\n\nObjaśnienia podatkowe z 27 czerwca 2025 r. - Formy i sposoby \n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/finanse/ostrzezenia-i-wyjasnienia-podatkowe",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:50:15.774Z",
+    "discoveryCandidateId": "candidate_9949421c-b6f",
+    "discoveryQueryId": "generated_TaxbellLegalReference_11f19b13e6",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "7415748cdd19ab8b330005d8b292008b4c5588977f83afec4d16d4d08eda85bd"
+  },
+  "createdAt": "2026-06-11T08:20:49.519Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.738Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_e36c4c49_ostrzezenia-i-wyjasnienia-podatkowe-ministerstwo-finansow-portal-gov-pl.json"
+}

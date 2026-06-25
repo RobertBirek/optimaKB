@@ -1,0 +1,158 @@
+{
+  "generatedAt": "2026-06-12T11:23:45.617Z",
+  "size": 5,
+  "sample": true,
+  "bridgeUrl": "http://10.10.254.42:3400/mcp",
+  "authMode": "bearer",
+  "allowDirectFallback": false,
+  "fallbackCount": 0,
+  "summary": {
+    "counts": {
+      "PASS": 5,
+      "PARTIAL": 0,
+      "MISS": 0,
+      "ENDPOINT_UNAVAILABLE": 0
+    },
+    "byCategory": {
+      "schema": {
+        "total": 5,
+        "PASS": 5,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "Q002",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Które klucze łączą dokument handlowy z kontrahentem?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q003",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie obiekty SQL czytają tabelę TraNag?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q004",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie obiekty zapisują do TraElem?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q005",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jak znaleźć join path od dokumentu do definicji dokumentu?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q006",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jak wygląda ścieżka joinów od BnkZapisy do kontrahenta?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+# KB-01 — Workflow budowy Bazy Wiedzy w OpenSPG / KAG
+
+## Cel
+
+Ten plik opisuje domyślny proces tworzenia Bazy Wiedzy opartej o OpenSPG i KAG.
+
+## Główna zasada
+
+Nie zaczynaj od importu dokumentów. Najpierw zaprojektuj model domeny, schemat, typy encji, relacje, koncepty i strategię walidacji.
+
+## Warstwy stosu
+
+1. OpenSPG — silnik grafu wiedzy.
+2. SPG-Schema — model domeny.
+3. SPG-Builder / KAG Builder — budowa wiedzy z danych.
+4. SPG-Reasoner — zapytania, reguły, KGDSL/GQL.
+5. KNext — CLI/SDK i workflow projektowy.
+6. KAG Solver — hybrydowe QA/reasoning z LLM.
+7. Neo4j/TuGraph — graph store.
+8. MinIO — storage obiektowy.
+9. MySQL — metadane projektów, schematów i zadań.
+
+## Proces budowy KB
+
+1. Zdefiniuj cel KB:
+   - jakie pytania ma obsługiwać,
+   - kto będzie jej używał,
+   - jakie decyzje ma wspierać,
+   - jaki poziom precyzji jest wymagany.
+
+2. Zidentyfikuj źródła danych:
+   - CSV,
+   - JSON/JSONL,
+   - Markdown,
+   - PDF,
+   - DOCX,
+   - HTML,
+   - bazy SQL,
+   - słowniki domenowe,
+   - taksonomie,
+   - relacje SPO.
+
+3. Podziel dane:
+   - dane strukturalne,
+   - dane niestrukturalne,
+   - słowniki i taksonomie,
+   - dokumenty referencyjne,
+   - dane do walidacji.
+
+4. Zaprojektuj SPG-Schema:
+   - EntityType,
+   - ConceptType,
+   - EventType,
+   - RelationType,
+   - properties,
+   - relations,
+   - constraints,
+   - indeksy Text / Vector / TextAndVector.
+
+5. Wybierz tryb ekstrakcji:
+   - schema-constrained dla danych krytycznych,
+   - schema-free dla szerokiego pokrycia,
+   - mieszany dla projektów RAG/GraphRAG.
+
+6. Zaprojektuj chunking:
+   - według nagłówków,
+   - według sekcji,
+   - według akapitów,
+   - według limitu długości,
+   - z zachowaniem identyfikatorów źródłowych.
+
+7. Zaprojektuj alignment:
+   - normalizacja nazw,
+   - deduplikacja encji,
+   - entity linking,
+   - concept linking,
+   - słowniki synonimów,
+   - mapowanie aliasów.
+
+8. Skonfiguruj modele:
+   - openie_llm do ekstrakcji,
+   - chat_llm do QA,
+   - vectorize_model do embeddingów.
+
+9. Uruchom ingest próbny:
+   - mały zestaw dokumentów,
+   - mały zestaw CSV,
+   - ręczna kontrola grafu,
+   - pytania testowe.
+
+10. Dopiero po walidacji skaluj ingest na cały korpus.
+
+## Minimalne kryteria jakości
+
+- Każdy typ ma jasne znaczenie.
+- Każda relacja ma kierunek i uzasadnienie.
+- Każda encja ma stabilny identyfikator.
+- Dane źródłowe są możliwe do odtworzenia.
+- Pipeline nie zawiera sekretów.
+- QA ma zestaw testów typowych, edge-case i adversarial.
+- Odpowiedzi można powiązać ze źródłowymi chunkami lub faktami grafu.

@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-12_0b5cd42f_zmiany-w-prawie-pracy-2026-biznes-gov-pl-serwis-informacyjno-us-ugowy-dla-przeds",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Zmiany w prawie pracy 2026 | Biznes.gov.pl - Serwis informacyjno-usługowy dla przedsiebiorcy",
+  "content": "Automated source-discovery draft.\n\nQuery: kadry płace ZUS prawo pracy zmiany 2026\nSource: https://www.biznes.gov.pl/pl/portal/006365\nTier: official\nDiscovery confidence: 0.85\n\nSummary:\n- The Biznes.gov.pl page outlines 2025–2026 changes in Polish labor law relevant to HR (kadry i płace), focusing on:\n  - December 2025: Free Christmas Eve (24 December) becomes a day off for employees.\n  - December 24, 2025 onward: Recruitment and job advertisements must be gender-neutral and non-discriminatory. Job titles should be usable by any gender (e.g., “asystent/a”).\n  - Salary transparency: Candidates must be informed of the full pay range or exact salary for the position, either in the job ad, before a qualifying interview, or before entering cooperation.\n  - Salary components: All pay elements must be disclosed (base pay, bonuses, and even in-kind/policy benefits like a company phone).\n- Practical impact for HR and payroll (kadry i płace): update recruitment texts, ensure gender-neutral language, publish or share total compensation details early in the process, and...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.biznes.gov.pl/pl/portal/006365",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:04:56.038Z",
+    "discoveryCandidateId": "candidate_71804fa5-7fa",
+    "discoveryQueryId": "seed_TaxbellPayrollHRReference",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-00-05-874Z_765f3494",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.85,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "631cab1df6b627d05a8fd34819bfad27e58be52a544d3ef7cd8c2f24929b7171"
+  },
+  "createdAt": "2026-06-12T06:42:13.356Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T06:42:24.255Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 6 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_0b5cd42f_zmiany-w-prawie-pracy-2026-biznes-gov-pl-serwis-informacyjno-us-ugowy-dla-przeds.json"
+}

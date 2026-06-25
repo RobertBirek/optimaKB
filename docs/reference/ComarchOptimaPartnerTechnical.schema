@@ -1,0 +1,259 @@
+namespace ComarchOptimaPartnerTechnical
+
+ReferenceDocument(ReferenceDocument): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		sourceType(sourceType): Text
+		documentCategory(documentCategory): Text
+		versionHint(versionHint): Text
+		articleUpdatedAt(articleUpdatedAt): Text
+		relatedKnowledgeBase(relatedKnowledgeBase): Text
+		summary(summary): Text
+			index: TextAndVector
+
+PartnerCategory(PartnerCategory): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		categorySlug(categorySlug): Text
+			index: Text
+		parentCategoryRefId(parentCategoryRefId): Text
+		categoryGroup(categoryGroup): Text
+		lifecycleBand(lifecycleBand): Text
+		overlapPolicy(overlapPolicy): Text
+		portalUrl(portalUrl): Text
+			index: Text
+		itemCount(itemCount): Text
+		recommendedUse(recommendedUse): Text
+		summary(summary): Text
+			index: TextAndVector
+
+PartnerAsset(PartnerAsset): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		directDownloadUrl(directDownloadUrl): Text
+			index: Text
+		assetTypeRefId(assetTypeRefId): Text
+		categoryRefId(categoryRefId): Text
+		versionBandRefId(versionBandRefId): Text
+		productAreaRefId(productAreaRefId): Text
+		overlapPolicy(overlapPolicy): Text
+		primaryRouteKbName(primaryRouteKbName): Text
+		primaryRouteNamespace(primaryRouteNamespace): Text
+		mimeType(mimeType): Text
+		fileExtension(fileExtension): Text
+		publishedAt(publishedAt): Text
+		currentState(currentState): Text
+		localSnapshotPath(localSnapshotPath): Text
+		summary(summary): Text
+			index: TextAndVector
+
+AssetType(AssetType): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		assetKind(assetKind): Text
+			index: Text
+		mimeFamily(mimeFamily): Text
+		typicalUse(typicalUse): Text
+		sourceCategoryHint(sourceCategoryHint): Text
+		summary(summary): Text
+			index: TextAndVector
+
+VersionBand(VersionBand): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		versionCode(versionCode): Text
+			index: Text
+		lifecycleState(lifecycleState): Text
+		releaseFamily(releaseFamily): Text
+		sourceCategoryHint(sourceCategoryHint): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ProductArea(ProductArea): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		areaCode(areaCode): Text
+			index: Text
+		scopeType(scopeType): Text
+		targetKbName(targetKbName): Text
+		targetNamespace(targetNamespace): Text
+		recommendedUse(recommendedUse): Text
+		summary(summary): Text
+			index: TextAndVector
+
+CfgEntry(CfgEntry): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		configKey(configKey): Text
+			index: Text
+		configType(configType): Text
+		sourceAssetRefId(sourceAssetRefId): Text
+		versionBandRefId(versionBandRefId): Text
+		sourcePath(sourcePath): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ProcEntry(ProcEntry): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		procedureCode(procedureCode): Text
+			index: Text
+		sourceAssetRefId(sourceAssetRefId): Text
+		versionBandRefId(versionBandRefId): Text
+		sourcePath(sourcePath): Text
+		summary(summary): Text
+			index: TextAndVector
+
+MsgEntry(MsgEntry): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		messageCode(messageCode): Text
+			index: Text
+		messageConstant(messageConstant): Text
+			index: Text
+		messageText(messageText): Text
+		sourceAssetRefId(sourceAssetRefId): Text
+		versionBandRefId(versionBandRefId): Text
+		sourcePath(sourcePath): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ComExample(ComExample): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		exampleKind(exampleKind): Text
+		exampleLanguage(exampleLanguage): Text
+			index: Text
+		sourceAssetRefId(sourceAssetRefId): Text
+		versionBandRefId(versionBandRefId): Text
+		sourcePath(sourcePath): Text
+			index: Text
+		exampleTitle(exampleTitle): Text
+		authorCode(authorCode): Text
+		optimaVersion(optimaVersion): Text
+		launchNotes(launchNotes): Text
+		interfaceList(interfaceList): Text
+		activeXList(activeXList): Text
+		moduleHint(moduleHint): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ComInterfaceUse(ComInterfaceUse): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		interfaceName(interfaceName): Text
+			index: Text
+		sourceExampleRefId(sourceExampleRefId): Text
+		sourceAssetRefId(sourceAssetRefId): Text
+		versionBandRefId(versionBandRefId): Text
+		interfaceSource(interfaceSource): Text
+		exampleLanguage(exampleLanguage): Text
+		sourcePath(sourcePath): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ComSchemaTouchpoint(ComSchemaTouchpoint): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceExampleRefId(sourceExampleRefId): Text
+		sourceAssetRefId(sourceAssetRefId): Text
+		versionBandRefId(versionBandRefId): Text
+		targetKbName(targetKbName): Text
+		targetNamespace(targetNamespace): Text
+		schemaObjectName(schemaObjectName): Text
+			index: Text
+		moduleHint(moduleHint): Text
+		evidence(evidence): Text
+		sourcePath(sourcePath): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ComModuleRecipe(ComModuleRecipe): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		moduleCode(moduleCode): Text
+			index: Text
+		moduleLabel(moduleLabel): Text
+		exampleCount(exampleCount): Text
+		languageMix(languageMix): Text
+		interfaceHints(interfaceHints): Text
+		schemaObjectHints(schemaObjectHints): Text
+		procedureHintList(procedureHintList): Text
+		configHintList(configHintList): Text
+		messageHintList(messageHintList): Text
+		recommendedEntryPattern(recommendedEntryPattern): Text
+		cautions(cautions): Text
+		summary(summary): Text
+			index: TextAndVector
+
+KnowledgeRoute(KnowledgeRoute): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		routeType(routeType): Text
+		targetKbName(targetKbName): Text
+		targetNamespace(targetNamespace): Text
+		recommendedWhen(recommendedWhen): Text
+		anchorObjects(anchorObjects): Text
+		summary(summary): Text
+			index: TextAndVector
+
+Chunk(Chunk): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		sourcePath(sourcePath): Text
+		sectionHeading(sectionHeading): Text
+		sectionOrder(sectionOrder): Text
+		content(content): Text
+			index: TextAndVector

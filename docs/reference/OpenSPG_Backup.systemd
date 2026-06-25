@@ -1,0 +1,42 @@
+[Unit]
+Description=OpenSPG stack backup snapshot
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+WorkingDirectory=/docker/openspg
+Environment=HOME=/tmp
+Environment=OPENSPG_BACKUP_ROOT=/docker/openspg/backups/automated
+Environment=OPENSPG_BACKUP_RETENTION_DAYS=14
+ExecStart=/usr/bin/node /docker/openspg/scripts/backup_openspg_stack.mjs
+TimeoutStartSec=2h
+UMask=0077
+
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=full
+RemoveIPC=true
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+
+ReadOnlyPaths=/docker/openspg/scripts
+ReadOnlyPaths=/docker/openspg/compose.yaml
+ReadOnlyPaths=/docker/openspg/data
+ReadWritePaths=/docker/openspg/backups
+ReadWritePaths=/docker/openspg/logs

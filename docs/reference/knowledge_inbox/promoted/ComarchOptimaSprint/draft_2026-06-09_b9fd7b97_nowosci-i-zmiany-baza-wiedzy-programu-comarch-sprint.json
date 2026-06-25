@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_b9fd7b97_nowosci-i-zmiany-baza-wiedzy-programu-comarch-sprint",
+  "kbName": "Comarch Optima Sprint and Prints",
+  "kbNamespace": "ComarchOptimaSprint",
+  "title": "Nowości i zmiany – Baza Wiedzy programu  Comarch sPrint",
+  "content": "Automated source-discovery draft.\n\nQuery: sPrint GenRap nowości 2026\nSource: https://pomoc.comarch.pl/sprint/index.php/nowosci-i-zmiany/\nTier: official\nDiscovery confidence: 0.9\n\nKrótki przegląd nowości i zmian w sPrint (GenRap) na 2026:\n\n- Dostępne środowisko DEMO do testowania aplikacji Comarch sPrint: repozytorium, galeria wzorów i zestaw standardowych szablonów wydruków.\n- Edytor aplikacji umożliwia samodzielne tworzenie testowych wydruków.\n- Demo łączy się z testową bazą danych systemu Comarch ERP Optima (połączeń własnych w DEMO nie da się tworzyć).\n- Dostarczona dokumentacja krok po kroku prowadzi przez tworzenie wydruków.\n- Co tydzień w niedzielę środowisko jest odświeżane; modyfikacje wprowadzane w DEMO zostaną wyczyszczone.\n- W wersji demonstracyjnej drukowanie do pliku .pdf jest dozwolone; drukowanie na fizyczną drukarkę wyłączone.\n- W razie pytań - zgłoszenia w Systemie Obsług Zgłoszeń do obszaru sPrint.\n\nJeśli interesuje Cię konkretna nowość 2026 w GenRap, daj znać, a podsumuję według najnowszych opisów i kroków implementacji.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/sprint/index.php/nowosci-i-zmiany/",
+  "tags": [
+    "discovery",
+    "official",
+    "sPrint",
+    "wydruki",
+    "GenRap",
+    "wzorce"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:11:03.887Z",
+    "discoveryCandidateId": "candidate_b7e397bd-b8d",
+    "discoveryQueryId": "generated_ComarchOptimaSprint_eaf65ef1b9",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "25d4e6447e24981bb7f39648f0ba5ae3943af1278ec8237715fdcec1a82726d9"
+  },
+  "createdAt": "2026-06-09T13:11:17.236Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T13:12:51.927Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_b9fd7b97_nowosci-i-zmiany-baza-wiedzy-programu-comarch-sprint.json"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_d5776462_jak-skonfigurowac-integracje-z-krajowym-systemem-e-faktur-ksef-baza-wiedzy-progr",
+  "kbName": "Comarch Betterfly Reference",
+  "kbNamespace": "ComarchBetterflyReference",
+  "title": "Jak skonfigurować integrację z Krajowym Systemem e-Faktur (KSeF). - Baza Wiedzy programu Comarch Betterfly",
+  "content": "Automated source-discovery draft.\n\nQuery: Comarch Betterfly API KSeF faktury integracje 2026\nSource: https://pomoc.comarchbetterfly.pl/dokumentacja/jak-skonfigurowac-integracje-z-krajowym-systemem-e-faktur-ksef/\nTier: official\nDiscovery confidence: 0.95\n\nSummary:\nThe page explains how to configure Comarch Betterfly to integrate with the National System of e-Invoices (KSeF). Steps include:\n- Open Settings and go to the KSeF section.\n- Choose the appropriate KSeF environment.\n- Select an authentication method: either Ministry of Finance certificate (generated in the KSeF Taxpayer App; token-based access expires after a week) or a Token (generated in the KSeF Taxpayer App; usable until end of 2026). If multiple users access the program, each user must have their own account and install their own certificates.\nNotes reference related articles for: which environment to choose, and details on configuring authentication via certificate or token, plus token renewal specifics.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-skonfigurowac-integracje-z-krajowym-systemem-e-faktur-ksef/",
+  "tags": [
+    "discovery",
+    "official",
+    "API",
+    "KSeF",
+    "faktury",
+    "integracje"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:03:13.026Z",
+    "discoveryCandidateId": "candidate_646a12e2-375",
+    "discoveryQueryId": "seed_ComarchBetterflyReference",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-00-05-874Z_765f3494",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "5c604fe1e33f1d3b9775b3336a7d8285d15b5a1409ee4709b4dae54287d30ca3"
+  },
+  "createdAt": "2026-06-07T03:08:17.265Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.274Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_d5776462_jak-skonfigurowac-integracje-z-krajowym-systemem-e-faktur-ksef-baza-wiedzy-progr.json"
+}

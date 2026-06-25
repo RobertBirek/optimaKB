@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_5c4e2111_ustawa-z-dnia-4-grudnia-2025-r-o-zmianie-ustawy-kodeks-pracy-oraz-ustawy-o-zak-a",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy – Kodeks pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych",
+  "content": "Automated source-discovery draft.\n\nQuery: zmiany w prawie pracy 2026\nSource: https://www.dziennikustaw.gov.pl/D2026000002501.pdf\nTier: official\nDiscovery confidence: 0.95\n\n## DZIENNIK USTAW\n\n### RZECZYPOSPOLITEJ POLSKIEJ\n\n#### Warszawa, dnia 12 stycznia 2026 r.\n\n#### Poz. 25\n\nUSTAWA z dnia 4 grudnia 2025 r.\n\no zmianie ustawy – Kodeks pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych\n\nArt. 1. W ustawie z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2025 r. poz. 277, 807, 1423 i 1661) wprowadza się \nnastępujące zmiany: \n1) użyte w art. 22 2 w § 8 i w art. 23 1 w § 3 wyrazy „na piśmie” zastępuje się wyrazami „w postaci papierowej lub elektro \nnicznej”; \n2) w art. 38: \na) w § 1 wyrazy „na piśmie” zastępuje się wyrazami „w postaci papierowej lub elektronicznej”, \nb) w § 2 skreśla się wyrazy „na piśmie” i po wyrazie „pracodawcy” dodaje się wyrazy „w postaci papierowej lub elektro \nnicznej”; \n3) w art. 129: \na) w § 3 wyrazy „w formie pisemnej lub elektronicznej” zastępuje się wyrazami „w postaci papierowej lub elektro \nnicznej”, \nb) w § 4 w pkt 3 i 4 skreśla się wyraz „pisemny” i po wyrazie „pracownika” dodaje się wyrazy „złożony w postaci \npapierowej lub elektronicznej”; \n4) w art. 142, w art. 143, w art. 144 i w art. 150 w § 5 skreśla się wyraz „pisemny” i po wyrazie „pracownika” dodaje się \nwyrazy „złożony w postaci papierowej lub elektronicznej”; \n5) w art. 151 w § 2 1 w zdaniu pierwszym skreśla się wyraz „pisemny” i po wyrazie „wniosek” dodaje się wyrazy „złożony \nw postaci papierowej lub elektronicznej”; \n6) w art. 151 2 w § 1 skreśla się wyraz „pisemny” i po wyrazie „pracownika” dodaje się wyrazy „złożony w postaci papiero \nwej l\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.dziennikustaw.gov.pl/D2026000002501.pdf",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-07T02:47:43.786Z",
+    "discoveryCandidateId": "candidate_5a4f5563-e36",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_1a3c3588ca",
+    "discoveryRunId": "discovery_daily_2026-06-07T02-45-53-759Z_f0a9cd3d",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "074960947a9a6b670dee5546f8d1c7a9122b7502b0a447b579da0e3065b61f11"
+  },
+  "createdAt": "2026-06-07T03:08:46.766Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.252Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_5c4e2111_ustawa-z-dnia-4-grudnia-2025-r-o-zmianie-ustawy-kodeks-pracy-oraz-ustawy-o-zak-a.json"
+}

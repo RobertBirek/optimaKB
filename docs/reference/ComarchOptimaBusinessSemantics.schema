@@ -1,0 +1,50 @@
+namespace ComarchOptimaBusinessSemantics
+
+BusinessDomain(BusinessDomain): ConceptType
+	hypernymPredicate: isA
+
+BusinessDescription(BusinessDescription): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		tableRefId(tableRefId): Text
+		columnRefId(columnRefId): Text
+		source(source): Text
+		language(language): Text
+		domainName(domainName): Text
+		descriptionPreview(descriptionPreview): Text
+			index: TextAndVector
+		descriptionHash(descriptionHash): Text
+			index: Text
+		descriptionLength(descriptionLength): Text
+
+CodeMeaning(CodeMeaning): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		columnRefId(columnRefId): Text
+		codeValue(codeValue): Text
+		label(label): Text
+		source(source): Text
+		domainName(domainName): Text
+
+BusinessRule(BusinessRule): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		tableRefId(tableRefId): Text
+		ruleType(ruleType): Text
+		expression(expression): Text
+		descriptionPreview(descriptionPreview): Text
+			index: TextAndVector
+		descriptionHash(descriptionHash): Text
+			index: Text
+		descriptionLength(descriptionLength): Text
+		isHardConstraint(isHardConstraint): Text
+		domainName(domainName): Text

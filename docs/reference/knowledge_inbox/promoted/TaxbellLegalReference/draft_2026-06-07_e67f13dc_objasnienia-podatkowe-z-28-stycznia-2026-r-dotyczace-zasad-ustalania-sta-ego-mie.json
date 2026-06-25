@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_e67f13dc_objasnienia-podatkowe-z-28-stycznia-2026-r-dotyczace-zasad-ustalania-sta-ego-mie",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Objaśnienia podatkowe z 28 stycznia 2026 r., dotyczące zasad ustalania stałego miejsca prowadzenia działalności gospodarczej na terytorium kraju dla potrzeb wystawiania faktur przy użyciu Krajowego Sy",
+  "content": "Automated source-discovery draft.\n\nQuery: objaśnienia podatkowe KSeF 2026\nSource: https://www.gov.pl/web/finanse/objasnienia-podatkowe-z-28-stycznia-2026-r-dotyczace-zasad-ustalania-stalego-miejsca-prowadzenia-dzialalnosci-gospodarczej-na-terytorium-kraju-dla-potrzeb-wystawiania-faktur-przy-uzyciu-krajowego-systemu-e-faktur\nTier: official\nDiscovery confidence: 0.95\n\nSummary:\n- Topic: Tax explanations issued on 28 January 2026 by the Polish Ministry of Finance (Gov.pl) regarding rules for determining the permanent establishment location for tax purposes within Poland, for invoicing using the National System of e-Invoices (Krajowy System e-Faktur, KSeF).\n- Publication date: 28 January 2026.\n- Contents: The explanations (Objaśnienia podatkowe) clarify how to determine where a permanent establishment is located in Poland for issuing invoices through KSeF.\n- Related materials: \n  - Cover letter to the tax explanations (Pismo przewodnie do objaśnień podatkowych z 28 stycznia 2026 r.)\n  - The main tax explanations document (Objaśnienia podatkowe z 28 stycznia 2026 r.)\n- Publication details: First published 28.01.2026; author/editing by Jarosław Neneman; Version 1.0.\n- Access: Documents available on Gov.pl; for archival versions, contact the BIP editoria...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/finanse/objasnienia-podatkowe-z-28-stycznia-2026-r-dotyczace-zasad-ustalania-stalego-miejsca-prowadzenia-dzialalnosci-gospodarczej-na-terytorium-kraju-dla-potrzeb-wystawiania-faktur-przy-uzyciu-krajowego-systemu-e-faktur",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:12:06.322Z",
+    "discoveryCandidateId": "candidate_74161f7c-821",
+    "discoveryQueryId": "generated_TaxbellLegalReference_2202f2b324",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "abdb13c287e2c92737695a71c5dc203805735be84192d6c4dff9934294a2840b"
+  },
+  "createdAt": "2026-06-07T03:08:47.557Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.164Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_e67f13dc_objasnienia-podatkowe-z-28-stycznia-2026-r-dotyczace-zasad-ustalania-sta-ego-mie.json"
+}

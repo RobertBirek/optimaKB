@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "Aktualna wersja Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch Optima czerwiec 2026\nSource: https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/\nTier: official\nDiscovery confidence: 0.9\n\nNajważniejsze informacje o aktualizacjach Comarch ERP Optima (czerwiec 2026):\n\n- Aktualna wersja to 2026.4.1.\n- Nowości w wersji:\n  - Rozszerzono integrację z KSeF (Krajowy System e-Faktur) o dodatkowe funkcje, w tym obsługę wysyłki faktur wystawionych w ramach samofaktu.\n- Dostępność aktualizacji:\n  - Dla użytkowników: możliwość pobrania najnowszej wersji z Indywidualnych Stron (dla Klientów i Partnerów).\n  - Dostępne także testowe wersje stacjonarne oraz wersja w chmurze, która zawsze pozostaje aktualna.\n- Wsparcie i zgodność:\n  - Comarch na bieżąco monitoruje zmiany prawne i regularnie aktualizuje rozwiązania w ramach usługi Comarch Asysta (bez dodatkowych kosztów).\n- Dodatkowe konteksty:\n  - W ofercie podkreślane są elementy AI i nowe interfejsy (Comarch ERP XL WEB), jednak kluczowa aktualizacja dotyczy KSeF i zgodności prawnej.\n\nJeśli potrzebujesz, mogę podać bezpośrednie linki d...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/",
+  "tags": [
+    "discovery",
+    "official",
+    "instrukcje",
+    "aktualizacje",
+    "KSeF",
+    "obsługa programu"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:10:00.042Z",
+    "discoveryCandidateId": "candidate_a6aedcda-41c",
+    "discoveryQueryId": "generated_ComarchOptimaReference_81b04327b7",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "18da9f68eaab5b66ff58c15df047c168b0402b4b8d600fba5debdafd1957f519"
+  },
+  "createdAt": "2026-06-09T06:50:00.050Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T06:55:47.254Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 13 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.json"
+}

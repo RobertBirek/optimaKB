@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-12_719ced1e_wydruki-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "Comarch Optima Sprint and Prints",
+  "kbNamespace": "ComarchOptimaSprint",
+  "title": "Wydruki - Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: wzorce wydruków Optima aktualizacje\nSource: https://pomoc.comarch.pl/optima/pl/2025/dokumentacja/wydruki/?print=print\nTier: official\nDiscovery confidence: 0.95\n\n﻿ Wydruki - Baza Wiedzy programu Comarch ERP Optima Wydruki - Baza Wiedzy programu Comarch ERP Optima\n\n# Wydruki\n\nGałąź Wydruki odpowiada ona za poprawne wywołanie indywidualnych, zdefiniowanych przez użytkownika własnych wydruków.\n\nPlik edytora wydruków w formacie Crystal Reports – podanie ścieżki dostępu do programu Crystal Report umożliwi edycję i tworzenie wydruków w tym programie.\n\nUżywaj przeglądarki Crystal do podglądu wydruków typu Crystal Reports – zaznaczenie parametru powoduje, że podgląd wydruków typu Crystal Reports odbywa się poprzez natywną przeglądarkę Crystala (.NET). Taki sposób podglądu wydruków wymaga zainstalowania jej komponentów. O potrzebne pliki instalacyjne proszę zwrócić się do Autoryzowanego Partnera Comarch. Jeżeli parametr nie jest zaznaczony wówczas podgląd wydruków typu Crystal Reports odbywa się z użyciem programu skojarzonego z rozszerzeniem PDF.\n\nPlik edytora wydruków XML oraz narzędziowych – ścieżka dostępu do programu umożliwiającego edycję plików w trybie tekstowym (standardowo w systemie Windows jest to natepad.exe).\n\nWydruk faktury wg definicji – jeśli korzystamy ze zdefiniowanego w Microsoft Excel wzoru faktury należy zaznaczyć ten parametr. Dodatkowo w oknie pojawią się parametry związane z wydrukiem faktury, czyli:\n\n- Nazwa programu dla wydruków do Worda (XML) – program, który ma być używany do edycji, przed wysłaniem na drukarkę, wydruków do Worda dostępnych między innymi w module Płace i Kadry z poziomu formularzu pracownika (m.in.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2025/dokumentacja/wydruki/?print=print",
+  "tags": [
+    "discovery",
+    "official",
+    "sPrint",
+    "wydruki",
+    "GenRap",
+    "wzorce"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-10T02:50:37.008Z",
+    "discoveryCandidateId": "candidate_7dba1bcb-090",
+    "discoveryQueryId": "generated_ComarchOptimaSprint_11cd622df6",
+    "discoveryRunId": "discovery_daily_2026-06-10T02-49-13-742Z_99c5b3d4",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "ddd844dafc0e8448cb0d21fd1b8d0f8143bd08f892e341060c3a4a804e8b894e"
+  },
+  "createdAt": "2026-06-12T05:27:10.259Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T05:33:28.217Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 2 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_719ced1e_wydruki-baza-wiedzy-programu-comarch-erp-optima.json"
+}

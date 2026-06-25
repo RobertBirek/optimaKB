@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_d76480d0_jak-skonfigurowac-uwierzytelnianie-z-krajowym-systemem-e-faktur-ksef-za-pomoca-c",
+  "kbName": "Comarch Betterfly Reference",
+  "kbNamespace": "ComarchBetterflyReference",
+  "title": "Jak skonfigurować uwierzytelnianie z Krajowym Systemem e-Faktur (KSeF) za pomocą certyfikatu Ministerstwa Finansów. - Baza Wiedzy programu Comarch Betterfly",
+  "content": "Automated source-discovery draft.\n\nQuery: Betterfly API KSeF 2026\nSource: https://pomoc.comarchbetterfly.pl/dokumentacja/jak-skonfigurowac-uwierzytelnianie-z-krajowym-systemem-e-faktur-ksef-za-pomoca-certyfikatu-ministerstwa-finansow/\nTier: official\nDiscovery confidence: 0.95\n\nJak skonfigurować uwierzytelnianie z Krajowym Systemem e-Faktur (KSeF) za pomocą certyfikatu Ministerstwa Finansów. - Baza Wiedzy programu Comarch Betterfly\n\nJak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\n1. Strona główna\n2. eFaktury\n3. Jak skonfigurować uwierzytelnianie z Krajowym Systemem e-Faktur (KSeF) za pomocą certyfikatu Ministerstwa Finansów.\n\n1. Generowanie certyfikatu uwierzytelniającego\n\nW aplikacji KSeF udostępnianej przez Ministerstwo Finansów należy wygenerować przede wszystkim certyfikat umożliwiający uwierzytelnienie.\n\nZgodnie z informacjami Ministerstwa, od 01.02.2026 generowanie certyfikatów jest możliwe po zalogowaniu do Aplikacji Podatnika KSeF.\n\nPo wygenerowaniu certyfikatu otrzymasz dwa pliki: *.cert oraz *.key.\n\nWskazówka\n\nPamiętaj: Certyfikat jest zabezpieczony hasłem. Należy je zapamiętać, ponieważ będzie cyklicznie wykorzystywane do odświeżania dostępu do KSeF w programie.\n\n2. Konfiguracja w programie\n\nAby skonfigurować połączenie w aplikacji Comarch Betterfly:\n\nWejdź w Ustawienia programu na zakładkę KSeF.\n\nWybierz sposób uwierzytelniania: Certyfikaty Ministerstwa Finansów.\n\nWgraj oba uzyskane pliki ( *.cert oraz *.key. )\n\nPodaj hasło do certyfikatu uwierzytelniającego KSeF.\n\nUwaga\n\nHasło nie jest przechowywane w programie – jest wykorzystywane jednorazowo do uwierzytelnienia. Na podstawie podanych danych system automatycznie tworzy tokeny (access i refresh), które pozwalają na automatyczną pracę przez tydzień bez konieczności ponownego wpisywania hasła\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-skonfigurowac-uwierzytelnianie-z-krajowym-systemem-e-faktur-ksef-za-pomoca-certyfikatu-ministerstwa-finansow/",
+  "tags": [
+    "discovery",
+    "official",
+    "API",
+    "KSeF",
+    "faktury",
+    "integracje"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-08T02:49:57.990Z",
+    "discoveryCandidateId": "candidate_f89d6581-40d",
+    "discoveryQueryId": "generated_ComarchBetterflyReference_440d47e1f5",
+    "discoveryRunId": "discovery_daily_2026-06-08T02-49-27-759Z_20bfba27",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "0bcc6abe9e56a38c9c3da09f28338c7a6aa0cfbd4c58537798226e0dab445d14"
+  },
+  "createdAt": "2026-06-09T06:45:22.210Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T06:55:47.434Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 13 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_d76480d0_jak-skonfigurowac-uwierzytelnianie-z-krajowym-systemem-e-faktur-ksef-za-pomoca-c.json"
+}

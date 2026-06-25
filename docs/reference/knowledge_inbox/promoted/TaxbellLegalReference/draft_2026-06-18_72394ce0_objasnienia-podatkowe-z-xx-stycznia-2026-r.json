@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-18_72394ce0_objasnienia-podatkowe-z-xx-stycznia-2026-r",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Objaśnienia podatkowe z XX stycznia 2026 r.",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy objaśnienia 2026\nSource: https://www.gov.pl/attachment/4bf22377-68f5-4e92-a2ab-357784aacc4f\nTier: official\nDiscovery confidence: 0.9\n\nPodstawa prawna: art. 14a § 1 pkt 2 ustawy z dnia 29 sierpnia 1997 r. – Ordynacja podatkowa (Dz. U. z 2025 r. poz. 111, z późn. zm.)\n\n## Objaśnienia podatkowe z XX stycznia 2026 r.\n\ndotyczące zasad ustalania stałego miejsca prowadzenia działalności gospodarczej na terytorium kraju dla potrzeb wystawiania faktur przy użyciu Krajowego Systemu e-Faktur\n\n### Spis treści\n\nCzego dotyczą objaśnienia? ... 3 \nPrzepisy podatkowe objęte zakresem objaśnień i cel ich opublikowania ... 3 \nPodstawy prawne SMPD ... 4 \nDefinicja SMPD ... 5 \nPrzesłanki wskazujące na istnienie SMPD ... 7 \nPrzykłady związane z ustaleniem SMPD w kontekście stosowania KSeF ... 13 \nPouczenie o ochronie wynikającej z zastosowania się do objaśnień podatkowych ... 15 \n\n### Czego dotyczą objaśnienia?\n\nObjaśnienia dotyczą zasad ustalania stałego miejsca prowadzenia działalności gospodarczej (dalej także jako: SMPD) na terytorium Polski dla potrzeb wystawiania faktur przy użyciu Krajowego Systemu e-Faktur (dalej także jako: KSeF).\n\n### Przepisy podatkowe objęte zakresem objaśnień i cel ich\n\n### opublikowania\n\nOd 1 lutego 2026 r., zgodnie z art. 106ga ust. 1 ustawy o VAT 1, podatnicy są obowiązani, co do zasady, wystawiać faktury ustrukturyzowane przy użyciu Krajowego Systemu e-Faktur. Zgodnie z art. 106ga ust. 2 pkt 1 i 2 ustawy o VAT, obowiązek ten nie dotyczy wystawiania faktur przez podatnika:\n\n• nieposiadającego siedziby działalności gospodarczej ani stałego miejsca prowadzenia działalności gospodarczej na terytorium\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/attachment/4bf22377-68f5-4e92-a2ab-357784aacc4f",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-15T02:49:00.533Z",
+    "discoveryCandidateId": "candidate_9ae11463-6bc",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-06-15T02-48-46-835Z_9a0eb6f4",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "31ff77e698876056b890fba4293e2c523a5d03761a5ca3b6ac0c2c70b95ace11"
+  },
+  "createdAt": "2026-06-18T05:13:43.344Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-18T05:14:35.223Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-18/draft_2026-06-18_72394ce0_objasnienia-podatkowe-z-xx-stycznia-2026-r.json"
+}

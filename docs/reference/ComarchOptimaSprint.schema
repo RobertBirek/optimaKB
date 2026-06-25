@@ -1,0 +1,240 @@
+namespace ComarchOptimaSprint
+
+ReferenceDocument(ReferenceDocument): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		sourceType(sourceType): Text
+		documentCategory(documentCategory): Text
+		versionHint(versionHint): Text
+		sourceOrigin(sourceOrigin): Text
+		summary(summary): Text
+			index: TextAndVector
+
+FileArtifact(FileArtifact): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		relativePath(relativePath): Text
+			index: Text
+		sourceOrigin(sourceOrigin): Text
+		collectionName(collectionName): Text
+		artifactType(artifactType): Text
+		fileExtension(fileExtension): Text
+		fileSizeBytes(fileSizeBytes): Text
+		contentPreview(contentPreview): Text
+			index: TextAndVector
+
+PrintTechnology(PrintTechnology): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		technologyCode(technologyCode): Text
+			index: Text
+		lifecycleStatus(lifecycleStatus): Text
+		preferredUse(preferredUse): Text
+		editorType(editorType): Text
+		dataSources(dataSources): Text
+		exportFormats(exportFormats): Text
+		migrationNote(migrationNote): Text
+		summary(summary): Text
+			index: TextAndVector
+
+PrintWorkflow(PrintWorkflow): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		workflowType(workflowType): Text
+		uiContext(uiContext): Text
+		triggerPath(triggerPath): Text
+		shortcut(shortcut): Text
+		primaryAction(primaryAction): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+
+PrintOption(PrintOption): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		optionName(optionName): Text
+			index: Text
+		optionScope(optionScope): Text
+		effect(effect): Text
+		recommendedWhen(recommendedWhen): Text
+		riskIfSkipped(riskIfSkipped): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+TemplateFeature(TemplateFeature): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		featureType(featureType): Text
+		availabilityVersion(availabilityVersion): Text
+		editorArea(editorArea): Text
+		useCase(useCase): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+
+SqlPattern(SqlPattern): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		patternType(patternType): Text
+		contextParams(contextParams): Text
+		sourceMode(sourceMode): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		anchorSchemaObjects(anchorSchemaObjects): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+		exampleSql(exampleSql): Text
+			index: TextAndVector
+
+DiagnosticCase(DiagnosticCase): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		symptom(symptom): Text
+			index: Text
+		probableCause(probableCause): Text
+		firstCheck(firstCheck): Text
+		escalationPath(escalationPath): Text
+		logPath(logPath): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+VersionChange(VersionChange): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		versionCode(versionCode): Text
+			index: Text
+		releaseDate(releaseDate): Text
+		changeScope(changeScope): Text
+		moduleScope(moduleScope): Text
+		lifecycleImpact(lifecycleImpact): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+PrintCatalog(PrintCatalog): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		catalogGroup(catalogGroup): Text
+		printTechnology(printTechnology): Text
+		moduleScope(moduleScope): Text
+		versionHint(versionHint): Text
+		printExamples(printExamples): Text
+		migrationContext(migrationContext): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+LearningResource(LearningResource): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		resourceType(resourceType): Text
+		provider(provider): Text
+		accessChannel(accessChannel): Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		versionHint(versionHint): Text
+		audience(audience): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+GlossaryTerm(GlossaryTerm): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		term(term): Text
+			index: Text
+		relatedTopic(relatedTopic): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		definition(definition): Text
+			index: TextAndVector
+
+SchemaTouchpoint(SchemaTouchpoint): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceObjectRefId(sourceObjectRefId): Text
+		schemaObjectRefId(schemaObjectRefId): Text
+		schemaObjectName(schemaObjectName): Text
+			index: Text
+		schemaObjectKind(schemaObjectKind): Text
+		touchpointType(touchpointType): Text
+		confidence(confidence): Text
+		evidence(evidence): Text
+		schemaKnowledgeBase(schemaKnowledgeBase): Text
+		queryDesignNote(queryDesignNote): Text
+			index: TextAndVector
+
+ModuleRecipe(ModuleRecipe): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		moduleName(moduleName): Text
+			index: Text
+		scenarioType(scenarioType): Text
+		preferredMechanism(preferredMechanism): Text
+		triggerSuitability(triggerSuitability): Text
+		anchorSchemaObjects(anchorSchemaObjects): Text
+		joinHint(joinHint): Text
+		sqlObjectHint(sqlObjectHint): Text
+		schemaKnowledgeBase(schemaKnowledgeBase): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+
+Chunk(Chunk): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		sourceObjectRefId(sourceObjectRefId): Text
+		sourceDocument(sourceDocument): Text
+		sourceSection(sourceSection): Text
+		semanticType(semanticType): Text
+			index: Text
+		content(content): Text
+			index: TextAndVector

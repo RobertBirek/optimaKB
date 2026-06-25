@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_75ef2b71_serwis-o-podatkach-interpretacje-ogolne",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Serwis o podatkach - Interpretacje ogólne",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - objaśnienia i przepisy podatkowe\nURL: https://www.podatki.gov.pl/interpretacje-podatkowe/interpretacje-ogolne/\n\nThe page \"Serwis o podatkach - Interpretacje ogólne\" on podatki.gov.pl serves as the central gateway for general tax interpretations and guidance from the Polish Ministry of Finance. It outlines: \n\n- Main tax areas: personal taxes (PIT), taxes for entrepreneurs (CIT, VAT, JPK), customs, and other guidance resources.\n- Sections and tools: guides and information booklets, news, tools, and online services to handle tax matters.\n- Tax categories by situation: \n  - Personal income tax (PIT) with basics, allowances, rates, forms, and scenarios (employment, abroad work, contract work, royalties, rental income, undeclared activity, nanny income, pension, etc.).\n  - Wealth/asset taxes: inheritance and donations, civil-law transactions.\n  - Purchases: excise duty, VAT.\n  - Other taxes and local taxes: selected local taxes, gaming tax, real estate tax, and related topics.\n- For entrepreneurs: co...",
+  "sourceUrl": "https://www.podatki.gov.pl/interpretacje-podatkowe/interpretacje-ogolne/",
+  "tags": [
+    "prawo",
+    "podatki",
+    "mf",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_ef8fc436",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-15-832Z_82bfa824",
+    "retrievedAt": "2026-06-05T17:41:16.070Z",
+    "contentHash": "2b80c9e834d78b9bc25b13065fe29db09b435547acdce4ede9899113ff831ae8",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:16.099Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:21.982Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_75ef2b71_serwis-o-podatkach-interpretacje-ogolne.json"
+}

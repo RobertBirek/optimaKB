@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_2c8ac997_serwis-o-podatkach-formularze-podatki-gov-pl",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Serwis o podatkach - Formularze - Podatki.gov.pl",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - PIT CIT i rozliczenia\nURL: https://www.podatki.gov.pl/podatki-firmowe/cit/formularze/\n\nSummary:\n- The page is a centralized portal for tax forms on podatki.gov.pl, specifically the “Serwis o podatkach – Formularze” section.\n- It organizes tax topics into: Podatki osobiste (personal taxes), Podatki dla przedsiębiorców (taxes for entrepreneurs), Cło (customs), Poradniki i informatory (guides and manuals), Aktualności (news), Narzędzia (tools), and Załatw sprawę online (handle a matter online).\n- Within taxes for entrepreneurs, it lists foundational corporate taxes and related categories, including:\n  - Podstawowe podatki dla przedsiębiorców (basic business taxes)\n  - Pozostałe podatki (other taxes) such as PCC, SD, mineral royalties, financial institutions, and excise-like cases\n  - Specific regimes and compliance terms: VAT-related topics, with references to withholding tax (WHT), MDR (tax schemes reporting), ICAP, ETACA, SME procedures, GLOBE, CRBR, etc.\n  - Other forma...",
+  "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/formularze/",
+  "tags": [
+    "pit",
+    "cit",
+    "podatki",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_5603dd29",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-16-983Z_bf4c11f4",
+    "retrievedAt": "2026-06-05T17:41:17.211Z",
+    "contentHash": "523fc71fdd277dc07cf478692fddbee9904f04480746e4e485d7a401b2ddd06d",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:17.257Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-05T18:35:30.710Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 2 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_2c8ac997_serwis-o-podatkach-formularze-podatki-gov-pl.json"
+}

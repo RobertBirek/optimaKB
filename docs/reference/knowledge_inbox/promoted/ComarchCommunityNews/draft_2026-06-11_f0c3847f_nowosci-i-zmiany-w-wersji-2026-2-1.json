@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_f0c3847f_nowosci-i-zmiany-w-wersji-2026-2-1",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Nowości i zmiany w wersji 2026.2.1",
+  "content": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch Optima 2026.2 społeczność\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/nowosci-i-zmiany-w-wersji-2026-2-1/\nTier: official\nDiscovery confidence: 0.9\n\nNowości i zmiany w wersji 2026.2.1\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n1. Strona główna\n2. Instalacja i aktualizacje\n3. Co nowego?\n4. Nowości i zmiany w wersji 2026.2.1\n\n## Nowości i zmiany w wersji 2026.2.1\n\n### Księgowość\n\n- 1\n- 1309\n\n### Handel z magazynem\n\n- 1\n- 1227\n\n### Ogólne\n\n- 1\n- 1055\n\n### Płace i Kadry\n\n- 1\n- 916\n\n### Instalacja i reinstalacja systemu\n\n- 1\n- 745\n\n### Aktualizacje po wydaniu wersji\n\n- 1\n- 729\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/nowosci-i-zmiany-w-wersji-2026-2-1/",
+  "tags": [
+    "discovery",
+    "official",
+    "pytania społeczności",
+    "KSeF",
+    "Optima",
+    "Betterfly"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:47:49.251Z",
+    "discoveryCandidateId": "candidate_ff78bd1c-6cf",
+    "discoveryQueryId": "generated_ComarchCommunityNews_872094d42d",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "4b91186ad152317c5d1cfa649cfe67b8edd4bdc4fd22a8f48d36e8475740fe7f"
+  },
+  "createdAt": "2026-06-11T08:20:49.722Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.659Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_f0c3847f_nowosci-i-zmiany-w-wersji-2026-2-1.json"
+}

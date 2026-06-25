@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_3c36d550_serwis-o-podatkach-interpretacje-podatkowe-podatki-gov-pl",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Serwis o podatkach - Interpretacje podatkowe - Podatki.gov.pl",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - objaśnienia i przepisy podatkowe\nURL: https://www.podatki.gov.pl/interpretacje-podatkowe/\n\nSummary:\n- The page is theTax Servicе “Interpretacje podatkowe” on podatki.gov.pl, a central portal for Polish tax interpretations and guidance.\n- It provides categorized sections for personal taxes, business taxes, customs, guides/informational materials, news, tools, and online services.\n- Key sections include: Od dochodu (income taxes), Od majątku (property/estate taxes like inheritance and donation), Od zakupów (purchase-related taxes), and various specific tax topics for entrepreneurs (basic taxes, PCC, SD, VAT-related items, withholding/tax schemes such as WHT, MDR, ICAP, etc.).\n- It also lists compliance and regulatory resources such as Klauzula ogólna przeciwko unikaniu opodatkowania, Rejestr działalności, and other cross-border and international tax frameworks.\n- There are dedicated options to manage tax matters online (\"Załatw sprawę online\") and to access tools, news, and i...",
+  "sourceUrl": "https://www.podatki.gov.pl/interpretacje-podatkowe/",
+  "tags": [
+    "prawo",
+    "podatki",
+    "mf",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_ef8fc436",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-15-832Z_82bfa824",
+    "retrievedAt": "2026-06-05T17:41:16.070Z",
+    "contentHash": "c24722cd3abc9ebaae7930390329b63a5df3bfa7c61b4e84850677868face9d6",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:16.110Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:21.971Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_3c36d550_serwis-o-podatkach-interpretacje-podatkowe-podatki-gov-pl.json"
+}

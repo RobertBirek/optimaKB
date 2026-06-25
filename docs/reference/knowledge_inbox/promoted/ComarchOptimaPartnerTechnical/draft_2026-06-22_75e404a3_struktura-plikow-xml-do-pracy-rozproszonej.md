@@ -1,0 +1,323 @@
+# Struktura plików XML do pracy rozproszonej
+- draftId: `draft_2026-06-22_75e404a3_struktura-plikow-xml-do-pracy-rozproszonej`
+- kbNamespace: `ComarchOptimaPartnerTechnical`
+- status: `promoted`
+- promotedAt: `2026-06-22T06:16:35.754Z`
+- tags: `XML`, `praca rozproszona`, `struktura plików`, `Comarch ERP Optima`, `biuletyn techniczny`, `eksport`, `import`
+- reviewNote: Approved from inbox row
+## Content
+# Biuletyn techniczny
+
+# Struktura plików XML do pracy rozproszonej
+
+# do wersji 2025.2.1 Comarch ERP Optima
+
+**Data ostatniej aktualizacji**
+
+**21\.01.2025**
+
+<image redacted: 597x844px, 597x844pt, ~72dpi, PNG, DEVICE_RGB, 32bpp>
+
+# Spis treści
+
+# 1 Zmiany wprowadzane w poszczególnych wersjach aplikacji ....... 3
+
+| 1.1 Zmiany w wersji 2018.0.1  | ........................................................................................................................ 3 |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| 1.2 Zmiany w wersji 2018.2.1  | ........................................................................................................................ 3 |
+| 1.3 Zmiany w wersji 2018.5.1  | ........................................................................................................................ 3 |
+| 1.4 Zmiany w wersji 2018.6.1  | ........................................................................................................................ 3 |
+| 1.5 Zmiany w wersji 2019.1.1  | ........................................................................................................................ 3 |
+| 1.6 Zmiany w wersji 2019.5.1  | ........................................................................................................................ 3 |
+| 1.7 Zmiany w wersji 2020.0.1  | ........................................................................................................................ 4 |
+| 1.8 Zmiany w wersji 2020.1.1  | ........................................................................................................................ 4 |
+| 1.9 Zmiany w wersji 2020.4.1  | ........................................................................................................................ 4 |
+| 1.10 Zmiany w wersji 2021.0.1 | ........................................................................................................................ 4 |
+| 1.11 Zmiany w wersji 2021.5.1 | ........................................................................................................................ 4 |
+| 1.12 Zmiany w wersji 2022.1.1 | ........................................................................................................................ 4 |
+| 1.13 Zmiany w wersji 2022.3.1 | ........................................................................................................................ 4 |
+| 1.14 Zmiany w wersji 2023.0.1 | ........................................................................................................................ 4 |
+| 1.15 Zmiany w wersji 2023.5.1 | ........................................................................................................................ 4 |
+| 1.16 Zmiany w wersji 2023.6.1 | ........................................................................................................................ 5 |
+| 1.17 Zmiany w wersji 2025.1.1 | ........................................................................................................................ 5 |
+| 1.18 Zmiany w wersji 2025.2.1 | ........................................................................................................................ 5 |
+
+# 2 Praca w modelu rozproszonym (off-line) ....................................... 5
+
+# 3 Założenia podstawowe .................................................................... 5
+
+| 4 Podział | obszarów danych |             | ............................................................... | 5         |
+|-----------|-----------------|-------------|-----------------------------------------------------------------|-----------|
+| 5 Symbole | numeracji       | dokumentów, | nazwy                                                           | rejestrów |
+
+# kasowych/bankowych oraz inne słowniki ...................................... 6
+
+# 6 Konfiguracja pracy rozproszonej ................................................... 7
+
+| 6.1 Eksport danych | ....................................................................................................................................... 8   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| 6.2 Import danych  | ......................................................................................................................................... 9 |
+| 7 Co to jest       | XML?.............................................................................. 11                                                       |
+
+# 8 Informacje ogólne na temat struktury plików XML ...................... 12
+
+# 9 Informacje szczegółowe na temat importu danych ..................... 14
+
+**Struktura plików XML do pracy rozproszonej**
+
+**2**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+# 1 Zmiany wprowadzane w poszczególnych wersjach
+
+# aplikacji
+
+# 1\.1 Zmiany w wersji 2018.0.1
+
+| 1. Dodano w konfiguracji Parametr określa, karty podmiotu. 1.2 Zmiany w | Pracy rozproszonej parametr Status importowanych płatności wg ustawień w pliku. czy status zaimportowanej płatności ma być ustawiony wg danych w pliku, czy pobierany z wersji 2018.2.1    |
+|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1. Dodano nową stawkę 1.3 Zmiany w                                      | 12,5 % dla ewidencji ryczałtowej. wersji 2018.5.1                                                                                                                                          |
+| 1. Dodano tagi 2. Dodano tagi w podwęźle                                | \<FA\_Z\_PA\>, \<VAN\_FA\_Z\_PA\> i \<VAN\_RODZAJ\> w węźle REJESTRY\_SPRZEDAZY\_VAT\>. \<PLAT\_FA\_Z\_PA\> i \<PLAT\_VAN\_FA\_Z\_PA\> w węźle \<REJESTRY\_SPRZEDAZY\_VAT\> \<PLATNOSCI\>. |
+| 3. Dodano tag 1.4 Zmiany w                                              | \<ANONIMIZACJA\> w węźle \<KONTRAHENCI\>. wersji 2018.6.1                                                                                                                                  |
+| 1. Dodano tag                                                           | \<SPLIT\_PAYMENT\> w węźle \<KONTRAHENCI\>.                                                                                                                                                |
+| 2. Dodano tag 3. Dodano tag                                             | \<FORMAT\_SPLIT\_PAYMENT\> w węźle \<BANKI\>. \<RACHUNEK\_VAT\_SPLIT\_PAYMENT\> w węźle \<RACHUNKI\_KB\>.                                                                                  |
+| 4. Dodano tagi i i \<REJESTRY\_ZAKUPU\_VAT\>                            | \<PLAT\_SPLIT\_PAYMENT\>,\<PLAT\_SPLIT\_KWOTA\_VAT\>, \<PLAT\_SPLIT\_NIP\> \<PLAT\_SPLIT\_NR\_DOKUMENTU\> w węźle \<REJESTRY\_SPRZEDAZY\_VA \> w podwęźle \<PLATNOSCI\>.                   |
+| 5. Dodano tagi \<                                                       | SPLIT\_PAYMENT\> i \<ZAPIS\_VAT\> w węźle \<RAPORTY\_KB\>.                                                                                                                                 |
+| 6. Dodano tagi \< w węźle \<PLATNOSCI\>.                                | SPLIT\_PAYMENT\>, \< SPLIT\_KWOTA\_VAT \>, \< SPLIT\_NIP\> i \<SPLIT\_NR\_DOKUMENTU\>                                                                                                      |
+
+# 1\.5 Zmiany w wersji 2019.1.1
+
+1\. Dodano tagi \<KSIEGUJ\_W\_KOSZTY\> i \<KSIEGUJ\_W\_KOSZTY\_PROCENT\> w węźle \<KATEGORIE\>.
+
+# 1\.6 Zmiany w wersji 2019.5.1
+
+1\. Dodano tagi \<ELEMENT\_PODST\_PPK\>, \<ELEMENT\_SKL\_PPK\_PRAC1\>, \<ELEMENT\_SKL\_PPK\_PRAC2\>, \<ELEMENT\_SKL\_PPK\_FIRMA1\>,\<ELEMENT\_SKL\_PPK\_FIRMA2\> w węźle \<ELEMENTY\>. 2. Dodano tag \<WYPLATA\_OBNIZSKLPPK\> w węźle \<WYPLATA\>.
+
+**Struktura plików XML do pracy rozproszonej**
+
+**3**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+# 1\.7 Zmiany w wersji 2020.0.1
+
+1\. Dodano tag \< POD\_ZWOL\_PIT26 \> w węźle \<PRACOWNICY\>. 2. Dodano tag \<MPP\> w węzłach \<REJESTRY\_ZAKUPU\_VAT\> i \<REJESTRY\_SPRZEDAZY\_VAT\>.
+
+# 1\.8 Zmiany w wersji 2020.1.1
+
+1\. Dodano tagi \<WYPLATA\_PODSTAWAPODAT1\>, \<WYPLATA\_PODSTAWAPODAT2\>, \<WYPLATA\_PROCENTPODAT1\> i \<WYPLATA\_PROCENTPODAT2\> w węźle \<WYPLATA\>.
+
+# 1\.9 Zmiany w wersji 2020.4.1
+
+1\. Umożliwiono przenoszenie kodów JPK\_V7 z kartoteki kontrahenta i z faktur. Dodano węzeł \<KODY\_JPK\> w węźle \< KONTRAHENT\>, \<REJESTR\_ZAKUPU\_VAT\> i \<REJESTR\_SPRZEDAZY\_VAT\>.
+
+# 1\.10 Zmiany w wersji 2021.0.1
+
+1\. Umożliwiono przenoszenie kodów JPK\_V7 z kategorii. Dodano węzeł \<KODY\_JPK\> w węźle \< KATEGORIA\>.
+
+2\. W węźle \<REJESTR\_SPRZEDAZY\_VAT\> zmieniono zasady działania pól związanych z ewidencją paragonów i wystawionych do nich faktur.
+
+# 1\.11 Zmiany w wersji 2021.5.1
+
+1\. W węźle \<KATEGORIA\> dodano węzeł \<OSS\_STAWKI\_VAT\>. 2. W węźle \<REJESTR\_SPRZEDAZY\_VAT\> dodano węzły \<PODATEK\_W\_OSS\>, \<DEKLARACJA\_OSS\> i \<KOD\_KRAJU\_ODBIORCY\>.
+
+# 1\.12 Zmiany w wersji 2022.1.1
+
+1\. W węźle \<KATEGORIA\> oraz w węźle \<REJESTR\_SPRZEDAZY\_VAT\> w tagu \<KOLUMNA\_RYCZALT\> dodano nowe stawki 12.00% i 14.00%.
+
+# 1\.13 Zmiany w wersji 2022.3.1
+
+1\. Dodano tagi \<ELEMENT\_ZALFIS\_NADWYZKA\> oraz \<ELEMENT\_ZALFIS\_DOPLATA\> w węźle \<ELEMENTY\>.
+
+# 1\.14 Zmiany w wersji 2023.0.1
+
+1\. Dodano tagi \<NIEAKTYWNY\> w węźle \<ATRYBUTY\>.
+
+# 1\.15 Zmiany w wersji 2023.5.1
+
+1\. Dodano tagi \<NR\_KSEF\>, \<KSEF\_DATA\_PRZYJECIA\> i \<DODATKOWY\_OPIS\> w węzłach \<REJESTR\_ZAKUPU\_VAT\> i \<REJESTR\_SPRZEDAZY\_VAT\>.
+
+**Struktura plików XML do pracy rozproszonej**
+
+**4**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+# 1\.16 Zmiany w wersji 2023.6.1
+
+1\. Dodano tag \<DODATKOWY\_OPIS\> w węzłach \<DOKUMENT\_INNY\_PRZYCHOD\> i \<DOKUMENT\_INNY\_ROZCHOD\> 2. Dodano tag \<ODDELEGOWANI\_UMOWA\> w węźle \<LISTA\_PLAC\>
+
+# 1\.17 Zmiany w wersji 2025.1.1
+
+1\. Dodano tag \<NIE\_UWZGLEDNIAJ\_KASOWY\_PIT\> w węźle \<KONTRAHENCI\>
+
+# 1\.18 Zmiany w wersji 2025.2.1
+
+1\. W węźle \<REJESTR\_ZAKUPU\_VAT\> i \<REJESTR\_SPRZEDAZY\_VAT\> w tagu \<EKSPORT\> dodano nową wartość procedura sme
+
+# 2 Praca w modelu rozproszonym (off-line)
+
+Moduł eksportu-importu danych za pomocą plików XML ma na celu rozwiązanie problemu pracy w trybie off-line, tzn. umożliwić rozdzielenie modułów operacyjnych (sprzedaż, prowadzenie kasy, płace) od modułu o charakterze księgowym (księgowość).
+
+# 3 Założenia podstawowe
+
+1\. Model pracy off-line jest adresowany do zastosowań Klient - Biuro rachunkowe, ale także Dział sprzedaży/płac – Centrala/Księgowość w firmie wielo-oddziałowej. Dla uproszczenia w dalszym opisie przyjęto pierwszy przykład zastosowania.
+
+2\. Klient pracuje na modułach operacyjnych, w których wprowadzane są wszelkie dokumenty. 3. Biuro rachunkowe przetwarza na potrzeby księgowe dokumenty wprowadzone uprzednio przez Klienta. Biuro rachunkowe nie wprowadza żadnych dokumentów o charakterze „operacyjnym”,poza raportami kasowo/bankowymi. 4. Praca w trybie off-line nie rozwiązuje problemu replikacji dwukierunkowej dla potrzeb pracy firmy wielooddziałowej, jak również pracy rozproszonej w firmie. W takich przypadkach Klient może skorzystać z zaproponowanego ograniczonego modelu lub jeśli takie rozwiązanie jest niewystarczające, powinien zastosować model on-line (oparty o usługi terminalowe). 5. Do przenoszenia danych stosujemy uniwersalny nośnik, jakim są pliki w formacie XML.
+
+# 4 Podział obszarów danych
+
+Każda ze stron pracujących w trybie off-line (Klient i Biuro rachunkowe) posiada odrębną bazę danych. Dane przetwarzane w systemie Comarch ERP Optima są podzielone na dwa obszary: obszar Klienta (sprzedaż/płace) i obszar Biura rachunkowego (księgowość). Każdy obszar może być modyfikowany tylko przez właściciela i w niezbędnym do prawidłowej współpracy zakresie, będzie on przenoszony do drugiej bazy danych pracującej w modelu rozproszonym. Obszar danych Klienta obejmuje dane o charakterze operacyjnym: 1. dokumenty handlowe i magazynowe 2. dokumenty kasowo-bankowe
+
+**Struktura plików XML do pracy rozproszonej**
+
+**5**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+3\. wszelkiego rodzaju słowniki (w tym również dane kadrowe – stanowiące słownik pracowników i struktury organizacyjnej) 4. płatności 5. rozliczenia
+
+6\. dokumenty płacowe Obszar danych Biura rachunkowego obejmuje: 1. dane słownikowe
+
+2\. dane księgowe 3. dane kadrowe
+
+4\. dane płacowe Obszary danych Klienta i Biura rachunkowego zachodzą na siebie w zakresie danych słownikowych. W zakresie słowników zapewniona jest dwukierunkowa wymiana danych. Dwukierunkowa wymiana zapewniona jest również w zakresie przesyłu raportów kasowo/bankowych oraz rozliczeń.
+
+# 5 Symbole numeracji dokumentów, nazwy rejestrów
+
+# kasowych/bankowych oraz inne słowniki
+
+**Przed rozpoczęciem pracy na stanowisku działu sprzedaży/płac należy ustalić jakie schematy numeracji**
+
+dokumentów będą wykorzystywane np. przy wystawianiu faktur, przy dodawaniu zapisów Kasowych/Bankowych, przy dodawaniu list płac. Ta uwaga dotyczy zwłaszcza tych sytuacji, gdy model Pracy rozproszonej jest wykorzystywany przez firmy wielooddziałowe. Każde stanowisko sprzedaży/płac (a także stanowisko księgowe, jeżeli na nim również są wystawiane np. faktury) musi mieć swoje schematy numeracji, aby nie doszło do sytuacji, gdy w dziale księgowym duplikują się numery dokumentów. Równie ważne jest, aby w obu bazach schematy numeracji dokumentów, które mają ten sam symbol – miały również te same człony numeracji. Kwestię schematów numeracji można również rozwiązać poprzez człon Seria, wtedy każde stanowisko miałoby własną serię w dokumencie. W bazie sprzedaży/płac należy dodać nowe, unikalne dla całej firmy, rejestry kasowe/bankowe – każdy oddział musi mieć swoją kasę. Nie należy zmieniać nazwy domyślnej kasie o nazwie KASA ponieważ rejestry kasowe rozpoznawane są po numerze identyfikacyjnym zapisanym w tabeli CDN.BnkRachunki w polu BRa\_ImportRowId. Ten numer dla domyślnej kasy KASA jest stały. Zawsze należy dodać do listy nowy rejestr – kasując ewentualnie domyślny rejestr KASA. Należy na jeden schemat nadawania akronimów pracownikom. Bardzo ważne jest, aby w bazie do której wykonywany będzie import list płac, były założone lub zaimportowane kartoteki pracowników. Jeśli w bazie księgowej nie będzie pracownika odpowiadającego pracownikowi znajdującemu się w pliku z listą płac, cały dokument listy nie zostanie zaimportowany. Podczas importu pracowników z pliku XML należy zwrócić uwagę na przypisane im schematy płatności. Jeśli w bazie, do której importujemy pracowników nie ma słowników bankowych odpowiadających bankom używanym w schemacie płatności pracownika, taki pracownik nie zostanie zaimportowany. Wówczas przed wykonaniem importu pracowników należy wcześniej zaimportować lub uzupełnić słownik banków. Dokumenty list płac zawierające ustawienia opisu analitycznego wymagają wcześniejszego importu struktury organizacyjnej (wydziały, lokalizacje, projekty). Przed importem list płac należy również zaimportować słownik typów wypłat zdefiniowanych w bazie płacowej Klienta, a wykorzystywanych w dokumentach list płac. Eksportowi podlegają dokumenty zatwierdzone, co w przypadku list płac oznacza zamknięte listy płac i wszystkie w nich wypłaty. Nie podlegają eksportowi wypłaty anulowane. Import list płac do bazy księgowej dodaje do bazy księgowej wypłaty dla poszczególnych pracowników oraz płatności z nimi związane. Jeśli płatności nie będą rozliczanie ówczas , w bazie księgowej, na kartotekach pracowników w tej bazie można zaznaczyć opcję „Nie rozliczać płatności”w płatności z wypłat podczas importu zostaną ustawione jako nie podlegające rozliczeniom.
+
+**Struktura plików XML do pracy rozproszonej**
+
+**6**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+# 6 Konfiguracja pracy rozproszonej
+
+Do celów ustawienia parametrów pracy w modelu rozproszonym została utworzona sekcja w konfiguracji programu (Konfiguracja/Firma/Ogólne/ Praca rozproszona). Sekcja Praca rozproszona służy do określenia charakteru pracy w wybranej bazie danych:
+
+| ■ nie (ustawiony domyślnie)                     | – oznacza, że dana baza nie pracuje w modelu rozproszonym                                                                                   |
+|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| ■ dział sprzedaży/płac –                        | w danej bazie wystawia się dokumenty handlowo-magazynowe i/lub płacowe                                                                      |
+| ■ księgowość – w danej                          | bazie prowadzi się księgowość w modelu rozproszonym                                                                                         |
+| ■ oddział – parametr ten współpracy z programem | nie dotyczy pracy rozproszonej omówionej w tym biuletynie, ma znaczenie przy Comarch CDN XL (parametr nieaktywny w instalacji standardowej) |
+
+Rys 1. Konfiguracja pracy rozproszonej
+
+W polu Identyfikator księgowości i Identyfikator działu sprzedaży/płac wprowadzamy maksymalnie 5 znakowy symbol (istotna jest wielkość liter), po którym będzie następowała identyfikacja tych działów. Istotne jest, aby był wprowadzony taki sam Identyfikator księgowości w obu bazach – operacyjnej i księgowej. Program weryfikuje
+
+**Struktura plików XML do pracy rozproszonej**
+
+**7**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+<image redacted: 454x377px, 454x377pt, ~72dpi, PNG, DEVICE_RGB, 32bpp> w ten sposób czy dany plik XML, zawierający dane wygenerowane w dziale sprzedaży/płac, jest przeznaczony dla tej właśnie bazy księgowej. Poniżej określamy nazwy rejestrów dla dokumentów handlowych. Sekcja ta jest widoczna tylko wtedy, gdy ustawimy w konfiguracji: dział sprzedaży/płac. Nazwy rejestrów, innych niż domyślne, można zdefiniować w konfiguracji w sekcji: Konfiguracja/Firma/Księgowość. Dodatkowo można wybrać: 1. czy do Kwot dodatkowych dla dokumentów WZ i WKA będą przenoszone kwoty wg cen sprzedaży czy wg cen zakupu; 2. czy eksportować dokumenty fiskalne; 3. czy eksportować dokumenty MM; 4. czy eksportować faktury wystawione w module Faktury (Handel) z Rejestrów VAT (najpierw należy wtedy przenieść faktury z listy faktur do Rejestrów VAT a następnie wykonać eksport).
+
+Po ustawieniu parametrów konfiguracyjnych w menu Narzędzia pojawia się dodatkowa pozycja Praca rozproszona, umożliwiająca import i eksport danych.
+
+# 6\.1 Eksport danych
+
+Rodzaj danych podlegających eksportowi zależy od ustawień konfiguracyjnych – inne dane są eksportowane w dziale sprzedaży/płac, inne w dziale księgowym. W dziale sprzedaży/płac eksportowi podlegają: słowniki: atrybuty kontrahenta i dokumentu, definicje dokumentów, kategorie (ogólne i szczegółowe), banki, urzędy, pracownicy, wspólnicy, rachunki (rejestry) kasowo/bankowe, formy płatności, kontrahenci, waluty, kursy walut, notowania walut, lokalizacje, wydziały, projekty i typy wypłat. dokumenty: faktury sprzedaży, faktury zakupu, faktury wewnętrzne sprzedaży, faktury wewnętrzne zakupu, zapisy z rejestru VAT (sprzedaży i zakupu), dokumenty Tax Free, dokumenty inne przychodowe (RW, WZ, WKA), dokumenty inne kosztowe (PW, PZ, MM, PKA), dokumenty ewidencji przychodów i kosztów, listy płac, raporty kasowe, płatności (tylko wprowadzone ręcznie lub wynikające z deklaracji księgowych/płacowych), rozliczenia, kompensaty. W przypadku dokumentów eksportowi podlegają wyłącznie dokumenty zatwierdzone (tzn. faktury i dokumenty wewnętrzne wyciągnięte z bufora, zamknięte raporty kasowe, płatności zatwierdzone do realizacji, zamknięte listy płac z zamkniętymi wszystkimi wypłatami).
+
+W dziale księgowym można eksportować: słowniki: atrybuty kontrahenta i dokumentu, definicje dokumentów, kategorie (ogólne i szczegółowe), banki, urzędy, pracownicy, wspólnicy, rachunki (rejestry) kasowo/bankowe, formy płatności, kontrahenci, waluty, kursy walut, notowania walut, lokalizacje, wydziały, projekty i typy wypłat. dokumenty: zapisy z rejestru VAT (sprzedaży i zakupu), dokumenty ewidencji przychodów i kosztów, płatności (tylko wprowadzone ręcznie lub wynikające z deklaracji księgowych/płacowych), rozliczenia, raporty kasowe, kompensaty.
+
+Okno uruchomienia eksportu pozwala dodatkowo na określenie parametrów eksportu: Eksportowane dane – wybranie opcji Dotąd nie eksportowane lub zmienione spowoduje wyeksportowanie danych słownikowych, które od czasu ostatniego eksportu zostały wprowadzone lub zmienione oraz tych dokumentów, które do tej pory nie zostały wyeksportowane. Wybranie opcji Wszystkie spowoduje wyeksportowanie wszystkich danych słownikowych i wszystkich zatwierdzonych dokumentów. Zakres dat – umożliwia ograniczenie eksportowanych dokumentów tylko do tych, które zostały wystawione w zadanym przedziale czasowym. W przypadku list płac jest to data wypłaty ustawiona na dokumencie listy płac. Parametr ten nie ma wpływu na wymianę danych słownikowych. Odpowiedniego wyboru dokonujemy przed uruchomieniem eksportu (patrz Rys. 2).
+
+**Struktura plików XML do pracy rozproszonej**
+
+**8**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+Rys 2. Eksport danych z działu sprzedaży/płac
+
+# 6\.2 Import danych
+
+Podobnie jak w przypadku eksportu rodzaj danych podlegających importowi zależy od ustawień konfiguracyjnych –inn e dane są importowane w dziale sprzedaży/płac, inne w dziale księgowym.
+
+**Struktura plików XML do pracy rozproszonej**
+
+**9**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+<image redacted: 442x347px, 442x347pt, ~72dpi, JPG, DEVICE_RGB, 32bpp>
+
+Rys 3. Import danych w dziale księgowym
+
+W dziale sprzedaży/płac importowi podlegają: słowniki: atrybuty kontrahenta i dokumentu, definicje dokumentów, zakłady, kategorie (ogólne i szczegółowe), banki, urzędy, pracownicy, wspólnicy, rachunki (rejestry) kasowo/bankowe, formy płatności, kontrahenci, waluty, kursy walut, notowania walut, lokalizacje, wydziały, projekty i typy wypłat. dokumenty: zapisy z rejestru VAT (sprzedaży i zakupu), dokumenty ewidencji przychodów i kosztów, płatności, rozliczenia, raporty kasowe, kompensaty.
+
+W dziale księgowym można importować: słowniki: atrybuty kontrahenta i dokumentu, definicje dokumentów, zakłady, kategorie (ogólne i szczegółowe), banki, urzędy, pracownicy, wspólnicy, rachunki (rejestry) kasowo/bankowe, formy płatności, kontrahenci, waluty, kursy walut, notowania walut, lokalizacje, wydziały, projekty oraz typy wypłat. dokumenty: faktury sprzedaży, zakupu oraz dokumenty Tax Free do rejestru VAT, dokumenty inne przychodowe (RW, WZ, WKA), dokumenty inne kosztowe (PW, PZ, MM, PKA), listy płac, raporty kasowe, płatności, rozliczenia, kompensaty.
+
+Okno uruchomienia importu pozwala dodatkowo na określenie parametrów importu: Importowane dane – wybranie opcji Tylko nowe spowoduje zaimportowanie tylko tych pozycji do słowników, które nie występują w bazie danych (np. zostaną dodani tylko nowi kontrahenci). Wybranie opcji Nowe i zmienione spowoduje zaimportowanie zarówno nowych pozycji do słowników jak i aktualizację istniejących danych (np. zostaną dodani nowi kontrahenci oraz zostaną uwzględnione zmiany w danych już istniejących kontrahentów). W przypadku dokumentów są importowane zawsze tylko nowe pozycje (eksport nie przewiduje możliwości
+
+**Struktura plików XML do pracy rozproszonej**
+
+**10**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+<image redacted: 440x347px, 440x347pt, ~72dpi, JPG, DEVICE_RGB, 32bpp> automatycznego przeniesienia zmian dokonanych na już wyeksportowanych dokumentach). W przypadku zmian w zaimportowanej liście płac należy usunąć cały dokument listy płac i wykonać import ponownie. Zakres dat – umożliwia ograniczenie importowanych dokumentów tylko do tych, które zostały wystawione w zadanym przedziale czasowym. Parametr ten nie ma wpływu na import danych słownikowych.
+
+7 Co to jest XML?
+
+Eksport i import danych odbywa się za pośrednictwem plików w formacie XML – dzięki temu zostały spełnione założenia projektowe dotyczące łatwości implementacji w różnych systemach (również programach firm trzecich) oraz elastyczności w zakresie ewentualnych zmian danych z zachowaniem kompatybilności z poprzednimi wersjami. XML (skrót od eXtensible Markup Language - rozszerzalny język znaczników) to otwarty standard opracowany przez W3C. XML nie jest kolejnym językiem do przechowywania konkretnych danych, jak np. język HTML opisujący wygląd stron sieciowych. XML to język opisujący dane, czyli metajęzyk. W uproszczeniu można powiedzieć, że XML służy do tworzenia innych języków (aplikacji XML) służących do przechowywania informacji. Jeśli mamy potrzebę zapisywania określonych danych o określonej strukturze, XML okaże się najlepszym narzędziem, bez względu jakie by te dane nie były. W przeciwieństwie do np. HTML, XML nie ma ograniczonej liczby znaczników, bo pozwala przechowywać dowolne dane i to w jak najbardziej wygodny dla nas sposób, bo sami go określamy. Sami określamy strukturę danych, która może być tabelaryczna, ale może także tworzyć drzewo. W ten sposób nie jesteśmy, jako twórcy baz danych XML w żaden sposób ograniczeni. Na tym właśnie polega wyższość XML nad innymi formatami zapisu danych. Potrzeba uniwersalnego i czytelnego formatu danych widoczna była od dawna, a w czasach gwałtownego powiększania się Sieci stała się koniecznością. Wreszcie pojawił się format pozwalający na łatwe przechowywanie dowolnych danych. Dzięki oddzieleniu treści od formy (czego nie umożliwia HTML) łatwo skupić się na samych danych. Programy mogą dzięki formatowi XML łatwiej wymieniać dane i je przetwarzać.
+
+\<!-- Ten przykład zawiera tylko dwa rekordy, ale może mieć ich tyle, ile jest miejsca na dysku :-) --\>
+
+\<ludzie\> \<człowiek\> \<imie\>Jan\</imie\> \<nazwisko\>Kowalski\</nazwisko\> \<poczta\>jan.kowalski@comarch.pl\</poczta\> \<web\>http://www.comarch.com/cdn\</web\> \</człowiek\> \<człowiek\> \<imie\>Józef\</imie\> \<nazwisko\>Nowak\</nazwisko\> \<poczta\>jozef.nowak@comarch.pl\</poczta\> \<web\>http://www.comarch.com/cdn\</web\> \</człowiek\>
+
+Rys 4. Prosty przykład wykorzystania formatu XML
+
+**Struktura plików XML do pracy rozproszonej**
+
+**11**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+# 8 Informacje ogólne na temat struktury plików XML
+
+Tworząc struktury plików eksportowych należy wziąć pod uwagę następujące informacje: 1. Dane wyeksportowane z Comarch ERP Optima do pliku XML są pogrupowane w tzw. węzły. W zamieszczonym poniżej szczegółowym opisie struktury plików węzły zostały oznaczone znakami – (węzeł rozwinięty) lub + (węzeł zwinięty). 2. Główny węzeł określony jako \<ROOT\> jest zawsze jeden i do niego podpinane są kolejne podwęzły odpowiedzialne za poszczególne grupy eksportowanych informacji:
+
+**Struktura plików XML do pracy rozproszonej**
+
+**12**
+
+<image redacted: 105x27px, 104x26pt, ~73dpi, PNG, DEVICE_RGB, 32bpp>
+
+\- \<ROOT\>
+
+\+ \<ATRYBUTY\>
+
+\+ \<DEFINICJE\_DOKUMENTÓW\> + \<KATEGORIE\>
+
+\+ \<BANKI\>
+
+\+ \<URZEDY\>
+
+\+ \<PRACOWNICY\>
+
+\+ \<WSPOLNICY\>
+
+\+ \<RACHUNKI\_KB\> + \<FORMY\_PLATNOSCI\> + \<KONTRAHENCI\>
+
+\+ \<WALUTY\>
+
+\+ \<KURSY\_WALUT\> + \<NOTOWANIA\_WALUT\> + \<LOKALIZACJE\>
+
+\+ \<WYDZIALY\>
+
+\+ \<PROJEKTY\>
+
+\+ \<TYPY\_WYPLAT\> + \<REJESTRY\_SPRZEDAZY\_VAT\> + \<REJESTRY\_ZAKUPU\_VAT\> + \<DOKUMENTY\_INNE\_PRZYCHOD\> + \<DOKUMENTY\_INNE\_ROZCHOD\> + \<LISTY\_PLAC\> + \<RAPORTY\_KB\> + \<PLATNOSCI\>
+
+\+ \<ROZLICZENIA\>
+
+3\. Nie ma obowiązku umieszczania

@@ -1,0 +1,253 @@
+namespace ComarchOptimaCore
+
+SchemaChange(SchemaChange): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		sourceDocument(sourceDocument): Text
+		changeScope(changeScope): Text
+		semanticType(semanticType): Text
+			index: Text
+		versionTo(versionTo): Text
+		versionFrom(versionFrom): Text
+
+BankEntry(BankEntry): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		entryKind(entryKind): Text
+		semanticType(semanticType): Text
+			index: Text
+		paymentStatus(paymentStatus): Text
+		sourceTable(sourceTable): Text
+
+CommercialDocument(CommercialDocument): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		documentKind(documentKind): Text
+		sourceTable(sourceTable): Text
+		documentNumber(documentNumber): Text
+		semanticType(semanticType): Text
+			index: Text
+
+Contractor(Contractor): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceTable(sourceTable): Text
+		status(status): Text
+		code(code): Text
+
+EmailMessage(EmailMessage): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceTable(sourceTable): Text
+		messageStatus(messageStatus): Text
+		subject(subject): Text
+
+DatabaseInstance(DatabaseInstance): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		engine(engine): Text
+		sqlName(sqlName): Text
+			index: Text
+		version(version): Text
+		role(role): Text
+
+PayrollDocument(PayrollDocument): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		period(period): Text
+		payrollKind(payrollKind): Text
+		sourceTable(sourceTable): Text
+
+TaxoOfObjectKind(TaxoOfObjectKind): ConceptType
+	hypernymPredicate: isA
+
+Product(Product): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		code(code): Text
+		itemType(itemType): Text
+		sourceTable(sourceTable): Text
+
+DocumentDefinition(DocumentDefinition): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceTable(sourceTable): Text
+		documentCode(documentCode): Text
+		documentDomain(documentDomain): Text
+
+Chunk(Chunk): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		content(content): Text
+			index: TextAndVector
+		sourceSection(sourceSection): Text
+		sourceDocument(sourceDocument): Text
+		semanticType(semanticType): Text
+			index: Text
+
+LedgerAccount(LedgerAccount): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		accountKind(accountKind): Text
+		sourceTable(sourceTable): Text
+		accountCode(accountCode): Text
+		semanticType(semanticType): Text
+			index: Text
+
+DatabaseRegistry(DatabaseRegistry): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		status(status): Text
+		accessDefinition(accessDefinition): Text
+		sqlName(sqlName): Text
+
+Employee(Employee): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		code(code): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceTable(sourceTable): Text
+		employmentStatus(employmentStatus): Text
+
+TaxoOfDatabaseRole(TaxoOfDatabaseRole): ConceptType
+	hypernymPredicate: isA
+
+ReportDefinition(ReportDefinition): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		outputType(outputType): Text
+		semanticType(semanticType): Text
+			index: Text
+		reportCode(reportCode): Text
+		sourceTable(sourceTable): Text
+
+TaxoOfDocumentKind(TaxoOfDocumentKind): ConceptType
+	hypernymPredicate: isA
+
+ConfigurationKey(ConfigurationKey): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		keyPath(keyPath): Text
+		sourceTable(sourceTable): Text
+		keyScope(keyScope): Text
+
+Column(Column): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		sqlName(sqlName): Text
+		keyRole(keyRole): Text
+		nullable(nullable): Text
+		dataType(dataType): Text
+		semanticType(semanticType): Text
+			index: Text
+
+Table(Table): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		sourceDatabase(sourceDatabase): Text
+		sqlName(sqlName): Text
+			index: Text
+		objectKind(objectKind): Text
+		module(module): Text
+		semanticType(semanticType): Text
+			index: Text
+
+TaxoOfBusinessDomain(TaxoOfBusinessDomain): ConceptType
+	hypernymPredicate: isA
+
+BusinessObject(BusinessObject): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		domain(domain): Text
+		sourceTable(sourceTable): Text
+		semanticType(semanticType): Text
+			index: Text
+		canonicalName(canonicalName): Text
+
+PaymentForm(PaymentForm): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		paymentCode(paymentCode): Text
+		sourceTable(sourceTable): Text
+		paymentKind(paymentKind): Text
+
+Warehouse(Warehouse): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		warehouseKind(warehouseKind): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceTable(sourceTable): Text
+		warehouseCode(warehouseCode): Text
+
+DocumentLine(DocumentLine): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		lineNumber(lineNumber): Text
+		lineKind(lineKind): Text
+		sourceTable(sourceTable): Text
+		semanticType(semanticType): Text
+			index: Text
+
+ForeignKey(ForeignKey): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		parentTable(parentTable): Text
+		semanticType(semanticType): Text
+			index: Text
+		sqlName(sqlName): Text
+		referencedTable(referencedTable): Text
+		relationKind(relationKind): Text
+
+SystemOperator(SystemOperator): EntityType
+	properties:
+		description(æè¿°): Text
+		name(name): Text
+		operatorStatus(operatorStatus): Text
+		sourceTable(sourceTable): Text
+		semanticType(semanticType): Text
+			index: Text
+		login(login): Text
+
+

@@ -1,0 +1,31 @@
+{
+  "id": "draft_2026-06-05_1eee34c7_serwis-o-podatkach-pliki-do-pobrania-podatki-gov-pl",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Serwis o podatkach - Pliki do pobrania - Podatki.gov.pl",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/pliki-do-pobrania/\n\nThe page is the “Serwis o podatkach - Pliki do pobrania” on podatki.gov.pl, which serves as a downloadable resources hub for Polish tax information. It lists key tax categories and tools for individuals, businesses, customs, guides, news, and online services. However, the page itself is a navigation index rather than a specific article about updates.\n\nGiven your query (site:podatki.gov.pl aktualności VAT JPK KSeF Ministerstwo Finansów 2026), you’re likely seeking:\n- Latest Aktualności (news) related to VAT, JPK (Jednolity Plik Kontrolny), and KSeF (Krajowy System e-Faktur) from the Ministry of Finance in 2026.\n- Official 2026 updates or press releases about VAT, JPK, and KSeF.\n\nSuggested next steps to find precise items:\n- Use the site’s “Aktualności” section to filter for 2026 and search terms: VAT, JPK, KSeF.\n- Look for Ministry of Finance announcements on KSeF rollout, VAT changes,...",
+  "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja/pliki-do-pobrania/",
+  "tags": [
+    "podatki",
+    "vat",
+    "jpk",
+    "ksef",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_302deb2d",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-15-155Z_9d039043",
+    "retrievedAt": "2026-06-05T17:41:15.728Z",
+    "contentHash": "b2e5c5f0518a39547e6d3a8e19ca94f86b2b24f4002064517b78ab4173e956f0",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:15.782Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:22.049Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_1eee34c7_serwis-o-podatkach-pliki-do-pobrania-podatki-gov-pl.json"
+}

@@ -1,0 +1,26 @@
+.shortcutsGrid {
+  display: grid;
+  gap: 8px;
+  min-width: 280px;
+}
+
+.shortcutRow {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.shortcutRow code {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 12px;
+  min-width: 72px;
+  padding: 3px 8px;
+  text-align: center;
+}
+
+.shortcutRow span {
+  color: var(--muted);
+}

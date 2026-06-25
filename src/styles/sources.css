@@ -1,0 +1,649 @@
+.discoveryControls {
+  margin-top: 12px;
+}
+
+.sourceSummary {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.sourceSummary > div {
+  align-items: center;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 10px 12px;
+}
+
+.sourceSummary span:first-child {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.sourceSummary strong {
+  font-size: 14px;
+}
+
+.sourceTabs {
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 4px;
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.sourceTabs button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 5px 5px 0 0;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  min-height: 46px;
+  padding: 9px 14px 7px;
+  white-space: nowrap;
+}
+
+.sourceTabs button:hover {
+  background: var(--soft);
+  color: var(--text);
+}
+
+.sourceTabs button.active {
+  border-bottom-color: var(--blue);
+  color: var(--blue);
+}
+
+.sourceTabs button svg {
+  height: 17px;
+  width: 17px;
+}
+
+.sourceTabs button strong {
+  background: #eef2f6;
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 11px;
+  min-width: 24px;
+  padding: 2px 7px;
+  text-align: center;
+}
+
+.sourceTabs button.active strong {
+  background: #e8efff;
+  color: var(--blue);
+}
+
+.sourceTabPanel {
+  min-width: 0;
+  padding-top: 18px;
+}
+
+.sourceTabPanel > h3,
+.sourcePanelHeader h3 {
+  margin-bottom: 4px;
+}
+
+.sourcePanelHeader {
+  align-items: flex-start;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.sourcePanelHeader p {
+  margin-bottom: 0;
+  max-width: 900px;
+}
+
+.sourcePanelStats {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.sourcePanelStats span {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.sourcePanelStats strong {
+  color: var(--text);
+}
+
+.savedViewsBar {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.savedViewsBar > svg {
+  color: var(--muted);
+  height: 17px;
+  width: 17px;
+}
+
+.savedViewsBar select {
+  min-width: 230px;
+}
+
+.resolvedIcon {
+  align-items: center;
+  background: #dcfae6;
+  border-radius: 6px;
+  color: var(--ok);
+  display: inline-flex;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+.resolvedIcon svg {
+  height: 16px;
+  width: 16px;
+}
+
+.discoveryFilterFields {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.discoveryFilterFields .iconField {
+  min-width: 170px;
+}
+
+.discoveryFilterFields .searchField {
+  min-width: 320px;
+}
+
+.compactToggle {
+  align-items: center;
+  display: inline-flex;
+  gap: 7px;
+}
+
+.compactToggle input {
+  width: auto;
+}
+
+.discoveryControls .bulkActions {
+  align-items: center;
+  flex: 1 1 440px;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.discoveryControls .bulkActions input {
+  flex: 1 1 260px;
+  max-width: 420px;
+  min-width: 180px;
+}
+
+.discoveryControls .inboxControlsRow {
+  flex-wrap: wrap;
+}
+
+.discoveryTable table {
+  min-width: 1260px;
+}
+
+.discoveryTable th:last-child,
+.discoveryTable td:last-child {
+  background: var(--panel);
+  box-shadow: -8px 0 12px -12px rgba(17, 24, 39, 0.45);
+  position: sticky;
+  right: 0;
+  z-index: 1;
+}
+
+.discoveryTable th:last-child {
+  background: var(--soft);
+  z-index: 2;
+}
+
+.bulkActions button.secondary,
+.draftActions button.secondary,
+.rowActions button.secondary,
+.modalActions button.secondary {
+  background: #fff;
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.rowActions button {
+  padding: 6px 9px;
+}
+
+.rowActions button.danger {
+  background: var(--bad);
+  border-color: var(--bad);
+  color: #fff;
+}
+
+.detailPanel {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.draftPreviewModal {
+  background: #fff;
+  border: 0;
+  padding: 0;
+}
+
+.inboxFullWidth .detailMeta {
+  color: var(--inbox-muted);
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.detailMeta {
+  color: var(--muted);
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.detailActions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.detailActions button {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.actionLog {
+  margin-top: 12px;
+}
+
+.detailPanel pre,
+.cron {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 12px;
+  margin: 12px 0 0;
+  max-height: 420px;
+  overflow: auto;
+  padding: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.draftForm,
+.sourceForm {
+  display: grid;
+  gap: 12px;
+}
+
+.draftForm {
+  max-width: 920px;
+}
+
+.draftForm label,
+.sourceForm label {
+  color: var(--muted);
+  display: grid;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.draftForm textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.enhancedDraftForm {
+  max-width: none;
+}
+
+.sourceTypeTabs {
+  margin-bottom: 2px;
+}
+
+.draftProviderStatus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.draftProviderStatus span {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.dropZone {
+  align-items: center;
+  background: var(--soft);
+  border: 1px dashed #98a2b3;
+  border-radius: 6px;
+  cursor: pointer;
+  display: grid;
+  gap: 8px;
+  min-height: 150px;
+  padding: 22px;
+  place-items: center;
+  text-align: center;
+}
+
+.dropZone.active {
+  background: #eef4ff;
+  border-color: var(--blue);
+}
+
+.dropZone input {
+  max-width: 320px;
+}
+
+.sourceForm {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px;
+}
+
+.sourceForm.inModal {
+  border: 0;
+  padding: 0;
+}
+
+.formGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.badText {
+  color: var(--bad);
+}
+
+.badMessage {
+  border-color: var(--bad);
+  color: var(--bad);
+}
+
+.apiErrorInline {
+  align-items: center;
+  background: var(--bad-bg);
+  border: 1px solid var(--bad);
+  border-radius: 6px;
+  color: var(--bad);
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.apiErrorBanner {
+  align-items: center;
+  background: var(--bad-bg);
+  border: 1px solid var(--bad);
+  border-radius: 6px;
+  color: var(--bad);
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  justify-content: center;
+  padding: 12px 16px;
+}
+
+.apiErrorDismiss {
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--bad);
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  padding: 2px;
+}
+
+.warningList {
+  background: #fff8e6;
+  border: 1px solid #f3c872;
+  border-radius: 6px;
+  color: var(--warn);
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+}
+
+.analysisGrid {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 4px;
+  padding-top: 14px;
+}
+
+.analysisGrid textarea {
+  min-height: 320px;
+}
+
+.analysisMeta {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+.inboxFullWidth .formMessage {
+  background: var(--inbox-panel);
+  border: 1px solid var(--inbox-line);
+  border-left: 3px solid var(--inbox-brass);
+  border-radius: 6px;
+  color: var(--inbox-muted);
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.formMessage,
+.topError,
+.emptyInline {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  padding: 12px;
+  text-align: center;
+}
+
+.automationInfo {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.automationControls {
+  align-items: end;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 14px;
+  padding: 12px;
+}
+
+.automationControls label {
+  color: var(--muted);
+  display: grid;
+  font-size: 13px;
+  gap: 6px;
+}
+
+.automationControls .toggleControl {
+  align-items: center;
+  color: var(--text);
+  display: flex;
+  flex: 1 1 250px;
+  font-weight: 700;
+}
+
+.shadowReport {
+  margin-bottom: 14px;
+}
+
+.promotionGate {
+  border-left: 4px solid var(--warn);
+  margin-bottom: 14px;
+}
+
+.promotionGate.gateReady {
+  border-left-color: var(--ok);
+}
+
+.gateBlockers {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.reroutePanel {
+  border-left: 4px solid var(--warn);
+}
+
+.adjudicationActions {
+  margin-top: 10px;
+}
+
+.canaryQueuePanel {
+  margin-bottom: 14px;
+}
+
+.canaryQueueItems {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.canaryQueueItems button {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 150px minmax(0, 1fr) 90px 42px;
+  padding: 9px 10px;
+  text-align: left;
+}
+
+.canaryQueueItems button:hover {
+  border-color: var(--accent);
+}
+
+.automationControls .toggleControl input {
+  width: auto;
+}
+
+.topError {
+  border-color: var(--bad);
+  color: var(--bad);
+  margin: 12px 24px 0;
+}
+
+.infoGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.infoGrid > div {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.infoGrid span,
+.confirmSummary span {
+  color: var(--muted);
+  display: block;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.subsection {
+  margin-top: 18px;
+  min-width: 0;
+}
+
+.sourceRegistryPath {
+  margin: 0.75rem 0 0;
+}
+
+.briefingGrid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+}
+
+.briefingCard,
+.semiAutoPanel {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 14px;
+}
+
+.briefingCard .sectionHeader > svg {
+  color: var(--blue);
+  height: 20px;
+  width: 20px;
+}
+
+.briefingMetrics,
+.semiAutoMetrics {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 12px 0 16px;
+}
+
+.briefingMetrics span,
+.semiAutoMetrics > div {
+  background: var(--soft);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 9px;
+}
+
+.briefingMetrics strong,
+.semiAutoMetrics strong {
+  color: var(--text);
+  display: block;
+  font-size: 16px;
+  margin-bottom: 3px;
+}

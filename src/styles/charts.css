@@ -1,0 +1,64 @@
+/* Health line chart */
+.healthChartWrap {
+  padding: 12px 0 4px;
+  width: 100%;
+}
+
+.healthChartWrap svg {
+  display: block;
+  width: 100%;
+}
+
+.healthChartLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  padding: 0 0;
+  width: 100%;
+}
+
+.healthChartLabels span {
+  color: var(--muted);
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 48px;
+}
+
+/* Action type distribution */
+.actionTypeGrid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.actionTypeItem {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  padding: 6px 8px;
+}
+
+.actionTypeBar {
+  background: var(--accent);
+  border-radius: 3px;
+  height: 10px;
+  min-width: 4px;
+  transition: width 0.3s;
+}
+
+.actionTypeItem code {
+  color: var(--muted);
+  flex: 1;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.actionTypeItem strong {
+  font-size: 13px;
+  min-width: 24px;
+  text-align: right;
+}
+

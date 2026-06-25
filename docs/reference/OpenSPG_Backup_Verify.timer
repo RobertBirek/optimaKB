@@ -1,0 +1,11 @@
+[Unit]
+Description=Verify latest OpenSPG backup weekly
+
+[Timer]
+OnCalendar=Sun *-*-* 04:30:00
+RandomizedDelaySec=15m
+Persistent=true
+Unit=openspg-backup-verify.service
+
+[Install]
+WantedBy=timers.target

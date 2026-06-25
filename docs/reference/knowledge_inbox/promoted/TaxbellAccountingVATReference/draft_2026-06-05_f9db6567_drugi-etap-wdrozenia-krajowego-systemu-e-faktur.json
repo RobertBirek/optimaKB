@@ -1,0 +1,31 @@
+{
+  "id": "draft_2026-06-05_f9db6567_drugi-etap-wdrozenia-krajowego-systemu-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Drugi etap wdrożenia Krajowego Systemu e-Faktur",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://ksef.podatki.gov.pl/wyjasnienia/drugi-etap-wdrozenia-krajowego-systemu-e-faktur/\n\nDrugi etap wdrożenia Krajowego Systemu e-Faktur (KSeF) – kluczowe informacje\n\n- II etap wdrożenia KSeF wchodzi w życie. Obecnie ponad 306 tys. firm wystawia faktury w systemie dobrowolnie; obowiązek wdrożenia jeszcze nie wszedł w życie, ale rozpoczęły się przygotowania. \n- Wdrożenie KSeF wiąże się ze zmianą nawyków i procesów fakturowania. System ma być praktycznym ułatwieniem dla firm. W 2026 r. za błędy w korzystaniu z systemu nie będą nałożone kary.\n- Narzędzia KSeF tworzone były we współpracy z przedsiębiorcami. Wprowadzane będą usprawnienia w Aplikacji Podatnika, z pierwszymi zmianami już w kwietniu. Planuje się modyfikacje opisów pól oraz uproszczenie zgłaszania faktur „scamowych”.\n- Od 1 kwietnia planowane jest wejście w życie przepisów umożliwiających dobrowolne wystawianie faktur VAT RR i VAT RR KOREKTA w KSeF. Ta funkcjonalność będzie również dostępna w Aplikacji Podatnika K...",
+  "sourceUrl": "https://ksef.podatki.gov.pl/wyjasnienia/drugi-etap-wdrozenia-krajowego-systemu-e-faktur/",
+  "tags": [
+    "podatki",
+    "vat",
+    "jpk",
+    "ksef",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_302deb2d",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-15-155Z_9d039043",
+    "retrievedAt": "2026-06-05T17:41:15.728Z",
+    "contentHash": "50f93aa8fca5f4dfcfc5b1606d29b103ae69a401704f3de3453bc15fbf7346ec",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:15.806Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:22.030Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_f9db6567_drugi-etap-wdrozenia-krajowego-systemu-e-faktur.json"
+}

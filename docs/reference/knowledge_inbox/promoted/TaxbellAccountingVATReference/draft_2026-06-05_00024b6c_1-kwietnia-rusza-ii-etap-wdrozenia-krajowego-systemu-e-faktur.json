@@ -1,0 +1,31 @@
+{
+  "id": "draft_2026-06-05_00024b6c_1-kwietnia-rusza-ii-etap-wdrozenia-krajowego-systemu-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "1 kwietnia rusza II etap wdrożenia Krajowego Systemu e-Faktur",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://ksef.podatki.gov.pl/wyjasnienia/1-kwietnia-rusza-ii-etap-wdrozenia-krajowego-systemu-e-faktur/\n\nGłówne informacje z materiału:\n- II etap wdrożenia Krajowego Systemu e-Faktur (KSeF) startuje 1 kwietnia.  \n- Od startu systemu rośnie aktywność użytkowników: ponad 345 tys. podmiotów wystawiło faktury, ok. 87 mln faktur wpłynęło w dwóch pierwszych miesiącach; wyraźnie najwięcej dokumentów (ponad 3 mln) przesłano 3 marca.  \n- Kolejne 25 zmian będzie wprowadzanych sukcesywnie, opierając się na wynikach testów UX. Cel: wszystkie funkcje w bezpłatnych aplikacjach MF dostępne w maks. trzech krokach.  \n- Apel o korzystanie z wiarygodnych źródeł informacji. Publikacje na oficjalnych stronach MF i kontakt z pracownikami jednostek terenowych są rekomendowane. Ekspresse ekspertów gotowych wyjaśnić wątpliwości.  \n- Podczas konferencji prasowej w MFMarcin Łoboda (szef KAS) i Zbigniew Stawicki (zastępca szefa KAS) przedstawili szczegóły dotyczące II etapu KSeF.\n\nUwagi:\n- Informacje są z oficjalne...",
+  "sourceUrl": "https://ksef.podatki.gov.pl/wyjasnienia/1-kwietnia-rusza-ii-etap-wdrozenia-krajowego-systemu-e-faktur/",
+  "tags": [
+    "podatki",
+    "vat",
+    "jpk",
+    "ksef",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_302deb2d",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-15-155Z_9d039043",
+    "retrievedAt": "2026-06-05T17:41:15.728Z",
+    "contentHash": "9f863c341c2bbf1f30288e9bad99a5ffe277a41f92e5eda1888fc3cf16aad896",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:15.796Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:22.040Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_00024b6c_1-kwietnia-rusza-ii-etap-wdrozenia-krajowego-systemu-e-faktur.json"
+}

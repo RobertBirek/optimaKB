@@ -1,0 +1,357 @@
+{
+  "generatedAt": "2026-06-09T06:44:31.293Z",
+  "appName": "ERP Knowledge Assistant",
+  "appAlias": "erpknowledgeassistant",
+  "appDescription": "Single-entry assistant across Optima and Betterfly knowledge bases.",
+  "appLogo": "/img/logo/appicon.png",
+  "openSpgAppId": 2,
+  "template": "think_pipeline",
+  "purpose": "Single-entry OpenSPG application layer above the active Optima, business-semantics and Betterfly KB set.",
+  "kbProjects": [
+    {
+      "name": "ComarchOptimaSchema",
+      "displayName": "Comarch Optima ERP MSSQL Schema",
+      "projectId": 4
+    },
+    {
+      "name": "ComarchOptimaAdditionalFunctions",
+      "displayName": "Comarch Optima Additional Functions",
+      "projectId": 6
+    },
+    {
+      "name": "ComarchOptimaSprint",
+      "displayName": "Comarch Optima Sprint and Prints",
+      "projectId": 7
+    },
+    {
+      "name": "ComarchOptimaReference",
+      "displayName": "Comarch Optima Reference",
+      "projectId": 8
+    },
+    {
+      "name": "ComarchOptimaPartnerTechnical",
+      "displayName": "Comarch Optima Partner Technical",
+      "projectId": 9
+    },
+    {
+      "name": "ComarchBetterflyReference",
+      "displayName": "Comarch Betterfly Reference",
+      "projectId": 10
+    },
+    {
+      "name": "ComarchOptimaBusinessSemantics",
+      "displayName": "Comarch Optima Business Semantics",
+      "projectId": 15
+    },
+    {
+      "name": "ComarchUniversalKnowledge",
+      "displayName": "Comarch Universal Knowledge",
+      "projectId": 0
+    }
+  ],
+  "routing": {
+    "assistantName": "ERP Knowledge Assistant",
+    "version": "2026-06-01",
+    "primaryKbOrder": [
+      "TaxbellLegalReference",
+      "TaxbellPayrollHRReference",
+      "TaxbellAccountingVATReference",
+      "ComarchCommunityNews",
+      "ComarchOptimaBusinessSemantics",
+      "ComarchOptimaSchema",
+      "ComarchOptimaAdditionalFunctions",
+      "ComarchOptimaSprint",
+      "ComarchOptimaReference",
+    "ComarchOptimaPartnerTechnical",
+    "ComarchBetterflyReference",
+    "ComarchUniversalKnowledge"
+  ],
+    "routes": [
+      {
+        "intent": "taxbell_legal_tax_law",
+        "primaryKb": "TaxbellLegalReference",
+        "supportKbs": [
+          "TaxbellAccountingVATReference"
+        ],
+        "keywords": [
+          "prawo",
+          "ustawa",
+          "kodeks",
+          "podatek",
+          "podatkowe",
+          "ordynacja podatkowa",
+          "interpretacja",
+          "objaśnienie podatkowe",
+          "podstawa prawna",
+          "isap",
+          "dziennik ustaw",
+          "cit",
+          "pit"
+        ]
+      },
+      {
+        "intent": "taxbell_payroll_hr_zus",
+        "primaryKb": "TaxbellPayrollHRReference",
+        "supportKbs": [
+          "TaxbellLegalReference"
+        ],
+        "keywords": [
+          "zus",
+          "kadry",
+          "płace",
+          "place",
+          "hr",
+          "pracownik",
+          "umowa o pracę",
+          "umowa zlecenie",
+          "składki",
+          "ubezpieczenie",
+          "wynagrodzenie",
+          "urlop",
+          "pip",
+          "czas pracy"
+        ]
+      },
+      {
+        "intent": "taxbell_accounting_vat",
+        "primaryKb": "TaxbellAccountingVATReference",
+        "supportKbs": [
+          "TaxbellLegalReference"
+        ],
+        "keywords": [
+          "księgowość",
+          "ksiegowosc",
+          "rachunkowość",
+          "vat",
+          "jpk",
+          "jpk_v7",
+          "faktura",
+          "deklaracja",
+          "sprawozdanie finansowe",
+          "ewidencja",
+          "rozliczenie",
+          "biała lista",
+          "split payment"
+        ]
+      },
+      {
+        "intent": "community_news_updates",
+        "primaryKb": "ComarchCommunityNews",
+        "supportKbs": [
+          "ComarchOptimaReference",
+          "ComarchBetterflyReference"
+        ],
+        "keywords": [
+          "przerwa techniczna",
+          "nowa wersja",
+          "planowane wersje",
+          "komunikat",
+          "niedostępność",
+          "awaria",
+          "news",
+          "społeczność",
+          "ocr",
+          "ksef pod lupą",
+          "comarch tna",
+          "comarch betterfly"
+        ]
+      },
+      {
+        "intent": "optima_schema_sql",
+        "primaryKb": "ComarchOptimaSchema",
+        "supportKbs": [
+          "ComarchOptimaSprint"
+        ],
+        "keywords": [
+          "tranag",
+          "traelem",
+          "kontrahenci",
+          "towary",
+          "join",
+          "sql",
+          "trigger",
+          "view",
+          "function",
+          "procedure",
+          "schema",
+          "foreign key",
+          "fk",
+          "indeks",
+          "index"
+        ]
+      },
+      {
+        "intent": "optima_additional_functions",
+        "primaryKb": "ComarchOptimaAdditionalFunctions",
+        "supportKbs": [
+          "ComarchOptimaPartnerTechnical",
+          "ComarchOptimaSchema"
+        ],
+        "keywords": [
+          "funkcja dodatkowa",
+          "fd",
+          "com",
+          "okno logowania",
+          "dodaj operatora",
+          "kolumna użytkownika",
+          "user column",
+          "automat",
+          "automatyzacja"
+        ]
+      },
+      {
+        "intent": "optima_sprint_prints",
+        "primaryKb": "ComarchOptimaSprint",
+        "supportKbs": [
+          "ComarchOptimaSchema",
+          "ComarchOptimaAdditionalFunctions"
+        ],
+        "keywords": [
+          "sprint",
+          "wydruk",
+          "genrap",
+          "szablon",
+          "raport",
+          "parametry dynamiczne",
+          "ro_getreportheader",
+          "ro_getreportcontent",
+          "print"
+        ]
+      },
+      {
+        "intent": "optima_official_docs",
+        "primaryKb": "ComarchOptimaReference",
+        "supportKbs": [
+          "ComarchOptimaSchema",
+          "ComarchOptimaAdditionalFunctions",
+          "ComarchOptimaSprint"
+        ],
+        "keywords": [
+          "jak zacząć",
+          "gdzie w dokumentacji",
+          "oficjalna dokumentacja",
+          "instrukcja",
+          "aktualizacja",
+          "moduł",
+          "onboarding"
+        ]
+      },
+      {
+        "intent": "optima_partner_technical",
+        "primaryKb": "ComarchOptimaPartnerTechnical",
+        "supportKbs": [
+          "ComarchOptimaAdditionalFunctions",
+          "ComarchOptimaSchema",
+          "ComarchOptimaSprint"
+        ],
+        "keywords": [
+          "partner",
+          "dictionaries",
+          "messages.csv",
+          "procedures.csv",
+          "makra",
+          "pliki pomocnicze",
+          "przyklady-uzycia-obiektow-com",
+          "xml structures",
+          "xml"
+        ]
+      },
+      {
+        "intent": "optima_business_semantics",
+        "primaryKb": "ComarchOptimaBusinessSemantics",
+        "supportKbs": [
+          "ComarchOptimaSchema"
+        ],
+        "keywords": [
+          "znaczy",
+          "znaczenie",
+          "oznacza",
+          "reprezentuje",
+          "co to za",
+          "czym jest",
+          "typ dokumentu",
+          "kod",
+          "kody",
+          "etykiet",
+          "słownik",
+          "wartości",
+          "dopuszczalne",
+          "reguła biznesowa",
+          "walidac",
+          "ograniczen",
+          "opis biznesowy",
+          "co oznacza",
+          "jaka wartość",
+          "domena biznesowa"
+        ]
+      },
+      {
+        "intent": "betterfly_api",
+        "primaryKb": "ComarchBetterflyReference",
+        "supportKbs": [],
+        "keywords": [
+          "betterfly",
+          "api2",
+          "token",
+          "bearer",
+          "customers",
+          "products",
+          "invoices",
+          "payments",
+          "paymentdetails",
+          "advanceinvoices",
+          "profitmargininvoices"
+        ]
+      }
+    ],
+    "blendedRoutes": [
+      {
+        "case": "print_sql_and_joins",
+        "primaryKb": "ComarchOptimaSprint",
+        "supportKbs": [
+          "ComarchOptimaSchema"
+        ]
+      },
+      {
+        "case": "fd_implementation_with_table_context",
+        "primaryKb": "ComarchOptimaAdditionalFunctions",
+        "supportKbs": [
+          "ComarchOptimaSchema"
+        ]
+      },
+      {
+        "case": "partner_com_example_with_implementation_guidance",
+        "primaryKb": "ComarchOptimaPartnerTechnical",
+        "supportKbs": [
+          "ComarchOptimaAdditionalFunctions",
+          "ComarchOptimaSchema"
+        ]
+      },
+      {
+        "case": "vague_optima_entry_question",
+        "primaryKb": "ComarchOptimaReference",
+        "supportKbs": [
+          "ComarchOptimaSchema",
+          "ComarchOptimaAdditionalFunctions",
+          "ComarchOptimaSprint"
+        ]
+      },
+      {
+        "case": "catch_all_unmatched",
+        "primaryKb": "ComarchUniversalKnowledge",
+        "supportKbs": [
+          "ComarchOptimaReference",
+          "ComarchCommunityNews"
+        ]
+      }
+    ],
+    "answerContract": [
+      "direct_answer",
+      "primary_kb",
+      "support_kbs",
+      "relevant_artifacts",
+      "gap_or_next_step"
+    ]
+  },
+  "prompt": "# Prompt aplikacji ERP Knowledge Assistant\n\nUżyj tego jako system promptu lub warstwy instrukcji dla aplikacji OpenSPG\nzbudowanej na aktualnym lokalnym zestawie KB.\n\n---\n\nJesteś `ERP Knowledge Assistant`.\n\nOdpowiadaj wyłącznie po polsku. Jeśli źródła są po angielsku, streść je po\npolsku, bez zmiany sensu.\n\nTwoim zadaniem jest odpowiadać na pytania o:\n\n- strukturę bazy danych `Comarch ERP Optima`\n- `Comarch ERP Optima` Additional Functions\n- `Comarch sPrint` i inne definicje wydruków / raportów\n- oficjalną dokumentację `Comarch ERP Optima`\n- techniczne materiały partnerskie `Comarch ERP Optima`\n- dokumentację i API `Comarch Betterfly`\n\n## Źródłowe KB\n\nKieruj pytania do tych głównych baz wiedzy:\n\n1. `ComarchOptimaSchema`\n   - używaj do SQL, tabel, kolumn, joinów, FK, procedur, funkcji, triggerów,\n     zależności obiektów i analizy źródeł wydruków\n\n2. `ComarchOptimaAdditionalFunctions`\n   - używaj do Additional Functions, przykładów COM, kolumn użytkownika,\n     wzorców implementacyjnych, słowników i komunikatów runtime\n\n3. `ComarchOptimaSprint`\n   - używaj do sPrint, przepływów wydruku, wzorców SQL dla wydruków,\n     diagnostyki, technologii wydruku i projektowania źródeł raportów\n\n4. `ComarchOptimaReference`\n   - używaj do oficjalnej dokumentacji, obsługi produktu, onboardingu,\n     modułów, aktualizacji i ogólnych pytań operacyjnych\n\n5. `ComarchOptimaPartnerTechnical`\n   - używaj do technicznych materiałów partnerskich, słowników\n     procedur/komunikatów, recept modułów COM, assetów XML/helper i materiałów\n     technicznych KSeF\n\n6. `ComarchBetterflyReference`\n   - używaj do pytań o dokumentację i API Betterfly\n\n## Reguły routingu\n\n- ogólne pytania o użycie Optima albo „jak to zrobić w Optima”:\n  - zacznij od `ComarchOptimaReference`\n- SQL / schema / join / tabela / trigger / procedura / zależności obiektów:\n  - zacznij od `ComarchOptimaSchema`\n- Additional Functions / FD / COM / kolumny użytkownika:\n  - zacznij od `ComarchOptimaAdditionalFunctions`\n- sPrint / wydruk / raport / GenRap / parametry dynamiczne:\n  - zacznij od `ComarchOptimaSprint`\n- partner technical / słowniki / messages.csv / procedures.csv / KSeF\n  - techniczne problemy:\n  - zacznij od `ComarchOptimaPartnerTechnical`\n- Betterfly / API / token / bearer / faktury / płatności:\n  - zacznij od `ComarchBetterflyReference`\n\n## Kontrakt odpowiedzi\n\nZawsze układaj odpowiedź tak:\n\n1. bezpośrednia odpowiedź\n2. główna użyta KB\n3. KB pomocnicze, jeśli potrzebne\n4. istotne artefakty lub dowody\n5. następny krok albo luka, jeśli obecny zestaw KB jest niewystarczający\n\n## Ograniczenia\n\n- nie wymyślaj faktów spoza zestawu KB\n- nie ujawniaj sekretów, cookies, tokenów ani credentiali\n- nie proś o dane produkcyjne z Optima ani Betterfly i nie opieraj się na nich\n- dla Betterfly zostań przy poziomie metadanych, chyba że użytkownik wyraźnie\n  prosi o bezpieczną interpretację kontraktu API\n- gdy pytanie jest niejednoznaczne, wybierz najbezpieczniejszą szeroką KB i\n  dopiero potem wskaż, która specjalistyczna KB powinna być sprawdzona dalej\n\n## Preferowany styl odpowiedzi\n\n- zwięzły\n- bezpośredni\n- techniczny\n- oparty na konkretnych artefaktach KB, jeśli to możliwe\n\n## Gdy potrzeba wielu KB\n\nUżywaj tych typowych kombinacji:\n\n- `ComarchOptimaSprint` + `ComarchOptimaSchema`\n  - dla SQL wydruków, joinów wydruków i projektowania źródeł wydruku\n\n- `ComarchOptimaAdditionalFunctions` + `ComarchOptimaSchema`\n  - dla implementacji FD powiązanej z tabelami lub obiektami SQL\n\n- `ComarchOptimaPartnerTechnical` + `ComarchOptimaAdditionalFunctions`\n  - dla partnerskich przykładów COM i wskazówek implementacyjnych\n\n- `ComarchOptimaReference` + KB specjalistyczna\n  - gdy pytanie zaczyna się szeroko, a potem staje się techniczne\n\n## Uwagi bezpieczeństwa\n\nJeśli użytkownik pyta o payloady tenantów Betterfly albo o żywe wiersze\nbiznesowe Optima, nie odpowiadaj na podstawie wyobrażonych danych. Odpowiadaj\nna poziomie:\n\n- struktury\n- przepływu pracy\n- kontraktu\n- udokumentowanego zachowania\n\n---\n"
+}

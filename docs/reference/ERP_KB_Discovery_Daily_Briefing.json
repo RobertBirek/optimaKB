@@ -1,0 +1,296 @@
+{
+  "generatedAt": "2026-06-25T02:46:53.334Z",
+  "totals": {
+    "candidates": 164,
+    "pending": 76,
+    "duplicates": 25,
+    "reviewed": 63,
+    "activeQueries": 10,
+    "alerts": 4
+  },
+  "topCandidates": [
+    {
+      "id": "candidate_de40bf95-39a",
+      "title": "Rząd przyjął przepisy upraszczające prawo podatkowe w ramach deregulacji - Ministerstwo Finansów - Portal Gov.pl",
+      "kbNamespace": "TaxbellLegalReference",
+      "canonicalUrl": "https://www.gov.pl/web/finanse/rzad-przyjal-przepisy-upraszczajace-prawo-podatkowe-w-ramach-deregulacji",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 80,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "świeża publikacja"
+        ],
+        "ageDays": 12,
+        "kbPending": 14
+      }
+    },
+    {
+      "id": "candidate_cf5fa450-4d0",
+      "title": "Informacje ogólne KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "canonicalUrl": "https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 78,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "wysoka pewność LLM",
+          "rekomendowana akcja"
+        ],
+        "ageDays": 111,
+        "kbPending": 7
+      }
+    },
+    {
+      "id": "candidate_17bc1386-20b",
+      "title": "Podstawy prawne - KSeF (Krajowy System e-Faktur)",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "canonicalUrl": "https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/podstawy-prawne-oraz-kluczowe-terminy/",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 78,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "wysoka pewność LLM",
+          "rekomendowana akcja"
+        ],
+        "ageDays": 139,
+        "kbPending": 7
+      }
+    },
+    {
+      "id": "candidate_19f8231a-c9c",
+      "title": "Instalacja i aktualizacje",
+      "kbNamespace": "ComarchOptimaReference",
+      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/instalacja-i-aktualizacje/",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 73,
+        "level": "MEDIUM",
+        "reasons": [
+          "oficjalne źródło",
+          "świeża publikacja"
+        ],
+        "ageDays": 14,
+        "kbPending": 4
+      }
+    },
+    {
+      "id": "candidate_04813c83-bed",
+      "title": "Galeria wzorów – Baza Wiedzy programu  Comarch sPrint",
+      "kbNamespace": "ComarchOptimaSprint",
+      "canonicalUrl": "https://pomoc.comarch.pl/sprint/index.php/dokumentacja/galeria-wzorow/",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 72,
+        "level": "MEDIUM",
+        "reasons": [
+          "oficjalne źródło",
+          "niska liczba kandydatów dla KB"
+        ],
+        "ageDays": 1616,
+        "kbPending": 2
+      }
+    },
+    {
+      "id": "candidate_1ce261f7-61d",
+      "title": "Projekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości - Kancelaria Prezesa Rady Ministrów - Portal Gov.pl",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "canonicalUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 72,
+        "level": "MEDIUM",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja"
+        ],
+        "ageDays": 212,
+        "kbPending": 13
+      }
+    },
+    {
+      "id": "candidate_08b02a71-942",
+      "title": "Informacja dotycząca prac nad wdrożeniem dyrektywy dotyczącej równości wynagrodzeń - Ministerstwo Rodziny, Pracy i Polityki Społecznej - Portal Gov.pl",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "canonicalUrl": "https://www.gov.pl/web/rodzina/informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodzen",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 72,
+        "level": "MEDIUM",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja"
+        ],
+        "ageDays": 366,
+        "kbPending": 13
+      }
+    },
+    {
+      "id": "candidate_deb62f1d-4a5",
+      "title": "Interpretacja Ogólna Nr PAD6.8101.1.2026 Ministra Finansów i Gospodarki z dnia 26 lutego 2026 r. w sprawie stosowania obniżonych stawek podatku akcyzowego, o których mowa w art. 105 pkt 1a lit. a i pk",
+      "kbNamespace": "TaxbellLegalReference",
+      "canonicalUrl": "https://www.gov.pl/web/finanse/interpretacja-ogolna-nr-pad6810112026-ministra-finansow-i-gospodarki-z-dnia-26-lutego-2026-r-w-sprawie-stosowania-obnizonych-stawek-podatku-akcyzowego-o-ktorych-mowa-w-art-105-pkt-1a-lit-a-i-pkt-1b-ustawy-o-podatku-akcyzowym-na-samochody-osobowe-okreslane-mianem-miekka-hybryda-mhev",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 72,
+        "level": "MEDIUM",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja"
+        ],
+        "ageDays": 119,
+        "kbPending": 14
+      }
+    },
+    {
+      "id": "candidate_c92a444a-8d5",
+      "title": "Jak przesłać do KSeF dodatkowe informacje? - Baza Wiedzy programu Comarch ERP Optima",
+      "kbNamespace": "ComarchOptimaAdditionalFunctions",
+      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026/page/7/?ht-kb-search=1&print=print-search",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 72,
+        "level": "MEDIUM",
+        "reasons": [
+          "oficjalne źródło",
+          "świeża publikacja"
+        ],
+        "ageDays": 7,
+        "kbPending": 16
+      }
+    },
+    {
+      "id": "candidate_3577505a-d1b",
+      "title": "Interpretacja podatkowa",
+      "kbNamespace": "TaxbellLegalReference",
+      "canonicalUrl": "https://www.biznes.gov.pl/pl/portal/ou25",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 68,
+        "level": "MEDIUM",
+        "reasons": [
+          "oficjalne źródło",
+          "świeża publikacja"
+        ],
+        "ageDays": 12,
+        "kbPending": 14
+      }
+    }
+  ],
+  "queryIssues": [
+    {
+      "id": "seed_ComarchOptimaSchema",
+      "kbNamespace": "ComarchOptimaSchema",
+      "query": "Comarch ERP Optima struktura bazy danych schemat SQL zmiany 2026",
+      "analytics": {
+        "candidates": 3,
+        "pending": 0,
+        "reviewed": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "duplicates": 3,
+        "duplicateRate": 1,
+        "acceptanceRate": null,
+        "efficiencyScore": 45,
+        "health": "DUPLICATE_HEAVY",
+        "recommendation": "REFINE"
+      }
+    },
+    {
+      "id": "seed_ComarchOptimaSprint",
+      "kbNamespace": "ComarchOptimaSprint",
+      "query": "Comarch ERP Optima sPrint wydruki GenRap wzorce 2026",
+      "analytics": {
+        "candidates": 3,
+        "pending": 0,
+        "reviewed": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "duplicates": 3,
+        "duplicateRate": 1,
+        "acceptanceRate": null,
+        "efficiencyScore": 45,
+        "health": "DUPLICATE_HEAVY",
+        "recommendation": "REFINE"
+      }
+    },
+    {
+      "id": "seed_ComarchOptimaReference",
+      "kbNamespace": "ComarchOptimaReference",
+      "query": "Comarch ERP Optima instrukcje aktualizacje KSeF 2026",
+      "analytics": {
+        "candidates": 3,
+        "pending": 0,
+        "reviewed": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "duplicates": 3,
+        "duplicateRate": 1,
+        "acceptanceRate": null,
+        "efficiencyScore": 45,
+        "health": "DUPLICATE_HEAVY",
+        "recommendation": "REFINE"
+      }
+    }
+  ],
+  "alerts": [
+    {
+      "level": "warn",
+      "type": "query_duplicate_rate",
+      "resourceId": "seed_ComarchOptimaSchema",
+      "kbNamespace": "ComarchOptimaSchema",
+      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
+    },
+    {
+      "level": "warn",
+      "type": "query_duplicate_rate",
+      "resourceId": "seed_ComarchOptimaSprint",
+      "kbNamespace": "ComarchOptimaSprint",
+      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
+    },
+    {
+      "level": "warn",
+      "type": "query_duplicate_rate",
+      "resourceId": "seed_ComarchOptimaReference",
+      "kbNamespace": "ComarchOptimaReference",
+      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
+    },
+    {
+      "level": "warn",
+      "type": "unknown_domains",
+      "resourceId": "",
+      "kbNamespace": "",
+      "message": "8 kandydatów pochodzi z domen spoza profili zaufania."
+    }
+  ],
+  "semiAuto": {
+    "configured": false,
+    "eligible": true,
+    "active": false,
+    "blockers": [
+      "Tryb półautomatyczny jest wyłączony.",
+      "Discovery działa w wymuszonym trybie dry-run."
+    ],
+    "metrics": {
+      "reviewed": 63,
+      "agreement": 0.9629629629629629,
+      "falsePositiveRate": 0.037037037037037035,
+      "observationDays": 11.1,
+      "minimumConfidence": 0.95,
+      "maxPerRun": 3,
+      "allowedNamespaces": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference",
+        "TaxbellLegalReference",
+        "TaxbellPayrollHRReference",
+        "TaxbellAccountingVATReference"
+      ]
+    }
+  }
+}

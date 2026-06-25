@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-18_374eb809_interpretacja-ogolna-nr-dd3-8203-2-2024-z-dnia-7-maja-2026-r-w-sprawie-ulgi-term",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Interpretacja Ogólna Nr DD3.8203.2.2024 z dnia 7 maja 2026 r.w sprawie ulgi termomodernizacyjnej i wydatków na pokrycia dachowe - Ministerstwo Finansów - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy objaśnienia 2026\nSource: https://www.gov.pl/web/finanse/interpretacja-ogolna-nr-dd3820322024-z-dnia-7-maja-2026-rw-sprawie-ulgi-termomodernizacyjnej-i-wydatkow-na-pokrycia-dachowe\nTier: official\nDiscovery confidence: 0.95\n\nInterpretacja Ogólna Nr DD3.8203.2.2024 z dnia 7 maja 2026 r.w sprawie ulgi termomodernizacyjnej i wydatków na pokrycia dachowe - Ministerstwo Finansów - Portal Gov.pl\n\n## Interpretacja Ogólna Nr DD3.8203.2.2024 z dnia 7 maja 2026 r.w sprawie ulgi termomodernizacyjnej i wydatków na pokrycia dachowe\n\n### Materiały\n\n### Podstawa prawna\n\nUstawa z dnia 29 sierpnia 1997 r. – Ordynacja podatkowa\n\nInformacje o publikacji dokumentu\n\nPierwsza publikacja: 14.05.2026 10:49 Elżbieta Wojszycka\n\nWytwarzający/ Odpowiadający: Elżbieta Wojszycka\n\nPokaż historię zmian\n\n| Tytuł | Wersja | Dane zmiany / publikacji |\n| --- | --- | --- |\n| Interpretacja Ogólna Nr DD3.8203.2.2024 z dnia 7 maja 2026 r.w sprawie ulgi termomodernizacyjnej i wydatków na pokrycia dachowe | 1.0 | 14.05.2026 10:49 Elżbieta Wojszycka |\n\nAby uzyskać archiwalną wersję należy skontaktować się z Redakcją BIP\n\n```\n{\"register\":{\"columns\":[{\"header\":\"Pozycja\",\"value\":\"57\",\"registerId\":20389907,\"dictionaryValues\":[],\"nestedValues\":[],\"showInContent\":true,\"positionSelector\":\".article-area__article h2\",\"insertMethod\":\"after\"},{\"header\":\"Data ogłoszenia\",\"value\":\"14.05.2026 r.\",\"registerId\":20389907,\"dictionaryValues\":[],\"nestedValues\":[],\"showInContent\":true,\"positionSelector\":\".article-area__article h2\",\"insertMethod\":\"after\"},{\"header\":\"Data wydania\",\"value\":\"7.05.2026 r.\",\"registerId\":20389907,\"dictionaryValues\":[],\"nestedValues\":[],\"showInContent\":true,\"positionSelector\":\".article-area__article h2\",\"insertMethod\":\"after\"},{\"head\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/finanse/interpretacja-ogolna-nr-dd3820322024-z-dnia-7-maja-2026-rw-sprawie-ulgi-termomodernizacyjnej-i-wydatkow-na-pokrycia-dachowe",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-13T02:49:45.205Z",
+    "discoveryCandidateId": "candidate_301822c1-607",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-06-13T02-49-32-868Z_889274e3",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "419124a192003b4e97b0e5eeaafbdbb8649aa3992170ef01fb78d87016535d04"
+  },
+  "createdAt": "2026-06-18T05:13:00.499Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-18T05:14:35.299Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-18/draft_2026-06-18_374eb809_interpretacja-ogolna-nr-dd3-8203-2-2024-z-dnia-7-maja-2026-r-w-sprawie-ulgi-term.json"
+}

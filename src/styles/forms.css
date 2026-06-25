@@ -1,0 +1,242 @@
+
+.inboxFullWidth .pageTitle h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.inboxFullWidth .pageTitle p {
+  color: var(--inbox-muted);
+  font-size: 13px;
+  margin: 2px 0 0;
+}
+
+.selectAllHeader {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  font-size: 12px;
+  gap: 5px;
+  justify-content: center;
+}
+
+.selectAllHeader input {
+  margin: 0;
+}
+
+tr.clickable {
+  cursor: pointer;
+}
+
+tr.clickable:hover {
+  background: var(--soft);
+}
+
+.search,
+input,
+select,
+textarea {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 8px;
+}
+
+.search {
+  min-width: 260px;
+}
+
+.segmented,
+.filterBar,
+.bulkActions,
+.draftActions,
+.rowActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.segmented button {
+  white-space: nowrap;
+}
+
+.segmented button.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.bulkToolbar {
+  align-items: center;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+}
+
+.inboxControls {
+  background: var(--inbox-panel);
+  border: 1px solid var(--inbox-line);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 10px;
+}
+
+.inboxControlsRow {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.iconSegmented {
+  align-items: center;
+  background: var(--inbox-panel);
+  border: 1px solid var(--inbox-line);
+  border-radius: 6px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 2px;
+  padding: 3px;
+}
+
+.statusFilterButton {
+  align-items: center;
+  border-color: transparent;
+  border-radius: 5px;
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  min-width: 36px;
+  padding: 7px;
+}
+
+.inboxFullWidth .statusFilterButton.active {
+  background: var(--inbox-text);
+  border-color: var(--inbox-text);
+  color: #fff;
+}
+
+.inboxFields {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  gap: 8px;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.inboxFullWidth .iconField {
+  align-items: center;
+  background: var(--inbox-panel);
+  border: 1px solid var(--inbox-line);
+  border-radius: 6px;
+  display: flex;
+  gap: 6px;
+  height: 38px;
+  min-width: 210px;
+  padding: 0 8px;
+}
+
+.iconField {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+  gap: 6px;
+  height: 38px;
+  min-width: 210px;
+  padding: 0 8px;
+}
+
+.iconField.searchField {
+  flex: 1 1 360px;
+  max-width: 520px;
+  min-width: 280px;
+}
+
+.inboxFullWidth .fieldIcon,
+.inboxFullWidth .summaryIcon {
+  color: var(--inbox-muted);
+  flex: 0 0 auto;
+  height: 16px;
+  width: 16px;
+}
+
+.fieldIcon,
+.summaryIcon {
+  color: var(--muted);
+  flex: 0 0 auto;
+  height: 16px;
+  width: 16px;
+}
+
+.iconField input,
+.iconField select {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  min-width: 0;
+  outline: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.inboxFullWidth .iconField:focus-within {
+  border-color: var(--inbox-brass);
+  box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.15);
+}
+
+.iconField:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.12);
+}
+
+.inboxFullWidth .bulkRow {
+  border-top: 1px solid var(--inbox-line);
+  padding-top: 8px;
+}
+
+.bulkRow {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.selectionSummary {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.inboxFullWidth .selectionSummary strong {
+  color: var(--inbox-text);
+  font-size: 16px;
+}
+
+.selectionSummary strong {
+  font-size: 16px;
+}
+
+.bulkActions button,
+.draftActions button,
+.sourceForm button,
+.rowActions button,
+.modalActions button:last-child {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}

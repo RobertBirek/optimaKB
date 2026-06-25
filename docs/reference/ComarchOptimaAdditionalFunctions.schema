@@ -1,0 +1,284 @@
+namespace ComarchOptimaAdditionalFunctions
+
+ReferenceDocument(ReferenceDocument): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		sourceType(sourceType): Text
+		documentCategory(documentCategory): Text
+		versionHint(versionHint): Text
+		articleUpdatedAt(articleUpdatedAt): Text
+		relatedKnowledgeBase(relatedKnowledgeBase): Text
+		summary(summary): Text
+			index: TextAndVector
+
+FunctionCapability(FunctionCapability): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		capabilityType(capabilityType): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		defaultTrigger(defaultTrigger): Text
+		relatedFeature(relatedFeature): Text
+		evidence(evidence): Text
+		summary(summary): Text
+			index: TextAndVector
+
+FunctionEntryPoint(FunctionEntryPoint): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		entryPointType(entryPointType): Text
+		uiLocation(uiLocation): Text
+		shortcut(shortcut): Text
+		behavior(behavior): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+FunctionExecutionMode(FunctionExecutionMode): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		modeCode(modeCode): Text
+		lifecyclePhase(lifecyclePhase): Text
+		intendedUse(intendedUse): Text
+		caution(caution): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		example(example): Text
+			index: TextAndVector
+
+FunctionConfigOption(FunctionConfigOption): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		optionName(optionName): Text
+		effect(effect): Text
+		scope(scope): Text
+		defaultState(defaultState): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+FunctionRule(FunctionRule): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		ruleType(ruleType): Text
+		severity(severity): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		rationale(rationale): Text
+		statement(statement): Text
+			index: TextAndVector
+
+FunctionPattern(FunctionPattern): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		patternType(patternType): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		relatedFeatureRefId(relatedFeatureRefId): Text
+		relatedKnowledgeBase(relatedKnowledgeBase): Text
+		summary(summary): Text
+			index: TextAndVector
+		example(example): Text
+
+RelatedFeature(RelatedFeature): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		featureType(featureType): Text
+		accessPath(accessPath): Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		relatedKnowledgeBase(relatedKnowledgeBase): Text
+		summary(summary): Text
+			index: TextAndVector
+
+FileArtifact(FileArtifact): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		relativePath(relativePath): Text
+			index: Text
+		sourceOrigin(sourceOrigin): Text
+		collectionName(collectionName): Text
+		artifactType(artifactType): Text
+		fileExtension(fileExtension): Text
+		moduleScope(moduleScope): Text
+		implementationScope(implementationScope): Text
+		runtimeFamily(runtimeFamily): Text
+		fileSizeBytes(fileSizeBytes): Text
+		contentPreview(contentPreview): Text
+			index: TextAndVector
+
+ImplementationExample(ImplementationExample): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		exampleType(exampleType): Text
+		sourceArtifactRefId(sourceArtifactRefId): Text
+		sourceCollection(sourceCollection): Text
+		runtimeFamily(runtimeFamily): Text
+		language(language): Text
+		moduleScope(moduleScope): Text
+		operationScope(operationScope): Text
+		optimaVersion(optimaVersion): Text
+		author(author): Text
+		launchHint(launchHint): Text
+		interfaceList(interfaceList): Text
+		companionArtifacts(companionArtifacts): Text
+		summary(summary): Text
+			index: TextAndVector
+		codePreview(codePreview): Text
+			index: TextAndVector
+
+ComInterface(ComInterface): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		interfaceName(interfaceName): Text
+			index: Text
+		interfaceGroup(interfaceGroup): Text
+		sourceCollection(sourceCollection): Text
+		sourceArtifactRefId(sourceArtifactRefId): Text
+		exampleRefCount(exampleRefCount): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ConfigurationCatalogEntry(ConfigurationCatalogEntry): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		keyName(keyName): Text
+			index: Text
+		configType(configType): Text
+		label(label): Text
+		sourceArtifactRefId(sourceArtifactRefId): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ProcedureDictionaryEntry(ProcedureDictionaryEntry): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		procedureId(procedureId): Text
+			index: Text
+		procedureName(procedureName): Text
+			index: Text
+		sourceArtifactRefId(sourceArtifactRefId): Text
+		categoryHint(categoryHint): Text
+		summary(summary): Text
+			index: TextAndVector
+
+MessageCatalogEntry(MessageCatalogEntry): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		messageId(messageId): Text
+			index: Text
+		constant(constant): Text
+			index: Text
+		messageType(messageType): Text
+		buttons(buttons): Text
+		projects(projects): Text
+		sourceArtifactRefId(sourceArtifactRefId): Text
+		messageText(messageText): Text
+		summary(summary): Text
+			index: TextAndVector
+
+ImplementationGuide(ImplementationGuide): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		guideType(guideType): Text
+		preferredMechanism(preferredMechanism): Text
+		runtimeFamily(runtimeFamily): Text
+		moduleScope(moduleScope): Text
+		triggerSuitability(triggerSuitability): Text
+		schemaKnowledgeBase(schemaKnowledgeBase): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+
+SchemaTouchpoint(SchemaTouchpoint): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceExampleRefId(sourceExampleRefId): Text
+		sourceArtifactRefId(sourceArtifactRefId): Text
+		schemaObjectRefId(schemaObjectRefId): Text
+		schemaObjectName(schemaObjectName): Text
+			index: Text
+		schemaObjectKind(schemaObjectKind): Text
+		touchpointType(touchpointType): Text
+		confidence(confidence): Text
+		evidence(evidence): Text
+		schemaKnowledgeBase(schemaKnowledgeBase): Text
+		queryDesignNote(queryDesignNote): Text
+			index: TextAndVector
+
+ModuleRecipe(ModuleRecipe): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		moduleName(moduleName): Text
+			index: Text
+		scenarioType(scenarioType): Text
+		preferredMechanism(preferredMechanism): Text
+		triggerSuitability(triggerSuitability): Text
+		sourceExampleRefs(sourceExampleRefs): Text
+		anchorSchemaObjects(anchorSchemaObjects): Text
+		joinHint(joinHint): Text
+		sqlObjectHint(sqlObjectHint): Text
+		schemaKnowledgeBase(schemaKnowledgeBase): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+
+Chunk(Chunk): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		sourceObjectRefId(sourceObjectRefId): Text
+		sourceDocument(sourceDocument): Text
+		sourceSection(sourceSection): Text
+		semanticType(semanticType): Text
+			index: Text
+		content(content): Text
+			index: TextAndVector

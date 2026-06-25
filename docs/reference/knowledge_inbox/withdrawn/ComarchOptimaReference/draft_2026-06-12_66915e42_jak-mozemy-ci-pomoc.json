@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "Jak możemy Ci pomóc?",
+  "content": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch ERP Optima 2026.2 lista zmian\nSource: https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb\nTier: official\nDiscovery confidence: 0.9\n\nInstalacja i reinstalacja systemu – Baza Wiedzy programu Comarch ERP Optima\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n1. Instalacja i reinstalacja systemu\n2. Nowości i zmiany w wersji 2026.2.1\n3. Co nowego?\n4. Instalacja i aktualizacje\n5. Strona główna\n\nUwaga\n\nComarch ERP Optima nie jest wspierana na systemach operacyjnych Windows 8.1, Windows 8, Windows Server 2012 R2, Windows Server 2012 i starszych.\n\nUwaga\n\nComarch ERP Optima w wersji 2026.2.1 wymaga wykupionej gwarancji na dzień 03.11.2025. W przypadku kończącego się wcześniej terminu gwarancji, praca na tej wersji programu nie będzie możliwa.\n\nSzczegółowe informacje na temat instalacji znajdują się w Instrukcji instalacji.\n\n### Zmiany wymagań sprzętowych i systemowych\n\n- Drukarka pracująca w systemie Microsoft Windows\n- Microsoft .NET Framework w wersji minimum 4.7.2\n- System operacyjny Windows 11, Windows 10, Windows Server 2025, Windows Server 2022, Windows Server 2019, Windows Server 2016 w wersji 64bit\n- Dysk: 5 GB wolnej przestrzeni\n- 2 GB pamięci RAM\n- Procesor firmy Intel lub AMD min. 2 GHz\n\nW instalacjach wielostanowiskowych zalecamy wykorzystanie dedykowanego serwera bazy danych. W sprawie konfiguracji sprzętowej dla takich instalacji prosimy o kontakt z Autoryzowanym Partnerem Comarch.\n\n## Reinstalacja programu\n\n### Reinstalacja z poprzedniej wersji\n\nW celu wykonania reinstalacji programu, należy z poziomu kreatora umieszczonego na płycie Comarch ERP Optima \n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb",
+  "tags": [
+    "discovery",
+    "official",
+    "instrukcje",
+    "aktualizacje",
+    "KSeF",
+    "obsługa programu"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:48:57.299Z",
+    "discoveryCandidateId": "candidate_e8c751ca-f82",
+    "discoveryQueryId": "generated_ComarchOptimaReference_305429abdd",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "67055ed4ad1c65cadd410fd2a262a004a3cc5f0b097594e2ff60ffdddd3a5511"
+  },
+  "createdAt": "2026-06-12T06:41:57.748Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T06:42:24.321Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 6 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.json"
+}

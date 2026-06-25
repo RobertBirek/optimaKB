@@ -1,0 +1,31 @@
+{
+  "id": "draft_2026-06-05_8c2822f5_pdf-broszura-jpk-vat-z-deklaracja-od-1-lutego-2026-podatki-gov-pl",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "[PDF] Broszura – JPK_VAT z deklaracją od 1 lutego 2026 - Podatki.gov.pl",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://www.podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf\n\nSummary:\n- This PDF brochure from podatki.gov.pl (January 2026) explains the structure of JPK_VAT with deklaracją for JPK_V7M(3) and JPK_V7K(3), effective from February 1, 2026.\n- It covers:\n  - Main schema structure for JPK_V7M and JPK_V7K\n  - Headers and Podmiot1 sections\n  - Ewidencja (records) section, including general filling principles and specific inventory for Tax Payable (Podatek należny) and Tax Recoverable (Podatek naliczony)\n  - Detailed structures for SprzedazWiersz, ZakupWiersz, corresponding control totals (SprzedazCtrl, ZakupCtrl) and their control sums\n  - Deklaracja (declaration) section, including header and detailed declaration positions\n- The document is an informational guide intended to help entities correctly complete JPK_VAT with the single declaration under the new JPK_V7M(3) and JPK_V7K(3) schemas.\n- It is published by the Ministry/Tax Administration in Pol...",
+  "sourceUrl": "https://www.podatki.gov.pl/media/wgbkrejs/broszura-jpk_vat-z-deklaracj%C4%85-od-1-lutego-2026-r.pdf",
+  "tags": [
+    "podatki",
+    "vat",
+    "jpk",
+    "ksef",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_302deb2d",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-15-155Z_9d039043",
+    "retrievedAt": "2026-06-05T17:41:15.728Z",
+    "contentHash": "1f4d514c1da0e9db0190868ffcedfb181b156ea956de66602c94dfad6bc6a561",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:15.815Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:22.022Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_8c2822f5_pdf-broszura-jpk-vat-z-deklaracja-od-1-lutego-2026-podatki-gov-pl.json"
+}

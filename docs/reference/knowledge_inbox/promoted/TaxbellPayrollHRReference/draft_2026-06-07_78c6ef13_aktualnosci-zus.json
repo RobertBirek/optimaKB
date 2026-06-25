@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_78c6ef13_aktualnosci-zus",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Aktualności - ZUS",
+  "content": "Automated source-discovery draft.\n\nQuery: ZUS nowości czerwiec 2026\nSource: https://www.zus.pl/o-zus/aktualnosci\nTier: official\nDiscovery confidence: 0.95\n\nZUS Aktualności (o-zus/aktualnosci) to sekcja biuletynu ZUS zawierająca najnowsze ogłoszenia i informacje dotyczące świadczeń, zasad ustalania ich podstawy wymiaru, terminów oraz zmian w przepisach. Strona pełni rolę centrum aktualności dotyczących emerytur, rent, zasad obliczania świadczeń, a także bieżących zmian w obsłudze i dokumentacji. \n\nJeśli szukasz nowości z czerwca 2026 roku, warto odwiedzić aktualności na tej stronie, aby znaleźć najnowsze komunikaty ZUS, które mogą obejmować:\n- zmiany w przepisach dotyczących emerytur i rent,\n- aktualizacje w sposobie wyliczania podstawy wymiaru świadczeń,\n- nowe lub zmienione procedury obsługi świadczeń,\n- ważne terminy i ostrzeżenia dla zainteresowanych świadczeniami.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.zus.pl/o-zus/aktualnosci",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:12:47.257Z",
+    "discoveryCandidateId": "candidate_8c545a65-28a",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_55573f490d",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "d55be3c4ccf7100ab510497d4c5afc369383c7965b3c9459ca8f554cb26cea59"
+  },
+  "createdAt": "2026-06-07T03:08:47.468Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.187Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_78c6ef13_aktualnosci-zus.json"
+}

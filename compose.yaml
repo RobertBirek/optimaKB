@@ -1,0 +1,148 @@
+x-security-defaults: &security_defaults
+  security_opt:
+    - no-new-privileges:true
+  cap_drop:
+    - ALL
+
+services:
+  mysql:
+    <<: *security_defaults
+    image: ${OPENSPG_MYSQL_IMAGE:?OPENSPG_MYSQL_IMAGE is required}
+    container_name: release-openspg-mysql
+    restart: always
+    mem_limit: 2g
+    environment:
+      TZ: ${TZ:-Europe/Warsaw}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?MYSQL_ROOT_PASSWORD is required}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-openspg}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p\"$${MYSQL_ROOT_PASSWORD}\" --silent"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    volumes:
+      - /docker/openspg/data/mysql:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - spg
+  neo4j:
+    <<: *security_defaults
+    image: ${OPENSPG_NEO4J_IMAGE:?OPENSPG_NEO4J_IMAGE is required}
+    container_name: release-openspg-neo4j
+    restart: always
+    mem_limit: 10g
+    environment:
+      TZ: ${TZ:-Europe/Warsaw}
+      OPENSPG_NEO4J_USER: ${OPENSPG_NEO4J_USER:?OPENSPG_NEO4J_USER is required}
+      OPENSPG_NEO4J_PASSWORD: ${OPENSPG_NEO4J_PASSWORD:?OPENSPG_NEO4J_PASSWORD is required}
+      NEO4J_AUTH: ${OPENSPG_NEO4J_USER:?OPENSPG_NEO4J_USER is required}/${OPENSPG_NEO4J_PASSWORD:?OPENSPG_NEO4J_PASSWORD is required}
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_apoc_import_file_enabled: "true"
+      NEO4J_apoc_export_file_enabled: "true"
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
+      NEO4J_dbms_security_procedures_allowlist: "apoc.*"
+      NEO4J_server_memory_heap_initial__size: 4G
+      NEO4J_server_memory_heap_max__size: 4G
+      NEO4J_server_memory_pagecache_size: 2G
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u \"$${OPENSPG_NEO4J_USER}\" -p \"$${OPENSPG_NEO4J_PASSWORD}\" 'RETURN 1;' >/dev/null"]
+      interval: 30s
+      timeout: 15s
+      retries: 10
+      start_period: 60s
+    volumes:
+      - /docker/openspg/data/neo4j/data:/data
+      - /docker/openspg/data/neo4j/logs:/logs
+      - /docker/openspg/data/neo4j/plugins:/plugins
+      - /docker/openspg/data/neo4j/import:/import
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - spg
+  minio:
+    <<: *security_defaults
+    image: ${OPENSPG_MINIO_IMAGE:?OPENSPG_MINIO_IMAGE is required}
+    container_name: release-openspg-minio
+    restart: always
+    mem_limit: 1g
+    environment:
+      TZ: ${TZ:-Europe/Warsaw}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?MINIO_ROOT_USER is required}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?MINIO_ROOT_PASSWORD is required}
+    command:
+      - server
+      - --console-address
+      - :9001
+      - /data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    volumes:
+      - /docker/openspg/data/minio:/data
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - spg
+  tika:
+    <<: *security_defaults
+    image: apache/tika:latest
+    container_name: openspg-tika
+    restart: unless-stopped
+    mem_limit: 2g
+    ports:
+      - "127.0.0.1:9998:9998"
+    networks:
+      - spg
+
+  server:
+    <<: *security_defaults
+    image: ${OPENSPG_SERVER_IMAGE:?OPENSPG_SERVER_IMAGE is required}
+    container_name: release-openspg-server
+    restart: always
+    mem_limit: 6g
+    ports:
+      - "${OPENSPG_BIND_ADDRESS:-127.0.0.1}:${OPENSPG_PORT:-8887}:8887"
+    environment:
+      TZ: ${TZ:-Europe/Warsaw}
+      JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8 -Xms${OPENSPG_SERVER_XMS:-2048m} -Xmx${OPENSPG_SERVER_XMX:-4096m}
+      SERVER_REPOSITORY_IMPL_JDBC_HOST: mysql
+      SERVER_REPOSITORY_IMPL_JDBC_USERNAME: ${MYSQL_APP_USER:?MYSQL_APP_USER is required}
+      SERVER_REPOSITORY_IMPL_JDBC_PASSWORD: ${MYSQL_APP_PASSWORD:?MYSQL_APP_PASSWORD is required}
+      BUILDER_MODEL_EXECUTE_NUM: ${BUILDER_MODEL_EXECUTE_NUM:-6}
+      # NOTE: OpenSPG requires secrets inline in connection URLs (upstream limitation).
+      # Visible via `docker inspect` to anyone with docker access. Mitigation:
+      # restrict docker group membership and use `docker exec` for diagnostics.
+      CLOUDEXT_GRAPHSTORE_URL: neo4j://release-openspg-neo4j:7687?user=${OPENSPG_NEO4J_USER:?OPENSPG_NEO4J_USER is required}&password=${OPENSPG_NEO4J_PASSWORD_URLENCODED:?OPENSPG_NEO4J_PASSWORD_URLENCODED is required}&database=neo4j
+      CLOUDEXT_SEARCHENGINE_URL: neo4j://release-openspg-neo4j:7687?user=${OPENSPG_NEO4J_USER:?OPENSPG_NEO4J_USER is required}&password=${OPENSPG_NEO4J_PASSWORD_URLENCODED:?OPENSPG_NEO4J_PASSWORD_URLENCODED is required}&database=neo4j
+      CLOUDEXT_OBJECTSTORAGE_URL: minio://release-openspg-minio:9000?accessKey=${MINIO_ROOT_USER:?MINIO_ROOT_USER is required}&secretKey=${MINIO_ROOT_PASSWORD_URLENCODED:?MINIO_ROOT_PASSWORD_URLENCODED is required}
+      LOGGING_LEVEL_COM_ANTGROUP_OPENSPG_SERVER_ARKS_SOFABOOT: WARN
+      LOGGING_LEVEL_COM_ANTGROUP_OPENSPGAPP_ARKS_SOFABOOT: WARN
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -I --max-time 5 http://127.0.0.1:8887/ >/dev/null"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      mysql:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    networks:
+      - spg
+      - proxy
+networks:
+  spg:
+    name: openspg_spg
+    driver: bridge
+  proxy:
+    external: true

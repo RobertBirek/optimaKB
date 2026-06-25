@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_f3e18de6_nowosci-w-wersji-2026-0-0-baza-wiedzy-programu-comarch-sprint",
+  "kbName": "Comarch Optima Sprint and Prints",
+  "kbNamespace": "ComarchOptimaSprint",
+  "title": "Nowości w wersji 2026.0.0 – Baza Wiedzy programu  Comarch sPrint",
+  "content": "Automated source-discovery draft.\n\nQuery: sPrint GenRap nowości 2026\nSource: https://pomoc.comarch.pl/sprint/index.php/dokumentacja/nowosci-w-wersji-2026-0-0/\nTier: official\nDiscovery confidence: 0.9\n\nSummary:\n- The article covers the new features in Comarch sPrint version 2026.0.0.\n- Highlighted item: Optimization of RAM usage. The update reduces memory consumption, improving stability and performance of processes in the system environment.\n\nNote: The page focuses on general improvements, with RAM optimization being the key highlighted change. If you need details on GenRap (GenRap) or other 2026.0.0 specifics, you may want to consult the full help article or search for GenRap-specific release notes.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/sprint/index.php/dokumentacja/nowosci-w-wersji-2026-0-0/",
+  "tags": [
+    "discovery",
+    "official",
+    "sPrint",
+    "wydruki",
+    "GenRap",
+    "wzorce"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:11:03.887Z",
+    "discoveryCandidateId": "candidate_e90fb327-fb8",
+    "discoveryQueryId": "generated_ComarchOptimaSprint_eaf65ef1b9",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "da20a70737abb177b79b9a10c756698d541db03a759babcd43649fefff15b645"
+  },
+  "createdAt": "2026-06-09T13:11:28.263Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T13:12:51.905Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_f3e18de6_nowosci-w-wersji-2026-0-0-baza-wiedzy-programu-comarch-sprint.json"
+}

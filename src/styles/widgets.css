@@ -1,0 +1,297 @@
+.metricLabel,
+.metricHint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.metricValue {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.metricHint {
+  margin-top: 6px;
+}
+
+.badge {
+  background: var(--soft);
+  border-radius: 999px;
+  color: var(--text);
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+}
+
+.inboxFullWidth .badge.ok {
+  background: var(--inbox-ok-bg);
+  color: var(--inbox-ok);
+}
+
+.badge.ok {
+  background: var(--ok-bg);
+  color: var(--ok);
+}
+
+.inboxFullWidth .badge.bad {
+  background: var(--inbox-bad-bg);
+  color: var(--inbox-bad);
+}
+
+.badge.warn {
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+
+.badge.bad {
+  background: var(--bad-bg);
+  color: var(--bad);
+}
+
+.alerts,
+.attentionList,
+.preflightList {
+  display: grid;
+  gap: 8px;
+}
+
+.alert,
+.attentionItem {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  border-radius: 6px;
+  font-size: 13px;
+  padding: 10px 12px;
+}
+
+.alert.ok,
+.attentionItem.ok {
+  border-left-color: var(--ok);
+}
+
+.alert.warn,
+.attentionItem.warn {
+  border-left-color: var(--warn);
+}
+
+.alert.bad,
+.attentionItem.bad {
+  border-left-color: var(--bad);
+}
+
+.attentionItem {
+  align-items: center;
+  color: var(--text);
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.attentionArrow {
+  height: 16px;
+  margin-left: auto;
+  width: 16px;
+}
+
+.quickActionGrid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.quickAction {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 36px minmax(0, 1fr) 18px;
+  min-height: 64px;
+  padding: 10px;
+  text-align: left;
+}
+
+.quickAction:hover {
+  background: #f5f8ff;
+}
+
+.quickActionIcon,
+.toolIcon {
+  align-items: center;
+  background: #eaf0ff;
+  border-radius: 7px;
+  color: var(--blue);
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  width: 36px;
+}
+
+.quickActionIcon svg,
+.toolIcon svg {
+  height: 19px;
+  width: 19px;
+}
+
+.quickActionCopy,
+.toolCopy {
+  min-width: 0;
+}
+
+.quickActionCopy strong,
+.quickActionCopy small {
+  display: block;
+}
+
+.quickActionCopy small {
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.quickActionArrow,
+.toolExternal {
+  color: var(--muted);
+  height: 17px;
+  width: 17px;
+}
+
+.toolGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.toolCard {
+  align-items: flex-start;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--text);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 36px minmax(0, 1fr) 18px;
+  min-height: 126px;
+  padding: 13px;
+}
+
+.toolCard:hover {
+  background: #f5f8ff;
+  border-color: var(--blue);
+  text-decoration: none;
+}
+
+.toolTitleRow {
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.toolDescription {
+  color: var(--muted);
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 7px 0 9px;
+}
+
+.toolCard code {
+  color: #475467;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.barChart {
+  display: grid;
+  gap: 9px;
+}
+
+.barRow {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(160px, 260px) minmax(120px, 1fr) 80px;
+}
+
+.barLabel {
+  font-size: 13px;
+}
+
+.barTrack {
+  background: #e7ebf2;
+  border-radius: 999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.barFill {
+  background: var(--blue);
+  border-radius: 999px;
+  height: 100%;
+}
+
+.barValue {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.donutWrap {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+}
+
+.donut {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 112px;
+  height: 112px;
+  justify-content: center;
+  position: relative;
+  width: 112px;
+}
+
+.donut::after {
+  background: var(--panel);
+  border-radius: 50%;
+  content: "";
+  height: 70px;
+  position: absolute;
+  width: 70px;
+}
+
+.donut span {
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.legend,
+.reportStatusList {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.legend span {
+  background: var(--blue);
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  margin-right: 6px;
+  width: 8px;
+}
+
+.reportStatus {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 8px 0;
+}

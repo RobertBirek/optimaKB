@@ -1,0 +1,758 @@
+{
+  "generatedAt": "2026-06-19T13:22:43.124Z",
+  "overall": "REMEDIATED",
+  "root": "/docker/openspg",
+  "dryRun": false,
+  "candidateCount": 8,
+  "withdrawnCount": 8,
+  "skippedCount": 0,
+  "candidates": [
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/",
+      "draftId": "draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima",
+      "title": "Baza Wiedzy programu Comarch ERP Optima",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_11_AE0FAEDF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+          "name": "Baza Wiedzy programu Comarch ERP Optima",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_11_AE0FAEDF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+            "name": "Baza Wiedzy programu Comarch ERP Optima",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-11T10:53:59.763Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: obsługa programu Comarch Optima 2026 poradnik\nSource: https://pomoc.comarch.pl/optima/\nTier: official\nDiscovery confidence: 0.85\n\n﻿ Baza Wiedzy programu Comarch ERP Optima \n\n \n\n \n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n \n\n### Krajowy System e-Faktur (KSeF) – zapoznaj się z informacjami dotyczącymi konfiguracji, wysyłk..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_11_AE0FAEDF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA"
+      ]
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search",
+      "draftId": "draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima",
+      "title": "Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_12_96AFA8CD_AKTUALIZACJE_PO_WYDANIU_WERSJI_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+          "name": "Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_12_96AFA8CD_AKTUALIZACJE_PO_WYDANIU_WERSJI_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+            "name": "Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima",
+            "description": "Promoted knowledge inbox draft for ComarchOptimaReference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "exa; auto-draft; recency_question",
+            "versionHint": "2026",
+            "lastModified": "2026-06-12T13:29:27.933Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "External source discovered via Exa query: Jakie publiczne aktualności Comarch mówią o nowej wersji?\nTitle: Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima\nURL: https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search\nTier: official\nSummary:\nNajważniejsze publiczne aktualności Comarch dotyczące nowej wersji (dla Comarch ERP Optima):\n\n- Aktualizacje po wydaniu wersji (odpow..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_12_96AFA8CD_AKTUALIZACJE_PO_WYDANIU_WERSJI_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA"
+      ]
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb",
+      "draftId": "draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc",
+      "title": "Jak możemy Ci pomóc?",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_12_66915E42_JAK_MOZEMY_CI_POMOC",
+          "name": "Jak możemy Ci pomóc?",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_12_66915E42_JAK_MOZEMY_CI_POMOC",
+            "name": "Jak możemy Ci pomóc?",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "CRMAndService",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-12T06:42:24.321Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch ERP Optima 2026.2 lista zmian\nSource: https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb\nTier: official\nDiscovery confidence: 0.9\n\nInstalacja i reinstalacja systemu – Baza Wiedzy programu Comarch ERP Optima\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n1. Instalacja i reinstalacja systemu\n..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_12_66915E42_JAK_MOZEMY_CI_POMOC"
+      ]
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/opt032-handlowy-dokument-identyfikacyjny/",
+      "draftId": "draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny",
+      "title": "OPT032 – Handlowy dokument identyfikacyjny",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_HTTPS_POMOC_COMARCH_PL_OPTIMA_PL_2026_DOKUMENTACJA_OPT032_HANDLOWY_DOKUMENT_IDENTYFIKACYJNY",
+          "name": "Opt032 Handlowy Dokument Identyfikacyjny",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/opt032-handlowy-dokument-identyfikacyjny/",
+          "sourceType": "official_help_sitemap",
+          "raw": {
+            "id": "REF_DOC_HTTPS_POMOC_COMARCH_PL_OPTIMA_PL_2026_DOKUMENTACJA_OPT032_HANDLOWY_DOKUMENT_IDENTYFIKACYJNY",
+            "name": "Opt032 Handlowy Dokument Identyfikacyjny",
+            "description": "Official Comarch ERP Optima help article Opt032 Handlowy Dokument Identyfikacyjny.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/opt032-handlowy-dokument-identyfikacyjny/",
+            "sourceType": "official_help_sitemap",
+            "documentCategory": "help_article",
+            "moduleScope": "General",
+            "categoryHint": "opt032-handlowy-dokument-identyfikacyjny",
+            "versionHint": "2019",
+            "lastModified": "2019-11-20T13:51:02+00:00",
+            "localSnapshotPath": "",
+            "sourceOrigin": "pomoc.comarch.pl",
+            "summary": "Official Comarch ERP Optima help article covering Opt032 Handlowy Dokument Identyfikacyjny. Category: help_article. Module scope: General. Last updated 2019-11-20."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_HTTPS_POMOC_COMARCH_PL_OPTIMA_PL_2026_DOKUMENTACJA_OPT032_HANDLOWY_DOKUMENT_IDENTYFIKACYJNY"
+      ]
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/",
+      "draftId": "draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie",
+      "title": "Konfiguracja KSeF w programie",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_09_151AE85B_KONFIGURACJA_KSEF_W_PROGRAMIE",
+          "name": "Konfiguracja KSeF w programie",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_09_151AE85B_KONFIGURACJA_KSEF_W_PROGRAMIE",
+            "name": "Konfiguracja KSeF w programie",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-09T06:55:47.413Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: KSeF Optima instrukcja 2026\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/\nTier: official\nDiscovery confidence: 0.95\n\nKonfiguracja KSeF w programie\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n1. Strona główna\n2. Ogólne i Kasa/Bank\n3. KSeF\n4. Konfiguracja KSeF w programie\n\n## Konfi..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_09_151AE85B_KONFIGURACJA_KSEF_W_PROGRAMIE"
+      ]
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/",
+      "draftId": "draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima",
+      "title": "KSeF – Baza Wiedzy programu Comarch ERP Optima",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_07_B17718A8_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+          "name": "KSeF – Baza Wiedzy programu Comarch ERP Optima",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_07_B17718A8_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+            "name": "KSeF – Baza Wiedzy programu Comarch ERP Optima",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-07T03:11:20.069Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: instrukcje obsługi Comarch Optima 2026 KSeF\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/\nTier: official\nDiscovery confidence: 0.95\n\nKrótkie podsumowanie: Strona to część Bazy Wiedzy Comarch ERP Optima 2026, dedykowana integracji z Krajowym Systemem e-Faktur (KSeF). Zawiera podział na tematy dla biur rachunkowych i użytkowników, obejmujący:\n\n- Ogólne info..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_07_B17718A8_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA"
+      ]
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385",
+      "draftId": "draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026",
+      "title": "Instrukcja do programu Comarch ERP Optima w wersji 2026",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_11_E17994E7_INSTRUKCJA_DO_PROGRAMU_COMARCH_ERP_OPTIMA_W_WERSJI_2026",
+          "name": "Instrukcja do programu Comarch ERP Optima w wersji 2026",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_11_E17994E7_INSTRUKCJA_DO_PROGRAMU_COMARCH_ERP_OPTIMA_W_WERSJI_2026",
+            "name": "Instrukcja do programu Comarch ERP Optima w wersji 2026",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "PlatformAndAdministration",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-11T10:53:59.792Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: obsługa programu Comarch Optima 2026 poradnik\nSource: https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385\nTier: official\nDiscovery confidence: 0.9\n\nInstrukcja do programu Comarch ERP Optima w wersji 2026 Spis treści – Baza Wiedzy programu Comarch ERP Optima\n\n# Instalacja i inne systemowe\n\nPobierz Drukuj kategorię\n\n## Jak zaktualizować program Comarch ERP Optima ..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_11_E17994E7_INSTRUKCJA_DO_PROGRAMU_COMARCH_ERP_OPTIMA_W_WERSJI_2026"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/",
+      "draftId": "draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima",
+      "title": "Aktualna wersja Comarch ERP Optima",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_09_7B9B963B_AKTUALNA_WERSJA_COMARCH_ERP_OPTIMA",
+          "name": "Aktualna wersja Comarch ERP Optima",
+          "sourceUrl": "https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_09_7B9B963B_AKTUALNA_WERSJA_COMARCH_ERP_OPTIMA",
+            "name": "Aktualna wersja Comarch ERP Optima",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-09T06:55:47.254Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch Optima czerwiec 2026\nSource: https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/\nTier: official\nDiscovery confidence: 0.9\n\nNajważniejsze informacje o aktualizacjach Comarch ERP Optima (czerwiec 2026):\n\n- Aktualna wersja to 2026.4.1.\n- Nowości w wersji:\n - Rozszerzono integrację z KSeF (Krajowy System e-Faktur) o dodatkowe fu..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_09_7B9B963B_AKTUALNA_WERSJA_COMARCH_ERP_OPTIMA"
+      ]
+    }
+  ],
+  "withdrawn": [
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/",
+      "draftId": "draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima",
+      "title": "Baza Wiedzy programu Comarch ERP Optima",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_11_AE0FAEDF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+          "name": "Baza Wiedzy programu Comarch ERP Optima",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_11_AE0FAEDF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+            "name": "Baza Wiedzy programu Comarch ERP Optima",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-11T10:53:59.763Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: obsługa programu Comarch Optima 2026 poradnik\nSource: https://pomoc.comarch.pl/optima/\nTier: official\nDiscovery confidence: 0.85\n\n﻿ Baza Wiedzy programu Comarch ERP Optima \n\n \n\n \n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n \n\n### Krajowy System e-Faktur (KSeF) – zapoznaj się z informacjami dotyczącymi konfiguracji, wysyłk..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_11_AE0FAEDF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA"
+      ],
+      "withdrawnAt": "2026-06-19T13:22:43.557Z",
+      "withdrawnBy": "root",
+      "registryEntry": {
+        "draftId": "draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima",
+        "status": "withdrawn",
+        "kbName": "Comarch Optima Reference",
+        "kbNamespace": "ComarchOptimaReference",
+        "title": "Baza Wiedzy programu Comarch ERP Optima",
+        "sourceUrl": "https://pomoc.comarch.pl/optima/",
+        "rawJsonPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.json",
+        "withdrawnAt": "2026-06-19T13:22:43.557Z",
+        "withdrawnBy": "root",
+        "reviewNote": "Auto-withdrawn duplicate source URL",
+        "previousPromotedAt": "2026-06-11T10:53:59.763Z",
+        "movedPaths": [
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.json",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.json"
+          },
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.md",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.md"
+          }
+        ]
+      }
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search",
+      "draftId": "draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima",
+      "title": "Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_12_96AFA8CD_AKTUALIZACJE_PO_WYDANIU_WERSJI_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+          "name": "Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_12_96AFA8CD_AKTUALIZACJE_PO_WYDANIU_WERSJI_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+            "name": "Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima",
+            "description": "Promoted knowledge inbox draft for ComarchOptimaReference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "exa; auto-draft; recency_question",
+            "versionHint": "2026",
+            "lastModified": "2026-06-12T13:29:27.933Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "External source discovered via Exa query: Jakie publiczne aktualności Comarch mówią o nowej wersji?\nTitle: Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima\nURL: https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search\nTier: official\nSummary:\nNajważniejsze publiczne aktualności Comarch dotyczące nowej wersji (dla Comarch ERP Optima):\n\n- Aktualizacje po wydaniu wersji (odpow..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_12_96AFA8CD_AKTUALIZACJE_PO_WYDANIU_WERSJI_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA"
+      ],
+      "withdrawnAt": "2026-06-19T13:22:43.600Z",
+      "withdrawnBy": "root",
+      "registryEntry": {
+        "draftId": "draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima",
+        "status": "withdrawn",
+        "kbName": "Comarch Optima Reference",
+        "kbNamespace": "ComarchOptimaReference",
+        "title": "Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima",
+        "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search",
+        "rawJsonPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.json",
+        "withdrawnAt": "2026-06-19T13:22:43.600Z",
+        "withdrawnBy": "root",
+        "reviewNote": "Auto-withdrawn duplicate source URL",
+        "previousPromotedAt": "2026-06-12T13:29:27.933Z",
+        "movedPaths": [
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.json",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.json"
+          },
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.md",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.md"
+          }
+        ]
+      }
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb",
+      "draftId": "draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc",
+      "title": "Jak możemy Ci pomóc?",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_12_66915E42_JAK_MOZEMY_CI_POMOC",
+          "name": "Jak możemy Ci pomóc?",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_12_66915E42_JAK_MOZEMY_CI_POMOC",
+            "name": "Jak możemy Ci pomóc?",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "CRMAndService",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-12T06:42:24.321Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch ERP Optima 2026.2 lista zmian\nSource: https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb\nTier: official\nDiscovery confidence: 0.9\n\nInstalacja i reinstalacja systemu – Baza Wiedzy programu Comarch ERP Optima\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n1. Instalacja i reinstalacja systemu\n..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_12_66915E42_JAK_MOZEMY_CI_POMOC"
+      ],
+      "withdrawnAt": "2026-06-19T13:22:43.630Z",
+      "withdrawnBy": "root",
+      "registryEntry": {
+        "draftId": "draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc",
+        "status": "withdrawn",
+        "kbName": "Comarch Optima Reference",
+        "kbNamespace": "ComarchOptimaReference",
+        "title": "Jak możemy Ci pomóc?",
+        "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?p=51982&post_type=ht_kb",
+        "rawJsonPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.json",
+        "withdrawnAt": "2026-06-19T13:22:43.630Z",
+        "withdrawnBy": "root",
+        "reviewNote": "Auto-withdrawn duplicate source URL",
+        "previousPromotedAt": "2026-06-12T06:42:24.321Z",
+        "movedPaths": [
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.json",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.json"
+          },
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.md",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-12_66915e42_jak-mozemy-ci-pomoc.md"
+          }
+        ]
+      }
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/opt032-handlowy-dokument-identyfikacyjny/",
+      "draftId": "draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny",
+      "title": "OPT032 – Handlowy dokument identyfikacyjny",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_HTTPS_POMOC_COMARCH_PL_OPTIMA_PL_2026_DOKUMENTACJA_OPT032_HANDLOWY_DOKUMENT_IDENTYFIKACYJNY",
+          "name": "Opt032 Handlowy Dokument Identyfikacyjny",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/opt032-handlowy-dokument-identyfikacyjny/",
+          "sourceType": "official_help_sitemap",
+          "raw": {
+            "id": "REF_DOC_HTTPS_POMOC_COMARCH_PL_OPTIMA_PL_2026_DOKUMENTACJA_OPT032_HANDLOWY_DOKUMENT_IDENTYFIKACYJNY",
+            "name": "Opt032 Handlowy Dokument Identyfikacyjny",
+            "description": "Official Comarch ERP Optima help article Opt032 Handlowy Dokument Identyfikacyjny.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/opt032-handlowy-dokument-identyfikacyjny/",
+            "sourceType": "official_help_sitemap",
+            "documentCategory": "help_article",
+            "moduleScope": "General",
+            "categoryHint": "opt032-handlowy-dokument-identyfikacyjny",
+            "versionHint": "2019",
+            "lastModified": "2019-11-20T13:51:02+00:00",
+            "localSnapshotPath": "",
+            "sourceOrigin": "pomoc.comarch.pl",
+            "summary": "Official Comarch ERP Optima help article covering Opt032 Handlowy Dokument Identyfikacyjny. Category: help_article. Module scope: General. Last updated 2019-11-20."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_HTTPS_POMOC_COMARCH_PL_OPTIMA_PL_2026_DOKUMENTACJA_OPT032_HANDLOWY_DOKUMENT_IDENTYFIKACYJNY"
+      ],
+      "withdrawnAt": "2026-06-19T13:22:43.684Z",
+      "withdrawnBy": "root",
+      "registryEntry": {
+        "draftId": "draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny",
+        "status": "withdrawn",
+        "kbName": "Comarch Optima Reference",
+        "kbNamespace": "ComarchOptimaReference",
+        "title": "OPT032 – Handlowy dokument identyfikacyjny",
+        "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/opt032-handlowy-dokument-identyfikacyjny/",
+        "rawJsonPath": "downloads/knowledge_inbox/2026-06-18/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.json",
+        "withdrawnAt": "2026-06-19T13:22:43.684Z",
+        "withdrawnBy": "root",
+        "reviewNote": "Auto-withdrawn duplicate source URL",
+        "previousPromotedAt": "2026-06-18T10:31:55.641Z",
+        "movedPaths": [
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.json",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.json"
+          },
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.md",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.md"
+          }
+        ]
+      }
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/",
+      "draftId": "draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie",
+      "title": "Konfiguracja KSeF w programie",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_09_151AE85B_KONFIGURACJA_KSEF_W_PROGRAMIE",
+          "name": "Konfiguracja KSeF w programie",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_09_151AE85B_KONFIGURACJA_KSEF_W_PROGRAMIE",
+            "name": "Konfiguracja KSeF w programie",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-09T06:55:47.413Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: KSeF Optima instrukcja 2026\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/\nTier: official\nDiscovery confidence: 0.95\n\nKonfiguracja KSeF w programie\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n1. Strona główna\n2. Ogólne i Kasa/Bank\n3. KSeF\n4. Konfiguracja KSeF w programie\n\n## Konfi..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_09_151AE85B_KONFIGURACJA_KSEF_W_PROGRAMIE"
+      ],
+      "withdrawnAt": "2026-06-19T13:22:43.716Z",
+      "withdrawnBy": "root",
+      "registryEntry": {
+        "draftId": "draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie",
+        "status": "withdrawn",
+        "kbName": "Comarch Optima Reference",
+        "kbNamespace": "ComarchOptimaReference",
+        "title": "Konfiguracja KSeF w programie",
+        "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/konfiguracja-ksef-w-programie/",
+        "rawJsonPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.json",
+        "withdrawnAt": "2026-06-19T13:22:43.716Z",
+        "withdrawnBy": "root",
+        "reviewNote": "Auto-withdrawn duplicate source URL",
+        "previousPromotedAt": "2026-06-09T06:55:47.413Z",
+        "movedPaths": [
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.json",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.json"
+          },
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.md",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie.md"
+          }
+        ]
+      }
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/",
+      "draftId": "draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima",
+      "title": "KSeF – Baza Wiedzy programu Comarch ERP Optima",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_07_B17718A8_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+          "name": "KSeF – Baza Wiedzy programu Comarch ERP Optima",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_07_B17718A8_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
+            "name": "KSeF – Baza Wiedzy programu Comarch ERP Optima",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-07T03:11:20.069Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: instrukcje obsługi Comarch Optima 2026 KSeF\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/\nTier: official\nDiscovery confidence: 0.95\n\nKrótkie podsumowanie: Strona to część Bazy Wiedzy Comarch ERP Optima 2026, dedykowana integracji z Krajowym Systemem e-Faktur (KSeF). Zawiera podział na tematy dla biur rachunkowych i użytkowników, obejmujący:\n\n- Ogólne info..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_07_B17718A8_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA"
+      ],
+      "withdrawnAt": "2026-06-19T13:22:43.756Z",
+      "withdrawnBy": "root",
+      "registryEntry": {
+        "draftId": "draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima",
+        "status": "withdrawn",
+        "kbName": "Comarch Optima Reference",
+        "kbNamespace": "ComarchOptimaReference",
+        "title": "KSeF – Baza Wiedzy programu Comarch ERP Optima",
+        "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef/",
+        "rawJsonPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.json",
+        "withdrawnAt": "2026-06-19T13:22:43.756Z",
+        "withdrawnBy": "root",
+        "reviewNote": "Auto-withdrawn duplicate source URL",
+        "previousPromotedAt": "2026-06-07T03:11:20.069Z",
+        "movedPaths": [
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.json",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.json"
+          },
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.md",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-07_b17718a8_ksef-baza-wiedzy-programu-comarch-erp-optima.md"
+          }
+        ]
+      }
+    },
+    {
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385",
+      "draftId": "draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026",
+      "title": "Instrukcja do programu Comarch ERP Optima w wersji 2026",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_11_E17994E7_INSTRUKCJA_DO_PROGRAMU_COMARCH_ERP_OPTIMA_W_WERSJI_2026",
+          "name": "Instrukcja do programu Comarch ERP Optima w wersji 2026",
+          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_11_E17994E7_INSTRUKCJA_DO_PROGRAMU_COMARCH_ERP_OPTIMA_W_WERSJI_2026",
+            "name": "Instrukcja do programu Comarch ERP Optima w wersji 2026",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "PlatformAndAdministration",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-11T10:53:59.792Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: obsługa programu Comarch Optima 2026 poradnik\nSource: https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385\nTier: official\nDiscovery confidence: 0.9\n\nInstrukcja do programu Comarch ERP Optima w wersji 2026 Spis treści – Baza Wiedzy programu Comarch ERP Optima\n\n# Instalacja i inne systemowe\n\nPobierz Drukuj kategorię\n\n## Jak zaktualizować program Comarch ERP Optima ..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_11_E17994E7_INSTRUKCJA_DO_PROGRAMU_COMARCH_ERP_OPTIMA_W_WERSJI_2026"
+      ],
+      "withdrawnAt": "2026-06-19T13:22:43.788Z",
+      "withdrawnBy": "root",
+      "registryEntry": {
+        "draftId": "draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026",
+        "status": "withdrawn",
+        "kbName": "Comarch Optima Reference",
+        "kbNamespace": "ComarchOptimaReference",
+        "title": "Instrukcja do programu Comarch ERP Optima w wersji 2026",
+        "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385",
+        "rawJsonPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.json",
+        "withdrawnAt": "2026-06-19T13:22:43.788Z",
+        "withdrawnBy": "root",
+        "reviewNote": "Auto-withdrawn duplicate source URL",
+        "previousPromotedAt": "2026-06-11T10:53:59.792Z",
+        "movedPaths": [
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.json",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.json"
+          },
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.md",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.md"
+          }
+        ]
+      }
+    },
+    {
+      "sourceUrl": "https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/",
+      "draftId": "draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima",
+      "title": "Aktualna wersja Comarch ERP Optima",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.md",
+      "officialDocuments": [
+        {
+          "id": "REF_DOC_PROMOTED_DRAFT_2026_06_09_7B9B963B_AKTUALNA_WERSJA_COMARCH_ERP_OPTIMA",
+          "name": "Aktualna wersja Comarch ERP Optima",
+          "sourceUrl": "https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/",
+          "sourceType": "promoted_knowledge_draft",
+          "raw": {
+            "id": "REF_DOC_PROMOTED_DRAFT_2026_06_09_7B9B963B_AKTUALNA_WERSJA_COMARCH_ERP_OPTIMA",
+            "name": "Aktualna wersja Comarch ERP Optima",
+            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
+            "semanticType": "reference_document",
+            "sourceUrl": "https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/",
+            "sourceType": "promoted_knowledge_draft",
+            "documentCategory": "promoted_knowledge",
+            "moduleScope": "TradeAndWarehouse",
+            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
+            "versionHint": "2026",
+            "lastModified": "2026-06-09T06:55:47.254Z",
+            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.md",
+            "sourceOrigin": "KnowledgeInboxPromoted",
+            "summary": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch Optima czerwiec 2026\nSource: https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/\nTier: official\nDiscovery confidence: 0.9\n\nNajważniejsze informacje o aktualizacjach Comarch ERP Optima (czerwiec 2026):\n\n- Aktualna wersja to 2026.4.1.\n- Nowości w wersji:\n - Rozszerzono integrację z KSeF (Krajowy System e-Faktur) o dodatkowe fu..."
+          }
+        }
+      ],
+      "officialDocumentIds": [
+        "REF_DOC_PROMOTED_DRAFT_2026_06_09_7B9B963B_AKTUALNA_WERSJA_COMARCH_ERP_OPTIMA"
+      ],
+      "withdrawnAt": "2026-06-19T13:22:43.818Z",
+      "withdrawnBy": "root",
+      "registryEntry": {
+        "draftId": "draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima",
+        "status": "withdrawn",
+        "kbName": "Comarch Optima Reference",
+        "kbNamespace": "ComarchOptimaReference",
+        "title": "Aktualna wersja Comarch ERP Optima",
+        "sourceUrl": "https://www.comarch.pl/erp/comarch-optima/informacje-dodatkowe/aktualne-wersje/",
+        "rawJsonPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.json",
+        "withdrawnAt": "2026-06-19T13:22:43.818Z",
+        "withdrawnBy": "root",
+        "reviewNote": "Auto-withdrawn duplicate source URL",
+        "previousPromotedAt": "2026-06-09T06:55:47.254Z",
+        "movedPaths": [
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.json",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.json"
+          },
+          {
+            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.md",
+            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-06-09_7b9b963b_aktualna-wersja-comarch-erp-optima.md"
+          }
+        ]
+      }
+    }
+  ],
+  "skipped": []
+}

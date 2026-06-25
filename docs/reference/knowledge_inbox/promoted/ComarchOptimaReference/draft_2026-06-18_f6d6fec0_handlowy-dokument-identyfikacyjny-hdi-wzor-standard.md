@@ -1,0 +1,171 @@
+# Handlowy Dokument Identyfikacyjny (HDI) - wzór standard
+- draftId: `draft_2026-06-18_f6d6fec0_handlowy-dokument-identyfikacyjny-hdi-wzor-standard`
+- kbNamespace: `ComarchOptimaReference`
+- status: `promoted`
+- promotedAt: `2026-06-18T10:31:55.587Z`
+- tags: `HDI`, `dokument handlowy`, `GenRap`, `wydruk`, `szablon`
+- reviewNote: Bulk approved 2 drafts from dashboard
+## Content
+Uploaded technical file: HDI.xml
+Detected extension: .xml
+Saved upload: downloads/knowledge_inbox/uploads/2026-06-18/1781778232389_7ffb365f_HDI.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Zestawy>
+  <Zestaw Nazwa=" Handlowy Dokument Identyfikacyjny (GenRap)">
+    <WdZ_Standardowy>0</WdZ_Standardowy>
+    <WdZ_ID>1</WdZ_ID>
+    <WdZ_Nazwa> Handlowy Dokument Identyfikacyjny (GenRap)</WdZ_Nazwa>
+    <WdZ_Rodzaj>1</WdZ_Rodzaj>
+    <WdZ_Warunek>
+    </WdZ_Warunek>
+    <WdZ_WarunekAuto>
+    </WdZ_WarunekAuto>
+    <WdZ_Opis>
+    </WdZ_Opis>
+    <WdZ_Wersja>1.0</WdZ_Wersja>
+    <WdZ_Autor>MJ</WdZ_Autor>
+    <WdZ_Haslo>
+    </WdZ_Haslo>
+    <WdZ_Haslo_chk>
+    </WdZ_Haslo_chk>
+    <WdZ_KopiaEl>0</WdZ_KopiaEl>
+    <WdZ_KopiaElGdzie>0</WdZ_KopiaElGdzie>
+    <WdZ_PodpisCyfrowy>0</WdZ_PodpisCyfrowy>
+    <WdZ_OpeZalId>0</WdZ_OpeZalId>
+    <WdZ_TS_Zal>2019-11-12 11:14:01</WdZ_TS_Zal>
+    <WdZ_OpeModId>1</WdZ_OpeModId>
+    <WdZ_TS_Mod>2019-11-12 11:14:01</WdZ_TS_Mod>
+    <WdZ_OpeModKod>ADMIN</WdZ_OpeModKod>
+    <WdZ_OpeModNazwisko>Administrator</WdZ_OpeModNazwisko>
+    <WdZ_OpeZalKod>
+    </WdZ_OpeZalKod>
+    <WdZ_OpeZalNazwisko>
+    </WdZ_OpeZalNazwisko>
+    <PROCID>0</PROCID>
+    <KONID>0</KONID>
+    <Wydruki>
+      <Wydruk Nazwa="HDI - wzór standard">
+        <WDR_STANDARDOWY>0</WDR_STANDARDOWY>
+        <WDR_ID>3</WDR_ID>
+        <WDR_RPWID>
+        </WDR_RPWID>
+        <WDR_RPFID>
+        </WDR_RPFID>
+        <WDR_NAZWA>HDI - wzór standard</WDR_NAZWA>
+        <WDR_RODZAJ>1</WDR_RODZAJ>
+        <WDR_TYP>3</WDR_TYP>
+        <WDR_PODTYP>0</WDR_PODTYP>
+        <WDR_TYPOBSLUGIZAZNACZEN>0</WDR_TYPOBSLUGIZAZNACZEN>
+        <WDR_OBSLUGAKOLEJKI>0</WDR_OBSLUGAKOLEJKI>
+        <WDR_SERYJNY>0</WDR_SERYJNY>
+        <WDR_DEFINICJA>xÚí}[sŰ8–˙Waůá_3SÝ–¨›ĺ^'Ué\:žtÜŢŘ=ŮíúWą`&#x11;¶iQ&#x4;&#x3;’Q‹o;µ[ó&#x1;&#x2;öij&gt;ĆĽÎ[wľ×âBJ˘&#x5;€ &#x1;&#x2;Ů˛ĂT%‘„ĂßÁĺŕŕvđăŃ&#xF;0Ä ú&#x1;&#x2;ÇĎŹp”8&#x1E;Ľz{&#xE;.Ďü&#xC;&gt;Űs÷{ĂÉlďůQ&#x4;®!ýÉ™ű^rólŻçîwI‚s&#x3;ýë›„|?Ü? ß;ĎŹf&#x1;&#x1;_űˇ&#x13;Ŕ«„&gt;O&#x1F;w0&#x17;Ęż%(Z~ľDI‚fôk—?&gt;Aa&#x2;ĂäůŃ‡ł—üăë&#x1;&#x1;Îh&#x6;đóŁ+ň‹C˙9&#x1;&#x2;3’»&#x17;Ř&#x7;Á&#x1E;ű!Ďnwż&#x1B;%&#x14;5đží%8…&#x1B;9ęň|ç9Ęż±&#x1C;ĺź‹&#x1C;u‹&#x1C;Ŕż&#xE;IĆHV &amp;ß;ů&#xF;&#x1F;ÎN&#x1;&#x2;ć™k–Ż©&#x1F;zĎŹ&#x12;řkňü,‚“Ĺ•?&#x5;“[@r3&#x7;ř·ÎŹ:,í¨Ă&#x5;;k
+;¬::węHŁĘÎý&#x19;Śť&#x13;8w&gt; &#x19;&#x8;×39¸ÇşÓĘ˙5öI±/A&#xC;?Ŕ+Ç÷H&#x2;)&#x1;&#x1;&#x6;4•ä§&#x14;âĹó#řkD |‚O&#xB;‹_‡‰źź=R&lt;źh
+üpJ„ÂĎ&#x4;&#x18;8ý‡č&#x6;łçÇ&#x14;ŹŐy‚0Ë&#x10; &#x15;Ë$’E&#x4;&#x1D;ČxµŃ˛t
+&#xF;0ř‘ ’ŞĂ¤ˇHe] †{&#x14;= 9%˙­žJc_Á+ň&#xC;K§YIŢ`4+Á&#x17;…ę°äsTJ|&#x3;¦IŠÁY„iú§dA&#x1F;§-&#x13;.h®–?&#xF;çčů&#x11;
+aţ3ýÖa:_"&#x15;ë9&#x13;&#x14;¸´iáE‚CßŰŁ?ôč&#xF;aţ&#x3;}p=ĂťĽ¨ä&#x13;ŻÇNQ­W~@jÜˇ&#x6;JĘY´ÂĄ&#x1F;&#x2;ĽxÍ&gt;Cwó;H&#x12;ě_¦	ĽÓ"&#x1;&#x2;š€ŕőŻ‰&#x13;'`2=ţ•XĐžCštĆ?vôÚ…˘ÓúźÂ&#x5;/ĺ&#x14;¤¤?Q&#x19;úŕóŁh&#xF;Żé#ü{g-?&#x1D;š?Řc&#xE;(Nţ&#x2;&#x2;ç3&#x8;RHŐ&#x17;ŹűÄ6Żą&#x19;çĎ&#x17;˛ôń^Ńˇ'ł }˘běcŃ}×+c©í!khŽ/8&#x15;Ř°hÖý7úĺ«“ý7ď.ÎńësęŁ&#x18;öŇD&#xC;ęŘÝN&#x1D;/ĹAčudBü?nĎôĂĘ…t¸S‰&#x11;N~Â&#x1E;ýČţŁ&#xF;: &amp;&gt;Í#%]Ö&#x15;&#x5;şŰ&#x1F;îŮŢH×ÖKe_–Š|^+l‘śűŮNî7Ć&#x4;·4&amp;¸kc‚{gL&#x18;ňAá&#x12;q&#x5;DŠúüďŮWbCÔomďk‡©›ůž&#x17;Ŕr˘“Üř“i&#x8;ăĺ’&#xC;‚lŘ€gÉ‚Š†ąG]ű‰řMD&#xB;€A&#x18;“´&#x10;łDţkg&#x1D;»ŐÔjz8MťÂÜy'l«łŐôU}aîź!Nü	ť;´&#x15;Újj5Yěb«®Ő)ćs&#x1F;Î~ +ö—(Hga±OäŽ÷űŁáx08čŤ†ŁŢeĂ	đ&#x3;Ă˝ž1+“µ-
+öDłÝťeNřú‚O›W˙~ô“›cĎńÉ˛ęÇÓĺŇ€-&#x1;&#x2;Vë&#x5;ţ(Fó&#x13;Ľ¶RaBĺů:G[ţF–+32ł'Sýâ3©ľ€,Ń;|-Ă~č¬K&#x15;`ş›Jťe+uŠvë¬·´¤Ý‡ă}×&#x1D;¸ýáÁ çŽ&#xF;v°á·ŇÂ' ›&#x3;¶8N—M}&#x1D; KÚŚ;°B$kţć°Ń:±(Çc4Gw°O&lt;Đao|ŕv&#xF;ű_Ť9žľűč˙ĽŁ†"?ţÚěp0Ţ&#x1F;ôz˝ŰŰU3ĽĎáđ8@_ţńűßvŃ&gt;ý&#x1;&#x1;Ĺ“ű´Î0ť]Běxţur&#x6;Iű|łÇ&gt;Ç/®&#x12;Ů/=z$‚Ň=Ç&gt;=ď&#x13;}ěCţ?7eŽőŔ–ŢŰ&#x1F;Śú˝áhÜ&#x1F;¶–ţç÷;gäs|q;»×Í˙§âÄ&#xF;Üýˇ{pĐíş‡ĂľŰűęM»·›¶ťµĆÝŔ¸‡ŁýQŹxîţÁř°űŐ/Ř=˙ł–qß=ĆMéWY"ý•&#x1A;m&gt;ýáË¬xy@zďť%Â&#x19;&#xC;üI&#x16;úÓŕ^űÍňŚ–TµúŚ¶Ř"IK‡ąyM/kn–&#x6;‰Ďźű&#xB;=\~­&#x15;Đ¶×Cµ×WXsÄD;&#x15;a!*“+&#x7;A&#x4;‰:&#x8;b­&#x13;¬}l&#x18;€ˇ&#x7;Ö­Ć3î_˝&#xE;b¸V5k}y=Ă«
+ćx\Ł0­|&#xB;GV EĽ4Á&#x1B;ö+&#x1B;ma`:ü&#x1E;Z&#x1A;~&#x1B;‡&#x1E;n-G5FţĂňČĎâ+ŚökGZ®µjŃ8m#mł‘ŘľzŰL»ŢL?E~ü§?=ąv2
+c~ś&#x1A;,ŽDÍú&#x11;\§Ú¨w«ękiÓ?ďĎöż–65¬Ş&#xF;ČËŔ­"0%S˙/˙ÝV›ŢÄŠ¬˛.Ýj»AŘĎx J|źÁĂe˝4řE'&#x13;U&#x11;7ŠđťöQ­G;y(Ň˛5:Ĺ˘©łZW±Ó1ßŰ-Ż®5Î$ŕ’VŔ&#x1D;U˝’Ş&#x1E;Ç“÷ŚŘ¨¶;
+(»Čşť,~(ĂŰČđť,žÓÖ"ËúÎňË&#x7;4_%p_Űë?¦+{÷ÚŠ¸Cú|eKr!†^)›K±&#xB;#&#x15;˘L¦&#x8;7®-ÄÖ&#x2;&amp;ŤĆ×S4ą!3&#x13;&#x18;úĐ‰SŚć&#x13;đťŁ&#x18;d›«Sś|&#x6;&#x18;Ă«&#xB;v;s¨uVÂv	OŮuË·ŻŽ/ÖJqĆ&#xB;AúŐJd'7ővŻ×&gt;úľĐşťÇâvŢűđ6ž@'BŮ"ž‚Đ&#x7;NÇˇ§*É&#x1C;aÚŹé÷xúĺŻŔ#Ó~ňőaťŇ¨‰SĘËxş,bë“ZźÔú¤ťőIŻ@&#x2;śů"^|ůëÔXs`&#x14;eĘMq'5ĽđHÍŠąĎPV˘&#x12;&amp;ÄŐPGS|~¶‡Éźogło=ŹTÂ&#x4;&#x4;0ôh&#xF;ąĆđš,ű&#x1;&#x1;s„«źy&#x8;ë›&#x1C;&#x11;’‰a&#x4;ąL9Ął¦¬ő¤­'m«ÚÖěŽLĺ˛&#x10;LŘ„îa=ęŘd&#x6;·^Śv&#x12;×şžÖőě¬ëÉŹŮřýc„“Ôńť[2;pČ&#xF;1'&#x1;&#x1;ă$i‹Űpń°&gt;é°‰Oâ&#x5;&lt;_–ŻőG­?jýŃ&#xE;/*Cčx(YL˛ß˙‡M‰Đ&#x4;Ć)éä“›&#x10;&#x5;čšF&#x11;&#x13;˙ôŤ&#x13;’.ćÜ‚)úňŹ‰Źć‹Éq]DÜK§ĚW‘ď&#x8;Ě‰&#x13;&#x14;Ó=1ú&#x3;›`q!j&#xB;Ŕ‰&#x17;q&#x2;gżýsîLI¶0
+ü%¤MOGV€éĺ&#x19;˝2&#x18;§&#x11;­Ââk‡J–*ŕ&#xF;˝?~í&#x1C;”m‡»ź&#xE;§&#x18;vo&lt;˙&#x1D;šąM&#x6;\ň&#x1C;íZ8sźÄP»Qź•íÖ3j·ŢŁk7&#x16;±á&#x1;&#x1;Ďăq&#x1;&#x2;ç+&#x12;ž&lt;¨˙‘Ärtžp|Ćň®Ł;Úw‡ýîÁČ=Č9j´C7Řv%űˇS&#x12;ę¬?ŢÉăw&#x14;m&#x16;0xÄSLkqPş7b&lt;&#x16;?`űcź'(ňďö¶&#x1C;™^‡ś|PANţ&#x16;„^@fµÎ+4M©cvŽËKńŻ}’(ŠŇ“3ßođâşm&#x1;&#x1;ßÎ&#xE;&#x10;dHîŹ&#xE;űăÁAA_g7¸ďŢŻ¬&#x18;®‰˝&#x1;&#x1;83˙÷żÇŔ	}&#x18;!Ď&#x3;t	ě`”]ú&#x8;ŁąĄµŞë
+”˙i+;~&#xC;ň›˘T˘"ńĹ{&#x11;âBWčL.ăÉs&#x1;&#x2;ś&#x2;¶Ü_K&#xE;ŕ$Ë“}˛Ŕ/62×dľqđâň&#x1B;'ž"śF&gt;ŇÇ|†;Éř7¦ÔĎw
+–Oń]…„
+Ü‚["‹ă)&#x11;˛Zëu¶&#x8;Ü?nŻQś9)í&#x1C;x&#x19;ß1	&#x1;&#x2;©ł&#x10;NMî&#x11;4žn=’ĺŮXTŤ¦ăł8
+˝»±rQ—b[ăŰŁ{t{&#x3;ňŁŻŠťźA&lt;ţ&#x1A;®ň¸á~8&lt;p{KţźŽXîpż7ěöGŁ&#x15;•ˇPâ&#x1D;”	…Ä€&#x7;Ä‰9Vo8&#x1C;&#xF;7&#x1;&#x1;·8×ÚĘBÂř*ť|9v‚ť·ŻŽm&#xF;‚Zuű&#x1E;yţ•Oßűă'&#x1;&#x2;É*Ý«űyŠ&#x17;·'ô„öÝžd'0„ź&#x1A;±(ÝŮ&#x15;dJXŃË{‚’—ĘěI#ŢäŻ”	+ß)Sw&#x3;2†d.ř(\mĎ\Bj`&#x11;Š9U
+&#x11;ť&amp;8·YZ%´Áś7ç)&#x15;s÷śÉŔ§ü‘ŐžĘňŃ&#xE;Ă¤±„^cŕáP&#xC;Y%&#x14;yď¬•gVX&#x1F;żő=&#xF;†Ë=NfĚÔ&#x1D;QŔBlÝ$ß/Ó´-™iÁOýGbZ&#xF;nY(ąÜCtŹ:«/MlI&#x1B;ęľŚçťţÖĂMÜn“c&#x14;™U?ä!Šá’pżáź&#x7;&#x19;.źüTÄCV°„ŠTěŚč&#x15;šju&#xC;=VŔ{&#xB;Ę'â^ľ—ž&#x1A;ľž°ß&#x1D;mĺĺyzTo&#x1F;Ń&#x1A;
+őŔŢśŐ&#x5;ÓáŤ{TÎNŢŐľ{&#x1C;&#x1E;lGÇŇs|ÂGĂS&#x18;„&#xB;w·®č°đÖfěIĽ&#xE;a›[¬ŹýTp‹»¦ťĘřŁ‡ďg®sŻű^}wĽ8îö&#x7;ŁŃÁáh,ßĎr&#xF;éKŃGĂCW Ww›J—ßErrÜŰŮťőťÜă~&#x14;™zĘ[ŕOíäŁöćz÷` ădzÝáţ¸ďv‡&#x3;c&#x17;Ss&#x18;}°iśbĂ›rżć·»Á-ĹżF;?&#x1D;v»Źqź©v´îËW'&#x17;o|2o&#x1C;&lt;Í&#x8;ëÇŮŚnăf&#x1C;î~3ÖYj&lt;¶ÓC‹^ó…‡‰Źß&#x5;Ży÷d‡ć)&#x1;&#x1;·`˛8‡¤˘P(?ÜŃ˛ăŇË;Š&#x17;%&#x10;%9zéĺ	ëŰFńI&#x1A;&#x4;˘WSŘ=‰éé&#x1D;Ĺukźńm&#x2;S&lt;ţ¶ŤGs&#x10;ó&#x8;Ľiż‘7}ď8A˝öâŃ¶Ý QŰý&#x1C;ř&#x13;Đ6Ý6ß&#x14;Ŕ`˙ţŻđŻF&#x5;˝-ŕkJO&#x4;¨Ł¤ l&#xC;ń&#x13;ČŰöuŃČŻŮNďó#Ź¬Ą¨&#x6;APÚýe&#x13;+ćŃ&#xB;‰+?H`eŚÂ=ľ&#x1A;éĘÇ|&#x1B;Úđ4Ęu‡ĂáVÎŁňžÁkŽw›˘Ţ;ËĆčđĆą÷&#x17;&#xE;Ňę›&#x3;śÔ}g,µŻ7i8!ť‘{…Ő&#xF;&#x1D;‘í=Őť˙­Ć¦}&lt;9ţE&gt;Ă&#x1C;X&#xB;&#x1F;:ö~&#x1;&#x2;Ó&#x1;&#x1;xéÓ	"&#x1A;Ř&#xB;"&#x1A;ě~&#x10;‘Ň‚TÁŤîŁ˛ˇđÁŤČRŚc&#x3;ŕŃĂĆ8¶ś&#x12;;Ŕ—Ó&#x12;&#x16;í&#x1A;aQľÉÚÖő¶nm~„&#x4;nA]üm¸&#x10;Ó©9&#x19;`”ÝéwOŕ6wŰçÚńĺáşśî!ŤŰ8¦[:Mü
+#»·&#x17;ă}&#xF;AkÖFľ­”tw/&#x16;ŕ&#x17;&gt;JŃŃjN:*&#x19;ľ&#x18;źžăŃËőě®8{&#x1;&#x2;ELďĚ{ŕËż&#x16;Oa8ł&#x16;nŘ•‡’µ—´Ű(§öjxűčv&#x2;ßzc˝Kĺýý±Ö]ńŢh˙@çňąË.ź÷F&#x7;Ă±«Ŕëöö»Ń°;&#x16;)~ň/ńł&#x17;&#x1A;'&#x19;„ÜšŮŻ&#x13;ôţ ś†&#x1A;ńň&#x15;=bLje0ěŤúŁÚÔ:[Ö&#x1F;(QÎĎŻ&#x15;›Ö=&#x1B;›ÖLÍ&#x19;źle&#xB;ÍMk·Ń&#x1;&#x2;áŽ^Íďnëj~5đĂďZďW“Ż/&#x14;&#x19;&#x1C;W¬4ţăA–“_ÝĄ˝&lt;Â›3{9?ż~Ŕ¸îvđÚŤÁkâC6®ĽĂŕV1€ő&#x1F;l&#x1;&#x1;ëµ&#x3;X;€µ&#x3;X;€m&#xE;`SâłĐ|ń&#x8;·˘ŰŤËv&#xB;±ÝĚűŞ·Ő&#x6;#2¦t-]mjĂm&#x15;KľÓ®\Ú•Kľr9&#xE;Ă…bĺ2x°•Kż]ą´+—vĺrď—&#x10;
+Ç@ű«Ę9ŔOĂÖ74ć5uíńšş»}%á®=©n'4ł¨Ý±°J&#x3;Ëµ‘6"5v&#x3;c:&#xF;hZ&#x1C;Z™&#xF;z÷"W¶…ü:ŰÉđR&#x1E;áŽD¦Ô2kO&#x1;&#x1;~W}wf&#x14;˝mÍ(ÖÝ~wŻ˝˘ßhwÍ&#xF;ů«sÁ—˙Ž“ůĂľ&#x1;&#x2;ÜmôfKeÇýŞŁwżĘđ_w«áżťâEW&#x8;%ćëŠűV6¤F4§Ď´Ć¦iĆŮn&#x5;·[ÁmUÔÚ&#x15;ď÷Ýaď {x8RF‡Ž‡űr&#x6;F÷p˙`p(Ů4ß
+ˇŘxËŻ~´wylĽ;/©&#x1C;kOŢf~Kú˛-Ň—^Ëůň49_&#xC;_=ůŤĄ%š~/&#x5;&#x12;đqAšyîÓ›`»Ĺôď‘ĚÍ&#x17;ń}Ňü&#x13;•0!sz:Ł/&gt;?ŰĂäĎ·łŮ·žG*t&#x18;zÔďSë#ł1Ŕ,eő3q&#x12;—&#x10;żÉ&#x11;aŠQ&#x4;ąL9Ął¦ěŢMíŢ-Ť˝Č%ľČČó;edyž&#x1E;ÜĆŢľýîýűÝ1/Ëgđťí&#x4;¸Užš=ŕUaI_yčFK/“ZßŰkB&#x1A;ůS&#x4;1ďĽ-ňc_E°ä˝&#xF;oă	šŁ/˙řýoßPÇF_ó~ŤĽŚĚQ)±r1Ç¸żŔźÎ=EŐîxËśúp’ýţ÷ß˙FÚ#B^äÇEs&#x14;D×-&#x15;ÄNń2&#x19;¶÷źśoťyöŰ?±s&#x3;B/@sŇÂÎň&#x5;zwŚXZ&#x1;&#x1;ś™˙űßcŕ„&gt;$&amp;â&#x1;&#x2;ö;FŮĄŹ0šűÎ&lt;§‹@,!,Nb˛žKoˇ&#x13;“§&#x1D;ä9&#x1E;e“pÉĎ‹IF?öşÝ±÷·A*±µ^hZű¬úť&#x8;g‹&#x8;xÓ´¨Ů&#x19;F_ţUT_&#x1;&#x1;żükA;# ˝’¸JR{&#x19;`&#x12;ÔC~Uőő&#x7;÷Ź¤ÂN¨Ý%8—!±¦)†_ţ&#x11;řż˙m˙žéHvĄNz´N&gt;’őÇ—ż†tĐ„´c˘K2&#x1C;Đ9&#x13;í¶÷]3»yšŐľÍ«=H˛ň6;wĐíw&#xF;Fîfśó˝žr&lt;¨oŇQ^ą0|™-&gt;~ź’&#x5;W&#x6;&#x1F;ă»†/iÖMwř&#x1F;đ&#x15;ĂřţŹ&#x16;ß1üÔŢ0ü&#x10;ď:«&#x1B;Ů}ßŻ1·ŇëY—kôö&#x17;Q@—"·ŕií&#x4;IĂć‹ŕ˘Uč"&#xF;;Š©gŁ^ŠU@Ěă$ą_*ą·˝"¸ąü+ó‡ĺ#U0MR&#xC;Î"Ě=&#x1E;W_Ö±Şń’ÂR»ě­÷~ŽR–¤gH'ŕăÂĂé4Ý[íoËä‹wýT&#x2;ż99&gt;=Á&#x1A;b~ô=ĚŢa&#x18;Ăiµ4[Mµ&#x1C;{MźžŘ°Rě&#x4;żC‘ďWĘ&#x15;Ű˘JA&#x1A;&#x19;ů&#xE;ŃŐ&lt;Ŕ™«/Ú«&#x14;ĺ›xđ&#x14;e‹x
+ř Ţ&#x13;d¸ĎB0É ÎCŚ••|Đ&#x13;\Ň·VŠź˘Ébś–đ,Ĺh&gt;©ÎĘ&#x7;"&#xF;nĎ1&#x8;ă&#x8;á¤ZÇÝ‹)šŇ,đźv&#xE;8ńI·_ë‘Ą&gt;ŘÁ&#x11;?!&#x2;D&#x2;y^p6ą3@`qî&#x1F;|XęŞk˝śĎfÖ&#x13;é„&#x6;L'‹&#xC;PDäŃÝśÔC{&#xE;Ščˇ9&#x8;–‘Ń|T_ďąů8·PBHäŮÄ(‹&#x10;±Ł‰&#xF;hµÍě Ď¸™ćů•bnLs*&#x11;ç&#xB;Źő&#x13;CÄ$%ătFÝí&#x4;†&#x4;}:Ąž~…y&#x5;ČŚJ1­&#x14;˘†iŔč^M.&#x3;4%mC&#x6;Ó$DńÄ7ĆcslS,ňĺf§‡AwÚ1&#x8;€i^&lt;piś&#x17;jű&#x1E;šĘł˘iď&#x14;&#x7;^qŻ`Úw(Ö4ĹVň„"h&#x5;'Jć	řő
+ChŁtÉĘń[@ŁÁ*Ćeô®Ěm	N-`$tŁŇ¬c@oA\&#x1A;™
+Ă`ę&#x6;‰1^nŘ×©˘|Z.&#x17;ĆÓ&#x1;&#x1;š{&#x10;˛‚ ĆcZ¬+P&#x1C;Ďx&#x1E;Ě-Ě&#x1;&#x2;ŤKvĺ“'ÍÇŽ&#x1C;f&#xE;Ż}&#x18;‘Yi&#x10;&#x2;[8&#x10;cÓZ"«$ăšţL–ü&#x19;°‚Ů|Ö&#x10;ëÚ'N&#x6;ä&#x1A;Ă&#x4;‘9&#x6;&#xF;ş5†!©† ţŚvv&#x10;E¦Î‡&#x3;ŃUS 846ż)&#x19;—Xś™ĽWiĺ…ŕç&#x5;y”&#x12;,5Í
+ňŘŔNfę·ľ1&#x16;†ÓÄŘĺä0Y˛HŇŔ¸|)Ž&#x15;ÎtmŤY&#x1;&#x2;2ł&#x1;&#x2;˛Ń?›ÔĎ&#xC;\{hbl@&#x4;&amp;Ăž9&#xC;L&#x7;¦ &amp;ë'Ó’Ń“Ű)†q@ ň&#x8;ř;‹»&#x6;&#x19;&#xC;&#x11;™™#&#x1C;!CK*pč&#x6;…)&#x14;&#xE;ü8I)Ô&#x1C;e,ęÄ&#x14;‘&#x1A;VhlZ&#xC;&#x6;]N&#x16;6˛&#x13;Á;“˘úN{…&#x13;áąŤ&lt;qIC$ä]&#x2;ŹiĎ&#x1C;ÇFG&amp;0p&#x6;üŔ¬Ş	ĘőĚ&#xF;y™l&#x14;ČGxBfú&#x13;ó™H&#x1;&#x2;v&#x1D;„&#x16;ŠF‘¬ä‰Ś»tď.Aó…y¶čDŔ&#x1C;eĆÎ&#x1A;ĚqBÍk	§g	§o&#x1;&#x2;ÇWíËÔ@±Ó\!öĐ,µC÷,&#x3;&#xB;HĚ śąŻÚ&#x1;&#x1;ŃĹIČ/W(4ö‹)=&#x6;3ĎÎ&#x1C;Ý’áŢË’ąy'—Xµĺ¤‡ruĹ÷dČLĐÔˇ]]E&#x18;Âˇb'Ý&#x7;Ö Ż@d&#xC;&#x16;AĘaă™ĂĚ&#x17;ń"&#x1;&#x1;·`b8ł!P&#x19;&#x8;,äČŹÍ &#x2;Wô02žřd"j:Śň]&#x15;&#xB;g2&#x11;Śˇ©‰Ós&#x18;úËś&lt;ŞÚpÖĚ&#x11;A›‚tr&#xB;m …ľůÎsŽc&gt;#)&#xE;¬Čş+3.&#x1C;Y&#xF;Ú&#x1E;Sś&#x4;N-ě…&#x13;$&#x1B;sŰČ‚&#xB;!&#x18;ö¦~&#x11;ß&#x3;2G±2őc8(1źhç@&#x16;¬š&#x3;&#x11;Gk&#x5;ËĘÄ¶ŔéYÂé[Ŕ1źŘr&#x14;;ĆhebËp¬LlŁĽ»&#x2;&#x1B;8&#x16;&amp;¶&#x4;ÇĆ„”ŔŘ›FtĐ7źÍD&#x18;Ú8ŹĹŕRUËzŰµ&#xC;D°Ł]&gt;đÖ‡Š0š!zŤla&#x3;­ŕ&#x7;1.d&#x6;g—8MTÎż6Ô&#x1C;&#x4;VĐBh+_&#xC;ÉV¶&gt;Ű0.Žc#K0 ˙™÷&#x19;A&lt;§QUs87ťomž¬6A‰Ë[ľ
+&#x15;'ŔĆ˛ŹŔ$iLdŤKÄ€6÷ ë/&#x1F;	’‡›‡&#x7;E(™ű&#x10;Ó;«ĆQ&#xC;	Ä”&#xF;Ë4¶‡ĂdsŚ’”­ą|Ó¨ŁŤ^Ň¨t8ľ3•l†˛¸d.ÉÂÚ&amp;‰&#x5;‘5Ťę'ľ!ĎĽá8IŚ1Ě"ZŢĂ6®˘E&#x14;^š‚|&#x6;ćN–4·&#x17;Đ&#x1;&#x1;¦ąyĽ&#x18;HŤç¤ů4"&#x3;Ó4Jç%Ů&#x1C;&#x5;!yś†äN&#x16;™±#!}ß¸Â&#x19;Ć&lt;›NÍqĐ&#x4;…”ëřÁť‰—&#x16;^‡&#x7;śo s6żÍxtJ&#x2;Gţšy¬&#x15;&#xF;ź!HĺtSbm˛Rź“É&#x18;^ÂđçřâvfbŐ&#xC;€ž¬“5R&#x16;úSł	&#x16;CË&#xC;ó“ĚŰ‘4&#x19;v¤őŹ&#x1;&#x2;˝c%Ľ&#x7;&#x1;&#x2;/6,ĽţĽ&#x14;^°AŰ0"&#x4;^&#x4;‘)&#x2;ůk:ěC&#x1B;s&#x7;¸i&#x6;µ&#x1D;&#x11;Ă`»&gt;F~źÁ4:9PŘÓ	¸nŻŐ´×j¶s­&#x6;Ěý&#xC;™ĎŢ&#x1F;Çíś&amp; íőśözN{=g‹×sAĎP&lt;›™wŐbY› ,&#x6;3µ&#x1B;Ň»źłă7‡¸?Ť7(8&#x1A;c%&#x10;zđ‡»ŮÄ`č±.dS4&#x3;I&#x1A;!OQŕ&#x1A;™+ˇňMZ&#x1B;°KĚ&#x2;ß·ŠĘŠ/9ç¶&#x3;ľybm&#x7;wăhÍ"l­&#x2;skŘV-sô-T3&#x7;¶_Ďk¸–*:§I±ľŃĄ&#x1F;ÓŰ? ň·&#x7;î&#x5;éµjwÉX…@q&#x15;üu&lt;Ű&#x1E;¸%?-&#x3;ç©[Ta»§Š•`pëÇh{
+,z&#x4;!ţfÍ&#x16;đ{[ÄÇ—©·&#x8;§é6Ul&#x6;¶ŘŐ&#x10;&#x13;WJěu›žČJp¶J˝&#x11;F&#x8;/	žiŞ„&#x1F;™&#xB;ŹĽ&#x1A;»!˛&#x1C;$ŮÍďÉol&#x1B;6Íi	Ő&lt;®.&#x7;e'ă‚+ý†Ő&#xB;…:é&#x1C;\űÓŔ§&#x1C;Q6Ş2#­&#x1E; –WˇĺUhy&#x15;Z^…–WˇĺUhy&#x15;Z^…–Wa‡x&#x15;6&#x11;‰419&#x1F;b`…mˇ%mhI&#x1B;ZŇ†–´ˇ%mhI&#x1B;ZŇ†–´ˇ%m°OÚ0c—®MkžáPżäÇSd&#xE;6_xŘ&#xE;#…‡­”Ž&#x2;Ů,ŢŽ&#x11;eP&#x18;+ő”Ń};[Ő”dn§pÉÜRé’ąµâ=]r&#x12;ó&#x15;@4ąŤÍAZ’”–$Ą%IiIRZ’”–$Ą%IiIRôahT&#xB;˝Ed&lt;nä@Ć·â[Ú––¶ĄĄmyü´-Đ&#x2;QJ&#x14;řI&#x4;&#x16;-…ĚV)dćS&#x10;F&#x8;YČSKFÓ’Ńě&amp;&#x19;ÝŐ´&#x1B;+ś6&#x14;&amp;™&#x1B;çf×¨qŇ&#x19;&#x19;¤í„W&gt;e–&#x1D;d&lt;)ĘâČ&#x12;&#x15;Ţź9ÄěŐĘd&#xE;Bj~’-ÂpAŻ|ššą&#x8;W0nÂć&#x3;¦&#x16;…Z¶#]Ţ™ÎęmĽdÚ{÷őŮűoŢ]śă×Ś&#x12;hŹ˝ą÷Ys•ŢĎ]ĐŐtXň9*'r.!’ö)YĐGé{áĂ&#x5;ÍÓň&#x7;ňá&#x1C;=?B!ü	źóDú[‘Gžł&#xE;}yđŚĆ×Ň·žÇź‚ĘW	;D˝Ë\đ‚áX‹
+…&#x1;&#x1;ĽDA:&#xB;źíýżO)JţM"É&#x13;ąBRŮĎöŠŽDš&#x7;{4Čý&#x14;ĹĎöÜţUT5aŠžbäi+&#x1E;©&#x14;oŇŞTčżű€v6&#xE;dŮ¸ËÁ˘Č@YtCőg€'7&#x1;&#x1;ßŐ&lt;®ĐĽäj©Öś‹ęj&gt;&#x14;i&#x16;sşHt‹„7´łx&lt;rGűP¤}Ĺý"VX¤ëéčnjŘds&#x11;*ş+¦Y&amp;&gt;Îö"VBÓô{&#x2;dN&#x1;&#x2;#F¦işí čů+f&#x18;!|‘¬§ˇż‰ź3Ć&#x8;ÁYšfŢ{#&#x11;vÎ$#Ag©šna(†_&#x11;ĚHu&#x14;"şţ§w VĹřg¤ZHŞ¶&#x2;W¬€&#x11;ÓH&#x15;TM&#x5;’–Xç«‘jY	i»kIiÖ	m¤ęVBšę$mĂřn¤ZHŞ&amp;Ľ`&#x1;&#x1;ČipÄŕ4MŻ&#xC;&#x4;Čü&#x18;@ŚLÓô&#xF;EČŚ2G‚LŇ4;µŔko˛Ő&#x8;µÜ&#x15;Óő€‚j*óŮµ­‰hŽ¸=ASŻřdÄZňdÍ˛&#xC;Dµ—ď®ńY˘&amp;ş ×	î€
+őlČé&#x16;¨/Ň)­.š¤‹,&#x1;&#x1;..ŹŠ±yŞ®UIá‹]&#xF;•&#x12;.Ł«JÔ.Ë;§&#x12;5&lt;YSĂH®€]FUę &#x12;šj&#x4;Ž6ż©*V@Ót§
+&#x2;čâ&#x2;«&#x18;ś§jÂ÷ĄđĹ&#x1;&#x2;‰J	—Ńµ[Ac¬nľ
+Ő&#x14;Éš&#x1A;ĆB&#x5;ôN¬&#xC;=4ˇ&#xF;…ĐůU&lt;&#x19;:KÖś(w…
+Ř–·&#xC;ž$j‚&#xB;úYér­PĂš„Ţ0ŃëÉÔäWo&#x15;j„¦&#x1A;Íć&#x17;sĹ
+hšfE	|ëÚ}]!ü2]3÷#ˇ
+iîYšfî&#x5;®{uĂWŚž'kćý@¨`ýîŻLËJFSŐX¤*Źt(a©šUu(…_^&#x19;ViÉ…4§OCAÇČď&#x14;‹•Đ4ÍEjW&#xC;=S@Ď4ˇ]1´Ęé-Ó5U&#x8;*fu3Y¨ˇHÖTĐ&#x17;*Čď,Ë&#x14;°dM&#x5;&#x2;ŹQľÍ,V˛&amp;˘;Y&#x12;&#x14;Ev×Y¨S,¬;x&#xB;ŚaíR´Xa‘®×MD[ąĺűŇJ-TDS‘Ŕ&#x5;&#xB;oS‹őmJjşŔV–×˘ĹşxŞ¦)&#x1E;Hŕůuią&#x2;š®Ysc‰Šü&amp;µ\&#x7;&#x13;ĐTr¨RÂ®YWč!2zŞD«ÎŇ-lą".ˇ©FĐyÖ®h&#xB;•,Ó5U&#xC;„*Tž´HÖÜ’&#x19;
+&#x15;ä÷şe
+X˛î&amp;¸&#x8;yśľL&#x3;KÖ¬Ł‘PŞ‚´kç@&#xC;˝~I\Şc%¤§lÔ“+c±öJMDBŻşF}ąšę&#x2;é—FÜěĄ;&#x11;2MkBš&amp;0&#x16;+ĂŇ•nžŞ	(„/.SČ&#x14;đt=&#x15;Ă®PEq&#x13;A¦‚§kŞpĺ*z&#x15;*4ÝŐ°'WŃŻPŃ×T!6_~µAŞŔ&#x17;&#x1C;&#x1C;á&#x7;2xµ1ĺ&#x2;šJÄN·¸&#xF;!ŐÁŇ5UŚ$*Š«&#x12;r%\BSŤŘA&#x16;÷(dJxş¦Š±D&#x5;żb!WAÓ5Uű÷ň&#x1A;żLG. ;&#x10;Š[=żă!ÓÁ’5=»Ř‡”nČÔ¬	i*&#x13;z“ś&#x1E;@˘…ĄjÂ‹*«Ä&#x1B; Ö±&amp;˘»&#x13;Ű&#x13;j&#x12;Đ
+Č4njN.”Š9ů@…J*¤©Lä6—ä&#x4;b5y˛ćx?&#x12;*XżB/Ó˛’ŃíI‡B]y&#x1;&#x1;·LKÖ,ŚČ­±›ŕ&#x12;p?Ö4k3»s?\¨ˇ$Ł{HŇ&#x15;éZ»&gt;.Ń´”ĐÝC&#x10;´F~§[¬¦é®­&#x5;q÷®·XIIHłŐ&#xF;ĹĘŠ«ŕRE\@OÉAW¬$ż%.ŐÁŇu÷”FR&#x1D;ň&#x19;ţJ@W‹¤mV×Ëĺzr&#x11;]M˘^łş|.VS¤ëYÚ+VQÜK—ęŕ&#x2;ş]E\&#x10;ŐZ¸HÖ,FO¨@nYú&#xE;ţ /„®^Đ•…4Ë1&#x10;+“ĎÁóTMřˇ&#x10;^ą [¦kŞ&#x18;ITä&#x17;çĺ:€ž’ńˇT‰˘Ł/&#x5;4ckşR%Ĺ…{•&#x1E;.Ł©JÜ&#xB;•«ŕeşf»&#x1C;ČUô*Tčú’±\EżB…ć*ř@ÜđŠUpžŞiW]&#x19;Ľş&#x7;ÖZ&#x5;Ź%Ť­Z&#x5;/Ó5Uô$*”«ŕ5	M5b×¨\&#x5;/Ó5U&#xC;$*&#x14;«ŕeş¦
+±ST­O‹dM&#x5;b—X˝&gt;-&#xB;i*&#x13;÷sŐ&#x1A;ˇHÖóUcQ/_ň&#x1A;&#x15;äÉşA&lt;&#x2;ëÍ	&#x6;„đ,MÓŃĘ Ő‡ńë"šŠú&#x12;Eë¤&#x4;r]+)Mu&#x3;‰şĺ­+ą®\DwNÚ&#x15;iZă4(ZJh&#x16;h¨T3—î¶”…4•Ť$Ęr:&#x4;ą"&amp; ©ä@Ą¤˘@…Ś¦Ş±DŐgE&#x1F;âÉš
+&#xE;ĺ
+*JÂ%tcEĆ¶d_&#x10;+É“u5¸"%b&#x6;‰š5&#x19;ÝŤ	‘.UXb­xÄ®ŔµĹŇÓĺ&#x18;ëćZtRşbV&#x10;çÉş9ď&#xB;5&#x14;¤&#xB;2&#x15;&lt;]wLéĘt(ĎĆ×E4·nşâúRŔE˛n}	ś˝€A¨L ©«WĐë&#xB;–&#x6;±*–¨{™Dtă@ÄŢ Pµ.¨­VĐ+U&#xE;¦Žw&#x11;…;&#x17;Ě&#xF;&#x12;đX#J&#x14;í\f„čX‰čö&#x1E;‘¦X}Ła™®Ű&#x10;Ý‘PÉLzÝ•'jĂ&#x1F;&#x8;á3épĹ&#x13;µá&#x5;cn™íA¬dMD·Ů&#x7;BM”&#xB;B¦"ĽÔĹ&#x16;8Żś×AÍŇt±G"ěuľ&#x7;‰Š•îŃ–Ŕ\&#xB;6&#x8;ˇ&#xE;ž¨éŕE×#î2H”¬ÉčÖ™ŔŞ6é&#xB;„ęîŠé&#xE;÷=‘F,µ&#x1;&#x1;–¦[šC	6'&gt;ăÓt]W5&#x10;ę¸KŠ ÓU–Óµ76rurÚ€Ów&#x1C;y]GyPáXtrCrŠĎďŇ1&#x14;?u
+¤çGW~@F8ç&#x12;ÄpI«p&#x2;®éóżFřůŃ%É&#xC;^ĽfźˇË&#x19;&#xC;üË4”&#x3;áó&#x7;xEé&#x1B;Č?&#x1;&#x2;-Űë_&#x13;‡L9&amp;Óă_éĺlÇOŕŚě02…+N&#x11;Qbj`I&#x5;&#x14;E'&#x1F;$Ž®#%XYËU‡ć&#x12;öž&#x1F;‘úŽ“ż€ŔůLú ¤&#x11;ŕ=&#x5;EE!M&#x1;&#x2;ČĂS?ô&#x8;Ä,"Xź¨&#x18;űŘá?wÖ+ĄĂë©Ă+R@žńfyo'g„ŕm˙ňŐ	˙°Ď˙{łvG@&#x14;qĺă&#xB;ňWŘ[–i&#x1B;VE-ˇs&#x17;F&#x16;—ľLÓ‘o&#x1;&#x1;¬ĄnÚyáú*ěş\Ţúv˝Ń&#xC;9#He;p9yC$s|q+Ľ5Ŕ&#x12;”&#x5;ľ‹BcŁ&#x3;’…ţ4"®&#xB;mÎ&#x19;8&#x1B;Ź&#x8;&lt;“"f52™Č&lt;t‘Vm,LT&lt;1ĺ)&#x1B;&#x10;‰&#x1F;.r&#x18;Ąď+ĺĎ†Ťä”2ŐFÂ&#x5;&#x15;V‚á…|@ČÓ4[“ł…&#x7;`ńDU%–Á$÷üh‚Fc&#x12;9ňW2jçiş0ˇ&#x2;&amp;Ô†‘Î! ¶…rŃümČ2$–¬Űuř#Ň&#x10;—ejc&#x7;Yn&#x8;;Ć’‡UŮţÉ2&#x16;ě~)Ťî‹Áča&#x8;‹¶ÎO$3Uű|D*Möů‡$žÎ„nH&#xC;7÷3$]Żä©zP¶hŠb2\&#x4;bµ‰‰&#x14;Xµ©„0MY‡¤í[źfH&#x2;cÄ(´=
+!ŰŚA¶	‚¶Ë&#x8;´]&#x2; ŰŚ?&#x16;(~ÄĆY›ĎG&#x2;S—ĽGŢëĐt†âŮLž­Ą€fŢň&#x15;~‚˛&#x18;Ě&#x14;îpS°ĆČc‹cHZ/¶(…$&#xC;BÜ&#xF;Ĺ‰’G¨&#x10;Şa§üA2 Ě*‡#‘hť&#x16;hČ„$®m&amp;Mă Á$›˘&#x19;HŇ&#x8;y&#x15;Őł)^;ű%&#x8;~X«Ż’Ë×Öą&#x4;(ŔÔ´)Ţ\#«¤ęÔŠ§&#xC;ő+ĂHĺ&#xF;&#x18;jUĹiIĺmč”^sW&lt;Ń\/·ÉÚMĽńi&#xE;ę4ňú&#x13;¦zk4óÚ&#x3;V´ę6té‘úšé»xŠUoŚ.ý&#x12;ń€¨Â‰Čž˛¤ß&#xB;Ňků‰Ć“–ňˇş_ůśĄ&lt;\Kih*ž˛¤żbH–=Tg –ađÔFęyŞy&amp;´]_ŐÓ–Z&#x6;|ű1j’&#x17;ţ¤Ą|č8dĹ–rˇĽŞPý Í\ôšć˘g+&#x17;ř2ő&#x16;á4m’‘âYkyQ†üë&lt;j)'1&#x19;&#x1C;I7l4–,źµ”&#x17;őwŤ'-ĺCcR#ÎR&#x1E;ŞŻ!h&gt;];?&lt;Ľµ*BJ([cąĎ&#x1E;Ź#šĺśňV~€$&#x17;Ż]¸&#x12;„&lt;ŕO,\cÓ7&#x7;`qŞję_dC=z&#x1B;&#x10;wdë6Y:&#x7;×ţ4đIs«&#x1B;k]°v3eÄ°&#x2;µás&#x11;Í	L&#x3;Žgi=ŘătV¨¨Gá,&#x6;iD×,Ď“1=ł&#x2;ş&#x19;&#x1B;s%`3öe1dm¦e1L#VeyAŤY”ĄĐMI“e`5	’ĺ.Ż)#˛&#xC;¬6ű±&lt;kvčŽ·DolÎXXhsęb&#xB;TĹâś5¤%–ŹNć&lt;Ä*ě&amp;ÄĂŇţkhX‘ŮÚÄÂ’đ¬&amp;DÂJ¨fÄÁÂ*lJ&#x12;,&#x3;kD&#x8;,&#x6;3$˙•ZÍ6¸~ĹŠ&#x1A;ÓúĘŤŇ”ÇWl•¸·–&#x1E;2&#x2;&#x11;łőˇ4&#x1A;BůŚfc4â&#x7;–C&#x19;q&#x1;&#x2;[ĺţ5PMÉ~·Dîk‘Ě7Ta6bď&#x15;¶}S¦^eö&#x1A;1ó*&#x11;kRńĘŠjL»+źGÚáŮµĚ««Ě®5"]KÄąJ&#x3;hČ”«ÄlHŤ[ŤYź&#xB;·&#x1A;ł&gt;ů­&#x1A;ł&gt;Űm&#x15;ž&#x19;˝­E:[uF›ó×*q&#x1B;&#x12;ÖV`6b¨Ub&#x1A;SŇZc UfÓrV…Ţ„cVgH*+ťŘŰćŐPÔś3V&#xE;Ţ#V&#x1;&#x2;6Ej´)Ş±ĄÂ&#x1F;ˇ&gt;ÔŹ§H‰[&#x8;Ő1&#xE;JNëaUńyşvů©¸˛&#x2;rZ5@ź©®‚u©şu`Dâ«ÄnDÚ+«]"­¬\ž^«n3şi]UµkBuKźĚŐĹOćµĘźĚ+*€	Ô¬d®S&#x5;+©ZuPŹUYŽdNŁ,u‚f¬ÉbHů&#x12;0Ň^ţE“ŰX&#x1;&#x2;C&#x13;5jÓ5+ÚÁ&#x2;=łĽ%&#xC;č• Íč—UpŤ–ĺK&gt;Sfeyé&#x1B;&#x13;)+lŔ€9Y•ŃFDÉĘlÖdF–eĚ&#x1A;&#xB;˛%Öce™&#x1B;Ň&#x1C;W`&#x1A;ň&#x1A;[ĺ1Vt#câb%vC¦beŐ6¤&amp;®Ć¬ĎE¬Ć¬O&gt;\…gĆ6l‘]XťŃćtÂJÜ†üÁ&#x15;Ť&#x8;•Ť&#x18;‚•Ć”ŔJôF&#x1C;Ŕâ&#x1E;ßďW&#xC;F&#x3;&#xB;éeu&#x19;Z‘^&#xF;.Ş€Ó&#xC;IŻO&lt;,=46%&#x1A;V&#x3;&#x1B;&#x13;&#xB;«á„&#x15;Ŕ&amp;ĽÁ:°Ťy‚Őŕy5@›ň&#x1;&#x1;«ˇ&#x1B;đţV&#x2;6ăů•Ă6¤ő&#x15;wZc&#x6;_élĽ	aŻ&#x10;(†rr[(ŕµ&#x15;DźD@Öĺ‹dýâŐc&#xC;–Ď	›2&#x4;ËŔ&#x1A;’&#x1;&#x2;+ŕšóţĘ&#x7;Y&#x1A;};&#x5;a„&#x1C;7&#x17;¨Ń$É…`vy‚Ąy6˘&#x5;ľ&#x1F;&#x16;`&#xB;¤żâ˘7ŕ÷•×Ł!ťŻ&#x18;Ôśą×.QŻ&#x8;ŤîÚËáhj=Ľć&lt;żb´d®‚Kćuđ&#xC;i‚ĹŤ\›&#x11;Xj„éŚL9”ářk&#x12;ú°őy…%0f&#x14;ÂŇü™0&#x6;Ë&#x8;‚Ą&#x3;Ă2]Ć”?&#x12;GjČ8Şi@c,‡†xqĺOé|‹4Ç$[„á‚Ň Č´HÄkt+&#x11;„z&#x15;ŁxBĎ&#x16;IĄČ‰’öŠŘ&#x16;ĂłÔ´ë&#x13;:Ëa&#x1A;q7Ëŕ,Ń4ë2“&#x1A;˛2çäŚ&#x1D;F”ěĂ’,&#x7;%–Ĺ—ŻNößĽ»8ÇŻ&#x19;a-A~ýé%
+=g‚&#x2;·DŚI~č­sĄvVđ&#x1C;´C˛HţťŃ+&#x1D;á5ů„&lt;/8›ÜŔ&#x19;x~ôáěßSbĽ/đµ&#x13;2ľćcŹdŠ&#x19;s‚¨ÚW¤ďü…2,?w»ŁŁÎęëQgő¬&#x1;&#x1;‡&#x14;ŕ‚q&#x1E;&#xF;J /z˙âĂË·ÎŮéo˙űĺżŢ˝p^Ľ{ůź&gt;yŃ&#x4;yXB®‹đžmÚ÷J&#x18;}÷ŰńhŕĽĂ`úŰ?çu&#x11;¦űveŔ&#x17;&#x1;&#x2;Ľ&#x5;ÎźA&#x8;śS0˙ňWŕ&#x1C;&#x1F;;ýĂÚĹ=9&gt;=)·Ćčŕ Ű&#x1D;&#x7;ő&#x1B;ĺÄŹľ‡Ů;&#xC;c8-AžţŘ&#x18;”
+ź€Źdr•NÓ&#x12;hŻë&#x1E;~ëşßş˝š/Č&#x12;”yÔ˛ý &#x19;&#x1D;)ť×&#x1F;Nťź"âżÁ7Îç}§×íu÷»űî&gt;Éű7Nťi’‘Ćq‡ýîh4&#x1C;&#xF;&#xF;kj˙)‚xŁ&#x7;ĽđČ"Á'‹;šR&#x13;đ&#x4;żC‘ď—đş50n&lt;˙&#x14;MnÎŇr–čoČË`čC‡¤ˇů&#x4;Ô&#x3;}Ď™&gt;OQVÂÍvČď‹xJă«šÁâ&#xC;ŠqIB&#x16;ŇŘ‚ÚĐ&#x1F;HyĎ&#x19;&#x3;`	ů&#x3;ŰBqÎ—Ü€őPß!:G&#x6;8sK¨Ëź&#x1D;·!^O‚W§?Ľ}u|qB&#x3;ňÉ‡¦No‰qěý&#x2;¦dV›š }X„pzĆ.©&#x1;&#x1;2Ď(Ť&#x13;MˇŽÉ¬É$Ok}!ď
+&amp;h«Ž‘w&#x1;&#x1;&#x1B;`ëVoTýĚŘW¶n‚%±ü¦(˝¦(çřäř•‘%Qá—&#x19;ď&#xC;@Ý!&#x1D;€z}§{řÝđđ»ÂíĆ&#x10;¦oyŕ˙;ŔŁ&#x1C;ńł˝Ó—ďüůÝ‹ł_^&lt;{wÜű˙?ťž&#x1F;ż±çĐ•&#x5;}·&#x6;÷ń	Ś“;…8&amp;c„s&#x6;')ö“…s&#x1C;^ˇgç8…{N‚Ó8&#x1E;ťżŃŻ)Q“ż!ŁPÜů&#x1;&#x2;†&#x18;D?™ç˙&#x1;&#x2;ă&#x1;&#x1;&#x1B;U</WDR_DEFINICJA>
+        <WDR_ROZMIARDEFINICJI>136011</WDR_ROZMIARDEFINICJI>
+        <WDR_KOMPRESJA>1</WDR_KOMPRESJA>
+        <WDR_UKRYJDEFINICJE>0</WDR_UKRYJDEFINICJE>
+        <WDR_PARAMETRY>@PAR ?@ABC('Parametry Handlowego Dokumentu Identyfikacyjnego')@? PAR@
+@PAR ?@S255|HDI_NumerHDI|&amp;Numer HDI:REG= @? @MSG(Numer Handlowego Dokumentu Identyfikacyjnego) @TIP(Numer Handlowego Dokumentu Identyfikacyjnego) PAR@
+@PAR ?@S255|HDI_NumerIdZakladu|&amp;Numer Zakładu:REG= @? @MSG(Weterynaryjny Numer Identyfikacyjny Zakładu) @TIP(Weterynaryjny Numer Identyfikacyjny Zakładu) PAR@
+
+@PAR ?@O(&amp;UE:1|&amp;krajowy:2|&amp;innych państw:3)|HDI_RynekSprzedazy|&amp;Rynek sprzedaży:REG=1 @? @MSG(Rynek sprzedaży) @TIP(Rynek sprzedaży) PAR@
+@PAR ?@S255|HDI_RynekSprzInny|Rynek innych państw:REG= @? @H(??HDI_RynekSprzedazy&lt;&gt;3) @MSG(Rynek sprzedaży innych państw) @TIP(Rynek sprzedaży innych państw) PAR@
+@PAR ?@EOL PAR@
+@PAR ?@S255|HDI_PochodzenieSurowca|&amp;Pochodzenie surowca:REG= @? @MSG(Pochodzenie surowca) @TIP(Pochodzenie surowca) PAR@
+@PAR ?@S255|HDI_MiejscePozyskania|&amp;Miejsce pozyskania:REG= @? @MSG(Miejsce pozyskania / przetworzenia / składowania) @TIP(Miejsce pozyskania / przetworzenia / składowania) PAR@
+@PAR ?@S255|HDI_MiejscePrzeznaczenia|&amp;Miejsce przeznaczenia:REG= @? @MSG(Miejsce przeznaczenia) @TIP(Miejsce przeznaczenia) PAR@
+@PAR ?@S255|HDI_RodzajTransportu|&amp;Rodzaj transportu:REG= @? @MSG(Rodzaj transportu i jego numer identyfikacyjny) @TIP(Rodzaj transportu i jego numer identyfikacyjny) PAR@
+
+@PAR ?@S255|HDI_Komentarz1|&amp;Komentarz:REG= @? @MSG(Komentarz - linijka 1) @TIP(Komentarz - linijka 2) PAR@
+@PAR ?@S255|HDI_Komentarz2|&amp;Komentarz c.d.:REG= @? @MSG(Komentarz - linijka 2) @TIP(Komentarz - linijka 2) PAR@
+@PAR ?@HDT|HDI_DataCzas|HDI_DataCzas:{Now()} @? PAR@</WDR_PARAMETRY>
+        <WDR_WARUNEK>
+        </WDR_WARUNEK>
+        <WDR_WARUNEKAUTO>
+        </WDR_WARUNEKAUTO>
+        <WDR_IGNORUJFILTRAPP>1</WDR_IGNORUJFILTRAPP>
+        <WDR_IGNORUJKLUCZAPP>1</WDR_IGNORUJKLUCZAPP>
+        <WDR_DOMYSLNYTYPURZADZENIA>2</WDR_DOMYSLNYTYPURZADZENIA>
+        <WDR_DRUKARKADOMYSLNA>
+        </WDR_DRUKARKADOMYSLNA>
+        <WDR_DOMYSLNYFORMATEKSPORTU>2</WDR_DOMYSLNYFORMATEKSPORTU>
+        <WDR_ILOSCKOPII>1</WDR_ILOSCKOPII>
+        <WDR_SORTUJKOPIE>1</WDR_SORTUJKOPIE>
+        <WDR_MARGINESL>-1</WDR_MARGINESL>
+        <WDR_MARGINESG>-1</WDR_MARGINESG>
+        <WDR_DUPLEX>-1</WDR_DUPLEX>
+        <WDR_ECO>0</WDR_ECO>
+        <WDR_OPIS>
+        </WDR_OPIS>
+        <WDR_WERSJA>1.0</WDR_WERSJA>
+        <WDR_AUTOR>MJ</WDR_AUTOR>
+        <WDR_HASLO>
+        </WDR_HASLO>
+        <WDR_HASLO_CHK>
+        </WDR_HASLO_CHK>
+        <WDR_KOPIAEL>0</WDR_KOPIAEL>
+        <WDR_KOPIAELGDZIE>0</WDR_KOPIAELGDZIE>
+        <WDR_PODPISCYFROWY>0</WDR_PODPISCYFROWY>
+        <WDR_ODSWIEZDANEPOWYKONANIU>0</WDR_ODSWIEZDANEPOWYKONANIU>
+        <WDR_ZRODLODANYCHFIRMY>0</WDR_ZRODLODANYCHFIRMY>
+        <WDR_WZORZECNAZWYPLIKUWYNIKOWEGO>
+        </WDR_WZORZECNAZWYPLIKUWYNIKOWEGO>
+        <WDR_ETECZKA>0</WDR_ETECZKA>
+        <WDR_ETECZKACZESC>0</WDR_ETECZKACZESC>
+        <WDR_OPEZALID>0</WDR_OPEZALID>
+        <WDR_TS_ZAL>2019-11-12 11:14:01</WDR_TS_ZAL>
+        <WDR_OPEMODID>1</WDR_OPEMODID>
+        <WDR_TS_MOD>2019-11-12 11:15:37</WDR_TS_MOD>
+        <WDR_OPEMODKOD>ADMIN</WDR_OPEMODKOD>
+        <WDR_OPEMODNAZWISKO>Administrator</WDR_OPEMODNAZWISKO>
+        <WDR_OPEZALKOD>
+        </WDR_OPEZALKOD>
+        <WDR_OPEZALNAZWISKO>
+        </WDR_OPEZALNAZWISKO>
+      </Wydruk>
+    </Wydruki>
+  </Zestaw>
+</Zestawy>
+```

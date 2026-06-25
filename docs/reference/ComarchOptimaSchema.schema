@@ -1,0 +1,320 @@
+namespace ComarchOptimaSchema
+
+TaxoOfDatabaseRole(TaxoOfDatabaseRole): ConceptType
+	hypernymPredicate: isA
+
+TaxoOfDbObjectKind(TaxoOfDbObjectKind): ConceptType
+	hypernymPredicate: isA
+
+TaxoOfConstraintType(TaxoOfConstraintType): ConceptType
+	hypernymPredicate: isA
+
+TaxoOfDependencyType(TaxoOfDependencyType): ConceptType
+	hypernymPredicate: isA
+
+DatabaseInstance(DatabaseInstance): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sqlName(sqlName): Text
+			index: Text
+		databaseRole(databaseRole): Text
+		schemaName(schemaName): Text
+		platform(platform): Text
+		engineVersion(engineVersion): Text
+
+Table(Table): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		databaseRefId(databaseRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		schemaName(schemaName): Text
+		objectKind(objectKind): Text
+		documentationRef(documentationRef): Text
+		moduleHint(moduleHint): Text
+
+Column(Column): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		tableRefId(tableRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		ordinalPosition(ordinalPosition): Text
+		dataType(dataType): Text
+		fullDataType(fullDataType): Text
+		nullable(nullable): Text
+		defaultDefinition(defaultDefinition): Text
+		defaultDefinitionAccessState(defaultDefinitionAccessState): Text
+		computedDefinition(computedDefinition): Text
+		computedDefinitionAccessState(computedDefinitionAccessState): Text
+		collationName(collationName): Text
+		isIdentity(isIdentity): Text
+		isComputed(isComputed): Text
+		keyRole(keyRole): Text
+
+PrimaryKey(PrimaryKey): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		tableRefId(tableRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		columnList(columnList): Text
+
+ForeignKey(ForeignKey): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		tableRefId(tableRefId): Text
+		referencedTableRefId(referencedTableRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		columnMapping(columnMapping): Text
+		deleteAction(deleteAction): Text
+		updateAction(updateAction): Text
+		isDisabled(isDisabled): Text
+
+Index(Index): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		tableRefId(tableRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		indexType(indexType): Text
+		uniqueness(uniqueness): Text
+		columnList(columnList): Text
+		includedColumns(includedColumns): Text
+		filterDefinition(filterDefinition): Text
+
+Constraint(Constraint): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		tableRefId(tableRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		constraintType(constraintType): Text
+		definition(definition): Text
+			index: TextAndVector
+		definitionAccessState(definitionAccessState): Text
+
+View(View): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		databaseRefId(databaseRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		schemaName(schemaName): Text
+		definition(definition): Text
+		definitionPreview(definitionPreview): Text
+			index: TextAndVector
+		definitionHash(definitionHash): Text
+			index: Text
+		definitionLength(definitionLength): Text
+		definitionAccessState(definitionAccessState): Text
+		isEncrypted(isEncrypted): Text
+		usesAnsiNulls(usesAnsiNulls): Text
+		usesQuotedIdentifier(usesQuotedIdentifier): Text
+		isSchemaBound(isSchemaBound): Text
+		dependencySummary(dependencySummary): Text
+
+StoredProcedure(StoredProcedure): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		databaseRefId(databaseRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		schemaName(schemaName): Text
+		definition(definition): Text
+		definitionPreview(definitionPreview): Text
+			index: TextAndVector
+		definitionHash(definitionHash): Text
+			index: Text
+		definitionLength(definitionLength): Text
+		definitionAccessState(definitionAccessState): Text
+		isEncrypted(isEncrypted): Text
+		usesAnsiNulls(usesAnsiNulls): Text
+		usesQuotedIdentifier(usesQuotedIdentifier): Text
+		isSchemaBound(isSchemaBound): Text
+		parameterCount(parameterCount): Text
+
+Function(Function): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		databaseRefId(databaseRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		schemaName(schemaName): Text
+		functionType(functionType): Text
+		definition(definition): Text
+		definitionPreview(definitionPreview): Text
+			index: TextAndVector
+		definitionHash(definitionHash): Text
+			index: Text
+		definitionLength(definitionLength): Text
+		definitionAccessState(definitionAccessState): Text
+		isEncrypted(isEncrypted): Text
+		usesAnsiNulls(usesAnsiNulls): Text
+		usesQuotedIdentifier(usesQuotedIdentifier): Text
+		isSchemaBound(isSchemaBound): Text
+		parameterCount(parameterCount): Text
+
+Trigger(Trigger): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		databaseRefId(databaseRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		parentObjectRefId(parentObjectRefId): Text
+		triggerScope(triggerScope): Text
+		definition(definition): Text
+		definitionPreview(definitionPreview): Text
+			index: TextAndVector
+		definitionHash(definitionHash): Text
+			index: Text
+		definitionLength(definitionLength): Text
+		definitionAccessState(definitionAccessState): Text
+		isEncrypted(isEncrypted): Text
+		usesAnsiNulls(usesAnsiNulls): Text
+		usesQuotedIdentifier(usesQuotedIdentifier): Text
+		isSchemaBound(isSchemaBound): Text
+
+Parameter(Parameter): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		objectRefId(objectRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		objectKind(objectKind): Text
+		ordinalPosition(ordinalPosition): Text
+		dataType(dataType): Text
+		maxLength(maxLength): Text
+		precisionValue(precisionValue): Text
+		scaleValue(scaleValue): Text
+		isOutput(isOutput): Text
+		hasDefaultValue(hasDefaultValue): Text
+
+ObjectDependency(ObjectDependency): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceObjectRefId(sourceObjectRefId): Text
+		targetObjectRefId(targetObjectRefId): Text
+		sourceObjectKind(sourceObjectKind): Text
+		targetObjectKind(targetObjectKind): Text
+		dependencyType(dependencyType): Text
+		evidence(evidence): Text
+
+TableQueryGuide(TableQueryGuide): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		tableRefId(tableRefId): Text
+		sqlName(sqlName): Text
+			index: Text
+		moduleHint(moduleHint): Text
+		roleHint(roleHint): Text
+		businessAreaHint(businessAreaHint): Text
+		importanceHint(importanceHint): Text
+		usageCategory(usageCategory): Text
+		inboundForeignKeyCount(inboundForeignKeyCount): Text
+		outboundForeignKeyCount(outboundForeignKeyCount): Text
+		joinAnchorColumns(joinAnchorColumns): Text
+		relatedTableSummary(relatedTableSummary): Text
+		queryDesignNote(queryDesignNote): Text
+			index: TextAndVector
+
+JoinPathGuide(JoinPathGuide): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceTableRefId(sourceTableRefId): Text
+		targetTableRefId(targetTableRefId): Text
+		viaForeignKeyRefId(viaForeignKeyRefId): Text
+		pathLength(pathLength): Text
+		joinKind(joinKind): Text
+		joinSqlTemplate(joinSqlTemplate): Text
+			index: TextAndVector
+		confidence(confidence): Text
+		useCase(useCase): Text
+		notes(notes): Text
+
+SqlObjectGuide(SqlObjectGuide): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		objectRefId(objectRefId): Text
+		objectKind(objectKind): Text
+		usageCategory(usageCategory): Text
+		moduleHint(moduleHint): Text
+		importanceHint(importanceHint): Text
+		detectionEvidence(detectionEvidence): Text
+		queryDesignNote(queryDesignNote): Text
+			index: TextAndVector
+
+SchemaChange(SchemaChange): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceDocument(sourceDocument): Text
+		versionFrom(versionFrom): Text
+		versionTo(versionTo): Text
+		changeScope(changeScope): Text
+		changeType(changeType): Text
+		objectName(objectName): Text
+		evidence(evidence): Text
+
+Chunk(Chunk): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		content(content): Text
+			index: TextAndVector
+		sourceDocument(sourceDocument): Text
+		sourceSection(sourceSection): Text
+		sourceObjectRefId(sourceObjectRefId): Text
+		semanticType(semanticType): Text
+			index: Text

@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_5a44dfa5_serwis-o-podatkach-objasnienia-podatkowe-podatki-gov-pl",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Serwis o podatkach - Objaśnienia podatkowe - Podatki.gov.pl",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - objaśnienia i przepisy podatkowe\nURL: https://www.podatki.gov.pl/interpretacje-podatkowe/objasnienia-podatkowe/\n\nSummary:\nThe page is the Tax Administration’s central portal for tax explanations and interpretations (Podatki.gov.pl). It aggregates guidance for individuals, businesses, and various tax topics, including:\n\n- Personal taxes (od dochodu) and different income situations (employment, foreign income, commissions, IP, rental income, unregistered activity, pensions) \n- Taxes on assets (SD – spadki i darowizny) and wealth changes\n- Taxes on purchases (transactions domestically and abroad)\n- Other taxes (local taxes and other forms of taxation)\n- Key sections for entrepreneurs ( podstawowe podatki dla przedsiębiorców; inne podatki such as PCC, SD, royalties from certain minerals, financial institutions, alcohol taxes)\n- Compliance and regulatory tools (WHT, MDR, ICAP, ETACA, SME procedures, GLOBE, CRBR)\n- Services to manage tax affairs online and related guidance\n\nIf you’re specifically look...",
+  "sourceUrl": "https://www.podatki.gov.pl/interpretacje-podatkowe/objasnienia-podatkowe/",
+  "tags": [
+    "prawo",
+    "podatki",
+    "mf",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_ef8fc436",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-15-832Z_82bfa824",
+    "retrievedAt": "2026-06-05T17:41:16.070Z",
+    "contentHash": "b76d82b1636db4de7c023999a7c488b3671583acc59ca05bfcd179169f5f28cc",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:16.077Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:22.002Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_5a44dfa5_serwis-o-podatkach-objasnienia-podatkowe-podatki-gov-pl.json"
+}

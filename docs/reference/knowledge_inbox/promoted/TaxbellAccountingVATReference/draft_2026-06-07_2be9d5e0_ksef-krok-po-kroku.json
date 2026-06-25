@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_2be9d5e0_ksef-krok-po-kroku",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "KSeF krok po kroku",
+  "content": "Automated source-discovery draft.\n\nQuery: KSeF rachunkowość 2026\nSource: https://ksef.podatki.gov.pl/krok-po-kroku-ksiegowi/\nTier: official\nDiscovery confidence: 0.95\n\nSummary:\n- The page outlines a step-by-step guide for accountants on preparing for KSeF (Polish National System of e-Invoicing) in 2026.\n- Key dates: KSeF becomes mandatory for large taxpayers from Feb 1, 2026; for the majority of firms from Apr 1, 2026.\n- Core changes: Invoices will be issued and received in XML format through KSeF; accountants may gain automatic access to clients’ invoices.\n- Steps for accountants:\n  1) Understand changes and deadlines (new mandatory usage by 2026, XML format).\n  2) Review current document workflows and identify required changes; coordinate with clients on new contracts and collaboration model.\n  3) Choose compatible software or update systems to integrate with KSeF; consider MF free apps (Aplikacja Podatnika KSeF, e-mikrofirma).\n  4) Authenticate with KSeF (Profil Zaufany, kwalifikowany podpis, pieczęć elektroniczna, certyfikat KSeF) and, if a comp...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/krok-po-kroku-ksiegowi/",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:11:33.794Z",
+    "discoveryCandidateId": "candidate_ee817761-c5d",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_9796aa8f51",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "f883e24313ed4e3daa163a5d3068e7928250c36070fc709f88801112a9519395"
+  },
+  "createdAt": "2026-06-07T03:08:47.953Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.088Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_2be9d5e0_ksef-krok-po-kroku.json"
+}

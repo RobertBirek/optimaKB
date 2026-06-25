@@ -1,0 +1,42 @@
+[Unit]
+Description=ERP KB Dashboard daily source discovery
+After=network-online.target erp-kb-dashboard.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=mcpbot
+Group=mcpbot
+WorkingDirectory=/docker/openspg
+EnvironmentFile=/etc/erp-kb-dashboard.env
+Environment=OPENSPG_LLM_APP_ID=4
+Environment=OPENSPG_LLM_SESSION_ID=23
+Environment=OPENSPG_LLM_MODEL=deepseek-reasoner
+Environment=OPENSPG_COOKIE_FILE=/etc/erp-kb-openspg.cookie
+Environment=ERP_KB_DISCOVERY_DRY_RUN=1
+ExecStart=/usr/bin/node /docker/openspg/scripts/run_dashboard_discovery.mjs --daily --dry-run --limit 3
+UMask=0027
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=full
+RemoveIPC=true
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+ReadOnlyPaths=/docker/openspg/scripts
+ReadWritePaths=/docker/openspg/data
+ReadWritePaths=/docker/openspg/downloads
+ReadWritePaths=/docker/openspg/docs/reference
+ReadWritePaths=/docker/openspg/logs

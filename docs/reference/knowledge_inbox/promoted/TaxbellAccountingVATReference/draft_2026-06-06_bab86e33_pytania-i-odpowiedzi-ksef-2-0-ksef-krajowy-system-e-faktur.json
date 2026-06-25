@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-06_bab86e33_pytania-i-odpowiedzi-ksef-2-0-ksef-krajowy-system-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Pytania i odpowiedzi KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
+  "content": "Source list scan draft.\n\nSource: KSeF podatki.gov.pl - FAQ i zasady obowiązywania\nURL: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/?category=&query=terytorium+kraju\n\nSummary:\n- The page \"Pytania i odpowiedzi KSeF 2.0\" on KSeF (Krajowy System e-Faktur) provides a living FAQ about KSeF 2.0, created with input from businesses, integrators, and participants of webinars and consultations.\n- It groups questions by categories and encourages ongoing Q&A to expand the knowledge base.\n- Key topics include basic information about KSeF, what the system is, and how to use it. \n- Important note: KSeF is a system for issuing, sending, receiving, and storing structured invoices, with a rollout starting February 1, 2026 to cover all entities in Poland. The page emphasizes updates and participation in discussions to reflect new questions and use cases.\n- The page is a searchable FAQ with sections like “Podstawowe informacje o KSeF” and “Co to jest KSeF?” and guidance on usage.\n\nIf you’re specifically asking about rules, obligations, and 2026 timelines, this page co...",
+  "sourceUrl": "https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/?category=&query=terytorium+kraju",
+  "tags": [
+    "ksef",
+    "vat",
+    "faktury",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_f40caf9e",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-06T08-19-43-465Z_245182a1",
+    "retrievedAt": "2026-06-06T08:19:54.692Z",
+    "contentHash": "c29c51701e51bdbd6f3dc3fc857b2aa12dac293a70c1609f6fcdb8b16caeb70e",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-06T08:19:54.724Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.289Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-06/draft_2026-06-06_bab86e33_pytania-i-odpowiedzi-ksef-2-0-ksef-krajowy-system-e-faktur.json"
+}

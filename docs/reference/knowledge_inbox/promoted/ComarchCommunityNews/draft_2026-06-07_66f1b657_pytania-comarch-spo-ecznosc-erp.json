@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_66f1b657_pytania-comarch-spo-ecznosc-erp",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Pytania - Comarch Społeczność ERP",
+  "content": "Automated source-discovery draft.\n\nQuery: najnowsze pytania społeczności Comarch Optima KSeF\nSource: https://spolecznosc.comarch.pl/question\nTier: community\nDiscovery confidence: 0.95\n\nSummary:\nThe page is part of Comarch Społeczność ERP (“Comarch ERP Community”) and lists user questions. It serves as a starter/questions hub where Community members post queries related to ERP topics. If you’re specifically looking for the latest questions about Comarch Optima and KSeF (Poland’s e-invoicing system), this page provides a general entry point to browse community questions, but does not itself display latest items in the provided excerpt. To find the most recent questions about Comarch Optima and KSeF, visit the page and filter/search for those keywords within the community questions.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://spolecznosc.comarch.pl/question",
+  "tags": [
+    "discovery",
+    "community",
+    "pytania społeczności",
+    "KSeF",
+    "Optima",
+    "Betterfly"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "community",
+    "retrievedAt": "2026-06-06T20:08:46.525Z",
+    "discoveryCandidateId": "candidate_4f00b32a-1e0",
+    "discoveryQueryId": "generated_ComarchCommunityNews_51b1de529f",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "eaf43287681948b1332d5ef4a5dc949a7e20d4a13b2239a9a1c1a1e8422c010e"
+  },
+  "createdAt": "2026-06-07T03:08:48.352Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.030Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_66f1b657_pytania-comarch-spo-ecznosc-erp.json"
+}

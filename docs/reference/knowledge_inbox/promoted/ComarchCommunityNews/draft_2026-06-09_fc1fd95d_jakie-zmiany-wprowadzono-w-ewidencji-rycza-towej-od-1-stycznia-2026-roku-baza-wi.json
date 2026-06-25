@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_fc1fd95d_jakie-zmiany-wprowadzono-w-ewidencji-rycza-towej-od-1-stycznia-2026-roku-baza-wi",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Jakie zmiany wprowadzono w ewidencji ryczałtowej od 1 stycznia 2026 roku? - Baza Wiedzy programu Comarch Betterfly",
+  "content": "Automated source-discovery draft.\n\nQuery: dyskusje Betterfly 2026\nSource: https://pomoc.comarchbetterfly.pl/dokumentacja/jakie-zmiany-wprowadzono-w-ewidencji-ryczaltowej-od-1-stycznia-2026-roku/\nTier: official\nDiscovery confidence: 0.9\n\nNadesłany materiał dotyczy zmian w ewidencji ryczałtowej w programie Comarch Betterfly od 1 stycznia 2026 roku. Najważniejsze punkty:\n\n- Nowe wzory Ewidencji Przychodów obowiązują od 01.01.2026 i są widoczne po włączeniu opcji Ewidencja ryczałtowa w Konfiguracja / Księgowość / Rodzaj księgowości.\n- Formularz zapisu w Ewidencji Przychodów:\n  - Zmieniona numeracja kolumn: zakres pozycji obejmuje kolumny 7–16.\n  - Identyfikacja kontrahenta: dodano pole NIP z prefiksem kraju, automatycznie pobierane z dokumentu źródłowego.\n  - Numer KSeF: nowe pole na unikalny identyfikator z systemu KSeF; automatycznie uzupełniane przy zapisie ze źródła (rejestr VAT sprzedaży, faktury i korekty). Pole edytowalne na niezatwierdzonym zapisie.\n- Wydruki ewidencji:\n  - Od 2026 zastosowanie nowego wzoru uwzględniającego zmiany.\n  - Dla lat wcześniejszych – obowiązuje dotychczasowy wzór.\n  - W 2026 roku – gene...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jakie-zmiany-wprowadzono-w-ewidencji-ryczaltowej-od-1-stycznia-2026-roku/",
+  "tags": [
+    "discovery",
+    "official",
+    "pytania społeczności",
+    "KSeF",
+    "Optima",
+    "Betterfly"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:08:51.388Z",
+    "discoveryCandidateId": "candidate_2f0d4e55-fe4",
+    "discoveryQueryId": "generated_ComarchCommunityNews_ab418aad40",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "7fda6fed279b8381407b6c757d0038e7aea4dcfe82e441c989881c412eae8929"
+  },
+  "createdAt": "2026-06-09T06:50:50.538Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T06:55:47.222Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 13 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_fc1fd95d_jakie-zmiany-wprowadzono-w-ewidencji-rycza-towej-od-1-stycznia-2026-roku-baza-wi.json"
+}

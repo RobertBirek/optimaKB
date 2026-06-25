@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_628b59ea_zus-dla-biznesu-nr-1-2026-magazyn-informacyjny-zak-adu-ubezpieczen-spo-ecznych",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "ZUS dla Biznesu nr 1/2026. Magazyn informacyjny Zakładu Ubezpieczeń Społecznych",
+  "content": "Automated source-discovery draft.\n\nQuery: kadry i płace aktualizacje czerwiec 2026\nSource: https://www.zus.pl/documents/10182/13847654/0161_26+ZUS+dla+Biznesu+nr+1_2026_WCAG_2.pdf/d37670ae-8262-ff24-cbb8-7119ab8f1fd4?t=1771941116481\nTier: official\nDiscovery confidence: 0.95\n\nStaż pracy – nowe przepisy od 2026 r. \nOd 1 stycznia 2026 r. osoby zatrudnione mogą doliczyć do stażu pracy okresy inne niż zatrudnienie na podstawie umowy \no pracę. \nNowe przepisy dotyczą: \n• od 1 stycznia 2026 r. – pracodawców w sektorze finansów publicznych, \n• od 1 maja 2026 r. – pozostałych pracodawców. \n\nJakie okresy można doliczyć do stażu pracy Kodeks pracy wskazuje okresy, które można zaliczyć do stażu pracy. Osoby, które chcą doliczyć te okresy do swojego stażu pracy, muszą uzyskać z Zakładu Ubezpieczeń Społecznych zaświadczenie o tym, w jakich okresach:\n\n• miały opłacane składki emerytalne i rentowe lub wypadkowe przez osobę prowadzącą pozarolniczą działalność lub osobę, która współpracuje z osobą prowadzącą tę działalność; \n• były objęte ubezpieczeniem emerytalnym i rentowym: { z tytułu zawartej umowy zlecenia lub innej umowy o świadczenie usług, do której zgodnie z przepisami Kodeksu cywilnego stosuje się przepisy dotyczące zlecenia, { z tytułu pracy na podstawie umowy agencyjnej, { z tytułu współpracy z osobą wykonującą umowę zlecenia, inną umowę o świadczenie usług lub umowę agencyjną, { jako członkowie rolniczej spółdzielni produkcyjnej, { jako byli członkowie spółdzielni kółek rolniczych; \n• były zgłoszone do ubezpieczenia zdrowotnego jako osoby, które prowadziły działalność gospodarczą i nie były objęte ubezpieczeniem emerytalnym i rentowymi przez pierwszych 6 miesięcy, ponieważ korzystały z tzw. „ulgi na start”; \n• miały opłacane składki na ubezpieczenia em\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.zus.pl/documents/10182/13847654/0161_26+ZUS+dla+Biznesu+nr+1_2026_WCAG_2.pdf/d37670ae-8262-ff24-cbb8-7119ab8f1fd4?t=1771941116481",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-09T02:51:36.993Z",
+    "discoveryCandidateId": "candidate_987c627f-3d8",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_3e1de0b6fe",
+    "discoveryRunId": "discovery_daily_2026-06-09T02-49-52-118Z_a0585710",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "c5169e095cc827793a6375f2edaeff6ad2c39a6419702c3aa99b19b4dd2c6702"
+  },
+  "createdAt": "2026-06-09T06:45:22.354Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T06:55:47.392Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 13 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_628b59ea_zus-dla-biznesu-nr-1-2026-magazyn-informacyjny-zak-adu-ubezpieczen-spo-ecznych.json"
+}

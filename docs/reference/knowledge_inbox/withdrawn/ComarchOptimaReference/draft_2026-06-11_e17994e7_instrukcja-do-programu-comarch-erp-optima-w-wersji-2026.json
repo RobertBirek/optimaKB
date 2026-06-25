@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "Instrukcja do programu Comarch ERP Optima w wersji 2026",
+  "content": "Automated source-discovery draft.\n\nQuery: obsługa programu Comarch Optima 2026 poradnik\nSource: https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385\nTier: official\nDiscovery confidence: 0.9\n\nInstrukcja do programu Comarch ERP Optima w wersji 2026 Spis treści – Baza Wiedzy programu Comarch ERP Optima\n\n# Instalacja i inne systemowe\n\nPobierz Drukuj kategorię\n\n## Jak zaktualizować program Comarch ERP Optima do wyższej wersji?\n\nUwaga\n\nFunkcjonalność dostępna w wersji stacjonarnej programu Comarch ERP Optima.\n\nW celu weryfikacji wersji programu, którą posiada Użytkownik należy przejść do zakładki ‘Pomoc’, następnie użyć ikony ‘O programie’. W otwartym oknie użytkownik ma możliwość sprawdzenia wersji programu (wraz z informacją czy jest to aktualna wersja). W powyższym przykładzie stanowisko wymaga podniesienia wersji programu. Kliknięcie w odnośnik ‘Dostępna nowsza wersja’ przenosi Użytkownika na witrynę ‘Indywidualne Strony Klientów Comarch’, gdzie po uprzednim zalogowaniu dostępny jest instalator do nowej wersji programu : Aktualizacja do nowej wersji – Wybierz tę opcję, jeśli masz już na komputerze program Comarch ERP Optima i potrzebujesz najnowszej aktualizacji (wersja programu). Pobrany plik należy uruchomić na prawach administratora. Przystępując do wykonania aktualizacji należy uprzednio zamknąć program Comarch ERP Opitma. Instalatory do aktualnych wersji programów Comarch ERP Optima są dostępne na Indywidualnych Stronach dla Klientów (https://klient.erp.comarch.pl/) w zakładce Comarch ERP Optima/Aktualne wersje Comarch ERP Optima.\n\nUwaga\n\nMożliwość aktualizacji Comarch ERP Optima do najnowszej wersji jest dostępna dla Klientów z aktualną gwarancją. W przypadku\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/spis-tresci/?print=385",
+  "tags": [
+    "discovery",
+    "official",
+    "instrukcje",
+    "aktualizacje",
+    "KSeF",
+    "obsługa programu"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:49:08.215Z",
+    "discoveryCandidateId": "candidate_afcd23bf-d01",
+    "discoveryQueryId": "generated_ComarchOptimaReference_3426b5acfe",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "5522e642670e77c3ac79239887139be4ca35b439c94d7d6ed5e46ecbd8a3c69c"
+  },
+  "createdAt": "2026-06-11T08:20:49.382Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.792Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_e17994e7_instrukcja-do-programu-comarch-erp-optima-w-wersji-2026.json"
+}

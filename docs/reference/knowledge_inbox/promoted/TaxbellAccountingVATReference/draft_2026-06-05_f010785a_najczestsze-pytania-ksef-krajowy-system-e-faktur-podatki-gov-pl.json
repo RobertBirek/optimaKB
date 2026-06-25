@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_f010785a_najczestsze-pytania-ksef-krajowy-system-e-faktur-podatki-gov-pl",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Najczęstsze pytania - KSeF (Krajowy System e-Faktur) - Podatki.gov.pl",
+  "content": "Source list scan draft.\n\nSource: KSeF podatki.gov.pl - FAQ i zasady obowiązywania\nURL: https://ksef.podatki.gov.pl/ksef-news/najczestsze-pytania/\n\nNajważniejsze pytania i odpowiedzi dotyczące KSeF (Krajowy System e-Faktur) na Podatki.gov.pl:\n\n- O czym informuje sekcja: Zestaw najczęściej zadawanych pytań o funkcjonowanie KSeF, oparty na realnych zgłoszeniach i najczęściej pojawiających się wątpliwościach użytkowników.\n- Kluczowa kwestia wyjaśniona w opisie: Prawo do odliczenia VAT naliczonego powstaje, gdy nabywane towary lub usługi są wykorzystywane do czynności opodatkowanych, w tym również faktury wystawione poza systemem KSeF (jeśli obowiązek fakturowania w KSeF został naruszony przez wystawcę).\n- Warunki odliczenia mimo błędów po stronie sprzedawcy: Odliczenie nadal przysługuje, o ile spełnione są materialne przesłanki odliczenia (art. 86), oraz nie występują przesłanki negatywne (art. 88) – przykładowo jeśli faktura dokumentuje transakcje, które faktycznie miały miejsce.\n- Ocena nakładania obowiązku weryfikacji: Obowiązek ...",
+  "sourceUrl": "https://ksef.podatki.gov.pl/ksef-news/najczestsze-pytania/",
+  "tags": [
+    "ksef",
+    "vat",
+    "faktury",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_f40caf9e",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-16-116Z_51768642",
+    "retrievedAt": "2026-06-05T17:41:16.323Z",
+    "contentHash": "e508ddc5d9b8d598b03138edf2ffc2777bc0d780549e7178d9e9851d2df1e7f6",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:16.352Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-05T19:41:00.791Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_f010785a_najczestsze-pytania-ksef-krajowy-system-e-faktur-podatki-gov-pl.json"
+}

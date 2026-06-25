@@ -1,0 +1,86 @@
+namespace TaxbellAccountingVATReference
+
+ReferenceDocument(ReferenceDocument): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		sourceDomain(sourceDomain): Text
+			index: Text
+		sourceTier(sourceTier): Text
+			index: Text
+		documentCategory(documentCategory): Text
+		topicArea(topicArea): Text
+			index: Text
+		audienceMode(audienceMode): Text
+		riskLevel(riskLevel): Text
+		publishedAt(publishedAt): Text
+		lastModified(lastModified): Text
+		retrievedAt(retrievedAt): Text
+		localSnapshotPath(localSnapshotPath): Text
+		contentHash(contentHash): Text
+		summary(summary): Text
+			index: TextAndVector
+
+SourceTopic(SourceTopic): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		topicSlug(topicSlug): Text
+			index: Text
+		topicGroup(topicGroup): Text
+		sourceTier(sourceTier): Text
+		usageCount(usageCount): Text
+		summary(summary): Text
+			index: TextAndVector
+
+KnowledgeRoute(KnowledgeRoute): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		routeType(routeType): Text
+		targetKbName(targetKbName): Text
+		targetNamespace(targetNamespace): Text
+		recommendedWhen(recommendedWhen): Text
+		anchorObjects(anchorObjects): Text
+		summary(summary): Text
+			index: TextAndVector
+
+EntryGuide(EntryGuide): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		guideGroup(guideGroup): Text
+		priorityRank(priorityRank): Text
+		userIntent(userIntent): Text
+		primaryDocumentRefId(primaryDocumentRefId): Text
+		targetKbName(targetKbName): Text
+		targetNamespace(targetNamespace): Text
+		nextStep(nextStep): Text
+		caution(caution): Text
+		summary(summary): Text
+			index: TextAndVector
+
+Chunk(Chunk): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		sourceUrl(sourceUrl): Text
+			index: Text
+		sourcePath(sourcePath): Text
+		sectionHeading(sectionHeading): Text
+		sectionOrder(sectionOrder): Text
+		content(content): Text
+			index: TextAndVector

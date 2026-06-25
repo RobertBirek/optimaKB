@@ -1,0 +1,19 @@
+[Unit]
+Description=ERP KB MCP Local Auth Proxy
+After=network.target erp-kb-mcp.service
+
+[Service]
+Type=simple
+WorkingDirectory=/docker/openspg
+EnvironmentFile=/etc/erp-kb-mcp.env
+Environment=ERP_KB_MCP_PROXY_HOST=127.0.0.1
+Environment=ERP_KB_MCP_PROXY_PORT=3401
+Environment=ERP_KB_MCP_PROXY_TARGET_BASE=http://10.10.254.42:3400
+ExecStart=/usr/bin/node /docker/openspg/scripts/erp_kb_mcp_auth_proxy.mjs
+Restart=always
+RestartSec=3
+User=mcpbot
+Group=mcpbot
+
+[Install]
+WantedBy=multi-user.target

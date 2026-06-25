@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_e41ce126_kadry-p-ace-zasi-ki-i-prawo-pracy-2026-najwazniejsze-zmiany-baza-us-ug-rozwojowy",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Kadry, Płace, Zasiłki i Prawo Pracy 2026 – najważniejsze zmiany - Baza Usług Rozwojowych - PARP",
+  "content": "Automated source-discovery draft.\n\nQuery: kadry płace ZUS prawo pracy zmiany 2026\nSource: https://uslugirozwojowe.parp.gov.pl/wyszukiwarka/uslugi/podglad?id=3593866\nTier: official\nDiscovery confidence: 0.9\n\nKadry, Płace, Zasiłki i Prawo Pracy 2026 – najważniejsze zmiany - Baza Usług Rozwojowych - PARP\n\n# Kadry, Płace, Zasiłki i Prawo Pracy 2026 – najważniejsze zmiany\n\nMożliwość dofinansowania\n\n## Kadry, Płace, Zasiłki i Prawo Pracy 2026 – najważniejsze zmiany\n\nNumer usługi 2026/05/28/8353/3593866\n\nBDO SOLUTIONS Sp. z o.o.\n\n4,3 / 5\n\n1 642 oceny\n\n922,50 PLN\n\nbrutto\n\n750,00 PLN\n\nnetto\n\n153,75 PLN\n\nbrutto/h\n\n125,00 PLN\n\nnetto/h\n\n165,00 PLN\n\ncena rynkowa\n\nWarszawa\n\nUsługa szkoleniowa\n\nstacjonarna\n\nZajęcia grupowe\n\n06:00 h\n\n15.06.2026 do 15.06.2026\n\n0 / 30 zapisanych uczestników\n\nPobierz kartę usługi w PDF\n\n## Informacje podstawowe\n\n## Informacje podstawowe\n\nKategoria\n\nPrawo i administracja / Prawo pracy\n\nGrupa docelowa usługi\n\nPracownicy działów kadr i płac, HR, ZZL.\n\nMinimalna liczba uczestników\n\n6\n\nMaksymalna liczba uczestników\n\n30\n\nData zakończenia rekrutacji\n\n12-06-2026\n\nForma prowadzenia usługi\n\nstacjonarna\n\nPodstawa uzyskania wpisu do BUR\n\nStandard Usługi Szkoleniowo-Rozwojowej PIFS SUS 2.0\n\n## Cel\n\n## Cel\n\n##### Cel edukacyjny\n\nOmówienie wszystkich ważnych i problematycznych zagadnień związanych z prowadzeniem spraw kadrowych. Wyjaśnienie wątpliwości związanych ze stosowaniem przepisów.\n\n##### Efekty uczenia się oraz kryteria weryfikacji ich osiągnięcia i Metody walidacji\n\n| Efekty uczenia się | Kryteria weryfikacji | Metoda walidacji |\n| --- | --- | --- |\n| Uczestnik wie czym są zmiany związane z kadrami, zasiłkami, płacami. Uczestnik zna aktualizację przepisów dot. kadr, pła\n\nReview this draft before promotion.",
+  "sourceUrl": "https://uslugirozwojowe.parp.gov.pl/wyszukiwarka/uslugi/podglad?id=3593866",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-08T02:49:51.905Z",
+    "discoveryCandidateId": "candidate_69d9d435-eb2",
+    "discoveryQueryId": "seed_TaxbellPayrollHRReference",
+    "discoveryRunId": "discovery_daily_2026-06-08T02-49-27-759Z_20bfba27",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "42c5747eb4cade29b330f305b79fdf57cc659eec60e97feb646cfa382ae3ca96"
+  },
+  "createdAt": "2026-06-11T08:20:50.041Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.583Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_e41ce126_kadry-p-ace-zasi-ki-i-prawo-pracy-2026-najwazniejsze-zmiany-baza-us-ug-rozwojowy.json"
+}

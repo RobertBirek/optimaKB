@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_84a77b72_podrecznik-ksef-2-0-cz-i-rozpoczecie-korzystania-z-ksef",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Podręcznik KSeF 2.0_cz. I Rozpoczęcie korzystania z KSeF",
+  "content": "Automated source-discovery draft.\n\nQuery: KSeF rachunkowość 2026\nSource: https://ksef.podatki.gov.pl/media/jzrevse3/podrecznik-ksef-20-cz-i-rozpoczecie-korzystania-z-ksef-20260209.pdf\nTier: official\nDiscovery confidence: 0.9\n\nPodręcznik\n\nKSeF 2.0\n\nCz. I\n\nRozpoczęcie korzystania z KSeF\n\nStan prawny na dzień: 1 lutego 2026 r.\n\nWarszawa, luty 2026 r.\n\nSpis treści\n\nSłownik pojęć ... 4\n\nWstęp ... 5\n\n1. Podstawowe informacje na temat KSeF ... 8\n\n1.1. Co to jest i do czego służy KSeF? ... 8\n\n1.2. Jak sprawnie przygotować się do KSeF? ... 11\n\n2. Uwierzytelnienie w KSeF ... 25\n\n2.1. Podpis Zaufany i Węzeł krajowy (login.gov) ... 31\n\n2.2. Kwalifikowany podpis elektroniczny ... 32\n\n2.3. Kwalifikowana pieczęć elektroniczna ... 33\n\n2.4. Token ... 35\n\n2.4.1. Co to jest token i do czego służy? ... 35\n\n2.4.2. Okres ważności tokena ... 35\n\n2.4.3. Kto może wygenerować token? ... 36\n\n2.4.4. Zasady bezpieczeństwa przy posługiwaniu się tokenem ... 37\n\n2.4.5. Ile tokenów może być wygenerowanych? ... 38\n\n2.4.6. Uzyskanie tokena w Aplikacji Podatnika KSeF lub w aplikacjach komercyjnych ... 38\n\n2.4.7. Token a zmiana zakresu uprawnień ... 38\n\n2.4.8. Działania na tokenach ... 41\n\n2.5. Certyfikat KSeF ... 41\n\n2.5.1. Co to jest i do czego będzie służył certyfikat KSeF? ... 41\n\n2.5.2. Uzyskanie certyfikatu KSeF ... 43\n\n2.5.3. Okres ważności certyfikatu KSeF ... 43\n\n2.5.4. Certyfikat dla osoby fizycznej lub podmiotu ... 45\n\n2.5.5. Bezpieczeństwo posługiwania się certyfikatami KSeF ... 45\n\n2.5.6. Limity dotyczące certyfikatów KSeF ... 46\n\n2.5.7. Certyfikat KSeF a zakres uprawnień ... 49\n\n2.5.8. Działania na certyfikatach KSeF ... 50\n\n2.5.9. Certyfikaty KSeF a tokeny ... 51\n\n3. Uprawnienia do korzystania z KSeF ... 52\n\n3.1. Rodza\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/media/jzrevse3/podrecznik-ksef-20-cz-i-rozpoczecie-korzystania-z-ksef-20260209.pdf",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-10T02:50:49.342Z",
+    "discoveryCandidateId": "candidate_237d013e-464",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_9796aa8f51",
+    "discoveryRunId": "discovery_daily_2026-06-10T02-49-13-742Z_99c5b3d4",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "c83bfe45b958ef744600e294d740ec10943eb5d6e125b5a8667256aaa61a0cc1"
+  },
+  "createdAt": "2026-06-11T08:20:49.829Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.633Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_84a77b72_podrecznik-ksef-2-0-cz-i-rozpoczecie-korzystania-z-ksef.json"
+}

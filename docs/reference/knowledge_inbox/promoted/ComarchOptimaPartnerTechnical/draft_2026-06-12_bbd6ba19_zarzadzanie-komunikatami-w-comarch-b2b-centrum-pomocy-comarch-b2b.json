@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-06-12_bbd6ba19_zarzadzanie-komunikatami-w-comarch-b2b-centrum-pomocy-comarch-b2b",
+  "kbName": "ComarchOptimaPartnerTechnical",
+  "kbNamespace": "ComarchOptimaPartnerTechnical",
+  "title": "Zarządzanie komunikatami w Comarch B2B – Centrum Pomocy Comarch B2B",
+  "content": "External source discovered via Exa query: Jakie partnerowe komunikaty mamy dla konfiguracji?\nTitle: Zarządzanie komunikatami w Comarch B2B – Centrum Pomocy Comarch B2B\nURL: https://pomoc.comarch.pl/b2b/pl/index.php/dokumentacja/zarzadzanie-komunikatami-w-comarch-b2b/\nTier: official\nPublished: 2026-05-07T23:54:33.000Z\nSummary:\nNajważniejsze informacje dotyczące komunikatów partnerskich (dla konfiguracji) w Comarch B2B:\n\n- Dostępność: Zarządzanie komunikatami z poziomu Panelu administracyjnego możliwe od wersji Comarch B2B 2026.0.\n- Co to narzędzie robi: Komunikaty umożliwiają błyskawiczne przekazywanie istotnych informacji kontrahentom (np. promocje, zmiany w ofercie, przerwy techniczne, ważne wydarzenia firmowe).\n- Co można robić:\n  - dodawać nowe komunikaty\n  - edytować istniejące treści\n  - przeglądać historię opublikowanych komunikatów\n- Lokalizacja i widoczność:\n  - Komunikaty znajdują się w menu Treści / Komunikaty (lista komunikatów z filtrowaniem i sortowaniem)\n  - Możliwość określenia, na jakich stronach i dla jakich użytkowników mają być wyświetlane (np. kontrahenci – wszyscy użytkownicy lub wybrani; lokalizacje – konkretne sekcje systemu lub wszystkie podstrony)\n- Konfiguracja nowego komunikatu:\n...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/b2b/pl/index.php/dokumentacja/zarzadzanie-komunikatami-w-comarch-b2b/",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Jakie partnerowe komunikaty mamy dla konfiguracji?",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-12T11:24:38.656Z"
+  },
+  "createdAt": "2026-06-12T11:24:38.705Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T13:29:27.904Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_bbd6ba19_zarzadzanie-komunikatami-w-comarch-b2b-centrum-pomocy-comarch-b2b.json"
+}

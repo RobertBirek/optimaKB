@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-10_c2f6ca03_dziennik-ustaw-2026-r-poz-424",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Dziennik Ustaw 2026 r. poz. 424",
+  "content": "Automated source-discovery draft.\n\nQuery: zmiany w ustawach podatkowych 2026\nSource: https://dziennikustaw.gov.pl/DU/2026/424\nTier: official\nDiscovery confidence: 0.95\n\nDziennik Ustaw 2026 r. poz. 424\n\nDzienniki Urzędowe Rządowe Centrum Legislacji\n\nTu jesteś: Dziennik Ustaw 2026 r. poz. 424\n\nPrzejdź Szukaj\n\n# Dziennik Ustaw 2026 r. poz. 424\n\n---\n\n## Ustawa z dnia 13 lutego 2026 r. o zmianie ustawy o podatku dochodowym od osób fizycznych\n\nPobierz plik:\n\nplik 1\n\n| Data ogłoszenia: | 2026-03-30 |\n| --- | --- |\n| Nazwa dziennika: | Dziennik Ustaw |\n| Rok: | 2026 |\n| Pozycja: | 424 |\n\n---\n\nUżywamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki. Więcej informacji w naszej polityce prywatności. Deklaracja dostępności serwisu dziennikustaw.gov.pl\n\nReview this draft before promotion.",
+  "sourceUrl": "https://dziennikustaw.gov.pl/DU/2026/424",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-10T02:50:50.012Z",
+    "discoveryCandidateId": "candidate_81f3bcc7-e7b",
+    "discoveryQueryId": "generated_TaxbellLegalReference_03bbb07043",
+    "discoveryRunId": "discovery_daily_2026-06-10T02-49-13-742Z_99c5b3d4",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "6b0c90b54ad14db77d61722c54ed9ca27e1b84359e9779f1626ab9746a2863f9"
+  },
+  "createdAt": "2026-06-10T05:21:25.542Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:35:10.945Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-10/draft_2026-06-10_c2f6ca03_dziennik-ustaw-2026-r-poz-424.json"
+}

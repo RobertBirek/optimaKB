@@ -1,0 +1,1019 @@
+{
+  "generatedAt": "2026-06-11T09:06:44.788Z",
+  "apiBase": "http://10.10.254.42:8887",
+  "appId": 2,
+  "sampleSize": 12,
+  "summary": {
+    "RUNNING_TIMEOUT": 12
+  },
+  "results": [
+    {
+      "id": "Q001",
+      "category": "schema",
+      "question": "Jak połączyć TraNag z TraElem i Towary?",
+      "sessionId": 24,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 441,
+      "dialogTaskId": 442,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q026",
+      "category": "additional_functions",
+      "question": "Kiedy użyć funkcji dodatkowej zamiast kolumny użytkownika?",
+      "sessionId": 25,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 443,
+      "dialogTaskId": 444,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q046",
+      "category": "sprint",
+      "question": "Jak zacząć wydruk sPrint z nagłówkiem i pozycjami?",
+      "sessionId": 26,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 445,
+      "dialogTaskId": 446,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q061",
+      "category": "reference",
+      "question": "Gdzie w dokumentacji Optimy znajdę onboarding modułu Handel?",
+      "sessionId": 27,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 447,
+      "dialogTaskId": 448,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q071",
+      "category": "partner",
+      "question": "Jakie partnerowe procedury dotyczą funkcji dodatkowych?",
+      "sessionId": 28,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 449,
+      "dialogTaskId": 450,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q086",
+      "category": "betterfly",
+      "question": "Jak działa token Betterfly API?",
+      "sessionId": 29,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 451,
+      "dialogTaskId": 452,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q103",
+      "category": "schema",
+      "question": "Jakie procedury raportowe dotykają wydruków handlowych?",
+      "sessionId": 30,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 453,
+      "dialogTaskId": 454,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q130",
+      "category": "additional_functions",
+      "question": "Jakie przykłady COM mamy dla wydruków i zmiennych dynamicznych?",
+      "sessionId": 31,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 455,
+      "dialogTaskId": 456,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q148",
+      "category": "sprint",
+      "question": "Jak znaleźć wydruki typu sPrint?",
+      "sessionId": 32,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 457,
+      "dialogTaskId": 458,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q162",
+      "category": "reference",
+      "question": "Jak znaleźć oficjalne informacje o funkcjach dodatkowych w dokumentacji?",
+      "sessionId": 33,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 459,
+      "dialogTaskId": 460,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q175",
+      "category": "partner",
+      "question": "Jakie partnerowe COM sample dotyczą wydruków i raportowania?",
+      "sessionId": 34,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 461,
+      "dialogTaskId": 462,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    },
+    {
+      "id": "Q194",
+      "category": "betterfly",
+      "question": "Jak wygląda finalize flow dla advanceInvoices?",
+      "sessionId": 35,
+      "userNo": "erpknowledgeassistant_5fd8163d8421e749",
+      "baseTaskId": 463,
+      "dialogTaskId": 464,
+      "terminalStatus": "RUNNING_TIMEOUT",
+      "polls": [
+        {
+          "tick": 1,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 2,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 3,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 4,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 5,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 6,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 7,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        },
+        {
+          "tick": 8,
+          "status": "RUNNING",
+          "resultMessage": "[]",
+          "reactionType": null,
+          "hasTable": false,
+          "nodeCount": 0,
+          "edgeCount": 0
+        }
+      ]
+    }
+  ]
+}

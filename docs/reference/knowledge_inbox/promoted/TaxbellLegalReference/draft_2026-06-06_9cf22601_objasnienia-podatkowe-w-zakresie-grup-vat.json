@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-06_9cf22601_objasnienia-podatkowe-w-zakresie-grup-vat",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Objaśnienia podatkowe w zakresie grup VAT",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - objaśnienia i przepisy podatkowe\nURL: https://www.podatki.gov.pl/media/gqxhys5u/obja%C5%9Bnienia_podatkowe_w_zakresie_grup_vat.pdf\n\nSummary:\n- The document “Objaśnienia podatkowe w zakresie grup VAT” (issued Oct 11, 2022) explains how the VAT Group (GV) operates under Polish and EU law.\n- It clarifies which tax regulations the guidance covers and aims to practicalize the VAT law for joint VAT settlements by multiple entities within a VAT group.\n- Key concept: transactions between members of a VAT group are not subject to VAT.\n- Contents outline:\n  - Idea of VAT Groups in EU law\n  - Who can use GV\n  - Formation and entry criteria for GV, including:\n    - Financial, economic, and organizational ties\n    - Tie tests and contractual arrangements\n- Legal framework notes: the guidance is issued under tax law (Ordynacja podatkowa) to provide general tax explanations, with tax payer protection under specific articles if followed in a given period.\n- The document serves as practical interpretation for creating and operatin...",
+  "sourceUrl": "https://www.podatki.gov.pl/media/gqxhys5u/obja%C5%9Bnienia_podatkowe_w_zakresie_grup_vat.pdf",
+  "tags": [
+    "prawo",
+    "podatki",
+    "mf",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_ef8fc436",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-06T08-19-38-003Z_6bc6f960",
+    "retrievedAt": "2026-06-06T08:19:43.394Z",
+    "contentHash": "7a2c095baeff31c2fe39e58350fb69bd070b0d8e0ee920c5319615ca071e3357",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-06T08:19:43.427Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T20:57:59.959Z",
+  "promotedBy": "llm-automation",
+  "reviewNote": "Automatic LLM approval dashboard-review-v1. confidence=0.95 reasons=Draft is based on an official Polish Ministry of Finance publication (podatki.gov.pl) regarding VAT groups under Polish and EU law. | Content is coherent, well-structured, and accurately summarizes the source document's scope and key concepts. | The draft is correctly routed to TaxbellLegalReference, as it pertains to tax law interpretations. | No prompt injection or unsafe content detected; the draft is safe to publish. | The topic is relevant and useful for understanding VAT group regulations.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-06/draft_2026-06-06_9cf22601_objasnienia-podatkowe-w-zakresie-grup-vat.json"
+}

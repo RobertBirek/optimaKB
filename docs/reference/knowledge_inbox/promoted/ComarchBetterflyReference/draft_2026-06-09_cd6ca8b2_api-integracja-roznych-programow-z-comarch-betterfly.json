@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_cd6ca8b2_api-integracja-roznych-programow-z-comarch-betterfly",
+  "kbName": "Comarch Betterfly Reference",
+  "kbNamespace": "ComarchBetterflyReference",
+  "title": "API - Integracja różnych programów z Comarch Betterfly",
+  "content": "Automated source-discovery draft.\n\nQuery: Comarch Betterfly API KSeF faktury integracje 2026\nSource: https://www.comarchbetterfly.pl/api/\nTier: official\nDiscovery confidence: 0.9\n\nSummary:\n- The Comarch Betterfly API enables two-way data exchange between Comarch Betterfly and external applications (e.g., your online shop) to automate invoicing and document handling.\n- Target users: businesses using non-Comarch tools that need a reliable invoicing workflow.\n- Data you can exchange:\n  - Import into Betterfly: product list, contractor list, payment forms, bank accounts, sales invoices, printing templates, proforma invoices.\n  - Export from Betterfly: add new product, add new contractor, add sales invoice, add proforma invoice.\n- How it works: practical usage and setup are described in the Help/Support page (API integration guidance available there).\n- Note: The page promotes “first invoice free” and provides contact lines for invoicing and KSeF inquiries.\n\nIf you’re specifically looking for KSeF (Polish e-INVOICE) integration details for 2026: the API supports sen...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.comarchbetterfly.pl/api/",
+  "tags": [
+    "discovery",
+    "official",
+    "API",
+    "KSeF",
+    "faktury",
+    "integracje"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:03:13.026Z",
+    "discoveryCandidateId": "candidate_f2f996eb-32f",
+    "discoveryQueryId": "seed_ComarchBetterflyReference",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-00-05-874Z_765f3494",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "2c8ed708173132595a8742ec9301af472d634c877737afd3b5229211c194780e"
+  },
+  "createdAt": "2026-06-09T13:12:06.014Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T13:12:51.829Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_cd6ca8b2_api-integracja-roznych-programow-z-comarch-betterfly.json"
+}

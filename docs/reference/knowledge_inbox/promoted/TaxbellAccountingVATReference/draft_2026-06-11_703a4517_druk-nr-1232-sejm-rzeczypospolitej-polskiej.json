@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_703a4517_druk-nr-1232-sejm-rzeczypospolitej-polskiej",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Druk nr 1232 - Sejm Rzeczypospolitej Polskiej",
+  "content": "Automated source-discovery draft.\n\nQuery: uproszczenia VAT 2026 zmiany przepisów\nSource: https://www.sejm.gov.pl/Sejm10.nsf/PrzebiegProc.xsp?nr=1232\nTier: official\nDiscovery confidence: 0.9\n\nDruk nr 1232 - Sejm Rzeczypospolitej Polskiej\n\n- Druk nr 1232\n- Przebieg procesu legislacyjnego\n- Proces Legislacyjny\n- Prace Sejmu\n- Strona główna\n\nPrzebieg prac przed skierowaniem projektu do Sejmu\n\ndruk nr 1232\n\nRządowy projekt ustawy o zmianie ustawy o podatku od towarów i usług\n\nprojekt dotyczy propozycji podwyższenia od 1 stycznia 2026 roku limitu tzw. zwolnienia podmiotowego w VAT z 200 tys. zł do 240 tys. zł. Nowe przepisy realizują działania deregulacyjne rządu.\n\nPosiedzenia komisji i podkomisji\n\n6 maja 2025\n\n### Projekt wpłynął do Sejmu - druk nr 1232\n\n8 maja 2025\n\n### Skierowano do I czytania na posiedzeniu Sejmu\n\n21 maja 2025\n\n### I czytanie na posiedzeniu Sejmu\n\nNr posiedzenia: 35\n\nSkierowano do: Komisji do Spraw Deregulacji oraz Komisji Finansów Publicznych\n\n### Praca w komisjach po I czytaniu\n\n3 czerwca 2025\n\n#### Sprawozdanie komisji druk nr 1333\n\nSprawozdawca: Elżbieta Burkiewicz\n\nWniosek komisji: uchwalić projekt ustawy bez poprawek\n\n11 czerwca 2025\n\n### II czytanie na posiedzeniu Sejmu\n\nNr posiedzenia: 36\n\nDecyzja: skierowano ponownie do komisji w celu przedstawienia sprawozdania\n\nSkierowano do: Komisji do Spraw Deregulacji oraz Komisji Finansów Publicznych\n\nKomentarz: poprawki\n\n### Praca w komisjach po II czytaniu\n\n23 czerwca 2025\n\n#### Sprawozdanie komisji druk nr 1333-A\n\nSprawozdawca: Dorota Marek\n\nWniosek komisji: odrzucić poprawki\n\n24 czerwca 2025\n\n### III czytanie na posiedzeniu Sejmu\n\nNr posiedzenia: 37\n\nGłosowanie: całość projektu ustawy\n\nWynik: 415\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.sejm.gov.pl/Sejm10.nsf/PrzebiegProc.xsp?nr=1232",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:49:53.849Z",
+    "discoveryCandidateId": "candidate_71d81e35-681",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_84ee30af30",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "32d0181da5de8a42b136a1403e2b161775e13f529a4e701aeb4a3fac632815ad"
+  },
+  "createdAt": "2026-06-11T08:20:49.655Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.684Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_703a4517_druk-nr-1232-sejm-rzeczypospolitej-polskiej.json"
+}

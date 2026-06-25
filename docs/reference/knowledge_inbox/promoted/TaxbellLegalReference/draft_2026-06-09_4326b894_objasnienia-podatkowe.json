@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_4326b894_objasnienia-podatkowe",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Objaśnienia podatkowe",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy objaśnienia 2026\nSource: https://www.gov.pl/attachment/8fde481a-18aa-4b1b-843e-5bbd303d6f94\nTier: official\nDiscovery confidence: 0.95\n\nSummary:\n- The Polish tax explanations (Objaśnienia podatkowe) issued 28 January 2026 clarify how to determine the existence of a permanent establishment (SMPD) in Poland for taxpayers without a fixed business place, when issuing invoices via the National System of e-Invoices (KSeF).\n- Key scope: rules for establishing SMPD for VAT purposes for transactions conducted using KSeF, effective from 1 February 2026.\n- Core content includes: legal basis (Polish Ordynacja podatkowa and related VAT provisions), definitions of SMPD, conditions indicating SMPD existence, scenarios where SMPD is not involved in a transaction, procedures to determine SMPD of the buyer, practical examples in the context of KSeF, and guidance on protections arising from following the explanations.\n- Practical impact: starting 1 February 2026, VAT invoices must generally be issued via KSeF, and taxpayers must apply S...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/attachment/8fde481a-18aa-4b1b-843e-5bbd303d6f94",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:04:23.254Z",
+    "discoveryCandidateId": "candidate_c0ba180a-662",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-00-05-874Z_765f3494",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "9f654f35aaaafdcd7c45e86c4c061847a7c035eb7f72733632f812414211a1dd"
+  },
+  "createdAt": "2026-06-09T06:44:16.193Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T06:55:47.469Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 13 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_4326b894_objasnienia-podatkowe.json"
+}

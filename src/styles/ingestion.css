@@ -1,0 +1,73 @@
+.ingestionWizard {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.ingestionStep {
+  align-items: center;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: grid;
+  gap: 3px;
+  grid-template-columns: auto 1fr;
+  padding: 10px;
+}
+
+.ingestionStep > span {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+.ingestionStep strong {
+  font-size: 13px;
+}
+
+.ingestionStep small {
+  color: var(--muted);
+  font-size: 11px;
+  grid-column: 2;
+}
+
+.ingestionStep.active {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 12%, transparent);
+}
+
+.ingestionStep.done > span {
+  background: var(--ok-bg);
+  border-color: color-mix(in srgb, var(--ok) 45%, var(--line));
+  color: var(--ok);
+}
+
+.draftSavedPanel {
+  align-items: center;
+  background: var(--ok-bg);
+  border: 1px solid color-mix(in srgb, var(--ok) 30%, var(--line));
+  border-radius: 10px;
+  color: var(--text);
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 12px;
+}
+
+.draftSavedPanel > svg {
+  color: var(--ok);
+  flex-shrink: 0;
+}
+
+.draftSavedPanel p {
+  margin: 3px 0 0;
+}
+

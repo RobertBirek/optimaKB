@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "ComarchOptimaReference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima",
+  "content": "External source discovered via Exa query: Jakie publiczne aktualności Comarch mówią o nowej wersji?\nTitle: Aktualizacje po wydaniu wersji - Baza Wiedzy programu Comarch ERP Optima\nURL: https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search\nTier: official\nSummary:\nNajważniejsze publiczne aktualności Comarch dotyczące nowej wersji (dla Comarch ERP Optima):\n\n- Aktualizacje po wydaniu wersji (odpowiedzialne za bieżące poprawki po premierze wersji, m.in.):\n  - 09.03.2026: Synchronizacja z Comarch e-Sklep (problem przy wysyłaniu danych z komunikatem „The statement has been terminated”), oraz usprawnienia w odbieraniu i wysyłaniu maili przy SQL Server Authentication.\n  - KSeF: Poprawiono zapisywanie kodu QR certyfikatu KSeF w fakturach offline w aplikacji mobilnej, co zapewnia pełną zgodność po synchronizacji.\n\n- Nowości (kluczowe funkcjonalności wprowadzone w nowej wersji):\n  - JPK_V7(3): Wersja pliku JPK_V7(3) obowiązująca od rozliczenia za luty 2026, z możliwością wydruku i wysyłki do e-Deklaracje. Obowiązek uzupełniania numeru KSeF oraz dodanie nowych kodów JPK w ewidencji.\n  - PIT-37(31): Możliwość naliczania deklaracji PIT-37(31) za rok 2025 z ...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/?ht-kb-search=1&print=print-search",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Jakie publiczne aktualności Comarch mówią o nowej wersji?",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-12T11:24:48.556Z"
+  },
+  "createdAt": "2026-06-12T11:24:48.612Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T13:29:27.933Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_96afa8cd_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.json"
+}

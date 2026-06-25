@@ -1,0 +1,113 @@
+{
+  "generatedAt": "2026-06-05T00:00:00.000Z",
+  "entries": [
+    {
+      "namespace": "ComarchOptimaSchema",
+      "kbName": "Comarch Optima ERP MSSQL Schema",
+      "category": "Optima",
+      "exportDir": "exports/optima_schema/v1",
+      "buildManifestPath": "exports/optima_schema/v1/build_schema_metadata_jobs_manifest.json",
+      "primaryFiles": ["table.csv", "column.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "ComarchOptimaAdditionalFunctions",
+      "kbName": "Comarch Optima Additional Functions",
+      "category": "Optima",
+      "exportDir": "exports/optima_additional_functions/v1",
+      "buildManifestPath": "exports/optima_additional_functions/v1/build_additional_functions_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "ComarchOptimaSprint",
+      "kbName": "Comarch Optima Sprint and Prints",
+      "category": "Optima",
+      "exportDir": "exports/optima_sprint/v1",
+      "buildManifestPath": "exports/optima_sprint/v1/build_optima_sprint_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "ComarchOptimaReference",
+      "kbName": "Comarch Optima Reference",
+      "category": "Optima",
+      "exportDir": "exports/optima_reference/v1",
+      "buildManifestPath": "exports/optima_reference/v1/build_optima_reference_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "ComarchOptimaPartnerTechnical",
+      "kbName": "Comarch Optima Partner Technical",
+      "category": "Optima Partner",
+      "exportDir": "exports/optima_partner_technical/v1",
+      "buildManifestPath": "exports/optima_partner_technical/v1/build_optima_partner_technical_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "partner_asset.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "ComarchOptimaBusinessSemantics",
+      "kbName": "Comarch Optima Business Semantics",
+      "category": "Optima",
+      "exportDir": "exports/optima_business_semantics/v1",
+      "buildManifestPath": "exports/optima_business_semantics/v1/build_business_semantics_jobs_manifest.json",
+      "primaryFiles": ["business_domain.csv", "business_description.csv", "code_meaning.csv", "business_rule.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "ComarchBetterflyReference",
+      "kbName": "Comarch Betterfly Reference",
+      "category": "Betterfly",
+      "exportDir": "exports/betterfly_reference/v1",
+      "buildManifestPath": "exports/betterfly_reference/v1/build_betterfly_reference_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "api_resource.csv", "api_pattern.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "ComarchCommunityNews",
+      "kbName": "Comarch Community News",
+      "category": "Community",
+      "exportDir": "exports/community_news/v1",
+      "buildManifestPath": "exports/community_news/v1/build_community_news_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "news_topic.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "TaxbellLegalReference",
+      "kbName": "Taxbell Legal Reference",
+      "category": "Taxbell",
+      "exportDir": "exports/taxbell_legal_reference/v1",
+      "buildManifestPath": "exports/taxbell_legal_reference/v1/build_taxbell_legal_reference_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "source_topic.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "TaxbellPayrollHRReference",
+      "kbName": "Taxbell Payroll HR Reference",
+      "category": "Taxbell",
+      "exportDir": "exports/taxbell_payroll_hr_reference/v1",
+      "buildManifestPath": "exports/taxbell_payroll_hr_reference/v1/build_taxbell_payroll_hr_reference_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "source_topic.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "TaxbellAccountingVATReference",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "category": "Taxbell",
+      "exportDir": "exports/taxbell_accounting_vat_reference/v1",
+      "buildManifestPath": "exports/taxbell_accounting_vat_reference/v1/build_taxbell_accounting_vat_reference_jobs_manifest.json",
+      "primaryFiles": ["reference_document.csv", "source_topic.csv", "chunk.csv"],
+      "enabled": true
+    },
+    {
+      "namespace": "ComarchUniversalKnowledge",
+      "kbName": "Comarch Universal Knowledge",
+      "category": "Krytyczne",
+      "exportDir": "exports/universal_knowledge/v1",
+      "buildManifestPath": "",
+      "primaryFiles": ["reference_document.csv", "chunk.csv"],
+      "enabled": true
+    }
+  ]
+}

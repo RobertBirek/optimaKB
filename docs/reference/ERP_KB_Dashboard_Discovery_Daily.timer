@@ -1,0 +1,11 @@
+[Unit]
+Description=Run ERP KB source discovery every day
+
+[Timer]
+OnCalendar=*-*-* 04:45:00
+RandomizedDelaySec=5m
+Persistent=true
+Unit=erp-kb-dashboard-discovery-daily.service
+
+[Install]
+WantedBy=timers.target

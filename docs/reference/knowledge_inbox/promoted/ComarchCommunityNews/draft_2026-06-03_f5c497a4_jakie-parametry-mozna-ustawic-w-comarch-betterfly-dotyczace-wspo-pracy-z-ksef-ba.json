@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-06-03_f5c497a4_jakie-parametry-mozna-ustawic-w-comarch-betterfly-dotyczace-wspo-pracy-z-ksef-ba",
+  "kbName": "ComarchCommunityNews",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Jakie parametry można ustawić w Comarch Betterfly dotyczące współpracy z KSeF. - Baza Wiedzy programu Comarch Betterfly",
+  "content": "External source discovered via Exa query: Czy pojawiły się ostatnio newsy o Comarch Betterfly i KSeF?\nTitle: Jakie parametry można ustawić w Comarch Betterfly dotyczące współpracy z KSeF. - Baza Wiedzy programu Comarch Betterfly\nURL: https://pomoc.comarchbetterfly.pl/dokumentacja/jakie-parametry-do-wysylania-dokumentow-do-ksef-mozna-ustawic-w-comarch-beterfly/\nTier: official\nPublished: 2026-04-01T00:00:00.000Z\nSummary:\nKrótka odpowiedź: artykuł z Bazy Wiedzy Comarch Betterfly opisuje parametry i funkcje integracji z KSeF, w tym:\n\n- Zakres współpracy z KSeF: pełna integracja (od 1 lutego 2026) do odbioru i wysyłki faktur, oraz opcja “Tylko odbiór” dla pobierania faktur zakupowych od dostawców.\n- Automatyczne pobieranie faktur z KSeF: automatyczne sprawdzanie nowo pojawiających się faktur kosztowych po logowaniu do systemu; w kontach e-Faktury pobierane są wszystkie nowo wykryte dokumenty i trafiają na dedykowaną listę Faktury z KSeF z możliwością dalszego przetwarzania.\n- Wysyłanie dokumentów dla osób fizycznych (B2C): wysyłka do KSeF dobrowolna; wprowadzone zabezpieczenie automatyzujące nadawanie statusu “nie podlega” dla faktur B2C, aby nie wysyłać danych konsumentów.\n- Metoda kasowa: konieczność oznaczenia faktur zgodnie z wymogiem (pole eFaktury P_16) i ustawienie parametru “Metoda kasową” na now...\n\nOperator notes:\nAuto-drafted from KB-first answer fallback. Review before promotion.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jakie-parametry-do-wysylania-dokumentow-do-ksef-mozna-ustawic-w-comarch-beterfly/",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Czy pojawiły się ostatnio newsy o Comarch Betterfly i KSeF?",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-03T10:29:48.135Z"
+  },
+  "createdAt": "2026-06-03T10:29:48.148Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-05T08:13:32.782Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-03/draft_2026-06-03_f5c497a4_jakie-parametry-mozna-ustawic-w-comarch-betterfly-dotyczace-wspo-pracy-z-ksef-ba.json"
+}

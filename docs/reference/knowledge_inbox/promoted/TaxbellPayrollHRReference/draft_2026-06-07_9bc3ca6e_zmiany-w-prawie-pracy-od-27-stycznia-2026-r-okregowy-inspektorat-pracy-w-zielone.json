@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_9bc3ca6e_zmiany-w-prawie-pracy-od-27-stycznia-2026-r-okregowy-inspektorat-pracy-w-zielone",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Zmiany w prawie pracy od 27 stycznia 2026 r. - Okręgowy Inspektorat Pracy w Zielonej Górze",
+  "content": "Automated source-discovery draft.\n\nQuery: zmiany w prawie pracy 2026\nSource: https://zielonagora.pip.gov.pl/aktualnosci/zmiany-w-prawie-pracy-od-27-stycznia-2026-r\nTier: official\nDiscovery confidence: 0.95\n\nZmiany w prawie pracy wchodzące w życie 27 stycznia 2026 r. (ustawa z dnia 4 grudnia 2025 r.) – podsumowanie najważniejszych punktów:\n\n- Cel nowelizacji: uproszczenie i uporządkowanie niektórych regulacji Kodeksu pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych (ZFŚS), w tym wprowadzenie elektronizacji wybranych czynności.\n\n- Elektroniczna forma czynności prawnych: dopuszczenie składania niektórych wniosków i informacji w formie elektronicznej (np. wniosek o urlop bezpłatny, komunikacja dotycząca monitoringu, warunków przejścia zakładu na innego pracodawcę, konsultacja zamiaru wypowiedzenia z zakładową organizacją związkową, sporządzanie rozkładu czasu pracy). W praktyce możliwe będzie składanie takich dokumentów także poprzez SMS lub e-mail.\n\n- Upraszczanie procesów: nowelizacja ma na celu ułatwienie i usprawnienie realizacji określonych czynności związanych z prawem prac...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://zielonagora.pip.gov.pl/aktualnosci/zmiany-w-prawie-pracy-od-27-stycznia-2026-r",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:12:13.127Z",
+    "discoveryCandidateId": "candidate_7b7c1a70-fe2",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_1a3c3588ca",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "b9ccfec1a94c633b790e00e6b55aaf2a525b39949b08c4f7745e5dfac4cc6ea5"
+  },
+  "createdAt": "2026-06-07T03:08:47.717Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.125Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_9bc3ca6e_zmiany-w-prawie-pracy-od-27-stycznia-2026-r-okregowy-inspektorat-pracy-w-zielone.json"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_9ef0185b_obwieszczenie-marsza-ka-sejmu-rzeczypospolitej-polskiej-z-dnia-22-kwietnia-2026-",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Obwieszczenie Marszałka Sejmu Rzeczypospolitej Polskiej z dnia 22 kwietnia 2026 r. w sprawie ogłoszenia jednolitego tekstu ustawy – Ordynacja podatkowa",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy objaśnienia 2026\nSource: https://eli.gov.pl/api/acts/DU/2026/622/text/T/D20260622L.pdf\nTier: official\nDiscovery confidence: 0.95\n\nSummary:\n- This Polish official notice announces a consolidated text (jednolity tekst) of the Tax Ordinance (Ordynacja podatkowa) as of 21 April 2026.\n- It combines the Tax Ordinance (dated 29 August 1997) with all amendments up to the state of law on 21 April 2026, including specific changes from seven 2025 acts listed in the notice.\n- The listed 2025 acts update or modify the Tax Ordinance and related areas (immigration work permit conditions for foreigners; general amendments to the Tax Ordinance and other acts; visa regulation corrections; Prison Service law amendments; deregulation and modernization of business and administrative regulation; certification of public procurement contractors).\n- The notice is published under the authority of the Speaker of the Sejm (Marshal of the Sejm) and is intended to provide the official, unified text for reference and legal certainty.\n\nIf you ...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://eli.gov.pl/api/acts/DU/2026/622/text/T/D20260622L.pdf",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:04:23.254Z",
+    "discoveryCandidateId": "candidate_be229754-6fe",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-00-05-874Z_765f3494",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "05ec5549c94a3416cf462e783d73dd6fd1a90abd164e37f45442644a53f80361"
+  },
+  "createdAt": "2026-06-07T03:08:48.521Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:19.949Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_9ef0185b_obwieszczenie-marsza-ka-sejmu-rzeczypospolitej-polskiej-z-dnia-22-kwietnia-2026-.json"
+}

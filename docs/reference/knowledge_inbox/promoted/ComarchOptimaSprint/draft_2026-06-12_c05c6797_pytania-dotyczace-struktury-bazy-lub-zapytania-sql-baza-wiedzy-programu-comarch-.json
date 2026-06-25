@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-06-12_c05c6797_pytania-dotyczace-struktury-bazy-lub-zapytania-sql-baza-wiedzy-programu-comarch-",
+  "kbName": "ComarchOptimaSprint",
+  "kbNamespace": "ComarchOptimaSprint",
+  "title": "Pytania dotyczące struktury bazy lub zapytania SQL - Baza Wiedzy programu  Comarch sPrint",
+  "content": "External source discovered via Exa query: Jakie SQL patterny mamy dla Sprint?\nTitle: Pytania dotyczące struktury bazy lub zapytania SQL - Baza Wiedzy programu  Comarch sPrint\nURL: https://pomoc.comarch.pl/sprint/20241/index.php/page/2/?ht-kb-search=1&print=print-search\nTier: official\nSummary:\nSummary:\n- The page discusses questions about database structure or SQL queries within Comarch sPrint Knowledge Base.\n- It advises directing SQL-structure or data-return questions to the system assist for the specific Comarch ERP system in use.\n- It notes that calculated measures can be created without changing the SQL query, using the editor or SQL, and mentions specific details about how measures are evaluated (source vs. table) and how they can be shared between subtemplates.\n- It lists formatting, numbering, rounding, and splitting of calculated measures, and explains how to expose variables between subtemplates (analogous to shared variables in Crystal Reports).\n- It highlights specific functions (FormatString, CurrentVisibleRowIndex) and UI actions (adding measures next to connections or queries).\n\nHow this answers “Jakie SQL patterny mamy dla Sprint?”:\n- The content does not pr...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/sprint/20241/index.php/page/2/?ht-kb-search=1&print=print-search",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "weak_local_evidence"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Jakie SQL patterny mamy dla Sprint?",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-12T11:24:13.272Z"
+  },
+  "createdAt": "2026-06-12T11:24:13.338Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T13:29:27.831Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_c05c6797_pytania-dotyczace-struktury-bazy-lub-zapytania-sql-baza-wiedzy-programu-comarch-.json"
+}

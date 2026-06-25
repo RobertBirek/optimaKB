@@ -1,0 +1,87 @@
+# KB-02 — Terminologia OpenSPG / KAG
+
+## OpenSPG
+
+OpenSPG to silnik grafu wiedzy oparty o Semantic-enhanced Programmable Graph. Łączy model property graph z warstwą semantyczną i programowalnymi regułami.
+
+## SPG
+
+Semantic-enhanced Programmable Graph. Framework reprezentacji wiedzy łączący praktyczność LPG z bogatszą semantyką RDF/OWL.
+
+## KAG
+
+Knowledge Augmented Generation. Framework oparty na OpenSPG, który łączy graf wiedzy, chunky tekstowe, retrieval, reasoning i LLM QA.
+
+## KNext
+
+CLI/SDK i framework programowalny do pracy z projektami OpenSPG/KAG. Typowe zadania:
+- tworzenie projektu,
+- commit schematu,
+- uruchamianie buildera,
+- wykonywanie zapytań reasonera.
+
+## SPG-Schema
+
+Warstwa modelowania domeny. Definiuje typy, właściwości, relacje, predykaty i ograniczenia.
+
+## SPG-Builder
+
+Warstwa budowy wiedzy. Odpowiada za ingest, ekstrakcję, linking, normalizację, wektoryzację i zapis do grafu.
+
+## SPG-Reasoner
+
+Silnik wnioskowania i wykonywania zapytań. Obsługuje KGDSL/GQL, reguły i pattern matching na grafie.
+
+## EntityType
+
+Typ konkretnej encji świata rzeczywistego, np. Person, Company, Product, Document, Procedure.
+
+## ConceptType
+
+Typ konceptu lub kategorii. Używany do taksonomii, klasyfikacji, uogólnień i semantic alignment.
+
+## EventType
+
+Typ zdarzenia. Używany dla faktów z czasem, uczestnikami i skutkami.
+
+## RelationType / Predicate
+
+Relacja między encjami albo konceptami, np. worksAt, belongsTo, hasProcedure, dependsOn.
+
+## Chunk
+
+Fragment dokumentu po segmentacji. W KAG chunk może być powiązany z encjami i relacjami przez mutual indexing.
+
+## Mutual Indexing
+
+Dwukierunkowe powiązanie między grafem wiedzy i tekstowymi chunkami:
+- graf wskazuje źródłowe chunky,
+- chunk wskazuje encje i relacje, które zawiera.
+
+## Schema-constrained extraction
+
+Ekstrakcja ograniczona do typów i pól zdefiniowanych w schemacie. Preferowana dla domen profesjonalnych i faktów krytycznych.
+
+## Schema-free extraction
+
+Swobodna ekstrakcja encji i relacji, podobna do OpenIE. Daje szerokie pokrycie, ale może wprowadzać szum.
+
+## Entity Linking
+
+Łączenie wzmianki tekstowej z istniejącą encją w grafie.
+
+## Concept Linking
+
+Łączenie encji z konceptem lub kategorią domenową.
+
+## KGDSL
+
+Knowledge Graph Domain Specific Language. Język reguł, zapytań i wnioskowania w OpenSPG.
+
+## GQL
+
+Język zapytań grafowych. W praktyce używany do zapytań typu MATCH / RETURN podobnych do Cypher.
+
+## SPO
+
+Subject-Predicate-Object. Podstawowy zapis faktu grafowego, np. `Produkt - maKategorię - Elektronika`.

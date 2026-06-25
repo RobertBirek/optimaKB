@@ -1,0 +1,2441 @@
+{
+  "generatedAt": "2026-06-20T18:35:11.264Z",
+  "requestedSize": 20,
+  "size": 20,
+  "questionCount": 250,
+  "summary": {
+    "counts": {
+      "PASS": 20,
+      "PARTIAL": 0,
+      "MISS": 0
+    },
+    "byCategory": {
+      "schema": {
+        "total": 20,
+        "PASS": 20,
+        "PARTIAL": 0,
+        "MISS": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "Q002",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Które klucze łączą dokument handlowy z kontrahentem?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 46,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podmiotyview,CDN.PodmiotyView Query Guide,Query design helper for table CDN.PodmiotyView.,table_query_guide,CDN_TEST:TABLE:CDN.PodmiotyView,CDN.PodmiotyView,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,27,0,Pod_PodId; Pod_PodmiotTyp,N..."
+            },
+            {
+              "line": 165,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
+            },
+            {
+              "line": 21,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_practeczkidokumenty,CDN.PracTeczkiDokumenty Query Guide,Query design helper for table CDN.PracTeczkiDokumenty.,table_query_guide,CDN_TEST:TABLE:CDN.PracTeczkiDokumenty,CDN.PracTeczkiDokumenty,KADRY_PLACE,REGISTER,HR_PAYROLL,HIGH,QUERY_DESIGN,0,1,..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 69,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajbnkzdarzenie,CDN.DodajBnkZdarzenie Guide,Query-design helper for stored_procedure CDN.DodajBnkZdarzenie.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajBnkZdarzenie,STORED_PROCEDURE,WORKFLOW_INTEGRATION,OGOLNE,MEDIUM,\"WORKFLOW_INTEGRATION | ..."
+            },
+            {
+              "line": 92,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpka,CDN.DetalStan_WydrukiNaglowekPKA Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekPKA.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekPKA,STORED_PROCEDURE,SPRINT_PRINT,OG..."
+            },
+            {
+              "line": 102,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekfa,CDN.DetalStan_WydrukiNaglowekFA Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekFA.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekFA,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 1147,
+              "score": 3,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.CRMDokumenty_InsertUpdateHandler=>U :CDN.TraNag,CRMDokumenty_InsertUpdateHandler => TraNag,Heuristic SQL-text dependency from CDN.CRMDokumenty_InsertUpdateHandler to CDN.TraNag.,object_dependency,CDN_TEST:TRIGGER:CDN.CRMDokumenty_InsertUpda..."
+            },
+            {
+              "line": 1148,
+              "score": 3,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.CRMDokumenty_InsertUpdateHandler=>U :CDN.CRMDokumenty,CRMDokumenty_InsertUpdateHandler => CRMDokumenty,Heuristic SQL-text dependency from CDN.CRMDokumenty_InsertUpdateHandler to CDN.CRMDokumenty.,object_dependency,CDN_TEST:TRIGGER:CDN.CRMDo..."
+            },
+            {
+              "line": 1707,
+              "score": 3,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.TraNag_DeleteHandler=>U :CDN.CRMDokumenty,TraNag_DeleteHandler => CRMDokumenty,Heuristic SQL-text dependency from CDN.TraNag_DeleteHandler to CDN.CRMDokumenty.,object_dependency,CDN_TEST:TRIGGER:CDN.TraNag_DeleteHandler,CDN_TEST:TABLE:CDN.C..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 11867,
+              "score": 3,
+              "snippet": "CDN_TEST:TRIGGER:CDN.CRMDokumenty_InsertUpdateHandler,CRMDokumenty_InsertUpdateHandler,Trigger CDN.CRMDokumenty_InsertUpdateHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.CRMDokumenty_InsertUpdateHandler,CDN_TEST:TABLE:CDN.CRMDokumenty,OBJECT_OR_COLUMN,\"CR..."
+            },
+            {
+              "line": 11886,
+              "score": 3,
+              "snippet": "\",\"CREATE TRIGGER CDN.CRMDokumenty_InsertUpdateHandler"
+            },
+            {
+              "line": 16951,
+              "score": 3,
+              "snippet": "RAISERROR('##OPT32351##', 16, 1) -- RAISERROR('Nie można usunąć pieczątki firmy powiązanej z dokumentem handlowo-magazynowym.', 16, 1)"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 75,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_crdcrmkontakty,CDN.CRMDokumenty -> CDN.CRMKontakty,Direct join path from CDN.CRMDokumenty to CDN.CRMKontakty based on FK_CRDCRMKontakty.,join_path_guide,CDN_TEST:TABLE:CDN.CRMDokumenty,CDN_TEST:TABLE:CDN.CRMKontakty,CDN_TEST:FOREIGN_KEY:C..."
+            },
+            {
+              "line": 176,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dpldtranagds,CDN.DetalPlatnosciDokumentu -> CDN.DetalTraNag,Direct join path from CDN.DetalPlatnosciDokumentu to CDN.DetalTraNag based on FK_DPlDTraNagDS.,join_path_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN_TEST:TABLE:CDN.Detal..."
+            },
+            {
+              "line": 184,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dstranag,CDN.DetalStanPlatnosciDokumentu -> CDN.DetalStanTraNag,Direct join path from CDN.DetalStanPlatnosciDokumentu to CDN.DetalStanTraNag based on FK_DSTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.DetalStanPlatnosciDokumentu,CDN_TEST:TAB..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q003",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie obiekty SQL czytają tabelę TraNag?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 372,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_usunieteobiekty,CDN.UsunieteObiekty Query Guide,Query design helper for table CDN.UsunieteObiekty.,table_query_guide,CDN_TEST:TABLE:CDN.UsunieteObiekty,CDN.UsunieteObiekty,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,0,,,Role OTHER in GENERAL_E..."
+            },
+            {
+              "line": 10,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_tranagrelacje,CDN.TraNagRelacje Query Guide,Query design helper for table CDN.TraNagRelacje.,table_query_guide,CDN_TEST:TABLE:CDN.TraNagRelacje,CDN.TraNagRelacje,HANDEL,RELATION,TRADE_DOCUMENTS,MEDIUM,QUERY_DESIGN,0,0,,,Role RELATION in TRADE_DOC..."
+            },
+            {
+              "line": 14,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podarkuszinwennag,CDN.PodArkuszInwenNag Query Guide,Query design helper for table CDN.PodArkuszInwenNag.,table_query_guide,CDN_TEST:TABLE:CDN.PodArkuszInwenNag,CDN.PodArkuszInwenNag,HANDEL_MAGAZYN,HEADER,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,1,1,P..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 5,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trnpieczatka,CDN.TraNag -> CDN.Pieczatki,Direct join path from CDN.TraNag to CDN.Pieczatki based on FK_TrNPieczatka.,join_path_guide,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:TABLE:CDN.Pieczatki,CDN_TEST:FOREIGN_KEY:CDN.FK_TrNPieczatka,1,DIRECT_..."
+            },
+            {
+              "line": 9,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trnpieczatkajs,CDN.TraNag -> CDN.PieczatkiJS,Direct join path from CDN.TraNag to CDN.PieczatkiJS based on FK_TrNPieczatkaJS.,join_path_guide,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:TABLE:CDN.PieczatkiJS,CDN_TEST:FOREIGN_KEY:CDN.FK_TrNPieczatka..."
+            },
+            {
+              "line": 13,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_treatranag,CDN.TraeSklepAukcje -> CDN.TraNag,Direct join path from CDN.TraeSklepAukcje to CDN.TraNag based on FK_TrEATraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraeSklepAukcje,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_TrEATraN..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 5,
+              "score": 1,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wz_getvattablesprinten,CDN.WZ_GetVATTableSprintEN Guide,Query-design helper for stored_procedure CDN.WZ_GetVATTableSprintEN.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZ_GetVATTableSprintEN,STORED_PROCEDURE,SPRINT_PRINT,KSIEGOWOSC_COMPLIANCE,HIGH..."
+            },
+            {
+              "line": 9,
+              "score": 1,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_esklep_eksportptw,CDN.ESKLEP_EksportPtw Guide,Query-design helper for stored_procedure CDN.ESKLEP_EksportPtw.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ESKLEP_EksportPtw,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | previ..."
+            },
+            {
+              "line": 17,
+              "score": 1,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wzkor_getreportcontent,CDN.WZKOR_GetReportContent Guide,Query-design helper for stored_procedure CDN.WZKOR_GetReportContent.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZKOR_GetReportContent,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT ..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 202,
+              "score": 1,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.TrNZaokraglenieNB=>U :CDN.TraNag,TrNZaokraglenieNB => TraNag,Heuristic SQL-text dependency from CDN.TrNZaokraglenieNB to CDN.TraNag.,object_dependency,CDN_TEST:FUNCTION:CDN.TrNZaokraglenieNB,CDN_TEST:TABLE:CDN.TraNag,FUNCTION,TABLE,HEURISTI..."
+            },
+            {
+              "line": 227,
+              "score": 1,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DokDefinicje_InsertUpdate_Trigger=>U :CDN.TraNag,DokDefinicje_InsertUpdate_Trigger => TraNag,Heuristic SQL-text dependency from CDN.DokDefinicje_InsertUpdate_Trigger to CDN.TraNag.,object_dependency,CDN_TEST:TRIGGER:CDN.DokDefinicje_InsertU..."
+            },
+            {
+              "line": 248,
+              "score": 1,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.TraKwoty=>U :CDN.TraNagRelacje,TraKwoty => TraNagRelacje,Heuristic SQL-text dependency from CDN.TraKwoty to CDN.TraNagRelacje.,object_dependency,CDN_TEST:FUNCTION:CDN.TraKwoty,CDN_TEST:TABLE:CDN.TraNagRelacje,FUNCTION,TABLE,HEURISTIC_SQL_TE..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 195,
+              "score": 1,
+              "snippet": "-- Sprawdzenie, czy zmieniono symbol, numerację lub klasę w definicji wykorzystanej w TraNag"
+            },
+            {
+              "line": 198,
+              "score": 1,
+              "snippet": "JOIN CDN.TraNag ON deleted.DDf_DDfId = CDN.TraNag.TrN_DDfId"
+            },
+            {
+              "line": 202,
+              "score": 1,
+              "snippet": "RAISERROR('##OPT32296##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana w nagłówkach transakcji (TraNag). Nie można zmieniać jej symbolu, schematu numeracji ani klasy.',16,1)"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q004",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie obiekty zapisują do TraElem?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 140,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_pobierzstatystykizmiany,CDN.DetalStan_PobierzStatystykiZmiany Guide,Query-design helper for stored_procedure CDN.DetalStan_PobierzStatystykiZmiany.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_PobierzStatystykiZmiany,STORED_PROCE..."
+            },
+            {
+              "line": 151,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_pobierzstatystykizmianydlaoperatora,CDN.DetalStan_PobierzStatystykiZmianyDlaOperatora Guide,Query-design helper for stored_procedure CDN.DetalStan_PobierzStatystykiZmianyDlaOperatora.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_..."
+            },
+            {
+              "line": 523,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajhamag,CDN.DodajHaMag Guide,Query-design helper for stored_procedure CDN.DodajHaMag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajHaMag,STORED_PROCEDURE,SPECIAL_FUNCTION,HANDEL_MAGAZYN,MEDIUM,\"SPECIAL_FUNCTION | HANDEL_MAGAZYN | preview:CRE..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 2337,
+              "score": 3,
+              "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
+            },
+            {
+              "line": 8071,
+              "score": 3,
+              "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
+            },
+            {
+              "line": 8194,
+              "score": 3,
+              "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 43,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelem,CDN.TraElem Query Guide,Query design helper for table CDN.TraElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraElem,CDN.TraElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,5,4,TrE_PodID; TrE_PodmiotTyp; TrE_TrNId; TrE_TwrId; TrE_KatID; TrE_..."
+            },
+            {
+              "line": 45,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traselemdost,CDN.TraSElemDost Query Guide,Query design helper for table CDN.TraSElemDost.,table_query_guide,CDN_TEST:TABLE:CDN.TraSElemDost,CDN.TraSElemDost,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TsD_TrEId,TraElem,Role LINE in TRADE_DO..."
+            },
+            {
+              "line": 65,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelemkorzbiorcza,CDN.TraElemKorZbiorcza Query Guide,Query design helper for table CDN.TraElemKorZbiorcza.,table_query_guide,CDN_TEST:TABLE:CDN.TraElemKorZbiorcza,CDN.TraElemKorZbiorcza,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TreZ_TrNI..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 21,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstraelemc,CDN.TraSElemCechy -> CDN.TraSElem,Direct join path from CDN.TraSElemCechy to CDN.TraSElem based on FK_TrSTraElemC.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElemCechy,CDN_TEST:TABLE:CDN.TraSElem,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTra..."
+            },
+            {
+              "line": 25,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstraelemd,CDN.TraSElemDost -> CDN.TraElem,Direct join path from CDN.TraSElemDost to CDN.TraElem based on FK_TrSTraElemD.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElemDost,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTraElemD,..."
+            },
+            {
+              "line": 29,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_treztranag,CDN.TraElemKorZbiorcza -> CDN.TraNag,Direct join path from CDN.TraElemKorZbiorcza to CDN.TraNag based on FK_TreZTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElemKorZbiorcza,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 199,
+              "score": 2,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.TrNZaokraglenieNB=>U :CDN.TraElem,TrNZaokraglenieNB => TraElem,Heuristic SQL-text dependency from CDN.TrNZaokraglenieNB to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.TrNZaokraglenieNB,CDN_TEST:TABLE:CDN.TraElem,FUNCTION,TABLE,HEUR..."
+            },
+            {
+              "line": 249,
+              "score": 2,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.TraKwoty=>U :CDN.TraElem,TraKwoty => TraElem,Heuristic SQL-text dependency from CDN.TraKwoty to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.TraKwoty,CDN_TEST:TABLE:CDN.TraElem,FUNCTION,TABLE,HEURISTIC_SQL_TEXT_MATCH,CDN.TraElem"
+            },
+            {
+              "line": 353,
+              "score": 2,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.OplataCukrowaRazemDlaFa=>U :CDN.TraElem,OplataCukrowaRazemDlaFa => TraElem,Heuristic SQL-text dependency from CDN.OplataCukrowaRazemDlaFa to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.OplataCukrowaRazemDlaFa,CDN_TEST:TABLE:CDN.Tra..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q005",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jak znaleźć join path od dokumentu do definicji dokumentu?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 176,
+              "score": 4,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dpldtranagds,CDN.DetalPlatnosciDokumentu -> CDN.DetalTraNag,Direct join path from CDN.DetalPlatnosciDokumentu to CDN.DetalTraNag based on FK_DPlDTraNagDS.,join_path_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN_TEST:TABLE:CDN.Detal..."
+            },
+            {
+              "line": 184,
+              "score": 4,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dstranag,CDN.DetalStanPlatnosciDokumentu -> CDN.DetalStanTraNag,Direct join path from CDN.DetalStanPlatnosciDokumentu to CDN.DetalStanTraNag based on FK_DSTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.DetalStanPlatnosciDokumentu,CDN_TEST:TAB..."
+            },
+            {
+              "line": 229,
+              "score": 4,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ddndokdef,CDN.DokumentyDostawyNag -> CDN.DokDefinicje,Direct join path from CDN.DokumentyDostawyNag to CDN.DokDefinicje based on FK_DDNDokDef.,join_path_guide,CDN_TEST:TABLE:CDN.DokumentyDostawyNag,CDN_TEST:TABLE:CDN.DokDefinicje,CDN_TEST..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 2572,
+              "score": 4,
+              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_trigger_cdn_dokdefinicje_delete_trigger,CDN.DokDefinicje_Delete_Trigger Guide,Query-design helper for trigger CDN.DokDefinicje_Delete_Trigger.,sql_object_guide,CDN_KNF_Konfiguracja:TRIGGER:CDN.DokDefinicje_Delete_Trigger,TRIGGER,WORKFLOW_INTEGRAT..."
+            },
+            {
+              "line": 58,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci,CDN.DetalStan_WydrukiPlatnosci Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPlatnosci,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIG..."
+            },
+            {
+              "line": 95,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_getplatnwyplaty,CDN.GetPlatnWyplaty Guide,Query-design helper for stored_procedure CDN.GetPlatnWyplaty.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.GetPlatnWyplaty,STORED_PROCEDURE,GENERAL_SQL_OBJECT,KADRY_PLACE,NORMAL,GENERAL_SQL_OBJECT | KADRY_PL..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 116,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstanplatnoscidokumentu,CDN.DetalStanPlatnosciDokumentu Query Guide,Query design helper for table CDN.DetalStanPlatnosciDokumentu.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanPlatnosciDokumentu,CDN.DetalStanPlatnosciDokumentu,OGOLNE,OTHER,G..."
+            },
+            {
+              "line": 165,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
+            },
+            {
+              "line": 231,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detaltranag,CDN.DetalTraNag Query Guide,Query design helper for table CDN.DetalTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalTraNag,CDN.DetalTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,0,DTrN_DSTrNID; DTrN_StanDetalID,DetalPlatnosciD..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 4468,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_mobile_eksportptw:READ:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.Mobile_EksportPtw reads CDN.DetalPlatnosciDokumentu,Definition-derived read dependency from CDN.Mobile_EksportPtw to CDN.DetalPlatnosciDokumentu.,object_dependency,CDN_TEST:PROCEDU..."
+            },
+            {
+              "line": 4691,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_mobile_importcashrecordsettlement:READ:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.Mobile_ImportCashRecordSettlement reads CDN.DetalPlatnosciDokumentu,Definition-derived read dependency from CDN.Mobile_ImportCashRecordSettlement to CDN.DetalPlatno..."
+            },
+            {
+              "line": 4693,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_mobile_importcashrecordsettlement:WRITE:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.Mobile_ImportCashRecordSettlement writes CDN.DetalPlatnosciDokumentu,Definition-derived write dependency from CDN.Mobile_ImportCashRecordSettlement to CDN.DetalPla..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 184,
+              "score": 3,
+              "snippet": "RAISERROR('##OPT32295##', 16, 1) -- RAISERROR('Nie można mieć aktywnych dwóch definicji dokumentów o takim samym symbolu', 16,1);"
+            },
+            {
+              "line": 202,
+              "score": 3,
+              "snippet": "RAISERROR('##OPT32296##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana w nagłówkach transakcji (TraNag). Nie można zmieniać jej symbolu, schematu numeracji ani klasy.',16,1)"
+            },
+            {
+              "line": 214,
+              "score": 3,
+              "snippet": "RAISERROR('##OPT32297##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana na stanowiskach Detalu lub sprzedaży mobilnej. Nie można zmieniać jej symbolu, schematu numeracji ani klasy.',16,1)"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q006",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jak wygląda ścieżka joinów od BnkZapisy do kontrahenta?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 6351,
+              "score": 4,
+              "snippet": "DEP:cdn_test_procedure_cdn_anonimizujkontrahenta:READ:cdn_test_table_cdn_bnkzapisy,CDN.AnonimizujKontrahenta reads CDN.BnkZapisy,Definition-derived read dependency from CDN.AnonimizujKontrahenta to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.AnonimizujKontrahenta,C..."
+            },
+            {
+              "line": 6387,
+              "score": 4,
+              "snippet": "DEP:cdn_test_procedure_cdn_anonimizujkontrahenta:WRITE:cdn_test_table_cdn_bnkzapisy,CDN.AnonimizujKontrahenta writes CDN.BnkZapisy,Definition-derived write dependency from CDN.AnonimizujKontrahenta to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.AnonimizujKontrahent..."
+            },
+            {
+              "line": 3352,
+              "score": 3,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.BnkZapisy_InsertUpdateDelete_Trigger=>U :CDN.Kontrahenci,BnkZapisy_InsertUpdateDelete_Trigger => Kontrahenci,Heuristic SQL-text dependency from CDN.BnkZapisy_InsertUpdateDelete_Trigger to CDN.Kontrahenci.,object_dependency,CDN_TEST:TRIGGER:..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 2729,
+              "score": 4,
+              "snippet": "-- Kiedy już wykorzystaliśmy zmienione kwoty limitów ustawiane z zewnątrz (w triggerze BnkZdarzenia lub BnkZapisy) na kontrahentach podrzędnych do ustawienia limitów na kontrahentach nadrzędnych"
+            },
+            {
+              "line": 2754,
+              "score": 4,
+              "snippet": "-- Kiedy już wykorzystaliśmy zmienione kwoty limitów ustawiane z zewnątrz (w triggerze BnkZdarzenia lub BnkZapisy) na kontrahentach podrzędnych do ustawienia limitów na kontrahentach nadrzędnych"
+            },
+            {
+              "line": 276,
+              "score": 2,
+              "snippet": "--Sprawdzenie, czy zmieniono symbol, numerację lub klasę w definicji wykorzystanej w BnkZapisy"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 259,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnknazwy,CDN.BnkNazwy Query Guide,Query design helper for table CDN.BnkNazwy.,table_query_guide,CDN_TEST:TABLE:CDN.BnkNazwy,CDN.BnkNazwy,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,10,1,BNa_KatID; BNa_BNaId,Kategorie; BnkCertyfikaty; PracEtaty..."
+            },
+            {
+              "line": 287,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kartykredytowe,CDN.KartyKredytowe Query Guide,Query design helper for table CDN.KartyKredytowe.,table_query_guide,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN.KartyKredytowe,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,NORMAL,QUERY_DESIGN,2,0,KKr_KKrId,BnkRa..."
+            },
+            {
+              "line": 313,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnkrachunki,CDN.BnkRachunki Query Guide,Query design helper for table CDN.BnkRachunki.,table_query_guide,CDN_TEST:TABLE:CDN.BnkRachunki,CDN.BnkRachunki,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,8,3,BRa_KKrID; BRa_DDfID; BRa_BNaID; BRa_BRaID,..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 190,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_fz_getreportheader,CDN.FZ_GetReportHeader Guide,Query-design helper for stored_procedure CDN.FZ_GetReportHeader.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.FZ_GetReportHeader,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT | HANDEL | previ..."
+            },
+            {
+              "line": 215,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_importrapkaszapis,CDN.ImportRapKasZapis Guide,Query-design helper for stored_procedure CDN.ImportRapKasZapis.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ImportRapKasZapis,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | previ..."
+            },
+            {
+              "line": 431,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_eslkep_importkntzgodypdflinkikontrola,CDN.ESLKEP_ImportKntZgodyPDFLinkiKontrola Guide,Query-design helper for stored_procedure CDN.ESLKEP_ImportKntZgodyPDFLinkiKontrola.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ESLKEP_ImportKntZgodyPDFLinkiKontr..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 459,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dorbnkzapis,CDN.Zaliczki -> CDN.BnkZapisy,Direct join path from CDN.Zaliczki to CDN.BnkZapisy based on FK_DoRBnkZapis.,join_path_guide,CDN_TEST:TABLE:CDN.Zaliczki,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:FOREIGN_KEY:CDN.FK_DoRBnkZapis,1,DIRE..."
+            },
+            {
+              "line": 480,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzppodmiot,CDN.BnkZapisy -> CDN.PodmiotyView,Direct join path from CDN.BnkZapisy to CDN.PodmiotyView based on FK_BZpPodmiot.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.PodmiotyView,CDN_TEST:FOREIGN_KEY:CDN.FK_BZpPodmi..."
+            },
+            {
+              "line": 485,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzpkartatyp,CDN.BnkZapisy -> CDN.KartyKredytowe,Direct join path from CDN.BnkZapisy to CDN.KartyKredytowe based on FK_BZpKartaTyp.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q007",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Które tabele są nagłówkami handlowymi, a które pozycjami?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 764,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_macierzrabatowa,CDN.MacierzRabatowa Guide,Query-design helper for stored_procedure CDN.MacierzRabatowa.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.MacierzRabatowa,STORED_PROCEDURE,SPECIAL_FUNCTION,HANDEL_MAGAZYN,MEDIUM,\"SPECIAL_FUNCTION | HANDEL_M..."
+            },
+            {
+              "line": 2256,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_trigger_cdn_traelemrelacje_insert_trigger,CDN.TraElemRelacje_Insert_Trigger Guide,Query-design helper for trigger CDN.TraElemRelacje_Insert_Trigger.,sql_object_guide,CDN_TEST:TRIGGER:CDN.TraElemRelacje_Insert_Trigger,TRIGGER,GENERAL_SQL_OBJECT,HANDEL,NORMAL,..."
+            },
+            {
+              "line": 2260,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_trigger_cdn_traelemrelacje_delete_trigger,CDN.TraElemRelacje_Delete_Trigger Guide,Query-design helper for trigger CDN.TraElemRelacje_Delete_Trigger.,sql_object_guide,CDN_TEST:TRIGGER:CDN.TraElemRelacje_Delete_Trigger,TRIGGER,GENERAL_SQL_OBJECT,HANDEL,NORMAL,..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 9101,
+              "score": 2,
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+            },
+            {
+              "line": 9122,
+              "score": 2,
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+            },
+            {
+              "line": 9614,
+              "score": 2,
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 64,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_ksefodbiorkolejnoscwyszukiwaniapozycji,CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji Query Guide,Query design helper for table CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji.,table_query_guide,CDN_TEST:TABLE:CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji,CD..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 19,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pcpenaglowek,CDN.PaczkiPrzelewowElem -> CDN.PaczkiPrzelewowNag,Direct join path from CDN.PaczkiPrzelewowElem to CDN.PaczkiPrzelewowNag based on FK_PcPENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.PaczkiPrzelewowElem,CDN_TEST:TABLE:CDN.Pac..."
+            },
+            {
+              "line": 23,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pcpanaglowek,CDN.PaczkiPrzelewowAkceptacje -> CDN.PaczkiPrzelewowNag,Direct join path from CDN.PaczkiPrzelewowAkceptacje to CDN.PaczkiPrzelewowNag based on FK_PcPANaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.PaczkiPrzelewowAkceptacje,CDN_..."
+            },
+            {
+              "line": 31,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_boenaglowek,CDN.BOElem -> CDN.BONag,Direct join path from CDN.BOElem to CDN.BONag based on FK_BOENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.BOElem,CDN_TEST:TABLE:CDN.BONag,CDN_TEST:FOREIGN_KEY:CDN.FK_BOENaglowek,1,DIRECT_FOREIGN_KEY,FRO..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 3,
+              "score": 1,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.MailIdentyfikatory_UpdateHandler=>U :CDN.MailKontaEMail,MailIdentyfikatory_UpdateHandler => MailKontaEMail,Heuristic SQL-text dependency from CDN.MailIdentyfikatory_UpdateHandler to CDN.MailKontaEMail.,object_dependency,CDN_KNF_..."
+            },
+            {
+              "line": 4,
+              "score": 1,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.MailIdentyfikatory_UpdateHandler=>U :CDN.MailIdentyfikatory,MailIdentyfikatory_UpdateHandler => MailIdentyfikatory,Heuristic SQL-text dependency from CDN.MailIdentyfikatory_UpdateHandler to CDN.MailIdentyfikatory.,object_depende..."
+            },
+            {
+              "line": 6,
+              "score": 1,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.MailIdentyfikatory_InsertHandler=>U :CDN.MailKontaEMail,MailIdentyfikatory_InsertHandler => MailKontaEMail,Heuristic SQL-text dependency from CDN.MailIdentyfikatory_InsertHandler to CDN.MailKontaEMail.,object_dependency,CDN_KNF_..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q008",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie procedury dotykają Kontrahenci?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 9,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_esklep_eksportptw,CDN.ESKLEP_EksportPtw Guide,Query-design helper for stored_procedure CDN.ESKLEP_EksportPtw.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ESKLEP_EksportPtw,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | previ..."
+            },
+            {
+              "line": 20,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_esklep_eksportptw_ver2,CDN.ESKLEP_EksportPtw_ver2 Guide,Query-design helper for stored_procedure CDN.ESKLEP_EksportPtw_ver2.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ESKLEP_EksportPtw_ver2,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXP..."
+            },
+            {
+              "line": 27,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_ecodawizopackingsequencelinesxml,CDN.EcodAwizoPackingSequenceLinesXml Guide,Query-design helper for stored_procedure CDN.EcodAwizoPackingSequenceLinesXml.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.EcodAwizoPackingSequenceLinesXml,STORED_PROCEDURE..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 3942,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_korektapodatkudochodowegozd_pozycjekorekty_roczneex2:READ:cdn_test_table_cdn_kontrahenci,CDN.KorektaPodatkuDochodowegoZD_PozycjeKorekty_RoczneEx2 reads CDN.Kontrahenci,Definition-derived read dependency from CDN.KorektaPodatkuDochodowegoZD_PozycjeKor..."
+            },
+            {
+              "line": 3957,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_sprawdzczymoznakorzbiorcza:READ:cdn_test_table_cdn_kontrahenci,CDN.SprawdzCzyMoznaKorZbiorcza reads CDN.Kontrahenci,Definition-derived read dependency from CDN.SprawdzCzyMoznaKorZbiorcza to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN.Sp..."
+            },
+            {
+              "line": 4001,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_dokkorzbiorcza:READ:cdn_test_table_cdn_kontrahenci,CDN.DokKorZbiorcza reads CDN.Kontrahenci,Definition-derived read dependency from CDN.DokKorZbiorcza to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN.DokKorZbiorcza,CDN_TEST:TABLE:CDN.Kont..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 22,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kontazakazy,CDN.KontaZakazy Query Guide,Query design helper for table CDN.KontaZakazy.,table_query_guide,CDN_TEST:TABLE:CDN.KontaZakazy,CDN.KontaZakazy,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,0,1,AcZ_AccId,Konta,Role MASTER in CO..."
+            },
+            {
+              "line": 30,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kontrahenci,CDN.Kontrahenci Query Guide,Query design helper for table CDN.Kontrahenci.,table_query_guide,CDN_TEST:TABLE:CDN.Kontrahenci,CDN.Kontrahenci,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,15,7,Knt_OdbiorcaId; Knt_FplID; Knt_B..."
+            },
+            {
+              "line": 32,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_typwyplata,CDN.TypWyplata Query Guide,Query design helper for table CDN.TypWyplata.,table_query_guide,CDN_TEST:TABLE:CDN.TypWyplata,CDN.TypWyplata,KADRY_PLACE,DICTIONARY,HR_PAYROLL,HIGH,QUERY_DESIGN,11,5,TWP_PdpId; TWP_PdzId; TWP_PPKUmowaId; TWP_..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 4,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kesknt,CDN.KntESklepy -> CDN.Kontrahenci,Direct join path from CDN.KntESklepy to CDN.Kontrahenci based on FK_KESKnt.,join_path_guide,CDN_TEST:TABLE:CDN.KntESklepy,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_KESKnt,1,DIRECT_..."
+            },
+            {
+              "line": 12,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kespknt,CDN.KntESklepyPrzedstawiciele -> CDN.Kontrahenci,Direct join path from CDN.KntESklepyPrzedstawiciele to CDN.Kontrahenci based on FK_KESPKnt.,join_path_guide,CDN_TEST:TABLE:CDN.KntESklepyPrzedstawiciele,CDN_TEST:TABLE:CDN.Kontrahen..."
+            },
+            {
+              "line": 48,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_krd2knt,CDN.Krd -> CDN.Kontrahenci,Direct join path from CDN.Krd to CDN.Kontrahenci based on FK_Krd2Knt.,join_path_guide,CDN_TEST:TABLE:CDN.Krd,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_Krd2Knt,1,DIRECT_FOREIGN_KEY,FROM C..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 927,
+              "score": 2,
+              "snippet": "-- Sprawdzenie, czy zmieniono nazwę lub typ w formie wykorzystanej w Kontrahenci"
+            },
+            {
+              "line": 930,
+              "score": 2,
+              "snippet": "JOIN CDN.Kontrahenci ON deleted.FPl_FPlID = CDN.Kontrahenci.Knt_FPlId"
+            },
+            {
+              "line": 933,
+              "score": 2,
+              "snippet": "RAISERROR('##OPT32328##', 16, 1) -- RAISERROR('Forma płatności jest używana w kontrahentach (Kontrahenci). Nie można zmieniać jej typu ani nazwy.',16,1)"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q009",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie funkcje dotykają Towary?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 599,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_detalfunkcjeprac,CDN.DetalFunkcjePrac Query Guide,Query design helper for table CDN.DetalFunkcjePrac.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.DetalFunkcjePrac,CDN.DetalFunkcjePrac,KADRY_PLACE,OTHER,HR_PAYROLL,NORMAL,QUERY_DES..."
+            },
+            {
+              "line": 5,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podarkuszinwenelem,CDN.PodArkuszInwenElem Query Guide,Query design helper for table CDN.PodArkuszInwenElem.,table_query_guide,CDN_TEST:TABLE:CDN.PodArkuszInwenElem,CDN.PodArkuszInwenElem,HANDEL_MAGAZYN,LINE,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,0,..."
+            },
+            {
+              "line": 19,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traselem,CDN.TraSElem Query Guide,Query design helper for table CDN.TraSElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraSElem,CDN.TraSElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,2,2,TrS_TwrId; TrS_TrSIdDost; TrS_TrSID,Towary; TraSElem; TraSE..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 1341,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_procedure_cdn_detal_pobierzoperatorow,CDN.Detal_PobierzOperatorow Guide,Query-design helper for stored_procedure CDN.Detal_PobierzOperatorow.,sql_object_guide,CDN_KNF_Konfiguracja:PROCEDURE:CDN.Detal_PobierzOperatorow,STORED_PROCEDURE,SPECIAL_FUN..."
+            },
+            {
+              "line": 2580,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_trigger_cdn_detalfunkcjeprac_delete_trigger,CDN.DetalFunkcjePrac_Delete_Trigger Guide,Query-design helper for trigger CDN.DetalFunkcjePrac_Delete_Trigger.,sql_object_guide,CDN_KNF_Konfiguracja:TRIGGER:CDN.DetalFunkcjePrac_Delete_Trigger,TRIGGER,S..."
+            },
+            {
+              "line": 2595,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_trigger_cdn_detalfunkcjeprac_insertupdatedelete_trigger,CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger Guide,Query-design helper for trigger CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger.,sql_object_guide,CDN_KNF_Konfiguracja:TRIGGER:CDN.Detal..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 87,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_Delete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_Delete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_Delete_Trigger to CDN.DetalFunkcjePrac.,object_dependency,CDN_K..."
+            },
+            {
+              "line": 139,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.RejestrOperacji,DetalFunkcjePrac_InsertUpdateDelete_Trigger => RejestrOperacji,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.Rejestr..."
+            },
+            {
+              "line": 140,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_InsertUpdateDelete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.Detal..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 34997,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:TRIGGER:CDN.DetalFunkcjePrac_Delete_Trigger,DetalFunkcjePrac_Delete_Trigger,Trigger CDN.DetalFunkcjePrac_Delete_Trigger in configuration database CDN_KNF_Konfiguracja.,trigger,CDN_KNF_Konfiguracja:DATABASE,CDN.DetalFunkcjePrac_Delete_Trigger,CDN_KNF_Konfig..."
+            },
+            {
+              "line": 34998,
+              "score": 2,
+              "snippet": "ON  [CDN].[DetalFunkcjePrac]"
+            },
+            {
+              "line": 35012,
+              "score": 2,
+              "snippet": "\",\"CREATE  TRIGGER [CDN].[DetalFunkcjePrac_Delete_Trigger]"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 17,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstowar,CDN.TraSElem -> CDN.Towary,Direct join path from CDN.TraSElem to CDN.Towary based on FK_TrSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElem,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTowar,1,DIRECT_FOREIGN_KEY,FRO..."
+            },
+            {
+              "line": 36,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ztwtwrkod,CDN.ZestawyTwr -> CDN.Towary,Direct join path from CDN.ZestawyTwr to CDN.Towary based on FK_ZTwTwrKod.,join_path_guide,CDN_TEST:TABLE:CDN.ZestawyTwr,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_ZTwTwrKod,1,DIRECT_FOREIG..."
+            },
+            {
+              "line": 40,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ztstowar,CDN.ZestawyTwrSkladniki -> CDN.Towary,Direct join path from CDN.ZestawyTwrSkladniki to CDN.Towary based on FK_ZTSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.ZestawyTwrSkladniki,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q010",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Które widoki albo funkcje używają TraElem?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 43,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelem,CDN.TraElem Query Guide,Query design helper for table CDN.TraElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraElem,CDN.TraElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,5,4,TrE_PodID; TrE_PodmiotTyp; TrE_TrNId; TrE_TwrId; TrE_KatID; TrE_..."
+            },
+            {
+              "line": 45,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traselemdost,CDN.TraSElemDost Query Guide,Query design helper for table CDN.TraSElemDost.,table_query_guide,CDN_TEST:TABLE:CDN.TraSElemDost,CDN.TraSElemDost,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TsD_TrEId,TraElem,Role LINE in TRADE_DO..."
+            },
+            {
+              "line": 65,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelemkorzbiorcza,CDN.TraElemKorZbiorcza Query Guide,Query design helper for table CDN.TraElemKorZbiorcza.,table_query_guide,CDN_TEST:TABLE:CDN.TraElemKorZbiorcza,CDN.TraElemKorZbiorcza,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TreZ_TrNI..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 21,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstraelemc,CDN.TraSElemCechy -> CDN.TraSElem,Direct join path from CDN.TraSElemCechy to CDN.TraSElem based on FK_TrSTraElemC.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElemCechy,CDN_TEST:TABLE:CDN.TraSElem,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTra..."
+            },
+            {
+              "line": 25,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstraelemd,CDN.TraSElemDost -> CDN.TraElem,Direct join path from CDN.TraSElemDost to CDN.TraElem based on FK_TrSTraElemD.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElemDost,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTraElemD,..."
+            },
+            {
+              "line": 29,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_treztranag,CDN.TraElemKorZbiorcza -> CDN.TraNag,Direct join path from CDN.TraElemKorZbiorcza to CDN.TraNag based on FK_TreZTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElemKorZbiorcza,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 17,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wzkor_getreportcontent,CDN.WZKOR_GetReportContent Guide,Query-design helper for stored_procedure CDN.WZKOR_GetReportContent.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZKOR_GetReportContent,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT ..."
+            },
+            {
+              "line": 18,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_ecodawizoheaderxml,CDN.EcodAwizoHeaderXml Guide,Query-design helper for stored_procedure CDN.EcodAwizoHeaderXml.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.EcodAwizoHeaderXml,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | p..."
+            },
+            {
+              "line": 26,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wzkor_getreportcontenten,CDN.WZKOR_GetReportContentEN Guide,Query-design helper for stored_procedure CDN.WZKOR_GetReportContentEN.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZKOR_GetReportContentEN,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRIN..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 87,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_Delete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_Delete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_Delete_Trigger to CDN.DetalFunkcjePrac.,object_dependency,CDN_K..."
+            },
+            {
+              "line": 139,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.RejestrOperacji,DetalFunkcjePrac_InsertUpdateDelete_Trigger => RejestrOperacji,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.Rejestr..."
+            },
+            {
+              "line": 140,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_InsertUpdateDelete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.Detal..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 2331,
+              "score": 2,
+              "snippet": "-- obsługa sprawdzania relacji restrict do tabeli CDN.TraElem"
+            },
+            {
+              "line": 2333,
+              "score": 2,
+              "snippet": "SELECT * FROM CDN.TraElem, deleted"
+            },
+            {
+              "line": 2337,
+              "score": 2,
+              "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q011",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jak powiązać VAT nagłówek z VAT pozycjami?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 324,
+              "score": 3,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_va7naglowek,CDN.VatTab7 -> CDN.VatNag,Direct join path from CDN.VatTab7 to CDN.VatNag based on FK_Va7Naglowek.,join_path_guide,CDN_TEST:TABLE:CDN.VatTab7,CDN_TEST:TABLE:CDN.VatNag,CDN_TEST:FOREIGN_KEY:CDN.FK_Va7Naglowek,1,DIRECT_FOREIGN_K..."
+            },
+            {
+              "line": 19,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pcpenaglowek,CDN.PaczkiPrzelewowElem -> CDN.PaczkiPrzelewowNag,Direct join path from CDN.PaczkiPrzelewowElem to CDN.PaczkiPrzelewowNag based on FK_PcPENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.PaczkiPrzelewowElem,CDN_TEST:TABLE:CDN.Pac..."
+            },
+            {
+              "line": 23,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pcpanaglowek,CDN.PaczkiPrzelewowAkceptacje -> CDN.PaczkiPrzelewowNag,Direct join path from CDN.PaczkiPrzelewowAkceptacje to CDN.PaczkiPrzelewowNag based on FK_PcPANaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.PaczkiPrzelewowAkceptacje,CDN_..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 764,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_macierzrabatowa,CDN.MacierzRabatowa Guide,Query-design helper for stored_procedure CDN.MacierzRabatowa.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.MacierzRabatowa,STORED_PROCEDURE,SPECIAL_FUNCTION,HANDEL_MAGAZYN,MEDIUM,\"SPECIAL_FUNCTION | HANDEL_M..."
+            },
+            {
+              "line": 928,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_generujrws,CDN.GenerujRWS Guide,Query-design helper for stored_procedure CDN.GenerujRWS.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.GenerujRWS,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
+            },
+            {
+              "line": 960,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_naliczajkws,CDN.NaliczajKWS Guide,Query-design helper for stored_procedure CDN.NaliczajKWS.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.NaliczajKWS,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROC..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 6064,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_off_dodajnaglowekmm:WRITE:cdn_test_table_cdn_travat,CDN.OFF_DodajNaglowekMM writes CDN.TraVat,Definition-derived write dependency from CDN.OFF_DodajNaglowekMM to CDN.TraVat.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,CDN_TEST:TABLE:..."
+            },
+            {
+              "line": 735,
+              "score": 2,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TF:CDN.VATZD_PozycjeVat=>U :CDN.VatTab,VATZD_PozycjeVat => VatTab,Heuristic SQL-text dependency from CDN.VATZD_PozycjeVat to CDN.VatTab.,object_dependency,CDN_TEST:FUNCTION:CDN.VATZD_PozycjeVat,CDN_TEST:TABLE:CDN.VatTab,FUNCTION,TABLE,HEURISTIC_SQ..."
+            },
+            {
+              "line": 736,
+              "score": 2,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TF:CDN.VATZD_PozycjeVat=>TF:CDN.VATZD_Zobowiazania,VATZD_PozycjeVat => VATZD_Zobowiazania,Heuristic SQL-text dependency from CDN.VATZD_PozycjeVat to CDN.VATZD_Zobowiazania.,object_dependency,CDN_TEST:FUNCTION:CDN.VATZD_PozycjeVat,CDN_TEST:FUNCTION..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 9101,
+              "score": 3,
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+            },
+            {
+              "line": 9122,
+              "score": 3,
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+            },
+            {
+              "line": 9614,
+              "score": 3,
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 37,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_vattab,CDN.VatTab Query Guide,Query design helper for table CDN.VatTab.,table_query_guide,CDN_TEST:TABLE:CDN.VatTab,CDN.VatTab,KSIEGOWOSC_COMPLIANCE,LINE,COMPLIANCE_ACCOUNTING,HIGH,QUERY_DESIGN,0,3,VaT_KatID; VaT_Kat2ID; VaT_VaNID,Kategorie; VatN..."
+            },
+            {
+              "line": 64,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_ksefodbiorkolejnoscwyszukiwaniapozycji,CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji Query Guide,Query design helper for table CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji.,table_query_guide,CDN_TEST:TABLE:CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji,CD..."
+            },
+            {
+              "line": 73,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_travat,CDN.TraVat Query Guide,Query design helper for table CDN.TraVat.,table_query_guide,CDN_TEST:TABLE:CDN.TraVat,CDN.TraVat,HANDEL,REGISTER,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TrV_TrNID,TraNag,Role REGISTER in TRADE_DOCUMENTS. Outbound forei..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q012",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie są kluczowe FK dla Kontrahenci w dokumentach handlowych?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 46,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podmiotyview,CDN.PodmiotyView Query Guide,Query design helper for table CDN.PodmiotyView.,table_query_guide,CDN_TEST:TABLE:CDN.PodmiotyView,CDN.PodmiotyView,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,27,0,Pod_PodId; Pod_PodmiotTyp,N..."
+            },
+            {
+              "line": 165,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
+            },
+            {
+              "line": 22,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kontazakazy,CDN.KontaZakazy Query Guide,Query design helper for table CDN.KontaZakazy.,table_query_guide,CDN_TEST:TABLE:CDN.KontaZakazy,CDN.KontaZakazy,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,0,1,AcZ_AccId,Konta,Role MASTER in CO..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 69,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajbnkzdarzenie,CDN.DodajBnkZdarzenie Guide,Query-design helper for stored_procedure CDN.DodajBnkZdarzenie.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajBnkZdarzenie,STORED_PROCEDURE,WORKFLOW_INTEGRATION,OGOLNE,MEDIUM,\"WORKFLOW_INTEGRATION | ..."
+            },
+            {
+              "line": 92,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpka,CDN.DetalStan_WydrukiNaglowekPKA Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekPKA.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekPKA,STORED_PROCEDURE,SPRINT_PRINT,OG..."
+            },
+            {
+              "line": 102,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekfa,CDN.DetalStan_WydrukiNaglowekFA Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekFA.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekFA,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 443,
+              "score": 3,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.Kontrahenci_Delete_Trigger=>U :CDN.CfgKlucze,Kontrahenci_Delete_Trigger => CfgKlucze,Heuristic SQL-text dependency from CDN.Kontrahenci_Delete_Trigger to CDN.CfgKlucze.,object_dependency,CDN_TEST:TRIGGER:CDN.Kontrahenci_Delete_Trigger,CDN_T..."
+            },
+            {
+              "line": 1368,
+              "score": 3,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.Kontrahenci_DeleteHandler=>U :CDN.Kontrahenci,Kontrahenci_DeleteHandler => Kontrahenci,Heuristic SQL-text dependency from CDN.Kontrahenci_DeleteHandler to CDN.Kontrahenci.,object_dependency,CDN_TEST:TRIGGER:CDN.Kontrahenci_DeleteHandler,CDN..."
+            },
+            {
+              "line": 1369,
+              "score": 3,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.Kontrahenci_DeleteHandler=>U :CDN.TwrDost,Kontrahenci_DeleteHandler => TwrDost,Heuristic SQL-text dependency from CDN.Kontrahenci_DeleteHandler to CDN.TwrDost.,object_dependency,CDN_TEST:TRIGGER:CDN.Kontrahenci_DeleteHandler,CDN_TEST:TABLE:..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 14909,
+              "score": 3,
+              "snippet": "CDN_TEST:TRIGGER:CDN.Kontrahenci_DeleteHandler,Kontrahenci_DeleteHandler,Trigger CDN.Kontrahenci_DeleteHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.Kontrahenci_DeleteHandler,CDN_TEST:TABLE:CDN.Kontrahenci,OBJECT_OR_COLUMN,\"CREATE TRIGGER CDN.Kontrahenci_..."
+            },
+            {
+              "line": 14929,
+              "score": 3,
+              "snippet": "\",\"CREATE TRIGGER CDN.Kontrahenci_DeleteHandler"
+            },
+            {
+              "line": 15792,
+              "score": 3,
+              "snippet": "CDN_TEST:TRIGGER:CDN.Kontrahenci_InsertUpdateHandler,Kontrahenci_InsertUpdateHandler,Trigger CDN.Kontrahenci_InsertUpdateHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.Kontrahenci_InsertUpdateHandler,CDN_TEST:TABLE:CDN.Kontrahenci,OBJECT_OR_COLUMN,\"CREATE ..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 4,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kesknt,CDN.KntESklepy -> CDN.Kontrahenci,Direct join path from CDN.KntESklepy to CDN.Kontrahenci based on FK_KESKnt.,join_path_guide,CDN_TEST:TABLE:CDN.KntESklepy,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_KESKnt,1,DIRECT_..."
+            },
+            {
+              "line": 12,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kespknt,CDN.KntESklepyPrzedstawiciele -> CDN.Kontrahenci,Direct join path from CDN.KntESklepyPrzedstawiciele to CDN.Kontrahenci based on FK_KESPKnt.,join_path_guide,CDN_TEST:TABLE:CDN.KntESklepyPrzedstawiciele,CDN_TEST:TABLE:CDN.Kontrahen..."
+            },
+            {
+              "line": 48,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_krd2knt,CDN.Krd -> CDN.Kontrahenci,Direct join path from CDN.Krd to CDN.Kontrahenci based on FK_Krd2Knt.,join_path_guide,CDN_TEST:TABLE:CDN.Krd,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_Krd2Knt,1,DIRECT_FOREIGN_KEY,FROM C..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q013",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Które obiekty SQL czytają PracEtaty i Pracownicy?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 1899,
+              "score": 4,
+              "snippet": "SQL_GUIDE:cdn_test_function_cdn_dekldradopoliczenia,CDN.DeklDRADoPoliczenia Guide,Query-design helper for function CDN.DeklDRADoPoliczenia.,sql_object_guide,CDN_TEST:FUNCTION:CDN.DeklDRADoPoliczenia,FUNCTION,COMPLIANCE_REPORTING,KSIEGOWOSC_COMPLIANCE,HIGH,\"COMPLIANCE_REPORTING..."
+            },
+            {
+              "line": 2153,
+              "score": 4,
+              "snippet": "SQL_GUIDE:cdn_test_view_cdn_pracownicyview,CDN.PracownicyView Guide,Query-design helper for view CDN.PracownicyView.,sql_object_guide,CDN_TEST:VIEW:CDN.PracownicyView,VIEW,IMPORT_EXPORT,KADRY_PLACE,MEDIUM,\"IMPORT_EXPORT | KADRY_PLACE | preview:create view CDN.PracownicyView ( ..."
+            },
+            {
+              "line": 11,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_czaspracypracownikowwroku,CDN.CzasPracyPracownikowWRoku Guide,Query-design helper for stored_procedure CDN.CzasPracyPracownikowWRoku.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.CzasPracyPracownikowWRoku,STORED_PROCEDURE,IMPORT_EXPORT,KADRY_PLACE,M..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 2932,
+              "score": 4,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:V :CDN.PracownicyView=>U :CDN.PracEtaty,PracownicyView => PracEtaty,Heuristic SQL-text dependency from CDN.PracownicyView to CDN.PracEtaty.,object_dependency,CDN_TEST:VIEW:CDN.PracownicyView,CDN_TEST:TABLE:CDN.PracEtaty,VIEW,TABLE,HEURISTIC_SQL_TE..."
+            },
+            {
+              "line": 8920,
+              "score": 4,
+              "snippet": "DEP:cdn_test_view_cdn_pracownicyview:READ:cdn_test_table_cdn_pracetaty,CDN.PracownicyView reads CDN.PracEtaty,Definition-derived read dependency from CDN.PracownicyView to CDN.PracEtaty.,object_dependency,CDN_TEST:VIEW:CDN.PracownicyView,CDN_TEST:TABLE:CDN.PracEtaty,VIEW,TABLE..."
+            },
+            {
+              "line": 4301,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_dodajdokumentdoteczkipracownika:READ:cdn_test_table_cdn_pracetaty,CDN.DodajDokumentDoTeczkiPracownika reads CDN.PracEtaty,Definition-derived read dependency from CDN.DodajDokumentDoTeczkiPracownika to CDN.PracEtaty.,object_dependency,CDN_TEST:PROCEDU..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 211,
+              "score": 3,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pre_dkmidpracodawca,CDN.PracEtaty -> CDN.DaneKadMod,Direct join path from CDN.PracEtaty to CDN.DaneKadMod based on FK_PRE_DkmIdPracodawca.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.DaneKadMod,CDN_TEST:FOREIGN_KEY:CDN..."
+            },
+            {
+              "line": 163,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_prezrgid,CDN.PracEtaty -> CDN.ZestawyRegul,Direct join path from CDN.PracEtaty to CDN.ZestawyRegul based on FK_PREZrgId.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.ZestawyRegul,CDN_TEST:FOREIGN_KEY:CDN.FK_PREZrgId,1,D..."
+            },
+            {
+              "line": 167,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_prekategoria,CDN.PracEtaty -> CDN.Kategorie,Direct join path from CDN.PracEtaty to CDN.Kategorie based on FK_PREKategoria.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.Kategorie,CDN_TEST:FOREIGN_KEY:CDN.FK_PREKategoria,..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 3,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_zestawyregul,CDN.ZestawyRegul Query Guide,Query design helper for table CDN.ZestawyRegul.,table_query_guide,CDN_TEST:TABLE:CDN.ZestawyRegul,CDN.ZestawyRegul,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,3,0,ZRG_ZrgId,PracEtaty; Dzialy; ZestawyR..."
+            },
+            {
+              "line": 36,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_danekadmod,CDN.DaneKadMod Query Guide,Query design helper for table CDN.DaneKadMod.,table_query_guide,CDN_TEST:TABLE:CDN.DaneKadMod,CDN.DaneKadMod,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,14,0,DKM_DkmId,DaneKadModRelacje; PracEtaty; PracTe..."
+            },
+            {
+              "line": 59,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_prackod,CDN.PracKod Query Guide,Query design helper for table CDN.PracKod.,table_query_guide,CDN_TEST:TABLE:CDN.PracKod,CDN.PracKod,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,43,0,PRA_PraId,Trwale; OAtrybuty; CentraKierownicy; OpisKadry; Dek..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 1882,
+              "score": 2,
+              "snippet": "-- Sprawdzenie obecności wierszy w tabeli nadrzędnej PracEtaty"
+            },
+            {
+              "line": 1883,
+              "score": 2,
+              "snippet": "IF EXISTS (SELECT * FROM inserted LEFT OUTER JOIN CDN.PracEtaty ON WPS_ZrodloId = PRE_PreId"
+            },
+            {
+              "line": 1887,
+              "score": 2,
+              "snippet": "--RAISERROR('Nie istnieje zapis w tabeli nadrzędnej (powiązanie z tabelą  PracEtaty). ', 16, 1)--ERR_SQL_Place_NieIstniejePowiazanieWPSPRE 32560"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q014",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie indeksy i FK są na Towary?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 5,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podarkuszinwenelem,CDN.PodArkuszInwenElem Query Guide,Query design helper for table CDN.PodArkuszInwenElem.,table_query_guide,CDN_TEST:TABLE:CDN.PodArkuszInwenElem,CDN.PodArkuszInwenElem,HANDEL_MAGAZYN,LINE,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,0,..."
+            },
+            {
+              "line": 19,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traselem,CDN.TraSElem Query Guide,Query design helper for table CDN.TraSElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraSElem,CDN.TraSElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,2,2,TrS_TwrId; TrS_TrSIdDost; TrS_TrSID,Towary; TraSElem; TraSE..."
+            },
+            {
+              "line": 43,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelem,CDN.TraElem Query Guide,Query design helper for table CDN.TraElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraElem,CDN.TraElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,5,4,TrE_PodID; TrE_PodmiotTyp; TrE_TrNId; TrE_TwrId; TrE_KatID; TrE_..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 17,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstowar,CDN.TraSElem -> CDN.Towary,Direct join path from CDN.TraSElem to CDN.Towary based on FK_TrSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElem,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTowar,1,DIRECT_FOREIGN_KEY,FRO..."
+            },
+            {
+              "line": 36,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ztwtwrkod,CDN.ZestawyTwr -> CDN.Towary,Direct join path from CDN.ZestawyTwr to CDN.Towary based on FK_ZTwTwrKod.,join_path_guide,CDN_TEST:TABLE:CDN.ZestawyTwr,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_ZTwTwrKod,1,DIRECT_FOREIG..."
+            },
+            {
+              "line": 40,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ztstowar,CDN.ZestawyTwrSkladniki -> CDN.Towary,Direct join path from CDN.ZestawyTwrSkladniki to CDN.Towary based on FK_ZTSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.ZestawyTwrSkladniki,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 12,
+              "score": 1,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_aktualizujopakelem,CDN.DetalStan_AktualizujOpakElem Guide,Query-design helper for stored_procedure CDN.DetalStan_AktualizujOpakElem.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_AktualizujOpakElem,STORED_PROCEDURE,GENERAL_SQL_OBJ..."
+            },
+            {
+              "line": 17,
+              "score": 1,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wzkor_getreportcontent,CDN.WZKOR_GetReportContent Guide,Query-design helper for stored_procedure CDN.WZKOR_GetReportContent.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZKOR_GetReportContent,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT ..."
+            },
+            {
+              "line": 22,
+              "score": 1,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detal_eksportopakelem,CDN.Detal_EksportOpakElem Guide,Query-design helper for stored_procedure CDN.Detal_EksportOpakElem.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Detal_EksportOpakElem,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT ..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 269,
+              "score": 1,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrybuty_Update_Trigger=>U :CDN.Towary,DefAtrybuty_Update_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrybuty_Update_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrybuty_Update_Trigger,CDN_TEST:TABLE..."
+            },
+            {
+              "line": 338,
+              "score": 1,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrElem_Update_Trigger=>U :CDN.Towary,DefAtrElem_Update_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrElem_Update_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrElem_Update_Trigger,CDN_TEST:TABLE:CDN..."
+            },
+            {
+              "line": 360,
+              "score": 1,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrElem_Delete_Trigger=>U :CDN.Towary,DefAtrElem_Delete_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrElem_Delete_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrElem_Delete_Trigger,CDN_TEST:TABLE:CDN..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 650,
+              "score": 1,
+              "snippet": "join cdn.Towary on TwTS_TwrId = Twr_TwrId"
+            },
+            {
+              "line": 655,
+              "score": 1,
+              "snippet": "select Twr_TwrId,GETDATE() from cdn.Towary"
+            },
+            {
+              "line": 1278,
+              "score": 1,
+              "snippet": "join cdn.Towary on TwTS_TwrId = Twr_TwrId"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q015",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Które tabele są słownikowe w obszarze konfiguracji?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 21,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_sprawdzkonto,CDN.SprawdzKonto Guide,Query-design helper for stored_procedure CDN.SprawdzKonto.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.SprawdzKonto,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:Create ..."
+            },
+            {
+              "line": 188,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_obrotykbmw,CDN.ObrotyKBMW Guide,Query-design helper for stored_procedure CDN.ObrotyKBMW.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ObrotyKBMW,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
+            },
+            {
+              "line": 350,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_kontoslownikowe,CDN.KontoSlownikowe Guide,Query-design helper for stored_procedure CDN.KontoSlownikowe.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KontoSlownikowe,STORED_PROCEDURE,GENERAL_SQL_OBJECT,CRM_KONTRAHENCI,NORMAL,\"GENERAL_SQL_OBJECT | CRM..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 6052,
+              "score": 2,
+              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_uaktualnijczasykonfiguracji:WRITE:cdn_test_table_cdn_detalstankonfiguracja,CDN.DetalStan_UaktualnijCzasyKonfiguracji writes CDN.DetalStanKonfiguracja,Definition-derived write dependency from CDN.DetalStan_UaktualnijCzasyKonfiguracji to CDN...."
+            },
+            {
+              "line": 10656,
+              "score": 2,
+              "snippet": "DEP:cdn_test_procedure_cdn_sprawdzkonto:EXEC:cdn_test_procedure_cdn_kontoslownikowe,CDN.SprawdzKonto execs CDN.KontoSlownikowe,Definition-derived procedure call from CDN.SprawdzKonto to CDN.KontoSlownikowe.,object_dependency,CDN_TEST:PROCEDURE:CDN.SprawdzKonto,CDN_TEST:PROCEDU..."
+            },
+            {
+              "line": 12278,
+              "score": 2,
+              "snippet": "DEP:cdn_test_procedure_cdn_kontoslownikowe:READ:cdn_test_table_cdn_konta,CDN.KontoSlownikowe reads CDN.Konta,Definition-derived read dependency from CDN.KontoSlownikowe to CDN.Konta.,object_dependency,CDN_TEST:PROCEDURE:CDN.KontoSlownikowe,CDN_TEST:TABLE:CDN.Konta,PROCEDURE,TA..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 944,
+              "score": 2,
+              "snippet": "RAISERROR('##OPT32329##', 16, 1) -- RAISERROR('Forma płatności jest używana w konfiguracji Detalu. Nie można zmieniać jej typu ani nazwy.',16,1)"
+            },
+            {
+              "line": 15152,
+              "score": 2,
+              "snippet": "-- Czy konto nadrzędne nie jest słownikowe a podrzędne niewalutowe"
+            },
+            {
+              "line": 27985,
+              "score": 2,
+              "snippet": "-- kontrola grup w konfiguracji"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 39,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstankonfiguracja,CDN.DetalStanKonfiguracja Query Guide,Query design helper for table CDN.DetalStanKonfiguracja.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanKonfiguracja,CDN.DetalStanKonfiguracja,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN..."
+            },
+            {
+              "line": 57,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfginpostkontaallegro,CDN.CfgInpostKontaAllegro Query Guide,Query design helper for table CDN.CfgInpostKontaAllegro.,table_query_guide,CDN_TEST:TABLE:CDN.CfgInpostKontaAllegro,CDN.CfgInpostKontaAllegro,KONFIGURACJA,CONFIG,CONFIGURATION_ADMIN,MEDI..."
+            },
+            {
+              "line": 81,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfgtowarautonumerserie,CDN.CfgTowarAutonumerSerie Query Guide,Query design helper for table CDN.CfgTowarAutonumerSerie.,table_query_guide,CDN_TEST:TABLE:CDN.CfgTowarAutonumerSerie,CDN.CfgTowarAutonumerSerie,KONFIGURACJA,CONFIG,CONFIGURATION_ADMIN..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 76,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_anksp_ankgp,CDN.AnkSlownikPytan -> CDN.AnkGrupyPytan,Direct join path from CDN.AnkSlownikPytan to CDN.AnkGrupyPytan based on FK_AnkSp_AnkGp.,join_path_guide,CDN_TEST:TABLE:CDN.AnkSlownikPytan,CDN_TEST:TABLE:CDN.AnkGrupyPytan,CDN_TEST:FORE..."
+            },
+            {
+              "line": 80,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ankspo_anksp,CDN.AnkSlownikPytanOdp -> CDN.AnkSlownikPytan,Direct join path from CDN.AnkSlownikPytanOdp to CDN.AnkSlownikPytan based on FK_AnkSpO_AnkSp.,join_path_guide,CDN_TEST:TABLE:CDN.AnkSlownikPytanOdp,CDN_TEST:TABLE:CDN.AnkSlownikPy..."
+            },
+            {
+              "line": 547,
+              "score": 1,
+              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_rsckategoria,CDN.RCSesje -> CDN.RCKategorie,Direct join path from CDN.RCSesje to CDN.RCKategorie based on FK_RSCKategoria.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.RCSesje,CDN_KNF_Konfiguracja:TABLE:CDN.RCKategorie,CDN_K..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q016",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jak znaleźć relacje między CfgKlucze i CfgWartosci?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 274,
+              "score": 4,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfgklucze,CDN.CfgKlucze Query Guide,Query design helper for table CDN.CfgKlucze.,table_query_guide,CDN_TEST:TABLE:CDN.CfgKlucze,CDN.CfgKlucze,KONFIGURACJA,DICTIONARY,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,2,1,CFK_ParentId; CFK_CfkId,CfgKlucze; C..."
+            },
+            {
+              "line": 298,
+              "score": 4,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfgwartosci,CDN.CfgWartosci Query Guide,Query design helper for table CDN.CfgWartosci.,table_query_guide,CDN_TEST:TABLE:CDN.CfgWartosci,CDN.CfgWartosci,KONFIGURACJA,CONFIG,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,1,CFW_CfkId,CfgKlucze,Role CONFI..."
+            },
+            {
+              "line": 585,
+              "score": 4,
+              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_cfgklucze,CDN.CfgKlucze Query Guide,Query design helper for table CDN.CfgKlucze.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.CfgKlucze,CDN.CfgKlucze,KONFIGURACJA,DICTIONARY,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,2,1,CFK_ParentId..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 67,
+              "score": 4,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_cfwcfklink,CDN.CfgWartosci -> CDN.CfgKlucze,Direct join path from CDN.CfgWartosci to CDN.CfgKlucze based on FK_CFWCfkLink.,join_path_guide,CDN_TEST:TABLE:CDN.CfgWartosci,CDN_TEST:TABLE:CDN.CfgKlucze,CDN_TEST:FOREIGN_KEY:CDN.FK_CFWCfkLink,..."
+            },
+            {
+              "line": 582,
+              "score": 4,
+              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_cfwcfklink,CDN.CfgWartosci -> CDN.CfgKlucze,Direct join path from CDN.CfgWartosci to CDN.CfgKlucze based on FK_CFWCfkLink.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.CfgWartosci,CDN_KNF_Konfiguracja:TABLE:CDN.CfgKlucze,CDN..."
+            },
+            {
+              "line": 621,
+              "score": 4,
+              "snippet": "JOIN_GUIDE:curated:company_config_key_value,CDN.CfgWartosci -> CDN.CfgKlucze,Curated business join path from CDN.CfgWartosci to CDN.CfgKlucze.,join_path_guide,CDN_TEST:TABLE:CDN.CfgWartosci,CDN_TEST:TABLE:CDN.CfgKlucze,CDN_TEST:FOREIGN_KEY:CDN.FK_CFWCfkLink,1,CURATED_BUSINESS_..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 16,
+              "score": 4,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_configupdate,CDN.ConfigUpdate Guide,Query-design helper for stored_procedure CDN.ConfigUpdate.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ConfigUpdate,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUNCTION | OGOLNE | preview:CREATE Proc..."
+            },
+            {
+              "line": 343,
+              "score": 4,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_kartaczasupracycalc,CDN.KartaCzasuPracyCalc Guide,Query-design helper for stored_procedure CDN.KartaCzasuPracyCalc.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KartaCzasuPracyCalc,STORED_PROCEDURE,COMPLIANCE_REPORTING,KADRY_PLACE,HIGH,\"COMPLIANCE_R..."
+            },
+            {
+              "line": 384,
+              "score": 4,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_z3_mies,CDN.Z3_Mies Guide,Query-design helper for stored_procedure CDN.Z3_Mies.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Z3_Mies,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUNCTION | OGOLNE | preview:CREATE PROCEDURE CDN.Z3_Mies @D..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 2430,
+              "score": 4,
+              "snippet": "IF EXISTS (SELECT * FROM CDN.CfgKlucze JOIN CDN.CfgWartosci ON CFW_CfkId = CFK_CfkId WHERE CFK_Nazwa = 'PPKInstytucjaFinansowa' AND CFW_Wartosc IN (SELECT CONVERT(NVARCHAR(4000), deleted.Knt_KntID) FROM deleted))"
+            },
+            {
+              "line": 8,
+              "score": 2,
+              "snippet": "DELETE CDN.DokRelacje"
+            },
+            {
+              "line": 9,
+              "score": 2,
+              "snippet": "FROM CDN.DokRelacje JOIN deleted ON DoR_DokumentTyp=904 AND DoR_DokumentId=deleted.SrU_SrUId"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 46,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.CfgKlucze_Update_Trigger=>U :CDN.CfgKlucze,CfgKlucze_Update_Trigger => CfgKlucze,Heuristic SQL-text dependency from CDN.CfgKlucze_Update_Trigger to CDN.CfgKlucze.,object_dependency,CDN_KNF_Konfiguracja:TRIGGER:CDN.CfgKlucze_Upda..."
+            },
+            {
+              "line": 62,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TF:CDN.CfgDietyRyczalty=>U :CDN.CfgKlucze,CfgDietyRyczalty => CfgKlucze,Heuristic SQL-text dependency from CDN.CfgDietyRyczalty to CDN.CfgKlucze.,object_dependency,CDN_KNF_Konfiguracja:FUNCTION:CDN.CfgDietyRyczalty,CDN_KNF_Konfiguracja..."
+            },
+            {
+              "line": 63,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TF:CDN.CfgDietyRyczalty=>U :CDN.CfgWartosci,CfgDietyRyczalty => CfgWartosci,Heuristic SQL-text dependency from CDN.CfgDietyRyczalty to CDN.CfgWartosci.,object_dependency,CDN_KNF_Konfiguracja:FUNCTION:CDN.CfgDietyRyczalty,CDN_KNF_Konfig..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q017",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie procedury obsługują wydruki lub Wydruki?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 1309,
+              "score": 4,
+              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_procedure_cdn_wydruk_dodaj,CDN.Wydruk_Dodaj Guide,Query-design helper for stored_procedure CDN.Wydruk_Dodaj.,sql_object_guide,CDN_KNF_Konfiguracja:PROCEDURE:CDN.Wydruk_Dodaj,STORED_PROCEDURE,SPRINT_PRINT,KONFIGURACJA,HIGH,\"SPRINT_PRINT | KONFIGUR..."
+            },
+            {
+              "line": 1310,
+              "score": 4,
+              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_procedure_cdn_wydruk_zmien,CDN.Wydruk_Zmien Guide,Query-design helper for stored_procedure CDN.Wydruk_Zmien.,sql_object_guide,CDN_KNF_Konfiguracja:PROCEDURE:CDN.Wydruk_Zmien,STORED_PROCEDURE,SPRINT_PRINT,KONFIGURACJA,HIGH,\"SPRINT_PRINT | KONFIGUR..."
+            },
+            {
+              "line": 58,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci,CDN.DetalStan_WydrukiPlatnosci Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPlatnosci,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIG..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 5176,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpakor:READ:cdn_test_table_cdn_detalstantranag,CDN.DetalStan_WydrukiNaglowekPAKOR reads CDN.DetalStanTraNag,Definition-derived read dependency from CDN.DetalStan_WydrukiNaglowekPAKOR to CDN.DetalStanTraNag.,object_dependency,C..."
+            },
+            {
+              "line": 5177,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpakor:READ:cdn_test_table_cdn_detalstankontrahenci,CDN.DetalStan_WydrukiNaglowekPAKOR reads CDN.DetalStanKontrahenci,Definition-derived read dependency from CDN.DetalStan_WydrukiNaglowekPAKOR to CDN.DetalStanKontrahenci.,obje..."
+            },
+            {
+              "line": 5178,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpakor:READ:cdn_test_table_cdn_detalstanoperatorzy,CDN.DetalStan_WydrukiNaglowekPAKOR reads CDN.DetalStanOperatorzy,Definition-derived read dependency from CDN.DetalStan_WydrukiNaglowekPAKOR to CDN.DetalStanOperatorzy.,object_..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 610,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_wydruki,CDN.Wydruki Query Guide,Query design helper for table CDN.Wydruki.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.Wydruki,CDN.Wydruki,KONFIGURACJA,TEMPLATE,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,0,,,Role TEMPLATE in CONFI..."
+            },
+            {
+              "line": 289,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_eskleprocechy,CDN.eSklepROCechy Query Guide,Query design helper for table CDN.eSklepROCechy.,table_query_guide,CDN_TEST:TABLE:CDN.eSklepROCechy,CDN.eSklepROCechy,OGOLNE,DICTIONARY,GENERAL_ERP,MEDIUM,QUERY_DESIGN,0,0,,,Role DICTIONARY in GENERAL_E..."
+            },
+            {
+              "line": 385,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_doknag,CDN.DokNag Query Guide,Query design helper for table CDN.DokNag.,table_query_guide,CDN_TEST:TABLE:CDN.DokNag,CDN.DokNag,HANDEL,HEADER,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,3,0,DoN_DoNID,DokNagEtapyHistoria; DokNagPliki; DokNagProcesEtapy,Role ..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 26350,
+              "score": 2,
+              "snippet": "-- uruchamiamy procedurę obsługi zasobów, jesli są podmieniane jakiekolwiek pola za wyjatkiem TrE_LpPow"
+            },
+            {
+              "line": 28076,
+              "score": 2,
+              "snippet": "IF EXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
+            },
+            {
+              "line": 28090,
+              "score": 2,
+              "snippet": "IF EXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "docs/reference/ComarchOptimaSchema.schema",
+          "type": "schema",
+          "hits": [
+            {
+              "line": 142,
+              "score": 1,
+              "snippet": "StoredProcedure(StoredProcedure): EntityType"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q018",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie tabele łączą się z operatorami i bazami w konfiguracji?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 506,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_prozakazy,CDN.ProZakazy Query Guide,Query design helper for table CDN.ProZakazy.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.ProZakazy,CDN.ProZakazy,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,1,PZa_OpeID,Operatorzy,Role OTHER..."
+            },
+            {
+              "line": 509,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_rcsesje,CDN.RCSesje Query Guide,Query design helper for table CDN.RCSesje.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.RCSesje,CDN.RCSesje,OGOLNE,OTHER,GENERAL_ERP,MEDIUM,QUERY_DESIGN,0,4,RCS_RCKId; RCS_StaId; RCS_BazId; RCS_OpeI..."
+            },
+            {
+              "line": 511,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_seketapoperatorzy,CDN.SekEtapOperatorzy Query Guide,Query design helper for table CDN.SekEtapOperatorzy.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.SekEtapOperatorzy,CDN.SekEtapOperatorzy,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DE..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 549,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_seoetap,CDN.SekEtapOperatorzy -> CDN.SekEtapy,Direct join path from CDN.SekEtapOperatorzy to CDN.SekEtapy based on FK_SEOEtap.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.SekEtapOperatorzy,CDN_KNF_Konfiguracja:TABLE:CDN.Sek..."
+            },
+            {
+              "line": 579,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_bmobaza,CDN.BazModulyOperatora -> CDN.Bazy,Direct join path from CDN.BazModulyOperatora to CDN.Bazy based on FK_BMOBaza.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.BazModulyOperatora,CDN_KNF_Konfiguracja:TABLE:CDN.Bazy,CDN..."
+            },
+            {
+              "line": 584,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_kazopeid,CDN.KAtrybutyKlasyZakaz -> CDN.Operatorzy,Direct join path from CDN.KAtrybutyKlasyZakaz to CDN.Operatorzy based on FK_KAZOpeId.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.KAtrybutyKlasyZakaz,CDN_KNF_Konfiguracja:T..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 188,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_obrotykbmw,CDN.ObrotyKBMW Guide,Query-design helper for stored_procedure CDN.ObrotyKBMW.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ObrotyKBMW,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
+            },
+            {
+              "line": 417,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajkorektedopzdlanieokreslonejwartosci,CDN.DodajKorekteDoPZDlaNieokreslonejWartosci Guide,Query-design helper for stored_procedure CDN.DodajKorekteDoPZDlaNieokreslonejWartosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajKorekteDoPZDlaNieokr..."
+            },
+            {
+              "line": 483,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajbnkzdarzenia,CDN.DodajBnkZdarzenia Guide,Query-design helper for stored_procedure CDN.DodajBnkZdarzenia.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajBnkZdarzenia,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOL..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 22,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Operatorzy_Update_TS_Zgody=>U :CDN.Operatorzy,Operatorzy_Update_TS_Zgody => Operatorzy,Heuristic SQL-text dependency from CDN.Operatorzy_Update_TS_Zgody to CDN.Operatorzy.,object_dependency,CDN_KNF_Konfiguracja:TRIGGER:CDN.Opera..."
+            },
+            {
+              "line": 49,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OperatorPrawoZmianNaKarcieTowaru=>U :CDN.ProZakazy,OperatorPrawoZmianNaKarcieTowaru => ProZakazy,Heuristic SQL-text dependency from CDN.OperatorPrawoZmianNaKarcieTowaru to CDN.ProZakazy.,object_dependency,CDN_KNF_Konfiguracja:FU..."
+            },
+            {
+              "line": 50,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OperatorPrawoZmianNaKarcieTowaru=>U :CDN.Operatorzy,OperatorPrawoZmianNaKarcieTowaru => Operatorzy,Heuristic SQL-text dependency from CDN.OperatorPrawoZmianNaKarcieTowaru to CDN.Operatorzy.,object_dependency,CDN_KNF_Konfiguracja..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 944,
+              "score": 2,
+              "snippet": "RAISERROR('##OPT32329##', 16, 1) -- RAISERROR('Forma płatności jest używana w konfiguracji Detalu. Nie można zmieniać jej typu ani nazwy.',16,1)"
+            },
+            {
+              "line": 27985,
+              "score": 2,
+              "snippet": "-- kontrola grup w konfiguracji"
+            },
+            {
+              "line": 28059,
+              "score": 2,
+              "snippet": "-- kontrola grup w konfiguracji"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q019",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jak znaleźć obiekty SQL związane z Wydruki?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 372,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_usunieteobiekty,CDN.UsunieteObiekty Query Guide,Query design helper for table CDN.UsunieteObiekty.,table_query_guide,CDN_TEST:TABLE:CDN.UsunieteObiekty,CDN.UsunieteObiekty,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,0,,,Role OTHER in GENERAL_E..."
+            },
+            {
+              "line": 610,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_wydruki,CDN.Wydruki Query Guide,Query design helper for table CDN.Wydruki.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.Wydruki,CDN.Wydruki,KONFIGURACJA,TEMPLATE,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,0,,,Role TEMPLATE in CONFI..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 294,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_skrzwiazane,CDN.SchKsiRelac -> CDN.SchKsiNag,Direct join path from CDN.SchKsiRelac to CDN.SchKsiNag based on FK_SKRZwiazane.,join_path_guide,CDN_TEST:TABLE:CDN.SchKsiRelac,CDN_TEST:TABLE:CDN.SchKsiNag,CDN_TEST:FOREIGN_KEY:CDN.FK_SKRZwiaza..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 58,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci,CDN.DetalStan_WydrukiPlatnosci Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPlatnosci,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIG..."
+            },
+            {
+              "line": 71,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukipozycjedokumentow,CDN.DetalStan_WydrukiPozycjeDokumentow Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPozycjeDokumentow.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPozycjeDokumentow,STORED_P..."
+            },
+            {
+              "line": 83,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekkb,CDN.DetalStan_WydrukiNaglowekKB Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekKB,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 166,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrDomyslne,Wydruki_Delete_Trigger => WdrDomyslne,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrDomyslne.,object_dependency,CDN_KNF_Konfiguracja:TRIGGER:CDN.Wydruki_Delete..."
+            },
+            {
+              "line": 167,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrPodlaczeniaWydrukow,Wydruki_Delete_Trigger => WdrPodlaczeniaWydrukow,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrPodlaczeniaWydrukow.,object_dependency,CDN_KNF_Konfig..."
+            },
+            {
+              "line": 168,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrZakazyDoWydrukow,Wydruki_Delete_Trigger => WdrZakazyDoWydrukow,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrZakazyDoWydrukow.,object_dependency,CDN_KNF_Konfiguracja:TR..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 2630,
+              "score": 2,
+              "snippet": "RAISERROR('##OPT32341##', 16, 1) -- RAISERROR('Nie można kasować kontrahenta związanego z e-Sklep', 16, 1)"
+            },
+            {
+              "line": 2645,
+              "score": 2,
+              "snippet": "RAISERROR('##OPT32341##', 16, 1) -- RAISERROR('Nie można kasować kontrahenta związanego z e-Sklep', 16, 1)"
+            },
+            {
+              "line": 2718,
+              "score": 2,
+              "snippet": "-- (sytuacja ma miejsce podczas dodawania, zmiany lub usuwania zdarzenia związanego z kontrahentem -"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q020",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Które funkcje lub procedury używają BnkZapisy?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 142,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_kalendarzkb,CDN.KalendarzKB Guide,Query-design helper for stored_procedure CDN.KalendarzKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KalendarzKB,STORED_PROCEDURE,SPECIAL_FUNCTION,KADRY_PLACE,MEDIUM,\"SPECIAL_FUNCTION | KADRY_PLACE | preview:CREAT..."
+            },
+            {
+              "line": 153,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_kalendarzkbplus,CDN.KalendarzKBPlus Guide,Query-design helper for stored_procedure CDN.KalendarzKBPlus.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KalendarzKBPlus,STORED_PROCEDURE,SPECIAL_FUNCTION,KADRY_PLACE,MEDIUM,\"SPECIAL_FUNCTION | KADRY_PLACE..."
+            },
+            {
+              "line": 188,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_obrotykbmw,CDN.ObrotyKBMW Guide,Query-design helper for stored_procedure CDN.ObrotyKBMW.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ObrotyKBMW,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 4200,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_getrozliczdoknum:READ:cdn_test_table_cdn_bnkzapisy,CDN.GetRozliczDokNum reads CDN.BnkZapisy,Definition-derived read dependency from CDN.GetRozliczDokNum to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.GetRozliczDokNum,CDN_TEST:TABLE:CDN.Bn..."
+            },
+            {
+              "line": 4467,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_mobile_eksportptw:READ:cdn_test_table_cdn_bnkzapisy,CDN.Mobile_EksportPtw reads CDN.BnkZapisy,Definition-derived read dependency from CDN.Mobile_EksportPtw to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.Mobile_EksportPtw,CDN_TEST:TABLE:CD..."
+            },
+            {
+              "line": 4496,
+              "score": 3,
+              "snippet": "DEP:cdn_test_procedure_cdn_sprawdzzaleglosci:READ:cdn_test_table_cdn_bnkzapisy,CDN.SprawdzZaleglosci reads CDN.BnkZapisy,Definition-derived read dependency from CDN.SprawdzZaleglosci to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.SprawdzZaleglosci,CDN_TEST:TABLE:CD..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/table_query_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 259,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnknazwy,CDN.BnkNazwy Query Guide,Query design helper for table CDN.BnkNazwy.,table_query_guide,CDN_TEST:TABLE:CDN.BnkNazwy,CDN.BnkNazwy,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,10,1,BNa_KatID; BNa_BNaId,Kategorie; BnkCertyfikaty; PracEtaty..."
+            },
+            {
+              "line": 287,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kartykredytowe,CDN.KartyKredytowe Query Guide,Query design helper for table CDN.KartyKredytowe.,table_query_guide,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN.KartyKredytowe,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,NORMAL,QUERY_DESIGN,2,0,KKr_KKrId,BnkRa..."
+            },
+            {
+              "line": 313,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnkrachunki,CDN.BnkRachunki Query Guide,Query design helper for table CDN.BnkRachunki.,table_query_guide,CDN_TEST:TABLE:CDN.BnkRachunki,CDN.BnkRachunki,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,8,3,BRa_KKrID; BRa_DDfID; BRa_BNaID; BRa_BRaID,..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/join_path_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 459,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dorbnkzapis,CDN.Zaliczki -> CDN.BnkZapisy,Direct join path from CDN.Zaliczki to CDN.BnkZapisy based on FK_DoRBnkZapis.,join_path_guide,CDN_TEST:TABLE:CDN.Zaliczki,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:FOREIGN_KEY:CDN.FK_DoRBnkZapis,1,DIRE..."
+            },
+            {
+              "line": 480,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzppodmiot,CDN.BnkZapisy -> CDN.PodmiotyView,Direct join path from CDN.BnkZapisy to CDN.PodmiotyView based on FK_BZpPodmiot.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.PodmiotyView,CDN_TEST:FOREIGN_KEY:CDN.FK_BZpPodmi..."
+            },
+            {
+              "line": 485,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzpkartatyp,CDN.BnkZapisy -> CDN.KartyKredytowe,Direct join path from CDN.BnkZapisy to CDN.KartyKredytowe based on FK_BZpKartaTyp.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 276,
+              "score": 2,
+              "snippet": "--Sprawdzenie, czy zmieniono symbol, numerację lub klasę w definicji wykorzystanej w BnkZapisy"
+            },
+            {
+              "line": 279,
+              "score": 2,
+              "snippet": "JOIN CDN.BnkZapisy ON deleted.DDf_DDfId = CDN.BnkZapisy.BZp_DDfId"
+            },
+            {
+              "line": 283,
+              "score": 2,
+              "snippet": "RAISERROR('##OPT32299##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana w zapisach kasowo-bankowych (BnkZapisy). Nie można zmieniać jej symbolu, schematu numeracji ani klasy.',16,1)"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "Q021",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jak znaleźć zależności obiektu SQL do tabel handlowych?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidence": [
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/sql_object_guide.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 681,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_oblicztravat,CDN.DetalStan_ObliczTraVAT Guide,Query-design helper for stored_procedure CDN.DetalStan_ObliczTraVAT.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_ObliczTraVAT,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL..."
+            },
+            {
+              "line": 944,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_aktualizujtravattranag,CDN.AktualizujTraVATTraNag Guide,Query-design helper for stored_procedure CDN.AktualizujTraVATTraNag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.AktualizujTraVATTraNag,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL..."
+            },
+            {
+              "line": 1051,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_anonimizacjadokblokujaceknt,CDN.AnonimizacjaDokBlokujaceKnt Guide,Query-design helper for stored_procedure CDN.AnonimizacjaDokBlokujaceKnt.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.AnonimizacjaDokBlokujaceKnt,STORED_PROCEDURE,GENERAL_SQL_OBJECT,..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/object_dependency.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 129,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>U :CDN.RejestrOperacjiTypyObiektow,OptimaNazwaObiektuEx => RejestrOperacjiTypyObiektow,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.RejestrOperacjiTypyObiektow.,object_dependency,CDN_K..."
+            },
+            {
+              "line": 130,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>FN:CDN.UI_LCID,OptimaNazwaObiektuEx => UI_LCID,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.UI_LCID.,object_dependency,CDN_KNF_Konfiguracja:FUNCTION:CDN.OptimaNazwaObiektuEx,CDN_KNF_Ko..."
+            },
+            {
+              "line": 131,
+              "score": 2,
+              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>FN:CDN.OptimaNazwaObiektu,OptimaNazwaObiektuEx => OptimaNazwaObiektu,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.OptimaNazwaObiektu.,object_dependency,CDN_KNF_Konfiguracja:FUNCTION:CD..."
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSchema",
+          "artifact": "exports/optima_schema/v1/trigger.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 6197,
+              "score": 2,
+              "snippet": "-- obsługa kaskadowego uaktualniania zapisów źródłowych Handlowych"
+            },
+            {
+              "line": 13253,
+              "score": 2,
+              "snippet": "-- Zależności czasowe"
+            },
+            {
+              "line": 15702,
+              "score": 2,
+              "snippet": "-- Jeśli ustawił, to pewnie wie co robi - za chwilę mogą być updatowane kolejne rozliczenia i ważne żeby na końcu wszystko się zgadzało - w takim przypadku nie mieszamy w obliczeniach obiektu (TFSID=13780)"
+            }
+          ]
+        },
+        {
+          "kb": "ComarchOptimaSprint",
+          "artifact": "exports/optima_sprint/v1/sql_pattern.csv",
+          "type": "csv",
+          "hits": [
+            {
+              "line": 9,
+              "score": 1,
+              "snippet": "SPR_SQL_PROCEDURA_NIE_JEST_TABELA,Procedura nie jest tabela,Procedura nie jest tabela Sprint SQL pattern.,sql_pattern,ANTI_PATTERN,@Identyfikator,SQL procedure,SPR_DOC_KB_SPRINT_04_SQL_MSSQL_PATTERNS_MD,CDN_TEST:PROCEDURE:CDN.RO_GetReportContent,FROM EXEC is not a valid normal..."
+            },
+            {
+              "line": 10,
+              "score": 1,
+              "snippet": "SPR_SQL_TABELA_TYMCZASOWA_DO_ANALIZY,Tabela tymczasowa do analizy,Tabela tymczasowa do analizy Sprint SQL pattern.,sql_pattern,ANALYTIC_HELPER,@Identyfikator,SSMS analysis,SPR_DOC_KB_SPRINT_04_SQL_MSSQL_PATTERNS_MD,CDN_TEST:PROCEDURE:CDN.RO_GetReportContent,\"This is an SSMS-si..."
+            }
+          ]
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

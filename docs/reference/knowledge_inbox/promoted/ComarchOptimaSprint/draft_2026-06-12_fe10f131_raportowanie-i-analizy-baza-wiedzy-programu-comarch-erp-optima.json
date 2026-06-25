@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-12_fe10f131_raportowanie-i-analizy-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "Comarch Optima Sprint and Prints",
+  "kbNamespace": "ComarchOptimaSprint",
+  "title": "Raportowanie i analizy – Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: GenRap aktualizacje 2026 Comarch Optima\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/raportowanie-i-analizy/\nTier: official\nDiscovery confidence: 0.9\n\nRaportowanie i analizy – Baza Wiedzy programu Comarch ERP Optima\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n1. Strona główna\n2. Raportowanie i analizy\n\n## Raportowanie i analizy\n\nNarzędzia do budowy analiz i raportów\n\n- Instrukcja GenRap – zaawansowane przykłady\n- Generator Raportów – pierwsze kroki\n- Instrukcja użytkowania\n- W jaki sposób umieścić kody JPK_V7 na wydruku faktury sprzedaży w Generatorze raportów (GenRap)?\n\n- Zestaw wydruków\n- Konfiguracja wydruków\n- Formularz wydruku\n- Drukowanie w programie\n\n- Instrukcja użytkownika: Edycja wykresów\n\n- Analizy dla modułu Płace i Kadry\n- Analizy dla modułu Handel\n- Obsługa modułu Comarch ERP Optima Analizy\n- Analizy dla modułów księgowych\n- Analizy dla elementów wspólnych programu\n\nComarch ERP Analizy BI\n\n- Comarch ERP Analizy BI\n\nComarch ERP Optima Pulpit Menadżera\n\n- Comarch ERP Optima Pulpit Menadżera (wersja stacjonarna)\n- Comarch ERP Optima Pulpit Menadżera (wersja online)\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/raportowanie-i-analizy/",
+  "tags": [
+    "discovery",
+    "official",
+    "sPrint",
+    "wydruki",
+    "GenRap",
+    "wzorce"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:49:41.772Z",
+    "discoveryCandidateId": "candidate_4f77f644-308",
+    "discoveryQueryId": "generated_ComarchOptimaSprint_9c49fe290c",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "c785a649071ec6c70bbe221c1433f836d4ed48fef786995000b62b089eccc12d"
+  },
+  "createdAt": "2026-06-12T05:49:57.329Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T06:42:24.403Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 6 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_fe10f131_raportowanie-i-analizy-baza-wiedzy-programu-comarch-erp-optima.json"
+}

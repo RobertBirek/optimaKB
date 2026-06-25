@@ -1,0 +1,323 @@
+{
+  "assistantName": "ERP Knowledge Assistant",
+  "version": "2026-06-12-v2",
+  "primaryKbOrder": [
+    "TaxbellLegalReference",
+    "TaxbellPayrollHRReference",
+    "TaxbellAccountingVATReference",
+    "ComarchCommunityNews",
+    "ComarchOptimaBusinessSemantics",
+    "ComarchOptimaSchema",
+    "ComarchOptimaAdditionalFunctions",
+    "ComarchOptimaSprint",
+    "ComarchOptimaReference",
+    "ComarchOptimaPartnerTechnical",
+    "ComarchBetterflyReference",
+    "ComarchUniversalKnowledge"
+  ],
+  "routes": [
+    {
+      "intent": "taxbell_legal_tax_law",
+      "primaryKb": "TaxbellLegalReference",
+      "supportKbs": [
+        "TaxbellAccountingVATReference"
+      ],
+      "keywords": [
+        "prawo",
+        "ustaw",
+        "kodeks",
+        "przepis",
+        "podatk",
+        "podatkowe",
+        "ordynacja podatkowa",
+        "interpretacja",
+        "objaśnienie podatkowe",
+        "podstawa prawna",
+        "isap",
+        "dziennik ustaw",
+        "akcyz",
+        "cit",
+        "pit"
+      ]
+    },
+    {
+      "intent": "taxbell_payroll_hr_zus",
+      "primaryKb": "TaxbellPayrollHRReference",
+      "supportKbs": [
+        "TaxbellLegalReference"
+      ],
+      "keywords": [
+        "zus",
+        "kadr",
+        "kadrow",
+        "płace",
+        "place",
+        "hr",
+        "pracownik",
+        "pracodawc",
+        "umowa o pracę",
+        "umowa zlecenie",
+        "skladk",
+        "ubezpiecz",
+        "wynagrodz",
+        "urlop",
+        "pip",
+        "bhp",
+        "inspekcj",
+        "ewidencj",
+        "społeczne",
+        "zdrowotne",
+        "czas pracy",
+        "przepisy prawa pracy",
+        "kodeks pracy"
+      ]
+    },
+    {
+      "intent": "taxbell_accounting_vat",
+      "primaryKb": "TaxbellAccountingVATReference",
+      "supportKbs": [
+        "TaxbellLegalReference"
+      ],
+      "keywords": [
+        "księgowość",
+        "ksiegowosc",
+        "rachunkowość",
+        "vat",
+        "jpk",
+        "jpk_v7",
+        "jpk_vat",
+        "faktur",
+        "ksef",
+        "deklaracj",
+        "sprawozdanie finansowe",
+        "ewidencj",
+        "rozlicz",
+        "biała lista",
+        "split payment"
+      ]
+    },
+    {
+      "intent": "community_news_updates",
+      "primaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "keywords": [
+        "przerwa techniczna",
+        "nowa wersja",
+        "planowane wersje",
+        "niedostępność",
+        "awaria systemu",
+        "serwisowa",
+        "news",
+        "społeczność"
+      ]
+    },
+    {
+      "intent": "optima_schema_sql",
+      "primaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "keywords": [
+        "tranag",
+        "traelem",
+        "kontrahenci",
+        "towary",
+        "join",
+        "sql",
+        "trigger",
+        "view",
+        "function",
+        "procedure",
+        "schema",
+        "foreign key",
+        "fk",
+        "indeks",
+        "index"
+      ]
+    },
+    {
+      "intent": "optima_additional_functions",
+      "primaryKb": "ComarchOptimaAdditionalFunctions",
+      "supportKbs": [
+        "ComarchOptimaPartnerTechnical",
+        "ComarchOptimaSchema"
+      ],
+      "keywords": [
+        "funkcja dodatkowa",
+        "fd",
+        "com",
+        "okno logowania",
+        "dodaj operatora",
+        "kolumna użytkownika",
+        "user column",
+        "automat",
+        "automatyzacja"
+      ]
+    },
+    {
+      "intent": "optima_sprint_prints",
+      "primaryKb": "ComarchOptimaSprint",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions"
+      ],
+      "keywords": [
+        "sprint",
+        "wydruk",
+        "genrap",
+        "szablon",
+        "raport",
+        "parametry dynamiczne",
+        "ro_getreportheader",
+        "ro_getreportcontent",
+        "print"
+      ]
+    },
+    {
+      "intent": "optima_official_docs",
+      "primaryKb": "ComarchOptimaReference",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSprint"
+      ],
+      "keywords": [
+        "jak zacząć",
+        "jak utworzyć",
+        "tworzenie",
+        "co to jest",
+        "gdzie w dokumentacji",
+        "oficjalna dokumentacja",
+        "instrukcja",
+        "aktualizacja",
+        "moduł",
+        "onboarding"
+      ]
+    },
+    {
+      "intent": "optima_partner_technical",
+      "primaryKb": "ComarchOptimaPartnerTechnical",
+      "supportKbs": [
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSchema",
+        "ComarchOptimaSprint"
+      ],
+      "keywords": [
+        "partner",
+        "dictionaries",
+        "messages.csv",
+        "procedures.csv",
+        "makra",
+        "pliki pomocnicze",
+        "przyklady-uzycia-obiektow-com",
+        "xml structures",
+        "xml"
+      ]
+    },
+    {
+      "intent": "optima_business_semantics",
+      "primaryKb": "ComarchOptimaBusinessSemantics",
+      "supportKbs": [
+        "ComarchOptimaSchema"
+      ],
+      "keywords": [
+        "znaczy",
+        "znaczenie",
+        "oznacza",
+        "reprezentuje",
+        "co to za",
+        "czym jest",
+        "typ dokumentu",
+        "kod",
+        "kody",
+        "etykiet",
+        "słownik",
+        "wartości",
+        "dopuszczalne",
+        "reguła biznesowa",
+        "walidac",
+        "ograniczen",
+        "opis biznesowy",
+        "co oznacza",
+        "jaka wartość",
+        "domena biznesowa"
+      ]
+    },
+    {
+      "intent": "betterfly_api",
+      "primaryKb": "ComarchBetterflyReference",
+      "supportKbs": [],
+      "keywords": [
+        "betterfly",
+        "api2",
+        "token",
+        "bearer",
+        "customers",
+        "products",
+        "invoices",
+        "payments",
+        "paymentdetails",
+        "advanceinvoices",
+        "profitmargininvoices"
+      ]
+    }
+  ],
+  "blendedRoutes": [
+    {
+      "case": "print_sql_and_joins",
+      "primaryKb": "ComarchOptimaSprint",
+      "supportKbs": [
+        "ComarchOptimaSchema"
+      ]
+    },
+    {
+      "case": "fd_implementation_with_table_context",
+      "primaryKb": "ComarchOptimaAdditionalFunctions",
+      "supportKbs": [
+        "ComarchOptimaSchema"
+      ]
+    },
+    {
+      "case": "partner_com_example_with_implementation_guidance",
+      "primaryKb": "ComarchOptimaPartnerTechnical",
+      "supportKbs": [
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSchema"
+      ]
+    },
+    {
+      "case": "business_semantics_with_schema",
+      "primaryKb": "ComarchOptimaBusinessSemantics",
+      "supportKbs": [
+        "ComarchOptimaSchema"
+      ]
+    },
+    {
+      "case": "vague_optima_entry_question",
+      "primaryKb": "ComarchOptimaReference",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSprint"
+      ]
+    },
+    {
+      "case": "catch_all_unmatched",
+      "primaryKb": "ComarchUniversalKnowledge",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchCommunityNews"
+      ]
+    }
+  ],
+  "answerContract": [
+    "direct_answer",
+    "primary_kb",
+    "support_kbs",
+    "relevant_artifacts",
+    "gap_or_next_step"
+  ]
+}

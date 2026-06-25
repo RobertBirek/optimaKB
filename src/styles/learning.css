@@ -1,0 +1,43 @@
+/* Learning page */
+.learningStatGrid { display: flex; gap: 1rem; margin-bottom: 1rem; }
+
+.learningToolbar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.mcpInput {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  font-size: 14px;
+}
+
+.mcpHealthStamp {
+  align-self: center;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+}
+
+.mcpDetailHeaderLine {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.mcpInstallSnippet {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 11px;
+  margin-top: 4px;
+  overflow-x: auto;
+  padding: 6px;
+}
+

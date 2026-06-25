@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_478a4d9c_jakie-zmiany-wprowadzilismy-w-ostatniej-wersji-baza-wiedzy-programu-comarch-bett",
+  "kbName": "Comarch Betterfly Reference",
+  "kbNamespace": "ComarchBetterflyReference",
+  "title": "Jakie zmiany wprowadziliśmy w ostatniej wersji? - Baza Wiedzy programu Comarch Betterfly",
+  "content": "Automated source-discovery draft.\n\nQuery: dokumentacja Betterfly czerwiec 2026\nSource: https://pomoc.comarchbetterfly.pl/dokumentacja/zmiany-w-ostatniej-wersji/\nTier: official\nDiscovery confidence: 0.95\n\nNajważniejsze zmiany w dokumentacji Betterfly, czerwiec 2026:\n\n- Wersje 6.9.1 (Android) / 6.7.1 (iOS) z 11.05.2026:\n  - Rozszerzona obsługa KSeF i ergonomii pracy.\n  - Import z KSeF do ewidencji kosztów dla podatników zwolnionych z VAT (pakiet eFaktury).\n  - Obsługa dokumentów w KSeF, gdy kraj w adresie różni się od kraju w numerze NIP.\n  - Dwie linie nazwy towaru na dokumentach.\n  - Ułatwione wprowadzanie i edycja opisu na fakturze.\n  - Drobne usprawnienia i optymalizacje.\n\n- 03.05.2026:\n  - Możliwość podawania w adresie kontrahenta dwuliterowego kodu kraju (obok pełnej nazwy); kod jest automatycznie przekazywany do KSeF. Puste pole kraju uzupełnia prefiks NIP podczas wysyłki.\n\n- 27.04.2026 (Android 6.9 / iOS 6.7, Alior Bank):\n  - Poprawa płynności działania i zapobieganie nieuzasadnionym wylogowaniom.\n  - Ulepszenia biometrii w procesie odblokowywania i utrzymania ustawień.\n  - Mnie...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/zmiany-w-ostatniej-wersji/",
+  "tags": [
+    "discovery",
+    "official",
+    "API",
+    "KSeF",
+    "faktury",
+    "integracje"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:08:21.191Z",
+    "discoveryCandidateId": "candidate_0fdd8537-610",
+    "discoveryQueryId": "generated_ComarchBetterflyReference_b74e39bc7b",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "dd9b7a04ca5cae65bff0f226194aee7bf33d1bcbfcc4b3ad1f8412616305a3c0"
+  },
+  "createdAt": "2026-06-07T03:08:48.425Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.010Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_478a4d9c_jakie-zmiany-wprowadzilismy-w-ostatniej-wersji-baza-wiedzy-programu-comarch-bett.json"
+}

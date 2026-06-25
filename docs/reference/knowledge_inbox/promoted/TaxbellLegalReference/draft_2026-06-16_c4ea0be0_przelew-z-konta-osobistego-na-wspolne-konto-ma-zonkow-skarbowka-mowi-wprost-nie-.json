@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-16_c4ea0be0_przelew-z-konta-osobistego-na-wspolne-konto-ma-zonkow-skarbowka-mowi-wprost-nie-",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Przelew z konta osobistego na wspólne konto małżonków. Skarbówka mówi wprost: nie ma przysporzenia, nie ma podatku od darowizn - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: nowe interpretacje podatkowe czerwiec 2026\nSource: https://www.infor.pl/twoje-pieniadze/podatki/7554230,przelew-z-konta-osobistego-na-kontro-wspolne-malzonkow-skarbowka-mowi-wprost.html\nTier: professional\nDiscovery confidence: 0.9\n\nPrzelew z konta osobistego na wspólne konto małżonków. Skarbówka mówi wprost: nie ma przysporzenia, nie ma podatku od darowizn - Infor.pl\n\nREKLAMA\n\nREKLAMA\n\n# Przelew z konta osobistego na wspólne konto małżonków. Skarbówka mówi wprost: nie ma przysporzenia, nie ma podatku od darowizn\n\nSubskrybuj nas na Youtube\n\nZapisz się na newsletter\n\nDołącz do ekspertów Dołącz do grona ekspertów\n\n04 czerwca 2026, 17:50\n\nPrzelew z konta osobistego na wspólne konto małżonków. Skarbówka mówi wprost: nie ma przysporzenia, nie ma podatku od darowizn\n\nINFOR\n\nREKLAMA\n\nREKLAMA\n\nCzy przelew pomiędzy kontami bankowymi małżonków może zainteresować skarbówkę? Wokół wspólnych finansów narosło wiele mitów, a Polacy często obawiają się, że większy transfer pieniędzy zostanie uznany za darowiznę. Sprawdź, kiedy urząd skarbowy rzeczywiście może zwrócić uwagę na takie operacje.\n\n- Skarbówka w interpretacji podatkowej mówi wprost: nie ma przysporzenia, nie ma podatku od darowizn, nie ma obowiązków podatkowego wobec urzędu skarbowego\n- Skarbówka sięga w swoich wyjaśnieniach podatkowych po Kodeks rodzinny i opiekuńczy i podkreśla: pieniądze trafiają do majątku wspólnego małżonków\n- Wyraźne stanowisko Dyrektora KIS: przelew nie jest darowizną, bo nie ma tutaj przysporzenia, a także nie ma nabywcy\n- Przepisy Kodeksu cywilnego przytoczone w indywidualnej interpretacji podatkowej potwierdzają: brak jest umowy darowizny\n- Organ skarbowy podsumowuje swoje stanowisko: taki przelew pieniężny jest po prostu neutralny \n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.infor.pl/twoje-pieniadze/podatki/7554230,przelew-z-konta-osobistego-na-kontro-wspolne-malzonkow-skarbowka-mowi-wprost.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-09T02:51:16.003Z",
+    "discoveryCandidateId": "candidate_939d8048-ec3",
+    "discoveryQueryId": "generated_TaxbellLegalReference_0e5200be11",
+    "discoveryRunId": "discovery_daily_2026-06-09T02-49-52-118Z_a0585710",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "e191e0ed0788fb743790727b35708519766f14dd3916e1c0e31dab4db6821574"
+  },
+  "createdAt": "2026-06-16T05:16:44.830Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-16T05:47:02.544Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-16/draft_2026-06-16_c4ea0be0_przelew-z-konta-osobistego-na-wspolne-konto-ma-zonkow-skarbowka-mowi-wprost-nie-.json"
+}

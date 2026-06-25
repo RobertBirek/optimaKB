@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_6fc9669f_pytania-i-odpowiedzi-ksef-2-0-ksef-krajowy-system-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Pytania i odpowiedzi KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
+  "content": "Automated source-discovery draft.\n\nQuery: KSeF rachunkowość 2026\nSource: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/?utm=\nTier: official\nDiscovery confidence: 0.95\n\nKSeF rachunkowość 2026 — kluczowe informacje\n\n- Co to jest: KSeF (Krajowy System e-Faktur) to system do wystawiania, przesyłania, odbierania i przechowywania strukturyzowanych faktur. Od 1 lutego 2026 r. objął etapami wszystkich przedsiębiorców w Polsce.\n- Cel: cyfryzacja procesów fakturowania i księgowania, redukcja błędów przy wystawianiu faktur.\n- Jak korzystać: KSeF dostępny do użycia w kontekście księgowości i rozliczeń, z możliwością integracji z systemami księgowymi i ERP. Więcej szczegółów i praktyczne wskazówki znajdują się w sekcji Pytania i odpowiedzi KSeF 2.0, która opisuje podstawowe informacje, obsługę i najczęściej zadawane pytania.\n\nNajważniejsze znaczenie dla rachunkowości 2026:\n- Obowiązkowy etap wprowadzania KSeF dla wszystkich wystawców faktur.\n- Usprawnienie procesów księgowych i archiwizacji faktur.\n- Wsparcie w unikaniu błędów w fakturach i lepsza zgodność z prz...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/?utm=",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:11:33.794Z",
+    "discoveryCandidateId": "candidate_7e27db91-f25",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_9796aa8f51",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "79ee1fce71dcd53c8c4b6601404b99a30d77bb747897b0b319b8ce6511dbf79e"
+  },
+  "createdAt": "2026-06-09T06:45:22.617Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T06:55:47.307Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 13 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_6fc9669f_pytania-i-odpowiedzi-ksef-2-0-ksef-krajowy-system-e-faktur.json"
+}

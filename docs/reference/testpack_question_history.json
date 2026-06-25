@@ -1,0 +1,96 @@
+{
+  "entries": {
+    "Q035": {
+      "firstPartial": "2026-06-12",
+      "category": "additional_functions"
+    },
+    "Q103": {
+      "firstPartial": "2026-06-12",
+      "category": "schema"
+    },
+    "Q111": {
+      "firstPartial": "2026-06-12",
+      "category": "schema"
+    },
+    "Q121": {
+      "firstPartial": "2026-06-12",
+      "category": "schema"
+    },
+    "Q135": {
+      "firstPartial": "2026-06-12",
+      "category": "additional_functions"
+    },
+    "Q138": {
+      "firstPartial": "2026-06-12",
+      "category": "additional_functions"
+    },
+    "Q145": {
+      "firstPartial": "2026-06-12",
+      "category": "additional_functions"
+    },
+    "Q202": {
+      "firstPartial": "2026-06-12",
+      "category": "schema"
+    },
+    "Q203": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_accounting_vat"
+    },
+    "Q204": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_legal"
+    },
+    "Q205": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_payroll_hr"
+    },
+    "Q015": {
+      "firstPartial": "2026-06-12",
+      "category": "schema"
+    },
+    "Q037": {
+      "firstPartial": "2026-06-12",
+      "category": "additional_functions"
+    },
+    "Q141": {
+      "firstPartial": "2026-06-12",
+      "category": "additional_functions"
+    },
+    "Q173": {
+      "firstPartial": "2026-06-12",
+      "category": "partner"
+    },
+    "Q201": {
+      "firstPartial": "2026-06-12",
+      "category": "additional_functions"
+    },
+    "Q207": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_accounting_vat"
+    },
+    "Q216": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_legal"
+    },
+    "Q218": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_legal"
+    },
+    "Q224": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_payroll_hr"
+    },
+    "Q225": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_payroll_hr"
+    },
+    "Q228": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_legal"
+    },
+    "Q229": {
+      "firstPartial": "2026-06-12",
+      "category": "taxbell_payroll_hr"
+    }
+  }
+}

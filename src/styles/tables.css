@@ -1,0 +1,139 @@
+.tableWrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 13px;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--soft);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.inboxTable {
+  max-height: calc(100vh - 285px);
+  min-height: 520px;
+  overflow: auto;
+}
+
+.inboxTable table {
+  min-width: 1180px;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.inboxTable th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.inboxTable th,
+.inboxTable td {
+  background-clip: padding-box;
+}
+
+.inboxTable th {
+  background: var(--inbox-panel, var(--soft));
+  border-bottom: 1px solid var(--inbox-line, var(--line));
+  color: var(--inbox-muted, var(--muted));
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 10px 8px;
+  text-transform: uppercase;
+}
+
+.inboxTable td {
+  border-bottom: 1px solid var(--inbox-line, var(--line));
+  padding: 8px;
+  transition: background 0.12s;
+}
+
+.inboxTable tbody tr:hover td {
+  background: rgba(212, 168, 83, 0.04);
+}
+
+.inboxTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tableWrap table tbody tr {
+  transition: background 0.1s;
+}
+.tableWrap table tbody tr:hover td {
+  background: var(--soft);
+}
+
+.inboxTable th:nth-child(1),
+.inboxTable td:nth-child(1) {
+  text-align: center;
+  width: 64px;
+}
+
+.inboxTable th:nth-child(2),
+.inboxTable td:nth-child(2) {
+  width: 126px;
+}
+
+.inboxTable th:nth-child(3),
+.inboxTable td:nth-child(3) {
+  width: 38%;
+}
+
+.inboxTable th:nth-child(4),
+.inboxTable td:nth-child(4) {
+  width: 240px;
+}
+
+.inboxTable th:nth-child(5),
+.inboxTable td:nth-child(5) {
+  width: 260px;
+}
+
+.inboxTable th:nth-child(6),
+.inboxTable td:nth-child(6) {
+  width: 150px;
+}
+
+.inboxTable th:nth-child(7),
+.inboxTable td:nth-child(7) {
+  text-align: right;
+  width: 120px;
+}
+
+.inboxFullWidth {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  --inbox-bg: #f5f1ea;
+  --inbox-panel: #ffffff;
+  --inbox-line: #e8e4dc;
+  --inbox-muted: #8b8fa0;
+  --inbox-text: #3a3d42;
+  --inbox-ok: #2c5f4a;
+  --inbox-ok-bg: #edf5f0;
+  --inbox-bad: #a04040;
+  --inbox-bad-bg: #f8eeee;
+  --inbox-brass: #d4a853;
+  --inbox-brass-dim: #c49a3e;
+}
+
+.inboxFullWidth .sectionHeader {
+  border-bottom: 2px solid var(--inbox-brass);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+}

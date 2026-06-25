@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_12840e14_ksef-krajowy-system-elektronicznych-faktur-system-comarch-betterfly",
+  "kbName": "Comarch Betterfly Reference",
+  "kbNamespace": "ComarchBetterflyReference",
+  "title": "KSeF - Krajowy System elektronicznych Faktur - system Comarch Betterfly",
+  "content": "Automated source-discovery draft.\n\nQuery: integracje Betterfly faktury 2026\nSource: https://www.comarchbetterfly.pl/ksef/\nTier: official\nDiscovery confidence: 0.95\n\nKSeF integration with Comarch Betterfly (2026)\n\n- Purpose: Integrates Krajowy System Elektronicznych Faktur (KSeF) with Comarch Betterfly for streamlined e-faktur management.\n- How it works:\n  - Create invoices in Betterfly using a simple form.\n  - Betterfly automatically validates invoices for KSeF compliance.\n  - One-click send to KSeF; receive and store Urzędowe Potwierdzenie Odbioru (UPO) within the system.\n- Supplier invoices: After linking your Betterfly account with KSeF, supplier invoices sent to KSeF appear in Betterfly automatically (under Faktury in KSef). From Feb 1, major suppliers (fuel, media, leasing) will deliver invoices directly to KSeF and then be accessible in Betterfly.\n- Key benefits:\n  - No complex setup; operations align with existing invoicing workflow.\n  - Real-time access to both your issued and received KSeF invoices in one place.\n  - Compliance with curre...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.comarchbetterfly.pl/ksef/",
+  "tags": [
+    "discovery",
+    "official",
+    "API",
+    "KSeF",
+    "faktury",
+    "integracje"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:08:26.604Z",
+    "discoveryCandidateId": "candidate_773923fc-140",
+    "discoveryQueryId": "generated_ComarchBetterflyReference_d03c36780e",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "f34879b084a5d6871ab6a2243b259c799bd01dceb5a68eec5d1bc34292b7435c"
+  },
+  "createdAt": "2026-06-07T03:08:48.474Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:19.987Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_12840e14_ksef-krajowy-system-elektronicznych-faktur-system-comarch-betterfly.json"
+}

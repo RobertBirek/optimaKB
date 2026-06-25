@@ -1,0 +1,11 @@
+[Unit]
+Description=Plan ERP KB discovery queries every week
+
+[Timer]
+OnCalendar=Sun *-*-* 05:30:00
+RandomizedDelaySec=10m
+Persistent=true
+Unit=erp-kb-dashboard-discovery-weekly.service
+
+[Install]
+WantedBy=timers.target

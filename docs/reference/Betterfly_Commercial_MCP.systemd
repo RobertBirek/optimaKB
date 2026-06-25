@@ -1,0 +1,43 @@
+[Unit]
+Description=Betterfly Commercial MCP HTTP Bridge
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/docker/openspg
+EnvironmentFile=/etc/betterfly-commercial-mcp.env
+ExecStart=/usr/bin/node /docker/openspg/scripts/betterfly_commercial_mcp_http_bridge.mjs
+Restart=always
+RestartSec=3
+User=mcpbot
+Group=mcpbot
+UMask=0027
+
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectClock=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectHostname=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=full
+RemoveIPC=true
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+
+ReadOnlyPaths=/docker/openspg/scripts
+ReadOnlyPaths=/docker/openspg/docs/reference
+ReadOnlyPaths=/docker/openspg/exports
+ReadOnlyPaths=/docker/openspg/package.json
+ReadOnlyPaths=/docker/openspg/package-lock.json
+
+[Install]
+WantedBy=multi-user.target

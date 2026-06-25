@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_87dea2a7_ksef-najczesciej-zadawane-pytania-dotyczace-integracji-z-krajowym-systemem-efakt",
+  "kbName": "Comarch Betterfly Reference",
+  "kbNamespace": "ComarchBetterflyReference",
+  "title": "KSeF. Najczęściej zadawane pytania dotyczące integracji z Krajowym Systemem eFaktur - Baza Wiedzy programu Comarch Betterfly",
+  "content": "Automated source-discovery draft.\n\nQuery: Betterfly faktury elektroniczne ustawienia 2026\nSource: https://pomoc.comarchbetterfly.pl/dokumentacja/ksef-najczesciej-zadawane-pytania-dotyczace-integracji-z-krajowym-systemem-efaktur/\nTier: official\nDiscovery confidence: 0.95\n\nKSeF. Najczęściej zadawane pytania dotyczące integracji z Krajowym Systemem eFaktur - Baza Wiedzy programu Comarch Betterfly\n\nJak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\n1. Strona główna\n2. eFaktury\n3. KSeF. Najczęściej zadawane pytania dotyczące integracji z Krajowym Systemem eFaktur\n\nPoniżej znajdują się odpowiedzi na najczęściej zadawane pytania dotyczące integracji z KSeF\n\n1..Jak skonfigurować KSeF?\n\nJak skonfigurować system Comarch Betterfly z Ksefem zostało opisane w artykule:\n\n- dla kont z pakietem eFaktury Plus: Jak skonfigurować integrację z Krajowym Systemem e-Faktur (KSeF).\n- dla kont z pakietem eFaktury: Jak skonfigurować integrację z Krajowym Systemem e-Faktur (KSeF) w module eFaktury.\n\n2..Jak nadać uprawnienia do wysyłki i odbioru faktur z KSeF?\n\nAby nadać uprawnienia do wysyłki i odbioru faktur z KSeF:\n\n1. Wejdź na listę Ustawieniach / Użytkownicy i role\n2. Przejdź na zakładkę Role\n3. Wybierz z menu pod 3 kropkami Edytuj i na roli wybierz uprawnienia dla:\n\n- Administratora\n- Użytkownika\n\nWięcej w artykule: Jak nadać uprawnienia do wysyłania faktur do KSeF w Comarch Betterfly.\n\n3..Dlaczego nie mogę dodać certyfikatu używanego w innej spółce / mam brak uprawnień do pobierania dokumentów (błąd 403)?\n\nBłąd najczęściej dotyczy spółek i wynika z braku odpowiednich uprawnień w systemie KSeF.\n\nUprawnienia do pracy w KSeF nadaje osoba wskazana w formularzu ZAW-FA. Po otrzymaniu uprawnień administracyjnych należy samodzielnie nadać sobie uprawnienia do zapisu i odczytu fa\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/ksef-najczesciej-zadawane-pytania-dotyczace-integracji-z-krajowym-systemem-efaktur/",
+  "tags": [
+    "discovery",
+    "official",
+    "API",
+    "KSeF",
+    "faktury",
+    "integracje"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:47:45.587Z",
+    "discoveryCandidateId": "candidate_ed534fd6-e6f",
+    "discoveryQueryId": "generated_ComarchBetterflyReference_c06ff13868",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "80d5b56f900ad4d4dbad034e4711111bd54d3cc6abdb16b6a5613ad7fcb3604f"
+  },
+  "createdAt": "2026-06-11T08:20:49.201Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.840Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_87dea2a7_ksef-najczesciej-zadawane-pytania-dotyczace-integracji-z-krajowym-systemem-efakt.json"
+}

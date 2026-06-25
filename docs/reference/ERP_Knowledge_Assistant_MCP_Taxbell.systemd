@@ -1,0 +1,16 @@
+[Unit]
+Description=ERP Knowledge Assistant MCP HTTP Bridge (Taxbell)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/docker/openspg
+EnvironmentFile=/etc/erp-kb-mcp.env
+ExecStart=/usr/bin/node /docker/openspg/scripts/erp_knowledge_mcp_http_bridge.mjs
+Restart=always
+RestartSec=3
+User=mcpbot
+Group=mcpbot
+
+[Install]
+WantedBy=multi-user.target

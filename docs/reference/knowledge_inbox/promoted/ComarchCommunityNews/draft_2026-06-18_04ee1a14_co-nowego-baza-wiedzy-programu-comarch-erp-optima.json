@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-18_04ee1a14_co-nowego-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Co nowego? – Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch Optima 2026.2 społeczność\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/co-nowego/\nTier: official\nDiscovery confidence: 0.95\n\nCo nowego? – Baza Wiedzy programu Comarch ERP Optima\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n1. Strona główna\n2. Instalacja i aktualizacje\n3. Co nowego?\n\n## Co nowego?\n\nNowości i zmiany w wersji 2026.4.1\n\nNowości i zmiany w wersji 2026.3.1\n\nNowości i zmiany w wersji 2026.2.1\n\nNowości i zmiany w wersji 2026.1.1\n\nNowości i zmiany w wersji 2026.0.1\n\nNowości i zmiany w wersji 2025\n\nNowości i zmiany w wersji 2025.5.1\n\nNowości i zmiany w wersji 2025.3.1\n\nNowości i zmiany w wersji 2025.2.1\n\nNowości i zmiany w wersji 2025.1.1\n\nNowości i zmiany w wersji 2025.0.1\n\nNowości i zmiany w wersji 2024\n\nNowości i zmiany w wersji 2024.6.1\n\nNowości i zmiany w wersji 2024.5.1\n\nNowości i zmiany w wersji 2024.3.1\n\nNowości i zmiany w wersji 2024.2.2\n\nNowości i zmiany w wersji 2024.2.1\n\nNowości i zmiany w wersji 2024.1.1\n\nNowości i zmiany w wersji 2024.0.1\n\nNowości i zmiany w wersji 2023\n\nNowości i zmiany w wersji 2023.6.1\n\nNowości i zmiany w wersji 2023.5.1\n\nNowości i zmiany w wersji 2023.3.1\n\nNowości i zmiany w wersji 2023.2.1\n\nNowości i zmiany w wersji 2023.1.1\n\nNowości i zmiany w wersji 2023.0.1\n\nNowości i zmiany w wersji 2022\n\nNowości i zmiany w wersji 2022.6.1 oraz 2022.7.1\n\nNowości i zmiany w wersji 2022.5.1\n\nNowości i zmiany w wersji 2022.4.1\n\nNowości i zmiany w wersji 2022.3.1\n\nNowości i zmiany w wersji 2022.2.1\n\nNowości i zmiany w wersji 2022.1.1\n\nNowości i zmiany w wersji 2022.0.1\n\nNowości i zmiany w wersji 2021\n\nNowości i zmiany w we\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/co-nowego/",
+  "tags": [
+    "discovery",
+    "official",
+    "pytania społeczności",
+    "KSeF",
+    "Optima",
+    "Betterfly"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-13T02:49:54.657Z",
+    "discoveryCandidateId": "candidate_7b973c57-d81",
+    "discoveryQueryId": "generated_ComarchCommunityNews_872094d42d",
+    "discoveryRunId": "discovery_daily_2026-06-13T02-49-32-868Z_889274e3",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "7977b86909bd2ce6963072a86adee26a5e2811d26a175bcc1c05473dd1e75643"
+  },
+  "createdAt": "2026-06-18T05:12:36.148Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-18T05:14:35.332Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-18/draft_2026-06-18_04ee1a14_co-nowego-baza-wiedzy-programu-comarch-erp-optima.json"
+}

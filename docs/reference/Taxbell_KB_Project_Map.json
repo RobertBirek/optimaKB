@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-06-05T14:41:50.296Z",
+  "entries": [
+    {
+      "namespace": "TaxbellAccountingVATReference",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "projectId": 14,
+      "projectName": "Taxbell Accounting VAT Reference",
+      "schemaFile": "docs/reference/TaxbellAccountingVATReference.schema",
+      "exportDir": "exports/taxbell_accounting_vat_reference/v1",
+      "buildManifest": "build_taxbell_accounting_vat_reference_jobs_manifest.json",
+      "updatedAt": "2026-06-05T14:41:50.296Z"
+    },
+    {
+      "namespace": "TaxbellLegalReference",
+      "kbName": "Taxbell Legal Reference",
+      "projectId": 12,
+      "projectName": "Taxbell Legal Reference",
+      "schemaFile": "docs/reference/TaxbellLegalReference.schema",
+      "exportDir": "exports/taxbell_legal_reference/v1",
+      "buildManifest": "build_taxbell_legal_reference_jobs_manifest.json",
+      "updatedAt": "2026-06-05T14:41:24.865Z"
+    },
+    {
+      "namespace": "TaxbellPayrollHRReference",
+      "kbName": "Taxbell Payroll HR Reference",
+      "projectId": 13,
+      "projectName": "Taxbell Payroll HR Reference",
+      "schemaFile": "docs/reference/TaxbellPayrollHRReference.schema",
+      "exportDir": "exports/taxbell_payroll_hr_reference/v1",
+      "buildManifest": "build_taxbell_payroll_hr_reference_jobs_manifest.json",
+      "updatedAt": "2026-06-05T14:41:37.709Z"
+    }
+  ]
+}

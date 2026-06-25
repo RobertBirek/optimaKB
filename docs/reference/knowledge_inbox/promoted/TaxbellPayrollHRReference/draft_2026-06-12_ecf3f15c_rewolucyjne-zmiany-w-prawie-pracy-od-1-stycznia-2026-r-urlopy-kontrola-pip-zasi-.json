@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-12_ecf3f15c_rewolucyjne-zmiany-w-prawie-pracy-od-1-stycznia-2026-r-urlopy-kontrola-pip-zasi-",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Rewolucyjne zmiany w prawie pracy od 1 stycznia 2026 r.: urlopy, kontrola PIP, zasiłek chorobowy, minimalne wynagrodzenie i inne - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: kadry płace ZUS prawo pracy zmiany 2026\nSource: https://kadry.infor.pl/wiadomosci/7469755,rewolucyjne-zmiany-w-prawie-pracy-od-1-stycznia-2026-r-urlopy-kontrola-pip-zasilek-chorobowy-minimalne-wynagrodzenie-i-inne.html\nTier: professional\nDiscovery confidence: 0.95\n\nRewolucyjne zmiany w prawie pracy od 1 stycznia 2026 r.: urlopy, kontrola PIP, zasiłek chorobowy, minimalne wynagrodzenie i inne - Infor.pl\n\nREKLAMA\n\nREKLAMA\n\n# Rewolucyjne zmiany w prawie pracy od 1 stycznia 2026 r.: urlopy, kontrola PIP, zasiłek chorobowy, minimalne wynagrodzenie i inne\n\nSubskrybuj nas na Youtube\n\nZapisz się na newsletter\n\nDołącz do ekspertów Dołącz do grona ekspertów\n\n02 grudnia 2025, 12:28\n\nRewolucyjne zmiany w prawie pracy od 1 stycznia 2026 r.: urlopy, kontrola PIP, zasiłek chorobowy, minimalne wynagrodzenie i inne\n\nShutterstock\n\nREKLAMA\n\nREKLAMA\n\nRewolucyjne zmiany w prawie pracy od 1 stycznia 2026 r.: dłuższe urlopy, nowe zasady kontroli PIP, modyfikacja w zasadach utraty zasiłku chorobowego, podwyżka minimalnego wynagrodzenia za pracę i innych świadczeń zależnych od płacy minimalnej. Nieco wcześniej wchodzą w życie przepisy o jawności wynagrodzeń.\n\n- Dłuższe urlopy wypoczynkowe od 2026 r.\n- Zmiany w zasadach utraty zasiłku chorobowego\n- Podwyżka minimalnego wynagrodzenia za pracę 2026\n- Zmiany w wynagrodzeniach od grudnia\n- Zmiany w kontroli PIP 2026\n- Zmiany w zatrudnianiu stażysty\n\nrozwiń >\n\n## Dłuższe urlopy wypoczynkowe od 2026 r.\n\nZ czego wynikają dłuższe urlopy wypoczynkowego od stycznia 2026 r.? Jest to konsekwencja zmian zasad naliczania stażu pracy. Jak wiadomo, liczba dni urlopowych uzależniona jest od lat pracy. Jeżeli dana osoba pracowała krócej niż 10 lat, ma prawo do 20 dni urlopu w roku kalendarzowym. Dłuższy, czyli co najmniej 10-letn\n\nReview this draft before promotion.",
+  "sourceUrl": "https://kadry.infor.pl/wiadomosci/7469755,rewolucyjne-zmiany-w-prawie-pracy-od-1-stycznia-2026-r-urlopy-kontrola-pip-zasilek-chorobowy-minimalne-wynagrodzenie-i-inne.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-09T02:50:10.434Z",
+    "discoveryCandidateId": "candidate_8bac8305-4ea",
+    "discoveryQueryId": "seed_TaxbellPayrollHRReference",
+    "discoveryRunId": "discovery_daily_2026-06-09T02-49-52-118Z_a0585710",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "264e188788451b3ae8605d15fb03b8c5378d0b1a14a48ba7015ec787ea13a0c1"
+  },
+  "createdAt": "2026-06-12T05:27:10.357Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T05:33:28.164Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 2 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_ecf3f15c_rewolucyjne-zmiany-w-prawie-pracy-od-1-stycznia-2026-r-urlopy-kontrola-pip-zasi-.json"
+}

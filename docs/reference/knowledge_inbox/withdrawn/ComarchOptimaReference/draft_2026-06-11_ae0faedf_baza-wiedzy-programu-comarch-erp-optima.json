@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: obsługa programu Comarch Optima 2026 poradnik\nSource: https://pomoc.comarch.pl/optima/\nTier: official\nDiscovery confidence: 0.85\n\n﻿ Baza Wiedzy programu Comarch ERP Optima \n\n \n\n \n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n \n\n### Krajowy System e-Faktur (KSeF) – zapoznaj się z informacjami dotyczącymi konfiguracji, wysyłki oraz odbioru faktur z KSeF\n\nW dedykowanym artykule zostały przedstawione informacje jak poprawnie wykonać konfigurację KSeF w programie oraz w jaki sposób wysyłać i odbierać dokumenty z KSeF. Zapraszamy do zapoznania się z materiałami.\n\nPrzejdź do artykułu\n\n \n\n \n\n \n\n# Baza Wiedzy programu Comarch ERP Optima\n\nPrzejrzyj kategorie i wybierz temat, który Cię interesuje.\n\n \n\n## Raportowanie i analizy\n\n## Handel z magazynem\n\n## Księgowość - Księga podatkowa/Księga handlowa\n\n## Płace i kadry\n\n## CRM i serwis\n\n## Rozwiązania dla biur rachunkowych\n\n## Instalacja i aktualizacje\n\n## Konfiguracja programu\n\n## Ogólne i Kasa/Bank\n\n## Pierwsze kroki\n\n## Sprzedaż w internecie\n\n- Narzędzia do budowy analiz i raportów\n- Kompleksowe rozwiązanie handlowo-magazynowe, obsługa sprzedaży detalicznej i mobilny program do inwentaryzacji.\n- Moduły do prowadzenia uproszczonej i pełnej księgowości oraz zarządzania środkami trwałymi.\n- Moduł do obsługi kadr i płac.\n- Narzędzia do obsługi kontaktów z klientami, towrzenia ofert i obsługi serwisowej w dowolnej branży.\n- Prowadzenie księgowości, kadr i płac, elektroniczna wymiana dokumentów i proste tworzenie różnorodnych analiz.\n- Instalacja oprogramowania oraz zmiany w kolejnych wersjach programu.\n- Ustawienia para\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/",
+  "tags": [
+    "discovery",
+    "official",
+    "instrukcje",
+    "aktualizacje",
+    "KSeF",
+    "obsługa programu"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:49:08.215Z",
+    "discoveryCandidateId": "candidate_1b522f5c-91f",
+    "discoveryQueryId": "generated_ComarchOptimaReference_3426b5acfe",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.85,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "f29bfb6892a817ea119c1c398bffc49d3c401402220f89eb5ef2b5d1c0d1f500"
+  },
+  "createdAt": "2026-06-11T08:20:49.449Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.763Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_ae0faedf_baza-wiedzy-programu-comarch-erp-optima.json"
+}

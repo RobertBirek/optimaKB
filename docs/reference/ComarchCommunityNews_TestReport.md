@@ -1,0 +1,90 @@
+# ComarchCommunityNews Test Report
+
+Generated at: 2026-06-03T11:04:28.910Z
+
+- PASS: 20
+- PARTIAL: 0
+- MISS: 0
+
+## Results
+
+- CN001 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy była ostatnio przerwa techniczna w Comarch OCR?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN002 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Jaka nowa wersja Comarch TNA została ostatnio opublikowana?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN003 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy są planowane wersje Comarch ERP Optima na rok 2026?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN004 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy na społeczności był ostatnio komunikat o KSeF w Optimie?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN005 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy były ostatnio newsy o Comarch Betterfly?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN006 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy był komunikat serwisowy o Comarch OCR?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN007 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Jakie publiczne aktualności były ostatnio dla Comarch ERP XL?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN008 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy były ostatnio newsy o nowej wersji Optimy?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN009 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy na społeczności jest wpis KSeF w Comarch ERP Optima pod lupą?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN010 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy były ostatnio prace serwisowe albo niedostępność usług Comarch?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN011 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Jakie tematy newsów dominują ostatnio w społeczności Comarch?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN012 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy publiczne newsy wspominają Comarch OCR, KSeF albo Betterfly?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN013 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy był ostatnio wpis o premierze nowej wersji produktu Comarch?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN014 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Jakie komunikaty publiczne dotyczą usług albo chmury Comarch?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN015 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy są na społeczności newsy o Comarch Data Editor?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN016 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy są publiczne aktualności o Comarch IBARD?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN017 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Jakie newsy publiczne dotyczą kategorii Nowa wersja?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN018 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy społeczność publikuje komunikaty o awariach i przerwach technicznych?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN019 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Jakie publiczne newsy dotyczą Comarch ERP Optima i KSeF?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv
+- CN020 PASS -> expected `ComarchCommunityNews`, actual `ComarchCommunityNews`
+  - question: Czy są publiczne newsy o Comarch TNA, OCR i Betterfly?
+  - evidence: 5
+  - top evidence: ComarchCommunityNews -> exports/community_news/v1/reference_document.csv

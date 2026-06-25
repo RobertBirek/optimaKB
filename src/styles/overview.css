@@ -1,0 +1,217 @@
+/* Quality Gate — signature element */
+.qualityGate {
+  align-items: center;
+  background: var(--ok-bg);
+  display: flex;
+  gap: 10px;
+  padding: 8px 18px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.qualityGate.gateWarn {
+  background: var(--warn-bg);
+}
+
+.qualityGate.gateBad {
+  background: var(--bad-bg);
+}
+
+.qualityGateValue {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.qualityGate.gateOk .qualityGateValue { color: var(--ok); }
+.qualityGate.gateWarn .qualityGateValue { color: var(--warn); }
+.qualityGate.gateBad .qualityGateValue { color: var(--bad); }
+
+.qualityGateLabel {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@keyframes gatePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+.qualityGate.pulse {
+  animation: gatePulse 1.5s ease-in-out infinite;
+}
+
+.pageGrid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+}
+
+.overviewGrid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(360px, 0.7fr);
+}
+
+.overviewStatus,
+.overviewTools,
+.overviewKbChart,
+.overviewHealth,
+.overviewActions {
+  grid-column: 1 / -1;
+}
+
+.split {
+  align-items: start;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.75fr);
+}
+
+.spanAll,
+.pageGrid > .pageSection:first-child,
+.pageGrid > .pageSection:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+.pageSection {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+  padding: 16px;
+}
+
+.sectionHeader {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.compactHeader {
+  align-items: center;
+}
+
+.pageTitle p {
+  margin-bottom: 0;
+}
+
+.pageActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.metricsGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.healthCockpit {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--deep-navy) 9%, var(--panel)), var(--panel));
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--muted);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 14px;
+  padding: 12px;
+}
+
+.healthCockpit.ok { border-left-color: var(--ok); }
+.healthCockpit.warn { border-left-color: var(--warn); }
+.healthCockpit.bad { border-left-color: var(--bad); }
+
+.healthCockpitHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.healthCockpitHeader strong {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.healthCockpitEyebrow {
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.healthSignalRail {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.healthSignal {
+  align-items: flex-start;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 5px;
+  min-height: 74px;
+  padding: 9px;
+  text-align: left;
+}
+
+.healthSignal:hover {
+  border-color: var(--blue);
+  text-decoration: none;
+}
+
+.healthSignal span:not(.healthSignalDot) {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.healthSignal strong {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 13px;
+}
+
+.healthSignalDot {
+  border-radius: 999px;
+  height: 7px;
+  width: 24px;
+}
+
+.healthSignal.ok .healthSignalDot { background: var(--ok); }
+.healthSignal.warn .healthSignalDot { background: var(--warn); }
+.healthSignal.bad .healthSignalDot { background: var(--bad); }
+
+.metric {
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  border-radius: 6px;
+  min-height: 88px;
+  padding: 12px;
+}
+
+.metric.ok {
+  border-left-color: var(--ok);
+}
+
+.metric.warn {
+  border-left-color: var(--warn);
+}
+
+.metric.bad {
+  border-left-color: var(--bad);
+}
+

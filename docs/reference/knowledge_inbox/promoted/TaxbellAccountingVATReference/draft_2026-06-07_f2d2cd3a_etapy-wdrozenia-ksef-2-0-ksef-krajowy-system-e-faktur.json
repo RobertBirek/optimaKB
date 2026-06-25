@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-07_f2d2cd3a_etapy-wdrozenia-ksef-2-0-ksef-krajowy-system-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Etapy wdrożenia KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
+  "content": "Automated source-discovery draft.\n\nQuery: KSeF rachunkowość 2026\nSource: https://ksef.podatki.gov.pl/etapy-wdrozenia-ksef/\nTier: official\nDiscovery confidence: 0.95\n\nSummary for query \"KSeF rachunkowość 2026\":\n\n- KSeF 2.0 rollout timeline:\n  - 1 Feb 2026: KSeF 2.0 becomes available for large businesses and those receiving invoices; KSeF 1.0 will be permanently disabled.\n  - 26–31 Jan 2026: Production environment downtime for KSeF 1.0 (including MCU) to complete transition; during downtime, basic permissions requests use form ZAW-FA.\n  - 1 Apr 2026: KSeF 2.0 becomes mandatory for all remaining enterprises not previously exempt, with general applicability.\n  - 1 Jan 2027: KSeF 2.0 becomes mandatory for all, including those previously exempt (micro firms with monthly sales ≤ 10,000 PLN documented by invoices remain exempt only until then?). Expect ongoing enforcement.\n- What this means for accounting/finance:\n  - From Feb 2026, large entities and those issuing/receiving invoices should use KSeF 2.0.\n  - By Apr 2026, most businesses must operate with ...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/etapy-wdrozenia-ksef/",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:11:33.794Z",
+    "discoveryCandidateId": "candidate_6aecd65b-b1b",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_9796aa8f51",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "6d04cfca356dbf12fe24d38b41fabf932055827b79ecee57524bfc56a4278e4d"
+  },
+  "createdAt": "2026-06-07T03:08:47.800Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-07T03:11:20.107Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 16 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-07/draft_2026-06-07_f2d2cd3a_etapy-wdrozenia-ksef-2-0-ksef-krajowy-system-e-faktur.json"
+}

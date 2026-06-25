@@ -1,0 +1,586 @@
+## Local Knowledge
+
+Primary local reference for OpenSPG work in this workspace:
+
+- [`reference/Dokumentacja OpenSPG.md`](/docker/openspg/docs/reference/Dokumentacja%20OpenSPG.md)
+- [`reference/KB-01_OpenSPG_KAG_Workflow.txt`](/docker/openspg/docs/reference/KB-01_OpenSPG_KAG_Workflow.txt)
+- [`reference/KB-02_OpenSPG_Terminologia.txt`](/docker/openspg/docs/reference/KB-02_OpenSPG_Terminologia.txt)
+- [`reference/KB-03_OpenSPG_Bezpieczenstwo_i_Walidacja.txt`](/docker/openspg/docs/reference/KB-03_OpenSPG_Bezpieczenstwo_i_Walidacja.txt)
+- [`reference/KB_Struktura_Bazy_Firmowej_2026.4.1.md`](/docker/openspg/docs/reference/KB_Struktura_Bazy_Firmowej_2026.4.1.md)
+- [`reference/KB_Struktura_Bazy_Konfiguracyjnej_2026.4.1.md`](/docker/openspg/docs/reference/KB_Struktura_Bazy_Konfiguracyjnej_2026.4.1.md)
+- [`reference/KB_Zmiany_Struktury_Bazy_2026.4.1.md`](/docker/openspg/docs/reference/KB_Zmiany_Struktury_Bazy_2026.4.1.md)
+- [`reference/Struktura_Bazy_2026.4.1.md`](/docker/openspg/docs/reference/Struktura_Bazy_2026.4.1.md)
+- [`reference/ComarchOptimaSchema.schema`](/docker/openspg/docs/reference/ComarchOptimaSchema.schema)
+- [`reference/ComarchOptimaSchema.extract_metadata.sql`](/docker/openspg/docs/reference/ComarchOptimaSchema.extract_metadata.sql)
+- [`reference/ComarchOptimaAdditionalFunctions.schema`](/docker/openspg/docs/reference/ComarchOptimaAdditionalFunctions.schema)
+- [`reference/ComarchOptimaAdditionalFunctions.seed.md`](/docker/openspg/docs/reference/ComarchOptimaAdditionalFunctions.seed.md)
+- [`reference/ComarchOptimaAdditionalFunctions.schema_audit.md`](/docker/openspg/docs/reference/ComarchOptimaAdditionalFunctions.schema_audit.md)
+- [`reference/ComarchOptimaSprint.schema`](/docker/openspg/docs/reference/ComarchOptimaSprint.schema)
+- [`reference/ComarchOptimaSprint.seed.md`](/docker/openspg/docs/reference/ComarchOptimaSprint.seed.md)
+- [`reference/ComarchOptimaSprint.schema_audit.md`](/docker/openspg/docs/reference/ComarchOptimaSprint.schema_audit.md)
+- [`reference/ComarchOptimaBusinessSemantics.schema`](/docker/openspg/docs/reference/ComarchOptimaBusinessSemantics.schema)
+- [`reference/Optima_Manual_Exports_Audit_2026-06-01.md`](/docker/openspg/docs/reference/Optima_Manual_Exports_Audit_2026-06-01.md)
+- [`reference/Optima_Wydruki_FD_TypeFamily_Map_2026-06-01.md`](/docker/openspg/docs/reference/Optima_Wydruki_FD_TypeFamily_Map_2026-06-01.md)
+- [`reference/ComarchOptimaReference.schema`](/docker/openspg/docs/reference/ComarchOptimaReference.schema)
+- [`reference/ComarchOptimaReference.seed.md`](/docker/openspg/docs/reference/ComarchOptimaReference.seed.md)
+- [`reference/ComarchOptimaReference.schema_audit.md`](/docker/openspg/docs/reference/ComarchOptimaReference.schema_audit.md)
+- [`reference/ComarchBetterflyReference.schema`](/docker/openspg/docs/reference/ComarchBetterflyReference.schema)
+- [`reference/ComarchBetterflyReference.seed.md`](/docker/openspg/docs/reference/ComarchBetterflyReference.seed.md)
+- [`reference/ComarchBetterflyReference.schema_audit.md`](/docker/openspg/docs/reference/ComarchBetterflyReference.schema_audit.md)
+- [`reference/ComarchBetterflyReference.live_probe.md`](/docker/openspg/docs/reference/ComarchBetterflyReference.live_probe.md)
+- [`reference/ComarchBetterflyReference.contract_notes.md`](/docker/openspg/docs/reference/ComarchBetterflyReference.contract_notes.md)
+- [`reference/ComarchBetterflyReference.write_notes.md`](/docker/openspg/docs/reference/ComarchBetterflyReference.write_notes.md)
+- [`reference/ComarchBetterflyReference.usability_test.md`](/docker/openspg/docs/reference/ComarchBetterflyReference.usability_test.md)
+- [`reference/ComarchKB_Global_Audit.md`](/docker/openspg/docs/reference/ComarchKB_Global_Audit.md)
+- [`reference/ComarchKB_CrossKB_Practical_Test.md`](/docker/openspg/docs/reference/ComarchKB_CrossKB_Practical_Test.md)
+- [`reference/ERP_Knowledge_Assistant_Blueprint.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Blueprint.md)
+- [`reference/ERP_Knowledge_Assistant_Routing.json`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Routing.json)
+- [`reference/ERP_Knowledge_Assistant_Runbook.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Runbook.md)
+- [`reference/ERP_Knowledge_Assistant_OpenSPG_App_Prompt.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_OpenSPG_App_Prompt.md)
+- [`reference/ERP_Knowledge_Assistant_OpenSPG_App_Spec.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_OpenSPG_App_Spec.md)
+- [`reference/ERP_Knowledge_Assistant_OpenSPG_App_Bundle.json`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_OpenSPG_App_Bundle.json)
+- [`reference/ERP_Knowledge_Assistant_MCP_Runbook.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_MCP_Runbook.md)
+- [`reference/ERP_Knowledge_Assistant_MCP_Intranet_Deployment.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_MCP_Intranet_Deployment.md)
+- [`reference/ERP_Knowledge_Assistant_MCP_Client_Configs.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_MCP_Client_Configs.md)
+- [`reference/ERP_Knowledge_Assistant_MCP_Taxbell_Rollout.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_MCP_Taxbell_Rollout.md)
+- [`reference/ERP_KB_Dashboard_Runbook.md`](/docker/openspg/docs/reference/ERP_KB_Dashboard_Runbook.md)
+- [`reference/ERP_KB_Discovery_Coverage_Report.md`](/docker/openspg/docs/reference/ERP_KB_Discovery_Coverage_Report.md)
+- [`reference/ERP_Knowledge_Assistant_100Q_Report.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_100Q_Report.md)
+- [`reference/ERP_Knowledge_Assistant_100Q_TestPack.json`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_100Q_TestPack.json)
+- [`reference/ERP_Knowledge_Assistant_200Q_Report.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_200Q_Report.md)
+- [`reference/ERP_Knowledge_Assistant_200Q_TestPack.json`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_200Q_TestPack.json)
+- [`reference/ERP_Knowledge_Assistant_Community_Questions_Report.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Community_Questions_Report.md)
+- [`reference/ERP_Knowledge_Assistant_Community_FullThread_Report.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Community_FullThread_Report.md)
+- [`reference/ERP_Knowledge_Assistant_Community_FullThread_TestPack.json`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Community_FullThread_TestPack.json)
+- [`reference/ERP_Knowledge_Assistant_Community_FullThread_TestPack.md`](/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Community_FullThread_TestPack.md)
+- [`reference/ComarchOptimaPartnerTechnical.schema`](/docker/openspg/docs/reference/ComarchOptimaPartnerTechnical.schema)
+- [`reference/ComarchOptimaPartnerTechnical.seed.md`](/docker/openspg/docs/reference/ComarchOptimaPartnerTechnical.seed.md)
+- [`reference/ComarchOptimaKB_CorpusCoverageAudit.md`](/docker/openspg/docs/reference/ComarchOptimaKB_CorpusCoverageAudit.md)
+- [`reference/ComarchOptimaPartnerTechnical.audit.md`](/docker/openspg/docs/reference/ComarchOptimaPartnerTechnical.audit.md)
+- [`reference/ADD_FILES_TO_KB.md`](/docker/openspg/docs/reference/ADD_FILES_TO_KB.md)
+- [`reference/OpenSPG_KB_Operational_Memory.md`](/docker/openspg/docs/reference/OpenSPG_KB_Operational_Memory.md)
+- [`../scripts/export_optima_schema_metadata.mjs`](/docker/openspg/scripts/export_optima_schema_metadata.mjs)
+- [`../scripts/build_optima_schema_metadata.mjs`](/docker/openspg/scripts/build_optima_schema_metadata.mjs)
+- [`../scripts/export_optima_additional_functions.mjs`](/docker/openspg/scripts/export_optima_additional_functions.mjs)
+- [`../scripts/build_optima_additional_functions.mjs`](/docker/openspg/scripts/build_optima_additional_functions.mjs)
+- [`../scripts/export_optima_sprint.mjs`](/docker/openspg/scripts/export_optima_sprint.mjs)
+- [`../scripts/build_optima_sprint.mjs`](/docker/openspg/scripts/build_optima_sprint.mjs)
+- [`../scripts/lib/pdf_text.mjs`](/docker/openspg/scripts/lib/pdf_text.mjs)
+- [`../scripts/export_optima_reference.mjs`](/docker/openspg/scripts/export_optima_reference.mjs)
+- [`../scripts/build_optima_reference.mjs`](/docker/openspg/scripts/build_optima_reference.mjs)
+- [`../scripts/export_betterfly_reference.mjs`](/docker/openspg/scripts/export_betterfly_reference.mjs)
+- [`../scripts/build_betterfly_reference.mjs`](/docker/openspg/scripts/build_betterfly_reference.mjs)
+- [`../scripts/export_optima_partner_technical.mjs`](/docker/openspg/scripts/export_optima_partner_technical.mjs)
+- [`../scripts/build_optima_partner_technical.mjs`](/docker/openspg/scripts/build_optima_partner_technical.mjs)
+- [`../scripts/download_optima_partner_technical_assets.mjs`](/docker/openspg/scripts/download_optima_partner_technical_assets.mjs)
+- [`../scripts/extract_optima_partner_technical_archives.mjs`](/docker/openspg/scripts/extract_optima_partner_technical_archives.mjs)
+- [`../scripts/push_openspg_schema.mjs`](/docker/openspg/scripts/push_openspg_schema.mjs)
+- [`../scripts/test_erp_knowledge_mcp_http_bridge.mjs`](/docker/openspg/scripts/test_erp_knowledge_mcp_http_bridge.mjs)
+- [`../scripts/preflight_erp_knowledge_mcp_http_bridge.mjs`](/docker/openspg/scripts/preflight_erp_knowledge_mcp_http_bridge.mjs)
+
+Notes:
+
+- Source file was downloaded from the user-provided Google Drive link on 2026-05-22.
+- The document identifies itself as `OpenSPG & KAG — Complete Knowledge Base for LLM`.
+- The document metadata inside the file lists `Last Updated: 2026-04-06`.
+- Prefer this file as the first local reference when answering OpenSPG and KAG questions for this repository.
+- Supplemental workspace notes were downloaded from user-provided Google Drive links on 2026-05-22.
+- The supplemental files currently cover workflow, terminology, and security/validation guidance.
+- Optima-specific structural references were downloaded from user-provided Google Drive links on 2026-05-22.
+- The Optima set currently covers firm DB structure, configuration DB structure, aggregate structure reference, and schema change history for version `2026.4.1`.
+- `ComarchOptimaSchema.schema` is the active source-of-truth schema for the current schema-only KB `ComarchOptimaSchema`.
+- `ComarchOptimaSchema.extract_metadata.sql` exports only SQL Server catalog metadata for `CDN_TEST` and `CDN_KNF_Konfiguracja`, without business table rows.
+- `ComarchOptimaAdditionalFunctions.schema` is the source-of-truth schema for the dedicated KB `Comarch Optima Additional Functions`.
+- `ComarchOptimaAdditionalFunctions.seed.md` defines the initial scope, seed entity plan, and extension policy for that KB.
+- `ComarchOptimaAdditionalFunctions.schema_audit.md` records the first corpus-based schema audit against the local Google Drive materials for Additional Functions and explains why artifact/example/dictionary entities were added.
+- `ComarchOptimaSprint.schema` is the source-of-truth schema for the dedicated KB `Comarch Optima Sprint and Prints`.
+- `ComarchOptimaSprint.seed.md` defines the initial scope, seed entity plan, and extension policy for that KB.
+- `ComarchOptimaSprint.schema_audit.md` records the first corpus-based schema audit against the local Google Drive materials for Sprint and explains why the KB centers on workflows, SQL patterns, diagnostics, versioning, and schema anchors rather than executable assets.
+- `ComarchOptimaBusinessSemantics.schema` is the source-of-truth schema for the dedicated KB `Comarch Optima Business Semantics`.
+- `ComarchOptimaBusinessSemantics` is the semantic companion to `ComarchOptimaSchema` for code meanings, business descriptions, and business rules.
+- `Optima_Manual_Exports_Audit_2026-06-01.md` records the audit of direct Optima exports `export_fd.xml` and `export_wydruki.xml` and confirms that Additional Functions and print definitions share the same broad `Wydruk` export model differentiated by `WDR_RODZAJ`, `WDR_TYP`, and `WDR_PODTYP`.
+- `Optima_Wydruki_FD_TypeFamily_Map_2026-06-01.md` is the current evidence-based map of `WDR_RODZAJ/WDR_TYP/WDR_PODTYP` families, including the strongest current assignments for Additional Functions, sPrint, GenRap, Word/XML, text-print, and declaration branches, plus the current state of compressed-definition reverse engineering.
+- `ComarchOptimaReference.schema` is the source-of-truth schema for the dedicated KB `Comarch Optima Reference`.
+- `ComarchOptimaReference.seed.md` defines the initial scope, seed entity plan, and extension policy for the general official-help KB.
+- `ComarchOptimaReference.schema_audit.md` records the first audit of the official `pomoc.comarch.pl` corpus and explains why this KB combines wide sitemap coverage with selected printable-page chunks.
+- `ComarchBetterflyReference.schema` is the source-of-truth schema for the dedicated KB `Comarch Betterfly Reference`.
+- `ComarchBetterflyReference.seed.md` defines the initial scope, seed entity plan, and extension policy for the Betterfly official-help and API KB.
+- `ComarchBetterflyReference.schema_audit.md` records the first Betterfly corpus audit and explains why the KB adds explicit `ApiResource` and `ApiPattern` layers instead of staying purely article-based.
+- `ComarchBetterflyReference.live_probe.md` records the metadata-only Betterfly live API validation results for token flow, Bearer auth, envelope shape, and versioning.
+- `ComarchBetterflyReference.contract_notes.md` records metadata-only endpoint contract notes for selected Betterfly resources, including top-level key sets and error-shape cautions.
+- `ComarchBetterflyReference.write_notes.md` records metadata-only Betterfly write-side workflow guidance for create, update, confirm, delete, finalize, and corrective sequences.
+- `ComarchBetterflyReference.usability_test.md` records the first practical Betterfly KB usefulness test against real API questions.
+- `ComarchKB_Global_Audit.md` is the current cross-KB operational audit for all active Optima and Betterfly KBs and is the best single file for judging readiness, strengths, and remaining gaps across the whole project.
+- `ComarchKB_CrossKB_Practical_Test.md` is the first cross-KB question-driven test across the whole active KB set. It is the current best file for deciding whether to deepen an existing KB or move to an assistant/routing layer.
+- `ERP_Knowledge_Assistant_Blueprint.md` is the current source of truth for the planned assistant/routing layer above all active Optima and Betterfly KBs.
+- `ERP_Knowledge_Assistant_Routing.json` is the machine-readable routing spec for the first rule-based version of that assistant.
+- `ERP_Knowledge_Assistant_Runbook.md` is the operator runbook for the first working assistant layer and points to the local CLI router `scripts/erp_knowledge_assistant.mjs`.
+- `ERP_Knowledge_Assistant_OpenSPG_App_Prompt.md` and `ERP_Knowledge_Assistant_OpenSPG_App_Spec.md` are the deployment-ready application pack for the OpenSPG-side `ERP Knowledge Assistant`.
+- `ERP_Knowledge_Assistant_OpenSPG_App_Bundle.json` is the exported application bundle combining the current prompt, routing JSON, and KB project set.
+- The OpenSPG-side `ERP Knowledge Assistant` is now also actually published in
+  the live instance as app id `2`, alias `erpknowledgeassistant`, with all six
+  active KBs attached. The confirmed create/update/deploy contract is recorded
+  in `OpenSPG_KB_Operational_Memory.md`.
+- The reproducible API-side deployment helper for that app is now
+  `scripts/deploy_erp_knowledge_openspg_app.mjs`.
+- The current OpenSPG build still has no verified custom-prompt field for app
+  config; the published app is template-backed and KB-backed.
+- The live app template was corrected from `kag_thinker_pipeline` to
+  `think_pipeline` after a real runtime failure:
+  `No configuration setting found for key rewrite_prompt`.
+- The first live benchmark of the published OpenSPG app is now recorded in
+  `ERP_Knowledge_Assistant_OpenSPG_Live_Benchmark.md` and companion JSON.
+  That run shows the published app is still blocked in backend runtime:
+  the live sample ended `12 RUNNING_TIMEOUT / 0 FINISH`, and server logs show
+  app tasks are executed with `projectId=2` (the app id), leading to
+  `IllegalArgumentException: 2 is not exists` plus paired `NullPointerException`
+  in NL query tasks.
+- `ERP_Knowledge_Assistant_MCP_Runbook.md` is the operator runbook for the MCP bridge over the same assistant layer.
+- The MCP bridge has now been validated through real stdio framing and is also
+  registered in local Codex MCP config as `erp-kb`.
+- The same assistant layer now also has an intranet-oriented HTTP bridge:
+  `scripts/erp_knowledge_mcp_http_bridge.mjs`, backed by shared logic in
+  `scripts/lib/erp_knowledge_mcp_core.mjs`.
+- That bridge now also exposes `/sse` as a legacy Claude-compatible alias for
+  clients that expect SSE transport on `/sse` instead of `/mcp`.
+- The practical rollout guide for exposing that bridge inside the company
+  network is now `ERP_Knowledge_Assistant_MCP_Intranet_Deployment.md`.
+- `ERP_Knowledge_Assistant_MCP_Client_Configs.md` contains ready-to-adapt
+  Codex and Claude Desktop examples for the intranet HTTP bridge, plus stdio
+  and SSH fallbacks.
+- `ERP_Knowledge_Assistant_MCP_Taxbell_Rollout.md` is the concrete rollout
+  profile for the current target host and LAN domain
+  `erp-kb.mcp.taxbell.local`, including `mcpbot`, NPMplus, HTTP-only, port
+  `3400`, and bearer-token auth.
+- The host-side service for that Taxbell profile is now actually installed and
+  running locally as `erp-kb-mcp.service`, first on `127.0.0.1:3400` and then
+  rebound to `10.10.254.42:3400` for LAN access, with bearer auth.
+- The proxy layer is now also known: NPMplus runs on `10.10.254.46` and
+  forwards `erp-kb.mcp.taxbell.local` to `http://10.10.254.42:3400`.
+- The first live proxy test initially failed because UFW on `10.10.254.42`
+  blocked `3400/tcp`. After allowing only `10.10.254.46 -> 3400/tcp`, the full
+  path through NPMplus was verified for `/health`, `tools/list`, and a real
+  `answer_question` call.
+- `scripts/test_erp_knowledge_mcp_http_bridge.mjs` is the repeatable smoke
+  test for `/health`, `tools/list`, and a real `answer_question` call over the
+  HTTP bridge.
+- `scripts/preflight_erp_knowledge_mcp_http_bridge.mjs` is the stricter
+  host-side preflight. It checks required files, starts the bridge locally,
+  verifies `/health`, `tools/list`, and a real `answer_question`, then exits
+  with a machine-readable pass/fail JSON summary.
+- `docs/reference/Knowledge_Inbox.md` documents the safe write-side inbox for
+  the assistant layer.
+- `submit_knowledge_draft` is the MCP tool for creating local JSON/Markdown
+  knowledge drafts under `downloads/knowledge_inbox/` before promoting them to
+  a real KB export/build flow.
+- That preflight was executed successfully on `2026-06-02`, so the current
+  `erp-kb` intranet bridge pack is verified end to end, not only syntax-checked.
+- `scripts/erp_knowledge_assistant.mjs` is the first operational question router across all active Optima and Betterfly KBs. It does not query OpenSPG directly; it classifies questions and returns the correct KB/artifact starting point.
+- `scripts/erp_knowledge_answer.mjs` is the second local assistant layer above that router. It scans starter artifacts from the routed KB set and returns a pragmatic first answer with evidence snippets.
+- `scripts/run_erp_knowledge_testpack.mjs` is the repeatable 100-question regression runner for the assistant layer.
+- `scripts/export_erp_knowledge_app_bundle.mjs` exports the current OpenSPG app bundle as JSON from the prompt and routing sources.
+- `scripts/erp_knowledge_mcp_server.mjs` is the local stdio MCP server exposing `route_question`, `answer_question`, and `run_community_thread_test`.
+- `ERP_Knowledge_Assistant_100Q_Report.md` and `ERP_Knowledge_Assistant_100Q_TestPack.json` are the current large-sample validation artifacts for the assistant layer. They are the best current proof of routing quality across all active KBs.
+- The same runner also supports `--size 200`.
+- `ERP_Knowledge_Assistant_200Q_Report.md` and `ERP_Knowledge_Assistant_200Q_TestPack.json` are the broader validation artifacts for the assistant layer and should be used when you want a larger routing-quality signal than the 100Q baseline.
+- The current final large-sample benchmark is the polished `200Q` run: `200 PASS`, `0 PARTIAL`, `0 MISS`.
+- `ERP_Knowledge_Assistant_Community_Questions_Report.md` is the first real-world sanity check against actual public question titles from `spolecznosc.comarch.pl`. It is title-level only, but it confirms that the assistant does not drift into obviously wrong KB families on real Optima community phrasing.
+- `ERP_Knowledge_Assistant_Community_FullThread_Report.md` is the stronger real-world benchmark for the assistant layer. It uses full public thread content gathered through a headless browser and records the token-boundary routing fix that prevented the short keyword `com` from matching the brand name `Comarch`.
+- `scripts/run_community_thread_test.mjs` is the repeatable runner for that stronger benchmark. It bootstraps a temporary Playwright runtime under `/tmp/erp-kb-playwright/`, fetches the curated public thread set, and writes machine-readable plus markdown results.
+- `ComarchOptimaPartnerTechnical.schema` is the prepared source-of-truth schema for a future partner-only technical KB for `Comarch ERP Optima`.
+- `ComarchOptimaPartnerTechnical.seed.md` defines the metadata-first ingestion policy for that partner KB, with categories and media as first-class source objects and an explicit anti-duplication policy against `ComarchOptimaSchema`, `ComarchOptimaAdditionalFunctions`, and `ComarchOptimaSprint`.
+- `ComarchOptimaKB_CorpusCoverageAudit.md` records corpus-consumption coverage for the local Google Drive materials behind `ComarchOptimaAdditionalFunctions` and `ComarchOptimaSprint`, including what is fully ingested, what remains artifact-only, and what is still missing from the local corpora themselves.
+- `ComarchOptimaPartnerTechnical.audit.md` records the first authenticated audit of the partner portal area for `Comarch ERP Optima` and shows that the technical corpus is primarily a WordPress media/attachment repository organized by category and version state.
+- `ADD_FILES_TO_KB.md` is the operator runbook for adding files into the existing KB corpora, regenerating staging CSV files, and running selective or full OpenSPG builds.
+- The same runbook now also records the current GUI `Settings -> Data Source` limitation of this OpenSPG build: only `ODPS` and `SLS` are exposed there, so MSSQL-backed Optima KBs must still use the CSV builder path.
+- The current schema-only KB now includes full metadata for `49` views, `1367` stored procedures, `743` functions, `449` triggers, `11702` parameters, and `14113` object dependencies in the last completed dependency refresh.
+- The same KB now also includes a query-design helper layer with:
+  - `634` `TableQueryGuide` rows
+  - `609` direct-FK `JoinPathGuide` rows, plus `12` curated business routes in the latest staged helper refresh (`621` staged rows total)
+  - `2608` `SqlObjectGuide` rows
+- For code-bearing objects (`View`, `StoredProcedure`, `Function`, `Trigger`), the active schema uses:
+  - full `definition` as plain text
+  - `definitionPreview` as the vectorized/searchable preview
+  - `definitionHash`
+  - `definitionLength`
+- `OpenSPG_KB_Operational_Memory.md` is the durable operational memory for KB work in this workspace and should be read before starting any later KB so the next agent reuses confirmed API contracts, builder job patterns, and verified pitfalls.
+- `scripts/export_optima_schema_metadata.mjs` exports the active schema-only KB source set to `exports/optima_schema/v1/`.
+- `scripts/export_optima_schema_metadata.mjs` also supports `OPENSPG_HELPER_ONLY=1` to regenerate only the query-design helper layer and a helper-only `_manifest.json` without replaying the full MSSQL metadata export.
+- The latest helper tuning added exact Optima overrides and corrected several previously weak classifications, including:
+  - `PodArkuszInwenNag` / `PodArkuszInwenElem` -> warehouse/inventory instead of CRM
+  - `TypWyplata` / `TypNieobec` -> HR dictionaries
+  - `DaneKadMod`, `Dzialy`, `ZestawyRegul` -> HR master structures
+  - `VatTab` -> compliance/accounting line structure
+  - `CfgKlucze` / `CfgWartosci` -> configuration-admin instead of incidental HR matches
+- The same helper tuning added curated join routes for:
+  - trade document header -> lines
+  - lines -> product
+  - header -> document definition
+  - header -> buyer
+  - header -> payer
+  - header -> products via lines
+  - bank event -> business party
+  - bank event -> document definition
+  - VAT header -> VAT lines
+  - employment -> employee/person
+  - company/global config value -> config key
+- `scripts/build_optima_schema_metadata.mjs` uploads and builds the schema-only KB into OpenSPG, now with incremental manifest checkpoints and resume behavior.
+- `scripts/export_optima_additional_functions.mjs` generates the current Additional Functions seed CSV set into `exports/optima_additional_functions/v1/`.
+- `scripts/export_optima_additional_functions.mjs` now also scans `downloads/google_drive/additional_functions/` and exports file artifacts, implementation examples, COM interfaces, and local dictionary/message catalogs for the Additional Functions KB.
+- The same exporter now also consumes `downloads/google_drive/manual_exports/export_fd.xml`, promoting direct Optima-exported FD definitions into `ReferenceDocument`, `ImplementationExample`, and `Chunk` rows.
+- `scripts/lib/pdf_text.mjs` is the shared best-effort local PDF text extractor used by the Additional Functions and Sprint exporters when a PDF should feed retrieval chunks.
+- `scripts/build_optima_additional_functions.mjs` uploads and builds the Additional Functions seed set into OpenSPG project `6`.
+- `scripts/export_optima_sprint.mjs` generates the current Sprint KB seed CSV set into `exports/optima_sprint/v1/`.
+- The Sprint exporter now also consumes `downloads/google_drive/manual_exports/export_wydruki.xml`, promoting readable direct Optima print definitions into `ReferenceDocument`, `SqlPattern`, and `Chunk` rows while preserving the full export as a staged artifact.
+- `scripts/build_optima_sprint.mjs` uploads and builds the Sprint KB seed set into OpenSPG project `7`.
+- `scripts/build_optima_sprint.mjs` now correctly honors `OPENSPG_FORCE_FILES` for refreshed files and no longer reuses an old finished server job only because the generated `jobName` matches.
+- `scripts/export_optima_reference.mjs` generates the current General Reference KB seed CSV set into `exports/optima_reference/v1/`.
+- `scripts/build_optima_reference.mjs` uploads and builds the General Reference KB seed set into OpenSPG project `8`.
+- `scripts/export_betterfly_reference.mjs` generates the Betterfly official-reference and API-oriented seed CSV set into `exports/betterfly_reference/v1/`.
+- `scripts/build_betterfly_reference.mjs` uploads and builds the Betterfly seed set into OpenSPG project `10`, with active-job reuse for safe resume behavior.
+- `scripts/export_optima_partner_technical.mjs` prepares the staged metadata-first partner technical export set into `exports/optima_partner_technical/v1/` and can refresh live partner category/media snapshots when `PARTNER_COOKIE` and `PARTNER_REFRESH=1` are provided.
+- That exporter now also enforces overlap policy on partner assets:
+  - `ROUTE_ONLY` for areas already covered by specialist KBs
+  - `INDEX_AND_RETRIEVE` only for the narrower set of partner materials that still add unique value
+- `scripts/download_optima_partner_technical_assets.mjs` performs the next step after metadata staging: selective partner asset download from `partner_asset.csv`, defaulting to `INDEX_AND_RETRIEVE`, `CURRENT`, and `pdf,zip`.
+- `downloads/partner/optima_technical/source_registry.json` is the central partner-URL provenance registry for duplicate checks, routing, and source attribution.
+- The downloader writes URL provenance and checksum metadata to `downloads/partner/optima_technical/download_manifest.json`, plus:
+  - downloaded binaries under `downloads/partner/optima_technical/downloads/`
+  - recovered PDF text under `downloads/partner/optima_technical/extracted/pdf_text/`
+  - ZIP entry inventories under `downloads/partner/optima_technical/unpacked/zip_inventory/`
+- `scripts/extract_optima_partner_technical_archives.mjs` is the next-stage extractor for already downloaded partner ZIP assets. It extracts selected text-bearing files into `downloads/partner/optima_technical/extracted/zip_text/` and records execution state in `downloads/partner/optima_technical/extraction_manifest.json`.
+- The partner exporter now also consumes those local PDF/ZIP sidecars, so the partner KB staging no longer stays metadata-only once local extracts exist.
+- `scripts/build_optima_partner_technical.mjs` is the OpenSPG builder runner for the active partner technical KB `ComarchOptimaPartnerTechnical` in project `9`.
+- In the current workspace sandbox, direct `node fetch` from that builder may fail with `connect EPERM ...:8887` even though the same OpenSPG API is reachable through `curl`. For narrow partner refreshes, a manual `curl` upload + `builder/job/submit` fallback is confirmed to work.
+- `scripts/push_openspg_schema.mjs` publishes the local schema script to OpenSPG through `POST /v1/schemas`.
+- The current staged schema-only export set exists locally under `exports/optima_schema/v1/` with `_manifest.json`, `upload_schema_metadata_manifest.json`, and `build_schema_metadata_jobs_manifest.json`.
+- The current Additional Functions staged export set exists locally under `exports/optima_additional_functions/v1/` with `_manifest.json`, `upload_additional_functions_manifest.json`, `build_additional_functions_jobs_manifest.json`, and `README.md`.
+- The current Sprint staged export set exists locally under `exports/optima_sprint/v1/` with `_manifest.json`, `upload_optima_sprint_manifest.json`, `build_optima_sprint_jobs_manifest.json`, and `README.md`.
+- The prepared Partner Technical staged export set exists locally under `exports/optima_partner_technical/v1/` with `_manifest.json` and `README.md`.
+- The current Additional Functions seed counts are:
+  - `reference_document.csv` -> `12`
+  - `additional_function_capability.csv` -> `4`
+  - `additional_function_entry_point.csv` -> `3`
+  - `additional_function_execution_mode.csv` -> `3`
+  - `additional_function_configuration_option.csv` -> `3`
+  - `additional_function_rule.csv` -> `2`
+  - `additional_function_pattern.csv` -> `4`
+  - `related_feature.csv` -> `3`
+  - `file_artifact.csv` -> `57`
+  - `implementation_example.csv` -> `33`
+  - `com_interface.csv` -> `30`
+  - `configuration_catalog_entry.csv` -> `1740`
+  - `procedure_dictionary_entry.csv` -> `1442`
+  - `message_catalog_entry.csv` -> `7061`
+  - `implementation_guide.csv` -> `7`
+  - `schema_touchpoint.csv` -> `206`
+  - `module_recipe.csv` -> `7`
+  - `chunk.csv` -> `40`
+- The current Additional Functions KB is OpenSPG project `6`, name `Comarch Optima Additional Functions`, namespace `ComarchOptimaAdditionalFunctions`.
+- The current Sprint KB is OpenSPG project `7`, name `Comarch Optima Sprint and Prints`, namespace `ComarchOptimaSprint`.
+- The current General Reference KB is OpenSPG project `8`, name `Comarch Optima Reference`, namespace `ComarchOptimaReference`.
+- The current Business Semantics KB is OpenSPG project `15`, name `Comarch Optima Business Semantics`, namespace `ComarchOptimaBusinessSemantics`.
+- The current Betterfly Reference KB is OpenSPG project `10`, name `Comarch Betterfly Reference`, namespace `ComarchBetterflyReference`.
+- The Partner Technical KB is now OpenSPG project `9`, name `Comarch Optima Partner Technical`, namespace `ComarchOptimaPartnerTechnical`.
+- The current General Reference KB also includes a curated `EntryGuide` layer used as the first-stop routing surface across official docs and the specialist Optima KBs.
+- The current Sprint seed counts are:
+  - `reference_document.csv` -> `22`
+  - `file_artifact.csv` -> `10`
+  - `print_technology.csv` -> `4`
+  - `print_workflow.csv` -> `8`
+  - `print_option.csv` -> `8`
+  - `template_feature.csv` -> `12`
+  - `sql_pattern.csv` -> `12`
+  - `diagnostic_case.csv` -> `10`
+  - `version_change.csv` -> `10`
+  - `print_catalog.csv` -> `12`
+  - `learning_resource.csv` -> `11`
+  - `glossary_term.csv` -> `44`
+  - `schema_touchpoint.csv` -> `22`
+  - `module_recipe.csv` -> `7`
+  - `chunk.csv` -> `145`
+- The current General Reference seed counts are:
+  - `reference_document.csv` -> `3361`
+  - `help_category.csv` -> `466`
+  - `module_area.csv` -> `10`
+  - `version_topic.csv` -> `95`
+  - `learning_guide.csv` -> `8`
+  - `knowledge_route.csv` -> `5`
+  - `chunk.csv` -> `240`
+- The current Betterfly Reference seed counts are:
+  - `reference_document.csv` -> `30`
+  - `help_category.csv` -> `3`
+  - `module_area.csv` -> `5`
+  - `api_resource.csv` -> `25`
+  - `api_pattern.csv` -> `69`
+  - `learning_guide.csv` -> `4`
+  - `knowledge_route.csv` -> `2`
+  - `entry_guide.csv` -> `6`
+  - `chunk.csv` -> `241`
+- The first Betterfly `Chunk` build `174` stalled because `chunk.csv` still contained giant `spis-tresci` pages as single retrieval rows, which hit the embedding limit (`maximum input length is 8192 tokens`) in the OpenSPG vectorization path. The exporter was then corrected to exclude `spis-tresci` pages from the `Chunk` layer while preserving them as `ReferenceDocument` rows. The corrected retry finished successfully as job `175`, which is now the authoritative Betterfly chunk build.
+- Any future Betterfly live-API tuning must remain metadata-only: token flow, endpoint availability, response-envelope shape, and auth/error behavior are allowed; business payloads from tenant data must not be persisted into the repo or KB.
+- The Betterfly KB now also has a local metadata-only live-validation note at `docs/reference/ComarchBetterflyReference.live_probe.md`. The related Betterfly enrichment refresh completed successfully as jobs `176`-`181` and added live-metadata guidance for token flow, Bearer auth, array response envelopes, mixed versioning, and safe validation workflow.
+- The Betterfly KB now also has a local contract-note document at `docs/reference/ComarchBetterflyReference.contract_notes.md`. The related Betterfly contract refresh completed successfully as jobs `182`-`184` and added selected endpoint contract notes for products, customers, invoices, paymentdetails, payment-status caution, and print caution.
+- The Betterfly KB was then widened again with official archived API pages for legacy `v1.4` endpoint families. The archived-page refresh completed successfully as jobs `185`-`189` and added archived `ReferenceDocument`, `ApiResource`, `ApiPattern`, and `Chunk` coverage for:
+  - sales invoices `v1.4`
+  - advance invoices `v1.4`
+  - payments `v1.4`
+  - VAT margin invoices `v1.4`
+  Treat duplicate `188` `ApiPattern` as non-authoritative duplicate noise; use `187` as the authoritative pattern refresh and `189` as the authoritative chunk refresh.
+- The Betterfly KB now also has a local write-side workflow note at `docs/reference/ComarchBetterflyReference.write_notes.md`. The write-side refresh completed successfully as jobs `191`-`195` and added:
+  - one local write-side `ReferenceDocument`
+  - five curated write-side `ApiPattern` rows for CRUD families, confirm flows, finalize flows, corrective sequences, and version cautions
+  - one write-side `LearningGuide`
+  - one write-side `EntryGuide`
+  - local retrieval chunks derived from the write-side note document
+- The current Betterfly Reference seed counts are now:
+  - `reference_document.csv` -> `31`
+  - `help_category.csv` -> `3`
+  - `module_area.csv` -> `5`
+  - `api_resource.csv` -> `25`
+  - `api_pattern.csv` -> `74`
+  - `learning_guide.csv` -> `5`
+  - `knowledge_route.csv` -> `2`
+  - `entry_guide.csv` -> `7`
+  - `chunk.csv` -> `254`
+- The current Partner Technical staging counts are:
+  - `reference_document.csv` -> `121`
+  - `partner_category.csv` -> `14`
+  - `partner_asset.csv` -> `548`
+  - `asset_type.csv` -> `9`
+  - `version_band.csv` -> `234`
+  - `product_area.csv` -> `8`
+  - `cfg_entry.csv` -> `3446`
+  - `proc_entry.csv` -> `2884`
+  - `msg_entry.csv` -> `14109`
+  - `com_example.csv` -> `97`
+  - `com_interface_use.csv` -> `537`
+  - `com_schema_touchpoint.csv` -> `202`
+  - `com_module_recipe.csv` -> `8`
+  - `knowledge_route.csv` -> `3`
+  - `chunk.csv` -> `296`
+- The current overlap split in `partner_asset.csv` is:
+  - `ROUTE_ONLY` -> `289`
+  - `INDEX_AND_RETRIEVE` -> `259`
+- The first controlled partner download pass on `2026-05-24` selected `8` current `pdf,zip` assets and downloaded all `8` successfully with no skips or errors.
+- The first refined ZIP extraction pass on `2026-05-24` processed `7` downloaded archives and produced `126` local extracted text files after prioritizing high-value implementation formats over raw COM headers.
+- The first content-enriched partner KB refresh then completed successfully in OpenSPG project `9` as jobs `129`-`131`, raising:
+  - `reference_document.csv` from `2` to `6`
+  - `chunk.csv` from `151` to `278`
+- The partner exporter now also parses downloaded `Dictionaries_*.zip` extracts into:
+  - `cfg_entry.csv`
+  - `proc_entry.csv`
+  - `msg_entry.csv`
+- The partner exporter now also parses downloaded `Przyklady-uzycia-obiektow-COM-*` extracts into:
+  - `com_example.csv`
+  - `com_interface_use.csv`
+  - `com_schema_touchpoint.csv`
+  - `com_module_recipe.csv`
+- The dictionary-layer refresh then completed successfully in OpenSPG project `9` as jobs `132`-`134`.
+- The first COM-example layer refresh in OpenSPG project `9` completed as jobs `135`-`137`, but it exposed id collisions caused by parallel `js` / `xpt` / `cs` variants sharing the same normalized example name.
+- The COM-example exporter was then corrected to generate source-file-based ids, the stale collided nodes were removed from Neo4j, and the authoritative clean rebuild completed as jobs `138`-`140`.
+- The later module-recipe enrichment completed successfully in OpenSPG project `9` as job `141`.
+- The module-recipe layer was then refreshed again as job `149`, after the recipe summaries were enriched with XML/XPT and accounting-macro hints from partner technical assets.
+- A targeted partner-source probe on `2026-05-25` selected `18` `INDEX_AND_RETRIEVE` assets from:
+  - `PRODUCT_AREA_XMLSTRUCTURES`
+  - `PRODUCT_AREA_ACCOUNTINGMACROS`
+  - `PRODUCT_AREA_HELPERFILES`
+- The first narrow pass showed an important access constraint: with only `PHPSESSID=...`, all `18` selected `pdf,zip` asset downloads returned the Comarch SSO HTML page instead of the requested binary. The local downloader records that explicitly as `AUTH_REDIRECT_HTML` whenever it happens.
+- A later pass with a fuller browser cookie succeeded for the same selected asset slice:
+  - `18` downloads as real binaries
+  - PDF text sidecars recovered for the selected partner PDFs
+  - ZIP inventories recovered for the selected partner archives
+  - a later ZIP extraction pass yielded `133` extracted local text files
+- The staged partner corpus is therefore now content-enriched for this selected XML/helper/macro slice, not only metadata-only.
+- Completed Partner Technical builder jobs:
+  - `121` `ReferenceDocument` -> `FINISH`
+  - `122` `PartnerCategory` -> `FINISH`
+  - `123` `PartnerAsset` -> `FINISH`
+  - `124` `AssetType` -> `FINISH`
+  - `125` `VersionBand` -> `FINISH`
+  - `126` `ProductArea` -> `FINISH`
+  - `127` `KnowledgeRoute` -> `FINISH`
+  - `128` `Chunk` -> `FINISH`
+  - `129` `ReferenceDocument` -> `FINISH`
+  - `130` `PartnerAsset` -> `FINISH`
+  - `131` `Chunk` -> `FINISH`
+  - `132` `CfgEntry` -> `FINISH`
+  - `133` `ProcEntry` -> `FINISH`
+  - `134` `MsgEntry` -> `FINISH`
+  - `135` `ComExample` -> `FINISH` (`superseded by clean rebuild`)
+  - `136` `ComInterfaceUse` -> `FINISH` (`superseded by clean rebuild`)
+  - `137` `ComSchemaTouchpoint` -> `FINISH` (`superseded by clean rebuild`)
+  - `138` `ComExample` -> `FINISH`
+  - `139` `ComInterfaceUse` -> `FINISH`
+  - `140` `ComSchemaTouchpoint` -> `FINISH`
+  - `141` `ComModuleRecipe` -> `FINISH`
+  - `142` `PartnerAsset` -> `FINISH`
+  - `143` `Chunk` -> `FINISH`
+  - `144` `ReferenceDocument` -> `FINISH`
+  - `145` `PartnerAsset` -> `FINISH`
+  - `146` `Chunk` -> `FINISH`
+  - `151` `ReferenceDocument` -> `FINISH`
+  - `152` `Chunk` -> `FINISH`
+  - `153` `ReferenceDocument` -> `FINISH`
+  - `154` `Chunk` -> `FINISH`
+  - `155` `ReferenceDocument` -> `FINISH`
+  - `156` `Chunk` -> `FINISH`
+  - `157` `ReferenceDocument` -> `FINISH`
+  - `158` `Chunk` -> `FINISH`
+- The final verified Partner Technical graph counts for the COM-example layer are:
+  - `ComExample` -> `97`
+  - `ComInterfaceUse` -> `537`
+  - `ComSchemaTouchpoint` -> `202`
+- The final verified Partner Technical graph count for the module-recipe layer is:
+  - `ComModuleRecipe` -> `8`
+- A later `XmlPatternEntry`/`MacroGuideEntry` experiment was reverted because `POST /v1/schemas` accepted the script but did not materialize those types. The stable path is to keep XML and macro hints embedded in `ComModuleRecipe.summary`; the current graph materializes only the recipe entity, not the helper fields.
+- A later narrow partner refresh widened retrieval without adding new schema types:
+  - selected extracted XML/XPT/HTML files from XML structures, helper packages, and accounting-macro archives are now emitted as additional `ReferenceDocument` rows with `semanticType=partnerExampleExtract`
+  - extracted `Chunk` rows now point to those example-style source documents where available instead of only to the parent asset
+  - representative ids include:
+    - `PARTNER_EXAMPLE_DOC_PARTNER_ASSET_5056_RYCZALT_XML_1`
+    - `PARTNER_EXAMPLE_DOC_PARTNER_ASSET_5056_RYCZALT_XPT_2`
+    - `PARTNER_EXAMPLE_DOC_PARTNER_ASSET_5059_DODATKOWA_KOLUMNA_XML_1`
+    - `PARTNER_EXAMPLE_DOC_PARTNER_ASSET_5059_FUNKCJE_DODATKOWE_XML_2`
+- A later pass promoted real COM sample extracts from `Przyklady-uzycia-obiektow-COM-*` into the same stable `ReferenceDocument + Chunk` path instead of adding new schema types.
+- That pass raised `reference_document.csv` from `27` to `124`, including `105` `partnerExampleExtract` rows, for example:
+  - `PARTNER_EXAMPLE_DOC_PARTNER_ASSET_10444_ATRYBUTY_1`
+  - `PARTNER_EXAMPLE_DOC_PARTNER_ASSET_10444_DODAJOPERATORA_5`
+  - `PARTNER_EXAMPLE_DOC_PARTNER_ASSET_10444_KSIEGUJFAKTUREKSIEGUJFAKTURESPRZEDAZY_28`
+  - `PARTNER_EXAMPLE_DOC_PARTNER_ASSET_10444_OKNOLOGOWANIALOGOWANIE_92`
+- A later dedup refresh collapsed exact multi-language variant duplicates for the same COM example name into single `ReferenceDocument` rows with `Primary variant` and `Variants:` listed in `summary`.
+- After that cleanup:
+  - COM-derived `partnerExampleExtract` rows dropped from `97` to `93`
+  - `reference_document.csv` dropped from `124` to `120`
+- The partner ZIP extractor was then widened again to recover text from PDF files embedded inside ZIP archives.
+- The first confirmed use was for:
+  - `PARTNER_ASSET_11023` `Comarch ERP Optima 2026.4 – API KSeF`
+  - embedded file `Optima.Core.API - szybki start.pdf`
+- That raised:
+  - `reference_document.csv` from `120` to `121`
+  - `chunk.csv` from `295` to `296`
+- The partner ZIP extractor was later widened again to recurse one level into nested ZIP archives. The first confirmed nested recovery came from:
+  - `PARTNER_ASSET_10061` `_Dictionaries_2026_2.zip`
+  - nested `Dictionaries_2026_1.zip`
+  - recovered nested text sidecars for:
+    - `configuration.csv`
+    - `messages.csv`
+    - `Procedures.csv`
+- A control-flow bug in `scripts/extract_optima_partner_technical_archives.mjs` was also fixed during that pass: per-entry skip/output checks now use `continue`, so one skipped file no longer aborts the rest of the archive.
+- The current staged partner counts after nested ZIP recovery are:
+  - `reference_document.csv` -> `122`
+  - `partner_category.csv` -> `14`
+  - `partner_asset.csv` -> `548`
+  - `asset_type.csv` -> `9`
+  - `version_band.csv` -> `234`
+  - `product_area.csv` -> `8`
+  - `cfg_entry.csv` -> `5149`
+  - `proc_entry.csv` -> `4324`
+  - `msg_entry.csv` -> `21140`
+  - `com_example.csv` -> `97`
+  - `com_interface_use.csv` -> `537`
+  - `com_schema_touchpoint.csv` -> `202`
+  - `com_module_recipe.csv` -> `8`
+  - `knowledge_route.csv` -> `3`
+  - `chunk.csv` -> `299`
+- The OpenSPG refresh after that pass is only partially complete:
+  - `159` `ReferenceDocument` -> `FINISH`
+  - `160` `CfgEntry` -> `FINISH`
+  - duplicate `ProcEntry` submits `161` and `162` both reached `FINISH`
+  - duplicate `MsgEntry` submits `163`-`165` eventually all reached `FINISH`; use `165` as the authoritative manifest row for the widened message refresh
+- `scripts/build_optima_partner_technical.mjs` was then hardened so that if a matching partner job is already in `INIT`, `WAITING`, or `RUNNING`, the runner reuses that active job and waits instead of submitting another duplicate build.
+- Direct partner-graph verification after that extracted-example refresh confirmed:
+  - `ReferenceDocument` -> `121`
+  - `Chunk` -> `296`
+  - `Chunk(PARTNER_CHUNK_EXTRACT_PARTNER_ASSET_5051_PDF)` exists
+  - `PartnerAsset(PARTNER_ASSET_5051).summary` now ends with `Local probe: BINARY_OK.`
+- Completed General Reference builder jobs:
+  - `101` `ReferenceDocument` -> `FINISH`
+  - `102` `HelpCategory` -> `FINISH`
+  - `103` `ModuleArea` -> `FINISH`
+  - `104` `VersionTopic` -> `FINISH`
+  - `105` `LearningGuide` -> `FINISH`
+  - `106` `KnowledgeRoute` -> `FINISH`
+  - `107` `Chunk` -> `FINISH`
+- The local official snapshot for this KB currently lives under `downloads/official/optima_reference/` and contains:
+  - `3` sitemap files
+  - `27` printable-page HTML snapshots
+- Completed Sprint builder jobs:
+  - `86` `ReferenceDocument` -> `FINISH`
+  - `87` `FileArtifact` -> `FINISH`
+  - `88` `PrintTechnology` -> `FINISH`
+  - `89` `PrintWorkflow` -> `FINISH`
+  - `90` `PrintOption` -> `FINISH`
+  - `91` `TemplateFeature` -> `FINISH`
+  - `92` `SqlPattern` -> `FINISH`
+  - `93` `DiagnosticCase` -> `FINISH`
+  - `94` `VersionChange` -> `FINISH`
+  - `95` `PrintCatalog` -> `FINISH`
+  - `96` `LearningResource` -> `FINISH`
+  - `97` `GlossaryTerm` -> `FINISH`
+  - `98` `SchemaTouchpoint` -> `FINISH`
+  - `99` `ModuleRecipe` -> `FINISH`
+  - `100` `Chunk` -> `FINISH`
+- The local Additional Functions drive corpus currently lives under `downloads/google_drive/additional_functions/` and is the source for artifact/example/dictionary extraction.
+- After the later Drive sync, that local Additional Functions corpus expanded to `57` files and now also includes extra top-level markdown/PDF references plus the recovered example `KorektaZbiorczaFA.js`.
+- A later exporter refresh added best-effort text extraction for local PDFs, so those PDF references now also contribute retrieval chunks where text can be recovered.
+- Completed Additional Functions builder jobs:
+  - `67` `ReferenceDocument` -> `FINISH`
+  - `68` `FunctionCapability` -> `FINISH`
+  - `69` `FunctionEntryPoint` -> `FINISH`
+  - `70` `FunctionExecutionMode` -> `FINISH`
+  - `71` `FunctionConfigOption` -> `FINISH`
+  - `72` `FunctionRule` -> `FINISH`
+  - `73` `FunctionPattern` -> `FINISH`
+  - `74` `RelatedFeature` -> `FINISH`
+  - `75` `Chunk` -> `FINISH`
+  - `76` `ReferenceDocument` -> `FINISH`
+  - `77` `FileArtifact` -> `FINISH`
+  - `78` `ImplementationExample` -> `FINISH`
+  - `79` `ComInterface` -> `FINISH`
+  - `80` `ConfigurationCatalogEntry` -> `FINISH`
+  - `81` `ProcedureDictionaryEntry` -> `FINISH`
+  - `82` `MessageCatalogEntry` -> `FINISH`
+- `83` `ImplementationGuide` -> `FINISH`
+- `84` `SchemaTouchpoint` -> `FINISH`
+- `85` `ModuleRecipe` -> `FINISH`
+- `113` `ReferenceDocument` -> `FINISH`
+- `114` `FileArtifact` -> `FINISH`
+- `115` `ImplementationExample` -> `FINISH`
+- `116` `SchemaTouchpoint` -> `FINISH`
+- `117` `Chunk` -> `FINISH`
+- `118` `ReferenceDocument` -> `FINISH`
+- `119` `FileArtifact` -> `FINISH`
+- `120` `Chunk` -> `FINISH`
+- The current schema-only export also includes `object_dependency.csv` with `365` metadata-derived dependencies.
+- The current schema-only export also includes `schema_change.csv` with `936` documented Optima schema-change rows and `chunk.csv` with `13118` documentation chunks for structural lookup.
+- The current schema-only export also includes:
+  - `table_query_guide.csv`
+  - `join_path_guide.csv`
+  - `object_dependency.csv`
+  - `sql_object_guide.csv`
+- In the latest staged helper refresh those file counts are:
+  - `table_query_guide.csv` -> `634`
+  - `join_path_guide.csv` -> `621`
+  - `object_dependency.csv` -> `10780`
+  - `sql_object_guide.csv` -> `2608`
+- Builder refresh status for that helper tuning:
+  - job `63` `TableQueryGuide` -> `FINISH`
+  - job `64` `JoinPathGuide` -> `FINISH`
+  - job `65` `ObjectDependency` -> `FINISH`
+  - job `66` `SqlObjectGuide` -> `FINISH`
+- Those helper files are intended for:
+  - table-role classification
+  - FK join-template lookup
+  - object-to-table and object-to-object dependency lookup
+  - object discovery for Sprint prints and special functions
+- The current enriched dependency layer contains:
+  - `6809` `SQL_READ`
+  - `1521` `SQL_WRITE`
+  - `955` `EXEC_CALL`
+  - `931` `FUNCTION_CALL`
+  - `3448` heuristic SQL-text matches
+  - `449` trigger parent-table links
+- `VIEW DEFINITION` is now available on both `CDN_TEST` and `CDN_KNF_Konfiguracja`, so the schema-only KB now stores real definitions for views, procedures, functions, triggers, defaults, checks, and computed columns.
+- A previous full-body procedure import (`job 51`) stalled in OpenSPG because vectorization hit very large SQL bodies. The current safe strategy keeps full `definition` as plain text and vectorizes only `definitionPreview`.
+- The active schema and export set now include `OperatorDatabasePermission` for `BazModulyOperatora` and `ConfigurationValue` for company/global `CfgWartosci`.

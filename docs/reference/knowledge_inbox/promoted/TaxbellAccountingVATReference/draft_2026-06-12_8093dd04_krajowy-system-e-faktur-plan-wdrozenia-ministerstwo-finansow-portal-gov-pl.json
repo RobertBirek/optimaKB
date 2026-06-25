@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-12_8093dd04_krajowy-system-e-faktur-plan-wdrozenia-ministerstwo-finansow-portal-gov-pl",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Krajowy System e-Faktur – plan wdrożenia - Ministerstwo Finansów - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: KSeF 2.0 terminy obowiązywania 2026 aktualizacja\nSource: https://www.gov.pl/web/finanse/krajowy-system-e-faktur--plan-wdrozenia\nTier: official\nDiscovery confidence: 0.9\n\nKrajowy System e-Faktur – plan wdrożenia - Ministerstwo Finansów - Portal Gov.pl\n\n## Krajowy System e-Faktur – plan wdrożenia\n\n12.04.2025\n\n- Ministerstwo Finansów przedstawia aktualny stan projektu rozwiązań prawnych, technicznych i biznesowych oraz plan wdrożenia obowiązkowego systemu KSeF.\n- W toku weryfikacji założeń biznesowych i technicznych projektu, resort uwzględnił wszystkie kluczowe postulaty zgłaszane przez przedsiębiorców w zakresie wystawiania e-faktur w KSeF.\n- Przedsiębiorcy mogą zgłaszać dodatkowe uwagi i opinie do projektu do 25 kwietnia 2025 r. pisząc na adres sekretariat.PT@mf.gov.pl\n\nPo analizie możliwości zmian pod kątem biznesowym i prawnym oraz analizie możliwości technicznych przygotowania systemu, Ministerstwo Finansów potwierdza wprowadzenie obowiązku wystawiania e-faktur dla wszystkich podatników (czynnych i zwolnionych z VAT), w dwóch głównych etapach z dodatkowym odroczeniem dla najmniejszych przedsiębiorców:\n\n- od 1 lutego 2026 r. dla dużych podatników (o wartości sprzedaży za 2024 r. przekraczającej 200 mln zł wraz z podatkiem),\n- od 1 kwietnia 2026 r. dla pozostałych przedsiębiorców, z wyjątkiem najmniejszych podatników „wykluczonych cyfrowo”, których transakcje obejmują niewielkie kwoty (do 450 zł dla pojedynczej faktury i do łącznej wartości sprzedaży do 10 tys. zł miesięcznie) i którzy będą objęci tym obowiązkiem od 1 stycznia 2027 r.\n\nFaktury VAT RR dokumentujące nabycie produktów rolnych od rolników ryczałtowych nie będą objęte obowiązkiem\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/finanse/krajowy-system-e-faktur--plan-wdrozenia",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:50:06.141Z",
+    "discoveryCandidateId": "candidate_32afcffc-310",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_d21b2f173f",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "4c61a6dfac1fd2a18140c15ff62a36a8a2f925603ee856b113b5bd02bc80f2a1"
+  },
+  "createdAt": "2026-06-12T06:41:36.523Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T06:42:24.348Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 6 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_8093dd04_krajowy-system-e-faktur-plan-wdrozenia-ministerstwo-finansow-portal-gov-pl.json"
+}

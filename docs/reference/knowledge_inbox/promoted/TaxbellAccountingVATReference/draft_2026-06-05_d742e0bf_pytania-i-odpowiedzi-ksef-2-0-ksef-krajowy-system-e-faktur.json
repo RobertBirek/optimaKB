@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_d742e0bf_pytania-i-odpowiedzi-ksef-2-0-ksef-krajowy-system-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Pytania i odpowiedzi KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
+  "content": "Source list scan draft.\n\nSource: KSeF podatki.gov.pl - FAQ i zasady obowiązywania\nURL: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/\n\nSummary:\n- The page is a FAQ hub for KSeF 2.0 (Krajowy System e-Faktur), updated in collaboration with businesses, integrators, and participants.\n- It explains what KSeF is: a system for issuing, sending, receiving, and storing structured invoices. Starting Feb 1, 2026, KSeF will be rolled out to all entrepreneurs and invoicing entities in Poland.\n- It emphasizes ongoing updates to Q&A, inviting users to submit questions to improve the knowledge base.\n- It features a searchable FAQ with categories, including foundational information about KSeF and how to use it.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/",
+  "tags": [
+    "ksef",
+    "vat",
+    "faktury",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_f40caf9e",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-16-116Z_51768642",
+    "retrievedAt": "2026-06-05T17:41:16.323Z",
+    "contentHash": "21af6cfd980f608b3d36918293d0af2f157c05c1f0e396b0c55b0674f1c4205c",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:16.331Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:21.961Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_d742e0bf_pytania-i-odpowiedzi-ksef-2-0-ksef-krajowy-system-e-faktur.json"
+}

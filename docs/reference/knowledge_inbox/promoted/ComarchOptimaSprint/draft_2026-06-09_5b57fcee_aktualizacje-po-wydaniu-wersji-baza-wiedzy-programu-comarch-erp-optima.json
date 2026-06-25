@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_5b57fcee_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "Comarch Optima Sprint and Prints",
+  "kbNamespace": "ComarchOptimaSprint",
+  "title": "Aktualizacje po wydaniu wersji – Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: wzorce wydruków Optima aktualizacje\nSource: https://pomoc.comarch.pl/optima/pl/2025/dokumentacja/aktualizacje-po-wydaniu-wersji-32/\nTier: official\nDiscovery confidence: 0.9\n\n﻿ Aktualizacje po wydaniu wersji – Baza Wiedzy programu Comarch ERP Optima\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\nZobacz jak automatycznie pobrać udostępnione aktualizacje Automatyczne aktualizacje programu.\n\n## Aktualizacja w dniu 09.04.2025\n\n1. Import e-zwolnień. Poprawiono logowanie do ZUS w celu pobrania e-zwolnień.\n\n## Aktualizacja w dniu 16.04.2025\n\n1. Zmiany w deklaracjach\n\n- Usunięto limit ulgi na zabytki w załączniku PIT/O(29) w polach 35 i 36.\n\n## Aktualizacja w dniu 23.04.2025\n\n1. Zmiany w deklaracjach\n\n- Usunięto problem z wyliczaniem deklaracji PIT-36(28), PIT-36(29), PIT-36(30), PIT-36L(19), PIT-28(24), JPK_V7(21) oraz zaliczek na PIT-36(20) i PIT-36(21) po aktualizacji systemu Windows 11 do wersji 24H2.\n- Poprawiono obsługę daty urodzenia podatnika w deklaracjach VAT-8(12), VAT-9M(11) i CIT-10Z(6).\n\n## Aktualizacja w dniu 07.05.2025\n\n1. Zmiany w deklaracjach\n\n- Poprawiono format kwoty w polu 159 załącznika CIT-8/O do deklaracji CIT-8(33) w wydruku oraz pliku do e-Deklaracji.\n\n## Aktualizacja w dniu 09.05.2025\n\n1. Wydruki i funkcje dodatkowe. Poprawiono wyszukiwanie wydruków i funkcji dodatkowych.\n\n## Aktualizacja w dniu 15.05.2025\n\n1. Data dostawy na zasobach. Poprawiono błąd, który powodował usunięcie daty dostawy z zasobów po korekcie ilości przypisanej do wcześniejszej dostawy, która została przeniesiona na inny magazyn.\n\n## Aktualizacja w dniu 16.05.2025\n\n1. Naliczanie deklaracji ZUS DRA. Poprawiono n\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2025/dokumentacja/aktualizacje-po-wydaniu-wersji-32/",
+  "tags": [
+    "discovery",
+    "official",
+    "sPrint",
+    "wydruki",
+    "GenRap",
+    "wzorce"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-09T02:50:56.635Z",
+    "discoveryCandidateId": "candidate_ae846cfa-9c2",
+    "discoveryQueryId": "generated_ComarchOptimaSprint_11cd622df6",
+    "discoveryRunId": "discovery_daily_2026-06-09T02-49-52-118Z_a0585710",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "6e9fcb66497ecb5ebb7d82a3c0f385f99d505cf5a177bb565a7801ce8a74d3ca"
+  },
+  "createdAt": "2026-06-09T13:11:42.883Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T13:12:51.863Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_5b57fcee_aktualizacje-po-wydaniu-wersji-baza-wiedzy-programu-comarch-erp-optima.json"
+}

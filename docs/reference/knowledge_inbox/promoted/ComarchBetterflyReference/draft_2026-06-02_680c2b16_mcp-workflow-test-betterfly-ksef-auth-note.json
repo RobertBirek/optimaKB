@@ -1,0 +1,21 @@
+{
+  "id": "draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note",
+  "kbName": "Comarch Betterfly Reference",
+  "kbNamespace": "ComarchBetterflyReference",
+  "title": "MCP workflow test - Betterfly KSeF auth note",
+  "content": "Kontrolowany draft testowy workflow MCP inbox. Betterfly API uses Bearer authentication after obtaining an OAuth token. This note is intentionally synthetic and contains no tenant, invoice, contractor, amount, NIP, or other business payload data. Purpose: verify that submit_knowledge_draft, promotion, export, build, and answer_question can carry a new Betterfly/KSeF-oriented note into the KB workflow.",
+  "sourceUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-informacje-ogolne/#mcp-workflow-test-2026-06-02",
+  "tags": [
+    "test",
+    "mcp-inbox",
+    "betterfly",
+    "ksef",
+    "auth"
+  ],
+  "createdAt": "2026-06-02T12:06:12.165Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-02T12:07:02.706Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "test workflow MCP inbox",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-02/draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note.json"
+}

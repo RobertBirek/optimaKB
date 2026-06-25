@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_370778ea_serwis-o-podatkach-twoj-e-pit-podatki-gov-pl",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Serwis o podatkach - #Twój e-PIT - Podatki.gov.pl",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - PIT CIT i rozliczenia\nURL: https://www.podatki.gov.pl/aktualnosci/twoj-e-pit-od-15-lutego-beda-udostepnione-rozliczenia-pit/\n\nSummary:\n- The page is a portal for tax information on podatki.gov.pl, focusing on the “Twój e-PIT” service.\n- It covers various tax areas: personal taxes, business taxes, customs, guides/informational materials, news, tools, and online case handling.\n- Key sections for individuals: od dochodu (basic personal income tax and income types), od majątku (taxes related to changes in wealth, including inheritance and donations), od zakupów (taxes on purchases), and other miscellaneous taxes.\n- For entrepreneurs: basic taxes for businesses and other taxes (e.g., PCC, SD, mineral extraction taxes, banking-related taxes, alcohol tax, anti-aggressive tax planning clause, business registers for SPVs/ Trusts, crypto activities).\n- Additional programs and compliance measures listed: withholding tax (WHT), MDR (tax scheme reporting), ICAP, ETACA, SME procedure, GLOBE, CRBR, etc.\n- Purpose: central ...",
+  "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/twoj-e-pit-od-15-lutego-beda-udostepnione-rozliczenia-pit/",
+  "tags": [
+    "pit",
+    "cit",
+    "podatki",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_5603dd29",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-16-983Z_bf4c11f4",
+    "retrievedAt": "2026-06-05T17:41:17.211Z",
+    "contentHash": "d3a4e952d97a22884cb9888987c4ae13914e858b5fa70f754d45f044a46a2b96",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:17.272Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-05T18:35:30.699Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 2 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_370778ea_serwis-o-podatkach-twoj-e-pit-podatki-gov-pl.json"
+}

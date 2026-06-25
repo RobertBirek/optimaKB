@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "błąd przy konfiguracji Comarch Betterfly z Ksef",
+  "content": "Automated source-discovery draft.\n\nQuery: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292\nTier: community\nDiscovery confidence: 0.95\n\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\n\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\n![logotype](assets/img/logo.svg)\nloader\n\nReview this draft before promotion.",
+  "sourceUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+  "tags": [
+    "discovery",
+    "community",
+    "pytania społeczności",
+    "KSeF",
+    "Optima",
+    "Betterfly"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "community",
+    "retrievedAt": "2026-06-08T02:49:41.552Z",
+    "discoveryCandidateId": "candidate_7a60a20a-070",
+    "discoveryQueryId": "seed_ComarchCommunityNews",
+    "discoveryRunId": "discovery_daily_2026-06-08T02-49-27-759Z_20bfba27",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "47bc6ec77d8c04c1e7f76a487f8bde4f1096637f1d89879c380e0292adb96286"
+  },
+  "createdAt": "2026-06-09T06:45:22.785Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T06:55:47.273Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 13 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.json"
+}

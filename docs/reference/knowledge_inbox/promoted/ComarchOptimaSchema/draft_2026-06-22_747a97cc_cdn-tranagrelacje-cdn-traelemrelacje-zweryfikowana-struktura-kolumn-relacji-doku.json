@@ -1,0 +1,21 @@
+{
+  "id": "draft_2026-06-22_747a97cc_cdn-tranagrelacje-cdn-traelemrelacje-zweryfikowana-struktura-kolumn-relacji-doku",
+  "kbName": "Comarch Optima ERP MSSQL Schema",
+  "kbNamespace": "ComarchOptimaSchema",
+  "title": "CDN.TraNagRelacje / CDN.TraElemRelacje — zweryfikowana struktura kolumn relacji dokumentów",
+  "content": "## CDN.TraNagRelacje\nKolumny (zweryfikowane przez describe_table na żywej bazie firmowej klienta):\n- TrR_TrRId (int, PK)\n- TrR_TrNTyp (smallint) — typ dokumentu \"źródłowego\" w relacji (DDfId/typ instalacyjny, NIE globalny enum Optimy)\n- TrR_TrNId (int) — TrN_TrNID dokumentu źródłowego\n- TrR_FaTyp (smallint) — typ dokumentu powiązanego\n- TrR_FaId (int) — TrN_TrNID dokumentu powiązanego\n- TrR_Flaga (smallint) — znaczenie nieustalone [NEEDS VERIFICATION]\n\nRelacja jest przechowywana SYMETRYCZNIE — każda relacja A↔B ma dwa wiersze (A→B i B→A), potwierdzone na danych produkcyjnych klienta.\n\nBezpieczny JOIN do znalezienia dokumentu powiązanego z dokumentem o TrN_TrNID = @X:\n```sql\nSELECT DISTINCT ro.*\nFROM CDN.TraNagRelacje r\nJOIN CDN.TraNag ro\n    ON ro.TrN_TrNID = CASE WHEN r.TrR_TrNId = @X THEN r.TrR_FaId\n                            WHEN r.TrR_FaId  = @X THEN r.TrR_TrNId END\nWHERE r.TrR_TrNId = @X OR r.TrR_FaId = @X;\n```\n\n## CDN.TraElemRelacje\nKolumny:\n- TeR_TeRId (int, PK)\n- TeR_ParentTyp (smallint)\n- TeR_ParentId (int) — TrE_TrEID elementu nadrzędnego\n- TeR_ChildTyp (smallint)\n- TeR_ChildId (int) — TrE_TrEID elementu podrzędnego\n- TeR_Flaga (smallint) — znaczenie nieustalone [NEEDS VERIFICATION]\n- TeR_Info, TeR_Info2 (decimal) — znaczenie nieustalone [NEEDS VERIFICATION]\n\nParentId/ChildId wskazują na CDN.TraElem.TrE_TrEID (element), NIE na TrE_TrNId (nagłówek) — odnaleziony nagłówek przez dodatkowy JOIN do CDN.TraElem.TrE_TrNId.\n\n## Ważna pułapka przy projektowaniu funkcji dodatkowych\nNaiwna heurystyka \"weź kolumny int/smallint, których nazwa nie zawiera 'Typ'\" jest BŁĘDNA dla obu tabel — przepuszcza PK (TrR_TrRId / TeR_TeRId) i pole Flaga (TrR_Flaga / TeR_Flaga), generując 3-4 kandydatów kolumn zamiast właściwych 2. Skutek: błędne dynamiczne JOIN-y w funkcjach dodatkowych. Zawsze używać nazw kolumn zweryfikowanych przez describe_table, nie heurystyki typu danych.\n\n## CDN.TraNag — uwaga strukturalna\nTrN_TrNID jest unikalnym PK niezależnie od typu dokumentu. Nie istnieje kolumna TrN_TrNTyp na CDN.TraNag (typ dokumentu trzymany jest w TrN_TypDokumentu, inny zakres wartości niż TrR_TrNTyp/TrR_FaTyp w TraNagRelacje, które odnoszą się raczej do DDfId/konfiguracji instalacyjnej). WHERE TrN_TrNID = @X jest bezpieczne i wystarczające do jednoznacznej identyfikacji dokumentu.\n\n## CDN.OpeDaneOperatora\nProcedura systemowa: `EXEC CDN.OpeDaneOperatora @OpeId INOUT int, @OpeKod INOUT varchar(20), @OpeNazwisko INOUT nvarchar(50), @Log INOUT int`.\nPotwierdzona w trigger.csv jako wzorzec pobrania danych operatora z kontekstu bieżącej sesji SQL. Test na połączeniu bez kontekstu Optimy (np. narzędzie administracyjne) zwraca @OpeId=0, OpeKod/Nazwisko='' — zgodne z hipotezą odczytu CONTEXT_INFO sesji klienta Optimy. [NEEDS VERIFICATION] zachowanie w realnej, aktywnej sesji desktopowego klienta Optimy (z funkcji dodatkowej) — nie testowane bezpośrednio, tylko wzorzec wywołania. Brak w tej procedurze danych stacji (Sta/Stacja) — tylko operator.\n\nTags: TraNagRelacje, TraElemRelacje, TraNag, OpeDaneOperatora, relacje dokumentów, schema verification",
+  "sourceUrl": "",
+  "tags": [
+    "TraNagRelacje",
+    "TraElemRelacje",
+    "schema-verified",
+    "OpeDaneOperatora"
+  ],
+  "metadata": null,
+  "createdAt": "2026-06-22T07:48:46.387Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-22T08:55:47.714Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-22/draft_2026-06-22_747a97cc_cdn-tranagrelacje-cdn-traelemrelacje-zweryfikowana-struktura-kolumn-relacji-doku.json"
+}

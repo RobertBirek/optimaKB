@@ -1,0 +1,392 @@
+{
+  "generatedAt": "2026-06-03T11:04:28.909Z",
+  "results": [
+    {
+      "id": "CN001",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy była ostatnio przerwa techniczna w Comarch OCR?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "przerwa techniczna",
+        "ocr",
+        "przerwa* technicz*",
+        "service/product keyword"
+      ]
+    },
+    {
+      "id": "CN002",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Jaka nowa wersja Comarch TNA została ostatnio opublikowana?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "nowa wersja",
+        "comarch tna",
+        "nowa wersj*",
+        "service/product keyword"
+      ]
+    },
+    {
+      "id": "CN003",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy są planowane wersje Comarch ERP Optima na rok 2026?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "planowane wersje",
+        "nowa wersj*",
+        "planowan* wersj*"
+      ]
+    },
+    {
+      "id": "CN004",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy na społeczności był ostatnio komunikat o KSeF w Optimie?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "komunikat",
+        "społeczność",
+        "komunikat*",
+        "service/product keyword"
+      ]
+    },
+    {
+      "id": "CN005",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy były ostatnio newsy o Comarch Betterfly?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "comarch betterfly",
+        "spolecznosc/news",
+        "extended product keyword"
+      ]
+    },
+    {
+      "id": "CN006",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy był komunikat serwisowy o Comarch OCR?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "komunikat",
+        "ocr",
+        "komunikat*",
+        "niedostepn*/awari*/serwisow*",
+        "service/product keyword"
+      ]
+    },
+    {
+      "id": "CN007",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Jakie publiczne aktualności były ostatnio dla Comarch ERP XL?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "aktualn*/publiczn*",
+        "extended product keyword"
+      ]
+    },
+    {
+      "id": "CN008",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy były ostatnio newsy o nowej wersji Optimy?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "spolecznosc/news"
+      ]
+    },
+    {
+      "id": "CN009",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy na społeczności jest wpis KSeF w Comarch ERP Optima pod lupą?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "społeczność",
+        "wpis*/premier*",
+        "service/product keyword"
+      ]
+    },
+    {
+      "id": "CN010",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy były ostatnio prace serwisowe albo niedostępność usług Comarch?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "niedostępność",
+        "niedostepn*/awari*/serwisow*"
+      ]
+    },
+    {
+      "id": "CN011",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Jakie tematy newsów dominują ostatnio w społeczności Comarch?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "społeczność",
+        "spolecznosc/news"
+      ]
+    },
+    {
+      "id": "CN012",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy publiczne newsy wspominają Comarch OCR, KSeF albo Betterfly?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "ocr",
+        "spolecznosc/news",
+        "aktualn*/publiczn*",
+        "service/product keyword",
+        "extended product keyword"
+      ]
+    },
+    {
+      "id": "CN013",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy był ostatnio wpis o premierze nowej wersji produktu Comarch?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "wpis*/premier*"
+      ]
+    },
+    {
+      "id": "CN014",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Jakie komunikaty publiczne dotyczą usług albo chmury Comarch?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "komunikat",
+        "komunikat*",
+        "aktualn*/publiczn*",
+        "uslug*/chmur*"
+      ]
+    },
+    {
+      "id": "CN015",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy są na społeczności newsy o Comarch Data Editor?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "społeczność",
+        "spolecznosc/news",
+        "extended product keyword"
+      ]
+    },
+    {
+      "id": "CN016",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy są publiczne aktualności o Comarch IBARD?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "aktualn*/publiczn*",
+        "extended product keyword"
+      ]
+    },
+    {
+      "id": "CN017",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Jakie newsy publiczne dotyczą kategorii Nowa wersja?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "nowa wersja",
+        "nowa wersj*",
+        "spolecznosc/news",
+        "aktualn*/publiczn*"
+      ]
+    },
+    {
+      "id": "CN018",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy społeczność publikuje komunikaty o awariach i przerwach technicznych?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "komunikat",
+        "awaria",
+        "społeczność",
+        "przerwa* technicz*",
+        "komunikat*",
+        "niedostepn*/awari*/serwisow*"
+      ]
+    },
+    {
+      "id": "CN019",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Jakie publiczne newsy dotyczą Comarch ERP Optima i KSeF?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "spolecznosc/news",
+        "aktualn*/publiczn*",
+        "service/product keyword"
+      ]
+    },
+    {
+      "id": "CN020",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy są publiczne newsy o Comarch TNA, OCR i Betterfly?",
+      "status": "PASS",
+      "actualPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "topEvidence": "ComarchCommunityNews -> exports/community_news/v1/reference_document.csv",
+      "matchedIntent": "community_news_updates",
+      "matchedKeywords": [
+        "ocr",
+        "comarch tna",
+        "spolecznosc/news",
+        "aktualn*/publiczn*",
+        "service/product keyword",
+        "extended product keyword"
+      ]
+    }
+  ]
+}

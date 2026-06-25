@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_b48f7e6b_podatki-2026-przewodnik-dla-inwestorow-1-stycznia-2026",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Podatki 2026 Przewodnik dla Inwestorów 1 stycznia 2026",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - objaśnienia i przepisy podatkowe\nURL: https://www.podatki.gov.pl/media/rr5pgg25/podatki-2026-przewodnik-dla-inwestorow.pdf\n\nSummary:\nPolish government tax guide for 2026 highlights key changes affecting investors in Poland starting January 1, 2026. Major points include:\n- Mandatory use of the National e-Invoicing System (KSeF) for all businesses from 2026.\n- Changes to costs deducted for purchase and leasing of passenger cars.\n- New information compliance duties for partnerships (spółki jawne).\n- Adjustments to VAT exemption thresholds.\n- Reduced penalties for transfer pricing non-compliance within capital groups.\n- Reduced penalties for revocation of state aid decisions or zone permits.\nThe document is informational and directs readers to relevant laws and ministerial explanations for specifics. For detailed enactments and interpretations, visit podatki.gov.pl and gov.pl/finanse, or consult the applicable statutes and justification for proposed acts.",
+  "sourceUrl": "https://www.podatki.gov.pl/media/rr5pgg25/podatki-2026-przewodnik-dla-inwestorow.pdf",
+  "tags": [
+    "prawo",
+    "podatki",
+    "mf",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_ef8fc436",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-15-832Z_82bfa824",
+    "retrievedAt": "2026-06-05T17:41:16.070Z",
+    "contentHash": "32d7ff95b188ead98a57d6584949d2fc79d8ef0a86c9cf69e5ff56f2b652f551",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:16.090Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:21.992Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_b48f7e6b_podatki-2026-przewodnik-dla-inwestorow-1-stycznia-2026.json"
+}

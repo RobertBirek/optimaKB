@@ -1,0 +1,39 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
+  "instructions": ["AGENTS.md"],
+  "skills": {
+    "paths": [".agents/skills", ".opencode/skills"]
+  },
+  "references": {
+    "docs": {
+      "path": "docs/reference",
+      "description": "OpenSPG KB: operational memory, API quirks, pipeline guides, routing rules, inbox workflow"
+    }
+  },
+  "permission": {
+    "read": {
+      ".env": "deny",
+      ".env.*": "deny",
+      "data/**": "deny",
+      "*": "allow"
+    },
+    "edit": {
+      "data/**": "deny",
+      "backups/**": "deny",
+      ".env": "deny",
+      ".env.*": "deny",
+      "node_modules/**": "deny",
+      "*": "ask"
+    },
+    "bash": "allow"
+  },
+  "mcp": {
+    "erp-kb": {
+      "type": "local",
+      "command": ["node", "scripts/erp_knowledge_mcp_server.mjs"],
+      "enabled": true
+    }
+  },
+  "formatter": true
+}

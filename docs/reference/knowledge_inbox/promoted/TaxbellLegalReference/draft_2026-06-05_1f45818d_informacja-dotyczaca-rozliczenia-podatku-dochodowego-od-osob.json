@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_1f45818d_informacja-dotyczaca-rozliczenia-podatku-dochodowego-od-osob",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Informacja dotycząca rozliczenia podatku dochodowego od osób ...",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - PIT CIT i rozliczenia\nURL: https://www.podatki.gov.pl/poradniki-i-informatory/informacja-dotyczaca-rozliczenia-podatku-dochodowego-od-osob-fizycznych/\n\nPodsumowanie wyników: Strona podatki.gov.pl oferuje poradniki i informatory dotyczące podatków w Polsce, w tym:\n\n- Podatki osobiste (PIT) i podatki od dochodów z różnych źródeł (praca, praca za granicą, umowy zlecenia/dzieło, praw autorskich, najem, działalność nierejestrowana, emerytura).\n- Podatki od majątku (spadki i darowizny) oraz od zakupów (transakcje krajowe i zagraniczne).\n- Podatki dla przedsiębiorców (podstawowe i inne podatki), w tym podatki od czynności cywilnoprawnych (PCC), od wydobycia kopalin, od instytucji finansowych, od sprzedaży alkoholu, a także klauzula przeciw unikaniu opodatkowania i rejestry (działalności na rzecz spółek/trustów, waluty wirtualne, WHT, MDR, ICAP, ETACA, SME, GLOBE).\n- Narzędzia, załatwianie spraw online i bieżące aktualności.\n\nDla zapytania użytkownika dotyczącego PIT/CIT, informacji ministerstwa finansów i 2026, strona zawiera ogólne przewod...",
+  "sourceUrl": "https://www.podatki.gov.pl/poradniki-i-informatory/informacja-dotyczaca-rozliczenia-podatku-dochodowego-od-osob-fizycznych/",
+  "tags": [
+    "pit",
+    "cit",
+    "podatki",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_5603dd29",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-16-983Z_bf4c11f4",
+    "retrievedAt": "2026-06-05T17:41:17.211Z",
+    "contentHash": "452e169e384ace50f2ae91e50b4712d5d168f20cb9f0e8424a3f185c4854bd81",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:17.235Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:21.868Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_1f45818d_informacja-dotyczaca-rozliczenia-podatku-dochodowego-od-osob.json"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-11_faa2d585_jakie-zmiany-wprowadzono-w-ksiedze-podatkowej-od-1-stycznia-2026-roku-baza-wiedz",
+  "kbName": "Comarch Betterfly Reference",
+  "kbNamespace": "ComarchBetterflyReference",
+  "title": "Jakie zmiany wprowadzono w Księdze Podatkowej od 1 stycznia 2026 roku? - Baza Wiedzy programu Comarch Betterfly",
+  "content": "Automated source-discovery draft.\n\nQuery: Betterfly zmiany w wersji 2026.1\nSource: https://pomoc.comarchbetterfly.pl/dokumentacja/jakie-zmiany-wprowadzono-w-ksiedze-podatkowej-od-1-stycznia-2026-roku/\nTier: official\nDiscovery confidence: 0.9\n\nJakie zmiany wprowadzono w Księdze Podatkowej od 1 stycznia 2026 roku? - Baza Wiedzy programu Comarch Betterfly\n\nJak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\n1. Strona główna\n2. Księgowość\n3. Księga Podatkowa i Ryczałt\n4. Jakie zmiany wprowadzono w Księdze Podatkowej od 1 stycznia 2026 roku?\n\nW najnowszej wersji programu Comarch Betterfly zostały udostępnione nowe wzory ewidencji obowiązujące od 01.01.2026 roku. Zmiany mają na celu dostosowanie programu do nowych wymogów raportowania danych księgowych.\n\nFunkcjonalność jest aktywna, jeżeli w menu Konfiguracja / Księgowość / Rodzaj księgowości jako rodzaj wskazano Księga Podatkowa.\n\nZmiany na formularzu zapisu księgowego\n\nDla dokumentów z datą księgowania od 01.01.2026 r. na formularzu zapisu wprowadzono następujące modyfikacje:\n\n- Nowa numeracja kolumn: Numeracja poszczególnych pól została przesunięta i obejmuje obecnie zakres od 9 do 18.\n- Pole Numer KSeF: Uzupełnia się automatycznie, jeśli zapis powstaje na podstawie dokumentu źródłowego z: rejestru VAT sprzedaży, rejestru VAT zakupu, Faktur (sprzedaży, zaliczkowych, finalnych, marża, zakupu) oraz korekt do nich. Pole jest edytowalne na niezatwierdzonym zapisie.\n\nUwaga\n\nDla dokumentów z datą do 31.12.2025 r. formularz nadal prezentowany jest w starej wersji.\n\nWydruki\n\nWydruki są generowane na podstawie daty wybranej w filtrze Okres na liście Księga podatkowa:\n\n- Do 31.12.2025 r. – wzór dotychczasowy.\n- Od 01.01.2026 r. – nowy wzór księgi.\n\nWskazówka\n\nPrzy próbie wydruku za okr\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jakie-zmiany-wprowadzono-w-ksiedze-podatkowej-od-1-stycznia-2026-roku/",
+  "tags": [
+    "discovery",
+    "official",
+    "API",
+    "KSeF",
+    "faktury",
+    "integracje"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:47:43.437Z",
+    "discoveryCandidateId": "candidate_d6a51923-fa3",
+    "discoveryQueryId": "generated_ComarchBetterflyReference_5a3afa1ef2",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "f039842d8f906a6c3055b096626f21315346794bfb174e98757e7af0dea7a4fc"
+  },
+  "createdAt": "2026-06-11T08:20:49.313Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-11T10:53:59.816Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Re-run after import fix",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-11/draft_2026-06-11_faa2d585_jakie-zmiany-wprowadzono-w-ksiedze-podatkowej-od-1-stycznia-2026-roku-baza-wiedz.json"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "OPT032 – Handlowy dokument identyfikacyjny",
+  "content": "OPT032 – Handlowy dokument identyfikacyjny – Baza Wiedzy programu Comarch ERP Optima\r\n\r\nData aktualizacji: 20-11-2019\r\n\r\nSpis treści\r\n\r\n### Wstęp\r\n\r\n### Handlowy dokument identyfikacyjny – dane o towarze\r\n\r\n### Handlowy dokument identyfikacyjny – wydruk\r\n\r\n### Handlowy dokument identyfikacyjny – podłączenie wydruku do Comarch ERP Optima\r\n\r\n#### Pliki do pobrania\r\n\r\n## Wstęp\r\n\r\n29 czerwca 2003 weszło w życie Rozporządzenie Ministra Rolnictwa i Rozwoju Wsi (Dz. U. nr 106, poz. 1000), w którym podany został wzór handlowego dokumentu identyfikacyjnego (HDI) obowiązujący w obrocie niektórymi artykułami spożywczymi pochodzenia zwierzęcego. Na podstawie tego rozporządzenia mięso rozebrane oraz jego przetwory, podobnie jak inne produkty wymienione w rozporządzeniu, zaopatrywane będą w handlowy dokument identyfikacyjny wystawiany przez firmę wprowadzającą na rynek środki spożywcze pochodzenia zwierzęcego.\r\n\r\nW Comarch ERP Optima dokument HDI można wydrukować z poziomu formularza faktury. W tym celu należy do wydruków użytkownika podłączyć wydruk załączony do tego biuletynu.\r\n\r\nUwaga\r\n\r\nWydruk dokumentu HDI odbywa się przy pomocy Generatora Raportów.\r\n\r\n## Handlowy dokument identyfikacyjny – dane o towarze\r\n\r\nAby na dokumencie HDI wydrukowane zostały informacje dotyczące towarów pobranych na Fakturę Sprzedaży, należy najpierw uzupełnić dane na karcie towaru.\r\n\r\nNiezbędne parametry to:\r\n\r\n- nazwa towaru\r\n- opis towaru (obligatoryjny)\r\n- jednostka miary (powinna być to jednostka wagowa np. kg)\r\n- jednostka pomocnicza (jednostka opakowania zbiorczego)\r\n- ilość jednostek podstawowych w opakowaniu zbiorczym\r\n\r\nDane pobierane bezpośrednio z Faktury Sprzedaży:\r\n\r\n- nazwa i adres wysyłającego (dane adresowe z Pieczątki Firmy)\r\n- numer faktury, do której drukowany jest dokument HDI\r\n- data wysyłki (data wystawienia faktury)\r\n- ilość towaru\r\n\r\nUwaga\r\n\r\nNa dokument HDI nie są przenoszone pozycje, które na karcie towaru mają zdefiniowany typ usługa.\r\n\r\n## Handlowy dokument identyfikacyjny – wydruk\r\n\r\nPo wybraniu opcji wydruku HDI pojawia się dodatkowe okno, w którym należy wprowadzić dane, które wymagane są na dokumencie HDI, a nie ma ich na Fakturze Sprzedaży:\r\n\r\n- numer dokumentu HDI\r\n- weterynaryjny numer identyfikacyjny zakładu\r\n- rynek, na który zakład został zakwalifikowany do prowadzenia sprzedaży. Po wyborze opcji inne państwa pojawia się dodatkowe pole, gdzie należy wprowadzić rynki sprzedaży innych państw\r\n- pochodzenie surowca\r\n- miejsce pozyskania, przetworzenia lub składowania\r\n- miejsce przeznaczenia\r\n- rodzaj transportu i jego numer identyfikacyjny\r\n- komentarz – dane dotyczące procesu technologicznego, norm jakościowych i produkcyjnych oraz stosowanych przez producenta systemów kontroli jakości\r\n\r\nWprowadzone dane są zapamiętywane i podpowiadają się podczas wykonywania kolejnego wydruku HDI.\r\n\r\n## Handlowy dokument identyfikacyjny – podłączenie wydruku do Comarch ERP Optima\r\n\r\nW załączniku znajduje się przykładowy wydruk dokumentu HDI. Wydruk należy podpiąć na formularzu Faktury Sprzedaży (patrz Rysunek 1, poniżej).\r\n\r\nW konfiguracji wydruków Formularz Faktury Sprzedaży, zakładka [Ogólne] importujemy definicję z pliku HDI.xml.\r\n\r\nRysunek 1. Import wydruku HDI.\r\n\r\n## Pliki do pobrania",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/opt032-handlowy-dokument-identyfikacyjny/",
+  "tags": [
+    "handlowy dokument identyfikacyjny",
+    "HDI",
+    "faktura sprzedaży",
+    "wydruk",
+    "Comarch ERP Optima",
+    "towar",
+    "dokumentacja"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-18T10:21:34.080Z",
+    "analysisProvider": "openspg_llm",
+    "contentProvider": "exa",
+    "sourceType": "url",
+    "analysisConfidence": "high",
+    "uploadPath": "",
+    "uploadFileName": "",
+    "uploadContentType": "",
+    "dashboardSubmittedAt": "2026-06-18T10:23:32.575Z"
+  },
+  "createdAt": "2026-06-18T10:23:32.575Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-18T10:31:55.641Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 2 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-18/draft_2026-06-18_1bf43cdf_opt032-handlowy-dokument-identyfikacyjny.json"
+}

@@ -1,0 +1,892 @@
+{
+  "generatedAt": "2026-06-12T11:39:05.483Z",
+  "size": 30,
+  "sample": false,
+  "bridgeUrl": "http://10.10.254.42:3400/mcp",
+  "authMode": "bearer",
+  "allowDirectFallback": false,
+  "fallbackCount": 0,
+  "summary": {
+    "counts": {
+      "PASS": 30,
+      "PARTIAL": 0,
+      "MISS": 0,
+      "ENDPOINT_UNAVAILABLE": 0
+    },
+    "byCategory": {
+      "schema": {
+        "total": 3,
+        "PASS": 3,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "additional_functions": {
+        "total": 3,
+        "PASS": 3,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "sprint": {
+        "total": 3,
+        "PASS": 3,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "reference": {
+        "total": 3,
+        "PASS": 3,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "partner": {
+        "total": 3,
+        "PASS": 3,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "betterfly": {
+        "total": 3,
+        "PASS": 3,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "taxbell_accounting_vat": {
+        "total": 3,
+        "PASS": 3,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "taxbell_legal": {
+        "total": 3,
+        "PASS": 3,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "taxbell_payroll_hr": {
+        "total": 2,
+        "PASS": 2,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "community_news": {
+        "total": 2,
+        "PASS": 2,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      },
+      "business_semantics": {
+        "total": 2,
+        "PASS": 2,
+        "PARTIAL": 0,
+        "MISS": 0,
+        "ENDPOINT_UNAVAILABLE": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "Q002",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Które klucze łączą dokument handlowy z kontrahentem?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q027",
+      "category": "additional_functions",
+      "expectedPrimaryKb": "ComarchOptimaAdditionalFunctions",
+      "question": "Jakie są tryby uruchamiania funkcji dodatkowych?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaAdditionalFunctions",
+      "supportKbs": [
+        "ComarchOptimaPartnerTechnical",
+        "ComarchOptimaSchema"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q047",
+      "category": "sprint",
+      "expectedPrimaryKb": "ComarchOptimaSprint",
+      "question": "Jakie SQL patterny mamy dla Sprint?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSprint",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "Ta odpowiedź łączy lokalne artefakty KB z zewnętrznie cytowanymi wynikami wyszukiwania live.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q062",
+      "category": "reference",
+      "expectedPrimaryKb": "ComarchOptimaReference",
+      "question": "Jak zacząć pracę z oficjalną dokumentacją Optimy?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaReference",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q072",
+      "category": "partner",
+      "expectedPrimaryKb": "ComarchOptimaPartnerTechnical",
+      "question": "Jakie partnerowe procedury dotyczą wydruków i parametrów dynamicznych?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaPartnerTechnical",
+      "supportKbs": [
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSchema",
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q086",
+      "category": "betterfly",
+      "expectedPrimaryKb": "ComarchBetterflyReference",
+      "question": "Jak działa token Betterfly API?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchBetterflyReference",
+      "supportKbs": [],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q201",
+      "category": "taxbell_accounting_vat",
+      "expectedPrimaryKb": "TaxbellAccountingVATReference",
+      "question": "Jakie są obowiązki księgowe związane z przesyłaniem JPK_V7M przy rozliczeniu VAT?",
+      "status": "PASS",
+      "answerPrimaryKb": "TaxbellAccountingVATReference",
+      "supportKbs": [
+        "TaxbellLegalReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q210",
+      "category": "taxbell_legal",
+      "expectedPrimaryKb": "TaxbellLegalReference",
+      "question": "Czy zgodnie z ustawą o CIT mogę odliczyć straty z lat ubiegłych?",
+      "status": "PASS",
+      "answerPrimaryKb": "TaxbellLegalReference",
+      "supportKbs": [
+        "TaxbellAccountingVATReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q219",
+      "category": "taxbell_payroll_hr",
+      "expectedPrimaryKb": "TaxbellPayrollHRReference",
+      "question": "Jakie są obowiązki pracodawcy wobec PIP w zakresie wynagrodzeń i składek ZUS?",
+      "status": "PASS",
+      "answerPrimaryKb": "TaxbellPayrollHRReference",
+      "supportKbs": [
+        "TaxbellLegalReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q231",
+      "category": "community_news",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Czy są aktualności społeczności Comarch o planowanej przerwie technicznej?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "Ta odpowiedź łączy lokalne artefakty KB z zewnętrznie cytowanymi wynikami wyszukiwania live.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q233",
+      "category": "business_semantics",
+      "expectedPrimaryKb": "ComarchOptimaBusinessSemantics",
+      "question": "Co oznacza typ dokumentu i dopuszczalne wartości kodu w Optimie?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaBusinessSemantics",
+      "supportKbs": [
+        "ComarchOptimaSchema"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q003",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie obiekty SQL czytają tabelę TraNag?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q028",
+      "category": "additional_functions",
+      "expectedPrimaryKb": "ComarchOptimaAdditionalFunctions",
+      "question": "Jakie przykłady COM dotyczą handlu i magazynu?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaAdditionalFunctions",
+      "supportKbs": [
+        "ComarchOptimaPartnerTechnical",
+        "ComarchOptimaSchema"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q048",
+      "category": "sprint",
+      "expectedPrimaryKb": "ComarchOptimaSprint",
+      "question": "Jak użyć RO_GetReportHeader i RO_GetReportContent?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSprint",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q063",
+      "category": "reference",
+      "expectedPrimaryKb": "ComarchOptimaReference",
+      "question": "Gdzie szukać oficjalnych instrukcji o aktualizacjach?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaReference",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q073",
+      "category": "partner",
+      "expectedPrimaryKb": "ComarchOptimaPartnerTechnical",
+      "question": "Jakie partnerowe komunikaty mamy dla konfiguracji?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaPartnerTechnical",
+      "supportKbs": [
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSchema",
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "Ta odpowiedź łączy lokalne artefakty KB z zewnętrznie cytowanymi wynikami wyszukiwania live.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q087",
+      "category": "betterfly",
+      "expectedPrimaryKb": "ComarchBetterflyReference",
+      "question": "Które endpointy Betterfly są wersjonowane?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchBetterflyReference",
+      "supportKbs": [],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q202",
+      "category": "taxbell_accounting_vat",
+      "expectedPrimaryKb": "TaxbellAccountingVATReference",
+      "question": "Kiedy należy wystawić fakturę korygującą VAT w księgowości i jak wpływa na rozliczenie?",
+      "status": "PASS",
+      "answerPrimaryKb": "TaxbellAccountingVATReference",
+      "supportKbs": [
+        "TaxbellLegalReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q211",
+      "category": "taxbell_legal",
+      "expectedPrimaryKb": "TaxbellLegalReference",
+      "question": "Jaka jest aktualna interpretacja podatkowa dotycząca kosztów uzyskania przychodów w PIT?",
+      "status": "PASS",
+      "answerPrimaryKb": "TaxbellLegalReference",
+      "supportKbs": [
+        "TaxbellAccountingVATReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q220",
+      "category": "taxbell_payroll_hr",
+      "expectedPrimaryKb": "TaxbellPayrollHRReference",
+      "question": "Kiedy pracownik ma prawo do urlopu wypoczynkowego i jak naliczać wynagrodzenie za ten urlop?",
+      "status": "PASS",
+      "answerPrimaryKb": "TaxbellPayrollHRReference",
+      "supportKbs": [
+        "TaxbellLegalReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q232",
+      "category": "community_news",
+      "expectedPrimaryKb": "ComarchCommunityNews",
+      "question": "Jakie publiczne aktualności Comarch mówią o nowej wersji?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchCommunityNews",
+      "supportKbs": [
+        "ComarchOptimaReference",
+        "ComarchBetterflyReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "Ta odpowiedź łączy lokalne artefakty KB z zewnętrznie cytowanymi wynikami wyszukiwania live.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q234",
+      "category": "business_semantics",
+      "expectedPrimaryKb": "ComarchOptimaBusinessSemantics",
+      "question": "Jakie jest znaczenie kodu typu dokumentu w domenie biznesowej Optimy?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaBusinessSemantics",
+      "supportKbs": [
+        "ComarchOptimaSchema"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q004",
+      "category": "schema",
+      "expectedPrimaryKb": "ComarchOptimaSchema",
+      "question": "Jakie obiekty zapisują do TraElem?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSchema",
+      "supportKbs": [
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q029",
+      "category": "additional_functions",
+      "expectedPrimaryKb": "ComarchOptimaAdditionalFunctions",
+      "question": "Jakie interfejsy COM pojawiają się przy logowaniu?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaAdditionalFunctions",
+      "supportKbs": [
+        "ComarchOptimaPartnerTechnical",
+        "ComarchOptimaSchema"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q049",
+      "category": "sprint",
+      "expectedPrimaryKb": "ComarchOptimaSprint",
+      "question": "Jakie są typowe źródła danych dla wydruków sPrint?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaSprint",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q064",
+      "category": "reference",
+      "expectedPrimaryKb": "ComarchOptimaReference",
+      "question": "Gdzie w dokumentacji są szkolenia i onboarding?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaReference",
+      "supportKbs": [
+        "ComarchOptimaSchema",
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q074",
+      "category": "partner",
+      "expectedPrimaryKb": "ComarchOptimaPartnerTechnical",
+      "question": "Jakie COM sample partnerowe dotyczą logowania?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchOptimaPartnerTechnical",
+      "supportKbs": [
+        "ComarchOptimaAdditionalFunctions",
+        "ComarchOptimaSchema",
+        "ComarchOptimaSprint"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q088",
+      "category": "betterfly",
+      "expectedPrimaryKb": "ComarchBetterflyReference",
+      "question": "Jaka jest różnica między payments i paymentdetails?",
+      "status": "PASS",
+      "answerPrimaryKb": "ComarchBetterflyReference",
+      "supportKbs": [],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q203",
+      "category": "taxbell_accounting_vat",
+      "expectedPrimaryKb": "TaxbellAccountingVATReference",
+      "question": "Czy deklaracja VAT za miesiąc może być złożona przez KSeF, a jakie są terminy rozliczenia?",
+      "status": "PASS",
+      "answerPrimaryKb": "TaxbellAccountingVATReference",
+      "supportKbs": [
+        "TaxbellLegalReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    },
+    {
+      "id": "Q212",
+      "category": "taxbell_legal",
+      "expectedPrimaryKb": "TaxbellLegalReference",
+      "question": "Jakie przepisy prawa podatkowego regulują kwestię amortyzacji środków trwałych?",
+      "status": "PASS",
+      "answerPrimaryKb": "TaxbellLegalReference",
+      "supportKbs": [
+        "TaxbellAccountingVATReference"
+      ],
+      "evidenceCount": 5,
+      "notePreview": "To jest wstępna odpowiedź z lokalnych artefaktów KB.",
+      "transport": "bridge",
+      "fallback": "",
+      "bridgeError": "",
+      "checks": {
+        "hasPrimary": true,
+        "correctPrimary": true,
+        "hasEvidence": true,
+        "hasNote": true,
+        "hasArtifacts": true,
+        "noError": true,
+        "supportContainsExpected": false
+      },
+      "notes": []
+    }
+  ]
+}

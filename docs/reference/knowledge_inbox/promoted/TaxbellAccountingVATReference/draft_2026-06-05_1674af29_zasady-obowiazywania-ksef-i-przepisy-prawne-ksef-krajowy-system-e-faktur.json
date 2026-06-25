@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-06-05_1674af29_zasady-obowiazywania-ksef-i-przepisy-prawne-ksef-krajowy-system-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Zasady obowiązywania KSeF i przepisy prawne - KSeF (Krajowy System e-Faktur)",
+  "content": "Source list scan draft.\n\nSource: KSeF podatki.gov.pl - FAQ i zasady obowiązywania\nURL: https://ksef.podatki.gov.pl/ksef-news/zasady-obowiazywania-ksef-i-przepisy-prawne/\n\nKrótkie podsumowanie zasad obowiązywania KSeF (2026)\n\n- Faktury do odbiorców indywidualnych (konsumenci): od 1 kwietnia 2026 r. nie obowiązuje bezwzględnie wystawianie faktur w KSeF. Możliwe są nadal faktury elektroniczne lub papierowe. W dobrowolnych przypadkach wystawienie faktury w KSeF wymaga przekazania odbiorcy w uzgodnionej formie (np. wydruk z kodem QR i numerem KSeF).\n\n- Usługi medyczne świadczone przez lekarza z siedzibą w Polsce na rzecz podatnika VAT z siedzibą w Szwecji: faktury muszą być wystawiane zgodnie z polskim prawem, czyli w KSeF. Jeśli nabywca jest podmiotem zagranicznym, fakturę należy przekazać w sposób uzgodniony z nabywcą (np. wydruk lub plik PDF z kodem QR).",
+  "sourceUrl": "https://ksef.podatki.gov.pl/ksef-news/zasady-obowiazywania-ksef-i-przepisy-prawne/",
+  "tags": [
+    "ksef",
+    "vat",
+    "faktury",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_f40caf9e",
+    "sourceType": "exa_query",
+    "sourceTier": "official",
+    "scanRunId": "source_scan_2026-06-05T17-41-16-116Z_51768642",
+    "retrievedAt": "2026-06-05T17:41:16.322Z",
+    "contentHash": "658f7e39b2ac0012c3535a4441e7cb47beb48767e54b26a04264c4360542859c",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-06-05T17:41:16.363Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-06T06:08:21.935Z",
+  "promotedBy": "mcpadmin",
+  "reviewNote": "Bulk approved 17 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_1674af29_zasady-obowiazywania-ksef-i-przepisy-prawne-ksef-krajowy-system-e-faktur.json"
+}

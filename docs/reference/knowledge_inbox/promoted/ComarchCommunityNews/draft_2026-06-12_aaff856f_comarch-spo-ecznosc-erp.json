@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-06-12_aaff856f_comarch-spo-ecznosc-erp",
+  "kbName": "ComarchCommunityNews",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Comarch Społeczność ERP",
+  "content": "External source discovered via Exa query: Czy są aktualności społeczności Comarch o planowanej przerwie technicznej?\nTitle: Comarch Społeczność ERP\nURL: https://spolecznosc.comarch.pl/news\nTier: official\nSummary:\nNiestety, na podstawie podanych informacji (tytuł, URL i „Relevant highlights”) nie da się stwierdzić, czy na stronie Comarch Społeczność ERP publikowano aktualności o planowanej przerwie technicznej. Strona wskazana w URL (spolecznosc.comarch.pl/news) sugeruje sekcję z nowościami, ale nie przytoczono konkretnych treści ani dat.\n\nCo mogę zrobić:\n- Odwiedzić stronę i zebrać najnowsze wpisy z sekcji „news” dotyczące przerw technicznych.\n- Sprawdzić terminy planowanych przerw technicznych na forum/aktualnościach i podsumować je.\n\nJeśli chcesz, mogę wygenerować krótką prośbę do użytkownika o dostęp do treści strony lub spróbować przeszukać konkretną datę/okres. Czy mam podjąć krok 1 i przejrzeć stronę, by wyłuskać informacje o planowanych przerwach technicznych?\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://spolecznosc.comarch.pl/news",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Czy są aktualności społeczności Comarch o planowanej przerwie technicznej?",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-12T11:24:21.969Z"
+  },
+  "createdAt": "2026-06-12T11:24:22.021Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-12T13:29:27.874Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-12/draft_2026-06-12_aaff856f_comarch-spo-ecznosc-erp.json"
+}

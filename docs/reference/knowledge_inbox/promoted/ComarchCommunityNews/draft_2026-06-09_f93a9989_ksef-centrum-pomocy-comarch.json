@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-09_f93a9989_ksef-centrum-pomocy-comarch",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "KSeF - Centrum pomocy - Comarch",
+  "content": "Automated source-discovery draft.\n\nQuery: najnowsze pytania społeczności Comarch Optima KSeF\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef-ksiegowosc-faq/\nTier: official\nDiscovery confidence: 0.95\n\nKSeF\n\n# Jak możemy Ci pomóc?\n\nSearch For Wyszukaj\n\nPrzejdź do spisu treści lub pobierz dokumentację\n\n## KSeF\n\n### Jak można pobrać faktury z Krajowego Systemu e-Faktur (KSeF) na listę w programie Comarch ERP Optima?\n\n- 1\n- 2369\n\n### Jak dodać pojedynczy dokument z Krajowego Systemu e-Faktur (KSeF)?\n\n- -1\n- 1841\n\n### Jak wystawić fakturę na Jednostkę budżetową?\n\n- 1\n- 1445\n\n### Jak wysyłać faktury do KSeF przy wielu oddziałach?\n\n- -1\n- 1306\n\n### Jakie są sposoby autoryzacji do KSeF?\n\n- 0\n- 1285\n\n### Komunikat ID 30114 „Nie dodano dokumentu. Dokument nie został wystawiony przez/dla podatnika”.\n\n- 1\n- 1279\n\n### Jak przesłać do KSeF dodatkowe informacje?\n\n- 1\n- 1233\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/ksef-ksiegowosc-faq/",
+  "tags": [
+    "discovery",
+    "official",
+    "pytania społeczności",
+    "KSeF",
+    "Optima",
+    "Betterfly"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-08T02:50:16.038Z",
+    "discoveryCandidateId": "candidate_ded7df6d-a7e",
+    "discoveryQueryId": "generated_ComarchCommunityNews_51b1de529f",
+    "discoveryRunId": "discovery_daily_2026-06-08T02-49-27-759Z_20bfba27",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "75f05485a073c14af45e53737c5c365cae51c4ff8cad49cd844e5c340cbe60a9"
+  },
+  "createdAt": "2026-06-09T06:45:22.524Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-09T06:55:47.332Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 13 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_f93a9989_ksef-centrum-pomocy-comarch.json"
+}

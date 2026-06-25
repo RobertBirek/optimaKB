@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-06-25T12:30:53.407Z",
+  "overall": "BLOCKED",
+  "gate": {
+    "eligible": false,
+    "approved": false,
+    "checks": {
+      "automationReady": true,
+      "samples": false,
+      "accuracy": true,
+      "falsePositives": true,
+      "llmHealth": true,
+      "noActiveJobs": true,
+      "noRollbackFailures": true
+    },
+    "blockers": [
+      "Need 16 more adjudicated live sample(s)."
+    ],
+    "metrics": {
+      "samples": 4,
+      "decisions": 4,
+      "correct": 4,
+      "accuracy": 1,
+      "falsePositives": 0
+    },
+    "requirements": {
+      "minimumSamples": 20,
+      "minimumAccuracy": 0.95,
+      "maximumFalsePositives": 0
+    },
+    "approvedAt": "",
+    "approvedBy": ""
+  },
+  "queue": {
+    "pending": 1,
+    "nextJobId": "automation_2026-06-18_17cb452a",
+    "items": [
+      {
+        "jobId": "automation_2026-06-18_17cb452a",
+        "draftId": "draft_2026-06-18_04ee1a14_co-nowego-baza-wiedzy-programu-comarch-erp-optima",
+        "title": "Co nowego? – Baza Wiedzy programu Comarch ERP Optima",
+        "kbNamespace": "ComarchCommunityNews",
+        "status": "SHADOW_COMPLETE",
+        "priority": 146,
+        "recommendedAction": "hold",
+        "confidence": 0.7,
+        "targetKb": "ComarchOptimaReference",
+        "finishedAt": "2026-06-18T05:13:06.091Z"
+      }
+    ]
+  }
+}
