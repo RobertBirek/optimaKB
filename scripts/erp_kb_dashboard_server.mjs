@@ -91,14 +91,7 @@ import {
   SOURCE_LIST_PATH,
   updateSource,
 } from './lib/dashboard_source_list.mjs';
-import {
-  deriveDiscoveryAutoDraftState,
-  deriveDiscoveryLearningState,
-  deriveAutomationLearningState,
-  automationLearningAdjustment,
-  buildDiscoveryPromptMemory,
-  discoveryLearningAdjustment,
-} from './lib/feedback_learning.mjs';
+import { deriveDiscoveryAutoDraftState } from './lib/feedback_learning.mjs';
 import {
   activeDiscoveryQueries,
   classifyDiscoveryTier,
