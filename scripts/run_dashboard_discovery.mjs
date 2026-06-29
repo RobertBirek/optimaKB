@@ -524,6 +524,9 @@ async function runWeekly() {
 
 async function runAutoDraft(options = {}) {
   const policy = loadDiscoveryPolicy();
+  if (!policy.enabled) {
+    throw new Error('Discovery is disabled in policy.');
+  }
   const candidates = listDiscoveryCandidates(5000);
   const semiAuto = discoverySemiAutoStatus(policy, candidates);
   const now = new Date().toISOString();
@@ -541,7 +544,17 @@ async function runAutoDraft(options = {}) {
   if (!semiAuto.active || policy.dryRun) {
     run.ok = false;
     run.error = 'Semi-auto gate is not active or dry-run is enabled.';
+    run.finishedAt = new Date().toISOString();
     writeDiscoveryRun(run);
+    refreshDiscoveryReport();
+    appendDashboardAudit({
+      actor: 'discovery-autodraft',
+      role: 'system',
+      action: 'discovery.run.autodraft',
+      resourceType: 'discovery_run',
+      resourceId: run.id,
+      after: run,
+    });
     return run;
   }
   const reviewable = candidates.filter(
@@ -563,7 +576,6 @@ async function runAutoDraft(options = {}) {
     const tier = candidate.sourceTier;
     if (tier !== 'official' && tier !== 'professional') continue;
     if (confidence < effectiveThreshold) continue;
-    if (autoDrafts >= policy.semiAutoMaxPerRun) break;
     if (!policy.semiAutoAllowedNamespaces.includes(ns)) continue;
     run.candidateCount += 1;
     if (run.dryRun) continue;
@@ -588,16 +600,14 @@ async function runAutoDraft(options = {}) {
   run.finishedAt = new Date().toISOString();
   writeDiscoveryRun(run);
   refreshDiscoveryReport();
-  if (run.draftedCount > 0) {
-    appendDashboardAudit({
-      actor: 'discovery-autodraft',
-      role: 'system',
-      action: 'discovery.run.autodraft',
-      resourceType: 'discovery_run',
-      resourceId: run.id,
-      after: run,
-    });
-  }
+  appendDashboardAudit({
+    actor: 'discovery-autodraft',
+    role: 'system',
+    action: 'discovery.run.autodraft',
+    resourceType: 'discovery_run',
+    resourceId: run.id,
+    after: run,
+  });
   return run;
 }
 
