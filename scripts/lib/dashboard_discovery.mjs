@@ -5,6 +5,8 @@ import fs from 'fs';
 import path from 'path';
 import process from 'process';
 import { appendDashboardAudit } from './dashboard_audit.mjs';
+import { cleanBoilerplate, cleanContent } from './content_cleaner.mjs';
+import { deriveDiscoveryAutoDraftState, deriveDiscoveryLearningState, discoveryLearningAdjustment } from './feedback_learning.mjs';
 import { submitKnowledgeDraft } from './knowledge_inbox.mjs';
 import { findExistingDraftBySourceUrl, normalizeUrl } from './dashboard_source_list.mjs';
 import { TARGET_KBS } from './promoted_knowledge.mjs';
@@ -448,6 +450,52 @@ export function listDiscoveryCandidates(limit = 500) {
     .slice(0, Math.max(1, Math.min(5000, Number(limit) || 500)));
 }
 
+export async function retroCleanDiscoveryCandidates({ limit = 5000, operator = 'cleanup', dryRun = false } = {}) {
+  const candidates = listDiscoveryCandidates(limit);
+  let cleaned = 0;
+  for (const candidate of candidates) {
+    const nextContent = cleanBoilerplate(candidate.content || '');
+    const nextSnippet = cleanBoilerplate(candidate.snippet || '');
+    const contentChanged = nextContent !== String(candidate.content || '');
+    const snippetChanged = nextSnippet !== String(candidate.snippet || '');
+    if (!contentChanged && !snippetChanged) continue;
+    cleaned += 1;
+    if (dryRun) continue;
+    saveDiscoveryCandidate({
+      ...candidate,
+      ...(contentChanged ? { content: nextContent } : {}),
+      ...(snippetChanged ? { snippet: nextSnippet } : {}),
+      cleanup: {
+        operator,
+        cleanedAt: new Date().toISOString(),
+        contentChanged,
+        snippetChanged,
+      },
+    });
+    appendDashboardAudit({
+      actor: operator,
+      role: 'operator',
+      action: 'discovery.candidate.cleanup',
+      resourceType: 'discovery_candidate',
+      resourceId: candidate.id,
+      before: {
+        contentLength: String(candidate.content || '').length,
+        snippetLength: String(candidate.snippet || '').length,
+      },
+      after: {
+        contentLength: nextContent.length,
+        snippetLength: nextSnippet.length,
+      },
+    });
+  }
+  return {
+    ok: true,
+    scanned: candidates.length,
+    cleaned,
+    dryRun,
+  };
+}
+
 export function findDiscoveryCandidateByUrl(url) {
   let normalized = '';
   try {
@@ -570,7 +618,7 @@ function candidateAgeDays(candidate, now = new Date()) {
   return Number.isFinite(timestamp) ? Math.max(0, (now.getTime() - timestamp) / DAY_MS) : null;
 }
 
-export function discoveryCandidatePriority(candidate, candidates = listDiscoveryCandidates(5000)) {
+export function discoveryCandidatePriority(candidate, candidates = listDiscoveryCandidates(5000), learningState = deriveDiscoveryLearningState(candidates)) {
   const confidence = Number(candidate.assessment?.confidence || 0);
   const kbPending = candidates.filter((item) => (
     item.kbNamespace === candidate.kbNamespace && isReviewableDiscoveryCandidate(item)
@@ -616,6 +664,19 @@ export function discoveryCandidatePriority(candidate, candidates = listDiscovery
   if (candidate.sourceTier === 'unknown') {
     score -= 20;
     reasons.push('nieznana domena');
+  }
+  const learning = discoveryLearningAdjustment(candidate, learningState);
+  score += learning.scoreDelta;
+  reasons.push(...learning.reasons);
+  const domainKey = hostnameFor(candidate.canonicalUrl);
+  const domainSignal = learningState?.byDomain?.[domainKey];
+  const noisePenalty = domainSignal?.operatorOverride != null
+    ? Number(domainSignal.operatorOverride)
+    : (domainSignal?.noisePenalty || 0);
+  if (noisePenalty > 0) {
+    const penaltyPoints = Math.round(noisePenalty * 30);
+    score -= penaltyPoints;
+    reasons.push(`domena ${domainKey}: kara ${Math.round(noisePenalty * 100)}%`);
   }
   const normalized = Math.max(0, Math.min(100, score));
   return {
@@ -681,10 +742,7 @@ export function discoveryQueryAnalytics(
   });
 }
 
-export function discoverySemiAutoStatus(
-  policy = loadDiscoveryPolicy(),
-  candidates = listDiscoveryCandidates(5000),
-) {
+export function discoverySemiAutoStatus(policy = loadDiscoveryPolicy(), candidates = listDiscoveryCandidates(5000)) {
   const feedback = discoveryFeedbackSummary(candidates);
   const reviewed = candidates
     .filter((candidate) => candidate.operatorDecision?.source === 'operator')
@@ -714,6 +772,20 @@ export function discoverySemiAutoStatus(
   }
   if (!policy.semiAutoAllowedNamespaces.length) blockers.push('Brak dozwolonych KB.');
   if (policy.dryRun) blockers.push('Discovery działa w wymuszonym trybie dry-run.');
+
+  // Load automation learning state for per-KB dynamic thresholds
+  let automationLearningState = null;
+  try {
+    const AUTOMATION_LEARNING_PATH = path.join(
+      process.env.ROOT || '/docker/openspg',
+      'data/dashboard/learning/automation_learning_state.json',
+    );
+    if (fs.existsSync(AUTOMATION_LEARNING_PATH)) {
+      automationLearningState = JSON.parse(fs.readFileSync(AUTOMATION_LEARNING_PATH, 'utf8'));
+    }
+  } catch { /* ignore — fallback to static threshold */ }
+  const perKb = deriveDiscoveryAutoDraftState(policy, automationLearningState);
+
   return {
     configured: policy.semiAutoEnabled,
     eligible: blockers.filter((item) => !/wyłączony|dry-run/i.test(item)).length === 0,
@@ -728,7 +800,23 @@ export function discoverySemiAutoStatus(
       maxPerRun: policy.semiAutoMaxPerRun,
       allowedNamespaces: policy.semiAutoAllowedNamespaces,
     },
+    perKb,
   };
+}
+
+const AUTO_DRAFT_LOG_PATH = path.join(
+  process.env.ROOT || '/docker/openspg',
+  'data/dashboard/learning/auto_draft_log.jsonl',
+);
+
+export function appendAutoDraftLog(entry) {
+  try {
+    fs.mkdirSync(path.dirname(AUTO_DRAFT_LOG_PATH), { recursive: true });
+    fs.appendFileSync(AUTO_DRAFT_LOG_PATH, `${JSON.stringify({
+      ts: new Date().toISOString(),
+      ...entry,
+    })}\n`, 'utf8');
+  } catch { /* log silently */ }
 }
 
 export function discoveryCalibrationSample(
@@ -873,6 +961,7 @@ export async function createDraftFromDiscoveryCandidate(
   if (!budget.allowed) throw new Error(`Discovery draft budget exceeded for ${candidate.kbNamespace}`);
   const target = TARGET_KBS[candidate.kbNamespace];
   if (!target) throw new Error(`Unsupported discovery target: ${candidate.kbNamespace}`);
+  const cleanedContent = await cleanContent(candidate.content || candidate.snippet || '');
   const draft = await submitKnowledgeDraft({
     kbName: target.kbName,
     kbNamespace: candidate.kbNamespace,
@@ -885,7 +974,7 @@ export async function createDraftFromDiscoveryCandidate(
       `Tier: ${candidate.sourceTier}`,
       `Discovery confidence: ${candidate.assessment.confidence}`,
       '',
-      candidate.content || candidate.snippet,
+      cleanedContent,
       '',
       'Review this draft before promotion.',
     ].join('\n'),
@@ -1243,6 +1332,9 @@ export function refreshDiscoveryBriefing() {
     `- Operator decisions: \`${briefing.totals.reviewed}\``,
     `- Quality alerts: \`${briefing.totals.alerts}\``,
     `- Semi-auto active: \`${briefing.semiAuto.active}\``,
+    ...Object.entries(briefing.semiAuto?.perKb || {}).map(([ns, state]) => (
+      `  - ${ns}: threshold=${state.threshold}${state.blockedByFp ? ' (blocked by FP)' : state.eligible ? ' (active)' : ' (not eligible)'}`
+    )),
     '',
     '## Top candidates',
     '',
@@ -1447,9 +1539,10 @@ export function discoverySummary() {
   const policy = loadDiscoveryPolicy();
   const rawQueries = loadDiscoveryQueries().queries;
   const rawCandidates = listDiscoveryCandidates(500);
+  const learning = deriveDiscoveryLearningState(rawCandidates);
   const candidates = rawCandidates.map((candidate) => ({
     ...candidate,
-    priority: discoveryCandidatePriority(candidate, rawCandidates),
+    priority: discoveryCandidatePriority(candidate, rawCandidates, learning),
     duplicateExplanation: duplicateExplanation(candidate),
     canUndo: canUndoDiscoveryCandidate(candidate),
     undoExpiresAt: canUndoDiscoveryCandidate(candidate)
@@ -1471,6 +1564,7 @@ export function discoverySummary() {
     queries,
     candidates,
     feedback: discoveryFeedbackSummary(rawCandidates),
+    learning,
     qualityAlerts: discoveryQualityAlerts(rawQueries, rawCandidates),
     semiAuto: discoverySemiAutoStatus(policy, rawCandidates),
     briefing,
