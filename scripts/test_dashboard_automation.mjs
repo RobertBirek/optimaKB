@@ -386,6 +386,21 @@ try {
     true,
   );
 
+  const automationModule = await import(`./lib/dashboard_automation.mjs?test=${Date.now()}`);
+  assert.throws(
+    () => automationModule.applyAutomationRerouteAuto({ id: 'x', kbNamespace: 'Src', status: 'REVIEWED' }, {}),
+    /does not have a reroute proposal/,
+    'Should reject job without reroute',
+  );
+  assert.throws(
+    () => automationModule.applyAutomationRerouteAuto(
+      { id: 'x', kbNamespace: 'Src', status: 'REROUTE_PROPOSED', draftId: 'd', reroute: { targetKb: 'Dst' } },
+      { reroutePairs: { 'Src->Dst': { correctRate: 0.5, reviewed: 3 } } },
+    ),
+    /does not meet auto-apply threshold/,
+    'Should reject pair below threshold',
+  );
+
   process.stdout.write(`${JSON.stringify({
     ok: true,
     checks: [
@@ -404,6 +419,7 @@ try {
       'audit_malformed_line_detection',
       'audit_origin_deletion_detection',
       'canary_readiness_report',
+      'auto_reroute_threshold_rejection',
     ],
   }, null, 2)}\n`);
 } finally {
