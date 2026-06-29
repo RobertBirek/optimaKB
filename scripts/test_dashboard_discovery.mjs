@@ -6,6 +6,7 @@ import os from 'os';
 import path from 'path';
 import process from 'process';
 import { spawnSync } from 'child_process';
+import { deriveDiscoveryAutoDraftState } from './lib/feedback_learning.mjs';
 
 const REPO_ROOT = process.env.ROOT || '/docker/openspg';
 
@@ -263,6 +264,67 @@ try {
   assert.strictEqual(fs.existsSync(discovery.DISCOVERY_BRIEFING_PATH), true);
   assert.strictEqual(fs.existsSync(discovery.DISCOVERY_REPORT_PATH), true);
 
+  const autoDraftTests = [
+    {
+      name: 'autoDraftState: fallback threshold when no learning state',
+      test() {
+        const policy = discovery.defaultDiscoveryPolicy();
+        const result = deriveDiscoveryAutoDraftState(policy, null);
+        for (const ns of Object.keys(result)) {
+          assert.strictEqual(result[ns].threshold, policy.semiAutoMinConfidence,
+            `Expected threshold ${policy.semiAutoMinConfidence} for ${ns}, got ${result[ns].threshold}`);
+          assert.strictEqual(result[ns].eligible, policy.semiAutoAllowedNamespaces.includes(ns),
+            `Expected eligible=${policy.semiAutoAllowedNamespaces.includes(ns)} for ${ns}`);
+        }
+      },
+    },
+    {
+      name: 'autoDraftState: dynamic threshold from learning state',
+      test() {
+        const policy = discovery.defaultDiscoveryPolicy();
+        const automationState = {
+          byKbNamespace: {
+            ComarchOptimaReference: { tunedBaseline: 0.82, windowFpRate: 0.03, reviewed: 10, windowSize: 50 },
+            ComarchOptimaAdditionalFunctions: { tunedBaseline: 0.95, windowFpRate: 0.12, reviewed: 5, windowSize: 30 },
+          },
+        };
+        const result = deriveDiscoveryAutoDraftState(policy, automationState);
+        assert.strictEqual(result.ComarchOptimaReference.threshold, 0.82,
+          `Expected 0.82, got ${result.ComarchOptimaReference.threshold}`);
+        assert.strictEqual(result.ComarchOptimaReference.eligible, true,
+          'ComarchOptimaReference should be eligible');
+        assert.strictEqual(result.ComarchOptimaAdditionalFunctions.blockedByFp, true,
+          'ComarchOptimaAdditionalFunctions should be blocked by FP > 5%');
+        assert.strictEqual(result.ComarchOptimaAdditionalFunctions.eligible, false,
+          'ComarchOptimaAdditionalFunctions should not be eligible');
+      },
+    },
+    {
+      name: 'autoDraftState: unknown KB namespace not eligible',
+      test() {
+        const policy = discovery.defaultDiscoveryPolicy();
+        const result = deriveDiscoveryAutoDraftState(policy, null);
+        assert.strictEqual(result.ComarchOptimaSchema.eligible, false,
+          'Non-allowed KB should not be eligible');
+      },
+    },
+  ];
+  let autoDraftPassed = 0;
+  let autoDraftFailed = 0;
+  for (const { name, test } of autoDraftTests) {
+    try {
+      test();
+      autoDraftPassed += 1;
+      process.stderr.write(`  PASS  ${name}\n`);
+    } catch (err) {
+      autoDraftFailed += 1;
+      process.stderr.write(`  FAIL  ${name}\n    ${err.message}\n`);
+    }
+  }
+  if (autoDraftFailed > 0) {
+    throw new Error(`${autoDraftFailed} auto-draft state test(s) failed`);
+  }
+
   process.stdout.write(`${JSON.stringify({
     ok: true,
     coverage: report.coverage,
@@ -274,6 +336,7 @@ try {
     briefingCandidates: briefing.totals.candidates,
     reviewed: report.feedback.overall.reviewed,
     agreement: report.feedback.overall.agreement,
+    autoDraftPassed,
   }, null, 2)}\n`);
 } finally {
   fs.rmSync(root, { recursive: true, force: true });
