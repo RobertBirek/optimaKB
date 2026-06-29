@@ -104,6 +104,8 @@ export default function AddDraftPage({ overview, setTab }) {
           <p>Podaj URL, wklej treść albo wrzuć plik. Panel pobierze treść i wygeneruje KB, tytuł oraz tagi przed zapisem.</p>
         </div>
         <div className="draftProviderStatus">
+          <DraftAnalyzeBadge label="Tavily" enabled={overview?.service?.draftAnalyze?.tavilyConfigured} fallbackLabel="brak" />
+          <DraftAnalyzeBadge label="Firecrawl" enabled={overview?.service?.draftAnalyze?.firecrawlConfigured} fallbackLabel="brak" />
           <DraftAnalyzeBadge label="Exa" enabled={overview?.service?.draftAnalyze?.exaConfigured} fallbackLabel="HTTP" />
           <DraftAnalyzeBadge label="Auto meta" enabled={overview?.service?.draftAnalyze?.openSpgLlmConfigured} fallbackLabel="Heurystyka" />
         </div>

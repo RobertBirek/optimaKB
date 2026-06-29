@@ -1,0 +1,14 @@
+.trendsPage { padding: 0; }
+.trendsControls { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
+.metricTabs, .rangeTabs { display: flex; gap: 0.25rem; }
+.metricTabs button, .rangeTabs button {
+  padding: 0.4rem 0.8rem; border: 1px solid var(--line); background: var(--panel);
+  border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: var(--text);
+}
+.metricTabs button.active, .rangeTabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.trendsGrid { display: flex; flex-direction: column; gap: 1.5rem; }
+.trendChart { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 1rem; }
+.trendChart h4 { margin: 0 0 0.5rem; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; }
+.trendDot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.trendSvg { width: 100%; height: auto; max-height: 300px; }
+.trendSummary { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
-  Activity, AlertTriangle, Bot, Check, CheckCircle, Eye, LoaderCircle, Pause, Play, RefreshCw,
+  Activity, AlertTriangle, Bot, Check, CheckCircle, Eye, LoaderCircle, Pause, Play, RefreshCw, Trash2, X,
 } from 'lucide-react';
 import { apiFetch, formatDate, formatNumber, shortLabel } from './constants';
 import PageShell from './shared/PageShell';
@@ -17,14 +17,63 @@ export default function AutomationPage({ overview }) {
   const automation = automationData?.automation || {};
   const config = automation.config || {};
   const jobs = automation.jobs || [];
+  const providerSecrets = automation.providerSecrets || {};
   const [selected, setSelected] = useState(null);
   const [busy, setBusy] = useState('');
   const [message, setMessage] = useState('');
+  const [secretDraft, setSecretDraft] = useState({ tavilyApiKey: '', firecrawlApiKey: '', exaApiKey: '' });
+  const [learningThresholds, setLearningThresholds] = useState([]);
+  const [learningPenalties, setLearningPenalties] = useState([]);
   const namespaces = [...new Set([
     ...(overview?.kbs || []).map((kb) => kb.namespace),
     ...(overview?.diagnosedKbs || []).map((kb) => kb.namespace),
     ...(config.allowedNamespaces || []),
   ].filter(Boolean))].sort();
+
+  useEffect(() => { loadLearning(); }, []);
+
+  async function loadLearning() {
+    try {
+      const response = await apiFetch('/api/automation/learning');
+      const result = await response.json();
+      if (!response.ok || !result.ok) return;
+      const thresholds = Object.entries(result.thresholds || {}).map(([kns, value]) => ({ kns, ...value }));
+      const penalties = Object.entries(result.penalties || {}).map(([domain, value]) => ({ domain, ...value }));
+      setLearningThresholds(thresholds);
+      setLearningPenalties(penalties);
+    } catch { }
+  }
+
+  async function resetLearning(target) {
+    if (!window.confirm(`Czy na pewno zresetować stan samonauki (${target})? Tej operacji nie można cofnąć.`)) return;
+    setBusy(`reset-${target}`);
+    try {
+      const response = await apiFetch('/api/automation/learning', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reset: target }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error(result.message);
+      setMessage(`Stan samonauki (${target}) został zresetowany.`);
+      await loadLearning();
+      await reload();
+    } catch (e) { setMessage(`Błąd: ${e.message}`); } finally { setBusy(''); }
+  }
+
+  async function setOverrideDomain(domain, value) {
+    setBusy(`override-${domain}`);
+    try {
+      const response = await apiFetch('/api/automation/learning', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ domainOverride: { domain, noisePenalty: value } }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error(result.message);
+      await loadLearning();
+    } catch (e) { setMessage(`Błąd: ${e.message}`); } finally { setBusy(''); }
+  }
 
   async function updateConfig(patch) {
     setBusy('config');
@@ -34,6 +83,26 @@ export default function AutomationPage({ overview }) {
       const result = await response.json();
       if (!response.ok || !result.ok) throw new Error(result.message || result.error || 'Automation config failed');
       setMessage('Konfiguracja automatyzacji została zapisana.');
+      await reload();
+    } catch (e) { setMessage(`Błąd: ${e.message}`); } finally { setBusy(''); }
+  }
+
+  async function saveProviderSecrets() {
+    setBusy('providerSecrets');
+    setMessage('Zapisuję klucze providerów treści...');
+    try {
+      const providerSecretsPatch = Object.fromEntries(
+        Object.entries(secretDraft).filter(([, value]) => String(value || '').trim()),
+      );
+      const response = await apiFetch('/api/automation/config', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ providerSecrets: providerSecretsPatch }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error(result.message || result.error || 'Provider secrets update failed');
+      setMessage('Klucze providerów zostały zapisane.');
+      setSecretDraft({ tavilyApiKey: '', firecrawlApiKey: '', exaApiKey: '' });
       await reload();
     } catch (e) { setMessage(`Błąd: ${e.message}`); } finally { setBusy(''); }
   }
@@ -126,6 +195,7 @@ export default function AutomationPage({ overview }) {
   const gate = automation.promotionGate || {};
   const health = automation.llmHealth || {};
   const canaryQueue = automation.canaryQueue || [];
+  const automationLearning = automation.learning || {};
 
   if (loading) {
     return (
@@ -167,6 +237,9 @@ export default function AutomationPage({ overview }) {
         <div><span>Status</span><StatusBadge value={!config.enabled ? 'DISABLED' : config.paused ? 'PAUSED' : 'RUNNING'} /></div>
         <div><span>Tryb</span><StatusBadge value={config.shadowOnly ? 'SHADOW' : 'PUBLISH'} /></div>
         <div><span>LLM</span><StatusBadge value={automation.llm?.configured ? 'OK' : 'MISSING'} /><br /><code>{automation.llm?.model || automation.llm?.endpoint}</code></div>
+        <div><span>Tavily</span><StatusBadge value={providerSecrets.tavilyApiKey?.configured ? 'OK' : 'MISSING'} /><br /><code>{providerSecrets.tavilyApiKey?.preview || 'brak'}</code></div>
+        <div><span>Firecrawl</span><StatusBadge value={providerSecrets.firecrawlApiKey?.configured ? 'OK' : 'MISSING'} /><br /><code>{providerSecrets.firecrawlApiKey?.preview || 'brak'}</code></div>
+        <div><span>Exa</span><StatusBadge value={providerSecrets.exaApiKey?.configured ? 'OK' : 'MISSING'} /><br /><code>{providerSecrets.exaApiKey?.preview || 'brak'}</code></div>
         <div><span>Health LLM</span><StatusBadge value={health.healthy ? 'PASS' : health.status || 'UNKNOWN'} /><br /><span className="muted">{health.checkedAt ? formatDate(health.checkedAt) : 'brak pomiaru'}</span></div>
         <div><span>Próg confidence</span><strong>{formatNumber(Number(config.minimumConfidence || 0) * 100)}%</strong></div>
         <div><span>Aktywne</span><strong>{formatNumber(automation.active?.length)}</strong></div>
@@ -180,6 +253,19 @@ export default function AutomationPage({ overview }) {
         <label>Canary namespace<select value={config.allowedNamespaces?.[0] || ''} onChange={(event) => updateConfig({ allowedNamespaces: event.target.value ? [event.target.value] : [] })} disabled={Boolean(busy)}><option value="">Wszystkie</option>{namespaces.map((namespace) => <option value={namespace} key={namespace}>{namespace}</option>)}</select></label>
         <label>Minimalne confidence<select value={String(config.minimumConfidence ?? 0.85)} onChange={(event) => updateConfig({ minimumConfidence: Number(event.target.value) })} disabled={Boolean(busy)}><option value="0.7">70%</option><option value="0.8">80%</option><option value="0.85">85%</option><option value="0.9">90%</option><option value="0.95">95%</option></select></label>
       </div>
+      <div className="detailPanel">
+        <strong>Klucze providerów treści</strong>
+        <div className="detailMeta">
+          <span>Aktualizacja: {providerSecrets.updatedAt ? formatDate(providerSecrets.updatedAt) : 'brak'}</span>
+          <span>Operator: {providerSecrets.updatedBy || 'brak'}</span>
+        </div>
+        <div className="automationControls">
+          <label>Tavily API key<input type="password" value={secretDraft.tavilyApiKey} placeholder={providerSecrets.tavilyApiKey?.preview || 'tvly...'} onChange={(event) => setSecretDraft((current) => ({ ...current, tavilyApiKey: event.target.value }))} disabled={Boolean(busy) || overview?.service?.role !== 'admin'} /></label>
+          <label>Firecrawl API key<input type="password" value={secretDraft.firecrawlApiKey} placeholder={providerSecrets.firecrawlApiKey?.preview || 'fc...'} onChange={(event) => setSecretDraft((current) => ({ ...current, firecrawlApiKey: event.target.value }))} disabled={Boolean(busy) || overview?.service?.role !== 'admin'} /></label>
+          <label>Exa API key<input type="password" value={secretDraft.exaApiKey} placeholder={providerSecrets.exaApiKey?.preview || 'exa...'} onChange={(event) => setSecretDraft((current) => ({ ...current, exaApiKey: event.target.value }))} disabled={Boolean(busy) || overview?.service?.role !== 'admin'} /></label>
+          <IconButton icon={busy === 'providerSecrets' ? LoaderCircle : Check} className={busy === 'providerSecrets' ? 'isSpinning' : ''} label="Zapisz klucze" showLabel onClick={saveProviderSecrets} disabled={Boolean(busy) || overview?.service?.role !== 'admin' || (!secretDraft.tavilyApiKey && !secretDraft.firecrawlApiKey && !secretDraft.exaApiKey)} />
+        </div>
+      </div>
       {message ? <div className="formMessage" aria-live="polite">{message}</div> : null}
       <div className={`detailPanel promotionGate ${gate.eligible ? 'gateReady' : 'gateBlocked'}`}>
         <strong>Gate publikacji canary</strong>
@@ -191,6 +277,51 @@ export default function AutomationPage({ overview }) {
           <StatusBadge value={gate.approved ? 'APPROVED' : gate.eligible ? 'READY' : 'BLOCKED'} />
         </div>
         {gate.blockers?.length ? <div className="gateBlockers">{gate.blockers.join(' ')}</div> : null}
+      </div>
+      <div className="detailPanel">
+        <strong>Samonauka automatyzacji</strong>
+        <div className="detailMeta">
+          <span>Reviewed: {formatNumber(automationLearning.overall?.reviewed || 0)}</span>
+          <span>Guarded KB: {formatNumber((automationLearning.highlights?.guardedKbNamespaces || []).length)}</span>
+          <span>Reroute pairs: {formatNumber((automationLearning.highlights?.reroutePairs || []).length)}</span>
+        </div>
+        <div className="reasonChips">{(automationLearning.highlights?.guardedKbNamespaces || []).slice(0, 4).map(([key, value]) => <span key={key}>{key}: +{value.scoreDelta}</span>)}</div>
+        <div className="reasonChips">{(automationLearning.highlights?.reroutePairs || []).slice(0, 4).map(([key, value]) => <span key={key}>{key}: +{value.scoreDelta}</span>)}</div>
+      </div>
+      <div className="detailPanel">
+        <strong>Stan samonauki</strong>
+        <div className="automationControls">
+          <IconButton icon={RefreshCw} label="Odśwież" showLabel onClick={() => { loadLearning(); reload(); }} disabled={Boolean(busy)} />
+          <IconButton icon={Trash2} label="Resetuj progi KB" showLabel onClick={() => resetLearning('thresholds')} disabled={Boolean(busy) || overview?.service?.role !== 'admin'} />
+          <IconButton icon={Trash2} label="Resetuj kary domen" showLabel onClick={() => resetLearning('penalties')} disabled={Boolean(busy) || overview?.service?.role !== 'admin'} />
+          <IconButton icon={Trash2} label="Resetuj wszystko" showLabel onClick={() => resetLearning('full')} disabled={Boolean(busy) || overview?.service?.role !== 'admin'} />
+        </div>
+        <h4>Progi per KB</h4>
+        {learningThresholds.length ? (
+          <DataTable rows={learningThresholds} columns={[
+            { key: 'kns', label: 'KB', render: (row) => <code>{row.kns}</code> },
+            { key: 'baseThreshold', label: 'Bazowy', render: (row) => <span>{formatNumber(Math.round(Number(row.baseThreshold || 0.6) * 100))}%</span> },
+            { key: 'tunedBaseline', label: 'Dostrojony', render: (row) => <strong>{formatNumber(Math.round(Number(row.tunedBaseline || 0.6) * 100))}%</strong> },
+            { key: 'windowFpRate', label: 'FP Rate', render: (row) => <span>{formatNumber(Math.round(Number(row.windowFpRate || 0) * 100))}%</span> },
+            { key: 'windowSize', label: 'Okno', render: (row) => <span>{row.windowSize || 0}</span> },
+            { key: 'reviewed', label: 'Decyzje', render: (row) => <span>{row.reviewed || 0}</span> },
+          ]} />
+        ) : <span className="muted">Brak danych o progach — brak rozstrzygniętych shadow jobów.</span>}
+        <h4>Kary za szum per domena</h4>
+        {learningPenalties.length ? (
+          <DataTable rows={learningPenalties} columns={[
+            { key: 'domain', label: 'Domena', render: (row) => <code>{row.domain}</code> },
+            { key: 'total', label: 'Kandydaci', render: (row) => <span>{row.total}</span> },
+            { key: 'accepted', label: 'Zaakc.', render: (row) => <span>{row.accepted}</span> },
+            { key: 'rejected', label: 'Odrzuc.', render: (row) => <span>{row.rejected}</span> },
+            { key: 'noisePenalty', label: 'Kara (auto)', render: (row) => <span>{formatNumber(Math.round(Number(row.noisePenalty || 0) * 100))}%</span> },
+            { key: 'operatorOverride', label: 'Kara (ręczna)', render: (row) => (
+              row.operatorOverride != null
+                ? <span>{formatNumber(Math.round(Number(row.operatorOverride) * 100))}% <IconButton icon={X} label="Usuń" onClick={() => setOverrideDomain(row.domain, null)} disabled={Boolean(busy)} /></span>
+                : <span className="muted">brak</span>
+            )},
+          ]} />
+        ) : <span className="muted">Brak danych o domenach — brak rozstrzygniętych kandydatów discovery.</span>}
       </div>
       <div className="detailPanel canaryQueuePanel">
         <div className="sectionHeader compactHeader">

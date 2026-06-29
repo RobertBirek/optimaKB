@@ -14,6 +14,7 @@ const TABS = [
   ['overview', 'Dashboard', React.lazy(() => import('./Overview'))],
   ['kb', 'Bazy wiedzy', React.lazy(() => import('./KbPage'))],
   ['reports', 'Raporty', React.lazy(() => import('./ReportsPage'))],
+  ['trends', 'Trendy', React.lazy(() => import('./TrendsPage'))],
   ['inbox', 'Inbox', React.lazy(() => import('./InboxPage'))],
   ['draft', 'Dodaj draft', React.lazy(() => import('./AddDraftPage'))],
   ['sources', 'Źródła', React.lazy(() => import('./SourcesPage'))],
@@ -23,12 +24,13 @@ const TABS = [
   ['system', 'System', React.lazy(() => import('./SystemPage'))],
 ];
 
-import { LayoutDashboard, Database, BarChart3, Inbox, FilePlus2, Globe, Bot, GraduationCap, KeyRound, Settings, RefreshCw, Play, Sparkles, Wrench, Shield, BookOpenText, AlertTriangle, HelpCircle } from 'lucide-react';
+import { LayoutDashboard, Database, BarChart3, Inbox, FilePlus2, Globe, Bot, GraduationCap, KeyRound, Settings, RefreshCw, Play, Sparkles, Wrench, Shield, BookOpenText, AlertTriangle, HelpCircle, TrendingUp } from 'lucide-react';
 
 const NAV_ICONS = {
   overview: LayoutDashboard,
   kb: Database,
   reports: BarChart3,
+  trends: TrendingUp,
   inbox: Inbox,
   draft: FilePlus2,
   sources: Globe,
@@ -39,7 +41,7 @@ const NAV_ICONS = {
 };
 
 const NAV_CATEGORIES = [
-  { label: 'Operacje', icon: Sparkles, items: ['overview', 'kb', 'reports', 'inbox'] },
+  { label: 'Operacje', icon: Sparkles, items: ['overview', 'kb', 'reports', 'trends', 'inbox'] },
   { label: 'Treść', icon: Wrench, items: ['draft', 'sources', 'learning', 'automation'] },
   { label: 'Administracja', icon: Shield, items: ['mcp', 'system'] },
 ];
