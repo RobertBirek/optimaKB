@@ -651,9 +651,9 @@
 .autoDraftPanel {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: var(--surface);
+  background: var(--panel);
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
 }
 .autoDraftPanel .sectionHeader {
   margin-bottom: 1rem;
@@ -667,7 +667,7 @@
 .autoDraftTable td {
   padding: 0.5rem 0.75rem;
   text-align: left;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--line);
 }
 .autoDraftTable th {
   font-weight: 600;
@@ -677,10 +677,10 @@
   letter-spacing: 0.05em;
 }
 .autoDraftTable .statusBadge.active {
-  color: var(--success);
+  color: var(--ok);
 }
 .autoDraftTable .statusBadge.blocked {
-  color: var(--danger);
+  color: var(--bad);
 }
 .autoDraftTable .statusBadge.inactive {
   color: var(--muted);

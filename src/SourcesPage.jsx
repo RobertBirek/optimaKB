@@ -721,7 +721,7 @@ export default function SourcesPage({ overview }) {
                   <tr key={ns}>
                     <td><code>{ns}</code></td>
                     <td>{state.tunedBaseline != null ? state.tunedBaseline.toFixed(2) : '\u2014'}</td>
-                    <td>{state.threshold.toFixed(2)}</td>
+                    <td>{state.threshold != null ? state.threshold.toFixed(2) : '\u2014'}</td>
                     <td>
                       {state.blockedByFp
                         ? <span className="statusBadge blocked">FP BLOCKED</span>
