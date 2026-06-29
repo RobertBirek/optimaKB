@@ -804,6 +804,37 @@ export function discoverySemiAutoStatus(policy = loadDiscoveryPolicy(), candidat
   };
 }
 
+const MAX_AUTO_DRAFTS_PER_DAY = 25;
+const AUTO_DRAFT_COUNT_PATH = path.join(
+  process.env.ROOT || '/docker/openspg',
+  'data/dashboard/learning/auto_draft_count.json',
+);
+
+export function checkAutoDraftDailyLimit() {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const state = JSON.parse(fs.readFileSync(AUTO_DRAFT_COUNT_PATH, 'utf8'));
+    if (state.date !== today) return MAX_AUTO_DRAFTS_PER_DAY;
+    return Math.max(0, MAX_AUTO_DRAFTS_PER_DAY - (state.count || 0));
+  } catch {
+    return MAX_AUTO_DRAFTS_PER_DAY;
+  }
+}
+
+export function incrementAutoDraftDailyCount(count = 1) {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    let state = { date: today, count: 0 };
+    try {
+      state = JSON.parse(fs.readFileSync(AUTO_DRAFT_COUNT_PATH, 'utf8'));
+      if (state.date !== today) state = { date: today, count: 0 };
+    } catch { /* start fresh */ }
+    state.count = (state.count || 0) + count;
+    fs.mkdirSync(path.dirname(AUTO_DRAFT_COUNT_PATH), { recursive: true });
+    fs.writeFileSync(AUTO_DRAFT_COUNT_PATH, JSON.stringify(state), 'utf8');
+  } catch { /* silently fail — limit is a soft guard */ }
+}
+
 const AUTO_DRAFT_LOG_PATH = path.join(
   process.env.ROOT || '/docker/openspg',
   'data/dashboard/learning/auto_draft_log.jsonl',

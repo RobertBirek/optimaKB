@@ -31,6 +31,8 @@ import {
   saveDiscoveryQueries,
   writeDiscoveryRun,
   appendAutoDraftLog,
+  checkAutoDraftDailyLimit,
+  incrementAutoDraftDailyCount,
 } from './lib/dashboard_discovery.mjs';
 import { appendDashboardAudit } from './lib/dashboard_audit.mjs';
 import { contentHash, findExistingDraftBySourceUrl, normalizeUrl } from './lib/dashboard_source_list.mjs';
@@ -309,30 +311,34 @@ async function runDaily(options) {
           createdAt: new Date().toISOString(),
         });
         run.candidateCount += 1;
+        const remainingDaily = checkAutoDraftDailyLimit();
         const semiAutoEligible = (
           !run.dryRun
           && semiAuto.active
           && semiAutoDrafts < policy.semiAutoMaxPerRun
+          && remainingDaily > 0
           && action === 'CREATE_DRAFT'
           && (tier === 'official' || tier === 'professional')
-          && assessment.confidence >= (semiAuto?.perKb?.[targetProfile.kbNamespace]?.threshold ?? policy.semiAutoMinConfidence)
+          && biasedAssessment.confidence >= (semiAuto?.perKb?.[targetProfile.kbNamespace]?.threshold ?? policy.semiAutoMinConfidence)
           && policy.semiAutoAllowedNamespaces.includes(targetProfile.kbNamespace)
           && (semiAuto?.perKb?.[targetProfile.kbNamespace]?.eligible !== false)
         );
         if (semiAutoEligible) {
-          await createDraftFromDiscoveryCandidate(candidate.id, 'discovery-daily');
+          const draftResult = await createDraftFromDiscoveryCandidate(candidate.id, 'discovery-daily');
+          const draftId = draftResult?.id || draftResult?.draft?.id || '';
           appendAutoDraftLog({
             kb: targetProfile.kbNamespace,
             tier,
-            confidence: assessment.confidence,
+            confidence: biasedAssessment.confidence,
             threshold: semiAuto?.perKb?.[targetProfile.kbNamespace]?.threshold ?? policy.semiAutoMinConfidence,
             candidateId: candidate.id,
-            draftId: '',
+            draftId,
             queryId: query.id,
             mode: 'inline',
           });
           run.draftedCount += 1;
           semiAutoDrafts += 1;
+          incrementAutoDraftDailyCount();
         }
       }
       const queryIndex = queryState.queries.findIndex((item) => item.id === query.id);
@@ -566,8 +572,10 @@ async function runAutoDraft(options = {}) {
   ));
   let autoDrafts = 0;
   const maxRun = policy.semiAutoMaxPerRun;
+  let remainingDaily = checkAutoDraftDailyLimit();
   for (const candidate of reviewable) {
     if (autoDrafts >= maxRun) break;
+    if (remainingDaily <= 0) break;
     const ns = candidate.kbNamespace;
     const nsState = semiAuto?.perKb?.[ns];
     if (!nsState?.eligible) continue;
@@ -584,6 +592,8 @@ async function runAutoDraft(options = {}) {
       const draftId = draftResult?.id || draftResult?.draft?.id || '';
       run.draftedCount += 1;
       autoDrafts += 1;
+      remainingDaily -= 1;
+      incrementAutoDraftDailyCount();
       appendAutoDraftLog({
         kb: ns,
         tier,
@@ -619,7 +629,7 @@ async function main() {
   try {
     let result;
     if (options.autoDraft) {
-      result = await runAutoDraft({ dryRun: options.dryRun !== false });
+      result = await runAutoDraft({ dryRun: options.dryRun !== true });
     } else {
       result = options.weekly ? await runWeekly() : await runDaily(options);
     }
