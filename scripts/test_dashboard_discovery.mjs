@@ -273,6 +273,8 @@ try {
         for (const ns of Object.keys(result)) {
           assert.strictEqual(result[ns].threshold, policy.semiAutoMinConfidence,
             `Expected threshold ${policy.semiAutoMinConfidence} for ${ns}, got ${result[ns].threshold}`);
+          assert.strictEqual(result[ns].blockedByFp, false,
+            `Expected blockedByFp=false for ${ns} with no learning state`);
           assert.strictEqual(result[ns].eligible, policy.semiAutoAllowedNamespaces.includes(ns),
             `Expected eligible=${policy.semiAutoAllowedNamespaces.includes(ns)} for ${ns}`);
         }
@@ -300,12 +302,14 @@ try {
       },
     },
     {
-      name: 'autoDraftState: unknown KB namespace not eligible',
+      name: 'autoDraftState: profiled KB excluded from allowedNamespaces is not eligible',
       test() {
         const policy = discovery.defaultDiscoveryPolicy();
         const result = deriveDiscoveryAutoDraftState(policy, null);
         assert.strictEqual(result.ComarchOptimaSchema.eligible, false,
           'Non-allowed KB should not be eligible');
+        assert.strictEqual(result.NonExistentNamespace, undefined,
+          'Unknown namespace not in profiles should be undefined');
       },
     },
   ];
