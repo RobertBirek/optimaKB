@@ -2302,6 +2302,29 @@ async function handlePatchAutomationLearning(req, res) {
   }
 }
 
+async function handleGetTrends(req, res) {
+  try {
+    const days = Math.max(1, Math.min(365, Number(req.route?.searchParams?.get('days') || 30)));
+    const cutoff = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
+    const trendsPath = path.join(ROOT, 'data/dashboard/learning/trends.jsonl');
+    const grouped = {};
+    if (fs.existsSync(trendsPath)) {
+      const raw = fs.readFileSync(trendsPath, 'utf8');
+      for (const line of raw.trim().split('\n').filter(Boolean)) {
+        try {
+          const entry = JSON.parse(line);
+          if (entry.date >= cutoff) {
+            (grouped[entry.kbNamespace] = grouped[entry.kbNamespace] || []).push(entry);
+          }
+        } catch {}
+      }
+    }
+    return sendJson(res, 200, { ok: true, trends: grouped });
+  } catch (error) {
+    return sendJson(res, 500, { ok: false, error: 'trends_load_failed', message: error.message });
+  }
+}
+
 async function handleAutomationRun(req, res) {
   let fields;
   try {
@@ -3814,6 +3837,9 @@ async function handleRequest(req, res) {
       });
     }
     return handlePatchAutomationLearning(req, res);
+  }
+  if (route.pathname === '/api/automation/trends' && req.method === 'GET') {
+    return handleGetTrends(req, res);
   }
   if (route.pathname.startsWith('/api/automation/jobs/') && route.pathname.endsWith('/reroute/apply') && ['POST', 'PUT'].includes(req.method)) {
     const jobId = decodeURIComponent(route.pathname.slice('/api/automation/jobs/'.length, -'/reroute/apply'.length));

@@ -850,6 +850,39 @@ export function appendAutoDraftLog(entry) {
   } catch { /* log silently */ }
 }
 
+const TRENDS_PATH = path.join(ROOT, 'data/dashboard/learning/trends.jsonl');
+
+export function appendTrendSnapshot() {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const policy = loadDiscoveryPolicy();
+    const candidates = listDiscoveryCandidates(5000);
+    const feedback = discoveryFeedbackSummary(candidates);
+    const autoLearningPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
+    let automationState = null;
+    try { automationState = JSON.parse(fs.readFileSync(autoLearningPath, 'utf8')); } catch {}
+    const lines = [];
+    for (const profile of policy.profiles) {
+      const ns = profile.kbNamespace;
+      const kbFeedback = feedback.byKb?.[ns] || {};
+      const kbAuto = automationState?.byKbNamespace?.[ns] || {};
+      lines.push(JSON.stringify({
+        date: today,
+        kbNamespace: ns,
+        fpRate: kbAuto.windowFpRate ?? null,
+        tunedBaseline: kbAuto.tunedBaseline ?? null,
+        acceptanceRate: kbFeedback.acceptanceRate ?? null,
+        draftedCount: kbFeedback.drafted ?? 0,
+        reviewedCount: kbFeedback.reviewed ?? 0,
+      }));
+    }
+    if (lines.length) {
+      fs.mkdirSync(path.dirname(TRENDS_PATH), { recursive: true });
+      fs.appendFileSync(TRENDS_PATH, lines.join('\n') + '\n', 'utf8');
+    }
+  } catch { /* silently fail */ }
+}
+
 export function discoveryCalibrationSample(
   candidates = listDiscoveryCandidates(5000),
   target = loadDiscoveryPolicy().calibrationTarget,

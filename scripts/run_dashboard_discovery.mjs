@@ -31,6 +31,7 @@ import {
   saveDiscoveryQueries,
   writeDiscoveryRun,
   appendAutoDraftLog,
+  appendTrendSnapshot,
   checkAutoDraftDailyLimit,
   incrementAutoDraftDailyCount,
 } from './lib/dashboard_discovery.mjs';
@@ -370,6 +371,7 @@ async function runDaily(options) {
     outcome: run.ok ? 'success' : 'failure',
     after: run,
   });
+  appendTrendSnapshot();
   return run;
 }
 
