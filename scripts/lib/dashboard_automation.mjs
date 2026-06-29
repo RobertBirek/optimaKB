@@ -6,6 +6,8 @@ import path from 'path';
 import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
 import { appendDashboardAudit } from './dashboard_audit.mjs';
+import { automationLearningAdjustment, deriveAutomationLearningState, reroutePairKey } from './feedback_learning.mjs';
+import { loadProviderSecrets, maskProviderSecrets, saveProviderSecrets } from './provider_secrets.mjs';
 import {
   findRawDraftById,
   reroutePendingDraft,
@@ -221,6 +223,14 @@ export function saveAutomationConfig(patch = {}, operator = '') {
   });
   refreshAutomationCanaryReport();
   return saved;
+}
+
+export function providerSecretsSummary() {
+  return maskProviderSecrets(loadProviderSecrets());
+}
+
+export function updateProviderSecrets(patch = {}, operator = '') {
+  return maskProviderSecrets(saveProviderSecrets(patch, operator));
 }
 
 export function automationJobPath(jobId) {
@@ -470,6 +480,11 @@ function actualActionForJob(job) {
   return 'hold';
 }
 
+function learnedActionForJob(job, learningState) {
+  const learned = automationLearningAdjustment(job, learningState);
+  return learned.recommendedAction || actualActionForJob(job);
+}
+
 export function adjudicateAutomationJob(jobId, expectedAction, operator = '', note = '') {
   const job = readAutomationJob(jobId);
   if (!job) throw new Error(`Automation job not found: ${jobId}`);
@@ -591,16 +606,27 @@ export function approveAutomationPublication(operator = '') {
   return { config: next, gate: approvedGate };
 }
 
-function canaryPriority(job) {
+function applyLearningAdjustedThreshold(job, learningState) {
+  const kbSignal = learningState?.byKbNamespace?.[job.kbNamespace];
+  if (!kbSignal || kbSignal.tunedBaseline == null) return null;
+  return {
+    tunedBaseline: kbSignal.tunedBaseline,
+    windowFpRate: kbSignal.windowFpRate || 0,
+    stricter: kbSignal.tunedBaseline > (kbSignal.baseThreshold || 0.6),
+  };
+}
+
+function canaryPriority(job, learningState) {
   let score = 0;
   if (job.status === 'REROUTE_PROPOSED') score += 100;
   if (job.review?.contentRisk === 'high' || job.review?.duplicateRisk === 'high') score += 80;
   if (['review', 'reject'].includes(job.review?.decision)) score += 60;
   score += Math.round((1 - Number(job.review?.confidence || 0)) * 20);
+  score += automationLearningAdjustment(job, learningState).priorityDelta;
   return score;
 }
 
-export function automationCanaryQueue(jobs = listAutomationJobs(500)) {
+export function automationCanaryQueue(jobs = listAutomationJobs(500), learningState = deriveAutomationLearningState(jobs)) {
   return jobs
     .filter((job) => (
       job.mode === 'shadow'
@@ -610,8 +636,9 @@ export function automationCanaryQueue(jobs = listAutomationJobs(500)) {
     ))
     .map((job) => ({
       ...job,
-      canaryPriority: canaryPriority(job),
-      recommendedAction: actualActionForJob(job),
+      canaryPriority: canaryPriority(job, learningState),
+      recommendedAction: learnedActionForJob(job, learningState),
+      learning: automationLearningAdjustment(job, learningState),
     }))
     .sort((left, right) => (
       right.canaryPriority - left.canaryPriority
@@ -623,12 +650,14 @@ export function refreshAutomationCanaryReport(options = {}) {
   const config = options.config || loadAutomationConfig();
   const jobs = options.jobs || listAutomationJobs(500);
   const health = options.health || loadAutomationLlmHealth();
+  const learning = options.learning || deriveAutomationLearningState(jobs);
   const gate = evaluateAutomationPromotionGate({ config, jobs, health });
-  const queue = automationCanaryQueue(jobs);
+  const queue = automationCanaryQueue(jobs, learning);
   const report = {
     generatedAt: new Date().toISOString(),
     overall: gate.approved ? 'APPROVED' : gate.eligible ? 'READY' : 'BLOCKED',
     gate,
+    learning,
     queue: {
       pending: queue.length,
       nextJobId: queue[0]?.id || '',
@@ -754,13 +783,100 @@ export function applyAutomationReroute(jobId, operator = '', note = '') {
   }
 }
 
+export function applyAutomationRerouteAuto(job, learningState) {
+  if (!job || !job.reroute?.targetKb) {
+    throw new Error('Job does not have a reroute proposal');
+  }
+  if (job.status !== 'REROUTE_PROPOSED' || !job.reroute?.targetKb) {
+    throw new Error(`Job does not have an applicable reroute proposal: ${job.status}`);
+  }
+  if (job.reroute?.appliedAt) throw new Error('Reroute proposal was already applied');
+
+  const pairKey = reroutePairKey(job.kbNamespace, job.reroute.targetKb);
+  const pairSignal = learningState?.reroutePairs?.[pairKey];
+  const correctRate = pairSignal?.correctRate ?? 0;
+  const reviewed = pairSignal?.reviewed ?? 0;
+
+  if (correctRate < 0.9 || reviewed < 5) {
+    throw new Error(
+      `Reroute pair ${pairKey} does not meet auto-apply threshold: ` +
+      `correctRate=${(correctRate * 100).toFixed(1)}% (need ≥90%), reviewed=${reviewed} (need ≥5)`,
+    );
+  }
+
+  const lock = acquireAutomationLock(`draft_${job.draftId}`, {
+    jobId: job.id,
+    operation: 'apply_reroute_auto',
+  });
+  try {
+    const beforeDraft = findRawDraftById(job.draftId);
+    const rerouted = reroutePendingDraft(job.draftId, job.reroute.targetKb, {
+      reroutedBy: 'discovery-autodraft',
+      note: `Auto-reroute: pair ${pairKey} has ${(correctRate * 100).toFixed(1)}% accuracy over ${reviewed} reviews.`,
+      automationJobId: job.id,
+    });
+    const nextReview = triggerAutomationForDraft(rerouted.draft, {
+      force: true,
+      mode: 'shadow',
+      origin: 'live',
+      reroutedFrom: job.id,
+      actor: 'discovery-autodraft',
+      message: `Post-reroute shadow review from ${job.kbNamespace} to ${rerouted.draft.kbNamespace} (auto-applied).`,
+    });
+    if (!nextReview.started) {
+      throw new Error(`Post-reroute review did not start: ${nextReview.reason || 'unknown reason'}`);
+    }
+    const updatedJob = transitionAutomationJob(job, 'REROUTED', {
+      status: 'REROUTED',
+      actor: 'discovery-autodraft',
+      autoApplied: true,
+      reroute: {
+        ...job.reroute,
+        appliedAt: new Date().toISOString(),
+        appliedBy: 'discovery-autodraft',
+        note: `Auto-reroute: ${pairKey} (${(correctRate * 100).toFixed(1)}% accuracy, ${reviewed} reviews)`,
+        reviewJobId: nextReview.job.id,
+      },
+      transitionMessage: `Draft auto-rerouted to ${rerouted.draft.kbNamespace}; post-reroute shadow review started.`,
+    });
+    appendDashboardAudit({
+      actor: 'discovery-autodraft',
+      role: 'system',
+      action: 'automation.reroute.auto_apply',
+      resourceType: 'knowledge_draft',
+      resourceId: job.draftId,
+      before: {
+        kbName: beforeDraft.kbName,
+        kbNamespace: beforeDraft.kbNamespace,
+      },
+      after: rerouted.after,
+      metadata: {
+        proposalJobId: job.id,
+        reviewJobId: nextReview.job.id,
+        reroutePair: pairKey,
+        correctRate,
+        reviewed,
+      },
+    });
+    refreshAutomationCanaryReport();
+    return {
+      job: updatedJob,
+      draft: rerouted.draft,
+      reviewJob: nextReview.job,
+    };
+  } finally {
+    lock.release();
+  }
+}
+
 export function automationSummary() {
   const config = loadAutomationConfig();
   const allJobs = listAutomationJobs(500);
   const jobs = allJobs.slice(0, config.maxRecentJobs);
   const health = loadAutomationLlmHealth();
-  const canaryQueue = automationCanaryQueue(allJobs);
-  const canaryReport = refreshAutomationCanaryReport({ config, jobs: allJobs, health });
+  const learning = deriveAutomationLearningState(allJobs);
+  const canaryQueue = automationCanaryQueue(allJobs, learning);
+  const canaryReport = refreshAutomationCanaryReport({ config, jobs: allJobs, health, learning });
   const counts = jobs.reduce((acc, job) => {
     acc[job.status] = (acc[job.status] || 0) + 1;
     return acc;
@@ -780,6 +896,7 @@ export function automationSummary() {
     jobs,
     shadowReport: readJson(AUTOMATION_SHADOW_REPORT_PATH, null),
     llmHealth: health,
+    learning,
     promotionGate: evaluateAutomationPromotionGate({ config, jobs: allJobs, health }),
     llm: {
       configured: Boolean(
@@ -798,6 +915,7 @@ export function automationSummary() {
       model: process.env.ERP_KB_AUTOMATION_LLM_MODEL || process.env.OPENSPG_LLM_MODEL || '',
       promptVersion: 'dashboard-review-v1',
     },
+    providerSecrets: providerSecretsSummary(),
   };
 }
 

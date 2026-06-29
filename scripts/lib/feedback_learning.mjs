@@ -239,7 +239,7 @@ function summarizeAutomationKb(items = []) {
   };
 }
 
-function reroutePairKey(sourceKb, targetKb) {
+export function reroutePairKey(sourceKb, targetKb) {
   return `${sourceKb || 'unknown'}->${targetKb || 'unknown'}`;
 }
 
