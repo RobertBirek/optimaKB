@@ -36,6 +36,7 @@ export default function SourcesPage({ overview }) {
   const sources = useMemo(() => sourceData?.sources || [], [sourceData?.sources]);
   const discovery = discoveryData?.discovery || {};
   const feedback = discovery.feedback || {};
+  const discoveryLearning = discovery.learning || {};
   const sourceActions = useMemo(() => (overview?.actions || []).filter((action) => (
     ['scan_sources', 'scan_source', 'discovery_daily', 'discovery_weekly'].includes(action.type)
   )).slice(0, 12), [overview?.actions]);
@@ -498,6 +499,16 @@ export default function SourcesPage({ overview }) {
         <div><span>Próbka / błędy</span><strong>{formatNumber(feedback.calibration?.reviewed)} / {formatNumber(feedback.calibration?.target || 30)} · {formatNumber(failedSources.length)}</strong></div>
       </div>
       {message ? <div className="formMessage">{message}</div> : null}
+      <div className="detailPanel">
+        <strong>Samonauka discovery</strong>
+        <div className="detailMeta">
+          <span>Reviewed: {formatNumber(discoveryLearning.overall?.reviewed || 0)}</span>
+          <span>Mocne domeny: {formatNumber((discoveryLearning.highlights?.strongestDomains || []).length)}</span>
+          <span>Słabe query: {formatNumber((discoveryLearning.highlights?.weakestQueries || []).length)}</span>
+        </div>
+        <div className="reasonChips">{(discoveryLearning.highlights?.strongestDomains || []).slice(0, 4).map(([key, value]) => <span key={key}>{key}: {value.scoreDelta > 0 ? '+' : ''}{value.scoreDelta}</span>)}</div>
+        <div className="reasonChips">{(discoveryLearning.highlights?.weakestQueries || []).slice(0, 4).map(([key, value]) => <span key={key}>{key}: {value.scoreDelta}</span>)}</div>
+      </div>
       <div className="sourceTabs" role="tablist" aria-label="Sekcje źródeł">
         {sourceTabs.map(({ id, label, count, icon: TabIcon }) => (
           <button type="button" role="tab" aria-selected={sourceTab === id} aria-controls={`source-panel-${id}`} className={sourceTab === id ? 'active' : ''} key={id} onClick={() => setSourceTab(id)}>
@@ -689,7 +700,42 @@ export default function SourcesPage({ overview }) {
             <label>Limit na przebieg<input type="number" min="0" max="50" defaultValue={discovery.policy?.semiAutoMaxPerRun} onBlur={(event) => updateDiscoveryPolicy({ semiAutoMaxPerRun: Number(event.target.value) })} /></label>
           </div> : null}
           <div className="gateBlockers">{(discovery.semiAuto?.blockers || []).map((blocker) => <span key={blocker}>{blocker}</span>)}</div>
-        </section>
+         </section>
+        {discovery.semiAuto?.perKb ? (
+          <section className="autoDraftPanel">
+            <div className="sectionHeader">
+              <div><h3>Auto-Draft per KB</h3><p>Dynamiczny próg na podstawie Phase 3 learning.</p></div>
+            </div>
+            <table className="autoDraftTable">
+              <thead>
+                <tr>
+                  <th>KB</th>
+                  <th>Tuned Baseline</th>
+                  <th>Threshold</th>
+                  <th>Status</th>
+                  <th>FP Rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(discovery.semiAuto.perKb).map(([ns, state]) => (
+                  <tr key={ns}>
+                    <td><code>{ns}</code></td>
+                    <td>{state.tunedBaseline != null ? state.tunedBaseline.toFixed(2) : '\u2014'}</td>
+                    <td>{state.threshold.toFixed(2)}</td>
+                    <td>
+                      {state.blockedByFp
+                        ? <span className="statusBadge blocked">FP BLOCKED</span>
+                        : state.eligible
+                          ? <span className="statusBadge active">ACTIVE</span>
+                          : <span className="statusBadge inactive">INELIGIBLE</span>}
+                    </td>
+                    <td>{state.fpRate != null ? `${(state.fpRate * 100).toFixed(1)}%` : '\u2014'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        ) : null}
       </div> : null}
       {selectedCandidate ? (
         <Modal title="Szczegóły znalezionego źródła" onClose={() => setSelectedCandidate(null)} actions={(

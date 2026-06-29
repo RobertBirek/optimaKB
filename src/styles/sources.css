@@ -647,3 +647,41 @@
   font-size: 16px;
   margin-bottom: 3px;
 }
+
+.autoDraftPanel {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.autoDraftPanel .sectionHeader {
+  margin-bottom: 1rem;
+}
+.autoDraftTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.autoDraftTable th,
+.autoDraftTable td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.autoDraftTable th {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.autoDraftTable .statusBadge.active {
+  color: var(--success);
+}
+.autoDraftTable .statusBadge.blocked {
+  color: var(--danger);
+}
+.autoDraftTable .statusBadge.inactive {
+  color: var(--muted);
+}
