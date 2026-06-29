@@ -134,20 +134,21 @@ export function deriveDiscoveryLearningState(candidates = [], options = {}) {
   return state;
 }
 
-export function deriveDiscoveryAutoDraftState(policy, automationLearningState) {
+export function deriveDiscoveryAutoDraftState(policy = {}, automationLearningState) {
+  const profiles = policy.profiles || [];
+  const allowed = policy.semiAutoAllowedNamespaces || [];
+  const maxFp = policy.semiAutoMaxFalsePositiveRate ?? 0.05;
+  const fallbackThreshold = policy.semiAutoMinConfidence ?? 0.95;
   const result = {};
-  for (const profile of policy.profiles) {
+  for (const profile of profiles) {
     const ns = profile.kbNamespace;
     const kbSignal = automationLearningState?.byKbNamespace?.[ns] || null;
     const dynamicThreshold = kbSignal?.tunedBaseline != null
       ? Math.max(0.5, Math.min(0.95, Number(kbSignal.tunedBaseline)))
-      : policy.semiAutoMinConfidence;
+      : fallbackThreshold;
     const fpRate = kbSignal?.windowFpRate != null ? Number(kbSignal.windowFpRate) : null;
-    const blockedByFp = fpRate != null && fpRate > policy.semiAutoMaxFalsePositiveRate;
-    const eligible = (
-      !blockedByFp
-      && policy.semiAutoAllowedNamespaces.includes(ns)
-    );
+    const blockedByFp = fpRate != null && fpRate > maxFp;
+    const eligible = !blockedByFp && allowed.includes(ns);
     result[ns] = {
       threshold: dynamicThreshold,
       tunedBaseline: kbSignal?.tunedBaseline ?? null,
