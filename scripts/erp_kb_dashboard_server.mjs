@@ -11,6 +11,9 @@ import { submitKnowledgeDraft } from './lib/knowledge_inbox.mjs';
 import { listInboxDrafts, promoteDraft, rejectDraft, withdrawPromotedDraft, TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { readOpenSpgCookie } from './lib/openspg_auth.mjs';
 import { classifySourceTier } from './lib/external_search_policy.mjs';
+import { fetchContent } from './lib/content_provider.mjs';
+import { stripHtmlToText } from './lib/content_cleaner.mjs';
+import { loadProviderSecrets, maskProviderSecrets } from './lib/provider_secrets.mjs';
 import { assertSafeHttpUrl, safeFetch } from './lib/safe_http.mjs';
 import { OPENSPG_API_BASE, ERP_KB_MCP_BASE_URL } from './lib/config.mjs';
 import { getGaps, updateGapStatus, gapStats } from './lib/learning.mjs';
@@ -78,6 +81,7 @@ import {
   saveAutomationConfig,
   triggerAutomationForDraft,
   triggerShadowBenchmark,
+  updateProviderSecrets,
 } from './lib/dashboard_automation.mjs';
 import {
   createSource,
@@ -88,9 +92,22 @@ import {
   updateSource,
 } from './lib/dashboard_source_list.mjs';
 import {
-  bulkDecideDiscoveryCandidates,
+  deriveDiscoveryAutoDraftState,
+  deriveDiscoveryLearningState,
+  deriveAutomationLearningState,
+  automationLearningAdjustment,
+  buildDiscoveryPromptMemory,
+  discoveryLearningAdjustment,
+} from './lib/feedback_learning.mjs';
+import {
+  activeDiscoveryQueries,
+  classifyDiscoveryTier,
   createDraftFromDiscoveryCandidate,
+  discoveryActionForAssessment,
+  discoveryFeedbackSummary,
+  discoverySemiAutoStatus,
   discoverySummary,
+  loadDiscoveryPolicy,
   refreshDiscoveryReport,
   refreshDiscoveryBriefing,
   rejectDiscoveryCandidate,
@@ -98,6 +115,7 @@ import {
   saveDiscoveryPolicy,
   setDiscoveryQueryEnabled,
   undoDiscoveryCandidate,
+  bulkDecideDiscoveryCandidates,
 } from './lib/dashboard_discovery.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
@@ -195,6 +213,8 @@ const ROUTING_PATH = 'docs/reference/ERP_Knowledge_Assistant_Routing.json';
 const ACTION_ROOT = path.join(ROOT, 'logs/dashboard_actions');
 const SOURCE_SCAN_SCRIPT = 'scripts/scan_dashboard_sources.mjs';
 const DISCOVERY_SCRIPT = 'scripts/run_dashboard_discovery.mjs';
+const DISCOVERY_LEARNING_PATH = path.join(ROOT, 'data/dashboard/learning/discovery_learning_state.json');
+const AUTOMATION_LEARNING_PATH = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
 const SOURCE_SCAN_CRON_SCHEDULE = process.env.ERP_KB_SOURCE_SCAN_CRON_SCHEDULE || '25 4 * * *';
 const DEFAULT_OPENSPG_COOKIE_FILE = process.env.OPENSPG_COOKIE_FILE || '/etc/erp-kb-openspg.cookie';
 // constants imported from ./lib/config.mjs
@@ -204,7 +224,6 @@ const OPENSPG_LLM_APP_ID = process.env.OPENSPG_LLM_APP_ID || '';
 const OPENSPG_LLM_SESSION_ID = process.env.OPENSPG_LLM_SESSION_ID || '';
 const DRAFT_ANALYZE_MAX_CHARS = Number(process.env.ERP_KB_DRAFT_ANALYZE_MAX_CHARS || 28000);
 const DRAFT_LLM_INPUT_MAX_CHARS = Number(process.env.ERP_KB_DRAFT_LLM_INPUT_MAX_CHARS || 6000);
-const EXA_API_KEY = process.env.EXA_API_KEY || '';
 const EXA_CONTENTS_API_URL = process.env.EXA_CONTENTS_API_URL || 'https://api.exa.ai/contents';
 const EXA_REQUEST_TIMEOUT_MS = Number(process.env.EXA_REQUEST_TIMEOUT_MS || '15000');
 const CSRF_SERVER_SECRET = randomUUID();
@@ -1029,6 +1048,7 @@ function statusPayload(role = 'viewer', username = '') {
   const actions = listActions(30);
   const sources = listSources();
   const automation = automationSummary();
+  const providerSecrets = maskProviderSecrets(loadProviderSecrets());
   const discovery = discoverySummary();
   const kbSync = loadKbSyncStatus(kbState);
   discovery.qualityAlerts = [
@@ -1048,7 +1068,9 @@ function statusPayload(role = 'viewer', username = '') {
       maxBodyBytes: MAX_BODY_BYTES,
       maxBody: formatBytes(MAX_BODY_BYTES),
       draftAnalyze: {
-        exaConfigured: Boolean(EXA_API_KEY),
+        exaConfigured: providerSecrets.exaApiKey.configured,
+        tavilyConfigured: providerSecrets.tavilyApiKey.configured,
+        firecrawlConfigured: providerSecrets.firecrawlApiKey.configured,
         exaContentsApiUrl: EXA_CONTENTS_API_URL,
         openSpgLlmConfigured: Boolean(readDashboardOpenSpgCookie() && OPENSPG_LLM_APP_ID && OPENSPG_LLM_SESSION_ID),
         openSpgLlmCookieConfigured: Boolean(readDashboardOpenSpgCookie()),
@@ -1110,6 +1132,7 @@ function statusPayload(role = 'viewer', username = '') {
           )
         ),
       },
+      providerSecrets,
     },
   };
   payload.summary.automationActive = automation.active.length;
@@ -1689,22 +1712,6 @@ function normalizeHttpUrl(value) {
   return url.toString();
 }
 
-function stripHtmlToText(html) {
-  return normalizeWhitespace(String(html || '')
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ' ')
-    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, ' ')
-    .replace(/<noscript\b[^<]*(?:(?!<\/noscript>)<[^<]*)*<\/noscript>/gi, ' ')
-    .replace(/<\/(p|div|section|article|header|footer|li|tr|h[1-6])>/gi, '\n')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/&amp;/gi, '&')
-    .replace(/&lt;/gi, '<')
-    .replace(/&gt;/gi, '>')
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/g, "'"));
-}
-
 function titleFromContent(content, fallback = 'Knowledge draft') {
   const firstStrongLine = String(content || '')
     .split(/\r?\n/)
@@ -1794,99 +1801,15 @@ function heuristicDraftAnalysis({ content, sourceUrl = '', titleHint = '' }) {
 }
 
 async function fetchUrlFallback(sourceUrl) {
-  await assertSafeHttpUrl(sourceUrl);
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), EXA_REQUEST_TIMEOUT_MS);
-  try {
-    const response = await safeFetch(sourceUrl, {
-      headers: {
-        Accept: 'text/html,text/plain,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.3',
-        'User-Agent': 'TaxbellKnowledgePanel/1.0',
-      },
-      signal: controller.signal,
-    });
-    const body = await response.text();
-    if (!response.ok) throw new Error(`HTTP ${response.status}: ${body.slice(0, 200)}`);
-    const title = body.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1]?.trim() || '';
-    const contentType = response.headers.get('content-type') || '';
-    const text = contentType.includes('html') ? stripHtmlToText(body) : normalizeWhitespace(body);
-    return {
-      provider: 'http',
-      title,
-      content: text,
-      retrievedAt: new Date().toISOString(),
-      warning: '',
-    };
-  } finally {
-    clearTimeout(timer);
-  }
+  return fetchContent(sourceUrl, { providers: ['http'] });
 }
 
 async function fetchUrlWithExa(sourceUrl) {
-  if (!EXA_API_KEY) throw new Error('EXA_API_KEY is not configured');
-  await assertSafeHttpUrl(sourceUrl);
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), EXA_REQUEST_TIMEOUT_MS);
-  try {
-    const response = await fetch(EXA_CONTENTS_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': EXA_API_KEY,
-      },
-      body: JSON.stringify({
-        urls: [sourceUrl],
-        text: { maxCharacters: DRAFT_ANALYZE_MAX_CHARS },
-        summary: true,
-      }),
-      signal: controller.signal,
-    });
-    const body = await response.text();
-    let json;
-    try {
-      json = JSON.parse(body);
-    } catch {
-      throw new Error(`Exa returned non-JSON response: ${body.slice(0, 240)}`);
-    }
-    if (!response.ok) throw new Error(`Exa contents failed with HTTP ${response.status}: ${body.slice(0, 240)}`);
-    const result = Array.isArray(json.results) ? json.results[0] : null;
-    if (!result) throw new Error('Exa contents returned no result');
-    return {
-      provider: 'exa',
-      requestId: json.requestId || '',
-      title: String(result.title || '').trim(),
-      content: normalizeWhitespace(result.text || result.summary || ''),
-      summary: normalizeWhitespace(result.summary || ''),
-      retrievedAt: new Date().toISOString(),
-      rawUrl: result.url || sourceUrl,
-      warning: '',
-    };
-  } finally {
-    clearTimeout(timer);
-  }
+  return fetchContent(sourceUrl, { providers: ['exa'] });
 }
 
 async function fetchSourceUrlContent(sourceUrl) {
-  const normalizedUrl = normalizeHttpUrl(sourceUrl);
-  if (EXA_API_KEY) {
-    try {
-      const exa = await fetchUrlWithExa(normalizedUrl);
-      if (exa.content && exa.content.length >= 120) return { ...exa, sourceUrl: normalizedUrl };
-    } catch (error) {
-      const fallback = await fetchUrlFallback(normalizedUrl);
-      return {
-        ...fallback,
-        sourceUrl: normalizedUrl,
-        warning: `Exa failed, used direct HTTP fetch: ${error.message}`,
-      };
-    }
-  }
-  const direct = await fetchUrlFallback(normalizedUrl);
-  return {
-    ...direct,
-    sourceUrl: normalizedUrl,
-    warning: EXA_API_KEY ? direct.warning : 'EXA_API_KEY is not configured; used direct HTTP fetch.',
-  };
+  return fetchContent(sourceUrl);
 }
 
 function extractJsonObject(text) {
@@ -2073,6 +1996,7 @@ async function handleAnalyzeDraft(req, res) {
   let content = '';
   let titleHint = String(fields.title || '').trim();
   let contentProvider = sourceType;
+  const providerSecrets = maskProviderSecrets(loadProviderSecrets());
   let uploadPath = '';
   let upload = null;
 
@@ -2143,9 +2067,10 @@ async function handleAnalyzeDraft(req, res) {
     contentLength: content.length,
     metadata,
     providers: {
+      ...providerSecrets,
       content: contentProvider,
       metadata: analysis.provider,
-      exaConfigured: Boolean(EXA_API_KEY),
+      exaConfigured: providerSecrets.exaApiKey.configured,
       openSpgLlmConfigured: Boolean(readDashboardOpenSpgCookie() && OPENSPG_LLM_APP_ID && OPENSPG_LLM_SESSION_ID),
     },
     warnings: [...warnings, ...(analysis.warnings || [])].filter(Boolean),
@@ -2244,11 +2169,19 @@ async function handleAutomationConfig(req, res) {
     });
   }
   try {
+    const { providerSecrets: providerSecretsPatch, ...configPatch } = fields;
+    let providerSecrets = null;
+    if (providerSecretsPatch && typeof providerSecretsPatch === 'object') {
+      providerSecrets = updateProviderSecrets(
+        providerSecretsPatch,
+        req.dashboardUser || USERNAME || process.env.USER || 'dashboard',
+      );
+    }
     const config = saveAutomationConfig(
-      fields,
+      configPatch,
       req.dashboardUser || USERNAME || process.env.USER || 'dashboard',
     );
-    return sendJson(res, 200, { ok: true, config, automation: automationSummary() });
+    return sendJson(res, 200, { ok: true, config, providerSecrets, automation: automationSummary() });
   } catch (error) {
     return sendJson(res, error.code === 'PROMOTION_GATE_BLOCKED' ? 409 : 400, {
       ok: false,
@@ -2256,6 +2189,123 @@ async function handleAutomationConfig(req, res) {
       message: error.message,
       gate: error.gate || null,
     });
+  }
+}
+
+async function handleGetAutomationLearning(req, res) {
+  try {
+    const discoveryState = readJsonAbsoluteIfExists(DISCOVERY_LEARNING_PATH, null);
+    const automationState = readJsonAbsoluteIfExists(AUTOMATION_LEARNING_PATH, null);
+    const thresholds = {};
+    if (automationState?.byKbNamespace) {
+      for (const [kns, stats] of Object.entries(automationState.byKbNamespace)) {
+        thresholds[kns] = {
+          baseThreshold: stats.baseThreshold || 0.6,
+          tunedBaseline: stats.tunedBaseline || stats.baseThreshold || 0.6,
+          windowFpRate: stats.windowFpRate || 0,
+          windowSize: stats.windowSize || 0,
+          reviewed: stats.reviewed || 0,
+        };
+      }
+    }
+    const penalties = {};
+    if (discoveryState?.byDomain) {
+      for (const [domain, stats] of Object.entries(discoveryState.byDomain)) {
+        penalties[domain] = {
+          total: (stats.accepted || 0) + (stats.rejected || 0) + (stats.duplicates || 0),
+          accepted: stats.accepted || 0,
+          rejected: stats.rejected || 0,
+          duplicate: stats.duplicates || 0,
+          noisePenalty: stats.noisePenalty || 0,
+          operatorOverride: stats.operatorOverride != null ? stats.operatorOverride : null,
+        };
+      }
+    }
+    const discoveryPolicy = loadDiscoveryPolicy();
+    const autoDraftState = deriveDiscoveryAutoDraftState(discoveryPolicy, automationState);
+    return sendJson(res, 200, {
+      ok: true,
+      thresholds,
+      penalties,
+      autoDraft: autoDraftState,
+      generatedAt: new Date().toISOString(),
+    });
+  } catch (error) {
+    return sendJson(res, 500, {
+      ok: false,
+      error: 'learning_load_failed',
+      message: error.message,
+    });
+  }
+}
+
+async function handlePatchAutomationLearning(req, res) {
+  let fields;
+  try {
+    fields = await readJsonRequest(req);
+  } catch (error) {
+    return sendJson(res, 400, {
+      ok: false,
+      error: 'invalid_body',
+      message: error.message,
+    });
+  }
+  try {
+    if (fields.reset === 'full') {
+      try { fs.rmSync(DISCOVERY_LEARNING_PATH, { force: true }); } catch { }
+      try { fs.rmSync(AUTOMATION_LEARNING_PATH, { force: true }); } catch { }
+      appendDashboardAudit({
+        actor: req.dashboardUser || process.env.USER || 'dashboard',
+        role: 'admin',
+        action: 'automation.learning.reset',
+        resourceType: 'learning_state',
+        resourceId: 'full',
+        after: { reset: 'full', at: new Date().toISOString() },
+      });
+      return sendJson(res, 200, { ok: true, message: 'Full learning state reset.' });
+    }
+    if (fields.reset === 'thresholds') {
+      try {
+        const state = JSON.parse(fs.readFileSync(AUTOMATION_LEARNING_PATH, 'utf8'));
+        state.byKbNamespace = {};
+        state.highlights = { guardedKbNamespaces: [], reroutePairs: [] };
+        fs.writeFileSync(AUTOMATION_LEARNING_PATH, JSON.stringify(state, null, 2) + '\n', { encoding: 'utf8', mode: 0o640 });
+      } catch { }
+      return sendJson(res, 200, { ok: true, message: 'Threshold learning state reset.' });
+    }
+    if (fields.reset === 'penalties') {
+      try {
+        const state = JSON.parse(fs.readFileSync(DISCOVERY_LEARNING_PATH, 'utf8'));
+        state.byDomain = {};
+        state.highlights = { strongestDomains: [], weakestQueries: [] };
+        fs.writeFileSync(DISCOVERY_LEARNING_PATH, JSON.stringify(state, null, 2) + '\n', { encoding: 'utf8', mode: 0o640 });
+      } catch { }
+      return sendJson(res, 200, { ok: true, message: 'Domain penalty learning state reset.' });
+    }
+    if (fields.domainOverride) {
+      const { domain, noisePenalty } = fields.domainOverride;
+      if (!domain || typeof domain !== 'string') {
+        return sendJson(res, 400, { ok: false, error: 'invalid_domain', message: 'domain is required' });
+      }
+      const state = readJsonAbsoluteIfExists(DISCOVERY_LEARNING_PATH, { generatedAt: new Date().toISOString(), overall: { reviewed: 0, candidates: 0 }, byDomain: {}, byQuery: {}, byKbNamespace: {}, bySourceTier: {}, highlights: { strongestDomains: [], weakestQueries: [] }, promptMemory: { recentRejectNotes: [], recentAcceptNotes: [] } });
+      if (!state.byDomain) state.byDomain = {};
+      if (noisePenalty == null) {
+        if (state.byDomain[domain]) state.byDomain[domain].operatorOverride = null;
+      } else {
+        const clamped = Math.max(0, Math.min(1, Number(noisePenalty)));
+        if (!state.byDomain[domain]) {
+          state.byDomain[domain] = { reviewed: 0, accepted: 0, rejected: 0, duplicates: 0, acceptanceRate: null, rejectRate: 0, duplicateRate: 0, scoreDelta: 0, reasons: [], noisePenalty: 0, operatorOverride: clamped };
+        } else {
+          state.byDomain[domain].operatorOverride = clamped;
+        }
+      }
+      fs.mkdirSync(path.dirname(DISCOVERY_LEARNING_PATH), { recursive: true });
+      fs.writeFileSync(DISCOVERY_LEARNING_PATH, JSON.stringify(state, null, 2) + '\n', { encoding: 'utf8', mode: 0o640 });
+      return sendJson(res, 200, { ok: true, message: `Domain ${domain} override updated.` });
+    }
+    return sendJson(res, 400, { ok: false, error: 'unknown_action', message: 'Specify reset, domainOverride, or learningAction.' });
+  } catch (error) {
+    return sendJson(res, 500, { ok: false, error: 'learning_patch_failed', message: error.message });
   }
 }
 
@@ -3758,6 +3808,19 @@ async function handleRequest(req, res) {
   }
   if (route.pathname === '/api/automation/llm-health/run' && ['POST', 'PUT'].includes(req.method)) {
     return handleAutomationLlmHealthRun(req, res);
+  }
+  if (route.pathname === '/api/automation/learning' && req.method === 'GET') {
+    return handleGetAutomationLearning(req, res);
+  }
+  if (route.pathname === '/api/automation/learning' && ['PATCH', 'POST'].includes(req.method)) {
+    if (auth.role !== 'admin') {
+      return sendJson(res, 403, {
+        ok: false,
+        error: 'forbidden',
+        message: 'Admin role is required to modify learning state.',
+      });
+    }
+    return handlePatchAutomationLearning(req, res);
   }
   if (route.pathname.startsWith('/api/automation/jobs/') && route.pathname.endsWith('/reroute/apply') && ['POST', 'PUT'].includes(req.method)) {
     const jobId = decodeURIComponent(route.pathname.slice('/api/automation/jobs/'.length, -'/reroute/apply'.length));
