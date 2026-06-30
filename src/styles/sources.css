@@ -648,6 +648,8 @@
   margin-bottom: 3px;
 }
 
+.queryHealthPanel { margin-top: 1.5rem; padding: 1rem; background: var(--panel); border-radius: 8px; border: 1px solid var(--line); }
+.queryHealthPanel .sectionHeader { margin-bottom: 0.75rem; }
 .autoDraftPanel {
   margin-top: 1.5rem;
   padding: 1rem;

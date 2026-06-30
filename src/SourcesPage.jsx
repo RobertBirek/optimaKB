@@ -736,6 +736,24 @@ export default function SourcesPage({ overview }) {
             </table>
           </section>
         ) : null}
+        {discovery.queries?.length ? (
+          <section className="queryHealthPanel">
+            <div className="sectionHeader"><div><h3>Wydajność zapytań</h3><p>Statystyki i zdrowie zapytań discovery.</p></div></div>
+            <DataTable
+              rows={discovery.queries}
+              columns={[
+                { key: 'query', label: 'Zapytanie', render: (q) => <code>{q.query?.slice(0, 50)}{q.query?.length > 50 ? '…' : ''}</code> },
+                { key: 'kb', label: 'KB', render: (q) => <code>{q.kbNamespace}</code> },
+                { key: 'source', label: 'Źródło', render: (q) => <StatusBadge value={q.source} /> },
+                { key: 'health', label: 'Health', render: (q) => <StatusBadge value={q.analytics?.health || 'UNKNOWN'} /> },
+                { key: 'acceptance', label: 'Accept', render: (q) => q.analytics?.acceptanceRate != null ? `${(q.analytics.acceptanceRate * 100).toFixed(0)}%` : '\u2014' },
+                { key: 'efficiency', label: 'Efficiency', render: (q) => <strong>{q.analytics?.efficiencyScore ?? '\u2014'}</strong> },
+                { key: 'results', label: 'Ostatnie wyniki', render: (q) => String(q.analytics?.candidates ?? 0) },
+                { key: 'status', label: 'Status', render: (q) => <StatusBadge value={q.enabled !== false ? 'ACTIVE' : 'DISABLED'} /> },
+              ]}
+            />
+          </section>
+        ) : null}
       </div> : null}
       {selectedCandidate ? (
         <Modal title="Szczegóły znalezionego źródła" onClose={() => setSelectedCandidate(null)} actions={(
