@@ -1,4 +1,5 @@
-import { formatDate, apiUrl } from './constants';
+import { useState } from 'react';
+import { formatDate, apiUrl, apiFetch } from './constants';
 import DataTable from './shared/DataTable';
 import StatusBadge from './shared/StatusBadge';
 import PageSkeleton from './shared/Skeleton';
@@ -7,11 +8,31 @@ import useApi from './shared/useApi';
 
 export default function ReportsPage() {
   const { data, loading, error } = useApi('/api/reports');
+  const [reporting, setReporting] = useState(false);
+  const [reportMsg, setReportMsg] = useState('');
+
+  const handleGenerate = async () => {
+    setReporting(true);
+    setReportMsg('');
+    try {
+      const res = await apiFetch('/api/automation/report', { method: 'POST' });
+      if (res.ok) { setReportMsg('Raport wygenerowany.'); }
+      else { const e = await res.json(); setReportMsg(`Błąd: ${e.message}`); }
+    } catch (e) { setReportMsg(`Błąd: ${e.message}`); }
+    setReporting(false);
+  };
+
   if (loading) return <PageSkeleton />;
   if (error) return <EmptyState title="Błąd ładowania" description={error} />;
   return (
     <section>
       <h2>Raporty</h2>
+      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginBottom: '1rem' }}>
+        <button className="primary" onClick={handleGenerate} disabled={reporting}>
+          {reporting ? 'Generowanie...' : 'Generuj raport jakości'}
+        </button>
+        {reportMsg ? <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>{reportMsg}</span> : null}
+      </div>
       <DataTable
         rows={data?.reports || []}
         columns={[
