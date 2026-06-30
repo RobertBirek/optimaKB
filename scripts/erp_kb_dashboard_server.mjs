@@ -2303,6 +2303,44 @@ async function handlePatchAutomationLearning(req, res) {
   }
 }
 
+async function handleExportLearningState(req, res) {
+  try {
+    const discoveryPath = path.join(ROOT, 'data/dashboard/learning/discovery_learning_state.json');
+    const automationPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
+    const discovery = fs.existsSync(discoveryPath) ? JSON.parse(fs.readFileSync(discoveryPath, 'utf8')) : null;
+    const automation = fs.existsSync(automationPath) ? JSON.parse(fs.readFileSync(automationPath, 'utf8')) : null;
+    res.writeHead(200, { 'Content-Type': 'application/json', 'Content-Disposition': 'attachment; filename="learning_state_export.json"' });
+    res.end(JSON.stringify({ ok: true, exportedAt: new Date().toISOString(), discovery, automation }, null, 2));
+  } catch (error) {
+    return sendJson(res, 500, { ok: false, error: 'export_failed', message: error.message });
+  }
+}
+
+async function handleImportLearningState(req, res) {
+  let fields;
+  try { fields = await readJsonRequest(req); } catch (error) {
+    return sendJson(res, 400, { ok: false, error: 'invalid_body', message: error.message });
+  }
+  try {
+    const learningRoot = path.join(ROOT, 'data/dashboard/learning');
+    fs.mkdirSync(learningRoot, { recursive: true });
+    if (fields.discovery) {
+      fs.writeFileSync(path.join(learningRoot, 'discovery_learning_state.json'), JSON.stringify(fields.discovery, null, 2) + '\n', { encoding: 'utf8', mode: 0o640 });
+    }
+    if (fields.automation) {
+      fs.writeFileSync(path.join(learningRoot, 'automation_learning_state.json'), JSON.stringify(fields.automation, null, 2) + '\n', { encoding: 'utf8', mode: 0o640 });
+    }
+    appendDashboardAudit({
+      actor: req.dashboardUser || 'dashboard', role: 'admin', action: 'automation.learning.import',
+      resourceType: 'learning_state', resourceId: 'import',
+      after: { importedAt: new Date().toISOString(), hasDiscovery: Boolean(fields.discovery), hasAutomation: Boolean(fields.automation) },
+    });
+    return sendJson(res, 200, { ok: true, message: 'Learning state imported.' });
+  } catch (error) {
+    return sendJson(res, 500, { ok: false, error: 'import_failed', message: error.message });
+  }
+}
+
 async function handleGetTrends(req, res) {
   try {
     const days = Math.max(1, Math.min(365, Number(req.route?.searchParams?.get('days') || 30)));
@@ -3847,6 +3885,15 @@ async function handleRequest(req, res) {
       });
     }
     return handlePatchAutomationLearning(req, res);
+  }
+  if (route.pathname === '/api/automation/learning/export' && req.method === 'GET') {
+    return handleExportLearningState(req, res);
+  }
+  if (route.pathname === '/api/automation/learning/import' && ['POST', 'PUT'].includes(req.method)) {
+    if (auth.role !== 'admin') {
+      return sendJson(res, 403, { ok: false, error: 'forbidden', message: 'Admin role is required to import learning state.' });
+    }
+    return handleImportLearningState(req, res);
   }
   if (route.pathname === '/api/automation/trends' && req.method === 'GET') {
     return handleGetTrends(req, res);

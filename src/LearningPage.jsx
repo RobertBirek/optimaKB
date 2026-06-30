@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { apiFetch, formatDate } from './constants';
 import DataTable from './shared/DataTable';
 import StatusBadge from './shared/StatusBadge';
@@ -124,6 +124,39 @@ export default function LearningPage({ data: _initialData }) {
           {processing ? 'Przetwarzanie...' : 'Przetwórz otwarte'}
         </button>
       </div>
+
+      <details style={{ marginBottom: '1rem' }}>
+        <summary style={{ cursor: 'pointer', fontSize: '0.85rem', color: 'var(--muted)' }}>Learning state — eksport/import</summary>
+        <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+          <button className="secondary" onClick={async () => {
+            const res = await apiFetch('/api/automation/learning/export');
+            if (!res.ok) return;
+            const blob = await res.blob();
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = `learning_state_${new Date().toISOString().slice(0, 10)}.json`;
+            a.click(); URL.revokeObjectURL(url);
+          }}>Eksportuj learning state</button>
+          <label className="secondary" style={{ cursor: 'pointer', padding: '0.4rem 0.75rem', borderRadius: '6px', border: '1px solid var(--line)', fontSize: '0.85rem' }}>
+            Importuj learning state
+            <input type="file" accept=".json" style={{ display: 'none' }} onChange={async (e) => {
+              const file = e.target.files?.[0];
+              if (!file) return;
+              const text = await file.text();
+              try {
+                const data = JSON.parse(text);
+                const payload = { discovery: data.discovery || null, automation: data.automation || null };
+                const res = await apiFetch('/api/automation/learning/import', {
+                  method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
+                });
+                if (res.ok) alert('Learning state zaimportowany.');
+                else { const err = await res.json(); alert(`Błąd: ${err.message}`); }
+              } catch { alert('Nieprawidłowy plik JSON'); }
+              e.target.value = '';
+            }} />
+          </label>
+        </div>
+      </details>
 
       {error && <div className="error-box">{error}</div>}
 
