@@ -754,6 +754,36 @@ export default function SourcesPage({ overview }) {
             />
           </section>
         ) : null}
+        {discovery.learning?.byDomain ? (() => {
+          const domainEntries = Object.entries(discovery.learning.byDomain)
+            .filter(([, d]) => (d.reviewed ?? 0) >= 3)
+            .sort((a, b) => (a[1].noisePenalty ?? 0) - (b[1].noisePenalty ?? 0));
+          if (!domainEntries.length) return null;
+          const suggestAction = (d) => {
+            if ((d.noisePenalty ?? 0) > 0.4) return { label: 'BLOCKLIST', cls: 'bad' };
+            if ((d.acceptanceRate ?? 0) >= 0.8) return { label: 'ALLOWLIST', cls: 'ok' };
+            return null;
+          };
+          return (
+            <section className="queryHealthPanel">
+              <div className="sectionHeader"><div><h3>Sugestie domen</h3><p>Automatyczne rekomendacje na podstawie noise penalty i acceptance rate.</p></div></div>
+              <DataTable
+                rows={domainEntries.map(([domain, d]) => ({ domain, ...d }))}
+                columns={[
+                  { key: 'domain', label: 'Domena', render: (r) => <code>{r.domain}</code> },
+                  { key: 'reviewed', label: 'Reviewed', render: (r) => String(r.reviewed ?? 0) },
+                  { key: 'acceptanceRate', label: 'Accept', render: (r) => r.acceptanceRate != null ? `${(r.acceptanceRate * 100).toFixed(0)}%` : '\u2014' },
+                  { key: 'rejectRate', label: 'Reject', render: (r) => r.rejectRate != null ? `${(r.rejectRate * 100).toFixed(0)}%` : '\u2014' },
+                  { key: 'noisePenalty', label: 'Noise', render: (r) => r.noisePenalty != null ? (r.noisePenalty * 100).toFixed(0) : '0' },
+                  { key: 'suggestion', label: 'Sugestia', render: (r) => {
+                    const s = suggestAction(r);
+                    return s ? <span className={`badge ${s.cls}`} style={{ fontSize: '0.8rem', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>{s.label}</span> : '\u2014';
+                  }},
+                ]}
+              />
+            </section>
+          );
+        })() : null}
       </div> : null}
       {selectedCandidate ? (
         <Modal title="Szczegóły znalezionego źródła" onClose={() => setSelectedCandidate(null)} actions={(
