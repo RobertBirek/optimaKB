@@ -633,7 +633,7 @@ async function main() {
   try {
     let result;
     if (options.autoDraft) {
-      result = await runAutoDraft({ dryRun: options.dryRun !== true });
+      result = await runAutoDraft({ dryRun: options.dryRun });
     } else {
       result = options.weekly ? await runWeekly() : await runDaily(options);
     }

@@ -312,6 +312,11 @@ const REPORTS = {
     jsonPath: 'docs/reference/Optima_Reference_Duplicate_Cleanup_Report.json',
     mdPath: 'docs/reference/Optima_Reference_Duplicate_Cleanup_Report.md',
   },
+  quality_weekly: {
+    title: 'Jakościowy raport tygodniowy',
+    jsonPath: '',
+    mdPath: 'docs/reference/ERP_KB_Quality_Weekly_Report.md',
+  },
 };
 
 function normalizeBasePath(value) {
@@ -2344,19 +2349,24 @@ async function handleImportLearningState(req, res) {
 
 async function handleGetTrends(req, res) {
   try {
-    const days = Math.max(1, Math.min(365, Number(req.route?.searchParams?.get('days') || 30)));
-    const cutoff = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
+    const days = Math.max(0, Math.min(365, Number(req.route?.searchParams?.get('days') || 30)));
+    const cutoff = days === 0 ? '' : new Date(Date.now() - days * 86400000).toISOString().slice(0, 10);
     const trendsPath = path.join(ROOT, 'data/dashboard/learning/trends.jsonl');
     const grouped = {};
     if (fs.existsSync(trendsPath)) {
+      const latestPerDay = {};
       const raw = fs.readFileSync(trendsPath, 'utf8');
       for (const line of raw.trim().split('\n').filter(Boolean)) {
         try {
           const entry = JSON.parse(line);
-          if (entry.date >= cutoff) {
-            (grouped[entry.kbNamespace] = grouped[entry.kbNamespace] || []).push(entry);
+          if (cutoff === '' || entry.date >= cutoff) {
+            const dedupKey = `${entry.date}|${entry.kbNamespace}`;
+            latestPerDay[dedupKey] = entry;
           }
         } catch {}
+      }
+      for (const entry of Object.values(latestPerDay)) {
+        (grouped[entry.kbNamespace] = grouped[entry.kbNamespace] || []).push(entry);
       }
     }
     return sendJson(res, 200, { ok: true, trends: grouped });

@@ -290,6 +290,51 @@ export default function Overview({ overview, setTab }) {
           ))}
         </div>
       </PageShell>
+      <PageShell title="KAG Readiness" description="Stan kluczowych składowych systemu automatycznej wiedzy." className="overviewKag">
+        <div className="kagReadiness">
+          <div className="healthSignalRail">
+            {(() => {
+              const auto = overview.automation || {};
+              const p = auto.providerSecrets || {};
+              const llmOk = auto.llm?.configured;
+              const tavilyOk = p.tavilyApiKey?.configured;
+              const firecrawlOk = p.firecrawlApiKey?.configured;
+              const exaOk = p.exaApiKey?.configured;
+              const discovery = overview.discovery || {};
+              const semiAuto = discovery.semiAuto || {};
+              const cfg = auto.config || {};
+              const learning = learningData || {};
+              const alerts = discovery.qualityAlerts?.length || 0;
+              const gateActive = semiAuto.active;
+              return (
+                <>
+                  <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
+                    <span className="healthSignalDot" /><span>LLM</span><strong><StatusBadge value={llmOk ? 'OK' : 'MISSING'} /></strong>
+                  </button>
+                  <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
+                    <span className="healthSignalDot" /><span>Tavily</span><strong><StatusBadge value={tavilyOk ? 'OK' : 'MISSING'} /></strong>
+                  </button>
+                  <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
+                    <span className="healthSignalDot" /><span>Firecrawl</span><strong><StatusBadge value={firecrawlOk ? 'OK' : 'MISSING'} /></strong>
+                  </button>
+                  <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
+                    <span className="healthSignalDot" /><span>Exa</span><strong><StatusBadge value={exaOk ? 'OK' : 'MISSING'} /></strong>
+                  </button>
+                  <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
+                    <span className="healthSignalDot" /><span>Auto-draft</span><strong><StatusBadge value={gateActive && !cfg.paused ? 'ACTIVE' : 'PAUSED'} /></strong>
+                  </button>
+                  <button type="button" className="healthSignal" onClick={() => setTab('learning')}>
+                    <span className="healthSignalDot" /><span>Learning</span><strong><StatusBadge value={learning?.thresholds ? 'OK' : 'EMPTY'} /></strong>
+                  </button>
+                  <button type="button" className="healthSignal" onClick={() => setTab('sources')}>
+                    <span className="healthSignalDot" /><span>Alerty</span><strong><StatusBadge value={alerts > 0 ? 'WARN' : 'OK'} /></strong>
+                  </button>
+                </>
+              );
+            })()}
+          </div>
+        </div>
+      </PageShell>
     </div>
   );
 }

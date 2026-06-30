@@ -100,7 +100,7 @@ export default function TrendsPage({ overview }) {
                 <div key={ns} className="trendChart">
                   <h4><span className="trendDot" style={{ background: COLORS[index % COLORS.length] }} />{ns}</h4>
                   <svg viewBox={`0 0 ${dim.width} ${dim.height}`} className="trendSvg" preserveAspectRatio="xMidYMid meet">
-                    <polyline fill="none" stroke={COLORS[index % COLORS.length]} strokeWidth="2" strokeLinejoin="round" points={linePath(points, dim)} />
+                    <path d={linePath(points, dim)} fill="none" stroke={COLORS[index % COLORS.length]} strokeWidth="2" strokeLinejoin="round" />
                   </svg>
                   <div className="trendSummary">
                     {points.length} dni | {selectedMetric.format(points.at(-1)?.[metric])} obecnie

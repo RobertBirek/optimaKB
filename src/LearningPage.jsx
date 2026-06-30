@@ -163,7 +163,7 @@ export default function LearningPage({ data: _initialData }) {
       {loading ? (
         <div className="loading">Ładowanie...</div>
       ) : gaps.length === 0 ? (
-        <EmptyState message={filter === 'open' ? 'Brak otwartych luk. Nowe pojawią się po teście lub zapytaniu bez odpowiedzi.' : `Brak luk o statusie "${filter}".`} />
+        <EmptyState title="Brak wyników" description={filter === 'open' ? 'Brak otwartych luk. Nowe pojawią się po teście lub zapytaniu bez odpowiedzi.' : `Brak luk o statusie "${filter}".`} />
       ) : (
         <DataTable
           rows={gaps}
