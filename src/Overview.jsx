@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { ArrowRight, BarChart3, Bot, Database, ExternalLink, FilePlus2, FileStack, Globe, Inbox, Radar, Settings, Sparkles } from 'lucide-react';
+import { AlertTriangle, ArrowRight, BarChart3, Bot, Database, ExternalLink, FilePlus2, FileStack, Globe, Inbox, Radar, Settings, Sparkles } from 'lucide-react';
 import { formatDate, formatNumber, classForStatus } from './constants';
 import PageShell from './shared/PageShell';
 import MetricTile from './shared/MetricTile';
@@ -8,6 +8,7 @@ import IconButton from './shared/IconButton';
 import DonutChart from './shared/DonutChart';
 import BarChart from './shared/BarChart';
 import { buildHealthCockpit } from './shared/healthCockpit';
+import useApi from './shared/useApi';
 
 const TOOL_ICONS = {
   database: Database,
@@ -18,6 +19,7 @@ const TOOL_ICONS = {
 };
 
 export default function Overview({ overview, setTab }) {
+  const { data: learningData } = useApi('/api/automation/learning');
   const summary = overview.summary || {};
   const actions = useMemo(() => overview.actions || [], [overview.actions]);
   const cockpit = useMemo(() => buildHealthCockpit(overview), [overview]);
@@ -223,6 +225,26 @@ export default function Overview({ overview, setTab }) {
             <div className={`alert ${alert.level}`} key={alert.message}>{alert.message}</div>
           ))}
         </div>
+      </PageShell>
+      <PageShell title="Quality Gates" description="Stan learning state per KB." className="overviewQualityGates">
+        {learningData?.thresholds ? (
+          <div className="kbGateGrid">
+            {Object.entries(learningData.thresholds).map(([ns, t]) => {
+              const fpOk = (t.windowFpRate ?? 0) <= 0.1;
+              return (
+                <div key={ns} className={`kbGateCard ${fpOk ? 'gbOk' : 'gbBad'}`}>
+                  <div className="kbGateHeader"><code>{ns}</code><StatusBadge value={fpOk ? 'OK' : 'WARN'} /></div>
+                  <div className="kbGateBody">
+                    <div><span>Tuned</span><strong>{(t.tunedBaseline ?? 0.6).toFixed(2)}</strong></div>
+                    <div><span>FP rate</span><strong>{((t.windowFpRate ?? 0) * 100).toFixed(1)}%</strong></div>
+                    <div><span>Window</span><strong>{t.windowSize ?? 0}</strong></div>
+                    <div><span>Reviewed</span><strong>{t.reviewed ?? 0}</strong></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : <div className="muted" style={{ padding: '12px' }}>Brak danych learning state.</div>}
       </PageShell>
       <PageShell
         title="Podstawowe narzędzia"
