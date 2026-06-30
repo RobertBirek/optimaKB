@@ -3,7 +3,7 @@ import useApi from './shared/useApi';
 import PageShell from './shared/PageShell';
 import PageSkeleton from './shared/Skeleton';
 import EmptyState from './shared/EmptyState';
-import { BarChart3 } from 'lucide-react';
+import { AlertTriangle, BarChart3 } from 'lucide-react';
 import './styles/trends.css';
 
 const METRICS = [
@@ -19,6 +19,7 @@ export default function TrendsPage({ overview }) {
   const [metric, setMetric] = useState('fpRate');
   const [days, setDays] = useState(30);
   const { data, loading } = useApi(`/api/automation/trends?days=${days}`);
+  const { data: alertsData } = useApi('/api/automation/alerts');
 
   const entries = useMemo(() => {
     if (!data?.trends) return [];
@@ -77,6 +78,17 @@ export default function TrendsPage({ overview }) {
             ))}
           </div>
         </div>
+
+        {alertsData?.alerts?.length ? (
+          <div className="alertsBar">
+            {alertsData.alerts.map((alert, i) => (
+              <div key={i} className={`alertItem ${alert.severity}`}>
+                <AlertTriangle size={16} />
+                <span><strong>{alert.kbNamespace}</strong> — {alert.message}</span>
+              </div>
+            ))}
+          </div>
+        ) : null}
 
         {entries.length === 0 ? (
           <EmptyState icon={BarChart3} title="Brak danych historycznych" description="Trendy pojawią się po kilku dniach od włączenia snapshota." />

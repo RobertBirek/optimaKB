@@ -96,6 +96,7 @@ import {
   activeDiscoveryQueries,
   classifyDiscoveryTier,
   createDraftFromDiscoveryCandidate,
+  detectAnomalies,
   discoveryActionForAssessment,
   discoveryFeedbackSummary,
   discoverySemiAutoStatus,
@@ -2325,6 +2326,15 @@ async function handleGetTrends(req, res) {
   }
 }
 
+async function handleGetAlerts(req, res) {
+  try {
+    const alerts = detectAnomalies();
+    return sendJson(res, 200, { ok: true, alerts });
+  } catch (error) {
+    return sendJson(res, 500, { ok: false, error: 'alerts_failed', message: error.message });
+  }
+}
+
 async function handleAutomationRun(req, res) {
   let fields;
   try {
@@ -3840,6 +3850,9 @@ async function handleRequest(req, res) {
   }
   if (route.pathname === '/api/automation/trends' && req.method === 'GET') {
     return handleGetTrends(req, res);
+  }
+  if (route.pathname === '/api/automation/alerts' && req.method === 'GET') {
+    return handleGetAlerts(req, res);
   }
   if (route.pathname.startsWith('/api/automation/jobs/') && route.pathname.endsWith('/reroute/apply') && ['POST', 'PUT'].includes(req.method)) {
     const jobId = decodeURIComponent(route.pathname.slice('/api/automation/jobs/'.length, -'/reroute/apply'.length));

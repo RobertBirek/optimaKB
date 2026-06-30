@@ -883,6 +883,53 @@ export function appendTrendSnapshot() {
   } catch { /* silently fail */ }
 }
 
+export function detectAnomalies() {
+  const alerts = [];
+  try {
+    const policy = loadDiscoveryPolicy();
+    const candidates = listDiscoveryCandidates(5000);
+    const feedback = discoveryFeedbackSummary(candidates);
+    const autoPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
+    const discPath = path.join(ROOT, 'data/dashboard/learning/discovery_learning_state.json');
+    let autoState = null, discState = null;
+    try { autoState = JSON.parse(fs.readFileSync(autoPath, 'utf8')); } catch {}
+    try { discState = JSON.parse(fs.readFileSync(discPath, 'utf8')); } catch {}
+
+    // FP rate spikes per KB
+    if (autoState?.byKbNamespace) {
+      for (const [ns, kb] of Object.entries(autoState.byKbNamespace)) {
+        const fpRate = kb.windowFpRate ?? 0;
+        if (fpRate > 0.15) {
+          alerts.push({ type: 'high_fp_rate', severity: 'high', kbNamespace: ns, message: `FP rate ${(fpRate * 100).toFixed(1)}% — powyżej progu 15%`, value: fpRate.toFixed(3), threshold: '0.15' });
+        } else if (fpRate > 0.10) {
+          alerts.push({ type: 'elevated_fp_rate', severity: 'medium', kbNamespace: ns, message: `FP rate ${(fpRate * 100).toFixed(1)}% — przekroczony próg 10%`, value: fpRate.toFixed(3), threshold: '0.10' });
+        }
+      }
+    }
+
+    // High noise penalty domains
+    if (discState?.byDomain) {
+      for (const [domain, stats] of Object.entries(discState.byDomain)) {
+        const penalty = stats.noisePenalty ?? 0;
+        if (penalty > 0.5) {
+          alerts.push({ type: 'high_noise_domain', severity: 'high', kbNamespace: domain, message: `Domain ${domain} ma noise penalty ${(penalty * 100).toFixed(0)}%`, value: penalty.toFixed(2), threshold: '0.5' });
+        }
+      }
+    }
+
+    // Low acceptance rate per KB
+    if (feedback.byKb) {
+      for (const [ns, kb] of Object.entries(feedback.byKb)) {
+        const acceptRate = kb.acceptanceRate ?? 1;
+        if (kb.reviewed >= 5 && acceptRate < 0.3) {
+          alerts.push({ type: 'low_acceptance', severity: 'medium', kbNamespace: ns, message: `Acceptance rate ${(acceptRate * 100).toFixed(0)}% — poniżej 30% (${kb.reviewed} reviewed)`, value: acceptRate.toFixed(2), threshold: '0.3' });
+        }
+      }
+    }
+  } catch { /* fail silently */ }
+  return alerts;
+}
+
 export function discoveryCalibrationSample(
   candidates = listDiscoveryCandidates(5000),
   target = loadDiscoveryPolicy().calibrationTarget,
