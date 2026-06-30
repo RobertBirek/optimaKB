@@ -55,7 +55,7 @@ const PROFILES = {
     exportDir: 'exports/optima_additional_functions/v1',
     uploadManifest: 'upload_additional_functions_manifest.json',
     buildManifest: 'build_additional_functions_jobs_manifest.json',
-    includeShortNames: false,
+    includeShortNames: true,
     listLimit: 100,
     reuseActive: false,
     fileEntityMap: {
