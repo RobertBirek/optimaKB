@@ -33,6 +33,7 @@ export default function SourcesPage({ overview }) {
   const defaultKb = kbs.find((kb) => kb.namespace === 'TaxbellLegalReference')?.namespace || kbs[0]?.namespace || '';
   const { data: sourceData, loading: sourcesLoading, error: sourcesError, reload: reloadSources } = useApi('/api/source-list');
   const { data: discoveryData, loading: discoveryLoading, error: discoveryError, reload: reloadDiscovery } = useApi('/api/discovery');
+  const { data: autopilotData } = useApi('/api/automation/autopilot');
   const sources = useMemo(() => sourceData?.sources || [], [sourceData?.sources]);
   const discovery = discoveryData?.discovery || {};
   const feedback = discovery.feedback || {};
@@ -533,6 +534,14 @@ export default function SourcesPage({ overview }) {
             <span><strong>{formatNumber(discovery.report?.totals?.duplicates)}</strong> duplikatów</span>
           </div>
         </div>
+        {autopilotData?.autopilot?.frozenKbCount > 0 || autopilotData?.autopilot?.frozenDomainCount > 0 ? (
+          <div className="alert warn">
+            <AlertTriangle size={14} />
+            Autopilot wstrzymał auto-draft dla <strong>{autopilotData.autopilot.frozenKbCount} KB</strong> i <strong>{autopilotData.autopilot.frozenDomainCount} domen</strong> z powodu niskiej jakości.
+            Kandydaci wciąż są zbierani, ale nie idą automatycznie do draftu.
+            {(autopilotData.autopilot.frozenKbNamespaces || []).map((ns) => <code key={ns} style={{ marginLeft: 4 }}>{ns}</code>)}
+          </div>
+        ) : null}
         <div className="savedViewsBar">
           <BookmarkPlus aria-hidden="true" />
           <select value={savedViewId} onChange={(event) => applySavedView(event.target.value)} aria-label="Zapisane widoki źródeł">

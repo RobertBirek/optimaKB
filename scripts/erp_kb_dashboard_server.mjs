@@ -92,6 +92,7 @@ import {
   updateSource,
 } from './lib/dashboard_source_list.mjs';
 import { deriveDiscoveryAutoDraftState } from './lib/feedback_learning.mjs';
+import { loadAutopilotState, autopilotSummary } from './lib/dashboard_autopilot.mjs';
 import {
   activeDiscoveryQueries,
   classifyDiscoveryTier,
@@ -2384,6 +2385,15 @@ async function handleGetAlerts(req, res) {
   }
 }
 
+async function handleGetAutopilot(req, res) {
+  try {
+    const state = loadAutopilotState();
+    return sendJson(res, 200, { ok: true, autopilot: autopilotSummary(state) });
+  } catch (error) {
+    return sendJson(res, 500, { ok: false, error: 'autopilot_failed', message: error.message });
+  }
+}
+
 async function handleGenerateReport(req, res) {
   try {
     const path = generateQualityReport();
@@ -3917,6 +3927,9 @@ async function handleRequest(req, res) {
   }
   if (route.pathname === '/api/automation/trends' && req.method === 'GET') {
     return handleGetTrends(req, res);
+  }
+  if (route.pathname === '/api/automation/autopilot' && req.method === 'GET') {
+    return handleGetAutopilot(req, res);
   }
   if (route.pathname === '/api/automation/alerts' && req.method === 'GET') {
     return handleGetAlerts(req, res);

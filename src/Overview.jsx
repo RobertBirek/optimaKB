@@ -20,6 +20,7 @@ const TOOL_ICONS = {
 
 export default function Overview({ overview, setTab }) {
   const { data: learningData } = useApi('/api/automation/learning');
+  const { data: autopilotData } = useApi('/api/automation/autopilot');
   const summary = overview.summary || {};
   const actions = useMemo(() => overview.actions || [], [overview.actions]);
   const cockpit = useMemo(() => buildHealthCockpit(overview), [overview]);
@@ -304,8 +305,10 @@ export default function Overview({ overview, setTab }) {
               const semiAuto = discovery.semiAuto || {};
               const cfg = auto.config || {};
               const learning = learningData || {};
+              const ap = autopilotData?.autopilot || {};
               const alerts = discovery.qualityAlerts?.length || 0;
               const gateActive = semiAuto.active;
+              const frozenCount = (ap.frozenKbCount || 0) + (ap.frozenDomainCount || 0);
               return (
                 <>
                   <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
@@ -322,6 +325,12 @@ export default function Overview({ overview, setTab }) {
                   </button>
                   <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
                     <span className="healthSignalDot" /><span>Auto-draft</span><strong><StatusBadge value={gateActive && !cfg.paused ? 'ACTIVE' : 'PAUSED'} /></strong>
+                  </button>
+                  <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
+                    <span className="healthSignalDot" /><span>Autopilot</span><strong><StatusBadge value={frozenCount > 0 ? 'WARN' : !ap.recentActions?.length ? 'IDLE' : 'ACTIVE'} /></strong>
+                  </button>
+                  <button type="button" className="healthSignal" onClick={() => setTab('automation')}>
+                    <span className="healthSignalDot" /><span>Freeze</span><strong>{ap.frozenKbCount || 0}/{ap.frozenDomainCount || 0}</strong>
                   </button>
                   <button type="button" className="healthSignal" onClick={() => setTab('learning')}>
                     <span className="healthSignalDot" /><span>Learning</span><strong><StatusBadge value={learning?.thresholds ? 'OK' : 'EMPTY'} /></strong>

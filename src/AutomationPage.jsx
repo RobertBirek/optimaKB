@@ -14,6 +14,7 @@ import useApi from './shared/useApi';
 
 export default function AutomationPage({ overview }) {
   const { data: automationData, loading, error, reload } = useApi('/api/automation');
+  const { data: autopilotData } = useApi('/api/automation/autopilot');
   const automation = automationData?.automation || {};
   const config = automation.config || {};
   const jobs = automation.jobs || [];
@@ -341,6 +342,17 @@ export default function AutomationPage({ overview }) {
         <div className="detailPanel shadowReport">
           <strong>Ostatni benchmark shadow</strong>
           <div className="detailMeta"><span>{formatDate(automation.shadowReport.generatedAt)}</span><span>match {automation.shadowReport.summary?.matches || 0}/{automation.shadowReport.summary?.complete || 0}</span><span>exceptions {automation.shadowReport.summary?.exceptions || 0}</span><span>próg {automation.shadowReport.calibration?.recommended?.threshold ?? 'brak'}</span></div>
+        </div>
+      ) : null}
+      {autopilotData?.autopilot?.recentActions?.length ? (
+        <div className="detailPanel">
+          <strong>Ostatnie działania autopilota</strong>
+          <div className="detailMeta"><span>{autopilotData.autopilot.frozenKbCount} KB frozen</span><span>{autopilotData.autopilot.frozenDomainCount} domain frozen</span><span>{autopilotData.autopilot.throttledCount} throttled</span></div>
+          <div className="actionLog">
+            {autopilotData.autopilot.recentActions.slice(-8).reverse().map((a, i) => (
+              <div key={i}><StatusBadge value={a.type} /> <strong>{a.ns || a.domain || ''}</strong> <span className="muted">{a.reason || ''}</span></div>
+            ))}
+          </div>
         </div>
       ) : null}
       <DataTable rows={jobs} onRowClick={setSelected} columns={[

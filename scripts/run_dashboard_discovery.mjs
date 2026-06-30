@@ -40,6 +40,7 @@ import { appendDashboardAudit } from './lib/dashboard_audit.mjs';
 import { contentHash, findExistingDraftBySourceUrl, normalizeUrl } from './lib/dashboard_source_list.mjs';
 import { TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { OPENSPG_API_BASE } from './lib/config.mjs';
+import { evaluateAutopilotDecisions, applyAutopilotDecisions, loadAutopilotState, effectiveThreshold, isKbFrozen, isDomainFrozen, autopilotSummary } from './lib/dashboard_autopilot.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const API_BASE = OPENSPG_API_BASE;
@@ -314,14 +315,20 @@ async function runDaily(options) {
         });
         run.candidateCount += 1;
         const remainingDaily = checkAutoDraftDailyLimit();
+        const autopilotState = loadAutopilotState();
+        const baseThreshold = semiAuto?.perKb?.[targetProfile.kbNamespace]?.threshold ?? policy.semiAutoMinConfidence;
+        const effThreshold = effectiveThreshold(baseThreshold, autopilotState, targetProfile.kbNamespace);
+        const frozenKb = isKbFrozen(targetProfile.kbNamespace, autopilotState);
+        const frozenDomain = isDomainFrozen(tier, autopilotState) || isDomainFrozen(new URL(canonicalUrl).hostname, autopilotState);
         const semiAutoEligible = (
           !run.dryRun
           && semiAuto.active
           && semiAutoDrafts < policy.semiAutoMaxPerRun
           && remainingDaily > 0
           && action === 'CREATE_DRAFT'
+          && !frozenKb && !frozenDomain
           && (tier === 'official' || tier === 'professional')
-          && biasedAssessment.confidence >= (semiAuto?.perKb?.[targetProfile.kbNamespace]?.threshold ?? policy.semiAutoMinConfidence)
+          && biasedAssessment.confidence >= effThreshold
           && policy.semiAutoAllowedNamespaces.includes(targetProfile.kbNamespace)
           && (semiAuto?.perKb?.[targetProfile.kbNamespace]?.eligible !== false)
         );
@@ -374,6 +381,20 @@ async function runDaily(options) {
   });
   appendTrendSnapshot();
   fireAnomalyWebhook();
+  // Autopilot decisions after daily run
+  try {
+    const automationLearningPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
+    const discoveryLearningPath = path.join(ROOT, 'data/dashboard/learning/discovery_learning_state.json');
+    let autoLs = null, discLs = null;
+    try { autoLs = JSON.parse(fs.readFileSync(automationLearningPath, 'utf8')); } catch {}
+    try { discLs = JSON.parse(fs.readFileSync(discoveryLearningPath, 'utf8')); } catch {}
+    const autopilotDecisions = evaluateAutopilotDecisions(autoLs, discLs);
+    if (autopilotDecisions.freezeKb.length || autopilotDecisions.freezeDomain.length || autopilotDecisions.throttle.length) {
+      applyAutopilotDecisions(autopilotDecisions);
+    }
+  } catch (error) {
+    process.stderr.write(`[autopilot] evaluation failed: ${error.message}\n`);
+  }
   return run;
 }
 
@@ -583,11 +604,18 @@ async function runAutoDraft(options = {}) {
     const ns = candidate.kbNamespace;
     const nsState = semiAuto?.perKb?.[ns];
     if (!nsState?.eligible) continue;
-    const effectiveThreshold = nsState.threshold;
+    const autopilotState = loadAutopilotState();
+    const baseThresh = nsState.threshold;
+    const effThresh = effectiveThreshold(baseThresh, autopilotState, ns);
+    if (isKbFrozen(ns, autopilotState)) continue;
+    try {
+      const hostname = new URL(candidate.canonicalUrl || '').hostname;
+      if (isDomainFrozen(hostname, autopilotState)) continue;
+    } catch {}
     const confidence = Number(candidate.assessment?.confidence || 0);
     const tier = candidate.sourceTier;
     if (tier !== 'official' && tier !== 'professional') continue;
-    if (confidence < effectiveThreshold) continue;
+    if (confidence < effThresh) continue;
     if (!policy.semiAutoAllowedNamespaces.includes(ns)) continue;
     run.candidateCount += 1;
     if (run.dryRun) continue;
