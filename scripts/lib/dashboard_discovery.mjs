@@ -1646,6 +1646,22 @@ function duplicateExplanation(candidate) {
   };
 }
 
+export function fireAnomalyWebhook() {
+  try {
+    const configPath = path.join(ROOT, 'data/dashboard/automation/config.json');
+    let webhookUrl = '';
+    try { webhookUrl = JSON.parse(fs.readFileSync(configPath, 'utf8')).anomalyWebhookUrl || ''; } catch {}
+    if (!webhookUrl) return;
+    const alerts = detectAnomalies();
+    if (!alerts.length) return;
+    fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ source: 'erp-kb-dashboard', alerts, generatedAt: new Date().toISOString() }),
+    }).catch(() => {});
+  } catch { /* silently fail */ }
+}
+
 export function generateQualityReport() {
   const report = [];
   const now = new Date();

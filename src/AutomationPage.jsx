@@ -252,6 +252,7 @@ export default function AutomationPage({ overview }) {
         <label className="toggleControl"><input type="checkbox" checked={Boolean(config.shadowOnly)} onChange={(event) => updateConfig({ shadowOnly: event.target.checked })} disabled={Boolean(busy) || (config.shadowOnly && (!gate.approved || config.shadowOnlyForced))} /> Tylko shadow, bez publikacji{config.shadowOnlyForced ? ' (wymuszone przez usługę)' : ''}</label>
         <label>Canary namespace<select value={config.allowedNamespaces?.[0] || ''} onChange={(event) => updateConfig({ allowedNamespaces: event.target.value ? [event.target.value] : [] })} disabled={Boolean(busy)}><option value="">Wszystkie</option>{namespaces.map((namespace) => <option value={namespace} key={namespace}>{namespace}</option>)}</select></label>
         <label>Minimalne confidence<select value={String(config.minimumConfidence ?? 0.85)} onChange={(event) => updateConfig({ minimumConfidence: Number(event.target.value) })} disabled={Boolean(busy)}><option value="0.7">70%</option><option value="0.8">80%</option><option value="0.85">85%</option><option value="0.9">90%</option><option value="0.95">95%</option></select></label>
+        <label>Webhook URL (anomalie)<input type="url" value={config.anomalyWebhookUrl || ''} placeholder="https://hooks.slack.com/..." onChange={(event) => updateConfig({ anomalyWebhookUrl: event.target.value })} disabled={Boolean(busy) || overview?.service?.role !== 'admin'} /></label>
       </div>
       <div className="detailPanel">
         <strong>Klucze providerów treści</strong>

@@ -32,6 +32,7 @@ import {
   writeDiscoveryRun,
   appendAutoDraftLog,
   appendTrendSnapshot,
+  fireAnomalyWebhook,
   checkAutoDraftDailyLimit,
   incrementAutoDraftDailyCount,
 } from './lib/dashboard_discovery.mjs';
@@ -372,6 +373,7 @@ async function runDaily(options) {
     after: run,
   });
   appendTrendSnapshot();
+  fireAnomalyWebhook();
   return run;
 }
 

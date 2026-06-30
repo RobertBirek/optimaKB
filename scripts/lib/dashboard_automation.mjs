@@ -46,6 +46,7 @@ const DEFAULT_CONFIG = {
   pauseReason: '',
   pausedAt: '',
   maxRecentJobs: 100,
+  anomalyWebhookUrl: '',
   updatedAt: '',
   updatedBy: '',
 };
@@ -204,6 +205,9 @@ export function saveAutomationConfig(patch = {}, operator = '') {
             : '',
           ...(patch.publicationApproved ? {} : { shadowOnly: true }),
         }),
+    ...(patch.anomalyWebhookUrl === undefined
+      ? {}
+      : { anomalyWebhookUrl: String(patch.anomalyWebhookUrl || '').slice(0, 500) }),
     updatedAt: new Date().toISOString(),
     updatedBy: String(operator || 'dashboard').trim(),
   };
