@@ -841,11 +841,12 @@ function crontabStatus() {
 
 function reportSummary() {
   return Object.entries(REPORTS).map(([key, config]) => {
-    const json = readJsonIfExists(config.jsonPath, null);
+    const json = config.jsonPath ? readJsonIfExists(config.jsonPath, null) : null;
     const report = {
       key,
       title: config.title,
-      json: fileInfo(config.jsonPath),
+      hasJsonPath: Boolean(config.jsonPath),
+      json: config.jsonPath ? fileInfo(config.jsonPath) : { exists: false, relativePath: '' },
       markdown: fileInfo(config.mdPath),
       status: json?.overall || json?.summary?.counts || json?.summary || null,
     };
@@ -864,6 +865,7 @@ function reportOverallStatus(report) {
   if (typeof status?.PASS === 'number' && typeof status?.MISS === 'number') {
     return status.MISS === 0 ? 'PASS' : 'FAIL';
   }
+  if (!report.hasJsonPath && report.markdown.exists) return 'OK';
   return report.json.exists ? 'OK' : 'MISSING';
 }
 
