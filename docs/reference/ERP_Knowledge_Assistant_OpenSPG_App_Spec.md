@@ -28,6 +28,7 @@ The app should provide one entry point for:
 - `ComarchOptimaReference` (`project 8`)
 - `ComarchOptimaPartnerTechnical` (`project 9`)
 - `ComarchBetterflyReference` (`project 10`)
+- `OWAOntology` (`project 16`)
 
 ## App name
 

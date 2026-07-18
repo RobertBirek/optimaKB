@@ -19,6 +19,7 @@ Active KBs covered:
 - `ComarchOptimaPartnerTechnical`
 - `ComarchOptimaBusinessSemantics`
 - `ComarchBetterflyReference`
+- `OWAOntology`
 
 ## Executive Summary
 
@@ -40,6 +41,7 @@ Overall assessment by KB:
 - `ComarchOptimaPartnerTechnical` -> `GOOD`
 - `ComarchOptimaBusinessSemantics` -> `READY`
 - `ComarchBetterflyReference` -> `READY`
+- `OWAOntology` -> `GOOD`
 
 Interpretation:
 

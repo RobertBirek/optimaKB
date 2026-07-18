@@ -1,0 +1,88 @@
+namespace OWAOntology
+
+TaxoOfOntologyCategory(TaxoOfOntologyCategory): ConceptType
+	hypernymPredicate: isA
+
+OntologyEntity(OntologyEntity): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		canonicalName(canonicalName): Text
+			index: Text
+		ontologyId(ontologyId): Text
+			index: Text
+		verificationStatus(verificationStatus): Text
+		confidenceLevel(confidenceLevel): Text
+		businessDomain(businessDomain): Text
+		mainTable(mainTable): Text
+		mcpReadTools(mcpReadTools): Text
+		mcpWriteTools(mcpWriteTools): Text
+		aliases(aliases): Text
+		summary(summary): Text
+			index: TextAndVector
+
+OntologyField(OntologyField): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		entityRefId(entityRefId): Text
+		fieldName(fieldName): Text
+			index: Text
+		mssqlColumn(mssqlColumn): Text
+		mcpField(mcpField): Text
+		sqlType(sqlType): Text
+		nullable(nullable): Text
+		keyRole(keyRole): Text
+		mappingStatus(mappingStatus): Text
+		summary(summary): Text
+			index: TextAndVector
+
+OntologyRelation(OntologyRelation): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceEntityRefId(sourceEntityRefId): Text
+		targetEntityRefId(targetEntityRefId): Text
+		predicate(predicate): Text
+			index: Text
+		cardinality(cardinality): Text
+		relationType(relationType): Text
+		joinCondition(joinCondition): Text
+		status(status): Text
+		summary(summary): Text
+			index: TextAndVector
+
+WorkflowPattern(WorkflowPattern): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		workflowName(workflowName): Text
+			index: Text
+		sourceEntityRefId(sourceEntityRefId): Text
+		targetEntityRefId(targetEntityRefId): Text
+		mcpTool(mcpTool): Text
+		mode(mode): Text
+		status(status): Text
+		summary(summary): Text
+			index: TextAndVector
+
+Chunk(Chunk): EntityType
+	properties:
+		description(description): Text
+		name(name): Text
+		semanticType(semanticType): Text
+			index: Text
+		sourceDocumentRefId(sourceDocumentRefId): Text
+		sourcePath(sourcePath): Text
+		sectionHeading(sectionHeading): Text
+		sectionOrder(sectionOrder): Text
+		content(content): Text
+			index: TextAndVector

@@ -60,6 +60,10 @@ export const TARGET_KBS = {
     kbName: 'Comarch Universal Knowledge',
     namespace: 'ComarchUniversalKnowledge',
   },
+  OWAOntology: {
+    kbName: 'OWA Platform Optima Ontology',
+    namespace: 'OWAOntology',
+  },
 };
 
 function ensureDir(dirPath) {

@@ -108,6 +108,15 @@
       "buildManifestPath": "",
       "primaryFiles": ["reference_document.csv", "chunk.csv"],
       "enabled": true
+    },
+    {
+      "namespace": "OWAOntology",
+      "kbName": "OWA Platform Optima Ontology",
+      "category": "OWA",
+      "exportDir": "exports/owa_ontology/v1",
+      "buildManifestPath": "exports/owa_ontology/v1/build_owa_ontology_jobs_manifest.json",
+      "primaryFiles": ["ontology_entity.csv", "ontology_field.csv", "ontology_relation.csv", "workflow_pattern.csv", "chunk.csv"],
+      "enabled": true
     }
   ]
 }

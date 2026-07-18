@@ -28,6 +28,8 @@ const STOPWORDS = new Set([
   'i', 'ich', 'jak', 'jakie', 'jaki', 'jest', 'kiedy', 'ktore', 'ktory', 'lub',
   'na', 'nad', 'nie', 'od', 'oraz', 'po', 'pod', 'przy', 'sie', 'sql', 'to',
   'u', 'w', 'we', 'z', 'za', 'ze',
+  'pokaz', 'ontologia', 'ontologii', 'encja', 'encji', 'mapowanie', 'mapuje',
+  'mcp', 'mssql', 'owa',
 ]);
 
 export function extractTerms(question) {
@@ -40,11 +42,28 @@ export function extractTerms(question) {
   return [...new Set(tokens)];
 }
 
+export function extractFocusHints(question) {
+  const normalizedQuestion = normalizeText(question);
+  const hints = [];
+  const patterns = [
+    /encj[aiy]?\s+(.+?)\s+i\s+mapowan/,
+    /dla\s+encj[aiy]?\s+(.+?)\s+i\s+mapowan/,
+    /ontologi[ai]\s+owa\s+dla\s+encj[aiy]?\s+(.+?)\s+i\s+mapowan/,
+  ];
+  for (const pattern of patterns) {
+    const match = normalizedQuestion.match(pattern);
+    if (!match) continue;
+    const value = String(match[1] || '').trim();
+    if (value) hints.push(value);
+  }
+  return [...new Set(hints)];
+}
+
 function resolveArtifactPath(relativePath) {
   return path.isAbsolute(relativePath) ? relativePath : path.join(ROOT, relativePath);
 }
 
-function scoreLine(lineNormalized, terms) {
+function scoreLine(lineNormalized, terms, focusHints = []) {
   let score = 0;
   for (const term of terms) {
     if (lineNormalized.includes(term)) {
@@ -58,13 +77,29 @@ function scoreLine(lineNormalized, terms) {
       }
     }
   }
+  for (const hint of focusHints) {
+    if (!hint) continue;
+    if (lineNormalized.includes(hint)) {
+      score += 8;
+      continue;
+    }
+    const hintTokens = hint.split(/[^a-z0-9_]+/).filter(Boolean);
+    if (hintTokens.length && hintTokens.every((token) => lineNormalized.includes(token))) {
+      score += 4;
+    }
+  }
   return score;
 }
 
-export function scanArtifact(relativePath, terms, limit = 4) {
+export function scanArtifact(relativePath, terms, focusHints = [], limit = 4) {
   const filePath = resolveArtifactPath(relativePath);
   if (!fs.existsSync(filePath)) {
     return { artifact: relativePath, type: 'missing', hits: [] };
+  }
+
+  const stats = fs.statSync(filePath);
+  if (stats.isDirectory()) {
+    return { artifact: relativePath, type: 'directory', hits: [] };
   }
 
   const raw = fs.readFileSync(filePath, 'utf8');
@@ -75,7 +110,7 @@ export function scanArtifact(relativePath, terms, limit = 4) {
     const line = lines[index].trim();
     if (!line) continue;
     const normalized = normalizeText(line);
-    const score = scoreLine(normalized, terms);
+    const score = scoreLine(normalized, terms, focusHints);
     if (score <= 0) continue;
     hits.push({
       line: index + 1,
@@ -93,7 +128,7 @@ export function scanArtifact(relativePath, terms, limit = 4) {
   };
 }
 
-export function gatherEvidence(response, terms) {
+export function gatherEvidence(response, terms, focusHints = []) {
   const evidence = [];
   const groups = [
     { kb: response.primaryKb.name, artifacts: response.primaryKb.artifacts || [] },
@@ -102,7 +137,7 @@ export function gatherEvidence(response, terms) {
 
   for (const group of groups) {
     for (const artifact of group.artifacts) {
-      const result = scanArtifact(artifact, terms, 3);
+        const result = scanArtifact(artifact, terms, focusHints, 3);
       if (result.hits.length) {
         evidence.push({
           kb: group.kb,
@@ -210,7 +245,8 @@ export async function answerQuestion(question, allowedNamespaces = null) {
   const classified = classifyQuestion(question, routing, allowedNamespaces);
   const response = buildResponse(classified, routing, allowedNamespaces);
   const terms = extractTerms(question);
-  const evidence = gatherEvidence(response, terms, allowedNamespaces);
+  const focusHints = extractFocusHints(question);
+  const evidence = gatherEvidence(response, terms, focusHints, allowedNamespaces);
   evidence.sort((a, b) => {
     const priorityDiff = kbPriority(response, a.kb) - kbPriority(response, b.kb);
     if (priorityDiff !== 0) return priorityDiff;

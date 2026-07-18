@@ -151,6 +151,21 @@ export const KB_DETAILS = {
       'exports/universal_knowledge/v1/chunk.csv',
     ],
   },
+  OWAOntology: {
+    projectId: 16,
+    namespace: 'OWAOntology',
+    summary: 'Global ontology for Comarch ERP Optima in OWA: canonical entities, MCP mappings, MSSQL mappings, relations, and workflow patterns.',
+    artifacts: [
+      'docs/reference/OWAOntology.schema',
+      'docs/reference/OWAOntology.seed.md',
+      'exports/owa_ontology/v1/ontology_entity.csv',
+      'exports/owa_ontology/v1/ontology_field.csv',
+      'exports/owa_ontology/v1/ontology_relation.csv',
+      'exports/owa_ontology/v1/chunk.csv',
+      'downloads/knowledge_inbox/2026-07-15/',
+      'downloads/knowledge_inbox/2026-07-17/',
+    ],
+  },
 };
 
 const BLENDED_RULES = [

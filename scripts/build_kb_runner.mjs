@@ -251,6 +251,26 @@ const PROFILES = {
       'chunk.csv': 'Chunk',
     },
   },
+  owa_ontology: {
+    projectId: 16,
+    namespace: 'OWAOntology',
+    jobPrefix: 'OWAO',
+    exportDir: 'exports/owa_ontology/v1',
+    uploadManifest: 'upload_owa_ontology_manifest.json',
+    buildManifest: 'build_owa_ontology_jobs_manifest.json',
+    readmeTitle: 'OWAOntology',
+    includeShortNames: true,
+    listLimit: 200,
+    reuseActive: true,
+    activeJobMaxAgeMinutes: 30,
+    fileEntityMap: {
+      'ontology_entity.csv': 'OntologyEntity',
+      'ontology_field.csv': 'OntologyField',
+      'ontology_relation.csv': 'OntologyRelation',
+      'workflow_pattern.csv': 'WorkflowPattern',
+      'chunk.csv': 'Chunk',
+    },
+  },
 };
 
 function parseArgs(args) {

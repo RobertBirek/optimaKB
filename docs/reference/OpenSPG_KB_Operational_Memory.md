@@ -21,6 +21,60 @@ pattern-level rather than corpus-level.
 - Main current KB: `ComarchOptimaSchema`
 - Current project id: `4`
 
+## OWA Ontology Draft Corpus
+
+On `2026-07-15` to `2026-07-17`, a new draft-only ontology corpus for Comarch
+ERP Optima was prepared for the OWA project:
+
+- KB display name: `OWA Platform Optima Ontology`
+- Namespace: `OWAOntology`
+- Current state: `first_build_complete`
+- OpenSPG project id: `16`
+- Local draft roots:
+  - `downloads/knowledge_inbox/2026-07-15/`
+  - `downloads/knowledge_inbox/2026-07-17/`
+
+Verified facts about this corpus:
+
+- `66` ontology entities were drafted as JSON/Markdown pairs.
+- Verification sources used:
+  - live `MSSQL` reads against `CDN_TEST`
+  - live `OptimaMCP` read tools
+  - `ComarchOptimaSchema`
+  - `ComarchOptimaBusinessSemantics`
+- The inbox validator and promotion layer were extended locally to accept
+  namespace `OWAOntology` by adding it to:
+  - `scripts/lib/promoted_knowledge.mjs`
+  - `scripts/lib/knowledge_inbox.mjs`
+- Services restarted after that local extension:
+  - `erp-kb-mcp.service`
+  - `erp-kb-dashboard.service`
+- Result: `OptimaKB_submit_knowledge_draft` now accepts `OWAOntology` and writes
+  drafts successfully into the local inbox.
+
+Known remaining gap:
+
+- project `16` exists and schema push succeeded
+- first export/build pipeline now exists:
+  - `scripts/export_owa_ontology.mjs`
+  - `scripts/build_owa_ontology.mjs`
+  - profile `owa_ontology` in `scripts/build_kb_runner.mjs`
+  - pipeline target `OWAOntology` in `scripts/run_knowledge_inbox_pipeline.mjs`
+- first verified build completed successfully:
+  - job `393` `OntologyEntity` `FINISH`
+  - job `394` `OntologyField` `FINISH`
+  - job `395` `OntologyRelation` `FINISH`
+  - job `396` `Chunk` `FINISH`
+- current staged counts:
+  - `ontology_entity.csv` -> `67`
+  - `ontology_field.csv` -> `109`
+  - `ontology_relation.csv` -> `147`
+  - `workflow_pattern.csv` -> `0`
+  - `chunk.csv` -> `189`
+- known remaining tuning gap:
+  - workflow extraction is not yet materialized into `workflow_pattern.csv`
+    from the current markdown drafts, so the first build loads `0` workflow rows
+
 Do not store passwords, cookies, or tokens here.
 
 ## Taxbell Reference KBs

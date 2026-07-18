@@ -89,6 +89,12 @@ const PIPELINE_TARGETS = {
     buildScript: '',
     promotedForceFiles: ['reference_document.csv', 'chunk.csv'],
   },
+  OWAOntology: {
+    projectId: '16',
+    exportScript: 'scripts/export_owa_ontology.mjs',
+    buildScript: 'scripts/build_owa_ontology.mjs',
+    promotedForceFiles: ['ontology_entity.csv', 'ontology_field.csv', 'ontology_relation.csv', 'workflow_pattern.csv', 'chunk.csv'],
+  },
 };
 
 function usage() {

@@ -39,6 +39,11 @@
       "projectId": 10
     },
     {
+      "name": "OWAOntology",
+      "displayName": "OWA Platform Optima Ontology",
+      "projectId": 16
+    },
+    {
       "name": "ComarchOptimaBusinessSemantics",
       "displayName": "Comarch Optima Business Semantics",
       "projectId": 15
@@ -56,9 +61,10 @@
       "TaxbellLegalReference",
       "TaxbellPayrollHRReference",
       "TaxbellAccountingVATReference",
-      "ComarchCommunityNews",
-      "ComarchOptimaBusinessSemantics",
-      "ComarchOptimaSchema",
+        "ComarchCommunityNews",
+        "OWAOntology",
+        "ComarchOptimaBusinessSemantics",
+        "ComarchOptimaSchema",
       "ComarchOptimaAdditionalFunctions",
       "ComarchOptimaSprint",
       "ComarchOptimaReference",
@@ -154,6 +160,29 @@
           "ksef pod lupą",
           "comarch tna",
           "comarch betterfly"
+        ]
+      },
+      {
+        "intent": "owa_optima_ontology",
+        "primaryKb": "OWAOntology",
+        "supportKbs": [
+          "ComarchOptimaBusinessSemantics",
+          "ComarchOptimaSchema"
+        ],
+        "keywords": [
+          "ontologi",
+          "encj",
+          "kanoniczn",
+          "mapowani",
+          "mcp",
+          "mssql",
+          "relacj",
+          "workflow",
+          "owa",
+          "rzeczywisty model",
+          "api do mssql",
+          "predykat",
+          "kardynalno"
         ]
       },
       {
@@ -305,6 +334,14 @@
       }
     ],
     "blendedRoutes": [
+      {
+        "case": "owa_ontology_with_schema_and_semantics",
+        "primaryKb": "OWAOntology",
+        "supportKbs": [
+          "ComarchOptimaBusinessSemantics",
+          "ComarchOptimaSchema"
+        ]
+      },
       {
         "case": "print_sql_and_joins",
         "primaryKb": "ComarchOptimaSprint",

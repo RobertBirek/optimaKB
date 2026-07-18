@@ -173,6 +173,24 @@ Notes:
 - `submit_knowledge_draft` is the MCP tool for creating local JSON/Markdown
   knowledge drafts under `downloads/knowledge_inbox/` before promoting them to
   a real KB export/build flow.
+- `OWA Platform Optima Ontology` currently exists as a large draft-only corpus
+  under `downloads/knowledge_inbox/2026-07-15/` and follow-up submissions under
+  `downloads/knowledge_inbox/2026-07-17/`.
+- The first build-ready export/build pipeline for `OWAOntology` now exists:
+  - schema: `docs/reference/OWAOntology.schema`
+  - seed note: `docs/reference/OWAOntology.seed.md`
+  - exporter: `scripts/export_owa_ontology.mjs`
+  - builder: `scripts/build_owa_ontology.mjs`
+  - staging: `exports/owa_ontology/v1/`
+- Current state of that corpus:
+  - `66` source ontology entities prepared as JSON/Markdown draft pairs
+  - first built export currently materializes `67` ontology entities, `109`
+    ontology fields, `147` ontology relations, and `189` chunks
+  - source verification combines live `OptimaMCP` read tools, live `MSSQL`
+    metadata from `CDN_TEST`, and `ComarchOptimaSchema` /
+    `ComarchOptimaBusinessSemantics`
+  - namespace `OWAOntology` is accepted by the local inbox validator after the
+    July 2026 extension and now has OpenSPG project `16`
 - That preflight was executed successfully on `2026-06-02`, so the current
   `erp-kb` intranet bridge pack is verified end to end, not only syntax-checked.
 - `scripts/erp_knowledge_assistant.mjs` is the first operational question router across all active Optima and Betterfly KBs. It does not query OpenSPG directly; it classifies questions and returns the correct KB/artifact starting point.

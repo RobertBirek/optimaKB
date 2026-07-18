@@ -55,6 +55,7 @@ const ALLOWED_KB_NAMESPACES = new Set([
   'TaxbellPayrollHRReference',
   'TaxbellAccountingVATReference',
   'ComarchUniversalKnowledge',
+  'OWAOntology',
 ]);
 const ALLOWED_SOURCE_TIERS = new Set(['official', 'community', 'third_party', 'official_law', 'official_authority', 'professional_commentary', 'news_or_low', 'operator_draft']);
 
