@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_116f0633_encja-cena-towaru",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Cena towaru",
+  "content": "# Encyja: Cena towaru\n\n## Status weryfikacji\n**Częściowo zweryfikowane** — struktura tabeli potwierdzona przez AGENTS.md, endpointy MCP potwierdzone. Kolumny niezweryfikowane w MSSQL.\n\n## Opis biznesowy\nCena towaru (CDN.TwrCeny) przechowuje definicje cen dla towarów. Każdy towar może mieć wiele cen (rozróżnianych przez `TwC_TwCNumer`). Cena może być wyrażona jako wartość brutto/netto, marża lub narzut. Obsługiwane są przeliczenia walutowe i zaokrąglenia.\n\n## Reguły biznesowe\n- UNIQUE na (TwC_TwrID, TwC_TwCNumer) — nie może być duplikatu numeru ceny dla tego samego towaru\n- FK do Towary z CASCADE — usunięcie towaru kasuje wszystkie jego ceny\n- `TwC_Typ` określa rodzaj ceny (netto/brutto/marża/narzut) [UNKNOWN — enum]\n- `TwC_WartoscZakOld` przechowuje poprzednią wartość zakupu\n\n## Źródła danych\n- **Tabela główna**: `CDN.TwrCeny` (BASE TABLE)\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| `TwC_TwCID` | int IDENTITY | PK |\n| `TwC_TwrID` | int FK→CDN.Towary | Towar, którego dotyczy cena |\n| `TwC_TwCNumer` | int | Numer ceny (unikalny per towar) |\n\n## Pola i mapowanie API↔MSSQL\n- `TwC_TwCID` (int, IDENTITY, PK) — NOT EXPOSED BY MCP\n- `TwC_TwrID` (int, FK→Towary, CASCADE) — NOT EXPOSED BY MCP\n- `TwC_TwCNumer` (int) — NOT EXPOSED BY MCP\n- `TwC_Typ` — `get_item_price_info` (READ)\n- `TwC_Wartosc` — `get_item_price_info` / `set_item_price` / `calculate_price`\n- `TwC_Waluta` — NOT EXPOSED BY MCP\n- `TwC_Aktualizacja` — NOT EXPOSED BY MCP\n- `TwC_Zaokraglenie` — NOT EXPOSED BY MCP\n- `TwC_Marza` — `get_item_price_info` (READ)\n- `TwC_MarzaWStu` — NOT EXPOSED BY MCP\n- `TwC_Offset` — NOT EXPOSED BY MCP\n- `TwC_DokID` — NOT EXPOSED BY MCP\n- `TwC_WartoscZakOld` — NOT EXPOSED BY MCP\n- `TwC_Punkty` — NOT EXPOSED BY MCP\n\n## Relacje ontologiczne\n- **NALEZY_DO_TOWARU** (N:1) → `CDN.Towary` przez `TwC_TwrID → Twr_TwrId` (CASCADE)\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `get_item_price_info` | READ — pobiera cenę towaru |\n| `set_item_price` | WRITE — ustawia cenę |\n| `create_item_price` | WRITE — tworzy cenę |\n| `calculate_price` | WRITE — kalkulacja ceny bez zapisu |\n\n## Pochodzenie wiedzy\n- AGENTS.md + analiza manualna MCP\n- Struktura tabeli zdefiniowana w AGENTS.md (sekcja \"Entities to create\")\n- Kolumny niezweryfikowane w MSSQL\n\n## Otwarte problemy\n1. Kolumny MSSQL niezweryfikowane przez `mssql_describe_table`. Należy wykonać SELECT.\n2. Enum `TwC_Typ`: jakie wartości dla netto, brutto, marży, narzutu?\n3. Jak API `get_item_price_info` zwraca które kolumny?\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.TwrCeny`\n\n## Walidacja\n- [ ] Sprawdź `mssql_describe_table` dla CDN.TwrCeny\n- [ ] Potwierdź enum TwC_Typ\n- [ ] Zweryfikuj endpoint `get_item_price_info` dla przykładowego towaru",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "cena-towaru",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:34.290Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:25.699Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_116f0633_encja-cena-towaru.json"
+}

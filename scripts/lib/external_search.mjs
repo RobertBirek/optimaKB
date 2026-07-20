@@ -5,6 +5,8 @@ import path from 'path';
 import { spawn } from 'child_process';
 import { submitKnowledgeDraft } from './knowledge_inbox.mjs';
 import { TARGET_KBS, loadPromotedKnowledge, listInboxDrafts } from './promoted_knowledge.mjs';
+import { cleanBoilerplate } from './content_cleaner.mjs';
+import { loadProviderSecrets } from './provider_secrets.mjs';
 import {
   buildExternalCitationLine,
   classifySourceTier,
@@ -21,7 +23,6 @@ const FALLBACK_LOG = path.join(LOG_DIR, 'external_search_fallback.jsonl');
 const DISCOVERY_LOG = path.join(LOG_DIR, 'external_search_discovery.jsonl');
 
 const EXA_PROVIDER = process.env.EXA_PROVIDER || 'auto';
-const EXA_API_KEY = process.env.EXA_API_KEY || '';
 const EXA_API_URL = process.env.EXA_API_URL || 'https://api.exa.ai/search';
 const EXA_USER_LOCATION = process.env.EXA_USER_LOCATION || 'PL';
 const EXA_DEFAULT_NUM_RESULTS = Number(process.env.EXA_DEFAULT_NUM_RESULTS || '5');
@@ -65,8 +66,9 @@ function appendJsonLine(filePath, payload) {
 }
 
 function providerAvailability() {
+  const { exaApiKey } = loadProviderSecrets();
   return {
-    api: Boolean(EXA_API_KEY),
+    api: Boolean(exaApiKey),
     mcp: Boolean(EXA_MCP_COMMAND),
   };
 }
@@ -107,12 +109,13 @@ function normalizeApiResult(raw) {
       return '';
     }
   })();
-  const snippet = truncate(
+  const snippet = truncate(cleanBoilerplate(
     raw.summary ||
     (Array.isArray(raw.highlights) ? raw.highlights[0] : '') ||
     raw.text ||
     raw.snippet ||
     '',
+  ),
     900,
   );
   return {
@@ -131,6 +134,7 @@ function normalizeApiResult(raw) {
 }
 
 async function searchViaApi({ query, numResults, includeDomains = [], type = 'auto', category = '', text = false }) {
+  const { exaApiKey } = loadProviderSecrets();
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), EXA_REQUEST_TIMEOUT_MS);
   try {
@@ -151,7 +155,7 @@ async function searchViaApi({ query, numResults, includeDomains = [], type = 'au
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': EXA_API_KEY,
+        'x-api-key': exaApiKey,
       },
       body: JSON.stringify(body),
       signal: controller.signal,
@@ -363,6 +367,7 @@ export function recordExternalFallback(payload) {
 }
 
 export function buildExternalDraftContent({ query, result, notes = '' }) {
+  const summary = cleanBoilerplate(result.snippet || 'No snippet returned by Exa.');
   return [
     `External source discovered via Exa query: ${query}`,
     '',
@@ -372,7 +377,7 @@ export function buildExternalDraftContent({ query, result, notes = '' }) {
     result.publishedDate ? `Published: ${result.publishedDate}` : '',
     '',
     'Summary:',
-    result.snippet || 'No snippet returned by Exa.',
+    summary || 'No snippet returned by Exa.',
     notes ? `\nOperator notes:\n${notes.trim()}` : '',
     '',
     'This draft came from external search and requires review before promotion into a KB.',

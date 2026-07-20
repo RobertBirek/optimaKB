@@ -1,0 +1,24 @@
+{
+  "id": "draft_2026-07-15_b53d38b5_analityka-kpi",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Analityka / KPI",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "analityka-kpi",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": {
+    "discoveredVia": "manual_analysis_mcp_mssql",
+    "sourceTier": "ontology",
+    "retrievedAt": "2026-07-15T00:00:00.000Z"
+  },
+  "createdAt": "2026-07-15T00:00:00.000Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:27.310Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_b53d38b5_analityka-kpi.json"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-01_877e0e8a_interpretacja-podatkowa",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Interpretacja podatkowa",
+  "content": "Automated source-discovery draft.\n\nQuery: interpretacje KIS czerwiec 2026\nSource: https://www.biznes.gov.pl/pl/portal/ou25\nTier: official\nDiscovery confidence: 0.8\n\nInterpretacja podatkowa\n# Uzyskaj indywidualną interpretację podatkową\nChcesz mieć pewność, że właściwie stosujesz przepisy prawa podatkowego? Złóż wniosek o indywidualną interpretację podatkową. Sprawdź, jak to zrobić.\n## Jak załatwić sprawę\nSprawę można załatwić:\n- podczas wizyty w urzędzie\n- listownie\n- elektronicznie\n## Co powinieneś wiedzieć i kto może skorzystać z usługi\n### Czym jest indywidualna interpretacja podatkowa\nIndywidualna interpretacja podatkowa to informacja udzielana przez Krajową Informację Skarbową.\nInterpretacja da ci odpowiedź, czy prawidłowo stosujesz przepisy podatkowe, na przykład czy zgodnie z prawem korzystasz z ulg podatkowych albo czy możesz skorzystać z nich w przyszłości.\n### Kto może złożyć wniosek o wydanie interpretacji podatkowej\n- osoba fizyczna\n- osoba prawna – na przykład spółka z ograniczoną odpowiedzialnością, spółka akcyjna\n- inny podmiot – na przykład stowarzyszenie, spółka cywilna.\nZ wnioskiem o wydanie interpretacji może wystąpić jedna lub kilka zainteresowanych osób.\nZanim złożysz wniosek, skorzystaj z Systemu Informacji Celno-Skarbowej EUREKA, czyli wyszukiwarki już wydanych interpretacji indywidualnych i ogólnych. Być może ktoś wcześniej zadał pytanie, które ty chcesz teraz zadać.\n### Kiedy nie otrzymasz interpretacji podatkowej\nNie otrzymasz interpretacji indywidualnej jeżeli twój wniosek dotyczy:\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.biznes.gov.pl/pl/portal/ou25",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-13T02:50:53.585Z",
+    "discoveryCandidateId": "candidate_3577505a-d1b",
+    "discoveryQueryId": "generated_TaxbellLegalReference_9d5bcec7b1",
+    "discoveryRunId": "discovery_daily_2026-06-13T02-49-32-868Z_889274e3",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.8,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "1604eb89d073cf87be987e490795abca427235b8b1137d7d99aff032ad1afc5c"
+  },
+  "createdAt": "2026-07-01T12:39:06.338Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-02T06:26:32.850Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_877e0e8a_interpretacja-podatkowa.json"
+}

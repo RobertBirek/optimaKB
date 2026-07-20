@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_4e0cebf0_encja-personel-wspo-pracownik",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Personel / Współpracownik",
+  "content": "# Encyja: Personel / Współpracownik\n\n## Status weryfikacji\n**Częściowo zweryfikowane** — widoki MSSQL i endpointy MCP potwierdzone, ale **struktura tabel bazowych niezweryfikowana**.\n\n## Opis biznesowy\nPersonel obejmuje pracowników, operatorów i współpracowników w Optimie. Dane dostępne przez widoki: `CDN.PracownicyView` (lista pracowników), `CDN.OperatorzyView` (operatorzy systemu). Tabele bazowe to prawdopodobnie `CDN.Personel` [UNKNOWN — nie potwierdzone] oraz `CDN.DetalOperator`. Struktury kadrowe dostępne przez `list_personnel_structures`.\n\n## Reguły biznesowe\n- Operator posiada uprawnienia do modyfikacji danych (śledzone przez OpeModId/OpeZalId w wielu tabelach)\n- Pracownik posiada dane kadrowo-płacowe (umowy, nieobecności, limitów)\n- Struktury kadrowe (działy, stanowiska) są osobnym bytem\n\n## Źródła danych\n- **Widoki**: `CDN.PracownicyView`, `CDN.OperatorzyView`\n- **Tabele**: `CDN.Personel` [UNKNOWN], `CDN.DetalOperator`, `CDN.DetalStanOperatorzy`\n- **Powiązane**: `CDN.Dzialy`, `CDN.DefinicjaZmian`, `CDN.TypWyplata`\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| [UNKNOWN] | [UNKNOWN] | PK tabeli Personel nieznany |\n\n## Pola i mapowanie API↔MSSQL\nWszystkie pola — niezweryfikowane. Struktury kolumn nieznane.\n\n## Relacje ontologiczne\n- **JEST_OPERATOREM** — dane w `CDN.OperatorzyView`, `CDN.DetalOperator`\n- **JEST_PRACOWNIKIEM** — dane w `CDN.PracownicyView`\n- **NALEZY_DO_DZIALU** (N:1) → `CDN.Dzialy` [UNKNOWN kolumna]\n- **TWORZY_DOKUMENTY** (1:N) → śledzone przez OpeZalId/OpeModId w innych tabelach\n- **POSIADA_STRUKTURE** (1:N) → `list_personnel_structures`\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `list_personnel` | READ — lista personelu |\n| `list_personnel_structures` | READ — struktury kadrowe |\n| `list_personnel` [inne?] | WRITE — [UNKNOWN] |\n\n## Pochodzenie wiedzy\n- `mssql_execute_query`: INFORMATION_SCHEMA potwierdza `CDN.PracownicyView`, `CDN.OperatorzyView`, `CDN.DetalOperator`, `CDN.DetalStanOperatorzy`\n- `mssql_list_tables` (schema=CDN) zawiera `Dzialy`, `DefinicjaZmian`, `TypWyplata`\n- Endpointy MCP zdefiniowane w AGENTS.md\n\n## Otwarte problemy\n1. Czy istnieje tabela `CDN.Personel`? Nazwa nie pojawiła się w wynikach INFORMATION_SCHEMA.\n2. Jakie są kolumny w `CDN.PracownicyView` i `CDN.OperatorzyView`?\n3. Relacja Personel ↔ Kontrahenci (współpracownik jako kontrahent)?\n4. Endpointy WRITE dla personelu? (MCP ma tylko READ)\n5. Struktura `list_personnel_structures` — co zwraca?\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Widoki: `CDN.PracownicyView`, `CDN.OperatorzyView`\n- Tabela bazowa: niepotwierdzona\n\n## Walidacja\n- [ ] Wykonaj `mssql_describe_table` dla Personel (jeśli istnieje)\n- [ ] Wykonaj SELECT TOP 1 * FROM CDN.PracownicyView\n- [ ] Wykonaj SELECT TOP 1 * FROM CDN.OperatorzyView\n- [ ] Zweryfikuj `list_personnel` runtime\n- [ ] Ustal czy istnieją endpointy WRITE dla personelu",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "personel",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:35.009Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:24.921Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_4e0cebf0_encja-personel-wspo-pracownik.json"
+}

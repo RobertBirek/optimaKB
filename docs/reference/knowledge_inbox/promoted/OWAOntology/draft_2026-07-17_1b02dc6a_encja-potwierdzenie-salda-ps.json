@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_1b02dc6a_encja-potwierdzenie-salda-ps",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Potwierdzenie Salda (PS)",
+  "content": "# Encja: Potwierdzenie Salda (PS)\n\n## Status weryfikacji\n- Status: `wstępne`\n- Poziom pewności: `średni`\n- Identyfikator ontologiczny: `OWAOntology.PotwierdzenieSalda`\n- Aliasy: `PS`, `BalanceConfirmation`, `SaldoConfirmation`\n\n## Opis biznesowy\nPotwierdzenie salda (PS) to dokument używany w procesie uzgadniania rozrachunków z kontrahentem. Zestawia bieżące należności i/lub zobowiązania wobec wybranego kontrahenta na określony dzień i służy do formalnego potwierdzenia poprawności salda. W systemie może być generowane na podstawie rozrachunków i danych kontrahenta. Dokument ma charakter raportowo-kontrolny, a nie stricte magazynowy.\n\n## Reguły biznesowe\n- Dotyczy jednego kontrahenta\n- Obejmuje zestaw rozrachunków otwartych lub historycznych\n- Generowane na określoną datę uzgodnienia\n- Może być wykorzystywane audytowo i windykacyjnie\n- Prawdopodobnie nie wpływa bezpośrednio na księgowania [UNKNOWN]\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela lub obiekt | Status | Dowód |\n|---|---|---|---|---|\n| Generowanie dokumentu | OptimaMCP | create_balance_confirmation | Potwierdzone | API WRITE |\n| Rozrachunki źródłowe | CDN | Rozrachunki / należności | Pośrednio potwierdzone | Model biznesowy |\n| Kontrahent | CDN | Kontrahenci / PodmiotyView | Pośrednio potwierdzone | Model biznesowy |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | create_balance_confirmation | POST /api/v1/tax/balance-confirmation | Potwierdzone |\n\n## Identyfikatory\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | [UNKNOWN] | ID dokumentu potwierdzenia salda | Oczekuje potwierdzenia |\n| FK | [UNKNOWN] | FK do kontrahenta | Oczekuje potwierdzenia |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| dotyczy_kontrahenta | PotwierdzenieSalda | Kontrahent | N:1 | Przez FK |\n| zestawia | PotwierdzenieSalda | Rozrachunek | 1:N | Przez listę rozrachunków |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| OptimaMCP | create_balance_confirmation | API WRITE potwierdzone |\n| MSSQL (CDN_TEST) | mssql_list_tables | Potwierdzenie istnienia powiązanych tabel |\n\n## Otwarte problemy\n- [UNKNOWN: dedykowana tabela PS — PotwierdzeniaSalda? Inwentaryzacja?]\n- [UNKNOWN: pełny schemat tabeli — wymaga mssql_describe_table po identyfikacji nazwy]\n- [UNKNOWN: czy PS generuje dekret księgowy?]\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "potwierdzenie-salda",
+    "do-weryfikacji"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:34.654Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:25.265Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_1b02dc6a_encja-potwierdzenie-salda-ps.json"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_e6ad73fd_encja-wydanie-zewnetrzne-wz",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Wydanie Zewnętrzne (WZ)",
+  "content": "# Encja: Wydanie Zewnętrzne (WZ)\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `wysoki`\n- Identyfikator ontologiczny: `OWAOntology.WydanieZewnetrzne`\n- Aliasy: `WZ`, `GoodsIssue`, `IssueDocument`\n\n## Opis biznesowy\nWydanie Zewnętrzne (WZ) w Comarch Optima to dokument magazynowy potwierdzający fizyczne wydanie towaru z magazynu do odbiorcy. Zmniejsza stan magazynowy i może stanowić etap pośredni między zamówieniem odbiorcy (RO) a fakturą sprzedaży (FS). W praktyce workflow często przebiega jako `RO → WZ → FS` lub `RO → WZ + FS` przy pełnej realizacji. WZ opiera się na modelu dokumentu handlowo-magazynowego (`TraNag`, `TraElem`) z przypisaniem magazynu źródłowego/docelowego i skutkiem ilościowym.\n\n## Reguły biznesowe\n- WZ zmniejsza stan magazynowy\n- WZ jest dokumentem magazynowym, ale może być powiązane z procesem sprzedaży\n- Może być utworzone bezpośrednio (`create_goods_issue`) lub przez workflow z RO (`fulfill_order`, `complete_order`)\n- Może być powiązane z fakturą sprzedaży jako dokument źródłowy\n- Każda pozycja WZ odnosi się do towaru i magazynu\n- WZ może mieć korektę lub zwrot w odrębnym workflow [UNKNOWN szczegóły]\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | Status | Dowód |\n|---|---|---|---|---|\n| Nagłówek dokumentu | CDN | TraNag | Pośrednio potwierdzona | Model nadrzędny dokumentów |\n| Pozycje dokumentu | CDN | TraElem | Pośrednio potwierdzona | Model nadrzędny dokumentów |\n| Relacje workflow | CDN | TraRelacje / DokumentRelacje | Częściowo potwierdzona | Ontologia relacji |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | create_goods_issue | POST /api/v1/warehouse/issue | Potwierdzone |\n| WRITE | fulfill_order | POST /api/v1/workflow/order/fulfill | Potwierdzone |\n| WRITE | complete_order | POST /api/v1/workflow/order/complete | Potwierdzone |\n| READ | get_warehouse_doc | GET /api/v1/warehouse-docs/{id} | Potwierdzone |\n| READ | list_warehouse_docs | — | Potwierdzone |\n\n## Identyfikatory\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | [UNKNOWN: TrN_TrNID?] | ID dokumentu WZ | Do potwierdzenia |\n| FK | [UNKNOWN] | FK do magazynu | Do potwierdzenia |\n| FK | [UNKNOWN] | FK do dokumentu źródłowego RO | Częściowo potwierdzone |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| wydaje_z_magazynu | WydanieZewnetrzne | Magazyn | N:1 | Przez pola magazynowe TraNag |\n| zawiera_towar | WydanieZewnetrzne | Towar | N:M | Przez TraElem |\n| realizuje_zamowienie | WydanieZewnetrzne | RezerwacjaOdbiorcy | N:1 / N:M | Przez workflow RO→WZ |\n| poprzedza_fakture | WydanieZewnetrzne | FakturaSprzedazy | 1:N / 1:1 | Przez workflow WZ→FS |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| OptimaMCP | create_goods_issue | API WRITE dla WZ |\n| OptimaMCP | fulfill_order, complete_order | Workflow RO→WZ / RO→WZ+FS |\n| OptimaMCP | get_warehouse_doc, list_warehouse_docs | API READ dokumentów magazynowych |\n| Ontologia nadrzędna | Dokument handlowy / magazynowy | Model TraNag/TraElem |\n\n## Otwarte problemy\n- [UNKNOWN: dokładny typ dokumentu WZ w TraNag]\n- [UNKNOWN: jednoznaczne mapowanie kolumn magazynowych i kontrahenta]\n- [UNKNOWN: czy WZ ma własny byt w tabelach poza TraNag/TraElem]\n- [UNKNOWN: pełna relacja korekt/zwrotów WZ]\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "wydanie-zewnetrzne",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:33.710Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:25.926Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_e6ad73fd_encja-wydanie-zewnetrzne-wz.json"
+}

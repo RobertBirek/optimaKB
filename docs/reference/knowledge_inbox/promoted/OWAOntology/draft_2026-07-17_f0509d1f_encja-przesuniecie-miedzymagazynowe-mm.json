@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_f0509d1f_encja-przesuniecie-miedzymagazynowe-mm",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Przesunięcie Międzymagazynowe (MM)",
+  "content": "# Encja: Przesunięcie Międzymagazynowe (MM)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: MM\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek, wymagane: `TrN_MagZrodlo` (magazyn źródłowy) i `TrN_MagDocelowy` (magazyn docelowy)\n- `CDN.TraElem` — pozycje przesunięcia\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_warehouse_transfer` `POST /api/v1/warehouse/transfer` — tworzy MM\n\n## Relacje\n- MM przenosi towary między dwoma magazynami\n- Magazyn źródłowy → zmniejszenie stanu\n- Magazyn docelowy → zwiększenie stanu\n- Nie zmienia sumarycznego stanu firmy, tylko rozmieszczenie\n\n## Uwagi\n- Ruch wewnętrzny — nie ma kontrahenta zewnętrznego\n- Wymagane są oba magazyny: źródłowy i docelowy\n- MM może być użyty do przesunięcia między magazynem głównym a produkcyjnym",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "przesuniecie-mm",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:37:34.205Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.024Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_f0509d1f_encja-przesuniecie-miedzymagazynowe-mm.json"
+}

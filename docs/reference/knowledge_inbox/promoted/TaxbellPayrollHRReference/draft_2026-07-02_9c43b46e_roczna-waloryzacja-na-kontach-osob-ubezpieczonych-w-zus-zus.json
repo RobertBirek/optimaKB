@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Roczna waloryzacja na kontach osób ubezpieczonych w ZUS - ZUS",
+  "content": "Automated source-discovery draft.\n\nQuery: ZUS nowości czerwiec 2026\nSource: https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus\nTier: official\nDiscovery confidence: 0.7\n\nRoczna waloryzacja na kontach osób ubezpieczonych w ZUS\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-10T02:51:17.156Z",
+    "discoveryCandidateId": "candidate_2d4468f5-1d1",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_55573f490d",
+    "discoveryRunId": "discovery_daily_2026-06-10T02-49-13-742Z_99c5b3d4",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.7,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "b6106faab1b01ce5a4498944188c50f945bf5edb94fde7afcb6f117a035e9be4"
+  },
+  "createdAt": "2026-07-02T05:17:09.019Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-02T06:26:32.795Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-02/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.json"
+}

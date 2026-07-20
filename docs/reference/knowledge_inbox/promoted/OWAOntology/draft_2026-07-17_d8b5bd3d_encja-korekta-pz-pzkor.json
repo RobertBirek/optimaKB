@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_d8b5bd3d_encja-korekta-pz-pzkor",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Korekta PZ (PZKOR)",
+  "content": "# Encja: Korekta PZ (PZKOR)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: PZKOR\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek\n- `CDN.TraElem` — pozycje korekty\n- `DokRelacje` — relacja PZKOR → PZ (oryginał)\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_goods_receipt_correction` `POST /api/v1/warehouse/receipt-correction` — tworzy PZKOR\n\n### Workflow (NIE WYWOŁANO)\n- `return_receipt` `POST /api/v1/workflow/receipt/return` — zwrot PZ → PZKOR\n\n## Relacje\n- PZKOR KORYGUJE PZ — powiązanie przez `DokRelacje` lub `TrN_RelTrNId`\n- Zwrot towaru do dostawcy (PZ na minus)\n- Generuje przeciwny ruch magazynowy\n\n## Uwagi\n- Osobny typ dokumentu od PZ\n- PZKOR może być utworzony ręcznie (`create_goods_receipt_correction`) lub przez workflow (`return_receipt`)\n- Analogicznie do FSKOR/FZKOR, ale dla dokumentów magazynowych",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "korekta-pz",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:40:48.509Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:46.692Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_d8b5bd3d_encja-korekta-pz-pzkor.json"
+}

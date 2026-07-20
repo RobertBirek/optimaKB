@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_202aa45f_encja-okres-obrachunkowy",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Okres obrachunkowy",
+  "content": "# Encja: Okres obrachunkowy\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `wysoki`\n- Identyfikator ontologiczny: `OWAOntology.OkresObrachunkowy`\n- Aliasy: `OkresyObrach`, `AccountingPeriod`, `FiscalPeriod`\n\n## Opis biznesowy\nOkres obrachunkowy w Comarch Optima definiuje ramy czasowe dla księgowań w danym roku obrotowym. Każdy okres ma symbol (np. \"2025-01\"), datę otwarcia (`OOb_DataOtw`), długość w miesiącach (`OOb_Dlugosc`) oraz datę końcową (`OOb_DataKoncowa`). Okres może zostać zamknięty (`OOb_DataZam`), co blokuje dalsze księgowania. Do okresu przypisane są dzienniki dla rozrachunków (`OOb_DziIdRK`) i kompensat (`OOb_DziIdKomp`). Okresy są powiązane z dziennikami relacją CASCADE DELETE.\n\n## Reguły biznesowe\n- Okres ma stan (`OOb_Stan`) — otwarty/zamknięty\n- Zamknięcie okresu (`OOb_DataZam`) blokuje nowe księgowania\n- Okres może mieć ciągłą numerację dokumentów (`OOb_CiaglaNumeracjaDC`)\n- Domyślnie data księgowania RK i kompensat z daty dokumentu (`OOb_DataKsiRk=1`)\n- Zaliczki uproszczone (`OOb_ZaliczkiUproszczone`) — tryb uproszczony\n- Usunięcie okresu powoduje CASCADE DELETE dzienników (Dzienniki.Dzi_OObId → OkresyObrach)\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | PK | Stan | Dowód |\n|---|---|---|---|---|---|\n| Okresy obrachunkowe | CDN | OkresyObrach | OOb_OObID (int, IDENTITY) | Potwierdzona | MSSQL |\n| Dzienniki | CDN | Dzienniki | Dzi_DziId | Potwierdzona | FK Dzi_OObId |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | create_journal_period | POST /api/v1/journal-periods | Potwierdzone |\n| WRITE | accounting_close_period | POST /api/v1/accounting/period/close | Potwierdzone |\n\n## Identyfikatory — OkresyObrach\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | OOb_OObID | Unikalny identyfikator okresu (int, IDENTITY) | Potwierdzony |\n| Naturalny | OOb_Symbol | Symbol okresu (varchar 5, np. \"2025-01\") | Potwierdzony |\n| FK | OOb_DziIdRK | FK do Dzienniki (dziennik RK) | Potwierdzony |\n| FK | OOb_DziIdKomp | FK do Dzienniki (dziennik kompensat) | Potwierdzony |\n\n## Kluczowe pola MSSQL — OkresyObrach\n| Kolumna | Typ | Opis |\n|---|---|---|\n| OOb_OObID | int (PK, IDENTITY) | ID okresu |\n| OOb_Symbol | varchar(5) | Symbol (unikalny) |\n| OOb_DataOtw | datetime | Data otwarcia |\n| OOb_Dlugosc | smallint | Długość w miesiącach |\n| OOb_DataKoncowa | datetime | Data końcowa |\n| OOb_DataZam | datetime (nullable) | Data zamknięcia (null=otwarty) |\n| OOb_Stan | smallint | Stan okresu |\n| OOb_CiaglaNumeracjaDC | int | Ciągła numeracja dokumentów |\n| OOb_ZaliczkiUproszczone | int | Tryb uproszczony |\n| OOb_DziIdRK | int (nullable) | Dziennik rozrachunków |\n| OOb_DziIdKomp | int (nullable) | Dziennik kompensat |\n| OOb_DataKsiRk | smallint | Data księgowania RK |\n| OOb_DataKsiKomp | smallint | Data księgowania kompensat |\n| OOb_Opis | nvarchar(254) | Opis okresu |\n| OOb_TypZOiS | nvarchar(10) (nullable) | Typ ZOiS |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| zawiera_dzienniki | OkresObrachunkowy | Dziennik | 1:N | Dzienniki.Dzi_OObId = OkresyObrach.OOb_OObID |\n| zawiera_dekrety | OkresObrachunkowy | DekretKsiegowy | 1:N | Przez Dzienniki |\n| poprzedza | OkresObrachunkowy | OkresObrachunkowy | 1:1 | Chronologicznie po dacie |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| MSSQL (CDN_TEST) | mssql_describe_table | Pełny schemat (25 kolumn, 3 indeksy unikalne) |\n| OptimaMCP | create_journal_period, accounting_close_period | API WRITE |\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "okres-obrachunkowy",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:40:48.723Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:46.396Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_202aa45f_encja-okres-obrachunkowy.json"
+}

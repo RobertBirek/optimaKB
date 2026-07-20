@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-01_6b628cf7_vat-2026-30-waznych-zmian-oprocz-ksef-ministerstwo-finansow-szykuje-nowelizacje-",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "VAT 2026: 30 ważnych zmian - oprócz KSeF. Ministerstwo Finansów szykuje nowelizację ustawy o VAT - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: uproszczenia VAT 2026 zmiany przepisów\nSource: https://ksiegowosc.infor.pl/wiadomosci/7060509,vat-2026-30-waznych-zmian-oprocz-ksef-ministerstwo-finansow-szykuje-nowelizacje-ustawy-o-vat.html\nTier: professional\nDiscovery confidence: 0.9\n\n# VAT 2026: 30 ważnych zmian - oprócz KSeF. Ministerstwo Finansów szykuje nowelizację ustawy o VAT\n15 stycznia 2026, 10:40\nVAT 2026: 30 ważnych zmian - oprócz KSeF. Ministerstwo Finansów szykuje projekt nowelizacji ustawy o VAT\nW dniu 17 października 2025 r. opublikowano projekt nowelizacji ustawy podatku od towarów i usług oraz ustawy o zasadach ewidencji i identyfikacji podatników i płatników. Nowelizacja ta ma dokonać co najmniej 30 większych i mniejszych zmian w różnych przepisach ustawy o VAT. Większość zmian ma wejść w życie od 1 lipca 2026 r. Będą to kolejne zmiany w zasadach rozliczania VAT w 2026 roku oprócz zmiany zasad fakturowania i wprowadzenia obowiązkowego modelu Krajowego Systemu e-Faktur. Poniżej lista tych zmian z krótkim omówieniem.\n- Miejsce dostawy energii elektrycznej\n- Likwidacja zdublowanego obowiązku składania informacji o dokonanym spisie z natury\n- Wykonanie wyroku TSUE w sprawie C-697/20\n- Grupy VAT\n- Likwidacja obowiązku rozliczenia w deklaracji podstawy opodatkowania w VAT w przypadku nabycia towarów i usług korzystających ze zwolnienia od podatku – zmiana w art. 17 ustawy o VAT\n- Moment powstania obowiązku podatkowego\n- Import towarów\n- System kaucyjny\n- Stawka 0%\n- Wykonanie wyroku TSUE\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksiegowosc.infor.pl/wiadomosci/7060509,vat-2026-30-waznych-zmian-oprocz-ksef-ministerstwo-finansow-szykuje-nowelizacje-ustawy-o-vat.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-13T02:50:38.484Z",
+    "discoveryCandidateId": "candidate_fcfeb7eb-18d",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_84ee30af30",
+    "discoveryRunId": "discovery_daily_2026-06-13T02-49-32-868Z_889274e3",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "30387762f697c08983b983cf233ef6ed78d758f170e3feb5f2808576041de0a0"
+  },
+  "createdAt": "2026-07-01T10:57:28.392Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-01T11:03:28.334Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_6b628cf7_vat-2026-30-waznych-zmian-oprocz-ksef-ministerstwo-finansow-szykuje-nowelizacje-.json"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_2999974b_interpretacja-ogolna-nr-pad6-8101-1-2026-ministra-finansow-i-gospodarki-z-dnia-2",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Interpretacja Ogólna Nr PAD6.8101.1.2026 Ministra Finansów i Gospodarki z dnia 26 lutego 2026 r. w sprawie stosowania obniżonych stawek podatku akcyzowego, o których mowa w art. 105 pkt 1a lit. a i pk",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy objaśnienia 2026\nSource: https://www.gov.pl/web/finanse/interpretacja-ogolna-nr-pad6810112026-ministra-finansow-i-gospodarki-z-dnia-26-lutego-2026-r-w-sprawie-stosowania-obnizonych-stawek-podatku-akcyzowego-o-ktorych-mowa-w-art-105-pkt-1a-lit-a-i-pkt-1b-ustawy-o-podatku-akcyzowym-na-samochody-osobowe-okreslane-mianem-miekka-hybryda-mhev\nTier: official\nDiscovery confidence: 0.9\n\nInterpretacja Ogólna Nr PAD6.8101.1.2026 Ministra Finansów i Gospodarki z dnia 26 lutego 2026 r. w sprawie stosowania obniżonych stawek podatku akcyzowego, o których mowa w art. 105 pkt 1a lit. a i pkt 1b ustawy o podatku akcyzowym, na samochody osobowe określane mianem „miękka hybryda” (MHEV)\nMateriały\nPodstawa prawna\nUstawa z dnia 29 sierpnia 1997 r. – Ordynacja podatkowa\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/finanse/interpretacja-ogolna-nr-pad6810112026-ministra-finansow-i-gospodarki-z-dnia-26-lutego-2026-r-w-sprawie-stosowania-obnizonych-stawek-podatku-akcyzowego-o-ktorych-mowa-w-art-105-pkt-1a-lit-a-i-pkt-1b-ustawy-o-podatku-akcyzowym-na-samochody-osobowe-okreslane-mianem-miekka-hybryda-mhev",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-16T02:49:49.974Z",
+    "discoveryCandidateId": "candidate_deb62f1d-4a5",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-06-16T02-49-32-876Z_8b144747",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "b532ea1c7188ffda914f6a91421aa560133d2ef55f74d47816c6e710cbf409c8"
+  },
+  "createdAt": "2026-06-30T09:44:37.138Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:17.880Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_2999974b_interpretacja-ogolna-nr-pad6-8101-1-2026-ministra-finansow-i-gospodarki-z-dnia-2.json"
+}

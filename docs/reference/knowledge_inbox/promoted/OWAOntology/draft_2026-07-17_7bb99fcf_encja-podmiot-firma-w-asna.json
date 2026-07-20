@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_7bb99fcf_encja-podmiot-firma-w-asna",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Podmiot / Firma własna",
+  "content": "# Encyja: Podmiot / Firma własna\n\n## Status weryfikacji\n**Częściowo zweryfikowane** — endpointy MCP i tabela MSSQL potwierdzone. Struktura Firma to EAV (Entity-Attribute-Value).\n\n## Opis biznesowy\nFirma własna (CDN.Firma) zawiera dane podmiotu gospodarczego zdefiniowanego w Optimie. Tabela ma strukturę EAV: `Fir_FirID` (ID firmy), `Fir_Numer` (numer atrybutu), `Fir_Wartosc` (wartość tekstowa), `Fir_Opis` (opis). 1417 wierszy w testowej bazie. Dane obejmują NIP, REGON, nazwę, adres, dane kontaktowe i konfigurację.\n\n## Reguły biznesowe\n- `Fir_FirID` — identyfikator firmy (może być wiele firm w jednej bazie)\n- `Fir_Numer` — numer atrybutu (klucz z mapowania do pól)\n- `Fir_Wartosc` (nvarchar) — wartość atrybutu (zawsze tekst, nawet dla wartości numerycznych)\n\n## Źródła danych\n- **Tabela główna**: `CDN.Firma` (BASE TABLE, 1417 wierszy)\n- **Widok**: `CDN.PodmiotyView` — lista podmiotów\n- **Konfiguracja**: `CDN.CfgKlucze` (1132 wierszy), `CDN.CfgWartosci` (1122 wierszy)\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| `Fir_FirID` | int | ID firmy (część PK) |\n| `Fir_Numer` | int | Numer atrybutu (część PK) |\n\n## Pola i mapowanie API↔MSSQL\n- `Fir_FirID` (int) — `get_config_firm`\n- `Fir_Numer` (int) — NOT EXPOSED BY MCP\n- `Fir_Wartosc` (nvarchar) — `get_config_firm` (wartość atrybutu)\n- `Fir_Opis` (nvarchar) — `get_config_firm` (nazwa atrybutu)\n- Konfiguracja systemowa — `get_config` (READ przez CfgKlucze/CfgWartosci)\n- Konfiguracja MCP — `config_update` (WRITE)\n\n## Relacje ontologiczne\n- **POSIADA_KONFIGURACJE** (1:N) → `CDN.CfgKlucze` / `CDN.CfgWartosci`\n- **JEST_WIDOCZNY_PRZEZ** → `CDN.PodmiotyView`\n- **REFEROWANY_PRZEZ** (1:N) → większość tabel przez `*Firma` lub `*GIDFirma` kolumny (multi-tenancy)\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `get_config_firm` | READ — dane firmy |\n| `get_config` | READ — konfiguracja (CfgKlucze) |\n| `list_entity_views` | READ — lista podmiotów |\n| `config_update` | WRITE — aktualizuje klucz konfiguracji |\n| `get_context` | READ — kontekst MCP (OrganizationId, baza CDN) |\n| `get_license_status` | READ — stan licencji |\n\n## Pochodzenie wiedzy\n- `mssql_execute_query`: INFORMATION_SCHEMA.COLUMNS dla CDN.Firma potwierdza 4 kolumny EAV\n- `mssql_list_tables`: `CDN.PodmiotyView` istnieje\n- Endpointy MCP zdefiniowane w AGENTS.md\n- `get_context` pokazuje OrganizationId — ID firmy w kontekście MCP\n\n## Otwarte problemy\n1. EAV — jak mapować `Fir_Numer` na nazwy pól? Gdzie jest słownik?\n2. `CDN.PodmiotyView` — jakie kolumny zawiera (zdenormalizowana wersja Firma?)\n3. Relacja między `Fir_FirID` a `OrganizationId` z `get_context`\n4. Multi-tenancy: czy `GIDFirma` w innych tabelach wskazuje na `Fir_FirID`?\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.Firma` (ROW_COUNT=1417, EAV)\n- Klucz: (Fir_FirID, Fir_Numer)\n\n## Walidacja\n- [x] `mssql_execute_query` potwierdza strukturę EAV\n- [ ] Wykonaj SELECT TOP 20 * FROM CDN.Firma aby zobaczyć mapowanie Numer→Opis\n- [ ] Wykonaj SELECT TOP 1 * FROM CDN.PodmiotyView\n- [ ] Zweryfikuj `get_config_firm` runtime — jakie pola zwraca?\n- [ ] Ustal słownik `Fir_Numer` → nazwa pola",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "podmiot-firma",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:31:05.109Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.540Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_7bb99fcf_encja-podmiot-firma-w-asna.json"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-07-13_f8566732_dziennik-ustaw",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "DZIENNIK USTAW",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy orzecznictwo zmiany 2026\nSource: https://www.inforlex.pl/download/akty_pdf,DZU,2026,166,779.pdf\nTier: professional\nDiscovery confidence: 0.95\n\n## DZIENNIK USTAW\n### RZECZYPOSPOLITEJ POLSKIEJ\n#### Warszawa, dnia 15 czerwca 2026 r.\n#### Poz. 779\nUSTAWA z dnia 15 maja 2026 r.\no zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne\nArt. 1. W ustawie z dnia 26 lipca 1991 r. o podatku dochodowym od osób fizycznych (Dz. U. z 2026 r. poz. 592)\nw art. 24a:\n1) w ust. 1 skreśla się wyrazy „zwaną dalej „księgą”,”;\n2) w ust. 1a wyrazy „w prowadzonej księdze albo w prowadzonych księgach rachunkowych, o których mowa w ust. 1,” zastępuje się wyrazami „w podatkowej księdze przychodów i rozchodów albo księgach rachunkowych”;\n3) w ust. 1b wyrazy „w prowadzonej księdze albo w prowadzonych księgach rachunkowych, o których mowa w ust. 1,” zastępuje się wyrazami „w podatkowej księdze przychodów i rozchodów albo księgach rachunkowych”;\n4) w ust. 1c wyrazy „w prowadzonej księdze albo w prowadzonych księgach rachunkowych, o których mowa w ust. 1,” zastępuje się wyrazami „w podatkowej księdze przychodów i rozchodów albo księgach rachunkowych”;\n5) ust. 1e otrzymuje brzmienie: „1e. Podmioty, o których mowa w ust. 1 i ust. 2 pkt 2 oraz art. 15 ust. 2, prowadzące podatkową księgę przycho dów i rozchodów, księgi rachunkowe lub ewidencję środków trwałych oraz wartości niematerialnych i prawnych są obowiązane prowadzić te księgi i tę ewidencję przy użyciu programów komputerowych oraz prze\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.inforlex.pl/download/akty_pdf,DZU,2026,166,779.pdf",
+  "tags": [
+    "discovery",
+    "professional",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia",
+    "orzecznictwo"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-07-12T02:49:01.035Z",
+    "discoveryCandidateId": "candidate_7d8ce87b-556",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-07-12T02-48-52-182Z_4934a5d9",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "416f6520de01f56917402ca0ea80047abd82a15f4859155196ff00b892fcb379"
+  },
+  "createdAt": "2026-07-13T08:33:49.667Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-15T12:14:58.472Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-13/draft_2026-07-13_f8566732_dziennik-ustaw.json"
+}

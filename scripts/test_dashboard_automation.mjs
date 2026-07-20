@@ -243,6 +243,65 @@ try {
     /does not have an applicable reroute proposal|already applied/,
   );
 
+  const pendingDraft = createDraft(root, 'pending-exception');
+  automation.saveAutomationJob({
+    id: 'job_stale_exception',
+    draftId: successDraft.id,
+    title: successDraft.title,
+    kbNamespace: successDraft.kbNamespace,
+    status: 'EXCEPTION',
+    stage: 'EXCEPTION',
+    mode: 'shadow',
+    origin: 'live',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    error: 'historical exception on promoted draft',
+  });
+  automation.saveAutomationJob({
+    id: 'job_actionable_exception',
+    draftId: pendingDraft.id,
+    title: pendingDraft.title,
+    kbNamespace: pendingDraft.kbNamespace,
+    status: 'EXCEPTION',
+    stage: 'EXCEPTION',
+    mode: 'shadow',
+    origin: 'live',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    error: 'actionable exception on pending draft',
+  });
+  automation.saveAutomationJob({
+    id: 'job_stale_reroute',
+    draftId: successDraft.id,
+    title: successDraft.title,
+    kbNamespace: successDraft.kbNamespace,
+    status: 'REROUTE_PROPOSED',
+    stage: 'REROUTE_PROPOSED',
+    mode: 'shadow',
+    origin: 'live',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    reroute: { sourceKb: successDraft.kbNamespace, targetKb: 'ComarchBetterflyReference' },
+  });
+  automation.saveAutomationJob({
+    id: 'job_actionable_reroute',
+    draftId: pendingDraft.id,
+    title: pendingDraft.title,
+    kbNamespace: pendingDraft.kbNamespace,
+    status: 'REROUTE_PROPOSED',
+    stage: 'REROUTE_PROPOSED',
+    mode: 'shadow',
+    origin: 'live',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    reroute: { sourceKb: pendingDraft.kbNamespace, targetKb: 'ComarchBetterflyReference' },
+  });
+  const actionableSummary = automation.automationSummary();
+  assert.strictEqual(actionableSummary.exceptions.some((job) => job.id === 'job_stale_exception'), false);
+  assert.strictEqual(actionableSummary.exceptions.some((job) => job.id === 'job_actionable_exception'), true);
+  assert.strictEqual(actionableSummary.reroutes.some((job) => job.id === 'job_stale_reroute'), false);
+  assert.strictEqual(actionableSummary.reroutes.some((job) => job.id === 'job_actionable_reroute'), true);
+
   const registryBeforeShadow = fs.readFileSync(
     path.join(root, 'docs/reference/knowledge_inbox/registry.json'),
     'utf8',

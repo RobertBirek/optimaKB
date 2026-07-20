@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T18:35:11.264Z",
+  "generatedAt": "2026-07-20T11:41:56.942Z",
   "requestedSize": 20,
   "size": 20,
   "questionCount": 250,
@@ -680,17 +680,17 @@
             {
               "line": 9101,
               "score": 2,
-              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             },
             {
               "line": 9122,
               "score": 2,
-              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             },
             {
               "line": 9614,
               "score": 2,
-              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             }
           ]
         },
@@ -967,7 +967,7 @@
             {
               "line": 34998,
               "score": 2,
-              "snippet": "ON  [CDN].[DetalFunkcjePrac]"
+              "snippet": "ON [CDN].[DetalFunkcjePrac]"
             },
             {
               "line": 35012,
@@ -1108,7 +1108,7 @@
             {
               "line": 2331,
               "score": 2,
-              "snippet": "-- obsługa sprawdzania relacji restrict do tabeli CDN.TraElem"
+              "snippet": "--obsługa sprawdzania relacji restrict do tabeli CDN.TraElem"
             },
             {
               "line": 2333,
@@ -1210,17 +1210,17 @@
             {
               "line": 9101,
               "score": 3,
-              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             },
             {
               "line": 9122,
               "score": 3,
-              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             },
             {
               "line": 9614,
               "score": 3,
-              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             }
           ]
         },
@@ -1480,17 +1480,17 @@
             {
               "line": 1882,
               "score": 2,
-              "snippet": "-- Sprawdzenie obecności wierszy w tabeli nadrzędnej PracEtaty"
+              "snippet": "--Sprawdzenie obecności wierszy w tabeli nadrzędnej PracEtaty"
             },
             {
               "line": 1883,
               "score": 2,
-              "snippet": "IF EXISTS (SELECT * FROM inserted LEFT OUTER JOIN CDN.PracEtaty ON WPS_ZrodloId = PRE_PreId"
+              "snippet": "IFEXISTS (SELECT * FROM inserted LEFT OUTER JOIN CDN.PracEtaty ON WPS_ZrodloId = PRE_PreId"
             },
             {
               "line": 1887,
               "score": 2,
-              "snippet": "--RAISERROR('Nie istnieje zapis w tabeli nadrzędnej (powiązanie z tabelą  PracEtaty). ', 16, 1)--ERR_SQL_Place_NieIstniejePowiazanieWPSPRE 32560"
+              "snippet": "--RAISERROR('Nie istnieje zapis w tabeli nadrzędnej (powiązanie z tabelą PracEtaty). ', 16, 1)--ERR_SQL_Place_NieIstniejePowiazanieWPSPRE 32560"
             }
           ]
         }
@@ -1694,7 +1694,7 @@
             {
               "line": 27985,
               "score": 2,
-              "snippet": "-- kontrola grup w konfiguracji"
+              "snippet": "--kontrola grup w konfiguracji"
             }
           ]
         },
@@ -1830,7 +1830,7 @@
             {
               "line": 2430,
               "score": 4,
-              "snippet": "IF EXISTS (SELECT * FROM CDN.CfgKlucze JOIN CDN.CfgWartosci ON CFW_CfkId = CFK_CfkId WHERE CFK_Nazwa = 'PPKInstytucjaFinansowa' AND CFW_Wartosc IN (SELECT CONVERT(NVARCHAR(4000), deleted.Knt_KntID) FROM deleted))"
+              "snippet": "IFEXISTS (SELECT * FROM CDN.CfgKlucze JOIN CDN.CfgWartosci ON CFW_CfkId = CFK_CfkId WHERE CFK_Nazwa = 'PPKInstytucjaFinansowa' AND CFW_Wartosc IN (SELECT CONVERT(NVARCHAR(4000), deleted.Knt_KntID) FROM deleted))"
             },
             {
               "line": 8,
@@ -1959,12 +1959,12 @@
             {
               "line": 28076,
               "score": 2,
-              "snippet": "IF EXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
+              "snippet": "IFEXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
             },
             {
               "line": 28090,
               "score": 2,
-              "snippet": "IF EXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
+              "snippet": "IFEXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
             }
           ]
         },
@@ -2095,12 +2095,12 @@
             {
               "line": 27985,
               "score": 2,
-              "snippet": "-- kontrola grup w konfiguracji"
+              "snippet": "--kontrola grup w konfiguracji"
             },
             {
               "line": 28059,
               "score": 2,
-              "snippet": "-- kontrola grup w konfiguracji"
+              "snippet": "--kontrola grup w konfiguracji"
             }
           ]
         }
@@ -2209,7 +2209,7 @@
             {
               "line": 2718,
               "score": 2,
-              "snippet": "-- (sytuacja ma miejsce podczas dodawania, zmiany lub usuwania zdarzenia związanego z kontrahentem -"
+              "snippet": "--(sytuacja ma miejsce podczas dodawania, zmiany lub usuwania zdarzenia związanego z kontrahentem -"
             }
           ]
         }
@@ -2403,7 +2403,7 @@
             {
               "line": 6197,
               "score": 2,
-              "snippet": "-- obsługa kaskadowego uaktualniania zapisów źródłowych Handlowych"
+              "snippet": "--obsługa kaskadowego uaktualniania zapisów źródłowych Handlowych"
             },
             {
               "line": 13253,

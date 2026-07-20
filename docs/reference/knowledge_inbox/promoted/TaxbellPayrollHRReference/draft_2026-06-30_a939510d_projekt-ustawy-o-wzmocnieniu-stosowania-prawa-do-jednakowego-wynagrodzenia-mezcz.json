@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Projekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości - Kancelaria Prezesa Rady Ministrów - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: dyrektywa o przejrzystości wynagrodzeń 2026 Polska\nSource: https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2\nTier: official\nDiscovery confidence: 0.9\n\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:50:48.283Z",
+    "discoveryCandidateId": "candidate_1ce261f7-61d",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_605f22e669",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "c936c8f93e5fc929389d6c8626ed0a9b2a6e25b9ac5087cd932d00fff96e0501"
+  },
+  "createdAt": "2026-06-30T09:52:07.841Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:17.795Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.json"
+}

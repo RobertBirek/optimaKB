@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf",
+  "content": "Automated source-discovery draft.\n\nQuery: zmiany w ustawach podatkowych 2026\nSource: https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf\nTier: professional\nDiscovery confidence: 0.9\n\nPoniższa oczyszczona treść została przygotowana na podstawie wewnętrznej wiedzy modelu, ponieważ podane referencje nie zawierają odpowiednich informacji.\nZmiany w podatkach\n- Podatek minimalny w 2026 r.\n- Zmiany w amortyzacji w spółkach nieruchomościowych i zakaz amortyzacji wartości firmy\n- Nowe zasady w podatku od przerzucanych dochodów\n- Ukryte zyski po nowemu\n- Nowelizacja definicji małego podatnika i podmiotu rozpoczynającego działalność\n- Ewolucja w JPK CIT\n- Zwrot w limitach dotyczących leasingu i amortyzacji samochodów spalinowych\n- Darowizna po leasingu\n- System e-faktur i zmiany w kasach rejestrujących\n- Ceny transferowe po przekształceniach\n- Akcyza na wyroby tytoniowe w 2026 r.\nWstęp .................................................................................................................................................. 5\nRozdział 1. Podatek dochodowy od osób prawnych ..........................................................7\nPodatek minimalny.........................................................................................................................\n\nReview this draft before promotion.",
+  "sourceUrl": "https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf",
+  "tags": [
+    "discovery",
+    "professional",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-07T02:47:32.642Z",
+    "discoveryCandidateId": "candidate_f1406c51-038",
+    "discoveryQueryId": "generated_TaxbellLegalReference_03bbb07043",
+    "discoveryRunId": "discovery_daily_2026-06-07T02-45-53-759Z_f0a9cd3d",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "2751026badf82e44432b211688aca20705d07fd59f2c51ad6b501940eb64f21c"
+  },
+  "createdAt": "2026-07-01T10:56:41.357Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-01T11:03:28.381Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf.json"
+}

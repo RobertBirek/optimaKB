@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Zmiany w stażu pracy – wnioski o zaświadczenia z ZUS od stycznia 2026 r. - ZUS",
+  "content": "Automated source-discovery draft.\n\nQuery: kadry płace ZUS prawo pracy zmiany 2026\nSource: https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.\nTier: official\nDiscovery confidence: 0.9\n\nZmiany w stażu pracy – wnioski o zaświadczenia z ZUS od stycznia 2026 r. - ZUS\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-26T02:46:49.760Z",
+    "discoveryCandidateId": "candidate_60eed446-d2a",
+    "discoveryQueryId": "seed_TaxbellPayrollHRReference",
+    "discoveryRunId": "discovery_daily_2026-06-26T02-46-32-864Z_934fae27",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "8b215536c47dd816c7bb0d3fe1880821695f28f751ef8d47d46bbd4ad30b9528"
+  },
+  "createdAt": "2026-06-30T09:35:49.661Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:18.080Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.json"
+}

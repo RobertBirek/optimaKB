@@ -2,10 +2,11 @@
 
 import assert from 'assert';
 import fs from 'fs';
+import http from 'http';
 import os from 'os';
 import path from 'path';
 import process from 'process';
-import { spawnSync } from 'child_process';
+import { spawn, spawnSync } from 'child_process';
 import { deriveDiscoveryAutoDraftState } from './lib/feedback_learning.mjs';
 
 const REPO_ROOT = process.env.ROOT || '/docker/openspg';
@@ -32,6 +33,51 @@ function runDiscovery(root, args, llmMock, searchMock) {
   });
 }
 
+function runDiscoveryAsync(env, args) {
+  return new Promise((resolve) => {
+    const child = spawn(process.execPath, [
+      path.join(REPO_ROOT, 'scripts/run_dashboard_discovery.mjs'),
+      ...args,
+    ], {
+      cwd: REPO_ROOT,
+      env,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    let stdout = '';
+    let stderr = '';
+    child.stdout.on('data', (chunk) => { stdout += String(chunk); });
+    child.stderr.on('data', (chunk) => { stderr += String(chunk); });
+    child.on('close', (status) => resolve({ status, stdout, stderr }));
+  });
+}
+
+function startSlowLlmServer(fixtures, delayMs) {
+  const server = http.createServer((req, res) => {
+    if (req.method !== 'POST') {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
+    setTimeout(() => {
+      const answer = JSON.stringify({
+        queries: Object.keys(fixtures).map((kbNamespace) => ({
+          kbNamespace,
+          query: `weekly focused query for ${kbNamespace}`,
+          includeDomains: [new URL(fixtures[kbNamespace]).hostname],
+          reason: 'Weekly timeout override fixture.',
+        })),
+      });
+      const body = `data: ${JSON.stringify({ success: true, answer })}\n\n`;
+      res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8' });
+      res.end(body);
+    }, delayMs);
+  });
+  return new Promise((resolve) => {
+    server.listen(0, '127.0.0.1', () => resolve(server));
+  });
+}
+
 const fixtures = {
   ComarchOptimaSchema: 'https://pomoc.comarch.pl/test/schema-2026',
   ComarchOptimaAdditionalFunctions: 'https://pomoc.comarch.pl/test/additional-functions-2026',
@@ -47,6 +93,7 @@ const fixtures = {
 
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'erp-kb-dashboard-discovery-'));
 const today = new Date().toISOString().slice(0, 10);
+let slowServer;
 try {
   writeJson(path.join(root, 'docs/reference/knowledge_inbox/registry.json'), {
     generatedAt: new Date().toISOString(),
@@ -91,10 +138,30 @@ try {
   writeJson(llmMock, llmPayload);
   writeJson(searchMock, searchPayload);
 
+  slowServer = await startSlowLlmServer(fixtures, 150);
+  const { port: slowPort } = slowServer.address();
+
   const weekly = runDiscovery(root, ['--weekly'], llmMock, searchMock);
   assert.strictEqual(weekly.status, 0, weekly.stderr || weekly.stdout);
   const weeklyResult = JSON.parse(weekly.stdout);
   assert.strictEqual(weeklyResult.result.generatedCount, 10);
+
+  const weeklyTimeoutOverride = await runDiscoveryAsync({
+    ...process.env,
+    ROOT: root,
+    OPENSPG_API_BASE: `http://127.0.0.1:${slowPort}`,
+    OPENSPG_LLM_ENDPOINT: '/v1/chat/completions',
+    OPENSPG_LLM_APP_ID: '4',
+    OPENSPG_LLM_SESSION_ID: '4',
+    OPENSPG_COOKIE: 'test-cookie=1',
+    ERP_KB_DISCOVERY_LLM_TIMEOUT_MS: '50',
+    ERP_KB_DISCOVERY_WEEKLY_LLM_TIMEOUT_MS: '500',
+    ERP_KB_DISCOVERY_SEARCH_MOCK_FILE: searchMock,
+  }, ['--weekly']);
+  assert.strictEqual(weeklyTimeoutOverride.status, 0, weeklyTimeoutOverride.stderr || weeklyTimeoutOverride.stdout);
+  const weeklyTimeoutOverrideResult = JSON.parse(weeklyTimeoutOverride.stdout);
+  assert.strictEqual(weeklyTimeoutOverrideResult.result.ok, true, weeklyTimeoutOverride.stdout);
+  assert.strictEqual(weeklyTimeoutOverrideResult.result.resultCount, 10);
 
   const daily = runDiscovery(root, ['--daily', '--dry-run', '--limit', '1'], llmMock, searchMock);
   assert.strictEqual(daily.status, 0, daily.stderr || daily.stdout);
@@ -258,6 +325,19 @@ try {
   const semiAuto = discovery.discoverySemiAutoStatus();
   assert.strictEqual(semiAuto.active, false);
   assert(semiAuto.blockers.length > 0);
+  const refreshedPolicy = discovery.loadDiscoveryPolicy();
+  assert.strictEqual(
+    refreshedPolicy.profiles.find((profile) => profile.kbNamespace === 'ComarchOptimaSchema').seedQuery,
+    'Comarch ERP Optima struktura bazy danych tabele procedury klucze obce TraNag TraElem 2026',
+  );
+  assert.strictEqual(
+    refreshedPolicy.profiles.find((profile) => profile.kbNamespace === 'ComarchOptimaSprint').seedQuery,
+    'Comarch ERP Optima sPrint konfigurator danych szablonu parametry subszablony SQL 2026',
+  );
+  assert.strictEqual(
+    refreshedPolicy.profiles.find((profile) => profile.kbNamespace === 'ComarchOptimaReference').seedQuery,
+    'Comarch ERP Optima instrukcja obsługi konfiguracja personalizacja kolumny użytkownika 2026',
+  );
   const briefing = discovery.refreshDiscoveryBriefing();
   assert.strictEqual(briefing.totals.candidates, 16);
   assert(Array.isArray(briefing.topCandidates));
@@ -343,5 +423,8 @@ try {
     autoDraftPassed,
   }, null, 2)}\n`);
 } finally {
+  if (slowServer) {
+    await new Promise((resolve) => slowServer.close(resolve));
+  }
   fs.rmSync(root, { recursive: true, force: true });
 }

@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_f718f3d5_encja-faktura-sprzedazy-fs",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Faktura Sprzedaży FS",
+  "content": "# Encja: Faktura Sprzedaży (FS)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = 302`, symbol FS\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek, `TrN_TypDokumentu = 302`\n- `CDN.TraElem` — pozycje faktury\n\n## Pola MCP (potwierdzone)\nWszystkie pola wspólne TraNag (patrz dokument-handlowy) plus:\n- `totalVat` — suma VAT (obecna dla faktur)\n\n## MCP API\n### READ (NIE WYWOŁANO)\n- `list_invoices(date_from?, date_to?, type=302)` — lista faktur\n- `get_invoice(id)` — szczegóły faktury\n- `get_invoice_ksef_status(invoice_id)` — status KSeF\n- `get_document(id)` — ogólny endpoint dokumentu\n- `get_document_balance(id)` — saldo (brutto, zapłacone, pozostaje)\n- `get_document_timeline(id)` — historia\n\n### WRITE (NIE WYWOŁANO)\n- `create_sales_invoice` `POST /api/v1/sales/invoice` — tworzy FS\n- `correct_invoice` `POST /api/v1/workflow/invoice/correct` — koryguje FS → FSKOR\n- `create_sales_correction` `POST /api/v1/sales/correction` — tworzy FSKOR bezpośrednio\n- `document_recalculate` `POST /api/v1/documents/recalculate` — przelicza\n- `document_toggle_split_payment` `POST /api/v1/documents/{id}/split-payment` — MPP\n- `pay_document` `POST /api/v1/settlements/pay/{id}/` — płatność KP/KW\n\n## Relacje\n- FS może być korygowana → FSKOR (Korekta FS)\n- FS może pochodzić z RO (Rezerwacja Odbiorcy) przez `invoice_order`\n- FS może pochodzić z FPF (Proforma) przez `advance_invoice_from_proforma` → FA\n- Powiązania przez `DokRelacje` lub `TrN_RelTrNId`\n\n## Uwagi\n- Typ 302 potwierdzony przez MCP\n- `splitPayment` — mechanizm podzielonej płatności (MPP)\n- KSeF: faktura wysyłana do Krajowego Systemu e-Faktur",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "faktura-sprzedazy",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:48:22.412Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:45.380Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_f718f3d5_encja-faktura-sprzedazy-fs.json"
+}

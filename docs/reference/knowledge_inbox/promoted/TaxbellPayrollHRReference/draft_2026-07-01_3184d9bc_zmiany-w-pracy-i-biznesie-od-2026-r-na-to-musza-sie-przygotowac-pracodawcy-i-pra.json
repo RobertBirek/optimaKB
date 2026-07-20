@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-01_3184d9bc_zmiany-w-pracy-i-biznesie-od-2026-r-na-to-musza-sie-przygotowac-pracodawcy-i-pra",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Zmiany w pracy i biznesie od 2026 r. Na to muszą się przygotować pracodawcy i pracownicy - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: kadry płace ZUS prawo pracy zmiany 2026\nSource: https://kadry.infor.pl/wiadomosci/7484883,zmiany-w-pracy-i-biznesie-od-2026-r-na-to-musza-sie-przygotowac-pracodawcy-i-pracownicy.html\nTier: professional\nDiscovery confidence: 0.95\n\n# Zmiany w pracy i biznesie od 2026 r. Na to muszą się przygotować pracodawcy i pracownicy\n25 grudnia 2025, 06:25\nTomasz Czerkies\nZmiany 2026 - prawo pracy i biznes\nW 2026 r. w prawie pracy i biznesie będą duże zmiany. Na nowe regulacje muszą przygotować się wszyscy pracodawcy i pracownicy. Przede wszystkim wchodzi w życie dyrektywa o transparentności płac. Zmieniają się także zasady naliczania stażu pracy i kompetencje PIP. Oto spis najważniejszych zmian do zapamiętania.\n- Zmiany w pracy i biznesie 2026\n- Jawność wynagrodzeń 2026\n- Naliczanie stażu pracy po nowemu 2026\n- Szersze kompetencje PIP\n- Dalsza cyfryzacja dokumentów firmowych w 2026 r.\n## Zmiany w pracy i biznesie 2026\nW nadchodzącym roku polski rynek pracy i środowisko biznesowe czekają istotne zmiany regulacyjne, które będą miały dalekosiężne skutki zarówno dla przedsiębiorców, jak i osób zatrudnionych. Do najważniejszych z nich należy wejście w życie ustawy wdrażającej postanowienia dyrektywy o transparentności płac. Projekt ustawy, która ma zmniejszyć luki wynagrodzeniowe i promować równe traktowanie, został właśnie ogłoszony. Inna ważna zmiana to zmodyfikowane zasady naliczania stażu pracy, co wpłynie na uprawnienia pracowników. Z kolei rozszerzone kompetenc\n\nReview this draft before promotion.",
+  "sourceUrl": "https://kadry.infor.pl/wiadomosci/7484883,zmiany-w-pracy-i-biznesie-od-2026-r-na-to-musza-sie-przygotowac-pracodawcy-i-pracownicy.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-19T02:46:22.513Z",
+    "discoveryCandidateId": "candidate_d98d3e55-8ba",
+    "discoveryQueryId": "seed_TaxbellPayrollHRReference",
+    "discoveryRunId": "discovery_daily_2026-06-19T02-46-03-772Z_304258cd",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "7b1b2df4ad7a52811734d01c06e372565c79d43473a624709c945c8f3e2df809"
+  },
+  "createdAt": "2026-07-01T09:29:52.765Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-01T09:36:46.674Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_3184d9bc_zmiany-w-pracy-i-biznesie-od-2026-r-na-to-musza-sie-przygotowac-pracodawcy-i-pra.json"
+}

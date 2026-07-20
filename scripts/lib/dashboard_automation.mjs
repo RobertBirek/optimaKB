@@ -10,6 +10,8 @@ import { automationLearningAdjustment, deriveAutomationLearningState, reroutePai
 import { loadProviderSecrets, maskProviderSecrets, saveProviderSecrets } from './provider_secrets.mjs';
 import {
   findRawDraftById,
+  loadRegistry,
+  registryEntryFor,
   reroutePendingDraft,
 } from './promoted_knowledge.mjs';
 
@@ -885,15 +887,30 @@ export function automationSummary() {
     acc[job.status] = (acc[job.status] || 0) + 1;
     return acc;
   }, {});
+  const registry = loadRegistry();
+  const actionableDraft = (job) => {
+    const entry = registryEntryFor(registry, job.draftId);
+    if (entry?.status && entry.status !== 'pending') return false;
+    try {
+      findRawDraftById(job.draftId);
+      return true;
+    } catch {
+      return false;
+    }
+  };
   return {
     config,
     counts,
     active: jobs.filter((job) => ['QUEUED', 'RUNNING'].includes(job.status)),
-    exceptions: jobs.filter((job) => ['EXCEPTION', 'ROLLBACK_FAILED'].includes(job.status)),
+    exceptions: jobs.filter((job) => (
+      ['EXCEPTION', 'ROLLBACK_FAILED'].includes(job.status)
+      && actionableDraft(job)
+    )),
     reroutes: jobs.filter((job) => (
       job.status === 'REROUTE_PROPOSED'
       && job.origin === 'live'
       && !job.reroute?.appliedAt
+      && actionableDraft(job)
     )),
     canaryQueue,
     canaryReport,

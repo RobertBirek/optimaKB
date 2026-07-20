@@ -5,7 +5,7 @@ import path from 'node:path';
 import { ensureDir, makeId, writeCsv, writeJson } from './lib/export_utils.mjs';
 import { findRawDrafts, splitDraftContent, truncate } from './lib/promoted_knowledge.mjs';
 
-const ROOT = '/docker/openspg';
+const ROOT = process.env.ROOT || '/docker/openspg';
 const EXPORT_DIR = path.join(ROOT, 'exports/owa_ontology/v1');
 const MANIFEST_PATH = path.join(EXPORT_DIR, '_manifest.json');
 const README_PATH = path.join(EXPORT_DIR, 'README.md');
@@ -135,7 +135,10 @@ function latestOntologyDrafts() {
 }
 
 function parseEntityDraft(draft) {
-  const content = String(draft.content || '');
+  const markdownFallback = draft.rawMarkdownPath && fs.existsSync(draft.rawMarkdownPath)
+    ? fs.readFileSync(draft.rawMarkdownPath, 'utf8')
+    : '';
+  const content = String(draft.content || markdownFallback || '');
   const entityId = makeId('OWA_ENTITY', draft.title);
   const canonicalName = draft.title.replace(/^Encja:\s*/i, '');
   const verificationStatus = parseListValue(content, 'Status');

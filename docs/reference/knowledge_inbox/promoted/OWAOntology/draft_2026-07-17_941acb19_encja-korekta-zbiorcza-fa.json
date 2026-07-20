@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_941acb19_encja-korekta-zbiorcza-fa",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Korekta zbiorcza FA",
+  "content": "# Encja: Korekta zbiorcza FA\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `średni`\n- Identyfikator ontologiczny: `OWAOntology.KorektaZbiorczaFA`\n- Aliasy: `KorektaZbiorcza`, `FAKZ`, `CorrectionBatch`\n\n## Opis biznesowy\nKorekta zbiorcza FA to specjalny dokument korygujący obejmujący wiele faktur sprzedaży jednocześnie. Używany do globalnych korekt wartościowych lub formalnych dla zestawu dokumentów sprzedażowych. W Optimie prawdopodobnie bazuje na standardowym modelu dokumentu handlowego (`TraNag`, `TraElem`) z dodatkowym workflow i regułami transformacji.\n\n## Reguły biznesowe\n- Koryguje wiele dokumentów źródłowych jednocześnie\n- Dotyczy dokumentów sprzedaży (FA)\n- Może generować skutki VAT i rozrachunkowe\n- Prawdopodobnie tworzy relacje w tabeli `CDN.TraRelacje` lub odpowiedniku [UNKNOWN]\n- Workflow może być zbliżony do `create_sales_correction`, ale dla wielu źródeł [UNKNOWN]\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela lub obiekt | Status | Dowód |\n|---|---|---|---|---|\n| Dokument handlowy | CDN | TraNag | Pośrednio potwierdzona | Model nadrzędny |\n| Pozycje dokumentu | CDN | TraElem | Pośrednio potwierdzona | Model nadrzędny |\n| Relacje dokumentów | CDN | TraRelacje / DokumentRelacje | Niepotwierdzona | Do ustalenia |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | [brak dedykowanego endpointu] | — | Niepotwierdzone |\n| WRITE | create_sales_correction | POST /api/v1/sales/correction | Pośrednio powiązane |\n\n## Identyfikatory\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | [UNKNOWN] | ID dokumentu korekty zbiorczej | Oczekuje potwierdzenia |\n| FK | [UNKNOWN] | Referencje do wielu dokumentów źródłowych | Oczekuje potwierdzenia |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| koryguje_dokumenty | KorektaZbiorczaFA | FakturaSprzedazy | N:M | Przez tabelę relacji |\n| generuje_rozrachunki | KorektaZbiorczaFA | Rozrachunek | 1:N | Przez workflow sprzedażowy |\n| wpływa_na_vat | KorektaZbiorczaFA | RejestrVAT | 1:N | Przez zapis VAT |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| OptimaMCP | create_sales_correction | API WRITE dla korekt FS |\n| Ontologia nadrzędna | Dokument handlowy | Model bazowy |\n\n## Otwarte problemy\n- [UNKNOWN: czy korekta zbiorcza ma własny typ dokumentu w TraNag]\n- [UNKNOWN: jak modelowane są relacje do wielu dokumentów źródłowych]\n- [UNKNOWN: czy istnieje osobny endpoint MCP lub workflow]\n- [UNKNOWN: skutki magazynowe i VAT zależne od typu korekty]\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "korekta-zbiorcza-fa",
+    "do-weryfikacji"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:33.566Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:26.002Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_941acb19_encja-korekta-zbiorcza-fa.json"
+}

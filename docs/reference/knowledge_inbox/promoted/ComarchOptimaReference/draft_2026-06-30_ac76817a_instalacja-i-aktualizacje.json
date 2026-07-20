@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_ac76817a_instalacja-i-aktualizacje",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "Instalacja i aktualizacje",
+  "content": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch ERP Optima 2026.2 lista zmian\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/instalacja-i-aktualizacje/\nTier: official\nDiscovery confidence: 0.8\n\nInstalacja i aktualizacje\nInstalacja oprogramowania oraz zmiany w kolejnych wersjach programu.\n### Instalacja\n- 17\n- 17326\n### Wymagania sprzętowe i programowe\n- 16\n- 14489\n### Wiadomości ogólne\n- 6\n- 6133\n### Jak zainstalować program?\n- 1\n- 5702\n### Informacje o gwarancji i licencjach\n- 1\n- 1299\nNowości i zmiany w wersji 2026.4.1\nNowości i zmiany w wersji 2026.3.1\nNowości i zmiany w wersji 2026.2.1\nNowości i zmiany w wersji 2026.1.1\nNowości i zmiany w wersji 2026.0.1\nNowości i zmiany w wersji 2025\nNowości i zmiany w wersji 2025.5.1\nNowości i zmiany w wersji 2025.3.1\nNowości i zmiany w wersji 2025.2.1\nNowości i zmiany w wersji 2025.1.1\nNowości i zmiany w wersji 2025.0.1\nNowości i zmiany w wersji 2024\nNowości i zmiany w wersji 2024.6.1\nNowości i zmiany w wersji 2024.5.1\nNowości i zmiany w wersji 2024.3.1\nNowości i zmiany w wersji 2024.2.2\nNowości i zmiany w wersji 2024.2.1\nNowości i zmiany w wersji 2024.1.1\nNowości i zmiany w wersji 2024.0.1\nNowości i zmiany w wersji 2023\nNowości i zmiany w wersji 2023.6.1\nNowości i zmiany w wersji 2023.5.1\nNowości i zmiany w wersji 2023.3.1\nNowości i zmiany w wersji 2023.2.1\nNowości i zmiany w wersji 2023.1.1\nNowości i zmiany w wersji 2023.0.1\nNowości i zmiany w wersji 2022\nNowości i zmiany w wersji 2022.6.1 oraz 2022.7.1\nNowości i zm\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/instalacja-i-aktualizacje/",
+  "tags": [
+    "discovery",
+    "official",
+    "instrukcje",
+    "aktualizacje",
+    "KSeF",
+    "obsługa programu"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:48:57.299Z",
+    "discoveryCandidateId": "candidate_19f8231a-c9c",
+    "discoveryQueryId": "generated_ComarchOptimaReference_305429abdd",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.8,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "dbe18e14ca71d1490ca14c68d6160fcbd471e5cd632dc8b4f31cf18b03d6aa6e"
+  },
+  "createdAt": "2026-06-30T09:53:19.939Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:17.747Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_ac76817a_instalacja-i-aktualizacje.json"
+}

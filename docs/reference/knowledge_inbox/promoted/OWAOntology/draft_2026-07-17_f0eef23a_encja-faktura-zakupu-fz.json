@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_f0eef23a_encja-faktura-zakupu-fz",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Faktura Zakupu FZ",
+  "content": "# Encja: Faktura Zakupu (FZ)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji przez MCP)\n- **Symbol**: FZ\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek, `TrN_TypDokumentu = ?`\n- `CDN.TraElem` — pozycje faktury zakupu\n\n## MCP API\n### READ (NIE WYWOŁANO)\n- `list_invoices(date_from?, date_to?, type=?)` — lista faktur zakupu\n- `get_invoice(id)` — szczegóły faktury zakupu\n- `get_document(id)` — ogólny endpoint dokumentu\n- `get_document_balance(id)` — saldo\n\n### WRITE (NIE WYWOŁANO)\n- `create_purchase_invoice` `POST /api/v1/purchase/invoice` — tworzy FZ\n- `create_purchase_correction` `POST /api/v1/purchase/correction` — tworzy FZKOR\n- `create_internal_purchase_proof` `POST /api/v1/purchase/internal-proof` — Dowód Wewnętrzny Zakupu (FZWFZ)\n\n## Relacje\n- FZ może pochodzić z ZO (Zamówienie u Dostawcy) przez `invoice_purchase_order`\n- FZ może być korygowana → FZKOR (Korekta FZ)\n- Powiązana z PZ (Przyjęcie Zewnętrzne) przez workflow zakupowy\n- Powiązania przez `DokRelacje` lub `TrN_RelTrNId`\n\n## Workflow zakupowy\n1. `create_purchase_order` → ZO (Zamówienie u Dostawcy)\n2. `receive_purchase_order` → PZ (Przyjęcie Zewnętrzne)\n3. `invoice_purchase_order` → FZ (Faktura Zakupu)",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "faktura-zakupu",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:23:38.938Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.931Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_f0eef23a_encja-faktura-zakupu-fz.json"
+}

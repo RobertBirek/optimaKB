@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_4ecadbcf_encja-forma-p-atnosci",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Forma płatności",
+  "content": "# Encyja: Forma płatności\n\n## Status weryfikacji\n**Zweryfikowane** — tabela MSSQL i endpointy MCP potwierdzone.\n\n## Opis biznesowy\nForma płatności (CDN.FormyPlatnosci) definiuje sposób rozliczenia dokumentów (przelew, gotówka, karta itp.). Każda forma ma nazwę, typ, termin płatności w dniach (`FPl_Termin`), może być powiązana z rachunkiem bankowym (`FPl_BRaId`) i może mieć przypisany rabat (`FPl_Rabat`).\n\n## Reguły biznesowe\n- `FPl_Nazwa` — UNIQUE, maks 20 znaków\n- `FPl_Termin >= 0` (CHECK constraint)\n- `FPl_Typ` (smallint) — typ formy płatności [UNKNOWN enum]\n- `FPl_BRaId` → BnkRachunki (FK, NO ACTION)\n- `FPl_NieAktywny` (smallint) — flaga dezaktywacji\n- `FPl_Domyslna` (tinyint) — flaga formy domyślnej\n- `FPl_Rabat` (decimal(5,2)) — domyślny rabat przy tej formie\n\n## Źródła danych\n- **Tabela główna**: `CDN.FormyPlatnosci` (BASE TABLE, 10 wierszy)\n- **Tabele pomocnicze**: `CDN.FormyPlatnWaluty` (asocjacja walut)\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| `FPl_FPlId` | int IDENTITY | PK (clustered) |\n| `FPl_Nazwa` | nvarchar(20) | Nazwa (UNIQUE INDEX) |\n\n## Pola i mapowanie API↔MSSQL\n- `FPl_FPlId` (int, IDENTITY, PK) — `list_payment_forms` / `create_payment_form`\n- `FPl_Nazwa` (nvarchar(20)) — `list_payment_forms` / `create_payment_form`\n- `FPl_Typ` (smallint) — NOT EXPOSED BY MCP\n- `FPl_BRaId` (int, FK→BnkRachunki) — NOT EXPOSED BY MCP\n- `FPl_PodmiotTyp`, `FPl_PodmiotID` — NOT EXPOSED BY MCP\n- `FPl_Termin` (smallint) — NOT EXPOSED BY MCP\n- `FPl_NieAktywny` (smallint) — NOT EXPOSED BY MCP\n- `FPl_TS_Export` (datetime) — NOT EXPOSED BY MCP\n- `FPl_ImportAppId`, `FPl_ImportRowId` — NOT EXPOSED BY MCP\n- `FPl_XLID` (int) — NOT EXPOSED BY MCP\n- `FPl_Rabat` (decimal(5,2)) — NOT EXPOSED BY MCP\n- `FPl_TerminalPlatniczy` (smallint, DEFAULT 0) — NOT EXPOSED BY MCP\n- `FPl_KSeFId` (int, DEFAULT 0) — NOT EXPOSED BY MCP\n- `FPl_Domyslna` (tinyint) — NOT EXPOSED BY MCP\n\n## Relacje ontologiczne\n- **POSIADA_RACHUNEK** (N:1) → `CDN.BnkRachunki` przez `FPl_BRaId → BRa_BRaID`\n- **OBSLUGUJE_WALUTY** (N:M) → `CDN.FormyPlatnWaluty` przez `FPW_FPlId`\n- **UZYWANA_PRZEZ_DOKUMENTY** (1:N) → `CDN.TraNag` przez `TrN_FPlId`\n- **UZYWANA_PRZEZ_KONTRAHENTOW** (1:N) → `CDN.Kontrahenci` [UNKNOWN kolumna FK]\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `list_payment_forms` | READ — lista form płatności |\n| `create_payment_form` | WRITE — tworzy formę |\n| `update_payment_form` | WRITE — aktualizuje formę |\n| `delete_payment_form` | WRITE — usuwa formę |\n\n## Pochodzenie wiedzy\n- `mssql_describe_table` (CDN.FormyPlatnosci, 2026-07-15)\n- 10 wierszy w testowej, CHECK constraint FPl_Termin>=0\n\n## Otwarte problemy\n1. Enum `FPl_Typ` — wartości (przelew, gotówka, karta, …)?\n2. `FPl_KSeFId` — jak mapuje się do systemu KSeF?\n3. Mapping endpointów MCP do konkretnych kolumn niepotwierdzony runtime.\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.FormyPlatnosci` (ROW_COUNT=10)\n- PK: `FPl_FPlId` (IDENTITY)\n- FK: `FPl_BRaId → CDN.BnkRachunki.BRa_BRaID` (NO ACTION)\n\n## Walidacja\n- [x] `mssql_describe_table` potwierdza strukturę\n- [ ] Zweryfikuj `list_payment_forms` — jakie pola zwraca?\n- [ ] Sprawdź enum `FPl_Typ`",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "forma-platnosci",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:34.451Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:25.484Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_4ecadbcf_encja-forma-p-atnosci.json"
+}

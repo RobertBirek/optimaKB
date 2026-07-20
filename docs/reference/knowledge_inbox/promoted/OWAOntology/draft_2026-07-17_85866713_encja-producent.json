@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_85866713_encja-producent",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Producent",
+  "content": "# Encyja: Producent\n\n## Status weryfikacji\n**Zweryfikowane** — tabela MSSQL i endpointy MCP potwierdzone. Uwaga: tabela w MSSQL to `CDN.Producenci` (nie \"Produconci\").\n\n## Opis biznesowy\nProducent (CDN.Producenci) reprezentuje producenta towaru. Każdy producent ma kod (`Prd_Kod`, UNIQUE) i nazwę (`Prd_Nazwa`, UNIQUE). Opcjonalnie może mieć URL strony i logo (referencja do danych binarnych). Istnieje też osobna tabela `CDN.Marki` — relacja między Producentem a Marką jest do zbadania.\n\n## Reguły biznesowe\n- `Prd_Kod` — UNIQUE (varchar(40))\n- `Prd_Nazwa` — UNIQUE na (Nazwa, PrdId)\n- `Prd_Logo` (int) — referencja do danych binarnych [UNKNOWN tabela]\n- `Prd_URL` — nullable\n\n## Źródła danych\n- **Tabela główna**: `CDN.Producenci` (BASE TABLE, 0 wierszy)\n- **Powiązane**: `CDN.ProducenciJezykObcy` (tłumaczenia), `CDN.Marki` (marki)\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| `Prd_PrdId` | int IDENTITY | PK (clustered) |\n| `Prd_Kod` | varchar(40) | Kod producenta (UNIQUE) |\n| `Prd_Nazwa` | nvarchar(250) | Nazwa producenta (UNIQUE) |\n\n## Pola i mapowanie API↔MSSQL\n- `Prd_PrdId` (int, IDENTITY, PK) — `list_manufacturers` / `update_manufacturer` / `delete_manufacturer`\n- `Prd_Kod` (varchar(40)) — `list_manufacturers` / `create_manufacturer`\n- `Prd_Nazwa` (nvarchar(250)) — `list_manufacturers` / `create_manufacturer` / `update_manufacturer`\n- `Prd_URL` (varchar(250)) — `list_manufacturers` / `create_manufacturer` / `update_manufacturer`\n- `Prd_Logo` (int) — NOT EXPOSED BY MCP\n- `Prd_OpeZalId`, `Prd_StaZalId`, `Prd_TS_Zal` — NOT EXPOSED BY MCP\n- `Prd_OpeModId`, `Prd_StaModId`, `Prd_TS_Mod` — NOT EXPOSED BY MCP\n- `Prd_OpeModKod`, `Prd_OpeModNazwisko`, `Prd_OpeZalKod`, `Prd_OpeZalNazwisko` — NOT EXPOSED BY MCP\n\n## Relacje ontologiczne\n- **PRODUKUJE_TOWAR** (1:N) → `CDN.Towary` [UNKNOWN kolumna FK]\n- **POSIADA_TLUMACZENIE** (1:N) → `CDN.ProducenciJezykObcy`\n- **POWIAZANY_Z_MARKA** (1:N?) → `CDN.Marki` [do zbadania]\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `list_manufacturers` | READ — lista producentów |\n| `create_manufacturer` | WRITE — tworzy producenta |\n| `update_manufacturer` | WRITE — aktualizuje producenta |\n| `delete_manufacturer` | WRITE — usuwa producenta |\n\n## Pochodzenie wiedzy\n- `mssql_describe_table` (CDN.Producenci, 2026-07-15)\n- 0 wierszy, 15 kolumn, 3 indeksy (Prd_Primary, PrdKod UNIQUE, PrdNazwa UNIQUE)\n- Potwierdzono nazwę tabeli: `CDN.Producenci` (nie Produconci)\n\n## Otwarte problemy\n1. Relacja Producenci ↔ Marki — jaka jest różnica biznesowa?\n2. `Prd_Logo` — FK do `CDN.DaneBinarne`?\n3. FK do Towary — która kolumna w Towary wskazuje producenta?\n4. 0 wierszy w testowej — struktura potwierdzona ale bez danych.\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.Producenci` (ROW_COUNT=0)\n- PK: `Prd_PrdId` (IDENTITY)\n\n## Walidacja\n- [x] `mssql_describe_table` potwierdza strukturę\n- [x] Potwierdzono poprawną nazwę tabeli: Producenci\n- [ ] Zweryfikuj `list_manufacturers` runtime\n- [ ] Zbadaj relację Producent ↔ Towary",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "producent",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:43:24.932Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:46.048Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_85866713_encja-producent.json"
+}

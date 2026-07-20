@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_86fccc4f_encja-magazyn",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Magazyn",
+  "content": "# Encyja: Magazyn\n\n## Status weryfikacji\n**Zweryfikowane** — tabela MSSQL i endpointy MCP potwierdzone.\n\n## Opis biznesowy\nMagazyn (CDN.Magazyny) reprezentuje fizyczną lub logiczną lokalizację przechowywania towarów. Każdy magazyn ma symbol (`Mag_Symbol`, UNIQUE), nazwę, opis, rejestr, typ. Wspiera magazyny unijne (`Mag_Unijny`) z kodem kraju UE i kodem transakcji. Magazyny są używane w dokumentach handlowych i magazynowych (TraNag, TwrIlosci, TwrZasoby).\n\n## Reguły biznesowe\n- `Mag_Symbol` — UNIQUE (varchar(20))\n- `Mag_Typ` (smallint) — typ magazynu [UNKNOWN enum]\n- `Mag_NieAktywny` (tinyint) — flaga dezaktywacji\n- `Mag_Unijny` (tinyint) — magazyn unijny (WDT/WNT)\n- `Mag_UEKraj` (nvarchar(2)) — kod kraju UE (jeśli unijny)\n- `Mag_KodTransakcji` (nvarchar(2)) — kod transakcji unijnej\n- `Mag_Rejestr` (nvarchar(5)) — rejestr księgowy\n- `Mag_TwCNumer` (int, DEFAULT 0) — domyślny numer ceny\n\n## Źródła danych\n- **Tabela główna**: `CDN.Magazyny` (BASE TABLE, 2 wiersze)\n- **eSklep**: `CDN.eSklepMagazyny`\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| `Mag_MagId` | int IDENTITY | PK (clustered) |\n| `Mag_Symbol` | varchar(20) | Symbol (UNIQUE) |\n| `Mag_Nazwa` | nvarchar(50) | Nazwa |\n\n## Pola i mapowanie API↔MSSQL\n- `Mag_MagId` (int, IDENTITY, PK) — `list_warehouses` / `create_warehouse` / `update_warehouse` / `delete_warehouse`\n- `Mag_GIDNumer` (int) — NOT EXPOSED BY MCP\n- `Mag_MagazynZwrotnyXL` (tinyint) — NOT EXPOSED BY MCP\n- `Mag_Typ` (smallint) — NOT EXPOSED BY MCP\n- `Mag_Symbol` (varchar(20)) — `list_warehouses` / `create_warehouse`\n- `Mag_Nazwa` (nvarchar(50)) — `list_warehouses` / `create_warehouse` / `update_warehouse`\n- `Mag_Opis` (nvarchar(254)) — `list_warehouses` / `create_warehouse` / `update_warehouse`\n- `Mag_Rejestr` (nvarchar(5)) — NOT EXPOSED BY MCP\n- `Mag_NieAktywny` (tinyint) — NOT EXPOSED BY MCP\n- `Mag_MagIdXL` (int) — NOT EXPOSED BY MCP\n- `Mag_Unijny` (tinyint) — NOT EXPOSED BY MCP\n- `Mag_UEKraj` (nvarchar(2)) — NOT EXPOSED BY MCP\n- `Mag_KodTransakcji` (nvarchar(2)) — NOT EXPOSED BY MCP\n- `Mag_Konto` (varchar(50)) — NOT EXPOSED BY MCP\n- `Mag_OpeZalId`, `Mag_StaZalId`, `Mag_TS_Zal` — NOT EXPOSED BY MCP\n- `Mag_OpeModId`, `Mag_StaModId`, `Mag_TS_Mod` — NOT EXPOSED BY MCP\n- `Mag_TwCNumer` (int, DEFAULT 0) — NOT EXPOSED BY MCP\n- `Mag_Adres` (int, DEFAULT 0) — NOT EXPOSED BY MCP\n- `Mag_OpeModKod`, `Mag_OpeModNazwisko`, `Mag_OpeZalKod`, `Mag_OpeZalNazwisko` — NOT EXPOSED BY MCP\n\n## Relacje ontologiczne\n- **UZYWANY_PRZEZ_DOKUMENTY** (1:N) → `CDN.TraNag` przez `TrN_MagZrdId`, `TrN_MagDocId`\n- **POSIADA_ILOSCI** (1:N) → `CDN.TwrIlosci` przez `TwI_MagId`\n- **POSIADA_ZASOBY** (1:N) → `CDN.TwrZasoby` przez `TwZ_MagId`\n- **UZYWANY_PRZEZ_ESKLEP** (1:N?) → `CDN.eSklepMagazyny`\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `list_warehouses` | READ — lista magazynów |\n| `create_warehouse` | WRITE — tworzy magazyn |\n| `update_warehouse` | WRITE — aktualizuje magazyn |\n| `delete_warehouse` | WRITE — usuwa magazyn |\n\n## Pochodzenie wiedzy\n- `mssql_describe_table` (CDN.Magazyny, 2026-07-15)\n- 2 wiersze, 26 kolumn, brak FK constraints, 2 indeksy\n\n## Otwarte problemy\n1. Enum `Mag_Typ` — jakie wartości?\n2. `Mag_MagazynZwrotnyXL` — znaczenie?\n3. `Mag_MagIdXL` — referencja do eSklepMagazyny?\n4. `Mag_Adres` (int) — FK do tabeli adresów?\n5. Mapping endpointów MCP do konkretnych kolumn niepotwierdzony — które pola są mutowalne?\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.Magazyny` (ROW_COUNT=2)\n- PK: `Mag_MagId` (IDENTITY)\n\n## Walidacja\n- [x] `mssql_describe_table` potwierdza strukturę\n- [ ] Zweryfikuj `list_warehouses` — jakie pola zwraca?\n- [ ] Sprawdź enum `Mag_Typ`",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "magazyn",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:34.828Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:25.096Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_86fccc4f_encja-magazyn.json"
+}

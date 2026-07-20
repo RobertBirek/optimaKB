@@ -6,6 +6,8 @@ import path from 'path';
 import process from 'process';
 import { randomUUID } from 'crypto';
 import { extractPdfText } from './lib/pdf_text.mjs';
+import { cleanContent, decodeHtmlEntities, normalizeWhitespace, stripHtmlToText } from './lib/content_cleaner.mjs';
+import { fetchContent } from './lib/content_provider.mjs';
 import { submitKnowledgeDraft } from './lib/knowledge_inbox.mjs';
 import { TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { searchExternalSources } from './lib/external_search.mjs';
@@ -48,34 +50,6 @@ function parseArgs(argv) {
   }
   if (!args.all && !args.sourceId) throw new Error('Use --all or --source <sourceId>');
   return args;
-}
-
-function normalizeWhitespace(value) {
-  return String(value || '')
-    .replace(/\r/g, '')
-    .replace(/[ \t]+/g, ' ')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
-
-function decodeHtmlEntities(value) {
-  return String(value || '')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/&amp;/gi, '&')
-    .replace(/&lt;/gi, '<')
-    .replace(/&gt;/gi, '>')
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/g, "'");
-}
-
-function stripHtmlToText(html) {
-  return normalizeWhitespace(decodeHtmlEntities(String(html || '')
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ' ')
-    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, ' ')
-    .replace(/<noscript\b[^<]*(?:(?!<\/noscript>)<[^<]*)*<\/noscript>/gi, ' ')
-    .replace(/<\/(p|div|section|article|header|footer|li|tr|h[1-6])>/gi, '\n')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<[^>]+>/g, ' ')));
 }
 
 function titleFromHtml(html, fallback = '') {
@@ -282,7 +256,7 @@ async function discoverItems(source) {
 async function fetchItemContent(item, source) {
   if (source.sourceType === 'directory') {
     const fileInfo = await readFileContent(item.url);
-    const body = fileInfo.body || '';
+    const body = await cleanContent(fileInfo.body || '');
     if (body.length < MIN_CONTENT_CHARS) return { skipped: true, reason: 'content_too_short' };
     return {
       sourceUrl: item.url,
@@ -293,23 +267,37 @@ async function fetchItemContent(item, source) {
     };
   }
   if (item.summary && item.summary.length >= MIN_CONTENT_CHARS) {
+    const content = await cleanContent(item.summary);
     return {
       sourceUrl: item.url,
-      title: item.title || titleFromContent(item.summary, item.url),
-      content: item.summary,
+      title: item.title || titleFromContent(content, item.url),
+      content,
       provider: item.provider || 'source_summary',
       retrievedAt: item.retrievedAt || new Date().toISOString(),
     };
   }
-  const fetched = item.fetched || await fetchText(item.url, source);
-  const isHtml = fetched.contentType.includes('html') || /<html|<body|<article/i.test(fetched.body);
-  const content = (isHtml ? stripHtmlToText(fetched.body) : normalizeWhitespace(fetched.body)).slice(0, MAX_CONTENT_CHARS);
+  if (source.authMode) {
+    const fetched = item.fetched || await fetchText(item.url, source);
+    const isHtml = fetched.contentType.includes('html') || /<html|<body|<article/i.test(fetched.body);
+    const content = String(await cleanContent(
+      isHtml ? stripHtmlToText(fetched.body) : normalizeWhitespace(fetched.body),
+    )).slice(0, MAX_CONTENT_CHARS);
+    return {
+      sourceUrl: item.url,
+      title: item.title || fetched.title || titleFromContent(content, item.url),
+      content,
+      provider: isHtml ? 'http_html_auth' : 'http_text_auth',
+      retrievedAt: new Date().toISOString(),
+    };
+  }
+  const fetched = await fetchContent(item.url);
+  const content = String(fetched.content || '').slice(0, MAX_CONTENT_CHARS);
   return {
     sourceUrl: item.url,
     title: item.title || fetched.title || titleFromContent(content, item.url),
     content,
-    provider: isHtml ? 'http_html' : 'http_text',
-    retrievedAt: new Date().toISOString(),
+    provider: fetched.provider,
+    retrievedAt: fetched.retrievedAt || new Date().toISOString(),
   };
 }
 

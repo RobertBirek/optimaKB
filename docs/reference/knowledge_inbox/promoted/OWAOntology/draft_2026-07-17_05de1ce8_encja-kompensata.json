@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_05de1ce8_encja-kompensata",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Kompensata",
+  "content": "# Encja: Kompensata\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `wysoki`\n- Identyfikator ontologiczny: `OWAOntology.Kompensata`\n- Aliasy: `KompensatyNag`, `KompensatyElem`, `Compensation`\n\n## Opis biznesowy\nKompensata w Comarch Optima umożliwia wzajemne potrącenie należności i zobowiązań między kontrahentami. Gdy ten sam podmiot jest jednocześnie dłużnikiem i wierzycielem, kompensata pozwala rozliczyć oba rozrachunki bez przepływu środków pieniężnych. Nagłówek (`CDN.KompensatyNag`) zawiera dane ogólne, a elementy (`CDN.KompensatyElem`) wskazują konkretne rozrachunki objęte kompensatą. Kompensata może być powiązana z dekretem księgowym (KPN_DekID).\n\n## Reguły biznesowe\n- Kompensata rozlicza co najmniej dwa rozrachunki o przeciwnych znakach\n- Nagłówek przechowuje konta Winien/Ma — `KPN_KontoWn`, `KPN_KontoMa`\n- Kwota kompensaty `KPN_RazemKwotaRoz` (decimal 15,2)\n- Numeracja dokumentu: `KPN_NumerNr` + `KPN_NumerString` → `KPN_NumerPelny` (computed)\n- Numer obcy `KPN_NumerObcy` ma priorytet nad numerem własnym\n- Kompensata jest przypisana do kategorii (`KPN_KatID` → `Kategorie`)\n- Kompensata generuje dekret księgowy (`KPN_DekID` → `DekretyNag`)\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | PK | Stan | Dowód |\n|---|---|---|---|---|---|\n| Nagłówki kompensat | CDN | KompensatyNag | KPN_KPNID (int, IDENTITY) | Potwierdzona | MSSQL |\n| Elementy kompensat | CDN | KompensatyElem | — | Potwierdzona | MSSQL CDN_TEST |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | settlement_compensate | POST /api/v1/settlements/compensate | Potwierdzone |\n\n## Identyfikatory — KompensatyNag\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | KPN_KPNID | Unikalny identyfikator kompensaty (int, IDENTITY) | Potwierdzony |\n| FK | KPN_DDfID | FK do DokDefinicje.DDf_DDfID | Potwierdzony |\n| FK | KPN_PodmiotTyp + KPN_PodmiotID | FK do PodmiotyView | Potwierdzony |\n| FK | KPN_KatID | FK do Kategorie.Kat_KatID | Potwierdzony |\n\n## Kluczowe pola MSSQL — KompensatyNag\n| Kolumna | Typ | Opis |\n|---|---|---|\n| KPN_KPNID | int (PK, IDENTITY) | ID kompensaty |\n| KPN_NumerNr | int | Numer kolejny |\n| KPN_NumerString | varchar(31) | Seria numeru |\n| KPN_NumerPelny | nvarchar(30) (computed) | Pełny numer dokumentu |\n| KPN_NumerObcy | nvarchar(256) | Numer obcy (nadrzędny) |\n| KPN_DataDok | datetime | Data dokumentu |\n| KPN_Waluta | varchar(3) | Kod waluty |\n| KPN_KontoWn | varchar(50) | Konto Winien |\n| KPN_KontoMa | varchar(50) | Konto Ma |\n| KPN_RazemKwotaRoz | decimal(15,2) | Kwota kompensaty |\n| KPN_DekID | int | FK do DekretyNag |\n| KPN_PreDekID | int | FK do wstępnego dekretu |\n| KPN_Opis | nvarchar(256) | Opis kompensaty |\n| KPN_Kategoria | varchar(50) | Kod kategorii |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| kompensuje | KompensataElem | Rozrachunek | N:M | KompensatyElem → KsiRozrachunki |\n| generuje_dekret | KompensataNag | DekretKsiegowy | 1:1 | KompensatyNag.KPN_DekID → DekretyNag |\n| dotyczy_kontrahenta | KompensataNag | Kontrahent | N:1 | KompensatyNag → PodmiotyView |\n| zawiera_elementy | KompensataNag | KompensataElem | 1:N | KompensatyElem → KompensatyNag |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| MSSQL (CDN_TEST) | mssql_describe_table | Pełny schemat KompensatyNag (32 kolumny, 4 FK, 9 indeksów) |\n| OptimaMCP | settlement_compensate | API WRITE |\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "kompensata",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:31:04.742Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.605Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_05de1ce8_encja-kompensata.json"
+}

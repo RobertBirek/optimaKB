@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_a224c1c5_encja-faktura-zaliczkowa-fa",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Faktura Zaliczkowa (FA)",
+  "content": "# Encja: Faktura Zaliczkowa (FA)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: FA\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek\n- `CDN.TraElem` — pozycje faktury zaliczkowej\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `advance_invoice_from_proforma` `POST /api/v1/workflow/proforma/advance` — generuje FA z FPF\n- `document_advance_invoice` `POST /api/v1/documents/advance-invoice` — generuje fakturę zaliczkową\n\n## Relacje\n- FA generowana z FPF (Faktura Proforma) przez `advance_invoice_from_proforma`\n- FA dokumentuje otrzymaną zaliczkę/przedpłatę\n- FA może być później rozliczona z FS końcową\n\n## Uwagi\n- Faktura zaliczkowa wystawiana po otrzymaniu przedpłaty\n- Podlega księgowaniu i podlega VAT\n- Workflow: FPF → wpłata zaliczki → FA → docelowa FS (z pomniejszeniem o zaliczkę)",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "faktura-zaliczkowa",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:23:39.101Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.802Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_a224c1c5_encja-faktura-zaliczkowa-fa.json"
+}

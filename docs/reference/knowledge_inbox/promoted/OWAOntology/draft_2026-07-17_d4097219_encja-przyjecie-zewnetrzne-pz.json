@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_d4097219_encja-przyjecie-zewnetrzne-pz",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Przyjęcie Zewnętrzne (PZ)",
+  "content": "# Encja: Przyjęcie Zewnętrzne (PZ)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: PZ\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek, kolumny magazynowe\n- `CDN.TraElem` — pozycje przyjęcia\n\n## MCP API\n### READ (NIE WYWOŁANO)\n- `list_warehouse_docs(type=?)` — lista dokumentów magazynowych\n- `get_warehouse_doc(id)` — szczegóły PZ\n\n### WRITE (NIE WYWOŁANO)\n- `create_goods_receipt` `POST /api/v1/warehouse/receipt` — tworzy PZ\n\n### Workflow (NIE WYWOŁANO)\n- `receive_purchase_order` `POST /api/v1/workflow/purchase/receive` — przyjmuje ZO → PZ\n\n## Relacje\n- PZ może powstać z ZO (Zamówienie u Dostawcy) przez `receive_purchase_order`\n- PZ może być korygowane → PZKOR przez `return_receipt`\n- PZ generuje ruch magazynowy — zwiększa stan w magazynie docelowym\n\n## Uwagi\n- Dokument przyjęcia towaru do magazynu z zewnątrz (od dostawcy)\n- Może być powiązany z FZ (faktura zakupu)\n- Workflow zakupowy: ZO → PZ → FZ",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "przyjecie-zewnetrzne",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:23:38.690Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:48.057Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_d4097219_encja-przyjecie-zewnetrzne-pz.json"
+}

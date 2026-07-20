@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_0b3556b0_encja-rozchod-wewnetrzny-rw",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Rozchód Wewnętrzny (RW)",
+  "content": "# Encja: Rozchód Wewnętrzny (RW)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: RW\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek\n- `CDN.TraElem` — pozycje rozchodu\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_internal_issue` `POST /api/v1/warehouse/internal-issue` — tworzy RW\n\n## Relacje\n- RW zmniejsza stan magazynowy (rozchód)\n- Do celów wewnętrznych: zużycie własne, braki, uszkodzenia\n- Nie jest powiązany z kontrahentem zewnętrznym ani FS\n\n## Uwagi\n- Dokument wydania towaru na cele wewnętrzne firmy\n- Typowe zastosowania: zużycie materiałów, likwidacja, wydanie do produkcji\n- Przeciwieństwo PW (Przyjęcie Wewnętrzne)",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "rozchod-wewnetrzny",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:45:35.445Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:45.745Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_0b3556b0_encja-rozchod-wewnetrzny-rw.json"
+}

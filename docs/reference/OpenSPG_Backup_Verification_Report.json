@@ -1,24 +1,24 @@
 {
   "ok": true,
-  "checkedAt": "2026-06-21T02:32:28.824Z",
+  "checkedAt": "2026-06-28T02:36:38.507Z",
   "backupRoot": "/docker/openspg/backups/automated",
-  "snapshotDir": "/docker/openspg/backups/automated/2026-06-21T01-21-03-707Z",
+  "snapshotDir": "/docker/openspg/backups/automated/2026-06-28T01-24-32-839Z",
   "checks": [
     {
       "id": "mysql_logical",
-      "path": "/docker/openspg/backups/automated/2026-06-21T01-21-03-707Z/mysql.sql",
+      "path": "/docker/openspg/backups/automated/2026-06-28T01-24-32-839Z/mysql.sql",
       "ok": true,
       "error": ""
     },
     {
       "id": "neo4j",
-      "path": "/docker/openspg/backups/automated/2026-06-21T01-21-03-707Z/neo4j.tar",
+      "path": "/docker/openspg/backups/automated/2026-06-28T01-24-32-839Z/neo4j.tar",
       "ok": true,
       "error": ""
     },
     {
       "id": "minio",
-      "path": "/docker/openspg/backups/automated/2026-06-21T01-21-03-707Z/minio.tar",
+      "path": "/docker/openspg/backups/automated/2026-06-28T01-24-32-839Z/minio.tar",
       "ok": true,
       "error": ""
     }

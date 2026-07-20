@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_3f537a39_rzad-przyja-przepisy-upraszczajace-prawo-podatkowe-w-ramach-deregulacji-minister",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Rząd przyjął przepisy upraszczające prawo podatkowe w ramach deregulacji - Ministerstwo Finansów - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: nowelizacje prawa podatkowego czerwiec 2026\nSource: https://www.gov.pl/web/finanse/rzad-przyjal-przepisy-upraszczajace-prawo-podatkowe-w-ramach-deregulacji\nTier: official\nDiscovery confidence: 0.85\n\n## Rząd przyjął przepisy upraszczające prawo podatkowe w ramach deregulacji\n03.02.2026\n- 3 lutego 2026 r. Rada Ministrów przyjęła projekt ustawy o zmianie ustawy – Ordynacja podatkowa oraz zmianie innych ustaw (UD196).\n- Projekt zawiera przepisy mające na celu ograniczanie obowiązków sprawozdawczych i ułatwiające dokonywanie rozliczeń podatkowych, usprawniające działanie organów podatkowych oraz zwiększające skuteczność ścigania najpoważniejszych przestępstw skarbowych.\n- Nowe przepisy, które powstały w Ministerstwie Finansów realizują działania deregulacyjne rządu.\nProjekt upraszcza prawo podatkowe. Będzie mniej biurokracji, więcej jasnych zasad i lepsza ochrona podatników. Nowe rozwiązania ułatwią życie obywatelom i przedsiębiorcom i skrócą czas załatwiania spraw. Prawo podatkowe stanie się bardziej przewidywalne – urząd skarbowy nie będzie już mógł w nieskończoność przedłużać spraw podatkowych. Zaproponowane przepisy pozwolą także skarbówce skupić się bardziej na realnych nadużyciach, a nie na drobnych uchybieniach.\n### Zmiany w zakresie raportowania schematów podatkowych\nZlikwidowany zostanie obowiązek raportowania krajowych schematów podatkowych (MDR) oraz w zakresie podatku VAT i akcyzowego, którego nie wymagają obowiązujące w tym zakresie przepisy prawa unijnego. Przepisy zostaną uporządkowane i dostosowane do dyrektywy DAC6, a ilość i częstotliwość sk...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/finanse/rzad-przyjal-przepisy-upraszczajace-prawo-podatkowe-w-ramach-deregulacji",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-13T02:51:02.522Z",
+    "discoveryCandidateId": "candidate_de40bf95-39a",
+    "discoveryQueryId": "generated_TaxbellLegalReference_bff3bd686e",
+    "discoveryRunId": "discovery_daily_2026-06-13T02-49-32-868Z_889274e3",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.85,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "19406b29b87dd3198a21887581ff39c8bf3f09e286f47579634e53cb61acebd4"
+  },
+  "createdAt": "2026-06-30T09:43:53.322Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:17.917Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_3f537a39_rzad-przyja-przepisy-upraszczajace-prawo-podatkowe-w-ramach-deregulacji-minister.json"
+}

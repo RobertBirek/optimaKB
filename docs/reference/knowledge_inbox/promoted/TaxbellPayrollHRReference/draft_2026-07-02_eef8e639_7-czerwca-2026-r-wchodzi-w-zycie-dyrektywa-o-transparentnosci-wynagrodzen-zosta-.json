@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-02_eef8e639_7-czerwca-2026-r-wchodzi-w-zycie-dyrektywa-o-transparentnosci-wynagrodzen-zosta-",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "7 czerwca 2026 r. wchodzi w życie dyrektywa o transparentności wynagrodzeń. Zostało mniej niż 100 dni na dostosowanie się do nowych przepisów - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: kadry i płace aktualizacje czerwiec 2026\nSource: https://kadry.infor.pl/kadry-dla-poczatkujacych/7534291,7-czerwca-2026-r-wchodzi-w-zycie-dyrektywa-o-transparentnosci-wynagrodzen-zostalo-mniej-niz-100-dni-na-dostosowanie-sie-do-nowych-przepisow.html\nTier: professional\nDiscovery confidence: 0.85\n\n7 czerwca 2026 r. wchodzi w życie dyrektywa o transparentności wynagrodzeń. Zostało mniej niż 100 dni na dostosowanie się do nowych przepisów.\nDnia 7 czerwca 2026 r. wchodzi w życie dyrektywa o transparentności wynagrodzeń. Pracodawcy mają więc mniej niż 100 dni na dostosowanie się do nowych przepisów, m.in. przeprowadzenie wartościowania stanowisk pracy. Są cztery obligatoryjne kryteria wartościowania.\n7 czerwca 2026 roku wejdą w życie przepisy unijnej dyrektywy o transparentności wynagrodzeń. Oznacza to, że firmom pozostało mniej niż 100 dni na dostosowanie do nowych regulacji. Tymczasem blisko połowa dużych i średnic...\n\nReview this draft before promotion.",
+  "sourceUrl": "https://kadry.infor.pl/kadry-dla-poczatkujacych/7534291,7-czerwca-2026-r-wchodzi-w-zycie-dyrektywa-o-transparentnosci-wynagrodzen-zostalo-mniej-niz-100-dni-na-dostosowanie-sie-do-nowych-przepisow.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-08T02:51:15.297Z",
+    "discoveryCandidateId": "candidate_909db92f-d21",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_3e1de0b6fe",
+    "discoveryRunId": "discovery_daily_2026-06-08T02-49-27-759Z_20bfba27",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.85,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "a67ac616529b8ea4b9368961fda28311352d626878a80f8567ff6288e5f7e424"
+  },
+  "createdAt": "2026-07-02T06:24:10.949Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-02T06:26:32.681Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-02/draft_2026-07-02_eef8e639_7-czerwca-2026-r-wchodzi-w-zycie-dyrektywa-o-transparentnosci-wynagrodzen-zosta-.json"
+}

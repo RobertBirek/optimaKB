@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-03_e65b6c5f_zus-w-czerwcu-2026-r-o-prawie-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-ka",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "ZUS w czerwcu 2026 r. o prawie 10% zwiększy stan wszystkich kont emerytalnych i kapitałów początkowych - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: ZUS nowości czerwiec 2026\nSource: https://www.infor.pl/prawo/nowosci-prawne/7595117,zus-w-czerwcu-2026-r-o-prawie-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-kapitalow-poczatkowych.html\nTier: professional\nDiscovery confidence: 0.8\n\nZUS w czerwcu 2026 r. zwiększy stan kont emerytalnych i kapitałów początkowych o około 9,81–10,61% w wyniku corocznej waloryzacji składek emerytalnych. W praktyce:\n- Konto ubezpieczonego I filar wzrośnie o 9,81%.\n- Subkonta zyskają o około 10,61%.\nWyższe wartości waloryzji podnoszą podstawę obliczenia przyszłej emerytury, co oznacza wyższe przyszłe wypłaty. Waloryzacja zależy od inflacji i wzrostu przypisu składek.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.infor.pl/prawo/nowosci-prawne/7595117,zus-w-czerwcu-2026-r-o-prawie-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-kapitalow-poczatkowych.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-06T20:12:47.257Z",
+    "discoveryCandidateId": "candidate_117ed2d6-9ff",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_55573f490d",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.8,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "14ec38a00d36f6cba0af0c12285ece1b32a5272baa4cd376e84b6bd4c8b536e7"
+  },
+  "createdAt": "2026-07-03T08:51:55.102Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-07T05:47:26.269Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-03/draft_2026-07-03_e65b6c5f_zus-w-czerwcu-2026-r-o-prawie-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-ka.json"
+}

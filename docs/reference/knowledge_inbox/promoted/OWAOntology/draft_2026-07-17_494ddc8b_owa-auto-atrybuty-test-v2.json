@@ -1,0 +1,24 @@
+{
+  "id": "draft_2026-07-17_494ddc8b_owa-auto-atrybuty-test-v2",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Atrybuty test v2",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "atrybuty-test-v2",
+    "auto-learned"
+  ],
+  "metadata": {
+    "discoveredVia": "owa_ontology_mcp",
+    "sourceTier": "ontology",
+    "retrievedAt": "2026-07-17T20:20:34.864Z"
+  },
+  "createdAt": "2026-07-17T20:20:34.864Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:14:16.340Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_494ddc8b_owa-auto-atrybuty-test-v2.json"
+}

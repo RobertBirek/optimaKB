@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_67726d6a_planowane-wersje-comarch-erp-optima-na-rok-2026-spo-ecznosc-erp",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "Planowane wersje Comarch ERP Optima na rok 2026 - Społeczność ERP",
+  "content": "Automated source-discovery draft.\n\nQuery: aktualizacje Comarch Optima czerwiec 2026\nSource: https://spolecznosc.comarch.pl/news/planowane-wersje-comarch-erp-optima-na-rok-2026-76753\nTier: official\nDiscovery confidence: 0.5\n\nNie można oczyścić treści na podstawie podanych referencji, ponieważ zawierają one wyłącznie stopkę z informacją o prawach autorskich (boilerplate), a nie merytoryczną treść artykułu o planowanych wersjach Comarch ERP Optima na 2026 rok. Opis artykułu podany w pytaniu („Planowane wersje Comarch ERP Optima na rok 2026…”) pochodzi spoza dostarczonych fragmentów i nie podlega oczyszczeniu zgodnie z instrukcją.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://spolecznosc.comarch.pl/news/planowane-wersje-comarch-erp-optima-na-rok-2026-76753",
+  "tags": [
+    "discovery",
+    "official",
+    "instrukcje",
+    "aktualizacje",
+    "KSeF",
+    "obsługa programu"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:10:00.042Z",
+    "discoveryCandidateId": "candidate_936b9415-cb9",
+    "discoveryQueryId": "generated_ComarchOptimaReference_81b04327b7",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.5,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "6086d49f4a0c80160bf84a344c18a1040dec4df686129e51d4a9b348925155b9"
+  },
+  "createdAt": "2026-06-30T12:37:45.487Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T12:54:41.359Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 4 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_67726d6a_planowane-wersje-comarch-erp-optima-na-rok-2026-spo-ecznosc-erp.json"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-01_7a4bdebb_eksport-i-import-dokumentow-przez-pliki-xml-baza-wiedzy-programu-comarch-erp-opt",
+  "kbName": "Comarch Optima Additional Functions",
+  "kbNamespace": "ComarchOptimaAdditionalFunctions",
+  "title": "Eksport i import dokumentów przez pliki XML – Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: nowe funkcje dodatkowe Comarch Optima XML XPT 2026\nSource: https://pomoc.comarch.pl/optima/pl/2025_5/dokumentacja/eksport-i-import-dokumentow-przez-pliki-xml/\nTier: official\nDiscovery confidence: 0.9\n\nEksport i import dokumentów przez pliki XML – Baza Wiedzy programu Comarch ERP Optima\nOpcja importu i eksportu do pliku XML jest dostępna dla następujących dokumentów:\n- Faktura sprzedaży (FS),\n- Paragon (PA),\n- Rezerwacja odbiorcy (RO),\n- Faktury proforma (FPF),\n- Faktury zakupu (FZ),\n- Zamówienia u dostawcy (ZD),\n- Dowody wewnętrzne sprzedaży (FSW),\n- Wydania zewnętrzne (WZ),\n- Przyjęcia zewnętrzne (PZ),\n- Rozchody wewnętrzne (RW),\n- Przyjęcia wewnętrzne (PW)\n- Przesunięcia międzymagazynowe (MM)\n- Dokumenty kaucyjne WKA i PKA\nDodatkowo w programie istnieje możliwość importu arkusza inwentaryzacyjnego (AI)\nAby wystawiać dokumenty magazynowe wymagana jest licencja na moduł Handel lub Handel Plus.\nEksport dokumentu jest możliwy bezpośrednio z poziomu formularza dokumentu z menu wyświetlanego pod przyciskiem strzałki w pasku zadań. Przy eksporcie należy wskazać plik, w którym zapisany będzie dokument. Domyślną ścieżkę dostępu do katalogu można wpisać w Konfiguracji stanowiska/ Handel/ Parametry: Eksport dokumentów – katalog dla plików XML.\nW pliku zapisywane są wszystkie informacje z eksportowanego dokumentu:\n- pozycje (ilość, cena, wartość)\n- kontrahent\n- płatności\n- kody JPK_V7 (w przypadku Faktur)\nImport dokumentu jest możliwy z poziomu listy dokumentów z menu wyświetlanego pod przyciskiem strzałki w pasku zadań. Przy imporcie należy wskazać plik, z którego odczyty\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2025_5/dokumentacja/eksport-i-import-dokumentow-przez-pliki-xml/",
+  "tags": [
+    "discovery",
+    "official",
+    "funkcje dodatkowe",
+    "XML",
+    "XPT",
+    "przykłady"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-07T02:46:33.472Z",
+    "discoveryCandidateId": "candidate_60049900-8d9",
+    "discoveryQueryId": "generated_ComarchOptimaAdditionalFunctions_4de5441422",
+    "discoveryRunId": "discovery_daily_2026-06-07T02-45-53-759Z_f0a9cd3d",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "b94dfd7fc3aaa1b8cce08a9b825934db75468e7ce1abce1115bedeedd2cb7b9e"
+  },
+  "createdAt": "2026-07-01T10:53:47.660Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-01T11:03:28.507Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_7a4bdebb_eksport-i-import-dokumentow-przez-pliki-xml-baza-wiedzy-programu-comarch-erp-opt.json"
+}

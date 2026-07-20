@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_8b13b718_galeria-wzorow-baza-wiedzy-programu-comarch-sprint",
+  "kbName": "Comarch Optima Sprint and Prints",
+  "kbNamespace": "ComarchOptimaSprint",
+  "title": "Galeria wzorów – Baza Wiedzy programu  Comarch sPrint",
+  "content": "Automated source-discovery draft.\n\nQuery: wzorce wydruków sPrint nowości 2026\nSource: https://pomoc.comarch.pl/sprint/index.php/dokumentacja/galeria-wzorow/\nTier: official\nDiscovery confidence: 0.9\n\nGaleria wzorów – Baza Wiedzy programu Comarch sPrint\n# Jak możemy Ci pomóc?\nGaleria Wzorów to miejsce, w którym znajdują się wydruki standardowe. Użytkownik może je wyedytować i zapisać w swoich katalogach. Nie ma możliwości zmiany wydruku standardowego w Galerii Wzorów.\nPo prawej stronie pod główną belką z polem wyszukiwarki znajduje się przycisk przenoszący użytkownika do Galerii wzorów.\nW Galerii wzorów znajdują się szablony wzorcowe. Szablony można otworzyć poprzez jednokrotne kliknięcie lewym przyciskiem myszy na wybrany szablon (otwiera się on w nowej karcie). Po najechaniu wskaźnikiem myszy na wybrany szablon użytkownik może rozwinąć opcje dla danego szablonu poprzez naciśniecie ikony trzech pionowych kropek.\nDla szablonów wzorcowych dostępne są dwie opcje:\n- Drukuj – Pozwala na wydrukowanie szablonu. Przycisk Drukuj otwiera okno konfiguracji wydruków.\nPo lewej stronie okna konfiguracji wydruku znajduje się podgląd pojedynczej stronu wydruku, informacja o ilości stron oraz możliwość przechodzenia pomiędzy nimi za pomocą poniższych przycisków:\nDostępne przyciski kolejno od lewej: pierwsza strona, poprzednia storna, następna strona, ostatnia strona.\nDostępne opcje konfiguracji wydruku:\n- Drukarka – Użytkownik ma możliwość wybrania drukarki z listy.\n- Liczba kopii – Użytkownik może wpisać liczbę kopii lub zwiększyć/zmniejszyć ilość za pomocą ikony strzałek góra-dół.\n- Dwustronnie – Check określający czy wydruk ma być dwustronny czy jednostro\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/sprint/index.php/dokumentacja/galeria-wzorow/",
+  "tags": [
+    "discovery",
+    "official",
+    "sPrint",
+    "wydruki",
+    "GenRap",
+    "wzorce"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:49:34.959Z",
+    "discoveryCandidateId": "candidate_04813c83-bed",
+    "discoveryQueryId": "generated_ComarchOptimaSprint_27137b7ed7",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "490ef92358e7360a73f0dba2ebfd90e68fc9f6089db87aa92a1ebb9c4bea293c"
+  },
+  "createdAt": "2026-06-30T09:40:38.029Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:17.956Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_8b13b718_galeria-wzorow-baza-wiedzy-programu-comarch-sprint.json"
+}

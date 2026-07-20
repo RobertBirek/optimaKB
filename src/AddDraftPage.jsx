@@ -25,7 +25,7 @@ export default function AddDraftPage({ overview, setTab }) {
     providers: null,
   });
   const fileInputRef = useRef(null);
-  const targets = overview?.kbRegistry?.entries || [];
+  const targets = overview?.kbs || [];
   const activeKbNamespace = draft.kbNamespace || targets[0]?.namespace || '';
   const wizardStep = savedDraft ? 3 : draft.content ? 2 : 1;
 

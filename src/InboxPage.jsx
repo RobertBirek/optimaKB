@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import {
   Check, CheckCircle, Database, Eye, FileText, FileStack, LoaderCircle,
-  Play, RotateCcw, Search, X, XCircle, Inbox,
+  Play, RotateCcw, Search, Undo2, X, XCircle, Inbox,
 } from 'lucide-react';
 import { apiFetch, formatDate, formatNumber, INBOX_FILTERS } from './constants';
 import PageShell from './shared/PageShell';
@@ -134,19 +134,53 @@ export default function InboxPage({ overview: _overview }) {
   async function rowApproveDraft(draftId, event) {
     event.stopPropagation();
     setActionBusy(true);
-    setActionMessage('Zatwierdzanie draftu...');
+    setActionMessage('Zatwierdzanie i budowanie draftu...');
     try {
-      const response = await apiFetch(`/api/drafts/${encodeURIComponent(draftId)}/promote`, {
+      const response = await apiFetch(`/api/drafts/${encodeURIComponent(draftId)}/promote-export`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ reviewNote: 'Approved from inbox row' }),
       });
       const payload = await response.json();
       if (!response.ok || !payload.ok) {
-        throw new Error(payload.message || payload.error || 'Promote failed');
+        const checks = payload.preflight?.checks
+          ?.map((check) => `${check.name}: ${check.ok ? 'OK' : 'FAIL'} ${check.message}`)
+          .join(' | ');
+        throw new Error(`${payload.message || payload.error || 'Promote failed'}${checks ? ` | ${checks}` : ''}`);
       }
-      reload();
-      setActionMessage('Draft zatwierdzony.');
+      setActionMessage(`Akcja uruchomiona: ${payload.actionId}`);
+      const result = await pollAction(payload.actionId);
+      if (result?.status === 'FINISH') {
+        reload();
+        setActionMessage('Draft zatwierdzony i zbudowany.');
+      }
+    } catch (error) {
+      setActionMessage(`Błąd: ${error.message}`);
+    } finally {
+      setActionBusy(false);
+    }
+  }
+
+  async function rowWithdrawDraft(draftId, event) {
+    event.stopPropagation();
+    setActionBusy(true);
+    setActionMessage('Wycofywanie draftu i przebudowa KB...');
+    try {
+      const response = await apiFetch(`/api/drafts/${encodeURIComponent(draftId)}/withdraw-build`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reviewNote: 'Withdrawn from inbox row' }),
+      });
+      const payload = await response.json();
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.message || payload.error || 'Withdraw failed');
+      }
+      setActionMessage(`Akcja uruchomiona: ${payload.actionId}`);
+      const result = await pollAction(payload.actionId);
+      if (result?.status === 'FINISH') {
+        reload();
+        setActionMessage('Draft wycofany i KB przebudowana.');
+      }
     } catch (error) {
       setActionMessage(`Błąd: ${error.message}`);
     } finally {
@@ -390,7 +424,12 @@ export default function InboxPage({ overview: _overview }) {
             <span className="muted">Uruchamia pełny pipeline: export, build OpenSPG, quality gate, testpack i freshness.</span>
           </div>
         ) : null}
-        {detail.status === 'promoted' ? <div className="formMessage">Zatwierdzony i uwzględniony w KB.</div> : null}
+        {detail.status === 'promoted' ? (
+          <div className="detailActions">
+            <div className="formMessage">Zatwierdzony i uwzględniony w KB.</div>
+            <IconButton icon={actionBusy ? LoaderCircle : Undo2} className={actionBusy ? 'isSpinning' : ''} label={actionBusy ? 'Pracuję' : 'Wycofaj i przebuduj KB'} variant="warning" showLabel onClick={() => rowWithdrawDraft(detail.id, { stopPropagation: () => {} })} disabled={actionBusy} />
+          </div>
+        ) : null}
         {detail.status === 'withdrawn' ? <div className="formMessage">Wycofany z promoted.</div> : null}
         {detail.status === 'rejected' ? <div className="formMessage">Odrzucony.</div> : null}
         {actionMessage ? <div className="formMessage">{actionMessage}</div> : null}
@@ -496,8 +535,14 @@ export default function InboxPage({ overview: _overview }) {
                   const control = inboxRowControlState(draft);
                   return (
                     <>
-                      <IconButton icon={CheckCircle} label="Zatwierdź" variant="primary" tooltip={control.disabledReason || 'Zatwierdź draft'} onClick={(event) => rowApproveDraft(draft.id, event)} disabled={!control.actionable || actionBusy} />
-                      <IconButton icon={XCircle} label="Odrzuć" variant="danger" tooltip={control.disabledReason || 'Odrzuć draft'} onClick={(event) => rowRejectDraft(draft.id, event)} disabled={!control.actionable || actionBusy} />
+                      {draft.status === 'promoted' ? (
+                        <IconButton icon={Undo2} label="Wycofaj i przebuduj" variant="warning" tooltip="Wycofaj promoted draft i przebuduj KB" onClick={(event) => rowWithdrawDraft(draft.id, event)} disabled={actionBusy} />
+                      ) : (
+                        <>
+                          <IconButton icon={CheckCircle} label="Zatwierdź i buduj" variant="primary" tooltip={control.disabledReason || 'Zatwierdź, eksportuj i zbuduj w OpenSPG'} onClick={(event) => rowApproveDraft(draft.id, event)} disabled={!control.actionable || actionBusy} />
+                          <IconButton icon={XCircle} label="Odrzuć" variant="danger" tooltip={control.disabledReason || 'Odrzuć draft'} onClick={(event) => rowRejectDraft(draft.id, event)} disabled={!control.actionable || actionBusy} />
+                        </>
+                      )}
                     </>
                   );
                 })()}

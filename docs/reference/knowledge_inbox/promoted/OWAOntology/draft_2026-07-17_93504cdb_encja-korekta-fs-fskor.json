@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_93504cdb_encja-korekta-fs-fskor",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Korekta FS (FSKOR)",
+  "content": "# Encja: Korekta FS (FSKOR)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: FSKOR\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek, osobny typ dokumentu\n- `CDN.TraElem` — pozycje korekty\n- `DokRelacje` — relacja FSKOR → FS (oryginał)\n\n## MCP API\n### READ (NIE WYWOŁANO)\n- `list_invoices(type=?)` — lista faktur korygujących\n- `get_invoice(id)` — szczegóły FSKOR\n- `get_document(id)` — ogólny endpoint\n\n### WRITE (NIE WYWOŁANO)\n- `correct_invoice` `POST /api/v1/workflow/invoice/correct` — generuje FSKOR z FS (workflow)\n- `create_sales_correction` `POST /api/v1/sales/correction` — tworzy FSKOR bezpośrednio\n\n## Relacje\n- FSKOR KORYGUJE FS — powiązanie przez `DokRelacje` lub `TrN_RelTrNId`\n- Korekta może dotyczyć kwot (zmiana ceny, rabatu) lub ilości (zwrot towaru)\n- Korekta może być in plus (zwiększenie) lub in minus (zmniejszenie)\n\n## Uwagi\n- FSKOR jest osobnym typem dokumentu, nie modyfikuje oryginalnego FS\n- Workflow `correct_invoice` automatyzuje tworzenie korekty z istniejącej FS\n- Alternatywnie można utworzyć FSKOR ręcznie przez `create_sales_correction`",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "korekta-fs",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:23:39.240Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.735Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_93504cdb_encja-korekta-fs-fskor.json"
+}

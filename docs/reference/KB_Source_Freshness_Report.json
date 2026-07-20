@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T03:35:35.771Z",
+  "generatedAt": "2026-07-20T11:41:58.436Z",
   "staleDays": 14,
   "overall": "WARN",
   "results": [
@@ -9,19 +9,19 @@
       "refreshPolicy": "weekly or after a new Optima version",
       "sourceRoot": "downloads/official/optima_reference",
       "sourceFileCount": 31,
-      "newestSource": "2026-06-19T13:07:55.099Z",
+      "newestSource": "2026-07-13T03:35:15.984Z",
       "oldestSource": "2026-05-24T07:05:55.661Z",
-      "sourceAgeDays": 3,
+      "sourceAgeDays": 7,
       "exportManifest": "exports/optima_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-19T13:07:55.102Z",
-      "exportAgeDays": 3,
+      "exportGeneratedAt": "2026-07-13T03:35:15.988Z",
+      "exportAgeDays": 7,
       "exportBehindSource": false,
       "stale": false,
       "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/official/optima_reference/meta/source_registry.json",
-          "sha256": "72c51b7f10d364b360ed5de521b60e1a45390a603e769c93227d0c0b7dc7903f"
+          "sha256": "427a238b2358bf967259bf92f855e180931ff2d010802de97baac293ba71d585"
         },
         {
           "path": "downloads/official/optima_reference/pages/aktualizacje_po_wydaniu_wersji_36_print.html",
@@ -101,18 +101,18 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-06-19T13:07:54.797Z",
-      "registrySourceCount": 3404,
+      "registryGeneratedAt": "2026-07-13T03:35:15.644Z",
+      "registrySourceCount": 3402,
       "registryUpdatedCount": 30,
-      "registryHashCount": 3404,
+      "registryHashCount": 3402,
       "registryStatusCounts": {
         "sitemap": 3,
         "official_help_snapshot": 27,
         "official_help_sitemap": 3337,
         "official_help_print_snapshot": 27,
-        "promoted_knowledge_draft": 10
+        "promoted_knowledge_draft": 8
       },
-      "registryAgeDays": 3
+      "registryAgeDays": 7
     },
     {
       "namespace": "ComarchBetterflyReference",
@@ -120,11 +120,11 @@
       "refreshPolicy": "daily or weekly delta, depending on API doc activity",
       "sourceRoot": "downloads/official/betterfly_reference",
       "sourceFileCount": 32,
-      "newestSource": "2026-06-22T03:35:33.700Z",
+      "newestSource": "2026-07-20T03:35:33.572Z",
       "oldestSource": "2026-05-25T19:16:33.988Z",
       "sourceAgeDays": 0,
       "exportManifest": "exports/betterfly_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-22T03:35:33.717Z",
+      "exportGeneratedAt": "2026-07-20T03:35:33.587Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
@@ -132,7 +132,7 @@
       "sampleHashes": [
         {
           "path": "downloads/official/betterfly_reference/meta/source_registry.json",
-          "sha256": "2f9e5c86b916cda1f1a857b683c70a0f07f38a265d1ec89c251711a342c32249"
+          "sha256": "b3b3d3e6dc3ca2f2268fcc822bab4ac7e8e940779bc3591716299d3902e696ec"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/.html",
@@ -140,79 +140,79 @@
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-proforma.html",
-          "sha256": "982b20b5ee00ddf67c34e6ec51b597e6b7cf140e0450b7ecfa13a788686e2ecf"
+          "sha256": "6ab58676672049ba1d412fa6e732ebcdaf5df51b0cde104e260344e158852656"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-sprzedazy-wersja-archiwalna-1-4.html",
-          "sha256": "c58fb3c7539e78ccc128809f1b13ca00c33978a066c795dc0dc53943e8cffd44"
+          "sha256": "faa383ed60ec4e02c365f95daaad40185ca454ac53bc522954942ffe8eef8cc0"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-sprzedazy.html",
-          "sha256": "371e9d6b4c73c9e5695f2dc139e50b6b575b788f4bd6bac07c328c417ca8bedf"
+          "sha256": "656b0fd371c528bc86c2074e0387bab6cfaeb3053e6d07f6995d73ebf51edda4"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-vat-marza-wersja-archiwalna-1-4.html",
-          "sha256": "1ffdd792163cae279ed4695adb90ad65b347bc97a03b428e2d5f75841bdb3e87"
+          "sha256": "f5e6c58d57ea4aaa21c7331a13674b6e297ea86364f9a696ed861be869092b89"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-vat-marza.html",
-          "sha256": "4c7dcb57b7d8b2ecb6891d99e1d968c7af473cc588d3c969d758bae26d066b80"
+          "sha256": "111e7f86b3ad4e24ac8ac29888e7abb018607e1872d04389ea548b62fdac640e"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-zakupu.html",
-          "sha256": "4dbee79f1f2ffb9ec998cbd5138549c0e51adaef7ace5c439212b15cb0b548a9"
+          "sha256": "8b5d3c8f11c1a39ab7e852343b2291bf0e8a0560a420409d3d26cd0984c55da4"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-zaliczkowa-wersja-archiwalna-1-4.html",
-          "sha256": "483e71a10e3a0712df1a17204fce2e62febbe54a3199a152bb5c7d48f097e79b"
+          "sha256": "ae4dc4c9f423bc4c44e9f64e87a7dcc746639cf46b423645ec3538cee3c9ad9c"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-zaliczkowa.html",
-          "sha256": "50b92a2c79174c2f27360990145a0aceeaae20e95ae2a0cb2ef582539cf09048"
+          "sha256": "bc6ec88573b690fcd69afe6e7540d8a3c7b9af05525a67c9ea20616e85100b94"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-filtrowanie-zasobow.html",
-          "sha256": "76179f0cd08bf57c637f14dd11c69d78adc87fd11887d6f0d5d4aa0a4d45cd55"
+          "sha256": "0c44f73cf8b8d49f1e0d88ec862e6a95f34dacbc77421fab20ccc2814fecb837"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-formy-platnosci.html",
-          "sha256": "19dc2052e4b553fdd902d958f05d32ba6d1b3e5e778fa2030deaa6a45f5a1399"
+          "sha256": "dea3b664140b19361e20b55ac84de7123194e746c2bfe155862c4d8141bb1700"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-historia-zmian.html",
-          "sha256": "89f386c365813ff2b75f653392a6f84a8d664a7d8baec0188a2c01713f88b2af"
+          "sha256": "05c8d9b1f4cf54291445dc29dc0bf38ce67510225de9675d0a43bc5269f93506"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-informacje-ogolne.html",
-          "sha256": "5f6927d7ef1969e2983e32a367e1bc94baad917b987e27a1813faf49a4bd31ac"
+          "sha256": "6b8f7faca01de3626058fb96acba0edcc2eea090e571eabd3918772a3d57f67b"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-instrukcja-uzytkownika.html",
-          "sha256": "a230e8f71ae1708d35b2366661c5d70e66368c281238ed85b5a1911d4be1127a"
+          "sha256": "99b8a6de4a92f07be5a26c2d43f75bbb8103df53503101c521103ee67abb8b1c"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-kontrahenci.html",
-          "sha256": "50d57ab1bdf9f1f00a1e24eaa4565851af68a051188015753f23eaf1481b0ea5"
+          "sha256": "0de8da6425eb59b94fe9e0bae18b998c9ed078833fab03bb3fd8169dfcb651cf"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-korekty.html",
-          "sha256": "e83058c46fd498d45fcbf0979df1e4e0ab6ffdfe1307bc5206ee4bf0c37fbb13"
+          "sha256": "f872cf5306f43304b1d140b1b64f85d2b51b6e2f3a57ae7e0eb3df0f13116e24"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-obsluga-procedury-oss.html",
-          "sha256": "1598b5cfecfbdf313c0629f25c1c958fb740c0bfb1a5678b3e029324533db0c6"
+          "sha256": "c6a6f4af500746ffccebda63a5ae66736e7965ad433118c3a9f8c1a111cf1b7c"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-platnosci-wersja-archiwalna-1-4.html",
-          "sha256": "82011aed183ccf4ab919b82a55ada9dc4d56d91b9c2f59e61e071dd109da6516"
+          "sha256": "d9c43650605e4a995bb5f5fe922a37600470adbee800bfb491da470cfa26822b"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-platnosci.html",
-          "sha256": "d4a808621c417a08c264821cbe3162e17144a1950e7fb6fc8483a200c2005e82"
+          "sha256": "fafb08d8cac4b197ae7b4f64a55ac0ae722cf9adea5c3c92aa2e7f77dbb990f4"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-06-22T03:35:33.676Z",
+      "registryGeneratedAt": "2026-07-20T03:35:33.546Z",
       "registrySourceCount": 31,
       "registryUpdatedCount": 5,
       "registryHashCount": 31,
@@ -226,12 +226,12 @@
       "kbName": "Comarch Community News",
       "refreshPolicy": "daily cron",
       "sourceRoot": "downloads/community_news",
-      "sourceFileCount": 211,
-      "newestSource": "2026-06-22T03:15:30.307Z",
+      "sourceFileCount": 220,
+      "newestSource": "2026-07-20T03:15:12.517Z",
       "oldestSource": "2026-06-09T03:15:29.758Z",
       "sourceAgeDays": 0,
       "exportManifest": "exports/community_news/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-22T03:15:30.902Z",
+      "exportGeneratedAt": "2026-07-20T03:15:13.168Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
@@ -239,11 +239,11 @@
       "sampleHashes": [
         {
           "path": "downloads/community_news/api/categories.json",
-          "sha256": "4199bc92cd335e727fb4d6e00022dbe078f2faeb6b770003ce06903d1c413e68"
+          "sha256": "5dc6b87cac34e2163f6e6af40879ca3c2039dbb2f342de9010b83c356ea238e3"
         },
         {
           "path": "downloads/community_news/api/posts_index.json",
-          "sha256": "0060453ae995aa42b2b9fc1afd4ed0a20e12aab544a147ca040da1784dfe1609"
+          "sha256": "3764028505ef3e43de3d49fc1ea7421b8f3d5f229f0a57a35f95aa83d36be1bf"
         },
         {
           "path": "downloads/community_news/api/posts/73367.json",
@@ -283,7 +283,7 @@
         },
         {
           "path": "downloads/community_news/api/posts/73556.json",
-          "sha256": "ba6401cd72fce1d513e41a6cb77f6a4ed2664c91a12da588ff22e32917af1721"
+          "sha256": "e8692e6cd47eddb454a3c8d7ad0f73180d25dba3819831bb35f417e8125fd7d1"
         },
         {
           "path": "downloads/community_news/api/posts/73562.json",
@@ -291,40 +291,40 @@
         },
         {
           "path": "downloads/community_news/api/posts/73563.json",
-          "sha256": "18d1784c1e6247000639a88c5ab286aa9238cad72eecd38c31038e6d2515660b"
+          "sha256": "f41b89a0c9e1f188ab4225342786d8322f155559b35a82624d7119e2b46f0d7d"
         },
         {
           "path": "downloads/community_news/api/posts/73593.json",
-          "sha256": "23318a20e9c2fa4e1552c7c513e53ce664bc2b648cf099888bcaffb06efa30e3"
+          "sha256": "5459a6829019823ff2115db7b7f172cbb76f2d6c4f12eed47b96717076f68ef4"
         },
         {
           "path": "downloads/community_news/api/posts/73597.json",
-          "sha256": "45af91d34d29415e33c400259472270f464bb6d508e4146b52d8922099b47623"
+          "sha256": "d0a8f1adf63b465f6bcc73738daff77e14e39ce837a19fc8686122ae19a7becf"
         },
         {
           "path": "downloads/community_news/api/posts/73626.json",
-          "sha256": "e65370309cfa9ce52a53763d581c9643cfe4a509263e9f0f90043b05b899c5bd"
+          "sha256": "21a238ea45e842c43a390caeefac40ce7a7e116e9f49ec4c23a279473ea356a4"
         },
         {
           "path": "downloads/community_news/api/posts/73653.json",
-          "sha256": "f78be57add068f7d9c166469c976ee7e40c849e642c65c0868b2b6a94299e52d"
+          "sha256": "4ae1a7a069d97bd97cb32cd0d3acee8f9a86ec146fc8613cf7e5f2bd3012d31a"
         },
         {
           "path": "downloads/community_news/api/posts/73684.json",
-          "sha256": "2e493e618251185e54c9e7477c582b99335adee3473e521d0f49640da7a30dba"
+          "sha256": "136881f5561ff2cbc9fe63277aed866ff895da168b86e8a68399be0a2c1ec49f"
         },
         {
           "path": "downloads/community_news/api/posts/73686.json",
-          "sha256": "cf4209ab56e4c278c5ec993d0d733fa65f9eff2aad222b945f46625c8ba96183"
+          "sha256": "691d156fa0f1d286edd5c91291f878dd049f4d7a7613253ae111b856146bdc2a"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-06-22T03:15:30.286Z",
-      "registrySourceCount": 208,
-      "registryUpdatedCount": 208,
-      "registryHashCount": 208,
+      "registryGeneratedAt": "2026-07-20T03:15:12.496Z",
+      "registrySourceCount": 217,
+      "registryUpdatedCount": 217,
+      "registryHashCount": 217,
       "registryStatusCounts": {
-        "DETAIL_OK": 208
+        "DETAIL_OK": 217
       },
       "registryAgeDays": 0
     },
@@ -334,12 +334,12 @@
       "refreshPolicy": "manual authenticated pass",
       "sourceRoot": "downloads/partner/optima_technical",
       "sourceFileCount": 322,
-      "newestSource": "2026-06-20T18:34:11.885Z",
+      "newestSource": "2026-07-10T06:01:37.733Z",
       "oldestSource": "2026-05-24T13:48:17.817Z",
-      "sourceAgeDays": 1,
+      "sourceAgeDays": 10,
       "exportManifest": "exports/optima_partner_technical/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-20T18:34:12.750Z",
-      "exportAgeDays": 1,
+      "exportGeneratedAt": "2026-07-10T06:01:38.808Z",
+      "exportAgeDays": 10,
       "exportBehindSource": false,
       "stale": false,
       "warnings": [],
@@ -426,19 +426,19 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-06-20T18:34:11.832Z",
-      "registrySourceCount": 672,
+      "registryGeneratedAt": "2026-07-10T06:01:37.645Z",
+      "registrySourceCount": 674,
       "registryUpdatedCount": 548,
-      "registryHashCount": 672,
+      "registryHashCount": 674,
       "registryStatusCounts": {
         "local_audit_markdown": 1,
         "partner_portal_page": 1,
         "partner_local_extract": 19,
         "partner_example_extract": 101,
-        "promoted_knowledge_draft": 2,
+        "promoted_knowledge_draft": 4,
         "unknown": 548
       },
-      "registryAgeDays": 1
+      "registryAgeDays": 10
     },
     {
       "namespace": "ComarchOptimaAdditionalFunctions",
@@ -446,17 +446,15 @@
       "refreshPolicy": "manual file-driven refresh",
       "sourceRoot": "downloads/google_drive/additional_functions",
       "sourceFileCount": 58,
-      "newestSource": "2026-06-07T03:14:23.617Z",
+      "newestSource": "2026-07-08T05:30:30.589Z",
       "oldestSource": "2026-05-23T18:27:51.000Z",
-      "sourceAgeDays": 15,
+      "sourceAgeDays": 12,
       "exportManifest": "exports/optima_additional_functions/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-07T03:14:23.619Z",
-      "exportAgeDays": 15,
+      "exportGeneratedAt": "2026-07-08T05:30:30.591Z",
+      "exportAgeDays": 12,
       "exportBehindSource": false,
-      "stale": true,
-      "warnings": [
-        "Newest source is older than 14 days."
-      ],
+      "stale": false,
+      "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/google_drive/additional_functions/comarch_erp_optima_funkcje_dodatkowe_README.md",
@@ -504,7 +502,7 @@
         },
         {
           "path": "downloads/google_drive/additional_functions/meta/source_registry.json",
-          "sha256": "3a7b990d7cd5122766766b077bc54a98c17dc8b2df99e7af4c439904bf825be0"
+          "sha256": "ca9cbafe70dbf4e34bf93e14430d3ee06706facceb6817fdd1851f41bef57db3"
         },
         {
           "path": "downloads/google_drive/additional_functions/Problemy-z-ladowaniem-zaleznosci-w-zewnetrznej-aplikacji-korzystajacej-z-API-Comarch-ERP-Optima-.pdf",
@@ -540,10 +538,10 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-06-07T03:14:20.239Z",
-      "registrySourceCount": 205,
+      "registryGeneratedAt": "2026-07-08T05:30:26.881Z",
+      "registrySourceCount": 214,
       "registryUpdatedCount": 61,
-      "registryHashCount": 205,
+      "registryHashCount": 214,
       "registryStatusCounts": {
         "google_drive_corpus": 57,
         "manual_optima_export": 135,
@@ -551,9 +549,9 @@
         "local_drive_folder": 3,
         "local_drive_markdown": 4,
         "local_drive_pdf": 3,
-        "promoted_knowledge_draft": 1
+        "promoted_knowledge_draft": 10
       },
-      "registryAgeDays": 15
+      "registryAgeDays": 12
     },
     {
       "namespace": "ComarchOptimaSprint",
@@ -561,12 +559,12 @@
       "refreshPolicy": "manual file-driven refresh",
       "sourceRoot": "downloads/google_drive/sprint",
       "sourceFileCount": 11,
-      "newestSource": "2026-06-12T13:34:34.871Z",
+      "newestSource": "2026-07-07T09:03:00.506Z",
       "oldestSource": "2026-05-23T18:22:57.000Z",
-      "sourceAgeDays": 10,
+      "sourceAgeDays": 13,
       "exportManifest": "exports/optima_sprint/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-12T13:34:34.872Z",
-      "exportAgeDays": 10,
+      "exportGeneratedAt": "2026-07-07T09:03:00.508Z",
+      "exportAgeDays": 13,
       "exportBehindSource": false,
       "stale": false,
       "warnings": [],
@@ -613,22 +611,22 @@
         },
         {
           "path": "downloads/google_drive/sprint/meta/source_registry.json",
-          "sha256": "c4d7b4c4ba5981252dd551d5bc632fd74141486f757c672d4d15b9c44871a387"
+          "sha256": "d1ae3629329c2e1f08d02e54d4dd846b45df634a98b5d7728c8140048fc04a4c"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-06-12T13:34:32.762Z",
-      "registrySourceCount": 184,
+      "registryGeneratedAt": "2026-07-07T09:02:57.640Z",
+      "registrySourceCount": 186,
       "registryUpdatedCount": 14,
-      "registryHashCount": 184,
+      "registryHashCount": 186,
       "registryStatusCounts": {
         "google_drive_corpus": 10,
         "manual_optima_export": 146,
         "local_drive_markdown": 10,
         "official_web": 12,
-        "promoted_knowledge_draft": 6
+        "promoted_knowledge_draft": 8
       },
-      "registryAgeDays": 10
+      "registryAgeDays": 13
     },
     {
       "namespace": "TaxbellLegalReference",
@@ -638,10 +636,10 @@
       "sourceFileCount": 46,
       "newestSource": "2026-06-05T14:40:36.234Z",
       "oldestSource": "2026-06-05T14:40:36.160Z",
-      "sourceAgeDays": 17,
+      "sourceAgeDays": 45,
       "exportManifest": "exports/taxbell_legal_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-18T05:14:38.028Z",
-      "exportAgeDays": 4,
+      "exportGeneratedAt": "2026-07-15T12:14:59.224Z",
+      "exportAgeDays": 5,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -737,7 +735,7 @@
       "registryStatusCounts": {
         "unknown": 44
       },
-      "registryAgeDays": 17
+      "registryAgeDays": 45
     },
     {
       "namespace": "TaxbellPayrollHRReference",
@@ -747,10 +745,10 @@
       "sourceFileCount": 49,
       "newestSource": "2026-06-05T14:40:42.666Z",
       "oldestSource": "2026-06-05T14:40:42.587Z",
-      "sourceAgeDays": 17,
+      "sourceAgeDays": 45,
       "exportManifest": "exports/taxbell_payroll_hr_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-18T05:14:38.280Z",
-      "exportAgeDays": 4,
+      "exportGeneratedAt": "2026-07-15T12:14:59.497Z",
+      "exportAgeDays": 5,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -846,7 +844,7 @@
       "registryStatusCounts": {
         "unknown": 47
       },
-      "registryAgeDays": 17
+      "registryAgeDays": 45
     },
     {
       "namespace": "TaxbellAccountingVATReference",
@@ -856,10 +854,10 @@
       "sourceFileCount": 46,
       "newestSource": "2026-06-05T14:40:53.725Z",
       "oldestSource": "2026-06-05T14:40:53.662Z",
-      "sourceAgeDays": 17,
+      "sourceAgeDays": 45,
       "exportManifest": "exports/taxbell_accounting_vat_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-06-18T05:14:38.421Z",
-      "exportAgeDays": 4,
+      "exportGeneratedAt": "2026-07-15T12:14:59.703Z",
+      "exportAgeDays": 5,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -955,7 +953,7 @@
       "registryStatusCounts": {
         "unknown": 44
       },
-      "registryAgeDays": 17
+      "registryAgeDays": 45
     }
   ]
 }

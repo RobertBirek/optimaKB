@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_78203fd9_encja-roznica-kursowa-rkur",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Różnica kursowa RKUR",
+  "content": "# Encja: Różnica kursowa RKUR\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `średni`\n- Identyfikator ontologiczny: `OWAOntology.RoznicaKursowa`\n- Aliasy: `ExchangeDifference`, `RKUR`\n\n## Opis biznesowy\nRóżnica kursowa (RKUR) w Comarch Optima to dokument księgowy powstający w wyniku zmiany kursu waluty między dniem powstania zobowiązania/należności a dniem jej uregulowania. Różnice kursowe są naliczane automatycznie przy rozliczaniu płatności w walutach obcych. Dokument RKUR księguje dodatnie lub ujemne różnice kursowe zgodnie z przepisami o rachunkowości i podatku dochodowym.\n\n## Reguły biznesowe\n- Różnica kursowa powstaje gdy kurs z dnia zapłaty różni się od kursu z dnia zarachowania\n- Dodatnie różnice kursowe → przychody finansowe\n- Ujemne różnice kursowe → koszty finansowe\n- Naliczane automatycznie przy rozliczaniu płatności walutowych\n- Mogą być naliczane metodą podatkową lub bilansową\n- RKUR może być powiązany z konkretną płatnością i rozrachunkiem\n- System przechowuje kursy w `BnkZdarzenia` (BZd_KursNumer, BZd_KursL, BZd_KursM)\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | Status | Dowód |\n|---|---|---|---|---|\n| Zdarzenia bankowe (kursy) | CDN | BnkZdarzenia | Potwierdzona | MSSQL |\n| Rozrachunki | CDN | KsiRozrachunki | Potwierdzona | MSSQL |\n| Kursy walut | CDN | [Do ustalenia] | Oczekuje | — |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | create_exchange_difference | POST /api/v1/tax/exchange-difference | Potwierdzone |\n\n## Identyfikatory\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| Naturalny | Numer RKUR | Numer dokumentu różnicy kursowej | Potwierdzony |\n| FK | — | FK do płatności (BnkZdarzenia) | Oczekuje potwierdzenia |\n| FK | — | FK do rozrachunku | Oczekuje potwierdzenia |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| wynika_z_platnosci | RoznicaKursowa | Platnosc | N:1 | Przez BnkZdarzenia |\n| dotyczy_rozrachunku | RoznicaKursowa | Rozrachunek | N:1 | Przez FK |\n| dotyczy_kontrahenta | RoznicaKursowa | Kontrahent | N:1 | Przez FK |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| OptimaMCP | create_exchange_difference | API WRITE potwierdzone |\n| MSSQL (CDN_TEST) | mssql_describe_table (BnkZdarzenia) | Dane kursowe w zdarzeniach |\n\n## Otwarte problemy\n- [UNKNOWN: dedykowana tabela RKUR — RozniceKursowe? Kursy?]\n- [UNKNOWN: pełny schemat — wymaga mssql_describe_table po identyfikacji]\n- [UNKNOWN: czy RKUR jest automatycznie generowany przy rozliczeniu, czy ręcznie?]\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "roznica-kursowa",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:34:16.408Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.217Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_78203fd9_encja-roznica-kursowa-rkur.json"
+}

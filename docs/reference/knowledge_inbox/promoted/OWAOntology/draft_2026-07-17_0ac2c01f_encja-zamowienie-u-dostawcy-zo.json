@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_0ac2c01f_encja-zamowienie-u-dostawcy-zo",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Zamówienie u Dostawcy (ZO)",
+  "content": "# Encja: Zamówienie u Dostawcy (ZO)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: ZO\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek zamówienia\n- `CDN.TraElem` — pozycje zamówienia\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_purchase_order` `POST /api/v1/purchase/order` — tworzy ZO\n\n### Workflow (NIE WYWOŁANO)\n- `receive_purchase_order` `POST /api/v1/workflow/purchase/receive` — przyjmuje ZO → PZ\n- `invoice_purchase_order` `POST /api/v1/workflow/purchase/invoice` — fakturuje ZO → FZ\n\n## Relacje\n- ZO → PZ (Przyjęcie Zewnętrzne) przez `receive_purchase_order`\n- ZO → FZ (Faktura Zakupu) przez `invoice_purchase_order`\n- ZO jest dokumentem zamówienia u dostawcy\n\n## Uwagi\n- Dokument zamówienia składanego do dostawcy\n- Może być realizowany etapami (częściowe PZ)\n- Workflow zakupowy: ZO → PZ → FZ",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "zamowienie-dostawcy",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:23:38.716Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.995Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_0ac2c01f_encja-zamowienie-u-dostawcy-zo.json"
+}

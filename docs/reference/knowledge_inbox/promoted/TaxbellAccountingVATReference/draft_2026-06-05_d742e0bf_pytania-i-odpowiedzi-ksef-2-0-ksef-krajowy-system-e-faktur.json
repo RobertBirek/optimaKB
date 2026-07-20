@@ -3,7 +3,7 @@
   "kbName": "Taxbell Accounting VAT Reference",
   "kbNamespace": "TaxbellAccountingVATReference",
   "title": "Pytania i odpowiedzi KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
-  "content": "Source list scan draft.\n\nSource: KSeF podatki.gov.pl - FAQ i zasady obowiązywania\nURL: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/\n\nSummary:\n- The page is a FAQ hub for KSeF 2.0 (Krajowy System e-Faktur), updated in collaboration with businesses, integrators, and participants.\n- It explains what KSeF is: a system for issuing, sending, receiving, and storing structured invoices. Starting Feb 1, 2026, KSeF will be rolled out to all entrepreneurs and invoicing entities in Poland.\n- It emphasizes ongoing updates to Q&A, inviting users to submit questions to improve the knowledge base.\n- It features a searchable FAQ with categories, including foundational information about KSeF and how to use it.",
+  "content": "Source: KSeF podatki.gov.pl - FAQ i zasady obowiązywania\nURL: https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/\n- The page is a FAQ hub for KSeF 2.0 (Krajowy System e-Faktur), updated in collaboration with businesses, integrators, and participants.\n- It explains what KSeF is: a system for issuing, sending, receiving, and storing structured invoices. Starting Feb 1, 2026, KSeF will be rolled out to all entrepreneurs and invoicing entities in Poland.\n- It emphasizes ongoing updates to Q&A, inviting users to submit questions to improve the knowledge base.\n- It features a searchable FAQ with categories, including foundational information about KSeF and how to use it.",
   "sourceUrl": "https://ksef.podatki.gov.pl/pytania-i-odpowiedzi-ksef-20/",
   "tags": [
     "ksef",

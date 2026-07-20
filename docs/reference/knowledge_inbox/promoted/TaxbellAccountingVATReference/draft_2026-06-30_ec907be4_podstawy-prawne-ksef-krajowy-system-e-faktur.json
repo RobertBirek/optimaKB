@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_ec907be4_podstawy-prawne-ksef-krajowy-system-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Podstawy prawne - KSeF (Krajowy System e-Faktur)",
+  "content": "Automated source-discovery draft.\n\nQuery: KSeF 2.0 terminy obowiązywania 2026 aktualizacja\nSource: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/podstawy-prawne-oraz-kluczowe-terminy/\nTier: official\nDiscovery confidence: 0.95\n\nPodstawy prawne - KSeF (Krajowy System e-Faktur)\nSprawdź akty prawne związane z KSeF oraz zapoznaj się z kluczowymi terminami wdrożenia KSeF\nEtapy wprowadzania KSeF\nKSeF w wersji fakultatywnej\nOd 1 stycznia 2022 r. KSeF został wdrożony jako rozwiązanie dobrowolne. Od tego momentu podatnicy mieli możliwość wystawiania faktur ustrukturyzowanych w ramach tego systemu.\nPodstawa prawna:\nUstawa z dnia 29 października 2021 r. o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw (Dz. U. z 2021 r. poz. 2076)\nRozporządzenie Ministra Finansów z dnia 27 grudnia 2021 r w sprawie korzystania z Krajowego Systemu e-Faktur (Dz. U. z 2021 r. poz. 2481) ze zmianami (Dz. U. z 2022 r. poz. 2667 oraz Dz. U. z 2023 r. poz. 1760)\nKSeF w wersji obligatoryjnej\nWprowadzenie obowiązkowego fakturowania elektronicznego w Polsce jest możliwe na podstawie otrzymanej zgody Rady Unii Europejskiej.\nJest to decyzja wykonawcza Rady (UE) 2022/1003 z dnia 17 czerwca 2022 r. upoważniająca Rzeczpospolitą Polską do stosowania szczególnego środka stanowiącego odstępstwo od art. 218 i 232 dyrektywy 2006/112/WE w sprawie wspólnego systemu podatku od wartości dodanej (Dz. Urz. UE L 168/81). Treść jest dostępna w bazie aktów prawnych Unii Europejskiej: Decyzja derogacyjna Rady UE.\n- KSeF według pierwotnych założeń miał obowiązywać w formie obligatoryjnej od 1 lipca 2024 r., a dla podatników zwolnionych z VAT od 1 stycznia 2025 r.\nPodstawa p\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/podstawy-prawne-oraz-kluczowe-terminy/",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-14T02:49:20.381Z",
+    "discoveryCandidateId": "candidate_17bc1386-20b",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_d21b2f173f",
+    "discoveryRunId": "discovery_daily_2026-06-14T02-48-32-834Z_bd47bbaf",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "1ad408c6213cddd23cec4097046183f225009c87b9418a78fd09e46094940a69"
+  },
+  "createdAt": "2026-06-30T09:38:54.483Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:18.041Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_ec907be4_podstawy-prawne-ksef-krajowy-system-e-faktur.json"
+}

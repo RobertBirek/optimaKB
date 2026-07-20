@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_11bf8cea_encja-oferta-handlowa-ofer",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Oferta Handlowa (OFER)",
+  "content": "# Encja: Oferta Handlowa (OFER)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: OFER\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek oferty\n- `CDN.TraElem` — pozycje oferty\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_sales_offer` `POST /api/v1/sales/offer` — tworzy OFER\n\n## Relacje\n- OFER może być przekształcona w RO (Rezerwacja Odbiorcy) lub FS\n- OFER nie jest dokumentem magazynowym — nie wpływa na stany\n- OFER nie podlega księgowaniu\n\n## Uwagi\n- Dokument ofertowy dla klienta\n- Nie rezerwuje towarów (w przeciwieństwie do RO)\n- Stanowi podstawę do dalszych negocjacji lub złożenia zamówienia\n- Typowy workflow: OFER → akceptacja → RO → WZ + FS",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "oferta-handlowa",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:34.325Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:25.626Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_11bf8cea_encja-oferta-handlowa-ofer.json"
+}

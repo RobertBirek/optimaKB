@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_348659b8_encja-grupa-towarowa",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Grupa towarowa",
+  "content": "# Encyja: Grupa towarowa\n\n## Status weryfikacji\n**Częściowo zweryfikowane** — tabela MSSQL potwierdzona, endpointy MCP potwierdzone, mapowanie pól niekompletne.\n\n## Opis biznesowy\nGrupy towarowe (CDN.Grupy) to wielozadaniowy słownik w Optimie. Rekordy są rozróżniane polem `Gru_Typ`, które określa przeznaczenie grupy: towarowa, kontrahenta, środka trwałego itp. Grupa towarowa agreguje towary i definiuje domyślne konta księgowe Wn/Ma.\n\n## Reguły biznesowe\n- `Gru_Typ` identyfikuje typ grupy (towarowa= [UNKNOWN], kontrahent= [UNKNOWN])\n- `Gru_KontoWn` i `Gru_KontoMa` to domyślne konta księgowe dla towarów w grupie\n- Grupa może mieć tłumaczenia w `CDN.GrupyJezykObcy`\n- Usunięcie grupy jest blokowane jeśli są przypisane towary (sprawdź CASCADE)\n\n## Źródła danych\n- **Tabela główna**: `CDN.Grupy` (BASE TABLE)\n- **Tabele pomocnicze**: `CDN.GrupyJezykObcy`, `CDN.GrupaZakazy`\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| `Gru_GruID` | int IDENTITY | PK, identyfikator grupy |\n| `Gru_Typ` | [UNKNOWN] | Typ grupy (towarowa, kontrahenta, …) |\n| `Gru_Nazwa` | [UNKNOWN] | Nazwa grupy |\n\n## Pola i mapowanie API↔MSSQL\n- `Gru_GruID` (int, IDENTITY, PK) — NOT EXPOSED BY MCP\n- `Gru_Typ` — NOT EXPOSED BY MCP\n- `Gru_Nazwa` — NOT EXPOSED BY MCP\n- `Gru_Opis` — NOT EXPOSED BY MCP\n- `Gru_Flaga` — NOT EXPOSED BY MCP\n- `Gru_NazwaPEF` — NOT EXPOSED BY MCP\n- `Gru_KontoWn` — NOT EXPOSED BY MCP\n- `Gru_KontoMa` — NOT EXPOSED BY MCP\n- `Gru_OpeZalID` — NOT EXPOSED BY MCP\n- `Gru_OpeModID` — NOT EXPOSED BY MCP\n- `Gru_TS_Zal` — NOT EXPOSED BY MCP\n- `Gru_TS_Mod` — NOT EXPOSED BY MCP\n\n## Relacje ontologiczne\n- **GRUPUJE** (1:N) → `CDN.Towary` przez `Twr_TwGGIDNumer → Gru_GruID`\n- **POSIADA_TLUMACZENIE** (1:N) → `CDN.GrupyJezykObcy`\n- **POSIADA_ZAKAZ** (1:N) → `CDN.GrupaZakazy`\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `list_item_groups` | READ — lista grup towarowych |\n| `create_group` | WRITE — tworzy grupę |\n\n## Pochodzenie wiedzy\n- Analiza manualna MCP + MSSQL (2026-07-15)\n- `mssql_list_tables` potwierdza `CDN.Grupy`\n- JOIN potwierdzony przez analizę FK w tabeli Towary\n\n## Otwarte problemy\n1. Pełna lista kolumn `CDN.Grupy` niezweryfikowana przez `mssql_describe_table` — narzędzie nie akceptuje schematu CDN dla tej tabeli. Należy użyć `mssql_execute_query` z SELECT TOP 1 * FROM CDN.Grupy.\n2. Wartości `Gru_Typ` dla typu \"towarowa\" nieznane.\n3. Endpointy MCP nie eksponują kolumn MSSQL w udokumentowanym API; potrzebna walidacja runtime.\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.Grupy`\n\n## Walidacja\n- [ ] Sprawdź SELECT TOP 1 * FROM CDN.Grupy\n- [ ] Potwierdź enum Gru_Typ\n- [ ] Zweryfikuj relację Gru_GruID ↔ Twr_TwGGIDNumer",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "grupa-towarowa",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:37:34.583Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:46.896Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_348659b8_encja-grupa-towarowa.json"
+}

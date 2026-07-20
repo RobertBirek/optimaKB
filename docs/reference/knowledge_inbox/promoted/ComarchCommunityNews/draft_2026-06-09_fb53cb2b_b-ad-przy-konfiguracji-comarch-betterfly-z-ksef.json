@@ -3,7 +3,7 @@
   "kbName": "Comarch Community News",
   "kbNamespace": "ComarchCommunityNews",
   "title": "błąd przy konfiguracji Comarch Betterfly z Ksef",
-  "content": "Automated source-discovery draft.\n\nQuery: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292\nTier: community\nDiscovery confidence: 0.95\n\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\n\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\n![logotype](assets/img/logo.svg)\nloader\n\nReview this draft before promotion.",
+  "content": "Query: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292\nTier: community\nDiscovery confidence: 0.95\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\n![logotype](assets/img/logo.svg)\nloader",
   "sourceUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
   "tags": [
     "discovery",

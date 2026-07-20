@@ -3,7 +3,7 @@
   "kbName": "Comarch Optima Sprint and Prints",
   "kbNamespace": "ComarchOptimaSprint",
   "title": "Nowości w wersji 2026.0.0 – Baza Wiedzy programu  Comarch sPrint",
-  "content": "Automated source-discovery draft.\n\nQuery: sPrint GenRap nowości 2026\nSource: https://pomoc.comarch.pl/sprint/index.php/dokumentacja/nowosci-w-wersji-2026-0-0/\nTier: official\nDiscovery confidence: 0.9\n\nSummary:\n- The article covers the new features in Comarch sPrint version 2026.0.0.\n- Highlighted item: Optimization of RAM usage. The update reduces memory consumption, improving stability and performance of processes in the system environment.\n\nNote: The page focuses on general improvements, with RAM optimization being the key highlighted change. If you need details on GenRap (GenRap) or other 2026.0.0 specifics, you may want to consult the full help article or search for GenRap-specific release notes.\n\nReview this draft before promotion.",
+  "content": "Query: sPrint GenRap nowości 2026\nSource: https://pomoc.comarch.pl/sprint/index.php/dokumentacja/nowosci-w-wersji-2026-0-0/\nTier: official\nDiscovery confidence: 0.9\n- The article covers the new features in Comarch sPrint version 2026.0.0.\n- Highlighted item: Optimization of RAM usage. The update reduces memory consumption, improving stability and performance of processes in the system environment.\nNote: The page focuses on general improvements, with RAM optimization being the key highlighted change. If you need details on GenRap (GenRap) or other 2026.0.0 specifics, you may want to consult the full help article or search for GenRap-specific release notes.",
   "sourceUrl": "https://pomoc.comarch.pl/sprint/index.php/dokumentacja/nowosci-w-wersji-2026-0-0/",
   "tags": [
     "discovery",

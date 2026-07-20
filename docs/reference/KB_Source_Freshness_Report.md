@@ -1,6 +1,6 @@
 # KB Source Freshness Report
 
-Generated at: 2026-06-22T03:35:35.771Z
+Generated at: 2026-07-20T11:41:58.436Z
 Stale threshold: `14` days
 
 Overall: `WARN`
@@ -9,21 +9,21 @@ Overall: `WARN`
 
 - Policy: weekly or after a new Optima version
 - Source files: `31`
-- Newest source: `2026-06-19T13:07:55.099Z`
-- Source age days: `3`
-- Export generatedAt: `2026-06-19T13:07:55.102Z`
+- Newest source: `2026-07-13T03:35:15.984Z`
+- Source age days: `7`
+- Export generatedAt: `2026-07-13T03:35:15.988Z`
 - Export behind source: `false`
 - Registry present: `true`
-- Registry sources: `3404`
-- Registry hashes: `3404`
+- Registry sources: `3402`
+- Registry hashes: `3402`
 
 ## ComarchBetterflyReference
 
 - Policy: daily or weekly delta, depending on API doc activity
 - Source files: `32`
-- Newest source: `2026-06-22T03:35:33.700Z`
+- Newest source: `2026-07-20T03:35:33.572Z`
 - Source age days: `0`
-- Export generatedAt: `2026-06-22T03:35:33.717Z`
+- Export generatedAt: `2026-07-20T03:35:33.587Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `31`
@@ -32,60 +32,58 @@ Overall: `WARN`
 ## ComarchCommunityNews
 
 - Policy: daily cron
-- Source files: `211`
-- Newest source: `2026-06-22T03:15:30.307Z`
+- Source files: `220`
+- Newest source: `2026-07-20T03:15:12.517Z`
 - Source age days: `0`
-- Export generatedAt: `2026-06-22T03:15:30.902Z`
+- Export generatedAt: `2026-07-20T03:15:13.168Z`
 - Export behind source: `false`
 - Registry present: `true`
-- Registry sources: `208`
-- Registry hashes: `208`
+- Registry sources: `217`
+- Registry hashes: `217`
 
 ## ComarchOptimaPartnerTechnical
 
 - Policy: manual authenticated pass
 - Source files: `322`
-- Newest source: `2026-06-20T18:34:11.885Z`
-- Source age days: `1`
-- Export generatedAt: `2026-06-20T18:34:12.750Z`
+- Newest source: `2026-07-10T06:01:37.733Z`
+- Source age days: `10`
+- Export generatedAt: `2026-07-10T06:01:38.808Z`
 - Export behind source: `false`
 - Registry present: `true`
-- Registry sources: `672`
-- Registry hashes: `672`
+- Registry sources: `674`
+- Registry hashes: `674`
 
 ## ComarchOptimaAdditionalFunctions
 
 - Policy: manual file-driven refresh
 - Source files: `58`
-- Newest source: `2026-06-07T03:14:23.617Z`
-- Source age days: `15`
-- Export generatedAt: `2026-06-07T03:14:23.619Z`
+- Newest source: `2026-07-08T05:30:30.589Z`
+- Source age days: `12`
+- Export generatedAt: `2026-07-08T05:30:30.591Z`
 - Export behind source: `false`
 - Registry present: `true`
-- Registry sources: `205`
-- Registry hashes: `205`
-- Warnings:
-  - Newest source is older than 14 days.
+- Registry sources: `214`
+- Registry hashes: `214`
 
 ## ComarchOptimaSprint
 
 - Policy: manual file-driven refresh
 - Source files: `11`
-- Newest source: `2026-06-12T13:34:34.871Z`
-- Source age days: `10`
-- Export generatedAt: `2026-06-12T13:34:34.872Z`
+- Newest source: `2026-07-07T09:03:00.506Z`
+- Source age days: `13`
+- Export generatedAt: `2026-07-07T09:03:00.508Z`
 - Export behind source: `false`
 - Registry present: `true`
-- Registry sources: `184`
-- Registry hashes: `184`
+- Registry sources: `186`
+- Registry hashes: `186`
 
 ## TaxbellLegalReference
 
 - Policy: wide Exa refresh, then manual review
 - Source files: `46`
 - Newest source: `2026-06-05T14:40:36.234Z`
-- Source age days: `17`
-- Export generatedAt: `2026-06-18T05:14:38.028Z`
+- Source age days: `45`
+- Export generatedAt: `2026-07-15T12:14:59.224Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `44`
@@ -98,8 +96,8 @@ Overall: `WARN`
 - Policy: wide Exa refresh, then manual review
 - Source files: `49`
 - Newest source: `2026-06-05T14:40:42.666Z`
-- Source age days: `17`
-- Export generatedAt: `2026-06-18T05:14:38.280Z`
+- Source age days: `45`
+- Export generatedAt: `2026-07-15T12:14:59.497Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `47`
@@ -112,8 +110,8 @@ Overall: `WARN`
 - Policy: wide Exa refresh, then manual review
 - Source files: `46`
 - Newest source: `2026-06-05T14:40:53.725Z`
-- Source age days: `17`
-- Export generatedAt: `2026-06-18T05:14:38.421Z`
+- Source age days: `45`
+- Export generatedAt: `2026-07-15T12:14:59.703Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `44`

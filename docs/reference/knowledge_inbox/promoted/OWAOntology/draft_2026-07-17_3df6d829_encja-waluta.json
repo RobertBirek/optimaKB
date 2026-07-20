@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_3df6d829_encja-waluta",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Waluta",
+  "content": "# Encyja: Waluta\n\n## Status weryfikacji\n**Częściowo zweryfikowane** — endpointy MCP potwierdzone, ale **brak dedykowanej tabeli CDN.Waluty w MSSQL**. Waluty są przechowywane jako kod varchar(3) w polach tabel (np. `BRa_Waluta`, `TwrCeny waluta`).\n\n## Opis biznesowy\nWaluta w Optimie nie ma osobnej tabeli słownikowej. Kod waluty (PLN, EUR, USD, …) jest przechowywany inline w rekordach. Endpointy MCP (`list_currencies`, `create_currency`, `get_currency_rate`) sugerują istnienie API do zarządzania walutami, ale backing storage jest prawdopodobnie po stronie API, nie MSSQL.\n\n## Reguły biznesowe\n- Kod waluty: 3 znaki (ISO 4217)\n- Kursy walut pobierane z NBP (tabela A, kurs średni) przez `get_currency_rate`\n- Przeszacowania walut: `CDN.PrzeszacWalutNag` / `CDN.PrzeszacWalutElem`\n\n## Źródła danych\n- **Brak dedykowanej tabeli** — waluty inline w `CDN.BnkRachunki.BRa_Waluta (varchar(3))`\n- **eSklep**: `CDN.eSklepWaluty`\n- **Asocjacja**: `CDN.FormyPlatnWaluty`\n- **Przeszacowania**: `CDN.PrzeszacWalutNag`, `CDN.PrzeszacWalutElem`\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| Kod waluty | varchar(3) | ISO 4217 (np. PLN, EUR) |\n\n## Pola i mapowanie API↔MSSQL\n- Kod waluty — `list_currencies`, `create_currency`, `get_currency_rate`\n- Kurs — `get_currency_rate` (z NBP)\n- Data kursu — `get_currency_rate`\n- `BRa_Waluta` (varchar(3)) na `CDN.BnkRachunki` — pole inline, nie FK\n\n## Relacje ontologiczne\n- **UZYWANA_PRZEZ_RACHUNEK** (1:N) → `CDN.BnkRachunki.BRa_Waluta` (pole inline)\n- **UZYWANA_PRZEZ_FORME_PLATNOSCI** (N:M) → `CDN.FormyPlatnWaluty`\n- **UZYWANA_PRZEZ_CENE** (1:N) → `CDN.TwrCeny` [UNKNOWN pole]\n- **PRZESZACOWANA** (1:N) → `CDN.PrzeszacWalutNag`\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `list_currencies` | READ — lista walut |\n| `create_currency` | WRITE — tworzy walutę |\n| `get_currency_rate` | READ — kurs z NBP (tabela A) |\n\n## Pochodzenie wiedzy\n- Analiza MSSQL: `INFORMATION_SCHEMA.TABLES` — brak `CDN.Waluty`\n- Potwierdzone tabele: `CDN.eSklepWaluty`, `CDN.FormyPlatnWaluty`, `CDN.PrzeszacWalutNag/Elem`\n- Endpointy MCP zdefiniowane w KB\n\n## Otwarte problemy\n1. Gdzie MCP `create_currency` zapisuje dane? (backing storage nieznany)\n2. `list_currencies` — skąd pobiera listę? (hardcoded? NBP?)\n3. `CDN.eSklepWaluty` — czy to jest słownik walut dla e-sklepu?\n4. Brak tabeli `CDN.Waluty` — czy API OptimaApi ma własny storage poza MSSQL?\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: **BRAK** — waluty inline w `CDN.BnkRachunki.BRa_Waluta`\n\n## Walidacja\n- [x] Potwierdzono brak `CDN.Waluty` w INFORMATION_SCHEMA\n- [ ] Zweryfikuj `list_currencies` runtime\n- [ ] Zbadaj `CDN.eSklepWaluty` strukturę\n- [ ] Ustal backing storage dla `create_currency`",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "waluta",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:45:35.618Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:45.665Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_3df6d829_encja-waluta.json"
+}

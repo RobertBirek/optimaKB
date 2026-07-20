@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_2d5af005_encja-przyjecie-wewnetrzne-pw",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Przyjęcie Wewnętrzne (PW)",
+  "content": "# Encja: Przyjęcie Wewnętrzne (PW)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: PW\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek\n- `CDN.TraElem` — pozycje przyjęcia\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_internal_receipt` `POST /api/v1/warehouse/internal-receipt` — tworzy PW\n\n## Relacje\n- PW zwiększa stan magazynowy (przychód)\n- Do celów wewnętrznych: nadwyżki inwentaryzacyjne, przyjęcie z produkcji\n- Nie jest powiązany z kontrahentem zewnętrznym ani FZ\n\n## Uwagi\n- Dokument przyjęcia towaru na cele wewnętrzne\n- Typowe zastosowania: przyjęcie nadwyżek, przyjęcie wyrobów gotowych z produkcji\n- Przeciwieństwo RW (Rozchód Wewnętrzny)",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "przyjecie-wewnetrzne",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:51:14.736Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:45.043Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_2d5af005_encja-przyjecie-wewnetrzne-pw.json"
+}

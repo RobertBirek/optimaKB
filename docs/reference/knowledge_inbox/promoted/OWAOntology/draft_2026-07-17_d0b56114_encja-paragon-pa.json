@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_d0b56114_encja-paragon-pa",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Paragon (PA)",
+  "content": "# Encja: Paragon (PA)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: PA\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek paragonu\n- `CDN.TraElem` — pozycje paragonu\n\n## MCP API\n### READ (NIE WYWOŁANO)\n- `list_receipt_rules` — lista reguł paragonowych\n- `list_documents(type=?)` — lista dokumentów\n\n### WRITE (NIE WYWOŁANO)\n- `create_receipt` `POST /api/v1/sales/receipt` — tworzy PA\n\n## Relacje\n- PA jest dokumentem sprzedaży detalicznej\n- PA podlega fiskalizacji (kasa fiskalna)\n- PA może być wystawiony na paragon (bez danych kontrahenta) lub jako faktura uproszczona\n\n## Uwagi\n- Dokument sprzedaży dla osób fizycznych nieprowadzących działalności\n- `list_receipt_rules` zwraca reguły wystawiania paragonów (np. limity kwotowe)\n- Paragon może być później wymieniony na FS (na żądanie klienta w ciągu 15 dni)",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "paragon",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:45:35.006Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:45.976Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_d0b56114_encja-paragon-pa.json"
+}

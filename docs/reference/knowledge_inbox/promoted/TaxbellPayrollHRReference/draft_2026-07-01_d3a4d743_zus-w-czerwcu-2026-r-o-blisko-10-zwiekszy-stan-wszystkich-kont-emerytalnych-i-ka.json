@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-01_d3a4d743_zus-w-czerwcu-2026-r-o-blisko-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-ka",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "ZUS w czerwcu 2026 r. o blisko 10% zwiększy stan wszystkich kont emerytalnych i kapitałów początkowych, a subkont jeszcze bardziej - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: ZUS zmiany czerwiec 2026 waloryzacja\nSource: https://www.infor.pl/prawo/nowosci-prawne/7595117,zus-w-czerwcu-2026-r-o-blisko-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-kapitalow-poczatkowych-a-subkont-jeszcze-bardziej.html\nTier: professional\nDiscovery confidence: 0.9\n\nZUS w czerwcu 2026 r. o blisko 10% zwiększy stan wszystkich kont emerytalnych i kapitałów początkowych, a subkont jeszcze bardziej\n05 czerwca 2026, 09:56\nZakład Ubezpieczeń Społecznych informuje, że w czerwcu 2026 roku stan kont ubezpieczonych w ZUS zdecydowanie wzrośnie za sprawą corocznej waloryzacji składek emerytalnych. Ta operacja bezpośrednio podniesie wysokość przyszłych świadczeń. Stan konta emerytalnego i kapitału początkowego wzrośnie o 9,81 proc., natomiast środki ulokowane na subkoncie zwiększą się o 10,61 proc. Zgromadzone na tych kontach kwoty stanowią podstawę obliczenia emerytury, co oznacza, że wyższe wskaźniki dają wyższe wypłaty w przyszłości.\n- Konto ubezpieczonego I filar\n- Subkonta rosną jeszcze szybciej\n- Zasada procentu składanego: zyskują najmłodsi i pracujący dłużej\n- Aktywni 50 plus i nie tylko\n## Konto ubezpieczonego I filar\nSkładki emerytalne wpłacone do ZUS podlegają corocznemu pomnożeniu przez wskaźnik waloryzacji - w tym roku to 109,81 proc. Ma on też zastosowanie do kapitału początkowego osób, które pracowały przed 1999 rokiem. Wysokość waloryzacji\n---\n*Odpowiedź oparta wyłącznie na treści dostarczonej w pytaniu – nie korzystałem z dołączonych dokumentów referencyjnych, ponieważ dotyczą one schematów baz danych, a nie artykułu do oczyszczenia.*\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.infor.pl/prawo/nowosci-prawne/7595117,zus-w-czerwcu-2026-r-o-blisko-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-kapitalow-poczatkowych-a-subkont-jeszcze-bardziej.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-13T02:51:06.753Z",
+    "discoveryCandidateId": "candidate_94cf5141-bbd",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_73de963ee9",
+    "discoveryRunId": "discovery_daily_2026-06-13T02-49-32-868Z_889274e3",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "2c65f52480ceb58ec4799958ec53caa5fe942e6bba4811deb97d8650258cf989"
+  },
+  "createdAt": "2026-07-01T10:55:39.323Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-01T11:03:28.423Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_d3a4d743_zus-w-czerwcu-2026-r-o-blisko-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-ka.json"
+}

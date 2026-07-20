@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_cafbecc8_encja-dziennik",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Dziennik",
+  "content": "# Encja: Dziennik\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `wysoki`\n- Identyfikator ontologiczny: `OWAOntology.Dziennik`\n- Aliasy: `Dzienniki`, `Journal`, `Book`\n\n## Opis biznesowy\nDziennik w Comarch Optima to rejestr księgowy zawierający chronologicznie uporządkowane zapisy księgowe (dekrety). Każdy dziennik jest przypisany do okresu obrachunkowego (`CDN.OkresyObrach`) przez klucz obcy `Dzi_OObId`. Dziennik identyfikowany jest przez symbol (`Dzi_Symbol`) i nazwę (`Dzi_Nazwa`). Usunięcie okresu obrachunkowego powoduje kaskadowe usunięcie wszystkich jego dzienników (CASCADE DELETE).\n\n## Reguły biznesowe\n- Każdy dziennik należy do dokładnie jednego okresu obrachunkowego\n- Dziennik ma unikalny symbol w ramach okresu (indeks `Dzi_OObId + Dzi_Symbol`)\n- Dziennik zawiera chronologicznie uporządkowane dekrety\n- Symbol dziennika — maks. 20 znaków\n- Nazwa dziennika — maks. 50 znaków\n- Usunięcie okresu → CASCADE DELETE wszystkich dzienników\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | PK | Stan | Dowód |\n|---|---|---|---|---|---|\n| Dzienniki | CDN | Dzienniki | Dzi_DziId (int, IDENTITY) | Potwierdzona | MSSQL |\n| Okresy obrachunkowe | CDN | OkresyObrach | OOb_OObID | Potwierdzona | FK CASCADE |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Status |\n|---|---|---|\n| READ | list_journal_entries (pośrednio) | Powiązanie przez Dzienniki → DekretyNag |\n\n## Identyfikatory — Dzienniki\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | Dzi_DziId | Unikalny identyfikator dziennika (int, IDENTITY) | Potwierdzony |\n| Naturalny | Dzi_Symbol | Symbol dziennika (varchar 20) | Potwierdzony |\n| FK | Dzi_OObId | FK do OkresyObrach.OOb_OObID (CASCADE) | Potwierdzony |\n\n## Kluczowe pola MSSQL — Dzienniki\n| Kolumna | Typ | Opis |\n|---|---|---|\n| Dzi_DziId | int (PK, IDENTITY) | ID dziennika |\n| Dzi_Symbol | varchar(20) | Symbol dziennika |\n| Dzi_Nazwa | varchar(50) | Nazwa dziennika |\n| Dzi_OObId | int | FK do OkresyObrach (CASCADE DELETE) |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| należy_do_okresu | Dziennik | OkresObrachunkowy | N:1 | Dzienniki.Dzi_OObId = OkresyObrach.OOb_OObID |\n| zawiera_dekrety | Dziennik | DekretKsiegowy | 1:N | DekretyNag → Dzienniki |\n| uzywany_przez_RK | Dziennik | OkresObrachunkowy | 1:1 | OkresyObrach.OOb_DziIdRK = Dzienniki.Dzi_DziId |\n| uzywany_przez_kompensaty | Dziennik | OkresObrachunkowy | 1:1 | OkresyObrach.OOb_DziIdKomp = Dzienniki.Dzi_DziId |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| MSSQL (CDN_TEST) | mssql_describe_table | Pełny schemat (14 kolumn, 1 FK CASCADE, 2 indeksy) |\n| OptimaKB | OpenSPG | ComarchOptimaSchema (relacje) |\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "dziennik",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:34.408Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:25.556Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_cafbecc8_encja-dziennik.json"
+}

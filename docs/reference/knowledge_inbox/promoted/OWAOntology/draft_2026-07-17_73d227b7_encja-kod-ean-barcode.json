@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_73d227b7_encja-kod-ean-barcode",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Kod EAN / Barcode",
+  "content": "# Encyja: Kod EAN / Barcode\n\n## Status weryfikacji\n**Zweryfikowane** — tabela MSSQL i endpointy MCP potwierdzone.\n\n## Opis biznesowy\nKod EAN (CDN.TwrEan) przechowuje kody kreskowe (barcodes) dla towarów. Jeden towar może mieć wiele kodów EAN. Istnieje również kod domyślny (`TwE_Domyslny`). Każdy kod EAN może być powiązany z jednostką miary (`TwE_JM`).\n\n## Reguły biznesowe\n- UNIQUE na (TwE_TwrID, TwE_EAN) — kod EAN jest unikalny w ramach towaru\n- FK do Towary z CASCADE — usunięcie towaru kasuje wszystkie jego EANy\n- `TwE_Domyslny` (tinyint) — flaga kodu domyślnego\n- `TwE_JM` określa jednostkę miary dla danego EAN\n\n## Źródła danych\n- **Tabela główna**: `CDN.TwrEan` (BASE TABLE, 1 wiersz w testowej)\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| `TwE_TwEId` | int IDENTITY | PK (clustered) |\n| `TwE_TwrID` | int FK→CDN.Towary | Towar (CASCADE) |\n| `TwE_EAN` | varchar(40) | Kod EAN |\n\n## Pola i mapowanie API↔MSSQL\n- `TwE_TwEId` (int, IDENTITY, PK) — NOT EXPOSED BY MCP\n- `TwE_TwrID` (int, FK→Towary, CASCADE) — `list_item_barcodes` / `create_item_barcode`\n- `TwE_EAN` (varchar(40)) — `list_item_barcodes` / `create_item_barcode`\n- `TwE_Opis` (nvarchar(100)) — `list_item_barcodes` / `create_item_barcode`\n- `TwE_Domyslny` (tinyint) — NOT EXPOSED BY MCP\n- `TwE_JM` (nvarchar(20)) — NOT EXPOSED BY MCP\n\n## Relacje ontologiczne\n- **NALEZY_DO_TOWARU** (N:1) → `CDN.Towary` przez `TwE_TwrID → Twr_TwrId` (CASCADE)\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `list_item_barcodes` | READ — lista kodów EAN |\n| `create_item_barcode` | WRITE — tworzy kod EAN |\n\n## Pochodzenie wiedzy\n- `mssql_describe_table` (CDN.TwrEan, 2026-07-15)\n- Analiza indeksów: `TwETowar` (UNIQUE na TwE_TwrID+TwE_EAN), `TwEEan` (NONCLUSTERED na TwE_EAN)\n\n## Otwarte problemy\n1. Mapping endpointów MCP do pełnych kolumn niepotwierdzony — `list_item_barcodes` zwraca jakie pola?\n2. `TwE_JM` powiązane z `CDN.TwrJm`? Brak FK w schemacie.\n3. Tylko 1 wiersz w testowej — mało danych do analizy wzorców.\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.TwrEan` (ROW_COUNT=1)\n- PK: `TwE_TwEId`\n- FK: `TwE_TwrID → CDN.Towary.Twr_TwrId` (CASCADE)\n\n## Walidacja\n- [x] `mssql_describe_table` potwierdza strukturę\n- [ ] Zweryfikuj działanie `list_item_barcodes` i `create_item_barcode`\n- [ ] Sprawdź czy `TwE_JM` mapuje się do `CDN.TwrJm.TwJ_JmZ`",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "kod-ean",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:51:15.006Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:44.941Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_73d227b7_encja-kod-ean-barcode.json"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_b857aef5_encja-faktura-proforma-fpf",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Faktura Proforma (FPF)",
+  "content": "# Encja: Faktura Proforma (FPF)\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `wysoki`\n- Identyfikator ontologiczny: `OWAOntology.FakturaProforma`\n- Aliasy: `FPF`, `Proforma`, `ProformaInvoice`\n\n## Opis biznesowy\nFaktura Proforma (FPF) w Comarch Optima jest dokumentem handlowym o charakterze ofertowo-przedpłatowym, który nie stanowi jeszcze dokumentu księgowego ani magazynowego. Służy do wezwania do zapłaty przed realizacją sprzedaży. Z proformy można wygenerować fakturę zaliczkową (`advance_invoice_from_proforma`) lub dalsze dokumenty sprzedażowe w zależności od procesu. Dokument prawdopodobnie opiera się na modelu `TraNag`/`TraElem` z odrębnym typem dokumentu.\n\n## Reguły biznesowe\n- FPF nie wpływa bezpośrednio na stany magazynowe\n- FPF nie stanowi wpisu księgowego ani VAT\n- Może poprzedzać fakturę zaliczkową\n- Z FPF można wygenerować FA zaliczkową przez dedykowany workflow\n- Może być wystawiona dla kontrahenta i zawierać pozycje towarowe/usługowe\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | Status | Dowód |\n|---|---|---|---|---|\n| Nagłówek dokumentu | CDN | TraNag | Pośrednio potwierdzona | Model nadrzędny |\n| Pozycje dokumentu | CDN | TraElem | Pośrednio potwierdzona | Model nadrzędny |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | create_proforma | POST /api/v1/sales/proforma | Potwierdzone |\n| WRITE | advance_invoice_from_proforma | POST /api/v1/workflow/proforma/advance | Potwierdzone |\n\n## Identyfikatory\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | [UNKNOWN: TrN_TrNID?] | ID dokumentu FPF | Do potwierdzenia |\n| FK | [UNKNOWN] | FK do kontrahenta | Pośrednio potwierdzone |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| dotyczy_kontrahenta | FakturaProforma | Kontrahent | N:1 | Przez model dokumentu handlowego |\n| zawiera_pozycje | FakturaProforma | Towar | N:M | Przez TraElem |\n| poprzedza_zaliczke | FakturaProforma | FakturaZaliczkowa | 1:N / 1:1 | Workflow proforma→advance |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| OptimaMCP | create_proforma | API WRITE |\n| OptimaMCP | advance_invoice_from_proforma | Workflow FPF→FA zaliczkowa |\n| Ontologia nadrzędna | Dokument handlowy | Model TraNag/TraElem |\n\n## Otwarte problemy\n- [UNKNOWN: dokładny typ dokumentu FPF w TraNag]\n- [UNKNOWN: czy proforma trafia do osobnych tabel pomocniczych]\n- [UNKNOWN: jak przechowywana jest relacja do dokumentu zaliczkowego]\n- [UNKNOWN: czy FPF może być bezpośrednio konwertowana do FS]\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "faktura-proforma",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:18:34.121Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:42:25.777Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_b857aef5_encja-faktura-proforma-fpf.json"
+}

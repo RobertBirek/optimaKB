@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_d468c50b_encja-relacje-dokumentow",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Relacje dokumentów",
+  "content": "# Encja: Relacje dokumentów\n\n## Identyfikacja\n\n- **Typ encji:** Relacja\n- **Tabela MSSQL:** `CDN.DokRelacje`\n- **Klucz główny:** `DoR_DoRId` (int, IDENTITY)\n- **Liczba rekordów:** 0 (tabela pusta w CDN_TEST)\n- **Status weryfikacji:** częściowo-zweryfikowane\n\n## Struktura tabeli\n\n| Kolumna | Typ | Opis |\n|---------|-----|------|\n| `DoR_DoRId` | int (PK, IDENTITY) | Identyfikator relacji |\n| `DoR_ParentTyp` | smallint | Typ dokumentu nadrzędnego (klucz/typ encji) |\n| `DoR_ParentId` | int | ID dokumentu nadrzędnego |\n| `DoR_ParentGUID` | uniqueidentifier | GUID dokumentu nadrzędnego |\n| `DoR_DokumentTyp` | smallint | Typ dokumentu podrzędnego |\n| `DoR_DokumentId` | int | ID dokumentu podrzędnego |\n| `DoR_DokumentGUID` | uniqueidentifier | GUID dokumentu podrzędnego |\n| `DoR_Flaga` | smallint | Flaga określająca typ relacji |\n| `DoR_HRM` | smallint | Dodatkowy identyfikator HRM (nullable) |\n\n## Indeksy\n\n- `DoR_Primary` (CLUSTERED) — `DoR_DoRId`\n- `DoRUniqueDok` (UNIQUE) — kombinacja `DoR_ParentTyp + DoR_ParentId + DoR_DokumentTyp + DoR_DokumentId + DoR_ParentGUID + DoR_DokumentGUID`\n- `DokRelacjeParentGUID` — `DoR_ParentGUID + DoR_DokumentTyp`\n- `DokRelacjeParentId` — `DoR_ParentId + DoR_DokumentTyp` (INCLUDE: `DoR_ParentTyp, DoR_DokumentId`)\n- `DoSDokument` — `DoR_DokumentTyp + DoR_DokumentId` (INCLUDE: `DoR_ParentTyp, DoR_ParentId`)\n- `DosParent` — `DoR_ParentTyp + DoR_ParentId + DoR_DoRId`\n\n## Semantyka\n\nTabela `DokRelacje` definiuje relacje między dokumentami w systemie Optima. Główne zastosowania:\n\n1. **Relacje parent-child** — dokument nadrzędny (parent) → dokument podrzędny (child), np. Zamówienie (ZO) → Faktura zakupu (FZ), Rezerwacja odbiorcy (RO) → Wydanie zewnętrzne (WZ)\n2. **Relacje korekt** — dokument korygowany → korekta, np. Faktura sprzedaży (FS) → Faktura korygująca (FSKOR)\n3. **Relacje łańcuchowe** — umożliwiają śledzenie pełnej ścieżki dokumentu od zamówienia przez realizację po płatność\n\nKolumna `DoR_Flaga` rozróżnia typ relacji (np. korekta, powiązanie zwykłe, anulowanie). Kolumna `DoR_HRM` jest używana w kontekście kadrowo-płacowym.\n\n## MCP API\n\n- `OptimaMCP_optima_list_document_relations` — lista relacji (READ), zwraca wszystkie zdefiniowane powiązania między dokumentami\n\n## Reguły biznesowe\n\n1. Każda relacja między parą dokumentów jest unikalna (wymuszona przez indeks `DoRUniqueDok`).\n2. Typ dokumentu nadrzędnego i podrzędnego (`DoR_ParentTyp`, `DoR_DokumentTyp`) odpowiadają identyfikatorom z `DokDefinicje.DDf_Klasa` lub innemu systemowi typów.\n3. Relacje są używane do nawigacji w interfejsie użytkownika (przycisk \"Dokumenty powiązane\") oraz w workflow (np. automatyczne generowanie FSKOR z FS).\n4. Usunięcie dokumentu nadrzędnego może skutkować kaskadowym usunięciem lub osieroceniem relacji (zależne od konfiguracji).",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "relacje-dokumentow",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:34:16.503Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:47.149Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_d468c50b_encja-relacje-dokumentow.json"
+}

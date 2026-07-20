@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_37b933aa_encja-dokument-handlowy",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Dokument handlowy",
+  "content": "# Encja: Dokument handlowy (abstrakcyjna baza)\n\n## Klasyfikacja\n- **Warstwa**: ontologia domeny\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\nWszystkie podtypy dokumentów współdzielą dwie tabele:\n- `CDN.TraNag` (nagłówek, PK=`TrN_TrNID`, 120+ kolumn) — kluczowe: `TrN_TypDokumentu` (int), `TrN_PelnyNumer`, `TrN_DataWystawienia`, `TrN_DataOperacji`, `TrN_KntId`, `TrN_SumaNetto`, `TrN_SumaVAT`, `TrN_SumaBrutto`, `TrN_FormaPlatnosci`, `TrN_Termin`, `TrN_Bufor`, `TrN_Anulowany`, `TrN_Waluta`, `TrN_KursWaluty`, `TrN_NumerObcy`, `TrN_MagZrodlo`, `TrN_MagDocelowy`, `TrN_PodzialPlatnosci`, `TrN_StatusStr`\n- `CDN.TraElem` (pozycje, PK=`TrE_TrEId`, FK=`TrE_TrNId` → `TraNag.TrN_TrNID`)\n\n## Definicje dokumentów\nTypy dokumentów zdefiniowane w `CDN.DokDefinicje` (PK=`DDf_DDfID`):\n- `DDf_Symbol` — skrót (np. FS, FZ, RO, WZ, PZ)\n- `DDf_Nazwa` — pełna nazwa\n- `DDf_Typ` — kategoria\n- `isActive` — czy aktywny\n\n## Potwierdzone typy\n- **FS (302)** — Faktura Sprzedaży, potwierdzone MCP\n\n## Pola MCP (wspólne dla TraNag)\n`id`, `type`, `fullNumber`, `issueDate`, `operationDate`, `contractorId`, `contractorName`, `contractorCode`, `sourceWarehouseId`, `destinationWarehouseId`, `totalNet`, `totalVat` (tylko faktury), `totalGross`, `paymentFormId`, `dueDate`, `isBuffer`, `isCancelled`, `statusString`, `updatedAt`, `lines[]`, `splitPayment`, `currencyCode`, `exchangeRate`, `externalNumber`\n\n## MCP API\n- **READ**: `list_documents(type?, date_from?, date_to?, updated_from?)` — lista dokumentów\n- **READ**: `get_document(id)` — szczegóły dokumentu (SEK)\n- **READ**: `list_document_definitions` — definicje typów (DokDefinicje)\n- **READ**: `list_document_relations` — relacje między dokumentami (DokRelacje)\n- **READ**: `get_document_timeline(id)` — historia dokumentu\n- **READ**: `get_document_balance(id)` — saldo dokumentu\n\n## Relacje\n- `DokRelacje` — powiązania między dokumentami (np. Korekta→oryginał)\n- `TrN_RelTrNId` — ID dokumentu powiązanego (np. FSKOR→FS)\n- Każdy dokument może mieć wiele pozycji (`TraElem`, 1:N)\n\n## Uwagi\n- Typ dokumentu (`TrN_TypDokumentu`) jednoznacznie określa podtyp\n- `TrN_Bufor=1` oznacza dokument w buforze (niezatwierdzony)\n- `TrN_Anulowany=1` oznacza dokument anulowany",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "dokument-handlowy",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:43:24.693Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:46.118Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_37b933aa_encja-dokument-handlowy.json"
+}

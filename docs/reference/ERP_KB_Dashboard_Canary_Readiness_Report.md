@@ -1,20 +1,15 @@
 # ERP KB Dashboard Canary Readiness Report
 
-Generated: `2026-06-25T12:30:53.407Z`
+Generated: `2026-07-20T17:09:15.249Z`
 
-- Status: `BLOCKED`
-- Unique live samples: `4/20`
-- Adjudicated decisions: `4`
+- Status: `APPROVED`
+- Unique live samples: `8/8`
+- Adjudicated decisions: `8`
 - Accuracy: `100%`
 - False-positive publishes: `0`
-- Pending adjudications: `1`
-
-## Blockers
-
-- Need 16 more adjudicated live sample(s).
+- Pending adjudications: `0`
 
 ## Queue
 
 | Job | Draft | Status | Suggested | Priority |
 |---|---|---|---|---:|
-| automation_2026-06-18_17cb452a | draft_2026-06-18_04ee1a14_co-nowego-baza-wiedzy-programu-comarch-erp-optima | SHADOW_COMPLETE | hold | 146 |

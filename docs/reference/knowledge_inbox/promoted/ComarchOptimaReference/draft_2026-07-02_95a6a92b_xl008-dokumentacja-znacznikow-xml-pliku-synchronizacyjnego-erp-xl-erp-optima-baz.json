@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-02_95a6a92b_xl008-dokumentacja-znacznikow-xml-pliku-synchronizacyjnego-erp-xl-erp-optima-baz",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "XL008 – Dokumentacja znaczników XML pliku synchronizacyjnego ERP XL –  ERP Optima – Baza wiedzy Comarch ERP XL 2023",
+  "content": "Automated source-discovery draft.\n\nQuery: przykłady funkcji dodatkowych XML XPT w Comarch Optima 2026\nSource: https://pomoc.comarch.pl/xl/2023/index.php/dokumentacja/dokumentacja-znacznikow-xml-pliku-synchronizacyjnego-erp-xl-erp-optima/\nTier: official\nDiscovery confidence: 0.8\n\nXL008 – Dokumentacja znaczników XML pliku synchronizacyjnego ERP XL – ERP Optima – Baza wiedzy Comarch ERP XL 2023\n## Struktura pliku synchronizacyjnego dla oddziału\n- Sekcja informacyjna (INFOBLOK)\n- Magazyny (MAGI)\n- Pieczątki firmy (PIFI)\n- Operatorzy (OPEI)\n- Banki (BNKI)\n- Rejestry kasowo-bankowe (RKBI)\n- Serie dokumentów (SERI)\n- Formy płatności (FPLI)\n- Waluty (WALI)\n- Nazwy cen (NTCI)\n- Stawki VAT (VATI)\n- Potwierdzenia (PTWI)\n- Towary (TWRI)\n- Grupy towarowe (TWGI)\n- Cenniki towarów (TWCI)\n- Schematy kaucji (SKI)\n- Kontrahenci (KNTI)\n- Grupy kontrahentów (KNGI)\n- Dokumenty (DOKI)\n- Nierozliczone płatności kontrahentów (PLTI)\n- Limity kredytowe kontrahentów (LKI)\n- Promocje (PRKI)\n- Promocje dla towarów (TPRI)\n- Promocje dla kontrahentów (KPRI)\n- Promocje dla form płatności (PLPRI)\n- Promocje w strukturze firmy (FPRI)\n## Struktura pliku synchronizacyjnego od oddziału\n- Sekcja informacyjna (INFOBLOK)\n- Kontrahenci (KNTI)\n- Dokumenty (DOKI)\n- Raporty kasowo-bankowe (RAPI)\n- Potwierdzenia (PTWI)\n## Struktura pliku synchronizacyjnego dla oddziału\n### Sekcja informacyjna (INFOBLOK)\n| Atrybut | Opis | ERP XL | Optima |\n| --- | --- | --- | ---\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/xl/2023/index.php/dokumentacja/dokumentacja-znacznikow-xml-pliku-synchronizacyjnego-erp-xl-erp-optima/",
+  "tags": [
+    "discovery",
+    "official",
+    "funkcje dodatkowe",
+    "XML",
+    "XPT",
+    "przykłady"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:48:29.446Z",
+    "discoveryCandidateId": "candidate_ff150490-471",
+    "discoveryQueryId": "generated_ComarchOptimaAdditionalFunctions_9b410b8ecf",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.8,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "c3c3c39adbddacbebbd719ac589be49c33e1792920de8f9e43c11ba85772f568"
+  },
+  "createdAt": "2026-07-02T05:19:43.538Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-02T06:26:32.745Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-02/draft_2026-07-02_95a6a92b_xl008-dokumentacja-znacznikow-xml-pliku-synchronizacyjnego-erp-xl-erp-optima-baz.json"
+}

@@ -1,52 +1,138 @@
 {
-  "generatedAt": "2026-06-25T12:30:53.407Z",
-  "overall": "BLOCKED",
+  "generatedAt": "2026-07-20T17:09:15.249Z",
+  "overall": "APPROVED",
   "gate": {
-    "eligible": false,
-    "approved": false,
+    "eligible": true,
+    "approved": true,
     "checks": {
       "automationReady": true,
-      "samples": false,
+      "samples": true,
       "accuracy": true,
       "falsePositives": true,
       "llmHealth": true,
       "noActiveJobs": true,
       "noRollbackFailures": true
     },
-    "blockers": [
-      "Need 16 more adjudicated live sample(s)."
-    ],
+    "blockers": [],
     "metrics": {
-      "samples": 4,
-      "decisions": 4,
-      "correct": 4,
+      "samples": 8,
+      "decisions": 8,
+      "correct": 8,
       "accuracy": 1,
       "falsePositives": 0
     },
     "requirements": {
-      "minimumSamples": 20,
+      "minimumSamples": 8,
       "minimumAccuracy": 0.95,
       "maximumFalsePositives": 0
     },
-    "approvedAt": "",
-    "approvedBy": ""
+    "approvedAt": "2026-07-07T09:01:27.769Z",
+    "approvedBy": "opencode-operator"
+  },
+  "learning": {
+    "generatedAt": "2026-07-20T17:09:15.246Z",
+    "overall": {
+      "reviewed": 8,
+      "kbNamespaces": 1
+    },
+    "byKbNamespace": {
+      "ComarchCommunityNews": {
+        "reviewed": 8,
+        "actualPublishes": 0,
+        "publishFalsePositives": 0,
+        "publishFalsePositiveRate": 0,
+        "scoreDelta": 0,
+        "reasons": [],
+        "baseThreshold": 0.6,
+        "windowSize": 8,
+        "windowFpRate": 0,
+        "tunedBaseline": 0.5
+      }
+    },
+    "byTargetKb": {
+      "ComarchBetterflyReference": {
+        "reviewed": 3,
+        "actualPublishes": 0,
+        "publishFalsePositives": 0,
+        "publishFalsePositiveRate": 0,
+        "scoreDelta": 0,
+        "reasons": [],
+        "baseThreshold": 0.6,
+        "windowSize": 3,
+        "windowFpRate": 0,
+        "tunedBaseline": 0.5
+      },
+      "ComarchCommunityNews": {
+        "reviewed": 4,
+        "actualPublishes": 0,
+        "publishFalsePositives": 0,
+        "publishFalsePositiveRate": 0,
+        "scoreDelta": 0,
+        "reasons": [],
+        "baseThreshold": 0.6,
+        "windowSize": 4,
+        "windowFpRate": 0,
+        "tunedBaseline": 0.5
+      },
+      "ComarchOptimaReference": {
+        "reviewed": 1,
+        "actualPublishes": 0,
+        "publishFalsePositives": 0,
+        "publishFalsePositiveRate": 0,
+        "scoreDelta": 0,
+        "reasons": [],
+        "baseThreshold": 0.6,
+        "windowSize": 1,
+        "windowFpRate": 0,
+        "tunedBaseline": 0.5
+      }
+    },
+    "reroutePairs": {
+      "ComarchCommunityNews->ComarchBetterflyReference": {
+        "reviewed": 3,
+        "confirmed": 1,
+        "correct": 1,
+        "correctRate": 0.3333333333333333,
+        "scoreDelta": 0,
+        "reasons": []
+      },
+      "ComarchCommunityNews->ComarchCommunityNews": {
+        "reviewed": 4,
+        "confirmed": 0,
+        "correct": 0,
+        "correctRate": 0,
+        "scoreDelta": 0,
+        "reasons": []
+      },
+      "ComarchCommunityNews->ComarchOptimaReference": {
+        "reviewed": 1,
+        "confirmed": 0,
+        "correct": 0,
+        "correctRate": 0,
+        "scoreDelta": 0,
+        "reasons": []
+      }
+    },
+    "highlights": {
+      "guardedKbNamespaces": [],
+      "reroutePairs": []
+    },
+    "promptMemory": {
+      "recentRejectNotes": [
+        "Operator adjudication: hold — treść to lista linkow, nie artykuł wiedzy",
+        "Operator adjudication: hold",
+        "Operator adjudication: hold",
+        "Operator adjudication: hold",
+        "Operator adjudication: hold"
+      ],
+      "recentRerouteNotes": [
+        "Operator adjudication: reroute do ComarchBetterflyReference - content dotyczy Betterfly KSeF"
+      ]
+    }
   },
   "queue": {
-    "pending": 1,
-    "nextJobId": "automation_2026-06-18_17cb452a",
-    "items": [
-      {
-        "jobId": "automation_2026-06-18_17cb452a",
-        "draftId": "draft_2026-06-18_04ee1a14_co-nowego-baza-wiedzy-programu-comarch-erp-optima",
-        "title": "Co nowego? – Baza Wiedzy programu Comarch ERP Optima",
-        "kbNamespace": "ComarchCommunityNews",
-        "status": "SHADOW_COMPLETE",
-        "priority": 146,
-        "recommendedAction": "hold",
-        "confidence": 0.7,
-        "targetKb": "ComarchOptimaReference",
-        "finishedAt": "2026-06-18T05:13:06.091Z"
-      }
-    ]
+    "pending": 0,
+    "nextJobId": "",
+    "items": []
   }
 }

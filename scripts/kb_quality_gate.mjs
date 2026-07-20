@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import process from 'process';
+import { execSync } from 'child_process';
 import { loadPromotedKnowledge, TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { slug } from './lib/export_utils.mjs';
 
@@ -71,6 +72,11 @@ const TARGETS = {
     buildManifest: '',
     requiredFiles: ['reference_document.csv', 'chunk.csv'],
   },
+  OWAOntology: {
+    exportDir: 'exports/owa_ontology/v1',
+    buildManifest: 'build_owa_ontology_jobs_manifest.json',
+    requiredFiles: ['ontology_entity.csv', 'ontology_field.csv', 'ontology_relation.csv', 'workflow_pattern.csv', 'chunk.csv'],
+  },
 };
 
 function usage() {
@@ -82,6 +88,7 @@ function usage() {
     'Options:',
     '  --json-only           Print JSON only',
     '  --fail-on-warn        Exit non-zero when warnings exist',
+    '  --auto-fix            Rebuild KBs with known fixable errors (needs OPENSPG_COOKIE_FILE for build step)',
   ].join('\n');
 }
 
@@ -359,11 +366,49 @@ try {
   if (!namespaces.length) throw new Error('Provide --kb <namespace> or --all');
 
   const results = namespaces.map(assessNamespace);
-  const overall = results.some((result) => result.verdict === 'FAIL')
+  let overall = results.some((result) => result.verdict === 'FAIL')
     ? 'FAIL'
     : results.some((result) => result.verdict === 'WARN')
       ? 'WARN'
       : 'PASS';
+
+  if (hasArg(args, '--auto-fix') && overall === 'FAIL') {
+    const FIXABLE_ERROR = 'Promoted drafts without visible chunks';
+    const failedKbs = results.filter(r => r.verdict === 'FAIL'
+      && r.errors.some(e => e.startsWith(FIXABLE_ERROR)));
+
+    if (failedKbs.length) {
+      const cookieFile = process.env.OPENSPG_COOKIE_FILE;
+      const cookie = process.env.OPENSPG_COOKIE;
+      const cookieEnv = cookieFile ? `OPENSPG_COOKIE_FILE=${cookieFile}`
+        : cookie ? `OPENSPG_COOKIE=${cookie}` : '';
+      const hasCookie = Boolean(cookieFile || cookie);
+
+      process.stderr.write(`Auto-fix: rebuilding ${failedKbs.length} KB(s) with ${FIXABLE_ERROR} errors...\n`);
+
+      for (const kb of failedKbs) {
+        const ns = kb.namespace;
+        process.stderr.write(`  Fixing ${ns}...\n`);
+        try {
+          const buildFlag = hasCookie ? ' --build' : '';
+          execSync(
+            `${cookieEnv} node scripts/process_knowledge_inbox.mjs --kb ${ns} --export${buildFlag}`,
+            { stdio: 'inherit', cwd: ROOT },
+          );
+          results.splice(results.indexOf(kb), 1, assessNamespace(ns));
+          process.stderr.write(`  ${ns}: fixed.\n`);
+        } catch (e) {
+          process.stderr.write(`  ${ns}: fix failed — ${e.message}\n`);
+        }
+      }
+
+      overall = results.some((result) => result.verdict === 'FAIL')
+        ? 'FAIL'
+        : results.some((result) => result.verdict === 'WARN')
+          ? 'WARN'
+          : 'PASS';
+    }
+  }
   const payload = {
     generatedAt: new Date().toISOString(),
     overall,

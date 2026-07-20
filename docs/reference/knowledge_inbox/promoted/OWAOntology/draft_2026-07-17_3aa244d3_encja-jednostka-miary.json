@@ -1,0 +1,22 @@
+{
+  "id": "draft_2026-07-17_3aa244d3_encja-jednostka-miary",
+  "kbName": "OWA Platform Optima Ontology",
+  "kbNamespace": "OWAOntology",
+  "title": "Encja: Jednostka miary",
+  "content": "# Encyja: Jednostka miary\n\n## Status weryfikacji\n**Zweryfikowane** — tabela MSSQL potwierdzona, endpoint MCP potwierdzony.\n\n## Opis biznesowy\nJednostka miary (CDN.TwrJm) definiuje przeliczniki jednostek dla towarów. Każdy rekord opisuje relację między jednostką podstawową a pomocniczą (`TwJ_JmZ`), wraz z przelicznikami (`TwJ_PrzeliczM`, `TwJ_PrzeliczL`) i wagą/objętością. Rekordy są identyfikowane przez composite key: (TwJ_TwrTyp, TwJ_TwrFirma, TwJ_TwrNumer, TwJ_TwrLp).\n\n## Reguły biznesowe\n- PK composite: TwJ_TwrTyp + TwJ_TwrFirma + TwJ_TwrNumer + TwJ_TwrLp\n- `TwJ_JmZ` (nvarchar(8)) — kod jednostki pomocniczej\n- `TwJ_PrzeliczM` / `TwJ_PrzeliczL` — mnożnik/licznik przelicznika\n- `TwJ_Calkowita` (tinyint) — czy jednostka całkowita\n- `TwJ_EAN` (varchar(20)) — EAN dla jednostki (osobny indeks TwjEAN)\n- `TwJ_TypJm` (tinyint) — typ jednostki miary [UNKNOWN enum]\n\n## Źródła danych\n- **Tabela główna**: `CDN.TwrJm` (BASE TABLE, 0 wierszy w testowej)\n\n## Identyfikatory\n| Pole | Typ | Opis |\n|------|-----|------|\n| `TwJ_TwrTyp` | smallint | Część PK — typ towaru |\n| `TwJ_TwrFirma` | int | Część PK — ID firmy |\n| `TwJ_TwrNumer` | int | Część PK — numer towaru |\n| `TwJ_TwrLp` | smallint | Część PK — liczba porządkowa |\n\n## Pola i mapowanie API↔MSSQL\n- `TwJ_TwrTyp`, `TwJ_TwrFirma`, `TwJ_TwrNumer`, `TwJ_TwrLp` (composite PK) — NOT EXPOSED BY MCP\n- `TwJ_JmZ` (nvarchar(8)) — `list_unit_mappings`\n- `TwJ_JmFormat` (tinyint) — NOT EXPOSED BY MCP\n- `TwJ_TypJm` (tinyint) — NOT EXPOSED BY MCP\n- `TwJ_Calkowita` (tinyint) — NOT EXPOSED BY MCP\n- `TwJ_PrzeliczM` (decimal(15,0)) — `list_unit_mappings`\n- `TwJ_PrzeliczL` (decimal(15,0)) — `list_unit_mappings`\n- `TwJ_Prog` (decimal(11,4)) — NOT EXPOSED BY MCP\n- `TwJ_Obowiazek` (tinyint) — NOT EXPOSED BY MCP\n- `TwJ_Waga` (decimal(7,3)) — NOT EXPOSED BY MCP\n- `TwJ_WJm` (nvarchar(5)) — NOT EXPOSED BY MCP\n- `TwJ_EAN` (varchar(20)) — NOT EXPOSED BY MCP\n- `TwJ_WyliczPrzySpr` (smallint) — NOT EXPOSED BY MCP\n- `TwJ_ObjetoscL`, `TwJ_ObjetoscM` (decimal(5,0)) — NOT EXPOSED BY MCP\n- `TwJ_WagaBrutto` (decimal(7,3)) — NOT EXPOSED BY MCP\n- `TwJ_WJmBrutto` (nvarchar(5)) — NOT EXPOSED BY MCP\n- `TwJ_KcaTyp`, `TwJ_KcaFirma`, `TwJ_KcaNumer`, `TwJ_KcaLp` — NOT EXPOSED BY MCP (referencja do kaucji? [UNKNOWN])\n\n## Relacje ontologiczne\n- **NALEZY_DO_TOWARU** (N:1) → `CDN.Towary` przez composite key (TwJ_TwrTyp, TwJ_TwrFirma, TwJ_TwrNumer) — brak formalnego FK w schemacie\n- **POWIAZANA_Z_EAN** (1:1?) → `CDN.TwrEan` przez `TwJ_EAN` (indeks TwjEAN, brak FK)\n- **POWIAZANA_Z_KAUCJA** (N:1?) → [UNKNOWN] przez TwJ_Kca* (indeks TwJKaucja)\n\n## Endpointy OptimaMCP\n| Narzędzie | Operacja |\n|-----------|----------|\n| `list_unit_mappings` | READ — lista mapowań jednostek |\n\n## Pochodzenie wiedzy\n- `mssql_describe_table` (CDN.TwrJm, 2026-07-15)\n- 0 wierszy w testowej — brak danych do analizy wzorców\n\n## Otwarte problemy\n1. Brak FK constraints — czy relacja do Towary jest gwarantowana na poziomie aplikacji?\n2. `TwJ_Kca*` — co to za referencja? (może Kaucje?)\n3. `TwJ_WyliczPrzySpr` — znaczenie flagi?\n4. Enum `TwJ_TypJm` nieznany.\n\n## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.TwrJm` (ROW_COUNT=0)\n- PK: composite (TwJ_TwrTyp, TwJ_TwrFirma, TwJ_TwrNumer, TwJ_TwrLp)\n\n## Walidacja\n- [x] `mssql_describe_table` potwierdza strukturę\n- [ ] Zweryfikuj `list_unit_mappings` działanie\n- [ ] Zbadaj referencję TwJ_Kca*",
+  "sourceUrl": "",
+  "tags": [
+    "OWA",
+    "ontologia",
+    "optima",
+    "jednostka-miary",
+    "częściowo-zweryfikowane"
+  ],
+  "metadata": null,
+  "createdAt": "2026-07-17T07:40:48.520Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-20T11:38:46.626Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 50 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-17/draft_2026-07-17_3aa244d3_encja-jednostka-miary.json"
+}

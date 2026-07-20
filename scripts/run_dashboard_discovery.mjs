@@ -36,6 +36,7 @@ import {
   checkAutoDraftDailyLimit,
   incrementAutoDraftDailyCount,
 } from './lib/dashboard_discovery.mjs';
+import { buildWeeklyPlannerPrompt } from './lib/discovery_weekly_prompt.mjs';
 import { appendDashboardAudit } from './lib/dashboard_audit.mjs';
 import { contentHash, findExistingDraftBySourceUrl, normalizeUrl } from './lib/dashboard_source_list.mjs';
 import { TARGET_KBS } from './lib/promoted_knowledge.mjs';
@@ -49,6 +50,7 @@ const APP_ID = process.env.OPENSPG_LLM_APP_ID || '';
 const SESSION_ID = process.env.OPENSPG_LLM_SESSION_ID || '';
 const MODEL = process.env.ERP_KB_DISCOVERY_LLM_MODEL || process.env.OPENSPG_LLM_MODEL || '';
 const TIMEOUT_MS = Number(process.env.ERP_KB_DISCOVERY_LLM_TIMEOUT_MS || 90000);
+const WEEKLY_TIMEOUT_MS = Number(process.env.ERP_KB_DISCOVERY_WEEKLY_LLM_TIMEOUT_MS || TIMEOUT_MS);
 const DAILY_CONCURRENCY = Math.max(
   1,
   Math.min(8, Number(process.env.ERP_KB_DISCOVERY_CONCURRENCY || 3)),
@@ -97,7 +99,7 @@ function parseJson(text) {
   return JSON.parse(fenced.slice(start, end + 1));
 }
 
-async function callLlm(prompt, mockKeys = []) {
+async function callLlm(prompt, mockKeys = [], timeoutMs = TIMEOUT_MS) {
   const mockPath = process.env.ERP_KB_DISCOVERY_LLM_MOCK_FILE;
   if (mockPath) {
     const mock = JSON.parse(fs.readFileSync(mockPath, 'utf8'));
@@ -110,7 +112,7 @@ async function callLlm(prompt, mockKeys = []) {
   const cookie = readOpenSpgCookie({ required: true });
   if (!APP_ID || !SESSION_ID) throw new Error('Discovery LLM app/session is not configured');
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(`${API_BASE}${ENDPOINT}`, {
       method: 'POST',
@@ -473,27 +475,11 @@ async function runWeekly() {
   if (!policy.enabled) throw new Error('Discovery policy is disabled');
   const state = loadDiscoveryQueries();
   const now = new Date();
-  const prompt = [
-    'Twórz zwięzłe tygodniowe zapytania do wyszukiwania internetowego dla wskazanych baz wiedzy.',
-    'Zwróć tylko JSON: {"queries":[{"kbNamespace":"...","query":"...","includeDomains":["..."],"reason":"..."}]}',
-    `Nie zwracaj więcej niż ${policy.generatedQueriesPerKb} zapytań na KB.`,
-    'Preferuj aktualną dokumentację oficjalną, zmiany prawne, release notes i niepokryte tematy operacyjne.',
-    'Uwzględniaj feedback operatorów, aby unikać wzorców z powtarzającymi się false positive lub odrzuceniami.',
-    'Preferuj luki i słabo pokryte tematy; nie powtarzaj tylko zapytań z wysokim współczynnikiem duplikatów lub odrzuceń.',
-    'Nie wymyślaj domen spoza profilu.',
-    'Wszystkie pola tekstowe, w tym query i reason, zapisuj po polsku.',
-    `Current operational context: ${JSON.stringify(weeklyPlannerContext())}`,
-    JSON.stringify(policy.profiles.map((profile) => ({
-      kbNamespace: profile.kbNamespace,
-      mode: profile.mode,
-      topics: profile.topics,
-      domains: [...profile.domains, ...profile.communityDomains, ...profile.professionalDomains],
-    }))),
-  ].join('\n');
+  const prompt = buildWeeklyPlannerPrompt(policy, weeklyPlannerContext());
   let generated = [];
   let plannerError = '';
   try {
-    generated = await callLlm(prompt, 'queries');
+    generated = await callLlm(prompt, 'queries', WEEKLY_TIMEOUT_MS);
   } catch (error) {
     plannerError = String(error.message || error).slice(0, 1000);
   }
@@ -573,8 +559,8 @@ async function runAutoDraft(options = {}) {
     errors: [],
   };
   if (!semiAuto.active || policy.dryRun) {
-    run.ok = false;
-    run.error = 'Semi-auto gate is not active or dry-run is enabled.';
+    run.ok = true;
+    run.skippedReason = 'Semi-auto gate is not active or dry-run is enabled.';
     run.finishedAt = new Date().toISOString();
     writeDiscoveryRun(run);
     refreshDiscoveryReport();

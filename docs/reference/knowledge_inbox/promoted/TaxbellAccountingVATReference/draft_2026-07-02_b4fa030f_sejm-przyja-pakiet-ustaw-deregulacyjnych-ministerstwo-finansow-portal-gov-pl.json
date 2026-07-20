@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-02_b4fa030f_sejm-przyja-pakiet-ustaw-deregulacyjnych-ministerstwo-finansow-portal-gov-pl",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Sejm przyjął pakiet ustaw deregulacyjnych - Ministerstwo Finansów - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: uproszczenia VAT 2026 zmiany przepisów\nSource: https://www.gov.pl/web/finanse/sejm-przyjal-pakiet-ustaw-deregulacyjnych\nTier: official\nDiscovery confidence: 0.8\n\n## Sejm przyjął pakiet ustaw deregulacyjnych\n26.06.2025\n- 24 czerwca 2025 r. Sejm przyjął pakiet ustaw w ramach procesu deregulacji.\n- Podwyższony zostaje limit zwolnienia podmiotowego z VAT do 240 tys. zł.\n- Dzięki nowym przepisom nie będzie wymagane pośrednictwo firm inwestycyjnych w ofertach publicznych papierów wartościowych o wartości poniżej 1 mln euro.\n- Przyjęty pakiet ma chronić podatników przed nagłymi zmianami przepisów ustaw podatkowych.\n- Nowe regulacje eliminują również wątpliwości interpretacyjne.\nNowe przepisy, które powstały w Ministerstwie Finansów, realizują działania deregulacyjne rządu. Przyjęty przez Sejm pakiet ustaw dotyczy m.in. podwyższenia limitu zwolnienia podmiotowego w VAT, zmniejsza koszty pozyskiwania kapitału przez małych przedsiębiorców, a także ujednolica obowiązki depozytariuszy z regulacjami unijnymi. Przepisy uregulowały również uprawnienie podmiotu kontrolowanego do złożenia korekty deklaracji częściowo uwzględniającej nieprawidłowości stwierdzone w kontroli celno-skarbowej, a także usunęły wątpliwości interpretacyjne przepisów w zakresie uprawnienia do złożenia deklaracji po wszczęciu i zakończeniu kontroli celno-skarbowej, jeżeli nie została wcześniej złożona.\n### Ustawa o zmianie ustawy o podatku od towarów i usług\nPodwyższony zostaje limit zwolnienia podmiotowego z VAT do 240 tys. zł. Dotychczas podatnicy mogli korzystać z tzw. zwolnienia podmioto\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/finanse/sejm-przyjal-pakiet-ustaw-deregulacyjnych",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:49:53.849Z",
+    "discoveryCandidateId": "candidate_9c584ffb-2f5",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_84ee30af30",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.8,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "9cab85804baba7ab3e28cf945fed51d7cb9b3fdf5292e72563ef1e7c10300534"
+  },
+  "createdAt": "2026-07-02T06:25:11.878Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-02T06:26:32.613Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-02/draft_2026-07-02_b4fa030f_sejm-przyja-pakiet-ustaw-deregulacyjnych-ministerstwo-finansow-portal-gov-pl.json"
+}

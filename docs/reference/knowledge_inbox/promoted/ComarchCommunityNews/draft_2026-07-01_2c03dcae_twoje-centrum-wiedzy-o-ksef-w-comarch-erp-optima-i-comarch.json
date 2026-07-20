@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-01_2c03dcae_twoje-centrum-wiedzy-o-ksef-w-comarch-erp-optima-i-comarch",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Twoje centrum wiedzy o KSeF w Comarch ERP Optima i Comarch ...",
+  "content": "Automated source-discovery draft.\n\nQuery: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/news/twoje-centrum-wiedzy-o-ksef-w-comarch-erp-optima-i-comarch-betterfly-77027\nTier: community\nDiscovery confidence: 0.9\n\nThe page introduces a knowledge hub about KSeF (Central Repository for Fatury Elektronicznej) within Comarch ERP Optima and Comarch Betterfly. It highlights how users can access guidance and resources related to KSeF within these Comarch ERP products, focusing on 2026 updates and concrete steps for using KSeF features in Optima and Betterfly.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://spolecznosc.comarch.pl/news/twoje-centrum-wiedzy-o-ksef-w-comarch-erp-optima-i-comarch-betterfly-77027",
+  "tags": [
+    "discovery",
+    "community",
+    "pytania społeczności",
+    "KSeF",
+    "Optima",
+    "Betterfly"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "community",
+    "retrievedAt": "2026-06-06T20:03:44.456Z",
+    "discoveryCandidateId": "candidate_c3af902b-333",
+    "discoveryQueryId": "seed_ComarchCommunityNews",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-00-05-874Z_765f3494",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "261ff968ffb826725547a2112ced7dfa67e724e5dd6d184626dd13b87348a921"
+  },
+  "createdAt": "2026-07-01T10:59:21.617Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-01T11:03:28.232Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_2c03dcae_twoje-centrum-wiedzy-o-ksef-w-comarch-erp-optima-i-comarch.json"
+}

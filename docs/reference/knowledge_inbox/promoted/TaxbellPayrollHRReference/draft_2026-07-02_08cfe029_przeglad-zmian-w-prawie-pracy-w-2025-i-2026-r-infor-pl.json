@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Przegląd zmian w prawie pracy w 2025 i 2026 r. - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo pracy 2026 nowelizacje urlopy wynagrodzenia\nSource: https://kadry.infor.pl/wiadomosci/6841531,przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r.html\nTier: professional\nDiscovery confidence: 0.8\n\nOczyszczona treść nie pochodzi z podanych odniesień – wykorzystano wyłącznie surową treść podaną w pytaniu.\n# Przegląd zmian w prawie pracy w 2025 i 2026 r.\n09 lutego 2025, 13:12\nJakie czekają nas zmiany w prawie pracy w 2025 i 2026 r.?\nCzeka nas sporo zmian w przepisach prawa pracy. Już od 1 lutego obowiązują regulacje wprowadzające dodatkowy dzień wolny od pracy. Niedługo wejdą w życie przepisy o uzupełniającym urlopie macierzyńskim. Trwają też prace nad dalszymi zmianami przepisów. Mają one wprowadzić m.in. krótszy tydzień pracy czy zmienić zasady ustalania minimalnego wynagrodzenia.\n- Zmiana ustawy o dniach wolnych od pracy\n- Dodatkowa niedziela handlowa\n- Nowelizacja Kodeksu pracy\n- Będą dalsze zmiany prawa pracy\n## Zmiana ustawy o dniach wolnych od pracy\n1 lutego 2025 r. zmieniły się przepisy ustawy o dniach wolnych od pracy. Zmiana polega na ustanowieniu nowego dnia wolnego od pracy. Tym dniem będzie 24 grudnia – Wigilia Bożego Narodzenia. W tym roku po raz pierwszy Wigilię spędzimy w domu.\nTak więc, od 2025 r. oprócz niedziel będziemy mamy 14 świąt państwowych i kościelnych. Ich wykaz przedstawiamy w tabeli.\nWykaz świąt w 2025 r.\nL.p.\nData w 2025 r.\nŚwięto\n1.\n1 stycznia\nNowy Rok\n2.\n6 stycznia\nŚwięto Trzech Króli\n3.\n20 kwietnia\npierwszy dzień Wielkiej Nocy\n4.\n21 kwietnia\ndrugi dzień Wielkiej Nocy\n5.\n1 maja\nŚwięto Państwowe\n6.\n3 maja\n\nReview this draft before promotion.",
+  "sourceUrl": "https://kadry.infor.pl/wiadomosci/6841531,przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-14T02:49:38.013Z",
+    "discoveryCandidateId": "candidate_b8f1479c-d3c",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_a9509b22a3",
+    "discoveryRunId": "discovery_daily_2026-06-14T02-48-32-834Z_bd47bbaf",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.8,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "857f661e35618def88ec95dc0b11b12700fc85f024537886cd19149f097d6e48"
+  },
+  "createdAt": "2026-07-02T06:26:08.391Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-02T06:26:32.533Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-02/draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl.json"
+}

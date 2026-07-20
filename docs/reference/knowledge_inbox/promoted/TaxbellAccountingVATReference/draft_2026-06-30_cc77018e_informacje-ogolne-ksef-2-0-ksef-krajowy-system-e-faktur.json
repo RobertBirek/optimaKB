@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_cc77018e_informacje-ogolne-ksef-2-0-ksef-krajowy-system-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Informacje ogólne KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
+  "content": "Automated source-discovery draft.\n\nQuery: KSeF 2.0 terminy obowiązywania 2026 aktualizacja\nSource: https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/\nTier: official\nDiscovery confidence: 0.95\n\nInformacje ogólne KSeF 2.0 - KSeF (Krajowy System e-Faktur)\n# Informacje ogólne KSeF 2.0\n---\nZapoznaj się z podstawowymi informacjami o KSeF, który będzie obowiązkowy od 1 lutego 2026 r.\n### Podstawy prawne oraz kluczowe terminy\nPoznaj podstawy prawne dla obligatoryjnego KSeF oraz kluczowe terminy wdrożeń\n### Zakres obowiązkowego KSeF\nDowiedz się: kto jest zobowiązany do korzystania z KSeF, o załączniku w KSeF oraz KSeF a PEF\n### Certyfikaty KSeF\nDowiedz się w jaki sposób uzyskać certyfikat KSeF oraz do czego on służy\n### Kody weryfikujące QR\nDowiedz się kiedy kod QR jest umieszczany na fakturze oraz w jakich sytuacjach na fakturze są umieszczane dwa kody QR\n### Faktura ustrukturyzowana i struktura logiczna FA\nDowiedz się co to jest faktura ustrukturyzowana oraz na temat struktury logicznej FA(3)\n### Tryby szczególne wystawiania faktur\nDowiedz się czym jest tryb offline24, offline, awaria i awaria całkowita\n### Numer KSeF oraz zbiorczy identyfikator\nDowiedz się czym jest numer KSeF oraz zbiorczy identyfikator\n### Struktura logiczna FA(3)\nDowiedz się więcej o strukturze FA(3)\n### Struktura logiczna FA_RR(1)\nDowiedz się więcej o strukturze FA_RR(1) opublikowanej na ePUAP\n### Potwierdzenie transakcji\nJaki dokument wydać nabywcy gdy fakturze nie nadano numeru KSeF\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/",
+  "tags": [
+    "discovery",
+    "official",
+    "VAT",
+    "JPK",
+    "KSeF",
+    "rachunkowość"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-14T02:49:20.381Z",
+    "discoveryCandidateId": "candidate_cf5fa450-4d0",
+    "discoveryQueryId": "generated_TaxbellAccountingVATReference_d21b2f173f",
+    "discoveryRunId": "discovery_daily_2026-06-14T02-48-32-834Z_bd47bbaf",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "16ad92d198565d2c3ce650225a2f6955a4f0ffbca57a67d38939c9d967dc2b89"
+  },
+  "createdAt": "2026-06-30T09:39:41.105Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:17.994Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_cc77018e_informacje-ogolne-ksef-2-0-ksef-krajowy-system-e-faktur.json"
+}

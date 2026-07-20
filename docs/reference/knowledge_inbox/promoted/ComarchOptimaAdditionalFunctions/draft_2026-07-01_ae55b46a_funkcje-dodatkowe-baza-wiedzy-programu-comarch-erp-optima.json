@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-01_ae55b46a_funkcje-dodatkowe-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "Comarch Optima Additional Functions",
+  "kbNamespace": "ComarchOptimaAdditionalFunctions",
+  "title": "Funkcje dodatkowe – Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: przykłady funkcji dodatkowych Optima dokumentacja\nSource: https://pomoc.comarch.pl/optima/pl/2023/index.php/dokumentacja/funkcje-dodatkowe/\nTier: official\nDiscovery confidence: 0.9\n\nFunkcje dodatkowe – Baza Wiedzy programu Comarch ERP Optima\nFunkcje dodatkowe umożliwiają rozbudowę standardowej funkcjonalności systemu Comarch ERP Optima o dodatkowe funkcje, realizujące określone procesy. Funkcje dodatkowe zostały zbudowane w oparciu o ten sam mechanizm, co wydruki. Z użytkowego punktu widzenia oznacza to przede wszystkim, że:\n- Funkcje dodatkowe są kontekstowo dostępne na wszystkich oknach, na których jest dostępny mechanizm drukowania\n- Funkcje dodatkowe dzielimy na funkcje systemowe oraz funkcje użytkownika.\nFunkcje dodatkowe są dla użytkownika dostępne na wstążce programu pod przyciskiem. Naciśnięcie tej ikony (lub użycie skrótu) powoduje uruchomienie funkcji określonej jako domyślna. Przycisk ten jest dodatkowo wyposażona w przycisk służący do rozwijania menu dostępnych funkcji dodatkowych.\nRozwijane menu funkcji dodatkowych może być różne dla każdego okna, a nawet dla każdej zakładki na jednym oknie.\nZawartość menu funkcji dodatkowych jest konfigurowana za pomocą Konfiguracji funkcji dodatkowych – analogicznie jak w przypadku wydruków.\nPo wciśnięciu przycisku funkcji dodatkowych wraz z klawiszem (lub po wywołaniu skrótu +) otwierane jest okno Konfiguracja funkcji dodatkowych. Identycznie jak w przypadku okna Konfiguracji wydruków, wyróżnione są funkcje standardowe oraz funkcje użytkownika poprzez zastosowanie in\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2023/index.php/dokumentacja/funkcje-dodatkowe/",
+  "tags": [
+    "discovery",
+    "official",
+    "funkcje dodatkowe",
+    "XML",
+    "XPT",
+    "przykłady"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-10T02:50:05.972Z",
+    "discoveryCandidateId": "candidate_aa6c216a-efb",
+    "discoveryQueryId": "generated_ComarchOptimaAdditionalFunctions_5d4c8fbf87",
+    "discoveryRunId": "discovery_daily_2026-06-10T02-49-13-742Z_99c5b3d4",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "bbd6e4f67c2c01f72961362224406a3d33b4b12fb32cda8cf7269b4976476162"
+  },
+  "createdAt": "2026-07-01T10:54:45.969Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-01T11:03:28.465Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 7 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_ae55b46a_funkcje-dodatkowe-baza-wiedzy-programu-comarch-erp-optima.json"
+}

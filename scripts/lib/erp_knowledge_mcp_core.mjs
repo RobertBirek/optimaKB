@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import { answerQuestion, renderAnswerMarkdown } from '../erp_knowledge_answer.mjs';
-import { buildResponse, classifyQuestion, loadRouting, renderMarkdown } from '../erp_knowledge_assistant.mjs';
+import { buildResponse, classifyQuestion, listKnowledgeBases, loadRouting, renderMarkdown } from '../erp_knowledge_assistant.mjs';
 import { submitKnowledgeDraft } from './knowledge_inbox.mjs';
 import {
   createExternalKnowledgeDraft,
@@ -15,15 +15,26 @@ const routing = loadRouting();
 export const SERVER_INFO = { name: 'erp-knowledge-assistant', version: '1.1.0' };
 export const PROTOCOL_VERSION = '2024-11-05';
 
-const KB_REGISTRY = [
-  { name: 'Comarch Optima ERP MSSQL Schema', namespace: 'ComarchOptimaSchema', projectId: 4 },
-  { name: 'Comarch Optima Additional Functions', namespace: 'ComarchOptimaAdditionalFunctions', projectId: 6 },
-  { name: 'Comarch Optima Sprint and Prints', namespace: 'ComarchOptimaSprint', projectId: 7 },
-  { name: 'Comarch Optima Reference', namespace: 'ComarchOptimaReference', projectId: 8 },
-  { name: 'Comarch Optima Partner Technical', namespace: 'ComarchOptimaPartnerTechnical', projectId: 9 },
-  { name: 'Comarch Betterfly Reference', namespace: 'ComarchBetterflyReference', projectId: 10 },
-  { name: 'Comarch Optima Business Semantics', namespace: 'ComarchOptimaBusinessSemantics', projectId: 15 },
-];
+const KB_NAME_REGISTRY_PATH = '/docker/openspg/docs/reference/ERP_KB_Dashboard_KB_Registry.json';
+
+function loadKbNameMap() {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(KB_NAME_REGISTRY_PATH, 'utf8'));
+    return new Map((parsed.entries || []).map((entry) => [entry.namespace, entry.kbName]));
+  } catch {
+    return new Map();
+  }
+}
+
+const KB_NAME_MAP = loadKbNameMap();
+
+function buildKbRegistry(allowedNamespaces = null) {
+  return Object.values(listKnowledgeBases(allowedNamespaces)).map((kb) => ({
+    name: KB_NAME_MAP.get(kb.namespace) || kb.namespace,
+    namespace: kb.namespace,
+    projectId: kb.projectId,
+  }));
+}
 
 function makeTool(name, description, inputSchema, annotations, outputSchema) {
   const tool = { name, description, inputSchema };
@@ -397,9 +408,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
   }
 
   if (method === 'resources/list') {
-    const kbList = context.allowedNamespaces
-      ? KB_REGISTRY.filter((kb) => context.allowedNamespaces.has(kb.namespace))
-      : KB_REGISTRY;
+    const kbList = buildKbRegistry(context.allowedNamespaces);
     const resources = kbList.map((kb) => ({
       uri: `erp-kb://${kb.namespace}/info`,
       name: kb.name,
@@ -417,7 +426,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
     const uri = params?.uri || '';
     const match = uri.match(/^erp-kb:\/\/(\w+)\/info$/);
     if (match) {
-      const kb = KB_REGISTRY.find((k) => k.namespace === match[1]);
+      const kb = buildKbRegistry(context.allowedNamespaces).find((k) => k.namespace === match[1]);
       if (kb) {
         return {
           jsonrpc: '2.0',
@@ -470,9 +479,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
     }
 
     if (name === 'list_knowledge_bases') {
-      const kbList = allowedNss
-        ? KB_REGISTRY.filter((kb) => allowedNss.has(kb.namespace))
-        : KB_REGISTRY;
+      const kbList = buildKbRegistry(allowedNss);
       return {
         jsonrpc: '2.0',
         id,

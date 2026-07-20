@@ -93,8 +93,23 @@ export default function Overview({ overview, setTab }) {
     { id: 'reports', label: 'Raporty jakości', hint: `${formatNumber(summary.reportProblemCount)} problemów`, icon: BarChart3 },
     { id: 'system', label: 'Stan systemu', hint: `${formatNumber(summary.runningActions)} aktywnych akcji`, icon: Settings },
   ];
+  const failGates = [
+    overview.overall?.quality !== 'PASS' && { field: 'Quality', value: overview.overall?.quality },
+    overview.overall?.officialDelta !== 'PASS' && { field: 'Official delta', value: overview.overall?.officialDelta },
+    overview.overall?.freshness !== 'PASS' && { field: 'Freshness', value: overview.overall?.freshness },
+  ].filter(Boolean);
+
+  const failBanner = failGates.filter(g => g.value === 'FAIL');
   return (
     <div className="overviewGrid">
+      {failBanner.length > 0 ? (
+        <div className={`alert fail`} style={{ gridColumn: '1 / -1', margin: 0 }}>
+          <strong>Quality Gate FAIL</strong>
+          {failBanner.map(g => <span key={g.field}> {g.field}: {g.value}</span>)}
+          {' — '}
+          <button type="button" className="linkStyle" onClick={() => setTab('reports')}>Przejdź do akcji naprawczych</button>
+        </div>
+      ) : null}
       <PageShell
         title="Status operacyjny"
         description={`Stan całego środowiska na ${formatDate(overview.generatedAt)}.`}

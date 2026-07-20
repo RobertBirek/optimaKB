@@ -1,0 +1,33 @@
+{
+  "id": "draft_2026-07-08_13d00645_interop-com-w-comarch-erp-optima",
+  "kbName": "Comarch Optima Partner Technical",
+  "kbNamespace": "ComarchOptimaPartnerTechnical",
+  "title": "Interop COM w Comarch ERP Optima",
+  "content": "# KB: Comarch ERP Optima COM Interop\r\n\r\n## Interop DLLs\r\n\r\nŚcieżka: `C:\\Program Files\\Comarch ERP Optima\\Interop\\`\r\n\r\n| DLL | Główne typy COM |\r\n|-----|----------------|\r\n| **ICDNBase.dll** | `IApplication` — główna aplikacja |\r\n| **ICDNHeal.dll** | `IKontrahent`, `IKntWeryfRach`, `IKntWeryfStat`, `IKntZamknMies`, `IKntOdbiorca`, `IKntESklep` |\r\n| **ICDNTwrb1.dll** | `ITowar`, `IKntAtrybut`, `ITwrKntAtrybut` |\r\n| **ICDNHlmn.dll** | `IDokumentHaMag`, `IMagazyn`, `Magazyny` |\r\n| **ICDNHeal2.dll** | `ICfgStawka`, `CfgStawka`, `CfgStawki`, `ICfgStawkaRejestru`, `CfgStawkiPl`, `ICfgDetalZakazyMagazyn`, `IJDPElementKnt` |\r\n| **ICDNDave.dll** | `IDziennik` |\r\n| **ICDNSlow.dll** | `IKasaChor` |\r\n| **IOP_KASBOLib.dll** | `IDokumentKK`, `IDokumentKKElement` |\r\n| **ICDNRVAT.dll** | VAT-related, `IEwidencjaDodatkowa`, `IKwotaDodatkowa` |\r\n| **ICDNKONFIGLib.dll** | Konfiguracja |\r\n| **ICDNPlcfg.dll** | Konfiguracja PL |\r\n| **ICDNDeklaracje.dll** | Deklaracje |\r\n| **ICDNPrac.dll** | Kadry: `IDodatek`, `IDodatekHis` |\r\n| **ICDNWypb.dll** | Płace |\r\n| **ICDNKPRR.dll** | KPiR / Ryczalt |\r\n| **ICDNMail.dll** | Email |\r\n| **ICDNOSAY.dll** | Oś czasu |\r\n| **ICDNResPr.dll** | Rezerwacje |\r\n| **ICDNR2R.dll** | R2R |\r\n| **ICDNSrtb.dll** | Środki trwałe, osoby odpowiedzialne |\r\n| **ICDNKH.dll** | `IKntZakaz` |\r\n| **ICDNSchematy.dll** | Schematy |\r\n| **IOP_Twrb2Lib.dll** | eSklep / Towary rozszerzone |\r\n| **IOP_KALBLib.dll** | Kalendarz |\r\n| **IOP_CCRMLib.dll** | CRM cykliczne |\r\n| **ICDNConst.dll** | Stałe |\r\n\r\n## `_comTypeInit` — aktualnie ładowane (Worker V2)\r\n\r\n```csharp\r\ntypeof(IApplication),       // ICDNBase\r\ntypeof(IKontrahent),        // ICDNHeal\r\ntypeof(IDokumentHaMag),     // ICDNHlmn\r\ntypeof(ITowar),             // ICDNTwrb1\r\ntypeof(IDziennik),          // ICDNDave\r\ntypeof(IKasaChor),          // ICDNSlow\r\ntypeof(ICfgStawka),         // ICDNHeal2\r\ntypeof(IDokumentKK),        // IOP_KASBOLib\r\n```\r\n\r\n## CO_E_CLASSSTRING — znane problemy\r\n\r\nEncje, gdzie `session.CreateObject()` rzuca CO_E_CLASSSTRING mimo załadowania typów:\r\n- Contact (5): `CDN.KntOsoby` — brak typu `IKntOsoba` w żadnym DLL\r\n- Detail (7): `CDN.KntDodatkowe` — brak typu `IKntDodatkowe` w żadnym DLL\r\n- Payment (8): `KASA.DokumentyKasowe` — typ IDokumentKK załadowany, ale ProgID może być inny\r\n- WarehouseDoc (13): `CDN.DokumentyMagazynowe` — typy z ICDNHlmn załadowane\r\n\r\n**Hipoteza:** te obiekty COM mogą być tworzone jako sub-kolekcje innych obiektów:\r\n- KntOsoby → `kontrahent.Osoby.AddNew()`\r\n- KntDodatkowe → `kontrahent.Dodatkowe.AddNew()` lub jako osobny obiekt\r\n- DokumentyMagazynowe → może wymagać `typ` do utworzenia\r\n\r\n## VAT — ITowar\r\n\r\n```csharp\r\n// Stawka (tylko wartość, bez flagi):\r\nent.Stawka = 23.00m;\r\n\r\n// Flaga (2 = 23% standardowa krajowa):\r\nent.Flaga = 2;\r\n\r\n// Stawka zakupu:\r\nent.StawkaZak = 23.00m;\r\nent.FlagaZak = 2;\r\n\r\n// StawkaVat (obiekt ICfgStawka) — NIE DZIAŁA przez dynamic:\r\n// ent.StawkaVat = cfgStawkaObj; // COM type mismatch\r\n// ent.SetStawkaVatSpr(23);      // hang\r\n```\r\n\r\nZnane mapowanie Flaga:\r\n- 23% → Flaga=2\r\n- 8% → Flaga=3 (niepotwierdzone)\r\n- 5% → Flaga=4 (niepotwierdzone)\r\n- 0% → Flaga=6 (niepotwierdzone)\r\n\r\n## Invoice lines — Elementy.AddNew\r\n\r\n```csharp\r\ndynamic elementy = ent.Elementy;\r\ndynamic ln = elementy.AddNew(null);\r\nln.StawkaVAT = 23;  // lub ln.Stawka\r\n// Cena, Ilosc, etc.\r\n```\r\n\r\n## Warehouse\r\n\r\n`CDN.Magazyny` wymaga pola `Rejestr` (nazwa właściwości COM nieznana).\r\n`ICDNHlmn.IMagazyn` — tylko podstawowe właściwości (Symbol?, Nazwa?).",
+  "sourceUrl": "",
+  "tags": [
+    "Interop COM",
+    "DLL",
+    "Integracja techniczna",
+    "Comarch ERP Optima",
+    "Środowisko COM"
+  ],
+  "metadata": {
+    "sourceTier": "official",
+    "retrievedAt": "2026-07-08T16:58:35.273Z",
+    "analysisProvider": "openspg_llm",
+    "contentProvider": "upload",
+    "sourceType": "file",
+    "analysisConfidence": "high",
+    "uploadPath": "",
+    "uploadFileName": "",
+    "uploadContentType": "",
+    "dashboardSubmittedAt": "2026-07-08T16:59:10.365Z"
+  },
+  "createdAt": "2026-07-08T16:59:10.365Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-10T06:01:31.672Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from daily ops",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-08/draft_2026-07-08_13d00645_interop-com-w-comarch-erp-optima.json"
+}

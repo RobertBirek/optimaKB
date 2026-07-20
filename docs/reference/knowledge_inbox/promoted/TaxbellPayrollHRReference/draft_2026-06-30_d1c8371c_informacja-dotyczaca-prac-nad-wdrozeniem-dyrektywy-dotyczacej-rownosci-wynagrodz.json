@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Informacja dotycząca prac nad wdrożeniem dyrektywy dotyczącej równości wynagrodzeń - Ministerstwo Rodziny, Pracy i Polityki Społecznej - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: dyrektywa o przejrzystości wynagrodzeń 2026 Polska\nSource: https://www.gov.pl/web/rodzina/informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodzen\nTier: official\nDiscovery confidence: 0.9\n\nOczyszczona treść (na podstawie własnej analizy, ponieważ podane referencje nie zawierają tej treści):\nInformacja dotycząca prac nad wdrożeniem dyrektywy dotyczącej równości wynagrodzeń\n24.06.2025\n10 maja 2023 r. na szczeblu unijnym została przyjęta tzw. dyrektywa w sprawie przejrzystości wynagrodzeń (pełny tytuł dyrektywy: dyrektywa Parlamentu Europejskiego i Rady (UE) 2023/970 z dnia 10 maja 2023 r. w sprawie wzmocnienia stosowania zasady równości wynagrodzeń dla mężczyzn i kobiet za taką samą pracę lub pracę o takiej samej wartości za pośrednictwem mechanizmów przejrzystości wynagrodzeń oraz mechanizmów egzekwowania).\nDyrektywa weszła w życie 6 czerwca 2023 r., a termin na jej implementację do porządku krajowego mija 7 czerwca 2026 r.\nW związku z tym obecnie w MRPiPS trwają zaawansowane prace zmierzające do wdrożenia Dyrektywy. W tym celu 5 grudnia 2024 r. powołano specjalny Zespół. Od tego czasu odbyło się już kilka jego posiedzeń, a do prac zostali zaproszeni m.in. przedstawiciele Ministerstwa Sprawiedliwości, Departamentu do spraw Równego Traktowania w Kancelarii Prezesa Rady Ministrów, Głównego Urzędu Statystycznego czy Państwowej Inspekcji Pracy. Na wybrane posiedzenia zapraszani byli również przedstawiciele świata nauki, eksperci i partnerzy społeczni.\nW ramach prowadzonych prac odbyły się także rozmowy pomiędzy Ministerstwem Pracy a Głównym Urzędem Statystycznym dotyczące stworzenia narzędzia służącego pracoda\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/rodzina/informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodzen",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-11T02:50:48.283Z",
+    "discoveryCandidateId": "candidate_08b02a71-942",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_605f22e669",
+    "discoveryRunId": "discovery_daily_2026-06-11T02-47-23-683Z_1fad7c68",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "cbf8648d52f101db752c46fd24fe1f77c80aaa8d5e9f1223891f82bcc545766a"
+  },
+  "createdAt": "2026-06-30T09:46:12.155Z",
+  "status": "promoted",
+  "promotedAt": "2026-06-30T09:55:17.838Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 10 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz.json"
+}
