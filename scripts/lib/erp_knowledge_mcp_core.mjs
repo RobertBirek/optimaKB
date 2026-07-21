@@ -213,6 +213,65 @@ export function listTools() {
   ];
 }
 
+const DOMAIN_TOOL_DESCRIPTIONS = {
+  'erp_concept.search': 'Search canonical ERP concepts in the semantic knowledge profile.',
+  'erp_entity.get': 'Get evidence about a canonical ERP entity.',
+  'erp_process.explain': 'Explain an ERP business process using semantic evidence.',
+  'erp_relation.list': 'Find relations between ERP entities and documents.',
+  'optima_schema.search': 'Search Comarch ERP Optima tables, columns, and schema evidence.',
+  'optima_object.get': 'Get technical evidence about an Optima object.',
+  'optima_join_path.find': 'Find documented join paths between Optima objects.',
+  'optima_implementation.explain': 'Explain an Optima implementation detail.',
+  'optima_docs.search': 'Search Optima product documentation.',
+  'optima_feature.explain': 'Explain an Optima product feature.',
+  'optima_release.search': 'Search Optima release and community information.',
+  'legal_source.search': 'Search curated legal and compliance sources.',
+  'legal_requirement.explain': 'Explain a legal requirement with provenance and validity warnings.',
+  'legal_live_source.search': 'Search live external legal sources; results are always unverified.',
+  'accounting_guidance.search': 'Search curated accounting guidance.',
+  'vat_rule.explain': 'Explain a VAT rule with provenance and validity warnings.',
+  'reporting_requirement.explain': 'Explain a reporting, JPK, or KSeF requirement.',
+  'payroll_guidance.search': 'Search curated payroll guidance.',
+  'hr_rule.explain': 'Explain an HR or employment rule with provenance and validity warnings.',
+  'social_insurance_rule.explain': 'Explain a social-insurance rule with provenance and validity warnings.',
+};
+
+const LIVE_TOOLS = new Set(['legal_live_source.search']);
+const TEMPORAL_DOMAINS = new Set(['legal', 'accounting', 'payroll']);
+
+function domainFromProfile(profile) {
+  const id = profile?.id || '';
+  if (id === 'legal-compliance-mcp') return 'legal';
+  if (id === 'accounting-tax-mcp') return 'accounting';
+  if (id === 'payroll-hr-mcp') return 'payroll';
+  if (id === 'erp-semantic-mcp') return 'semantic';
+  if (id === 'optima-technical-mcp') return 'optima_technical';
+  if (id === 'optima-product-mcp') return 'optima_product';
+  if (id === 'knowledge-editorial-mcp') return 'editorial';
+  return 'erp_knowledge';
+}
+
+function domainTool(name, description) {
+  return readOnlyTool(name, description, {
+    type: 'object',
+    properties: {
+      query: { type: 'string', description: 'Question or search query.' },
+      as_of: { type: 'string', description: 'Optional ISO date for time-sensitive questions.' },
+      correlation_id: { type: 'string', description: 'Optional end-to-end correlation identifier.' },
+      limit: { type: 'integer', minimum: 1, maximum: 20 },
+    },
+    required: ['query'],
+    additionalProperties: false,
+  });
+}
+
+export function listToolsForProfile(profile = null) {
+  const all = new Map(listTools().map((tool) => [tool.name, tool]));
+  for (const [name, description] of Object.entries(DOMAIN_TOOL_DESCRIPTIONS)) all.set(name, domainTool(name, description));
+  if (!profile?.tools) return [...all.values()];
+  return profile.tools.map((name) => all.get(name)).filter(Boolean);
+}
+
 function routeQuestionTool(question, allowedNamespaces) {
   const classified = classifyQuestion(question, routing, allowedNamespaces);
   const response = buildResponse(classified, routing, allowedNamespaces);
@@ -389,7 +448,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
       id,
       result: {
         protocolVersion: PROTOCOL_VERSION,
-        serverInfo: SERVER_INFO,
+        serverInfo: context.serverInfo || SERVER_INFO,
         capabilities: { tools: {}, resources: {} },
       },
     };
@@ -403,7 +462,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
     return {
       jsonrpc: '2.0',
       id,
-      result: { tools: listTools() },
+      result: { tools: listToolsForProfile(context.profile) },
     };
   }
 
@@ -451,12 +510,51 @@ export async function handleJsonRpcRequest(request, context = {}) {
   if (method === 'tools/call') {
     const name = params?.name;
     const args = params?.arguments || {};
+    const visibleTools = listToolsForProfile(context.profile);
+    const allowedToolNames = new Set(visibleTools.map((tool) => tool.name));
+    if (!allowedToolNames.has(name)) {
+      return { jsonrpc: '2.0', id, error: { code: -32601, message: `Tool is not available in this MCP profile: ${name}` } };
+    }
     const writeTools = new Set(['submit_knowledge_draft', 'draft_external_source']);
     if (writeTools.has(name) && context.writeAllowed === false) {
       return writeToolDenied(id, name);
     }
 
     const allowedNss = context.allowedNamespaces; // Set or null
+
+    if (DOMAIN_TOOL_DESCRIPTIONS[name]) {
+      const query = String(args.query || '');
+      const domain = domainFromProfile(context.profile);
+      if (LIVE_TOOLS.has(name)) {
+        const live = await searchExternalSourcesTool({ query, kbName: '', includeDomains: [], numResults: Number(args.limit || 5) });
+        return { jsonrpc: '2.0', id, result: toolResultPayload({
+          text: live.text,
+          structured: {
+            domain,
+            answer: live.text,
+            evidence: live.structured?.results || [],
+            knowledge_status: 'live_unverified',
+            validity: { valid_from: null, valid_to: null, as_of: args.as_of || null },
+            warnings: ['Live source results are unverified and are not written to OpenSPG.'],
+            correlation_id: args.correlation_id || '',
+          },
+        }) };
+      }
+      const result = await answerQuestionTool(query, allowedNss);
+      const temporalWarning = TEMPORAL_DOMAINS.has(domain) && Boolean(args.as_of);
+      return { jsonrpc: '2.0', id, result: toolResultPayload({
+        text: result.text,
+        structured: {
+          domain,
+          answer: result.text,
+          evidence: result.structured?.evidence || result.structured?.kbsUsed || [],
+          knowledge_status: temporalWarning ? 'partial' : (result.structured?.confidence ? 'verified' : 'unknown'),
+          validity: { valid_from: null, valid_to: null, as_of: args.as_of || null },
+          warnings: temporalWarning ? ['The available evidence does not confirm effective dates for the requested date.'] : [],
+          correlation_id: args.correlation_id || '',
+        },
+      }) };
+    }
 
     if (name === 'route_question') {
       const result = allowedNss
@@ -552,7 +650,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
       };
     }
 
-    const toolNames = listTools().map((t) => t.name).join(', ');
+    const toolNames = visibleTools.map((t) => t.name).join(', ');
     return {
       jsonrpc: '2.0',
       id,

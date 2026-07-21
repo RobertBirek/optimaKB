@@ -3,7 +3,9 @@
 import fs from 'fs';
 import path from 'path';
 import process from 'process';
+import crypto from 'crypto';
 import { getServer } from './lib/mcp_registry.mjs';
+import { getMcpProfile } from './lib/erp_knowledge_mcp_profiles.mjs';
 
 const ROOT = '/docker/openspg';
 const UNIT_DIR = '/etc/systemd/system';
@@ -32,13 +34,13 @@ async function main() {
   const mcpId = argValue(args, '--mcp-id', '');
   if (!mcpId) throw new Error('--mcp-id is required');
 
-  const server = getServer(mcpId);
-  if (!server) throw new Error(`MCP server not found: ${mcpId}`);
+  const server = getServer(mcpId) || { id: mcpId, name: mcpId };
+  const profile = getMcpProfile(server.profile || server.id);
 
   const unitPath = path.join(UNIT_DIR, `${mcpId}.service`);
   const envPath = path.join(ENV_DIR, `${mcpId}.env`);
-  const port = server.port || 9999;
-  const allowed = (server.kbFilter || []).join(',');
+  const port = server.port || profile.port;
+  const allowed = (profile.namespaces || server.kbFilter || []).join(',');
 
   const unitContent = [
     '[Unit]',
@@ -60,15 +62,20 @@ async function main() {
   ].join('\n');
 
   const mainEnv = fs.readFileSync(path.join(ENV_DIR, 'erp-kb-mcp.env'), 'utf8');
-  const exaLines = mainEnv.split('\n').filter((l) => l.startsWith('EXA_'));
+  const inheritedLines = mainEnv.split('\n').filter((line) => line.startsWith('EXA_'));
+  const existingEnv = fs.existsSync(envPath) ? fs.readFileSync(envPath, 'utf8') : '';
+  const existingToken = existingEnv.split('\n').find((line) => line.startsWith('ERP_KB_HTTP_TOKEN='))?.slice('ERP_KB_HTTP_TOKEN='.length);
+  const authToken = existingToken || crypto.randomBytes(32).toString('base64url');
   const envContent = [
     `# MCP ${server.name} – auto-generated on ${new Date().toISOString()}`,
     `ROOT=${ROOT}`,
     `ERP_KB_HTTP_HOST=10.10.254.42`,
     `ERP_KB_HTTP_PORT=${port}`,
+    `ERP_KB_MCP_PROFILE=${profile.id}`,
+    `ERP_KB_HTTP_TOKEN=${authToken}`,
     `ERP_KB_MCP_ALLOWED_NAMESPACES=${allowed}`,
     `ERP_KB_HTTP_AUDIT_LOG=${ROOT}/logs/${mcpId}_audit.jsonl`,
-    ...exaLines,
+    ...inheritedLines,
   ].join('\n');
 
   fs.writeFileSync(unitPath, unitContent + '\n', 'utf8');
@@ -81,8 +88,9 @@ async function main() {
     envPath,
     port,
     allowedNamespaces: allowed || '(all)',
+    profile: profile.id,
     unitContent: unitContent,
-    envContent: envContent,
+    envContent: '<redacted>',
   }));
 }
 

@@ -6,18 +6,25 @@ import fs from 'fs';
 import path from 'path';
 import { handleJsonRpcRequest, PROTOCOL_VERSION, SERVER_INFO } from './lib/erp_knowledge_mcp_core.mjs';
 import { verifyApiKey } from './lib/mcp_registry.mjs';
+import { getMcpProfile, MCP_PROFILE_VERSION } from './lib/erp_knowledge_mcp_profiles.mjs';
 
 const HOST = process.env.ERP_KB_HTTP_HOST || '127.0.0.1';
 const PORT = Number(process.env.ERP_KB_HTTP_PORT || 3400);
 const MCP_PATH = process.env.ERP_KB_HTTP_PATH || '/mcp';
 const AUTH_TOKEN = process.env.ERP_KB_HTTP_TOKEN || '';
 const WRITE_AUTH_TOKEN = process.env.ERP_KB_HTTP_WRITE_TOKEN || '';
+const PROFILE = getMcpProfile(process.env.ERP_KB_MCP_PROFILE || 'legacy');
+const PROFILE_NAMESPACES = PROFILE.namespaces ? new Set(PROFILE.namespaces) : null;
+const PROFILE_SERVER_INFO = { name: PROFILE.serverName, version: MCP_PROFILE_VERSION };
 const SSE_KEEPALIVE_MS = Number(process.env.ERP_KB_HTTP_SSE_KEEPALIVE_MS || 15000);
 const LEGACY_SSE_PATH = process.env.ERP_KB_LEGACY_SSE_PATH || '/sse';
 const DISABLE_SSE = process.env.ERP_KB_HTTP_DISABLE_SSE === '1';
 const ALLOWED_NAMESPACES = process.env.ERP_KB_MCP_ALLOWED_NAMESPACES
   ? new Set(process.env.ERP_KB_MCP_ALLOWED_NAMESPACES.split(',').map((ns) => ns.trim()).filter(Boolean))
   : null;
+const EFFECTIVE_NAMESPACES = PROFILE_NAMESPACES && ALLOWED_NAMESPACES
+  ? new Set([...PROFILE_NAMESPACES].filter((namespace) => ALLOWED_NAMESPACES.has(namespace)))
+  : (PROFILE_NAMESPACES || ALLOWED_NAMESPACES);
 const MAX_BODY_BYTES = Number(process.env.ERP_KB_HTTP_MAX_BODY_BYTES || 1048576);
 const MAX_SSE_CLIENTS = Number(process.env.ERP_KB_HTTP_MAX_SSE_CLIENTS || 50);
 const REQUEST_TIMEOUT_MS = Number(process.env.ERP_KB_HTTP_REQUEST_TIMEOUT_MS || 30000);
@@ -137,18 +144,22 @@ function secureTokenMatch(actual, expected) {
 }
 
 function authContext(req) {
-  if (!AUTH_TOKEN && !WRITE_AUTH_TOKEN) return { authorized: true, writeAllowed: true, mode: 'no_auth' };
+  if (!AUTH_TOKEN && !WRITE_AUTH_TOKEN) return { authorized: true, writeAllowed: PROFILE.mode === 'legacy', mode: 'no_auth', scopes: [] };
   const header = String(req.headers.authorization || '');
   const token = header.replace(/^Bearer\s+/i, '');
   const userKey = verifyApiKey(token);
   if (userKey.valid) {
-    return { authorized: true, writeAllowed: true, mode: 'user_key', user: userKey.user.name };
+    const scopes = Array.isArray(userKey.key.scopes) ? userKey.key.scopes : [];
+    const assigned = Array.isArray(userKey.user.mcpAssignments) ? userKey.user.mcpAssignments : [];
+    const profileAllowed = PROFILE.id === 'legacy' || assigned.includes(PROFILE.id) || PROFILE.scopes.some((scope) => scopes.includes(scope));
+    if (!profileAllowed) return { authorized: false, writeAllowed: false, mode: 'user_key_scope_denied', scopes };
+    return { authorized: true, writeAllowed: PROFILE.mode === 'editorial' && scopes.includes('kb.editorial.write'), mode: 'user_key', user: userKey.user.name, scopes };
   }
   if (WRITE_AUTH_TOKEN && secureTokenMatch(header, `Bearer ${WRITE_AUTH_TOKEN}`)) {
-    return { authorized: true, writeAllowed: true, mode: 'write_token' };
+    return { authorized: true, writeAllowed: PROFILE.mode === 'editorial' || PROFILE.mode === 'legacy', mode: 'write_token', scopes: ['kb.editorial.write'] };
   }
   if (AUTH_TOKEN && secureTokenMatch(header, `Bearer ${AUTH_TOKEN}`)) {
-    return { authorized: true, writeAllowed: true, mode: WRITE_AUTH_TOKEN ? 'read_token_with_write_access' : 'read_token' };
+    return { authorized: true, writeAllowed: PROFILE.mode === 'legacy' && !WRITE_AUTH_TOKEN, mode: 'read_token', scopes: [] };
   }
   return { authorized: false, writeAllowed: false };
 }
@@ -164,7 +175,7 @@ function addSseClient(res, path) {
   sseClients.set(clientId, { res, timer });
   res.write(`event: endpoint\ndata: ${JSON.stringify({
     protocolVersion: PROTOCOL_VERSION,
-    serverInfo: SERVER_INFO,
+    serverInfo: PROFILE_SERVER_INFO,
     path,
   })}\n\n`);
 
@@ -249,7 +260,9 @@ async function handleMcpPost(req, res, auditContext = null) {
   try {
     response = await handleJsonRpcRequest(payload, {
       writeAllowed: auth.writeAllowed,
-      allowedNamespaces: ALLOWED_NAMESPACES,
+      allowedNamespaces: EFFECTIVE_NAMESPACES,
+      profile: PROFILE,
+      serverInfo: PROFILE_SERVER_INFO,
     });
   } catch (error) {
     return sendJson(res, 500, {
@@ -310,7 +323,7 @@ const server = http.createServer(async (req, res) => {
   const rate = rateLimit(req);
   const auditContext = {
     ts: new Date().toISOString(),
-    service: SERVER_INFO.name,
+    service: PROFILE_SERVER_INFO.name,
     transport: 'http-bridge',
     method: req.method,
     path: req.url,

@@ -159,6 +159,7 @@ export function getUsers() {
       createdAt: k.createdAt,
       lastUsed: k.lastUsed,
       expiresAt: k.expiresAt,
+      scopes: Array.isArray(k.scopes) ? k.scopes : [],
     })),
   }));
 }
@@ -191,7 +192,7 @@ export function updateUser(id, patch) {
   if (patch.mcpAssignments !== undefined) data.users[idx].mcpAssignments = patch.mcpAssignments;
   writeJson(USERS_PATH, data);
   const u = data.users[idx];
-  return { ...u, apiKeys: u.apiKeys.map((k) => ({ id: k.id, prefix: k.prefix, status: k.status, createdAt: k.createdAt, lastUsed: k.lastUsed, expiresAt: k.expiresAt })) };
+  return { ...u, apiKeys: u.apiKeys.map((k) => ({ id: k.id, prefix: k.prefix, status: k.status, createdAt: k.createdAt, lastUsed: k.lastUsed, expiresAt: k.expiresAt, scopes: Array.isArray(k.scopes) ? k.scopes : [] })) };
 }
 
 export function deleteUser(id) {
@@ -203,7 +204,7 @@ export function deleteUser(id) {
   return true;
 }
 
-export function createUserApiKey(userId) {
+export function createUserApiKey(userId, scopes = []) {
   const data = loadUsers();
   const user = data.users.find((u) => u.id === userId);
   if (!user) return null;
@@ -220,6 +221,7 @@ export function createUserApiKey(userId) {
     lastUsed: null,
     expiresAt: null,
     status: 'active',
+    scopes: Array.isArray(scopes) ? [...new Set(scopes.map(String).filter(Boolean))] : [],
   };
   user.apiKeys.push(keyEntry);
   writeJson(USERS_PATH, data);
@@ -240,7 +242,8 @@ export function revokeUserApiKey(userId, keyId) {
 export function rotateUserApiKey(userId, keyId) {
   const revokeResult = revokeUserApiKey(userId, keyId);
   if (!revokeResult) return null;
-  return createUserApiKey(userId);
+  const existingScopes = getUser(userId)?.apiKeys?.find((key) => key.id === keyId)?.scopes || [];
+  return createUserApiKey(userId, existingScopes);
 }
 
 const MCP_PORT_START = 3402;
@@ -277,8 +280,9 @@ export function createMcpServer({ name, kbFilter = [], port, baseUrl = process.e
     sseUrl: `${baseUrl.replace(/\/+$/, '')}:${portNum}/sse`,
     authMethod: 'bearer',
     description: `Scoped MCP ${name}: ${kbFilter.length} KB(s).`,
-    capabilities: ['route_question', 'answer_question', 'search_external_sources', 'list_knowledge_bases', 'run_community_thread_test', 'submit_knowledge_draft', 'draft_external_source'],
-    toolCount: 7,
+    profile: 'scoped-readonly',
+    capabilities: ['answer_question', 'list_knowledge_bases'],
+    toolCount: 2,
     transport: 'sse',
     port: portNum,
     kbFilter,

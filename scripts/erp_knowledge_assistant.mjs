@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const ROOT = '/docker/openspg';
+const ROOT = process.env.ROOT || '/docker/openspg';
 const ROUTING_PATH = path.join(ROOT, 'docs/reference/ERP_Knowledge_Assistant_Routing.json');
 
 export const KB_DETAILS = {

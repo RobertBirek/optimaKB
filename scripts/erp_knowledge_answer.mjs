@@ -22,7 +22,7 @@ import {
   recordLearningGap,
 } from './lib/learning.mjs';
 
-const ROOT = '/docker/openspg';
+const ROOT = process.env.ROOT || '/docker/openspg';
 const STOPWORDS = new Set([
   'a', 'aby', 'albo', 'ale', 'api', 'bez', 'co', 'czy', 'dla', 'do', 'gdzie',
   'i', 'ich', 'jak', 'jakie', 'jaki', 'jest', 'kiedy', 'ktore', 'ktory', 'lub',

@@ -54,6 +54,8 @@ function generateMcpSystemd(server) {
     `ROOT=${ROOT}`,
     `ERP_KB_HTTP_HOST=10.10.254.42`,
     `ERP_KB_HTTP_PORT=${port}`,
+    `ERP_KB_MCP_PROFILE=scoped-readonly`,
+    `ERP_KB_HTTP_TOKEN=${randomUUID().replaceAll('-', '')}`,
     `ERP_KB_MCP_ALLOWED_NAMESPACES=${allowed}`,
     `ERP_KB_HTTP_AUDIT_LOG=${ROOT}/logs/${server.id}_audit.jsonl`,
     exaLines,
