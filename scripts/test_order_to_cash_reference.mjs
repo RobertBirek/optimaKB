@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { classifyQuestion, loadRouting } from './erp_knowledge_assistant.mjs';
+import { classifyQuestion } from './erp_knowledge_assistant.mjs';
 
 const root = process.env.ROOT || process.cwd();
 const filePath = path.join(root, 'docs/reference/OWA_Order_to_Cash_v1.md');
@@ -26,7 +26,7 @@ for (const required of [
 
 const route = classifyQuestion(
   'Jak wygląda Order-to-Cash od zamówienia przez fakturę do rozliczenia płatności?',
-  loadRouting(),
+  JSON.parse(fs.readFileSync(path.join(root, 'docs/reference/ERP_Knowledge_Assistant_Routing.json'), 'utf8')),
 );
 assert.equal(route.primaryRoute.primaryKb, 'OWAOntology');
 

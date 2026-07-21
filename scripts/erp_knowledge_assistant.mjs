@@ -720,7 +720,11 @@ export function classifyQuestion(question, routing, allowedNamespaces) {
   }
   if (hasOrderToCashContext) {
     const ontologyRoute = routeScores.find((route) => route.primaryKb === 'OWAOntology');
-    if (ontologyRoute) primary = ontologyRoute;
+    if (ontologyRoute) {
+      ontologyRoute.score = Math.max(ontologyRoute.score, 1);
+      if (!ontologyRoute.matched.includes('order-to-cash')) ontologyRoute.matched.push('order-to-cash');
+      primary = ontologyRoute;
+    }
   }
   if (hasNewsContext) {
     const communityRoute = routeScores.find((route) => route.primaryKb === 'ComarchCommunityNews');
