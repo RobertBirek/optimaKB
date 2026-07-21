@@ -8,6 +8,12 @@ const tableCsv = process.argv[2] || path.join(
   process.cwd(),
   'exports/optima_schema/v1/table.csv',
 );
+const companyDatabase = process.env.OPTIMA_COMPANY_DATABASE || 'CDN_TEST';
+const configurationDatabase = process.env.OPTIMA_CONFIGURATION_DATABASE || 'CDN_Konfiguracja';
+
+for (const database of [companyDatabase, configurationDatabase]) {
+  assert.match(database, /^[A-Za-z0-9_]+$/, `Unsafe database name: ${database}`);
+}
 
 function parseCsv(text) {
   const rows = [];
@@ -54,8 +60,8 @@ for (const required of ['id', 'databaseRefId', 'sqlName']) {
 }
 
 const allowedDatabases = new Set([
-  'CDN_TEST:DATABASE',
-  'CDN_KNF_Konfiguracja:DATABASE',
+  `${companyDatabase}:DATABASE`,
+  `${configurationDatabase}:DATABASE`,
 ]);
 const ids = new Set();
 const qualifiedNames = new Set();

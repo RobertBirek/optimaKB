@@ -2,18 +2,5 @@
   "schemaVersion": 1,
   "verifiedAt": "2026-07-21",
   "sourceExport": "exports/optima_schema/v1/table.csv",
-  "differences": [
-    { "direction": "live_only", "databaseKind": "company", "sqlName": "CDN.EDNKSeFPodmioty3", "classification": "standard_newer_version", "reason": "Current company database table; absent from the 2026.4.1 schema export." },
-    { "direction": "live_only", "databaseKind": "company", "sqlName": "CDN.PerformanceLog", "classification": "runtime_only", "reason": "Operational performance logging table present in the current company database." },
-    { "direction": "live_only", "databaseKind": "company", "sqlName": "CDN.PracKoszty50", "classification": "standard_newer_version", "reason": "Current payroll table; absent from the 2026.4.1 schema export." },
-    { "direction": "live_only", "databaseKind": "configuration", "sqlName": "CDN.SecurityLogs", "classification": "runtime_only", "reason": "Operational security logging table present in the current configuration database." },
-    { "direction": "export_only", "databaseKind": "company", "sqlName": "CDN.KsefCodes", "classification": "standard_version_specific", "reason": "Documented in the 2026.4.1 company schema as KSeF licenses, but absent from the current database." },
-    { "direction": "export_only", "databaseKind": "configuration", "sqlName": "CDN.PPK_KonfigUzytkownika", "classification": "standard_version_specific", "reason": "PPK configuration table from the exported configuration schema; absent from the current database." },
-    { "direction": "export_only", "databaseKind": "configuration", "sqlName": "CDN.PPK_MigrationsHistory", "classification": "standard_version_specific", "reason": "PPK migration history table from the exported configuration schema; absent from the current database." },
-    { "direction": "export_only", "databaseKind": "configuration", "sqlName": "dbo.JK_CFG", "classification": "custom", "reason": "Non-CDN schema object; treat as an installation-specific extension until vendor provenance is provided." },
-    { "direction": "export_only", "databaseKind": "configuration", "sqlName": "dbo.TaxOptShp", "classification": "custom", "reason": "Non-CDN schema object; treat as an installation-specific extension until vendor provenance is provided." },
-    { "direction": "export_only", "databaseKind": "company", "sqlName": "CDN.zzz_RtnetCT", "classification": "custom_legacy", "reason": "zzz-prefixed RTnet integration table; treat as custom legacy data." },
-    { "direction": "export_only", "databaseKind": "company", "sqlName": "CDN.zzz_rtnetCategoryMapping", "classification": "custom_legacy", "reason": "zzz-prefixed RTnet integration mapping; treat as custom legacy data." },
-    { "direction": "export_only", "databaseKind": "company", "sqlName": "CDN.zzz_rtnetOrderMapping", "classification": "custom_legacy", "reason": "zzz-prefixed RTnet integration mapping; treat as custom legacy data." }
-  ]
+  "differences": []
 }
