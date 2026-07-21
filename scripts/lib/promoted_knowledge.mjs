@@ -2,6 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { createHash } from 'node:crypto';
 import { appendDashboardAudit } from './dashboard_audit.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
@@ -140,7 +141,11 @@ export function slug(value) {
 }
 
 export function makePromotedId(prefix, draftId) {
-  return `${prefix}_${slug(draftId).slice(0, 96) || 'DRAFT'}`;
+  const normalized = slug(draftId) || 'DRAFT';
+  if (normalized.length <= 96) return `${prefix}_${normalized}`;
+
+  const hash = createHash('sha256').update(normalized).digest('hex').slice(0, 15).toUpperCase();
+  return `${prefix}_${normalized.slice(0, 80)}_${hash}`;
 }
 
 export function splitDraftContent(content, maxLength = 1800) {

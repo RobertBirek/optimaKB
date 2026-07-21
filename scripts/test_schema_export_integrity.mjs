@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import assert from 'node:assert/strict';
+import { makePromotedId } from './lib/promoted_knowledge.mjs';
 import {
   assertUniqueIds,
   deduplicateIdenticalRowsById,
@@ -26,6 +27,13 @@ assert.throws(
   () => assertUniqueIds([{ id: 'a' }, { id: 'a' }], 'chunk.csv'),
   /chunk\.csv contains 1 duplicate IDs: a/,
 );
+
+assert.equal(makePromotedId('CHUNK', 'short-id'), 'CHUNK_SHORT_ID');
+const longPrefix = 'draft-' + 'a'.repeat(100);
+const longIdA = makePromotedId('CHUNK', `${longPrefix}-first`);
+const longIdB = makePromotedId('CHUNK', `${longPrefix}-second`);
+assert.equal(longIdA.length, 'CHUNK_'.length + 96);
+assert.notEqual(longIdA, longIdB);
 
 assert.deepEqual(
   deduplicateIdenticalRowsById([{ id: 'a', content: 'same' }, { id: 'a', content: 'same' }], 'chunk.csv'),
