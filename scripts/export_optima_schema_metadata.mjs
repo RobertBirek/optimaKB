@@ -11,6 +11,7 @@ const SQL_FILE = path.join(ROOT, 'docs/reference/ComarchOptimaSchema.extract_met
 const OUTPUT_DIR = path.join(ROOT, 'exports/optima_schema/v1');
 const MANIFEST_FILE = path.join(OUTPUT_DIR, '_manifest.json');
 const CODEX_CONFIG = '/root/.codex/config.toml';
+const CONFIGURATION_DATABASE = process.env.OPTIMA_CONFIGURATION_DATABASE || 'CDN_Konfiguracja';
 const TEDIOUS_PATH =
   process.env.TEDIOUS_MODULE_PATH ||
   '/root/.npm/_npx/096058dd12901fb0/node_modules/tedious';
@@ -22,6 +23,10 @@ const DOC_FILES = [
   path.join(ROOT, 'docs/reference/KB_Struktura_Bazy_Konfiguracyjnej_2026.4.1.md'),
   path.join(ROOT, 'docs/reference/KB_Zmiany_Struktury_Bazy_2026.4.1.md'),
 ];
+
+if (!/^[A-Za-z0-9_]+$/.test(CONFIGURATION_DATABASE)) {
+  throw new Error(`Unsafe OPTIMA_CONFIGURATION_DATABASE: ${CONFIGURATION_DATABASE}`);
+}
 
 function readConnectionString() {
   if (process.env.MSSQL_CONNECTION_STRING) {
@@ -226,7 +231,7 @@ function deriveSourceObjectRefId(title) {
   if (prefix === 'F') {
     return `CDN_TEST:TABLE:CDN.${objectName}`;
   }
-  return `CDN_KNF_Konfiguracja:TABLE:CDN.${objectName}`;
+  return `${CONFIGURATION_DATABASE}:TABLE:CDN.${objectName}`;
 }
 
 function writeCsvRows(outPath, headers, rows) {
@@ -1183,7 +1188,7 @@ function buildCuratedJoinRouteRows(tablesById, foreignKeyRows) {
       id: 'global_config_key_value',
       sourceSqlName: 'CDN.CfgWartosci',
       targetSqlName: 'CDN.CfgKlucze',
-      databaseRefId: 'CDN_KNF_Konfiguracja:DATABASE',
+      databaseRefId: `${CONFIGURATION_DATABASE}:DATABASE`,
       pathLength: '1',
       joinKind: 'CURATED_BUSINESS_ROUTE',
       joinSqlTemplate:
@@ -1193,7 +1198,7 @@ function buildCuratedJoinRouteRows(tablesById, foreignKeyRows) {
         'Use when resolving a global configuration value to its configuration key in the configuration database.',
       notes:
         'Business route Config value -> Config key in configuration database.',
-      viaForeignKeyRefId: 'CDN_KNF_Konfiguracja:FOREIGN_KEY:CDN.FK_CFWCfkLink',
+      viaForeignKeyRefId: `${CONFIGURATION_DATABASE}:FOREIGN_KEY:CDN.FK_CFWCfkLink`,
     },
   ];
 
@@ -1504,7 +1509,8 @@ async function main() {
   if (!HELPER_ONLY) {
     const require = createRequire(import.meta.url);
     const { Connection, Request } = require(TEDIOUS_PATH);
-    const sqlText = fs.readFileSync(SQL_FILE, 'utf8');
+    const sqlText = fs.readFileSync(SQL_FILE, 'utf8')
+      .replaceAll('CDN_KNF_Konfiguracja', CONFIGURATION_DATABASE);
     const exportsList = parseExports(sqlText);
     const connectionConfig = parseConnectionString(readConnectionString());
 
