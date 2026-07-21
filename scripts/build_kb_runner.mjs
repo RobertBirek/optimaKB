@@ -145,7 +145,7 @@ const PROFILES = {
     exportDir: 'exports/optima_schema/v1',
     uploadManifest: 'upload_schema_metadata_manifest.json',
     buildManifest: 'build_schema_metadata_jobs_manifest.json',
-    includeShortNames: false,
+    includeShortNames: true,
     listLimit: 100,
     reuseActive: false,
     fileEntityMap: {
@@ -364,7 +364,7 @@ export function isReusableActiveJob(job, expectedJobName, uploadedUrl, maxAgeMs)
   return ageMs >= 0 && ageMs <= maxAgeMs;
 }
 
-async function main() {
+export async function main() {
   const cfg = resolveConfig();
   if (!COOKIE) throw new Error('OPENSPG_COOKIE or OPENSPG_COOKIE_FILE is required');
   if (!cfg.projectId) throw new Error('OPENSPG_PROJECT_ID is required');
