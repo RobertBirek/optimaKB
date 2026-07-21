@@ -691,6 +691,13 @@ export function classifyQuestion(question, routing, allowedNamespaces) {
   const explicitOptima = hasAny(q, ['optima', 'comarch erp', 'comarch']);
   const implicitOptima = hasAny(q, ['tranag', 'traelem', 'kontrahenci', 'towary', 'sprint', 'wydruk', 'funkcja dodatkowa']);
   const hasOptimaContext = explicitOptima || implicitOptima;
+  const hasOrderToCashContext = hasAny(q, [
+    'order-to-cash',
+    'order to cash',
+    'o2c',
+    'od zamowienia do zaplaty',
+    'od zamowienia do rozliczenia',
+  ]);
   const isOptimaProductKb = (name) => name.startsWith('Comarch') && !name.includes('CommunityNews') && !name.includes('Betterfly');
   if (hasOptimaContext && explicitOptima) {
     for (const r of routeScores) {
@@ -710,6 +717,10 @@ export function classifyQuestion(question, routing, allowedNamespaces) {
     if (topTaxbell && topOptima && topTaxbell.score > 0 && topTaxbell.score <= (topOptima.score + 2)) {
       primary = topOptima;
     }
+  }
+  if (hasOrderToCashContext) {
+    const ontologyRoute = routeScores.find((route) => route.primaryKb === 'OWAOntology');
+    if (ontologyRoute) primary = ontologyRoute;
   }
   if (hasNewsContext) {
     const communityRoute = routeScores.find((route) => route.primaryKb === 'ComarchCommunityNews');

@@ -3,6 +3,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { classifyQuestion, loadRouting } from './erp_knowledge_assistant.mjs';
 
 const root = process.env.ROOT || process.cwd();
 const filePath = path.join(root, 'docs/reference/OWA_Order_to_Cash_v1.md');
@@ -22,5 +23,11 @@ for (const required of [
 ]) {
   assert.ok(content.includes(required), `Missing Order-to-Cash contract element: ${required}`);
 }
+
+const route = classifyQuestion(
+  'Jak wygląda Order-to-Cash od zamówienia przez fakturę do rozliczenia płatności?',
+  loadRouting(),
+);
+assert.equal(route.primaryRoute.primaryKb, 'OWAOntology');
 
 process.stdout.write('Order-to-Cash reference tests passed.\n');
