@@ -8,8 +8,8 @@ import { loadPromotedKnowledge, makePromotedId, TARGET_KBS } from './lib/promote
 import { slug } from './lib/export_utils.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
-const OUT_JSON = path.join(ROOT, 'docs/reference/KB_Quality_Gate_Report.json');
-const OUT_MD = path.join(ROOT, 'docs/reference/KB_Quality_Gate_Report.md');
+const OUT_JSON = process.env.KB_QUALITY_GATE_OUT_JSON || path.join(ROOT, 'docs/reference/KB_Quality_Gate_Report.json');
+const OUT_MD = process.env.KB_QUALITY_GATE_OUT_MD || path.join(ROOT, 'docs/reference/KB_Quality_Gate_Report.md');
 
 const TARGETS = {
   ComarchOptimaSchema: {
@@ -450,6 +450,8 @@ try {
     results,
   };
 
+  fs.mkdirSync(path.dirname(OUT_JSON), { recursive: true });
+  fs.mkdirSync(path.dirname(OUT_MD), { recursive: true });
   fs.writeFileSync(OUT_JSON, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
   fs.writeFileSync(OUT_MD, buildMarkdown(payload), 'utf8');
 
