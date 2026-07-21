@@ -11,12 +11,12 @@ import {
   nextSectionOccurrence,
   upsertManifestFile,
 } from './lib/schema_export_integrity.mjs';
+import { readMssqlConnectionString } from './lib/mssql_connection_string.mjs';
 
 const ROOT = '/docker/openspg';
 const SQL_FILE = path.join(ROOT, 'docs/reference/ComarchOptimaSchema.extract_metadata.sql');
 const OUTPUT_DIR = path.join(ROOT, 'exports/optima_schema/v1');
 const MANIFEST_FILE = path.join(OUTPUT_DIR, '_manifest.json');
-const CODEX_CONFIG = '/root/.codex/config.toml';
 const CONFIGURATION_DATABASE = process.env.OPTIMA_CONFIGURATION_DATABASE || 'CDN_Konfiguracja';
 const TEDIOUS_PATH =
   process.env.TEDIOUS_MODULE_PATH ||
@@ -32,19 +32,6 @@ const DOC_FILES = [
 
 if (!/^[A-Za-z0-9_]+$/.test(CONFIGURATION_DATABASE)) {
   throw new Error(`Unsafe OPTIMA_CONFIGURATION_DATABASE: ${CONFIGURATION_DATABASE}`);
-}
-
-function readConnectionString() {
-  if (process.env.MSSQL_CONNECTION_STRING) {
-    return process.env.MSSQL_CONNECTION_STRING;
-  }
-
-  const content = fs.readFileSync(CODEX_CONFIG, 'utf8');
-  const match = content.match(/MSSQL_CONNECTION_STRING\s*=\s*'([^']+)'/);
-  if (!match) {
-    throw new Error('MSSQL_CONNECTION_STRING not found in /root/.codex/config.toml');
-  }
-  return match[1];
 }
 
 function parseConnectionString(connectionString) {
@@ -1535,7 +1522,7 @@ async function main() {
     const sqlText = fs.readFileSync(SQL_FILE, 'utf8')
       .replaceAll('CDN_KNF_Konfiguracja', CONFIGURATION_DATABASE);
     const exportsList = parseExports(sqlText);
-    const connectionConfig = parseConnectionString(readConnectionString());
+    const connectionConfig = parseConnectionString(readMssqlConnectionString());
 
     for (const entry of fs.readdirSync(OUTPUT_DIR, { withFileTypes: true })) {
       if (!entry.isFile()) continue;

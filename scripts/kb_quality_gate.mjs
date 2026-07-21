@@ -243,7 +243,36 @@ function assessNamespace(namespace) {
 
   if (!fs.existsSync(exportDir)) errors.push(`Missing export directory: ${target.exportDir}`);
 
-  const manifestFiles = new Map((manifest.files || []).map((file) => [file.fileName, file]));
+  const manifestFileEntries = Array.isArray(manifest.files) ? manifest.files : [];
+  const manifestFileNames = manifestFileEntries.map((file) => file.fileName);
+  const duplicateManifestFiles = [...new Set(
+    manifestFileNames.filter((fileName, index) => manifestFileNames.indexOf(fileName) !== index),
+  )];
+  if (duplicateManifestFiles.length) {
+    errors.push(`Duplicate files in export manifest: ${duplicateManifestFiles.join(', ')}`);
+  }
+
+  const manifestFiles = new Map(manifestFileEntries.map((file) => [file.fileName, file]));
+  for (const manifestFile of manifestFileEntries) {
+    const parsed = parseCsv(path.join(exportDir, manifestFile.fileName));
+    if (!parsed.exists) {
+      errors.push(`Manifest references missing CSV: ${manifestFile.fileName}`);
+      continue;
+    }
+    if (Number(manifestFile.rowCount) !== parsed.rows.length) {
+      errors.push(
+        `Manifest rowCount mismatch for ${manifestFile.fileName}: declared ${manifestFile.rowCount}, actual ${parsed.rows.length}`,
+      );
+    }
+    if (parsed.columns.includes('id')) {
+      const ids = parsed.rows.map((row) => String(row.id || ''));
+      const duplicateIds = ids.length - new Set(ids).size;
+      if (duplicateIds > 0) {
+        errors.push(`Duplicate IDs in ${manifestFile.fileName}: ${duplicateIds}`);
+      }
+      if (ids.some((id) => !id)) errors.push(`Empty IDs in ${manifestFile.fileName}`);
+    }
+  }
   const files = [];
   for (const fileName of target.requiredFiles) {
     const csvPath = path.join(exportDir, fileName);

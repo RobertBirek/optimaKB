@@ -11,10 +11,12 @@ WorkingDirectory=/docker/openspg
 Environment=HOME=/tmp
 Environment=OPENSPG_BACKUP_ROOT=/docker/openspg/backups/automated
 Environment=OPENSPG_BACKUP_VERIFY_TIMEOUT_MS=600000
-Environment=OPENSPG_BACKUP_VERIFY_REPORT=/docker/openspg/docs/reference/OpenSPG_Backup_Verification_Report.json
+Environment=OPENSPG_BACKUP_VERIFY_REPORT=/var/lib/openspg-backup/verification-report.json
 ExecStart=/usr/bin/node /docker/openspg/scripts/verify_openspg_backup_snapshot.mjs
 TimeoutStartSec=25min
 UMask=0077
+StateDirectory=openspg-backup
+StateDirectoryMode=0700
 
 NoNewPrivileges=true
 PrivateDevices=true
@@ -38,4 +40,4 @@ CapabilityBoundingSet=
 
 ReadOnlyPaths=/docker/openspg/backups
 ReadOnlyPaths=/docker/openspg/scripts
-ReadWritePaths=/docker/openspg/docs/reference
+ReadWritePaths=/var/lib/openspg-backup

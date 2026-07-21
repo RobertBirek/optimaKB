@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
+import { readMssqlConnectionString } from './lib/mssql_connection_string.mjs';
 
 const ROOT = process.env.OPENSPG_ROOT || process.cwd();
 const TABLE_CSV = process.env.OPTIMA_SCHEMA_TABLE_CSV || path.join(ROOT, 'exports/optima_schema/v1/table.csv');
@@ -12,9 +13,8 @@ const CLASSIFICATION_FILE = process.env.OPTIMA_SCHEMA_DRIFT_CLASSIFICATION || pa
   'docs/reference/ComarchOptimaSchema.drift-classification.json',
 );
 const COMPANY_DATABASE = process.env.OPTIMA_COMPANY_DATABASE || 'CDN_TEST';
-const CONFIGURATION_DATABASE = process.env.OPTIMA_CONFIGURATION_DATABASE || 'CDN_KNF_Konfiguracja';
+const CONFIGURATION_DATABASE = process.env.OPTIMA_CONFIGURATION_DATABASE || 'CDN_Konfiguracja';
 const TEDIOUS_PATH = process.env.TEDIOUS_MODULE_PATH || '/root/.npm/_npx/096058dd12901fb0/node_modules/tedious';
-const CODEX_CONFIG = process.env.CODEX_CONFIG || '/root/.codex/config.toml';
 
 function parseCsv(text) {
   const rows = [];
@@ -59,16 +59,6 @@ function parseConnectionString(connectionString) {
   return config;
 }
 
-function connectionString() {
-  if (process.env.MSSQL_CONNECTION_STRING) return process.env.MSSQL_CONNECTION_STRING;
-  assert.ok(fs.existsSync(CODEX_CONFIG), `Missing Codex config: ${CODEX_CONFIG}`);
-  const match = fs.readFileSync(CODEX_CONFIG, 'utf8').match(
-    /MSSQL_CONNECTION_STRING\s*=\s*['"]([^'"]+)['"]/,
-  );
-  assert.ok(match, `MSSQL_CONNECTION_STRING not found in ${CODEX_CONFIG}`);
-  return match[1];
-}
-
 function validateDatabaseName(value) {
   assert.match(value, /^[A-Za-z0-9_]+$/, `Unsafe database name: ${value}`);
   return value;
@@ -78,7 +68,7 @@ async function queryLiveTables() {
   const require = createRequire(import.meta.url);
   const { Connection, Request } = require(TEDIOUS_PATH);
   const connection = await new Promise((resolve, reject) => {
-    const instance = new Connection(parseConnectionString(connectionString()));
+    const instance = new Connection(parseConnectionString(readMssqlConnectionString()));
     instance.on('connect', (error) => error ? reject(error) : resolve(instance));
     instance.connect();
   });

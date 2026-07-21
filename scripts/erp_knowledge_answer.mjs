@@ -44,7 +44,7 @@ export function extractTerms(question) {
 
 export function extractFocusHints(question) {
   const normalizedQuestion = normalizeText(question);
-  const hints = [];
+  const hints = [...normalizedQuestion.matchAll(/\b(?:cdn|dbo)\.[a-z0-9_]+\b/g)].map((match) => match[0]);
   const patterns = [
     /encj[aiy]?\s+(.+?)\s+i\s+mapowan/,
     /dla\s+encj[aiy]?\s+(.+?)\s+i\s+mapowan/,
@@ -137,7 +137,7 @@ export function gatherEvidence(response, terms, focusHints = []) {
 
   for (const group of groups) {
     for (const artifact of group.artifacts) {
-        const result = scanArtifact(artifact, terms, focusHints, 3);
+      const result = scanArtifact(artifact, terms, focusHints, Math.max(3, focusHints.length));
       if (result.hits.length) {
         evidence.push({
           kb: group.kb,
