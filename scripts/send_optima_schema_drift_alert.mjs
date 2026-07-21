@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
 
 const MAX_DETAILS_LENGTH = 4000;
 const REDACTIONS = [
@@ -32,6 +34,33 @@ const payload = {
   details,
   generatedAt: new Date().toISOString(),
 };
+const cooldownMinutes = Number.parseInt(
+  process.env.OPTIMA_SCHEMA_DRIFT_ALERT_COOLDOWN_MINUTES || '60',
+  10,
+);
+const stateFile = process.env.OPTIMA_SCHEMA_DRIFT_ALERT_STATE_FILE
+  || '/var/lib/optima-schema-drift/alert-state.json';
+const fingerprint = crypto.createHash('sha256')
+  .update(`${payload.event}\n${payload.exitCode}\n${details}`)
+  .digest('hex');
+
+if (Number.isFinite(cooldownMinutes) && cooldownMinutes > 0 && fs.existsSync(stateFile)) {
+  try {
+    const state = JSON.parse(fs.readFileSync(stateFile, 'utf8'));
+    const elapsed = Date.now() - Date.parse(state.deliveredAt || '');
+    if (state.fingerprint === fingerprint && elapsed >= 0 && elapsed < cooldownMinutes * 60_000) {
+      console.log(JSON.stringify({
+        ...payload,
+        delivery: 'suppressed',
+        reason: 'duplicate_within_cooldown',
+        cooldownMinutes,
+      }));
+      process.exit(0);
+    }
+  } catch {
+    // A missing or malformed state must never block a fresh alert.
+  }
+}
 
 const webhookUrl = process.env.OPTIMA_SCHEMA_DRIFT_WEBHOOK_URL || '';
 const telegramBotToken = process.env.OPTIMA_SCHEMA_DRIFT_TELEGRAM_BOT_TOKEN || '';
@@ -87,4 +116,15 @@ if (webhookUrl) {
   }
 }
 
-if (deliveries.length > 0) console.log(JSON.stringify({ ...payload, deliveries }));
+if (deliveries.length > 0) {
+  const stateDirectory = path.dirname(stateFile);
+  const temporaryState = `${stateFile}.${process.pid}.tmp`;
+  fs.mkdirSync(stateDirectory, { recursive: true, mode: 0o700 });
+  fs.writeFileSync(temporaryState, JSON.stringify({
+    fingerprint,
+    deliveredAt: payload.generatedAt,
+    deliveries,
+  }), { mode: 0o600 });
+  fs.renameSync(temporaryState, stateFile);
+  console.log(JSON.stringify({ ...payload, deliveries }));
+}
