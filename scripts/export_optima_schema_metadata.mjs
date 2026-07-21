@@ -1517,6 +1517,18 @@ async function main() {
     files: [],
   };
 
+  if (HELPER_ONLY) {
+    for (const entry of fs.readdirSync(OUTPUT_DIR, { withFileTypes: true })) {
+      if (!entry.isFile() || !entry.name.endsWith('.csv')) continue;
+      const rows = parseCsvRows(path.join(OUTPUT_DIR, entry.name));
+      upsertManifestFile(manifest.files, {
+        fileName: entry.name,
+        rowCount: rows.length,
+        columns: Object.keys(rows[0] || {}),
+      });
+    }
+  }
+
   if (!HELPER_ONLY) {
     const require = createRequire(import.meta.url);
     const { Connection, Request } = require(TEDIOUS_PATH);
