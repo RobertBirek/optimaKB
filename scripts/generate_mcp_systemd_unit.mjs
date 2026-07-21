@@ -69,7 +69,7 @@ async function main() {
   const envContent = [
     `# MCP ${server.name} – auto-generated on ${new Date().toISOString()}`,
     `ROOT=${ROOT}`,
-    `ERP_KB_HTTP_HOST=10.10.254.42`,
+    `ERP_KB_HTTP_HOST=${profile.host || '10.10.254.42'}`,
     `ERP_KB_HTTP_PORT=${port}`,
     `ERP_KB_MCP_PROFILE=${profile.id}`,
     `ERP_KB_HTTP_TOKEN=${authToken}`,

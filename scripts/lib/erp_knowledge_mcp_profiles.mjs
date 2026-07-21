@@ -48,7 +48,7 @@ const profiles = {
   },
   'knowledge-editorial-mcp': {
     id: 'knowledge-editorial-mcp', serverName: 'knowledge-editorial-mcp', mode: 'editorial',
-    namespaces: null, scopes: ['kb.editorial.write'], port: 3426,
+    namespaces: null, scopes: ['kb.editorial.write'], port: 3426, host: '127.0.0.1',
     tools: ['search_external_sources', 'submit_knowledge_draft', 'draft_external_source', ...commonReadTools],
   },
 };
