@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import { handleJsonRpcRequest, PROTOCOL_VERSION } from './lib/erp_knowledge_mcp_core.mjs';
 import { verifyApiKey } from './lib/mcp_registry.mjs';
-import { getMcpProfile, MCP_PROFILE_VERSION } from './lib/erp_knowledge_mcp_profiles.mjs';
+import { getMcpProfile, listMcpProfiles, MCP_PROFILE_VERSION } from './lib/erp_knowledge_mcp_profiles.mjs';
 
 const HOST = process.env.ERP_KB_HTTP_HOST || '127.0.0.1';
 const PORT = Number(process.env.ERP_KB_HTTP_PORT || 3400);
@@ -16,6 +16,9 @@ const WRITE_AUTH_TOKEN = process.env.ERP_KB_HTTP_WRITE_TOKEN || '';
 const PROFILE = getMcpProfile(process.env.ERP_KB_MCP_PROFILE || 'legacy');
 const PROFILE_NAMESPACES = PROFILE.namespaces ? new Set(PROFILE.namespaces) : null;
 const PROFILE_SERVER_INFO = { name: PROFILE.serverName, version: MCP_PROFILE_VERSION };
+const PATH_PROFILES = new Map(listMcpProfiles()
+  .filter((profile) => profile.mode === 'read-only')
+  .map((profile) => [`${MCP_PATH}/${profile.id}`, getMcpProfile(profile.id)]));
 const SSE_KEEPALIVE_MS = Number(process.env.ERP_KB_HTTP_SSE_KEEPALIVE_MS || 15000);
 const LEGACY_SSE_PATH = process.env.ERP_KB_LEGACY_SSE_PATH || '/sse';
 const DISABLE_SSE = process.env.ERP_KB_HTTP_DISABLE_SSE === '1';
@@ -227,7 +230,7 @@ function readJsonBody(req) {
   });
 }
 
-async function handleMcpPost(req, res, auditContext = null) {
+async function handleMcpPost(req, res, auditContext = null, requestProfile = PROFILE) {
   const auth = authContext(req);
   if (!auth.authorized) return unauthorized(res);
 
@@ -258,11 +261,14 @@ async function handleMcpPost(req, res, auditContext = null) {
 
   let response;
   try {
+    const requestNamespaces = requestProfile.id === PROFILE.id
+      ? EFFECTIVE_NAMESPACES
+      : new Set(requestProfile.namespaces || []);
     response = await handleJsonRpcRequest(payload, {
-      writeAllowed: auth.writeAllowed,
-      allowedNamespaces: EFFECTIVE_NAMESPACES,
-      profile: PROFILE,
-      serverInfo: PROFILE_SERVER_INFO,
+      writeAllowed: ['editorial', 'legacy'].includes(requestProfile.mode) && auth.writeAllowed,
+      allowedNamespaces: requestNamespaces,
+      profile: requestProfile,
+      serverInfo: { name: requestProfile.serverName, version: MCP_PROFILE_VERSION },
     });
   } catch (error) {
     return sendJson(res, 500, {
@@ -315,7 +321,7 @@ function handleMcpSse(req, res) {
 }
 
 function isMcpPath(url) {
-  return url === MCP_PATH || url === LEGACY_SSE_PATH;
+  return url === MCP_PATH || url === LEGACY_SSE_PATH || PATH_PROFILES.has(url);
 }
 
 const server = http.createServer(async (req, res) => {
@@ -381,11 +387,12 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (isMcpPath(req.url) && req.method === 'GET') {
+    if (PATH_PROFILES.has(req.url)) return sendJson(res, 405, { error: 'streamable_http_required' });
     return handleMcpSse(req, res);
   }
 
   if (isMcpPath(req.url) && req.method === 'POST') {
-    return handleMcpPost(req, res, auditContext);
+    return handleMcpPost(req, res, auditContext, PATH_PROFILES.get(req.url) || PROFILE);
   }
 
   sendJson(res, 404, {
