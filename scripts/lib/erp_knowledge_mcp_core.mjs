@@ -541,7 +541,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
         }) };
       }
       const result = await answerQuestionTool(query, allowedNss);
-      const temporalWarning = TEMPORAL_DOMAINS.has(domain) && Boolean(args.as_of);
+      const temporalWarning = TEMPORAL_DOMAINS.has(domain);
       return { jsonrpc: '2.0', id, result: toolResultPayload({
         text: result.text,
         structured: {
@@ -550,7 +550,11 @@ export async function handleJsonRpcRequest(request, context = {}) {
           evidence: result.structured?.evidence || result.structured?.kbsUsed || [],
           knowledge_status: temporalWarning ? 'partial' : (result.structured?.confidence ? 'verified' : 'unknown'),
           validity: { valid_from: null, valid_to: null, as_of: args.as_of || null },
-          warnings: temporalWarning ? ['The available evidence does not confirm effective dates for the requested date.'] : [],
+          warnings: temporalWarning
+            ? [args.as_of
+              ? 'The available evidence does not confirm effective dates for the requested date.'
+              : 'Effective-date provenance is incomplete; verify the current legal or accounting status before acting.']
+            : [],
           correlation_id: args.correlation_id || '',
         },
       }) };
