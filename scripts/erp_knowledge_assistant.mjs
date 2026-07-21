@@ -140,6 +140,7 @@ export const KB_DETAILS = {
       'exports/optima_business_semantics/v1/code_meaning.csv',
       'exports/optima_business_semantics/v1/business_rule.csv',
       'exports/optima_business_semantics/v1/business_domain.csv',
+      'docs/reference/OWA_Order_to_Cash_v1.md',
     ],
   },
   ComarchUniversalKnowledge: {
@@ -158,6 +159,7 @@ export const KB_DETAILS = {
     artifacts: [
       'docs/reference/OWAOntology.schema',
       'docs/reference/OWAOntology.seed.md',
+      'docs/reference/OWA_Order_to_Cash_v1.md',
       'exports/owa_ontology/v1/ontology_entity.csv',
       'exports/owa_ontology/v1/ontology_field.csv',
       'exports/owa_ontology/v1/ontology_relation.csv',
