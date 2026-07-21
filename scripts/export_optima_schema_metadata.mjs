@@ -7,6 +7,7 @@ import { loadPromotedKnowledge, makePromotedId } from './lib/promoted_knowledge.
 import { csvEscape } from './lib/export_utils.mjs';
 import {
   assertUniqueIds,
+  deduplicateIdenticalRowsById,
   nextSectionOccurrence,
   upsertManifestFile,
 } from './lib/schema_export_integrity.mjs';
@@ -1502,8 +1503,9 @@ function buildChunkRows() {
     });
   }
 
-  assertUniqueIds(rows, 'chunk.csv');
-  return rows;
+  const uniqueRows = deduplicateIdenticalRowsById(rows, 'chunk.csv');
+  assertUniqueIds(uniqueRows, 'chunk.csv');
+  return uniqueRows;
 }
 
 async function main() {

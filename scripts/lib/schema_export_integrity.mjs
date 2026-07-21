@@ -22,6 +22,24 @@ export function assertUniqueIds(rows, fileName) {
   }
 }
 
+export function deduplicateIdenticalRowsById(rows, fileName) {
+  const rowsById = new Map();
+
+  for (const row of rows) {
+    const existing = rowsById.get(row.id);
+    if (!existing) {
+      rowsById.set(row.id, row);
+      continue;
+    }
+
+    if (JSON.stringify(existing) !== JSON.stringify(row)) {
+      throw new Error(`${fileName} contains conflicting rows for ID: ${row.id}`);
+    }
+  }
+
+  return [...rowsById.values()];
+}
+
 export function nextSectionOccurrence(occurrences, sourceDocument, sectionTitle) {
   const key = `${sourceDocument}\u0000${sectionTitle}`;
   const occurrence = (occurrences.get(key) || 0) + 1;

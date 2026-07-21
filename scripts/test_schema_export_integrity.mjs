@@ -3,6 +3,7 @@
 import assert from 'node:assert/strict';
 import {
   assertUniqueIds,
+  deduplicateIdenticalRowsById,
   nextSectionOccurrence,
   upsertManifestFile,
 } from './lib/schema_export_integrity.mjs';
@@ -24,6 +25,15 @@ assert.doesNotThrow(() => assertUniqueIds([{ id: 'a' }, { id: 'b' }], 'chunk.csv
 assert.throws(
   () => assertUniqueIds([{ id: 'a' }, { id: 'a' }], 'chunk.csv'),
   /chunk\.csv contains 1 duplicate IDs: a/,
+);
+
+assert.deepEqual(
+  deduplicateIdenticalRowsById([{ id: 'a', content: 'same' }, { id: 'a', content: 'same' }], 'chunk.csv'),
+  [{ id: 'a', content: 'same' }],
+);
+assert.throws(
+  () => deduplicateIdenticalRowsById([{ id: 'a', content: 'first' }, { id: 'a', content: 'second' }], 'chunk.csv'),
+  /chunk\.csv contains conflicting rows for ID: a/,
 );
 
 process.stdout.write('Schema export integrity tests passed.\n');
