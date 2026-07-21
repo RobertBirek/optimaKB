@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import process from 'process';
 import { execSync } from 'child_process';
-import { loadPromotedKnowledge, TARGET_KBS } from './lib/promoted_knowledge.mjs';
+import { loadPromotedKnowledge, makePromotedId, TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { slug } from './lib/export_utils.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
@@ -214,7 +214,13 @@ function promotedDraftChunkMatches(namespace, chunkRows) {
   const missing = promoted
     .filter((draft) => {
       const sluggedId = slug(draft.id).slice(0, 96);
-      const idFound = haystack.includes(draft.id) || haystackLower.includes(draft.id.toLowerCase()) || haystack.includes(sluggedId);
+      const schemaChunkId = namespace === 'ComarchOptimaSchema'
+        ? makePromotedId('CHUNK_PROMOTED', `${draft.id}_1`)
+        : '';
+      const idFound = haystack.includes(draft.id)
+        || haystackLower.includes(draft.id.toLowerCase())
+        || haystack.includes(sluggedId)
+        || (schemaChunkId && haystack.includes(schemaChunkId));
       const srcUrlFound = draft.sourceUrl && (haystack.includes(draft.sourceUrl) || haystackLower.includes(draft.sourceUrl.toLowerCase()));
       return !idFound && !srcUrlFound;
     })
