@@ -75,8 +75,8 @@ for (const [fileName, labelName] of Object.entries(LABELS)) {
   fs.writeFileSync(path.join(IMPORT_DIR, fileName), `id\n${ids.map((id) => `"${id.replaceAll('"', '""')}"`).join('\n')}\n`);
   const query = `LOAD CSV WITH HEADERS FROM 'file:///optima-schema-parity/${fileName}' AS row `
     + `WITH collect(row.id) AS expectedIds MATCH (n:\`ComarchOptimaSchema.${labelName}\`) `
-    + 'RETURN toString(size(expectedIds)) + "|" + toString(count(n)) + "|" '
-    + '+ toString(count(CASE WHEN NOT n.id IN expectedIds THEN 1 END)) AS result;';
+    + 'WITH expectedIds, count(n) AS actual, count(CASE WHEN NOT n.id IN expectedIds THEN 1 END) AS stale '
+    + 'RETURN toString(size(expectedIds)) + "|" + toString(actual) + "|" + toString(stale) AS result;';
   const [expected, actual, stale] = runDockerCypher(query).replaceAll('"', '').split('|').map(Number);
   results.push({ fileName, expected, actual, stale, matches: expected === actual && stale === 0 });
 }
