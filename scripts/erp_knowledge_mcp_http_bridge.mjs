@@ -4,7 +4,7 @@ import http from 'http';
 import { randomUUID, timingSafeEqual } from 'crypto';
 import fs from 'fs';
 import path from 'path';
-import { handleJsonRpcRequest, PROTOCOL_VERSION, SERVER_INFO } from './lib/erp_knowledge_mcp_core.mjs';
+import { handleJsonRpcRequest, PROTOCOL_VERSION } from './lib/erp_knowledge_mcp_core.mjs';
 import { verifyApiKey } from './lib/mcp_registry.mjs';
 import { getMcpProfile, MCP_PROFILE_VERSION } from './lib/erp_knowledge_mcp_profiles.mjs';
 
@@ -351,8 +351,9 @@ const server = http.createServer(async (req, res) => {
   if (req.url === '/health') {
     return sendJson(res, 200, {
       ok: true,
-      service: SERVER_INFO.name,
-      version: SERVER_INFO.version,
+      service: PROFILE_SERVER_INFO.name,
+      version: PROFILE_SERVER_INFO.version,
+      profile: PROFILE.id,
       protocolVersion: PROTOCOL_VERSION,
       transport: DISABLE_SSE ? 'streamable-http' : 'http-bridge',
       mcpPath: MCP_PATH,
@@ -404,7 +405,8 @@ server.listen(PORT, HOST, () => {
   process.stdout.write(
     JSON.stringify({
       ok: true,
-      service: SERVER_INFO.name,
+      service: PROFILE_SERVER_INFO.name,
+      profile: PROFILE.id,
       transport: 'http-bridge',
       host: HOST,
       port: PORT,
