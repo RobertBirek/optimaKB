@@ -34,20 +34,57 @@ const payload = {
 };
 
 const webhookUrl = process.env.OPTIMA_SCHEMA_DRIFT_WEBHOOK_URL || '';
-if (!webhookUrl) {
-  console.error(JSON.stringify({ ...payload, delivery: 'webhook_not_configured' }));
+const telegramBotToken = process.env.OPTIMA_SCHEMA_DRIFT_TELEGRAM_BOT_TOKEN || '';
+const telegramChatId = process.env.OPTIMA_SCHEMA_DRIFT_TELEGRAM_CHAT_ID || '';
+const deliveries = [];
+
+if (telegramBotToken && telegramChatId) {
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: telegramChatId,
+        text: [
+          '[CRITICAL] Optima schema drift check failed',
+          `Exit code: ${payload.exitCode}`,
+          `Time: ${payload.generatedAt}`,
+          details ? `Details:\n${details.slice(-3000)}` : '',
+        ].filter(Boolean).join('\n'),
+      }),
+      signal: AbortSignal.timeout(10_000),
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    deliveries.push('telegram');
+  } catch {
+    console.error(JSON.stringify({
+      ...payload,
+      delivery: 'telegram_failed',
+      deliveryError: 'Telegram request failed',
+    }));
+    process.exitCode = 1;
+  }
+}
+
+if (!webhookUrl && deliveries.length === 0 && !process.exitCode) {
+  console.error(JSON.stringify({ ...payload, delivery: 'external_delivery_not_configured' }));
   process.exit(0);
 }
 
-try {
-  const response = await fetch(webhookUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-    signal: AbortSignal.timeout(10_000),
-  });
-  if (!response.ok) throw new Error(`Webhook returned HTTP ${response.status}`);
-} catch (error) {
-  console.error(JSON.stringify({ ...payload, delivery: 'failed', deliveryError: error.message }));
-  process.exitCode = 1;
+if (webhookUrl) {
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(10_000),
+    });
+    if (!response.ok) throw new Error(`Webhook returned HTTP ${response.status}`);
+    deliveries.push('webhook');
+  } catch (error) {
+    console.error(JSON.stringify({ ...payload, delivery: 'webhook_failed', deliveryError: error.message }));
+    process.exitCode = 1;
+  }
 }
+
+if (deliveries.length > 0) console.log(JSON.stringify({ ...payload, deliveries }));
