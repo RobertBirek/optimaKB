@@ -5,6 +5,11 @@ import path from 'path';
 import { createRequire } from 'module';
 import { loadPromotedKnowledge, makePromotedId } from './lib/promoted_knowledge.mjs';
 import { csvEscape } from './lib/export_utils.mjs';
+import {
+  assertUniqueIds,
+  nextSectionOccurrence,
+  upsertManifestFile,
+} from './lib/schema_export_integrity.mjs';
 
 const ROOT = '/docker/openspg';
 const SQL_FILE = path.join(ROOT, 'docs/reference/ComarchOptimaSchema.extract_metadata.sql');
@@ -1452,6 +1457,7 @@ function buildSchemaChangeRows() {
 
 function buildChunkRows() {
   const rows = [];
+  const sectionOccurrences = new Map();
 
   for (const filePath of DOC_FILES) {
     const sourceDocument = path.basename(filePath);
@@ -1462,10 +1468,12 @@ function buildChunkRows() {
       const content = `${section.title}\n\n${section.content}`.trim();
       const chunks = splitLongContent(content);
       const sourceObjectRefId = deriveSourceObjectRefId(section.title);
+      const occurrence = nextSectionOccurrence(sectionOccurrences, sourceDocument, section.title);
+      const occurrenceSuffix = occurrence > 1 ? `:SECTION:${occurrence}` : '';
 
       chunks.forEach((chunkContent, index) => {
         rows.push({
-          id: `CHUNK:${slugify(sourceDocument)}:${slugify(section.title)}:${index + 1}`,
+          id: `CHUNK:${slugify(sourceDocument)}:${slugify(section.title)}${occurrenceSuffix}:${index + 1}`,
           name: chunks.length > 1 ? `${section.title} [${index + 1}]` : section.title,
           description: `Documentation chunk from ${sourceDocument}, section ${section.title}.`,
           content: chunkContent,
@@ -1494,6 +1502,7 @@ function buildChunkRows() {
     });
   }
 
+  assertUniqueIds(rows, 'chunk.csv');
   return rows;
 }
 
@@ -1560,7 +1569,7 @@ async function main() {
         connection.execSql(request);
       });
 
-      manifest.files.push({
+      upsertManifestFile(manifest.files, {
         fileName: exportDef.fileName,
         rowCount: result.rowCount,
         columns: result.headers || [],
@@ -1582,7 +1591,7 @@ async function main() {
     ];
     const schemaChangeRows = buildSchemaChangeRows();
     writeCsvRows(path.join(OUTPUT_DIR, 'schema_change.csv'), schemaChangeHeaders, schemaChangeRows);
-    manifest.files.push({
+    upsertManifestFile(manifest.files, {
       fileName: 'schema_change.csv',
       rowCount: schemaChangeRows.length,
       columns: schemaChangeHeaders,
@@ -1603,7 +1612,7 @@ async function main() {
   ];
   const chunkRows = buildChunkRows();
   writeCsvRows(path.join(OUTPUT_DIR, 'chunk.csv'), chunkHeaders, chunkRows);
-  manifest.files.push({
+  upsertManifestFile(manifest.files, {
     fileName: 'chunk.csv',
     rowCount: chunkRows.length,
     columns: chunkHeaders,
@@ -1633,7 +1642,7 @@ async function main() {
     tableQueryGuideHeaders,
     tableQueryGuideRows,
   );
-  manifest.files.push({
+  upsertManifestFile(manifest.files, {
     fileName: 'table_query_guide.csv',
     rowCount: tableQueryGuideRows.length,
     columns: tableQueryGuideHeaders,
@@ -1656,7 +1665,7 @@ async function main() {
   ];
   const joinPathGuideRows = buildJoinPathGuideRows();
   writeCsvRows(path.join(OUTPUT_DIR, 'join_path_guide.csv'), joinPathGuideHeaders, joinPathGuideRows);
-  manifest.files.push({
+  upsertManifestFile(manifest.files, {
     fileName: 'join_path_guide.csv',
     rowCount: joinPathGuideRows.length,
     columns: joinPathGuideHeaders,
@@ -1676,7 +1685,7 @@ async function main() {
   ];
   const objectDependencyRows = buildObjectDependencyRows();
   writeCsvRows(path.join(OUTPUT_DIR, 'object_dependency.csv'), objectDependencyHeaders, objectDependencyRows);
-  manifest.files.push({
+  upsertManifestFile(manifest.files, {
     fileName: 'object_dependency.csv',
     rowCount: objectDependencyRows.length,
     columns: objectDependencyHeaders,
@@ -1697,7 +1706,7 @@ async function main() {
   ];
   const sqlObjectGuideRows = buildSqlObjectGuideRows(objectDependencyRows);
   writeCsvRows(path.join(OUTPUT_DIR, 'sql_object_guide.csv'), sqlObjectGuideHeaders, sqlObjectGuideRows);
-  manifest.files.push({
+  upsertManifestFile(manifest.files, {
     fileName: 'sql_object_guide.csv',
     rowCount: sqlObjectGuideRows.length,
     columns: sqlObjectGuideHeaders,
