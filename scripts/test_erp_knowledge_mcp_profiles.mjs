@@ -7,6 +7,7 @@ import { getMcpProfile, listMcpProfiles } from './lib/erp_knowledge_mcp_profiles
 
 process.env.ROOT = process.env.ROOT || path.resolve(import.meta.dirname, '..');
 const { handleJsonRpcRequest, listToolsForProfile } = await import('./lib/erp_knowledge_mcp_core.mjs');
+const { classifyQuestion, loadRouting } = await import('./erp_knowledge_assistant.mjs');
 
 const publicProfiles = listMcpProfiles().filter((profile) => profile.mode === 'read-only');
 assert.equal(publicProfiles.length, 6, 'Expected exactly six public read-only profiles.');
@@ -43,5 +44,13 @@ const editorial = getMcpProfile('knowledge-editorial-mcp');
 assert.equal(editorial.tools.includes('submit_knowledge_draft'), true);
 assert.equal(editorial.tools.includes('draft_external_source'), true);
 assert.equal(editorial.tools.includes('answer_question'), false);
+
+const semantic = getMcpProfile('erp-semantic-mcp');
+const semanticRoute = classifyQuestion(
+  'Wyjasnij proces faktury',
+  loadRouting(),
+  new Set(semantic.namespaces),
+);
+assert.ok(semantic.namespaces.includes(semanticRoute.primaryRoute.primaryKb));
 
 process.stdout.write(JSON.stringify({ ok: true, publicProfiles: publicProfiles.map((profile) => profile.id) }, null, 2) + '\n');

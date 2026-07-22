@@ -761,6 +761,15 @@ export function classifyQuestion(question, routing, allowedNamespaces) {
     }
   }
 
+  // Scoped MCP profiles may exclude every legacy fallback route. Stay within
+  // the filtered routing table instead of dereferencing an unavailable KB.
+  if (!primary) {
+    primary = routeScores[0] || routing.routes[0];
+  }
+  if (!primary) {
+    throw new Error('No knowledge route is available for the allowed namespaces.');
+  }
+
   const supportSet = new Set(primary.supportKbs || []);
   for (const blend of blended) {
     if (blend.primaryKb === primary.primaryKb) {
