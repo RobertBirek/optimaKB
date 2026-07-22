@@ -15,6 +15,13 @@ const routing = loadRouting();
 export const SERVER_INFO = { name: 'erp-knowledge-assistant', version: '1.1.0' };
 export const PROTOCOL_VERSION = '2025-03-26';
 
+export function formatLegacySseEndpoint(path) {
+  if (typeof path !== 'string' || !path.startsWith('/')) {
+    throw new Error('Legacy SSE endpoint must be an absolute path.');
+  }
+  return `event: endpoint\ndata: ${path}\n\n`;
+}
+
 const KB_NAME_REGISTRY_PATH = '/docker/openspg/docs/reference/ERP_KB_Dashboard_KB_Registry.json';
 
 function loadKbNameMap() {

@@ -5,9 +5,11 @@ import path from 'node:path';
 import process from 'node:process';
 
 process.env.ROOT = process.env.ROOT || path.resolve(import.meta.dirname, '..');
-const { handleJsonRpcRequest, PROTOCOL_VERSION } = await import('./lib/erp_knowledge_mcp_core.mjs');
+const { formatLegacySseEndpoint, handleJsonRpcRequest, PROTOCOL_VERSION } = await import('./lib/erp_knowledge_mcp_core.mjs');
 
 assert.equal(PROTOCOL_VERSION, '2025-03-26', 'Streamable HTTP requires MCP protocol 2025-03-26 or newer.');
+assert.equal(formatLegacySseEndpoint('/mcp'), 'event: endpoint\ndata: /mcp\n\n');
+assert.throws(() => formatLegacySseEndpoint('mcp'), /absolute path/);
 
 const initialized = await handleJsonRpcRequest({
   jsonrpc: '2.0',

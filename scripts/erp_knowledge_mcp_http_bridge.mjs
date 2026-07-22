@@ -4,7 +4,7 @@ import http from 'http';
 import { randomUUID, timingSafeEqual } from 'crypto';
 import fs from 'fs';
 import path from 'path';
-import { handleJsonRpcRequest, PROTOCOL_VERSION } from './lib/erp_knowledge_mcp_core.mjs';
+import { formatLegacySseEndpoint, handleJsonRpcRequest, PROTOCOL_VERSION } from './lib/erp_knowledge_mcp_core.mjs';
 import { verifyApiKey } from './lib/mcp_registry.mjs';
 import { getMcpProfile, listMcpProfiles, MCP_PROFILE_VERSION } from './lib/erp_knowledge_mcp_profiles.mjs';
 
@@ -176,11 +176,7 @@ function addSseClient(res, path) {
   }, SSE_KEEPALIVE_MS);
 
   sseClients.set(clientId, { res, timer });
-  res.write(`event: endpoint\ndata: ${JSON.stringify({
-    protocolVersion: PROTOCOL_VERSION,
-    serverInfo: PROFILE_SERVER_INFO,
-    path,
-  })}\n\n`);
+  res.write(formatLegacySseEndpoint(path));
 
   reqCleanup(res, clientId);
 }
