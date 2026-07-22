@@ -1,6 +1,6 @@
 ---
 description: Read-only engineering delegate for OpenSPG, ERP knowledge MCP services, KAG retrieval, provenance, routing, reverse proxies, and runtime diagnostics. Never edits, builds, restarts, ingests, publishes, or reads secrets.
-mode: subagent
+mode: all
 model: opencode-go/deepseek-v4-pro
 permission:
   edit: deny
@@ -91,4 +91,3 @@ Use each skill at most once per task. Skills provide methods, not additional per
 Do not inspect `.env`, environment files, credentials, cookies, API keys, private keys, tenant data, or raw production payloads. Do not change files or runtime state. Clearly distinguish repository evidence from deployed-runtime evidence.
 
 End with the handoff required by `codex-delegation`.
-
