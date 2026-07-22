@@ -13,7 +13,7 @@ import {
 const routing = loadRouting();
 
 export const SERVER_INFO = { name: 'erp-knowledge-assistant', version: '1.1.0' };
-export const PROTOCOL_VERSION = '2024-11-05';
+export const PROTOCOL_VERSION = '2025-03-26';
 
 const KB_NAME_REGISTRY_PATH = '/docker/openspg/docs/reference/ERP_KB_Dashboard_KB_Registry.json';
 
