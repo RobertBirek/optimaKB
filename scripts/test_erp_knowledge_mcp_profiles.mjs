@@ -3,9 +3,11 @@
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import { getMcpProfile, listMcpProfiles } from './lib/erp_knowledge_mcp_profiles.mjs';
 
-process.env.ROOT = process.env.ROOT || path.resolve(import.meta.dirname, '..');
+const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
+process.env.ROOT = process.env.ROOT || path.resolve(scriptDirectory, '..');
 const { handleJsonRpcRequest, listToolsForProfile } = await import('./lib/erp_knowledge_mcp_core.mjs');
 const { classifyQuestion, loadRouting } = await import('./erp_knowledge_assistant.mjs');
 
