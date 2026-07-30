@@ -1,6 +1,6 @@
 # KB Quality Gate Report
 
-Generated at: 2026-07-30T11:29:18.807Z
+Generated at: 2026-07-30T12:08:48.824Z
 
 Overall: `FAIL`
 
@@ -206,7 +206,7 @@ Overall: `FAIL`
 
 - Verdict: `PASS`
 - Export dir: `exports/taxbell_legal_reference/v1`
-- Staging generatedAt: `2026-07-30T08:43:18.085Z`
+- Staging generatedAt: `2026-07-30T11:48:49.832Z`
 - Required files:
   - `reference_document.csv`: exists `true`, rows `72`
   - `source_topic.csv`: exists `true`, rows `5`
@@ -218,29 +218,11 @@ Overall: `FAIL`
   - `549` `FINISH` `chunk.csv`
   - `554` `FINISH` `reference_document.csv`
 
-## TaxbellPayrollHRReference
-
-- Verdict: `FAIL`
-- Export dir: `exports/taxbell_payroll_hr_reference/v1`
-- Staging generatedAt: `2026-07-30T11:28:18.617Z`
-- Errors:
-  - Duplicate IDs in chunk.csv: 60
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `69`
-  - `source_topic.csv`: exists `true`, rows `10`
-  - `chunk.csv`: exists `true`, rows `576`
-- Jobs:
-  - `253` `FINISH` `source_topic.csv`
-  - `254` `FINISH` `knowledge_route.csv`
-  - `255` `FINISH` `entry_guide.csv`
-  - `550` `FINISH` `reference_document.csv`
-  - `551` `FINISH` `chunk.csv`
-
 ## TaxbellAccountingVATReference
 
 - Verdict: `PASS`
 - Export dir: `exports/taxbell_accounting_vat_reference/v1`
-- Staging generatedAt: `2026-07-30T08:43:18.740Z`
+- Staging generatedAt: `2026-07-30T11:48:50.281Z`
 - Required files:
   - `reference_document.csv`: exists `true`, rows `75`
   - `source_topic.csv`: exists `true`, rows `6`
@@ -287,4 +269,20 @@ Overall: `FAIL`
   - `464` `FINISH` `ontology_relation.csv`
   - `465` `FINISH` `workflow_pattern.csv`
   - `466` `FINISH` `chunk.csv`
+
+## TaxbellPayrollHRReference
+
+- Verdict: `PASS`
+- Export dir: `exports/taxbell_payroll_hr_reference/v1`
+- Staging generatedAt: `2026-07-30T12:06:40.445Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `70`
+  - `source_topic.csv`: exists `true`, rows `10`
+  - `chunk.csv`: exists `true`, rows `577`
+- Jobs:
+  - `253` `FINISH` `source_topic.csv`
+  - `254` `FINISH` `knowledge_route.csv`
+  - `255` `FINISH` `entry_guide.csv`
+  - `556` `FINISH` `reference_document.csv`
+  - `557` `FINISH` `chunk.csv`
 

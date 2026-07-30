@@ -1,6 +1,6 @@
 # ERP KB Dashboard Canary Readiness Report
 
-Generated: `2026-07-30T11:38:14.459Z`
+Generated: `2026-07-30T12:55:54.330Z`
 
 - Status: `READY`
 - Unique live samples: `8/8`

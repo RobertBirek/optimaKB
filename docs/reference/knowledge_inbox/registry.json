@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T08:43:16.953Z",
+  "generatedAt": "2026-07-30T11:48:49.140Z",
   "entries": [
     {
       "draftId": "draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note",
@@ -4297,6 +4297,20 @@
       "rejectedAt": "2026-07-30T08:41:23.141Z",
       "rejectedBy": "mcpbot",
       "reviewNote": "Rejected from inbox row"
+    },
+    {
+      "draftId": "draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "Ocena ryzyka zawodowego - Państwowa Inspekcja Pracy",
+      "sourceUrl": "https://www.pip.gov.pl/dla-pracodawcow/niezbednik-pracodawcy/ocena-ryzyka-zawodowego",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-30/draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy.md",
+      "promotedAt": "2026-07-30T11:48:49.136Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
     }
   ]
 }

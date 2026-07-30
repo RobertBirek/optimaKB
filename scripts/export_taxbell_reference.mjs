@@ -127,11 +127,8 @@ function exportConfig(config) {
     });
     referenceIdBySourceUrl.set(entry.url, id);
     chunksFor(entry.content).forEach((content, index) => {
-      const chunkSuffix = `_${index + 1}`;
-      const maxBase = 106 - chunkSuffix.length;
-      const chunkBase = id.length > maxBase ? id.slice(0, maxBase) : id;
       chunkRows.push({
-        id: makeId('TBCHUNK', `${chunkBase}${chunkSuffix}`),
+        id: makeId('TBCHUNK', `${id}_${index + 1}`),
         name: `${entry.title || entry.url} #${index + 1}`,
         description: truncate(content, 240),
         semanticType: 'taxbell_external_chunk',
@@ -174,11 +171,8 @@ function exportConfig(config) {
       });
     }
     chunksFor(draft.content).forEach((content, index) => {
-      const chunkSuffix = `_${index + 1}`;
-      const maxBase = 106 - chunkSuffix.length;
-      const chunkBase = draft.id.length > maxBase ? draft.id.slice(0, maxBase) : draft.id;
       chunkRows.push({
-        id: makeId('TBCHUNK_PROMOTED', `${chunkBase}${chunkSuffix}`),
+        id: makeId('TBCHUNK_PROMOTED', `${draft.id}_${index + 1}`),
         name: `${draft.title} #${index + 1}`,
         description: truncate(content, 240),
         semanticType: 'taxbell_promoted_chunk',

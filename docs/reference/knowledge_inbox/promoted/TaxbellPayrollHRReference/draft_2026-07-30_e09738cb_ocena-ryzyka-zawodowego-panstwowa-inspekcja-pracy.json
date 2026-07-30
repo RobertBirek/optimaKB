@@ -1,0 +1,37 @@
+{
+  "id": "draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Ocena ryzyka zawodowego - Państwowa Inspekcja Pracy",
+  "content": "Automated source-discovery draft.\n\nQuery: obowiązki pracodawcy BHP 2026 nowe przepisy\nSource: https://www.pip.gov.pl/dla-pracodawcow/niezbednik-pracodawcy/ocena-ryzyka-zawodowego\nTier: official\nDiscovery confidence: 0.9\n\nOcena ryzyka zawodowego - Państwowa Inspekcja Pracy\nUmiejętność identyfikacji zagrożeń zawodowych i wiedza pozwalająca skutecznie neutralizować zagrożenia są podstawowym, najważniejszym sposobem zapobiegania wypadkom przy pracy i chorobom zawodowym. Ocena ryzyka zawodowego jest podstawą profilaktycznej ochrony zdrowia pracowników w przedsiębiorstwie. Od jakości tej oceny zależy skuteczność przyjętej w zakładzie pracy polityki bezpieczeństwa i higieny pracy, a co za tym idzie skuteczność zarządzania bhp.\nZgodnie z art. 226 Kodeksu pracy każdy pracodawca jest zobowiązany oceniać i dokumentować ryzyko związane z wykonywaną pracą oraz informować pracowników o ryzyku zawodowym i zasadach ochrony przed zagrożeniami. Również § 39 rozporządzenia w sprawie ogólnych przepisów bhp zobowiązuje pracodawcę do oceny i dokumentowania ryzyka zawodowego, występującego przy określonych pracach oraz stosowania niezbędnych środków profilaktycznych zmniejszających ryzyko. Przepis ten nakłada także na pracodawcę obowiązek zapewnienia organizacji pracy i stanowisk pracy w sposób zabezpieczający pracowników przed zagrożeniami wypadkowymi oraz oddziaływaniem czynników szkodliwych dla zdrowia i uciążliwych.\n## Ryzyko zawodowe\nRyzyko zawodowe to prawdopodobieństwo wystąpienia niepożądanych zdarzeń związanych z wykonywaną pracą – w szczególności wystąp\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.pip.gov.pl/dla-pracodawcow/niezbednik-pracodawcy/ocena-ryzyka-zawodowego",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy",
+    "BHP",
+    "zatrudnienie"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-07-21T02:52:40.039Z",
+    "discoveryCandidateId": "candidate_1f2c7259-2a1",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_8856de841f",
+    "discoveryRunId": "discovery_daily_2026-07-21T02-49-46-759Z_36c2e3db",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "bc3fb4a4f7abd0d2cb62cb49024e1d00a1831113b0f826bfeb75eedb6b34e685"
+  },
+  "createdAt": "2026-07-30T06:23:37.938Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-30T11:48:49.136Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-30/draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy.json"
+}

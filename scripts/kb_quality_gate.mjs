@@ -444,10 +444,28 @@ try {
           : 'PASS';
     }
   }
+  let existingResults = [];
+  try {
+    const existing = JSON.parse(fs.readFileSync(OUT_JSON, 'utf8'));
+    if (Array.isArray(existing.results)) existingResults = existing.results;
+  } catch {
+    // no prior report, or unreadable — proceed with just this run's results
+  }
+  const assessedNamespaces = new Set(results.map((result) => result.namespace));
+  const mergedResults = [
+    ...existingResults.filter((result) => !assessedNamespaces.has(result.namespace)),
+    ...results,
+  ];
+  const fileOverall = mergedResults.some((result) => result.verdict === 'FAIL')
+    ? 'FAIL'
+    : mergedResults.some((result) => result.verdict === 'WARN')
+      ? 'WARN'
+      : 'PASS';
+
   const payload = {
     generatedAt: new Date().toISOString(),
-    overall,
-    results,
+    overall: fileOverall,
+    results: mergedResults,
   };
 
   fs.mkdirSync(path.dirname(OUT_JSON), { recursive: true });
