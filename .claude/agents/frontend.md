@@ -1,6 +1,7 @@
 ---
 name: frontend
 description: Work on the Vite React dashboard (src/). Build UI components, fix frontend bugs, run the dev server, lint, and build. Use for any dashboard-related code changes.
+tools: Read, Edit, Write, Bash, Grep, Glob
 model: sonnet
 ---
 

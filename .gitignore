@@ -12,7 +12,7 @@ logs/
 .venv/
 *.service
 docs/reference/mcp_*.json
-.agents/skills/*/
+.agents/skills/*/*
 !.agents/skills/*/SKILL.md
-.opencode/skills/*/
+.opencode/skills/*/*
 !.opencode/skills/*/SKILL.md

@@ -12,7 +12,7 @@ const { handleJsonRpcRequest, listToolsForProfile } = await import('./lib/erp_kn
 const { classifyQuestion, loadRouting } = await import('./erp_knowledge_assistant.mjs');
 
 const publicProfiles = listMcpProfiles().filter((profile) => profile.mode === 'read-only');
-assert.equal(publicProfiles.length, 6, 'Expected exactly six public read-only profiles.');
+assert.equal(publicProfiles.length, 7, 'Expected exactly seven public read-only profiles.');
 
 for (const profileData of publicProfiles) {
   const profile = getMcpProfile(profileData.id);

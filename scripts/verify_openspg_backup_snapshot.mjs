@@ -8,7 +8,8 @@ import { spawnSync } from 'child_process';
 const ROOT = process.env.ROOT || '/docker/openspg';
 const BACKUP_ROOT = process.env.OPENSPG_BACKUP_ROOT || path.join(ROOT, 'backups/automated');
 const VERIFY_TIMEOUT_MS = Math.max(1000, Number(process.env.OPENSPG_BACKUP_VERIFY_TIMEOUT_MS || 10 * 60 * 1000));
-const REPORT_PATH = process.env.OPENSPG_BACKUP_VERIFY_REPORT || path.join(ROOT, 'docs/reference/OpenSPG_Backup_Verification_Report.json');
+const DEFAULT_REPORT_PATH = path.join(ROOT, 'docs/reference/OpenSPG_Backup_Verification_Report.json');
+const REPORT_PATH = process.env.OPENSPG_BACKUP_VERIFY_REPORT || DEFAULT_REPORT_PATH;
 
 function parseArgs(args) {
   const snapshotIndex = args.indexOf('--snapshot');
@@ -102,6 +103,17 @@ function main() {
     checks,
   };
   writeReport(report);
+  // OPENSPG_BACKUP_VERIFY_REPORT may point outside the repo (e.g. the systemd
+  // unit's sandboxed StateDirectory) so the repo-committed copy doesn't go
+  // stale — mirror it here best-effort, without failing the verification run.
+  if (REPORT_PATH !== DEFAULT_REPORT_PATH) {
+    try {
+      fs.mkdirSync(path.dirname(DEFAULT_REPORT_PATH), { recursive: true });
+      fs.writeFileSync(DEFAULT_REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+    } catch (error) {
+      process.stderr.write(`Warning: could not mirror report to ${DEFAULT_REPORT_PATH}: ${error.message}\n`);
+    }
+  }
   process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
   if (!report.ok) process.exitCode = 1;
 }

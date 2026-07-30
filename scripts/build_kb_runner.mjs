@@ -212,7 +212,7 @@ const PROFILES = {
     },
   },
   community_news: {
-    projectId: 0,
+    projectId: Number(process.env.OPENSPG_PROJECT_ID || 11),
     namespace: 'ComarchCommunityNews',
     jobPrefix: 'CCN',
     exportDir: 'exports/community_news/v1',

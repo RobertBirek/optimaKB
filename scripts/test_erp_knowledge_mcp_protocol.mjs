@@ -3,8 +3,10 @@
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 
-process.env.ROOT = process.env.ROOT || path.resolve(import.meta.dirname, '..');
+const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
+process.env.ROOT = process.env.ROOT || path.resolve(scriptDirectory, '..');
 const { formatLegacySseEndpoint, handleJsonRpcRequest, PROTOCOL_VERSION } = await import('./lib/erp_knowledge_mcp_core.mjs');
 
 assert.equal(PROTOCOL_VERSION, '2025-03-26', 'Streamable HTTP requires MCP protocol 2025-03-26 or newer.');

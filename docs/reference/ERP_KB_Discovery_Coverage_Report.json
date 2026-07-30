@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T06:24:10.436Z",
+  "generatedAt": "2026-07-30T10:03:18.885Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
   "dryRun": false,
@@ -1535,6 +1535,16 @@
   ],
   "recentRuns": [
     {
+      "id": "discovery_autodraft_2026-07-30T10-03-18-150Z_f0a17281",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-07-30T10:03:18.150Z",
+      "finishedAt": "2026-07-30T10:03:18.809Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": ""
+    },
+    {
       "id": "discovery_autodraft_2026-07-30T04-02-58-015Z_089db26f",
       "type": "autodraft",
       "ok": true,
@@ -1620,16 +1630,6 @@
       "ok": true,
       "startedAt": "2026-07-28T16:01:45.695Z",
       "finishedAt": "2026-07-28T16:01:46.946Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-07-28T10-02-55-729Z_f2bd2460",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-07-28T10:02:55.729Z",
-      "finishedAt": "2026-07-28T10:02:56.900Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": ""

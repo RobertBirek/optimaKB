@@ -5,8 +5,10 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const REPO_ROOT = process.env.ROOT || path.resolve(import.meta.dirname, '..');
+const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = process.env.ROOT || path.resolve(scriptDirectory, '..');
 const BRIDGE_SCRIPT = path.join(REPO_ROOT, 'scripts/erp_knowledge_mcp_http_bridge.mjs');
 const PORT = Number(process.env.ERP_KB_HTTP_PORT || 3412);
 const READ_TOKEN = process.env.ERP_KB_HTTP_TOKEN || 'read-token';

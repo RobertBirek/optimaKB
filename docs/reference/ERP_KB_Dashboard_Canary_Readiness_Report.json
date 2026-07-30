@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-30T09:17:45.329Z",
-  "overall": "BLOCKED",
+  "generatedAt": "2026-07-30T11:38:14.459Z",
+  "overall": "READY",
   "gate": {
-    "eligible": false,
+    "eligible": true,
     "approved": false,
     "checks": {
-      "automationReady": false,
+      "automationReady": true,
       "samples": true,
       "accuracy": true,
       "falsePositives": true,
@@ -14,7 +14,7 @@
       "noRollbackFailures": true
     },
     "blockers": [
-      "Automation must be enabled and resumed."
+      "Admin publication approval is still required."
     ],
     "metrics": {
       "samples": 8,
@@ -32,7 +32,7 @@
     "approvedBy": ""
   },
   "learning": {
-    "generatedAt": "2026-07-30T09:17:45.325Z",
+    "generatedAt": "2026-07-30T11:38:14.455Z",
     "overall": {
       "reviewed": 8,
       "kbNamespaces": 1

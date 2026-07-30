@@ -43,7 +43,16 @@ There is **no test suite** for this checkout. Validate with `docker compose conf
 | 8 | Comarch Optima Reference | `ComarchOptimaReference` | `export_optima_reference.mjs` | `build_optima_reference.mjs` |
 | 9 | Comarch Optima Partner Technical | `ComarchOptimaPartnerTechnical` | `export_optima_partner_technical.mjs` | `build_optima_partner_technical.mjs` |
 | 10 | Comarch Betterfly Reference | `ComarchBetterflyReference` | `export_betterfly_reference.mjs` | `build_betterfly_reference.mjs` |
+| 12 | Taxbell Legal Reference | `TaxbellLegalReference` | `export_taxbell_legal_reference.mjs` | `build_taxbell_legal_reference.mjs` |
+| 13 | Taxbell Payroll HR Reference | `TaxbellPayrollHRReference` | `export_taxbell_payroll_hr_reference.mjs` | `build_taxbell_payroll_hr_reference.mjs` |
+| 14 | Taxbell Accounting VAT Reference | `TaxbellAccountingVATReference` | `export_taxbell_accounting_vat_reference.mjs` | `build_taxbell_accounting_vat_reference.mjs` |
 | 15 | Comarch Optima Business Semantics | `ComarchOptimaBusinessSemantics` | `export_optima_business_semantics.mjs` | `build_optima_business_semantics.mjs` |
+| 16 | OWA Ontology | `OWAOntology` | `export_owa_ontology.mjs` | `build_owa_ontology.mjs` |
+| 17 | InsERT GT Schema (Subiekt/Rewizor/Gratyfikant GT) | `InsERTGTSchema` | `export_insert_gt_schema.mjs` | `build_insert_gt_schema.mjs` |
+| 11 | Comarch Community News | `ComarchCommunityNews` | `export_comarch_community_news.mjs` | `build_comarch_community_news.mjs` |
+| *nigdy niezbudowana (patrz F-20)* | Comarch Universal Knowledge | `ComarchUniversalKnowledge` | `export_universal_knowledge.mjs` | — (brak build script; `enabled: true` w rejestrze z `buildStatus: never_built`, decyzja o wyłączeniu pozostawiona operatorowi) |
+
+Źródło prawdy dla tej tabeli: `docs/reference/ERP_KB_Dashboard_KB_Registry.json` (lista namespace'ów/status enabled), `scripts/build_kb_runner.mjs` (project ID dla większości), `docs/reference/Taxbell_KB_Project_Map.json` (project ID dla 3 KB Taxbell). Ta tabela nie ma automatycznej regeneracji — przy dodaniu/zmianie KB zaktualizuj ją ręcznie i sprawdź zgodność z rejestrem (patrz `AUDYT_PELNY_OPENSPG_2026-07-30.md` F-11).
 
 All export scripts write staged CSVs to `exports/<kb>/v1/`. All build runners upload and submit OpenSPG builder jobs, resume from finished jobs, and support `OPENSPG_FORCE_FILES=...`.
 

@@ -83,6 +83,8 @@ Zweryfikowane adwersaryjnie (S2b): CONFIRMED, dokładna zgodność liczb (6 vs 7
 Zweryfikowane adwersaryjnie (S2b): CONFIRMED — pełna zgodność zbioru plików.
 **Proponowana naprawa**: zacommitować tę pracę (lub świadomie odłożyć w `git stash`) zanim produkcja dalej rozjedzie się z `main` — ryzyko utraty ścieżki audytu/rollbacku.
 
+**STATUS: WDROŻONE 2026-07-30.** Cała praca InsERT GT (i pozostałe 165 plików working tree) zacommitowana i wypchnięta do `origin/main` (commit `beeeb83`) na wyraźną prośbę użytkownika ("wypchnij wszystko do main"). Uwaga: `test:mcp-profiles` nadal czerwony (F-06 pozostaje osobnym, niezaadresowanym problemem — test wciąż hardkoduje `6`, profil InsERT GT jest teraz zacommitowany jako 7.).
+
 **F-08 [High] `compose.yaml` — regresja hardeningu kontenerów jest ŻYWA na wszystkich 5 kontenerach, nie tylko w pliku**
 Niezacommitowana zmiana usuwa kotwicę `x-security-defaults` (`no-new-privileges:true`, `cap_drop: [ALL]`) z `mysql`/`neo4j` (dodając `user: "0:0"` + `no-new-privileges:false`) i z `minio`/`tika`/`server` (`no-new-privileges:false` samodzielnie, cała reszta hardeningu utracona). `docker inspect` na wszystkich 5 działających kontenerach potwierdza: `SecurityOpt=[no-new-privileges:false]`, `CapDrop=[]` (pusty), `mysql`/`neo4j` z `User=0:0`. Timing: plik edytowany 2026-07-23 ~11:20 UTC, kontenery utworzone 2026-07-24 05:08 UTC — **18h później**, spójne z "edytowano, potem wdrożono".
 Zweryfikowane adwersaryjnie (S2c): CONFIRMED, wzmocnione dodatkowym testem (`docker compose config --hash` — 3/5 kontenerów ma hash identyczny z bieżącym plikiem, co dowodzi wdrożenia z tej dokładnej wersji, nie tylko koincydencji czasowej).
@@ -143,17 +145,36 @@ Zweryfikowane adwersaryjnie (S2c): CONFIRMED, dokładna diagnoza przyczyny.
 Neo4j (2024-11-20) jest starszy niż MinIO (2024-12-19), mimo że tylko MinIO oznaczony jako "POTRZEBUJE REFRESHU". `apache/tika:latest` jest niepinowany (mutowalny tag), podatny na ciche podmiany przez Watchtower co noc — w odróżnieniu od pozostałych 4 usług pinowanych przez digest.
 **Proponowana naprawa**: poprawić adnotacje dat, rozszerzyć flagę refresh na Neo4j, pinować `tika` przez digest.
 
-**F-19 [Medium] `KB_Quality_Gate_Report.json` — `overall: FAIL` na co najmniej dwóch kolejnych regeneracjach, różne przyczyny**
-Poprzednio: `OWAOntology` — promowane drafty bez widocznych chunków. Teraz: `TaxbellPayrollHRReference` — duplikaty ID w CSV. Brama jakości jest w stanie FAIL bez adresowania.
-**Proponowana naprawa**: zbadać i naprawić bieżącą przyczynę (duplikaty ID w `reference_document.csv`/`chunk.csv` dla TaxbellPayrollHRReference), potem monitorować czy FAIL nie staje się stanem chronicznym.
+**F-19 [High, zakres istotnie większy niż pierwotnie sądzono] `KB_Quality_Gate_Report.json` — `overall: FAIL`, duplikaty ID w 8 z 13 KB, nie tylko TaxbellPayrollHRReference**
+Pełny przebieg `node scripts/kb_quality_gate.mjs --all` (2026-07-30) ujawnił, że problem z duplikatami ID dotyczył **8 KB jednocześnie**: ComarchOptimaAdditionalFunctions, ComarchOptimaSprint, ComarchOptimaReference, ComarchOptimaBusinessSemantics, ComarchOptimaPartnerTechnical, ComarchCommunityNews, TaxbellPayrollHRReference, OWAOntology — zbyt szeroki wzorzec, żeby być przypadkiem jednej KB.
+
+**Root cause #1 (POTWIERDZONY, NAPRAWIONY)**: `makeId()` w `scripts/lib/export_utils.mjs:41` ślepo obcinał slug do 106 znaków (`.slice(0, 106)`) bez żadnego mechanizmu zachowania unikalności. Gdy wspólny prefiks (np. długi `example.id`) sam zajmował cały budżet długości, różne, semantycznie odrębne rekordy (np. `schema_touchpoint.csv`: 12 rekordów łączących ten sam przykład z 6 różnymi tabelami przez 2 różne mechanizmy — `INTERFACE_SIGNAL` i `ACCOUNTING_DECREE`) traciły rozróżniający sufiks i kolidowały w jedno ID. **To nie były prawdziwe duplikaty — to utrata unikalnych danych przez obcięcie stringa.** Naprawa: `makeId` teraz dołącza 8-znakowy hash SHA1 pełnej (nieobciętej) wartości, gdy slug przekracza limit, zachowując tę samą maksymalną długość ID (ważne z uwagi na limit backendu OpenSPG — patrz `AGENTS.md`). Krótkie ID (większość) pozostają bez zmian.
+
+Weryfikacja empiryczna po regeneracji eksportów (`export_optima_additional_functions.mjs`, `export_optima_reference.mjs`, `export_optima_business_semantics.mjs`, `export_optima_partner_technical.mjs`, `export_optima_sprint.mjs`, `export_owa_ontology.mjs`, `export_taxbell_reference.mjs --kb TaxbellPayrollHRReference`):
+| Plik | Przed | Po |
+|---|---|---|
+| `schema_touchpoint.csv` (AdditionalFunctions) | 46 grup / 121 nadmiarowych wierszy | **0** |
+| `business_rule.csv` (BusinessSemantics) | 41 grup / 41 wierszy | **0** |
+| `reference_document.csv` (ComarchOptimaReference) | 38 grup / 71 wierszy | 1 grupa (inna przyczyna, patrz niżej) |
+| `reference_document.csv` (TaxbellPayrollHRReference) | 2 grupy / 4 wiersze | **0** |
+
+**Root cause #2 (POTWIERDZONY, NIE NAPRAWIONY w tym przebiegu)**: pozostałe duplikaty (głównie `chunk.csv` w wielu KB, plus resztki w `implementation_example.csv`, `cfg_entry.csv`) to **inny problem** — te same źródła zewnętrzne (URL-e) zostały pobrane/zsnapshotowane więcej niż raz w różnym czasie (potwierdzone przykładem: ten sam URL `pip.gov.pl/dla-pracownikow/niezbednik-pracownika` ma dwa różne pliki snapshotu `downloads/taxbell/payroll_hr_reference/snapshots/{d459eb537ea05c98,d575c234bad63b30}.json`), a warstwa pobierania/snapshotów nie sprawdza przed zapisem, czy dany URL już ma świeży snapshot. To warstwa dedup na poziomie źródeł/downloads, bardziej inwazyjna niż fix w `export_utils.mjs` — celowo NIE naprawiona w tym przebiegu (wymaga osobnej analizy per-loader, ryzyko dotykania już pobranych plików w `downloads/`).
+
+**Nie zrobiono (świadomie)**: przebudowa/upload zregenerowanych eksportów do żywego OpenSPG. Zmiana schematu ID (root cause #1) oznacza, że wcześniej zbudowane encje w grafie mają STARE (obcięte, część kolidujące) ID — ponowny build z nowymi ID stworzyłby nowe węzły obok starych, nie nadpisał ich. To wymaga osobnej, przemyślanej decyzji o migracji danych, nie automatycznego rebuilda.
+
+**Proponowana naprawa (pozostała część)**: (1) zaimplementować dedup po URL w warstwie download/snapshot (`scripts/lib/content_provider.mjs` lub odpowiedniku per-KB) przed generowaniem dokumentów/chunków; (2) zaplanować migrację danych w OpenSPG dla encji, których ID zmieniło się przez fix root cause #1 (znaleźć stare-ID duplikaty w grafie i scalić/wycofać, zanim zrobi się pełny rebuild); (3) dodać `kb_quality_gate.mjs --all` jako regularny check (cron/CI), żeby regresje takie jak ta nie czekały do pełnego audytu.
 
 **F-20 [Medium] Brak rozwiązywalnego project ID dla 2 zarejestrowanych KB; jeden nigdy niezbudowany**
 `ComarchCommunityNews` i `ComarchUniversalKnowledge` nie mają project ID w żadnym pliku źródłowym (`build_kb_runner.mjs` hardkoduje `projectId: 0` dla pierwszego, drugi w ogóle nie ma wpisu). Project ID `11` (jedyna luka między potwierdzonymi 10 i 12) jest nieprzypisany — HIPOTEZA, nie fakt, że należy do któregoś z nich. `ComarchUniversalKnowledge` ma `enabled: true` w rejestrze, ale `buildManifestPath: ""` — nigdy nie zbudowany.
 **Proponowana naprawa**: albo dodać oba do `build_kb_runner.mjs` z jawnym `projectId`, albo oznaczyć `ComarchUniversalKnowledge` jako `enabled: false`, jeśli nie jest realną, żywą KB.
 
+**STATUS: CZĘŚCIOWO WDROŻONE 2026-07-30.** `ComarchCommunityNews` **rozwiązane** — `scripts/cron_refresh_comarch_community_news.sh` zawiera `OPENSPG_PROJECT_ID="${OPENSPG_PROJECT_ID:-11}"`, co potwierdza project ID `11` (dokładnie ta "nieprzypisana luka" między 10 a 12). Zaktualizowano `scripts/build_kb_runner.mjs`'s `community_news.projectId` (był hardkodowany na `0`) na `Number(process.env.OPENSPG_PROJECT_ID || 11)`, oraz dodano `projectId` do wszystkich 13 wpisów w `ERP_KB_Dashboard_KB_Registry.json` (rozwiązuje też osobne ustalenie niskiej wagi — "rejestr sam nie ma pola projectId"). `ComarchUniversalKnowledge` — świadomie **nie oznaczono `enabled: false`**: kategoria `"Krytyczne"` w rejestrze sugeruje zamierzone, planowane znaczenie tej KB, nie porzucenie; to decyzja produktowa, nie techniczna, więc dodano jawne pole `"buildStatus": "never_built"` zamiast jednostronnie wyłączać wpis — operator powinien zdecydować, czy dokończyć budowę, czy wyłączyć.
+
 **F-21 [Medium] Brak polityki retencji dla logów audytu MCP i katalogu audytu dashboardu**
 `scripts/lib/dashboard_audit.mjs` (writer audytu) nie ma żadnego capu rozmiaru ani wieku (`fs.appendFileSync` bez rotacji). Potwierdzony wzrost: `data/dashboard/audit` = 4.9M, `erp_kb_mcp_http_audit.jsonl` = 1.2M, 8 dodatkowych plików `*_mcp_audit.jsonl` w `logs/`. To **luka** (nic nie istnieje do oceny), nie ustalenie (coś istnieje i jest złe) — w odróżnieniu od retencji backupów, która faktycznie działa (14 dni, potwierdzone).
 **Proponowana naprawa**: dodać rotację wiekową (nie tylko rozmiarową, jak już istnieje dla `external_search.mjs`/`learning.mjs`) dla plików audytu.
+
+**STATUS: WDROŻONE 2026-07-30.** Log audytu dashboardu jest hash-chained (`previousHash` łączy zdarzenia) — usuwanie pojedynczych linii złamałoby łańcuch, więc retencja działa na poziomie całych plików dziennych (`YYYY-MM-DD.jsonl`), nie linii. Dodano `pruneOldAuditFiles()` w `scripts/lib/dashboard_audit.mjs`, wywoływaną (raz na proces) przy każdym `appendDashboardAudit()`, usuwającą pliki starsze niż `ERP_KB_DASHBOARD_AUDIT_RETENTION_DAYS` (domyślnie 90 dni). Świadomy kompromis: pełna weryfikacja łańcucha od początku przestaje być możliwa po wygaśnięciu retencji — identyczny trade-off jak w każdej polityce "archiwizuj i usuń" dla logów łańcuchowych; nowe zapisy działają normalnie (potrzebują tylko ostatniego zdarzenia). Zweryfikowano: `npm run check` zielony, ręczny zapis+odczyt zdarzenia działa poprawnie po zmianie.
 
 ### 4.4 Low / informacyjne (wybrane, pełna lista dostępna w transkryptach torów T1-T6)
 
@@ -226,8 +247,8 @@ Priorytet 1 (natychmiast):
 
 Priorytet 2 (w tym tygodniu):
 4. **[F-02]** Deny-by-default w bramce zapisu MCP stdio — **WDROŻONE 2026-07-30**, zweryfikowane (patrz szczegóły przy F-02), niezacommitowane
-5. **[F-07]** Commit lub świadome odłożenie pracy InsERT GT — `NIE WDROŻONO / wymaga zgody użytkownika`
-6. **[F-06]** Naprawa `test:mcp-profiles` (commit profilu + aktualizacja asercji) — `NIE WDROŻONO / wymaga zgody użytkownika`
+5. **[F-07]** Commit lub świadome odłożenie pracy InsERT GT — **WDROŻONE 2026-07-30** (commit + push do `main`, `beeeb83`)
+6. **[F-06]** Naprawa `test:mcp-profiles` (aktualizacja asercji 6→7, profil już zacommitowany) — `NIE WDROŻONO / wymaga zgody użytkownika`
 7. **[F-10]** Ręczne wznowienie automatyzacji/canary po weryfikacji stabilności LLM — `NIE WDROŻONO / wymaga zgody użytkownika`
 8. **[F-11]** Regeneracja tabeli KB w `AGENTS.md` z `KB_Registry.json` — `NIE WDROŻONO / wymaga zgody użytkownika`
 
@@ -240,6 +261,6 @@ Priorytet 3 (kiedy będzie okazja):
 14. **[F-16]** Naprawa logiki `scan_openspg_images.mjs`
 15. **[F-17]** Naprawa dwóch skryptów testowych pod Node 18
 16. **[F-18]** Korekta adnotacji wieku obrazów + pinowanie `tika` przez digest
-17. **[F-19]** Zbadanie przyczyny `KB_Quality_Gate_Report.json` FAIL (TaxbellPayrollHRReference)
-18. **[F-20]** Przypisanie/dezaktywacja `ComarchCommunityNews`/`ComarchUniversalKnowledge`
-19. **[F-21]** Polityka retencji logów audytu MCP
+17. **[F-19]** Root cause #1 (`makeId` truncation) — **WDROŻONE 2026-07-30**, naprawia 4/8 dotkniętych KB w pełni + częściowo resztę. Root cause #2 (dedup snapshotów per-URL) i migracja danych w grafie — `NIE WDROŻONO / wymaga osobnej decyzji`
+18. **[F-20]** `ComarchCommunityNews` — **WDROŻONE 2026-07-30** (projectId=11 rozwiązane i zapisane). `ComarchUniversalKnowledge` — pozostaje `NIE WDROŻONO / wymaga decyzji użytkownika` (build vs disable — celowo pozostawione operatorowi, oznaczone `buildStatus: never_built`)
+19. **[F-21]** Polityka retencji logów audytu MCP — **WDROŻONE 2026-07-30**

@@ -13,7 +13,7 @@ Perform daily inspection of the dashboard: check autopilot state, review alerts,
 
 ## Daily checklist
 
-1. **Start the stack** — run `docker compose up -d` if not running, then `docker compose ps`.
+1. **Check the stack** — run `docker compose ps`. If any service is down, flag it for operator intervention rather than starting it yourself.
 2. **Check autopilot state** — review `docs/reference/ERP_KB_Dashboard_Canary_Readiness_Report.md` for current autopilot health.
 3. **Quality gates** — check `docs/reference/KB_Quality_Gate_Report.md` for KB quality metrics.
 4. **Discovery health** — check `docs/reference/ERP_KB_Discovery_Coverage_Report.md` for discovery pipeline state.

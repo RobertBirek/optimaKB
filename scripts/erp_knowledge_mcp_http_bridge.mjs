@@ -44,11 +44,23 @@ const AUDIT_LOG_MAX_FILES = Math.max(1, Number(process.env.ERP_KB_HTTP_AUDIT_LOG
 const sseClients = new Map();
 const rateBuckets = new Map();
 
+const SECURITY_HEADERS = {
+  'Cache-Control': 'no-store',
+  'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'",
+  'Cross-Origin-Resource-Policy': 'same-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+};
+
 function sendJson(res, statusCode, payload, extraHeaders = {}) {
   const body = JSON.stringify(payload);
   res.writeHead(statusCode, {
     'Content-Type': 'application/json; charset=utf-8',
     'Content-Length': Buffer.byteLength(body, 'utf8'),
+    ...SECURITY_HEADERS,
     ...extraHeaders,
   });
   res.end(body);
@@ -275,7 +287,7 @@ async function handleMcpPost(req, res, auditContext = null, requestProfile = PRO
   }
 
   if (!response) {
-    res.writeHead(202, { 'Content-Length': '0' });
+    res.writeHead(202, { 'Content-Length': '0', ...SECURITY_HEADERS });
     res.end();
     return;
   }
@@ -310,6 +322,7 @@ function handleMcpSse(req, res) {
     'MCP-Protocol-Version': PROTOCOL_VERSION,
     'Deprecation': 'true',
     'Sunset': 'Sat, 01 Nov 2026 00:00:00 GMT',
+    ...SECURITY_HEADERS,
   });
   res.write(': connected\n\n');
   res.write(': SSE transport is deprecated. Use POST to the MCP path instead.\n\n');
@@ -377,6 +390,7 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(204, {
       Allow: 'GET, POST, OPTIONS',
       'MCP-Protocol-Version': PROTOCOL_VERSION,
+      ...SECURITY_HEADERS,
     });
     res.end();
     return;

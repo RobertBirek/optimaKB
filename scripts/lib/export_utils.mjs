@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 export function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
@@ -39,6 +40,16 @@ export function slug(value) {
 }
 
 export function makeId(prefix, value) {
-  const body = slug(value).slice(0, 106) || 'ITEM';
-  return `${prefix}_${body}`;
+  const MAX_BODY = 106;
+  const full = slug(value);
+  if (!full) return `${prefix}_ITEM`;
+  if (full.length <= MAX_BODY) return `${prefix}_${full}`;
+  // Naive left-truncation can collapse distinct inputs that share a long
+  // common prefix (e.g. the same source example touching different schema
+  // objects) into the same id. Append a short content hash of the full,
+  // untruncated value so truncated ids stay unique per distinct input.
+  const HASH_LEN = 8;
+  const hash = createHash('sha1').update(String(value)).digest('hex').slice(0, HASH_LEN).toUpperCase();
+  const body = full.slice(0, MAX_BODY - HASH_LEN - 1);
+  return `${prefix}_${body}_${hash}`;
 }

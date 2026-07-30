@@ -55,6 +55,31 @@ function auditFiles() {
     .map((name) => path.join(DASHBOARD_AUDIT_ROOT, name));
 }
 
+const AUDIT_RETENTION_DAYS = Math.max(1, Number(process.env.ERP_KB_DASHBOARD_AUDIT_RETENTION_DAYS || 90));
+let prunedThisProcess = false;
+
+// Log is hash-chained (each event links to the previous one's hash), so this
+// only prunes whole day-files older than the retention window rather than
+// individual lines — it trades full from-genesis chain verification for
+// bounded disk growth, same tradeoff any archive-then-delete audit policy
+// makes. New appends keep working since they only need the latest event.
+function pruneOldAuditFiles() {
+  if (prunedThisProcess) return;
+  prunedThisProcess = true;
+  const cutoff = Date.now() - AUDIT_RETENTION_DAYS * 24 * 60 * 60 * 1000;
+  for (const filePath of auditFiles()) {
+    const name = path.basename(filePath, '.jsonl');
+    const fileDate = Date.parse(`${name}T00:00:00Z`);
+    if (Number.isFinite(fileDate) && fileDate < cutoff) {
+      try {
+        fs.rmSync(filePath, { force: true });
+      } catch {
+        // Best-effort; a failed prune just means this file is retried next process start.
+      }
+    }
+  }
+}
+
 function lastAuditEvent() {
   for (const filePath of auditFiles().reverse()) {
     const lines = fs.readFileSync(filePath, 'utf8').trim().split(/\r?\n/).filter(Boolean);
@@ -99,6 +124,7 @@ function acquireAppendLock() {
 }
 
 export function appendDashboardAudit(input = {}) {
+  pruneOldAuditFiles();
   const release = acquireAppendLock();
   try {
     const previous = lastAuditEvent();

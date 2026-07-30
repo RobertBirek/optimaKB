@@ -99,7 +99,7 @@ services:
       - spg
   tika:
     <<: *security_defaults
-    image: apache/tika:latest
+    image: ${OPENSPG_TIKA_IMAGE:?OPENSPG_TIKA_IMAGE is required}
     container_name: openspg-tika
     restart: unless-stopped
     mem_limit: 2g

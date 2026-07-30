@@ -23,7 +23,7 @@ function run(cmd) {
 
 function inspectImage(imageRef) {
   if (!imageRef) return { pulled: false, errors: ['No image reference'] };
-  const localId = run(`docker images --no-trunc --format '{{.ID}}' "${imageRef}" 2>/dev/null | head -1`);
+  const localId = run(`docker image inspect --format '{{.Id}}' "${imageRef}" 2>/dev/null`);
   if (!localId) {
     return { pulled: false, errors: ['Not pulled locally'] };
   }
