@@ -8,6 +8,8 @@ import {
   listInboxDrafts,
   loadPromotedKnowledge,
   promoteDraft,
+  loadRegistry,
+  registryEntryFor,
   TARGET_KBS,
 } from './lib/promoted_knowledge.mjs';
 import { readOpenSpgCookie, openSpgCookieSource } from './lib/openspg_auth.mjs';
@@ -94,6 +96,12 @@ const PIPELINE_TARGETS = {
     exportScript: 'scripts/export_owa_ontology.mjs',
     buildScript: 'scripts/build_owa_ontology.mjs',
     promotedForceFiles: ['ontology_entity.csv', 'ontology_field.csv', 'ontology_relation.csv', 'workflow_pattern.csv', 'chunk.csv'],
+  },
+  InsERTGTSchema: {
+    projectId: '17',
+    exportScript: 'scripts/export_insert_gt_schema.mjs',
+    buildScript: 'scripts/build_insert_gt_schema.mjs',
+    promotedForceFiles: ['reference_document.csv', 'chunk.csv'],
   },
 };
 
@@ -250,11 +258,33 @@ try {
       actions.push({ action: 'promote', draftId, kbNamespace: draft.kbNamespace, dryRun: true });
       continue;
     }
-    const result = promoteDraft(draftId, {
-      reviewNote: valueFor(args, '--note', ''),
-      promotedBy: valueFor(args, '--by', ''),
-      force: hasArg(args, '--force'),
-    });
+    let result;
+    try {
+      result = promoteDraft(draftId, {
+        reviewNote: valueFor(args, '--note', ''),
+        promotedBy: valueFor(args, '--by', ''),
+        force: hasArg(args, '--force'),
+      });
+    } catch (promoteErr) {
+      if (String(promoteErr.message).startsWith('Draft already promoted:')) {
+        const registry = loadRegistry();
+        const existing = registryEntryFor(registry, draftId);
+        const kbNs = existing?.kbNamespace || '';
+        affectedNamespaces.add(kbNs);
+        promotedNamespaces.add(kbNs);
+        actions.push({
+          action: 'promote',
+          draftId,
+          kbNamespace: kbNs,
+          alreadyPromoted: true,
+          promotedJsonPath: existing?.promotedJsonPath || '',
+        });
+        if (!hasArg(args, '--export')) continue;
+        process.stderr.write(`[SKIP] Draft already promoted: ${draftId}\n`);
+        continue;
+      }
+      throw promoteErr;
+    }
     affectedNamespaces.add(result.promoted.kbNamespace);
     promotedNamespaces.add(result.promoted.kbNamespace);
     actions.push({

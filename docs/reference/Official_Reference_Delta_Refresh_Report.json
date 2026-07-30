@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-20T03:36:03.171Z",
-  "overall": "OK",
+  "generatedAt": "2026-07-27T03:38:11.856Z",
+  "overall": "FAIL",
   "options": {
     "kb": "all",
     "build": true,
@@ -458,8 +458,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-faktura-proforma/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "dd0d5bb5119f3c2f03d462b92575b4d8693c243c2f2b5c9f87dfe23809a264d7",
-            "newHash": "6ab58676672049ba1d412fa6e732ebcdaf5df51b0cde104e260344e158852656",
+            "oldHash": "6ab58676672049ba1d412fa6e732ebcdaf5df51b0cde104e260344e158852656",
+            "newHash": "feb2ea689f044d35a36aafcdd3e6372ae5d7b2bbdafeff49d7ef17217bead11f",
             "changed": true,
             "written": true
           },
@@ -471,8 +471,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-faktura-sprzedazy-wersja-archiwalna-1-4/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "a6099d2b5905c70c2355d6d9becad974575003c4f226e83aaddecf0a7d48002d",
-            "newHash": "faa383ed60ec4e02c365f95daaad40185ca454ac53bc522954942ffe8eef8cc0",
+            "oldHash": "faa383ed60ec4e02c365f95daaad40185ca454ac53bc522954942ffe8eef8cc0",
+            "newHash": "a83e29ccbcd4d77f46af07af7626ea21681abe4ce5fc3209b81ac4c8dc642f61",
             "changed": true,
             "written": true
           },
@@ -484,8 +484,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-faktura-sprzedazy/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "83cd548aaf453f0c5bc62c0a868ab601546179aef1896ae11a1d70732fb8e26b",
-            "newHash": "656b0fd371c528bc86c2074e0387bab6cfaeb3053e6d07f6995d73ebf51edda4",
+            "oldHash": "656b0fd371c528bc86c2074e0387bab6cfaeb3053e6d07f6995d73ebf51edda4",
+            "newHash": "ec9d4e08d58f441d9ab1c75d6135f800dda996567364371b5dc049186d2708c6",
             "changed": true,
             "written": true
           },
@@ -497,8 +497,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-faktura-vat-marza-wersja-archiwalna-1-4/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "5bc6245fa87b22333dcf8279a1239fd23775888fc489e4632c11af0097e8bb55",
-            "newHash": "f5e6c58d57ea4aaa21c7331a13674b6e297ea86364f9a696ed861be869092b89",
+            "oldHash": "f5e6c58d57ea4aaa21c7331a13674b6e297ea86364f9a696ed861be869092b89",
+            "newHash": "6f27622204fbd03e605c9583b6e9196011fb08cdf799d4d72bd1a71b8931e30f",
             "changed": true,
             "written": true
           },
@@ -510,8 +510,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-faktura-vat-marza/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "6df5ca1d19e841bc6e71d6deaf2ac8b2d49cdb8c2fa04451d9fb880093290a11",
-            "newHash": "111e7f86b3ad4e24ac8ac29888e7abb018607e1872d04389ea548b62fdac640e",
+            "oldHash": "111e7f86b3ad4e24ac8ac29888e7abb018607e1872d04389ea548b62fdac640e",
+            "newHash": "9b1a40a838e5b5ae4e719382e35f43e1cbf0898d1144425c8249e546cf3e9337",
             "changed": true,
             "written": true
           },
@@ -523,8 +523,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-faktura-zakupu/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "7b41c5c18b4dde60b6d830fffdd2f3c537eba9fcc0b473cae888531bc1bd76da",
-            "newHash": "8b5d3c8f11c1a39ab7e852343b2291bf0e8a0560a420409d3d26cd0984c55da4",
+            "oldHash": "8b5d3c8f11c1a39ab7e852343b2291bf0e8a0560a420409d3d26cd0984c55da4",
+            "newHash": "3c6eb772c004de5960a05469f8802e0f8fbf7bbb6abaf3c503396be549d8bcbf",
             "changed": true,
             "written": true
           },
@@ -536,8 +536,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-faktura-zaliczkowa-wersja-archiwalna-1-4/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "3af2f90c844d278c97f979a13822136be56c460448a1dc2e921aa8aa11f2fb56",
-            "newHash": "ae4dc4c9f423bc4c44e9f64e87a7dcc746639cf46b423645ec3538cee3c9ad9c",
+            "oldHash": "ae4dc4c9f423bc4c44e9f64e87a7dcc746639cf46b423645ec3538cee3c9ad9c",
+            "newHash": "eb72efd1e1d2c51fef54b3616289c658b613bacae6c55b3cfe0742630f5f1b0b",
             "changed": true,
             "written": true
           },
@@ -549,8 +549,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-faktura-zaliczkowa/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "14b3d7e502a8eb4b9c3329097049f5604b49751f8a609af1c470af28ad1f2321",
-            "newHash": "bc6ec88573b690fcd69afe6e7540d8a3c7b9af05525a67c9ea20616e85100b94",
+            "oldHash": "bc6ec88573b690fcd69afe6e7540d8a3c7b9af05525a67c9ea20616e85100b94",
+            "newHash": "9e1882dcf76d0204ddb91605041606954d147d073d68434a6fca3bd66aedd9cb",
             "changed": true,
             "written": true
           },
@@ -562,8 +562,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-filtrowanie-zasobow/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "613c6b83c00432b12c1d6af20d44eb1eaaca242b5234a1bcfe8508bd3f8269e4",
-            "newHash": "0c44f73cf8b8d49f1e0d88ec862e6a95f34dacbc77421fab20ccc2814fecb837",
+            "oldHash": "0c44f73cf8b8d49f1e0d88ec862e6a95f34dacbc77421fab20ccc2814fecb837",
+            "newHash": "60a0a64cb8cb0866d9c7db9e58969864cf7502c1c11ad69a6ae6037061b7e733",
             "changed": true,
             "written": true
           },
@@ -575,8 +575,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-formy-platnosci/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "4d2e7e2cd4a1fbc0637b11c4d86a1f18d74b9644d0f7a4fc8f6019759901f89a",
-            "newHash": "dea3b664140b19361e20b55ac84de7123194e746c2bfe155862c4d8141bb1700",
+            "oldHash": "dea3b664140b19361e20b55ac84de7123194e746c2bfe155862c4d8141bb1700",
+            "newHash": "bb7aead671db91b53adfefa247022bc880cb02ac846a3e366b3ac1ac9a0f0987",
             "changed": true,
             "written": true
           },
@@ -588,8 +588,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-historia-zmian/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "a6a03b9bfbbb6789854b610e7312c99e2dd069682c1faf41f88bd8228787e207",
-            "newHash": "05c8d9b1f4cf54291445dc29dc0bf38ce67510225de9675d0a43bc5269f93506",
+            "oldHash": "05c8d9b1f4cf54291445dc29dc0bf38ce67510225de9675d0a43bc5269f93506",
+            "newHash": "e05a96b4f6df6a9c5afe47e819d26addd1e6f19fb4c68c1d57a7715d949ae0b9",
             "changed": true,
             "written": true
           },
@@ -601,8 +601,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-informacje-ogolne/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "73ed5e4617ae5af82546add5f99d3e8a85f224d44d1b4a5247826f65f529a9f6",
-            "newHash": "6b8f7faca01de3626058fb96acba0edcc2eea090e571eabd3918772a3d57f67b",
+            "oldHash": "6b8f7faca01de3626058fb96acba0edcc2eea090e571eabd3918772a3d57f67b",
+            "newHash": "c52ae30de5d55dc7fbc1ef0ea86aed9ddf1f327008d51cb3d7aa172a69ed21f8",
             "changed": true,
             "written": true
           },
@@ -614,8 +614,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-uwierzytelnianie/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "c4ba2c6abf867fc549502663e6cd15c411a87beaa61742f010aed5325754e75a",
-            "newHash": "99b8a6de4a92f07be5a26c2d43f75bbb8103df53503101c521103ee67abb8b1c",
+            "oldHash": "99b8a6de4a92f07be5a26c2d43f75bbb8103df53503101c521103ee67abb8b1c",
+            "newHash": "011b6e06f65a47eb02aa17a7383cb6ff28c7f06f5041d86e1c33cc52b56fa684",
             "changed": true,
             "written": true
           },
@@ -627,8 +627,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-kontrahenci/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "e8130e6b1773649ae16905a1a497578b10d74738d8d71586fa0f80497b4a6f23",
-            "newHash": "0de8da6425eb59b94fe9e0bae18b998c9ed078833fab03bb3fd8169dfcb651cf",
+            "oldHash": "0de8da6425eb59b94fe9e0bae18b998c9ed078833fab03bb3fd8169dfcb651cf",
+            "newHash": "b17b2d0be78ac49418d25c25fdd300339e9470e8dfa559347ba3c1872de66e31",
             "changed": true,
             "written": true
           },
@@ -640,8 +640,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-korekty/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "2f3ccafc3b719dac8651615e03b781889f7ce3575ae1c93b1eb66eae0db8fe68",
-            "newHash": "f872cf5306f43304b1d140b1b64f85d2b51b6e2f3a57ae7e0eb3df0f13116e24",
+            "oldHash": "f872cf5306f43304b1d140b1b64f85d2b51b6e2f3a57ae7e0eb3df0f13116e24",
+            "newHash": "83d135597cba2af1cd7e40f646a967f63a212cd113e5d57964889120335b3aa1",
             "changed": true,
             "written": true
           },
@@ -653,8 +653,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-obsluga-procedury-oss/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "17bce6ed3d694963ce7caea82f3e8b08c8525fc4580482291f7077b4c037c1a1",
-            "newHash": "c6a6f4af500746ffccebda63a5ae66736e7965ad433118c3a9f8c1a111cf1b7c",
+            "oldHash": "c6a6f4af500746ffccebda63a5ae66736e7965ad433118c3a9f8c1a111cf1b7c",
+            "newHash": "df3bd1a7add3d53fe5dbb0dac8d2eff4d346ad3d41b967598c057c1634c2ee75",
             "changed": true,
             "written": true
           },
@@ -666,8 +666,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-platnosci-wersja-archiwalna-1-4/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "9ad7b0063b57b679baf3e65d09de3cd9bef927abe4876bc6dd8b02c047872eb1",
-            "newHash": "d9c43650605e4a995bb5f5fe922a37600470adbee800bfb491da470cfa26822b",
+            "oldHash": "d9c43650605e4a995bb5f5fe922a37600470adbee800bfb491da470cfa26822b",
+            "newHash": "0938d744b0243d2c19b47b35dbf48ef99458dde93459680acdc015247df659e9",
             "changed": true,
             "written": true
           },
@@ -679,8 +679,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-platnosci/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "a2ce553fa7493d8079b4735ed76baa5f0a6bb64588445049aafb2faa10f09305",
-            "newHash": "fafb08d8cac4b197ae7b4f64a55ac0ae722cf9adea5c3c92aa2e7f77dbb990f4",
+            "oldHash": "fafb08d8cac4b197ae7b4f64a55ac0ae722cf9adea5c3c92aa2e7f77dbb990f4",
+            "newHash": "54e33da626fabcad9814df42ee09d1895e96f31dd4c659a1beb860373762340f",
             "changed": true,
             "written": true
           },
@@ -692,8 +692,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-produkty/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "73235d17cb2a0e9718338e98918ba7608bd0565d9a1ab89a46ce3e5137629fc1",
-            "newHash": "00f1db50f27ceb10fb174b418c2685e020b287d6da48090a6b0542821b6bdb22",
+            "oldHash": "00f1db50f27ceb10fb174b418c2685e020b287d6da48090a6b0542821b6bdb22",
+            "newHash": "7f77a8eef0cef6c6610d08207c411e0f443aa22a66dbb5e5627c6ce551d682b7",
             "changed": true,
             "written": true
           },
@@ -705,8 +705,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-przeksztalcanie-faktur-zaliczkowych/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "734550ebe25fa1e0f759e893e887019d99365fb4013d30b2e6f816bbc9621b69",
-            "newHash": "51b70917d46204db758800b5fbd0c19f66db9e7ee322f2c450b2488d737fe27a",
+            "oldHash": "51b70917d46204db758800b5fbd0c19f66db9e7ee322f2c450b2488d737fe27a",
+            "newHash": "68f968ed827c061ed68fec9f97fc2441e1a206528477f5f866cbe6da1ff1691b",
             "changed": true,
             "written": true
           },
@@ -718,8 +718,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-rachunki-bankowe/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "5a8f2d2e874ea9d9d5fbcc0155d888ae68de3ea2a98f0ae5ffb2c0637586b8ab",
-            "newHash": "82ed780ec175dc68ad2a2669c8c6ea64e4ee9be61430d2eb21950f178b273e06",
+            "oldHash": "82ed780ec175dc68ad2a2669c8c6ea64e4ee9be61430d2eb21950f178b273e06",
+            "newHash": "0afb051fc55199ce0b1ebfe18eb478506fd10d3d2f7f6dbe3dd46cea4e3c7db8",
             "changed": true,
             "written": true
           },
@@ -731,8 +731,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-rejestr-vat-zakupu/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "d27e871dfc0cd337ffc1f68010c3f43c1ad91596d7d3ebea372580a4712ebcb8",
-            "newHash": "bb4f889c45702081946e74781172eadb5810f1aca895a36ba91ca2c900b68c69",
+            "oldHash": "bb4f889c45702081946e74781172eadb5810f1aca895a36ba91ca2c900b68c69",
+            "newHash": "d8c03df3f9f028d44ac9deccafc4d3996a4dbe0d0b161fe81a683e2250f960dc",
             "changed": true,
             "written": true
           },
@@ -744,8 +744,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/api-wydruki/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "cc2ba418dbcd63451060670064e240fe267b849840e3ecf99adf7f7ec34c5e93",
-            "newHash": "2367bb2a5c16c55fcf438feb29e51970bee13897578c51f36fad37109acb42e8",
+            "oldHash": "2367bb2a5c16c55fcf438feb29e51970bee13897578c51f36fad37109acb42e8",
+            "newHash": "882be12081f34d1a668ddcb7166dc3fdf182a8b3247d250a1223b0644154e335",
             "changed": true,
             "written": true
           },
@@ -757,8 +757,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/comarch-betterfly/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "1d12d855ec97e8377eea3732badb5fa387d5ee38c42b46460a5ea6fd30adf36b",
-            "newHash": "cb6447e2b2ce3680043dd531ca5d8882d0486695f3abffb1ea27ff76032cb5bd",
+            "oldHash": "cb6447e2b2ce3680043dd531ca5d8882d0486695f3abffb1ea27ff76032cb5bd",
+            "newHash": "70a8010e8f758ca4f81ba8d774e007a253419350fea3b1b265be01f4493ca8bf",
             "changed": true,
             "written": true
           },
@@ -770,8 +770,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/kategorie/api/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "97afeb7afbb198dd7a8823c85e6041f63c976027b62fe1e0cc8ab3918b8ddcb2",
-            "newHash": "7a6cb1b6f6ade470f79ae8e5931e3ad70ef69e5d151722a61be976c5eb80a7a0",
+            "oldHash": "7a6cb1b6f6ade470f79ae8e5931e3ad70ef69e5d151722a61be976c5eb80a7a0",
+            "newHash": "43509c6e6ef94bfd1c1f8e1513aea0c528766936abbb4a636be573a9799afc6a",
             "changed": true,
             "written": true
           },
@@ -783,8 +783,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/spis-tresci/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "9c554841182e99d598d929085dd590e87bc947831909d352ae4e486eeb589cca",
-            "newHash": "376a38771be60a83dcd91f2f90fe2849f2c86b7d1ec1fbab575e0af9472473fa",
+            "oldHash": "376a38771be60a83dcd91f2f90fe2849f2c86b7d1ec1fbab575e0af9472473fa",
+            "newHash": "1f24b898e0951f188f082affdf18b396ac4891d0e851f40dd6e729b47b9f8f4c",
             "changed": true,
             "written": true
           },
@@ -796,8 +796,8 @@
             "status": 200,
             "finalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/kiedy-mozna-anulowac-fakture/",
             "contentType": "text/html; charset=UTF-8",
-            "oldHash": "e3eaf4d693843efc25b253bd2d1681f853225e43102f22f437e7fcdc5f84cd23",
-            "newHash": "cda33dc691faab7ec4fcf42a4be45887f56c670453f8cb3f9d6f38abf080d29e",
+            "oldHash": "cda33dc691faab7ec4fcf42a4be45887f56c670453f8cb3f9d6f38abf080d29e",
+            "newHash": "63a738d7fc539dfb5cfbbfcebd15c92b1e770073fb1175aa74cb6f0059866078",
             "changed": true,
             "written": true
           }
@@ -852,7 +852,7 @@
           "status": 0,
           "ok": true,
           "stdout": "",
-          "stderr": ""
+          "stderr": "(node:1748200) ExperimentalWarning: buffer.File is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\nSkipping stale builder job 174 (INIT) for chunk.csv; age=5250m threshold=45m fileUrl=http://release-openspg-minio:9000/builder/upload/94af55332696981dbc31ebb957206d88/chunk.csv\n"
         }
       ]
     }
@@ -863,15 +863,15 @@
       "command": "node scripts/source_freshness_report.mjs",
       "status": 0,
       "ok": true,
-      "stdout": "{\n  \"ok\": true,\n  \"overall\": \"WARN\",\n  \"json\": \"/docker/openspg/docs/reference/KB_Source_Freshness_Report.json\",\n  \"md\": \"/docker/openspg/docs/reference/KB_Source_Freshness_Report.md\",\n  \"summary\": [\n    {\n      \"namespace\": \"ComarchOptimaReference\",\n      \"sourceFileCount\": 31,\n      \"sourceAgeDays\": 7,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"ComarchBetterflyReference\",\n      \"sourceFileCount\": 32,\n      \"sourceAgeDays\": 0,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"ComarchCommunityNews\",\n      \"sourceFileCount\": 220,\n      \"sourceAgeDays\": 0,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"ComarchOptimaPartnerTechnical\",\n      \"sourceFileCount\": 322,\n      \"sourceAgeDays\": 10,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"ComarchOptimaAdditionalFunctions\",\n      \"sourceFileCount\": 58,\n      \"sourceAgeDays\": 12,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"ComarchOptimaSprint\",\n      \"sourceFileCount\": 11,\n      \"sourceAgeDays\": 13,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"TaxbellLegalReference\",\n      \"sourceFileCount\": 46,\n      \"sourceAgeDays\": 45,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    },\n    {\n      \"namespace\": \"TaxbellPayrollHRReference\",\n      \"sourceFileCount\": 49,\n      \"sourceAgeDays\": 45,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    },\n    {\n      \"namespace\": \"TaxbellAccountingVATReference\",\n      \"sourceFileCount\": 46,\n      \"sourceAgeDays\": 45,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    }\n  ]\n}\n",
+      "stdout": "{\n  \"ok\": true,\n  \"overall\": \"WARN\",\n  \"json\": \"/docker/openspg/docs/reference/KB_Source_Freshness_Report.json\",\n  \"md\": \"/docker/openspg/docs/reference/KB_Source_Freshness_Report.md\",\n  \"summary\": [\n    {\n      \"namespace\": \"ComarchOptimaReference\",\n      \"sourceFileCount\": 31,\n      \"sourceAgeDays\": 14,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"ComarchBetterflyReference\",\n      \"sourceFileCount\": 32,\n      \"sourceAgeDays\": 0,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"ComarchCommunityNews\",\n      \"sourceFileCount\": 221,\n      \"sourceAgeDays\": 0,\n      \"exportBehindSource\": false,\n      \"warnings\": 0\n    },\n    {\n      \"namespace\": \"ComarchOptimaPartnerTechnical\",\n      \"sourceFileCount\": 322,\n      \"sourceAgeDays\": 17,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    },\n    {\n      \"namespace\": \"ComarchOptimaAdditionalFunctions\",\n      \"sourceFileCount\": 58,\n      \"sourceAgeDays\": 19,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    },\n    {\n      \"namespace\": \"ComarchOptimaSprint\",\n      \"sourceFileCount\": 11,\n      \"sourceAgeDays\": 20,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    },\n    {\n      \"namespace\": \"TaxbellLegalReference\",\n      \"sourceFileCount\": 46,\n      \"sourceAgeDays\": 52,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    },\n    {\n      \"namespace\": \"TaxbellPayrollHRReference\",\n      \"sourceFileCount\": 49,\n      \"sourceAgeDays\": 52,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    },\n    {\n      \"namespace\": \"TaxbellAccountingVATReference\",\n      \"sourceFileCount\": 46,\n      \"sourceAgeDays\": 52,\n      \"exportBehindSource\": false,\n      \"warnings\": 1\n    }\n  ]\n}\n",
       "stderr": ""
     },
     {
       "label": "quality gate",
       "command": "node scripts/kb_quality_gate.mjs --all",
-      "status": 0,
-      "ok": true,
-      "stdout": "opicGroup\",\n            \"sourceTier\",\n            \"usageCount\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"chunk.csv\",\n          \"exists\": true,\n          \"rowCount\": 383,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceDocumentRefId\",\n            \"sourceUrl\",\n            \"sourcePath\",\n            \"sectionHeading\",\n            \"sectionOrder\",\n            \"content\"\n          ]\n        }\n      ],\n      \"jobs\": [\n        {\n          \"id\": 248,\n          \"fileName\": \"source_topic.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBLG SourceTopic CSV Import\"\n        },\n        {\n          \"id\": 249,\n          \"fileName\": \"knowledge_route.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBLG KnowledgeRoute CSV Import\"\n        },\n        {\n          \"id\": 250,\n          \"fileName\": \"entry_guide.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBLG EntryGuide CSV Import\"\n        },\n        {\n          \"id\": 331,\n          \"fileName\": \"reference_document.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBLG ReferenceDocument CSV Import\",\n          \"gmtModified\": \"2026-06-11 12:37:11\"\n        },\n        {\n          \"id\": 332,\n          \"fileName\": \"chunk.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBLG Chunk CSV Import\",\n          \"gmtModified\": \"2026-06-11 12:37:54\"\n        }\n      ]\n    },\n    {\n      \"namespace\": \"TaxbellPayrollHRReference\",\n      \"kbName\": \"Taxbell Payroll HR Reference\",\n      \"verdict\": \"PASS\",\n      \"exportDir\": \"exports/taxbell_payroll_hr_reference/v1\",\n      \"generatedAt\": \"2026-07-15T12:14:59.497Z\",\n      \"errors\": [],\n      \"warnings\": [],\n      \"files\": [\n        {\n          \"fileName\": \"reference_document.csv\",\n          \"exists\": true,\n          \"rowCount\": 68,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceUrl\",\n            \"sourceDomain\",\n            \"sourceTier\",\n            \"documentCategory\",\n            \"topicArea\",\n            \"audienceMode\",\n            \"riskLevel\",\n            \"publishedAt\",\n            \"lastModified\",\n            \"retrievedAt\",\n            \"localSnapshotPath\",\n            \"contentHash\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"source_topic.csv\",\n          \"exists\": true,\n          \"rowCount\": 10,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"topicSlug\",\n            \"topicGroup\",\n            \"sourceTier\",\n            \"usageCount\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"chunk.csv\",\n          \"exists\": true,\n          \"rowCount\": 575,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceDocumentRefId\",\n            \"sourceUrl\",\n            \"sourcePath\",\n            \"sectionHeading\",\n            \"sectionOrder\",\n            \"content\"\n          ]\n        }\n      ],\n      \"jobs\": [\n        {\n          \"id\": 253,\n          \"fileName\": \"source_topic.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBHR SourceTopic CSV Import\"\n        },\n        {\n          \"id\": 254,\n          \"fileName\": \"knowledge_route.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBHR KnowledgeRoute CSV Import\"\n        },\n        {\n          \"id\": 255,\n          \"fileName\": \"entry_guide.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBHR EntryGuide CSV Import\"\n        },\n        {\n          \"id\": 354,\n          \"fileName\": \"reference_document.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBHR ReferenceDocument CSV Import\",\n          \"gmtModified\": \"2026-06-12 08:49:22\"\n        },\n        {\n          \"id\": 355,\n          \"fileName\": \"chunk.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBHR Chunk CSV Import\",\n          \"gmtModified\": \"2026-06-12 08:50:12\"\n        }\n      ]\n    },\n    {\n      \"namespace\": \"TaxbellAccountingVATReference\",\n      \"kbName\": \"Taxbell Accounting VAT Reference\",\n      \"verdict\": \"PASS\",\n      \"exportDir\": \"exports/taxbell_accounting_vat_reference/v1\",\n      \"generatedAt\": \"2026-07-15T12:14:59.703Z\",\n      \"errors\": [],\n      \"warnings\": [],\n      \"files\": [\n        {\n          \"fileName\": \"reference_document.csv\",\n          \"exists\": true,\n          \"rowCount\": 73,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceUrl\",\n            \"sourceDomain\",\n            \"sourceTier\",\n            \"documentCategory\",\n            \"topicArea\",\n            \"audienceMode\",\n            \"riskLevel\",\n            \"publishedAt\",\n            \"lastModified\",\n            \"retrievedAt\",\n            \"localSnapshotPath\",\n            \"contentHash\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"source_topic.csv\",\n          \"exists\": true,\n          \"rowCount\": 7,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"topicSlug\",\n            \"topicGroup\",\n            \"sourceTier\",\n            \"usageCount\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"chunk.csv\",\n          \"exists\": true,\n          \"rowCount\": 414,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceDocumentRefId\",\n            \"sourceUrl\",\n            \"sourcePath\",\n            \"sectionHeading\",\n            \"sectionOrder\",\n            \"content\"\n          ]\n        }\n      ],\n      \"jobs\": [\n        {\n          \"id\": 258,\n          \"fileName\": \"source_topic.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC SourceTopic CSV Import\"\n        },\n        {\n          \"id\": 259,\n          \"fileName\": \"knowledge_route.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC KnowledgeRoute CSV Import\"\n        },\n        {\n          \"id\": 260,\n          \"fileName\": \"entry_guide.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC EntryGuide CSV Import\"\n        },\n        {\n          \"id\": 352,\n          \"fileName\": \"reference_document.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC ReferenceDocument CSV Import\",\n          \"gmtModified\": \"2026-06-12 08:48:11\"\n        },\n        {\n          \"id\": 353,\n          \"fileName\": \"chunk.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC Chunk CSV Import\",\n          \"gmtModified\": \"2026-06-12 08:48:55\"\n        }\n      ]\n    },\n    {\n      \"namespace\": \"ComarchUniversalKnowledge\",\n      \"kbName\": \"Comarch Universal Knowledge\",\n      \"verdict\": \"WARN\",\n      \"exportDir\": \"exports/universal_knowledge/v1\",\n      \"generatedAt\": \"2026-06-24T07:39:30.734Z\",\n      \"errors\": [],\n      \"warnings\": [\n        \"Required CSV has zero rows: reference_document.csv (catch-all KB starts empty)\",\n        \"Required CSV has zero rows: chunk.csv (catch-all KB starts empty)\"\n      ],\n      \"files\": [\n        {\n          \"fileName\": \"reference_document.csv\",\n          \"exists\": true,\n          \"rowCount\": 0,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceUrl\",\n            \"sourceType\",\n            \"documentCategory\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"chunk.csv\",\n          \"exists\": true,\n          \"rowCount\": 0,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceDocumentRefId\",\n            \"sourceUrl\",\n            \"sourcePath\",\n            \"sectionHeading\",\n            \"sectionOrder\",\n            \"content\"\n          ]\n        }\n      ],\n      \"jobs\": []\n    }\n  ]\n}\n",
+      "status": 2,
+      "ok": false,
+      "stdout": "\": \"TBHR Chunk CSV Import\",\n          \"gmtModified\": \"2026-06-12 08:50:12\"\n        }\n      ]\n    },\n    {\n      \"namespace\": \"TaxbellAccountingVATReference\",\n      \"kbName\": \"Taxbell Accounting VAT Reference\",\n      \"verdict\": \"FAIL\",\n      \"exportDir\": \"exports/taxbell_accounting_vat_reference/v1\",\n      \"generatedAt\": \"2026-07-15T12:14:59.703Z\",\n      \"errors\": [\n        \"Duplicate IDs in source_topic.csv: 1\",\n        \"Duplicate IDs in chunk.csv: 56\"\n      ],\n      \"warnings\": [],\n      \"files\": [\n        {\n          \"fileName\": \"reference_document.csv\",\n          \"exists\": true,\n          \"rowCount\": 73,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceUrl\",\n            \"sourceDomain\",\n            \"sourceTier\",\n            \"documentCategory\",\n            \"topicArea\",\n            \"audienceMode\",\n            \"riskLevel\",\n            \"publishedAt\",\n            \"lastModified\",\n            \"retrievedAt\",\n            \"localSnapshotPath\",\n            \"contentHash\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"source_topic.csv\",\n          \"exists\": true,\n          \"rowCount\": 7,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"topicSlug\",\n            \"topicGroup\",\n            \"sourceTier\",\n            \"usageCount\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"chunk.csv\",\n          \"exists\": true,\n          \"rowCount\": 414,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceDocumentRefId\",\n            \"sourceUrl\",\n            \"sourcePath\",\n            \"sectionHeading\",\n            \"sectionOrder\",\n            \"content\"\n          ]\n        }\n      ],\n      \"jobs\": [\n        {\n          \"id\": 258,\n          \"fileName\": \"source_topic.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC SourceTopic CSV Import\"\n        },\n        {\n          \"id\": 259,\n          \"fileName\": \"knowledge_route.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC KnowledgeRoute CSV Import\"\n        },\n        {\n          \"id\": 260,\n          \"fileName\": \"entry_guide.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC EntryGuide CSV Import\"\n        },\n        {\n          \"id\": 352,\n          \"fileName\": \"reference_document.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC ReferenceDocument CSV Import\",\n          \"gmtModified\": \"2026-06-12 08:48:11\"\n        },\n        {\n          \"id\": 353,\n          \"fileName\": \"chunk.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"TBAC Chunk CSV Import\",\n          \"gmtModified\": \"2026-06-12 08:48:55\"\n        }\n      ]\n    },\n    {\n      \"namespace\": \"ComarchUniversalKnowledge\",\n      \"kbName\": \"Comarch Universal Knowledge\",\n      \"verdict\": \"WARN\",\n      \"exportDir\": \"exports/universal_knowledge/v1\",\n      \"generatedAt\": \"2026-06-24T07:39:30.734Z\",\n      \"errors\": [],\n      \"warnings\": [\n        \"Required CSV has zero rows: reference_document.csv (catch-all KB starts empty)\",\n        \"Required CSV has zero rows: chunk.csv (catch-all KB starts empty)\"\n      ],\n      \"files\": [\n        {\n          \"fileName\": \"reference_document.csv\",\n          \"exists\": true,\n          \"rowCount\": 0,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceUrl\",\n            \"sourceType\",\n            \"documentCategory\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"chunk.csv\",\n          \"exists\": true,\n          \"rowCount\": 0,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceDocumentRefId\",\n            \"sourceUrl\",\n            \"sourcePath\",\n            \"sectionHeading\",\n            \"sectionOrder\",\n            \"content\"\n          ]\n        }\n      ],\n      \"jobs\": []\n    },\n    {\n      \"namespace\": \"OWAOntology\",\n      \"kbName\": \"OWA Platform Optima Ontology\",\n      \"verdict\": \"FAIL\",\n      \"exportDir\": \"exports/owa_ontology/v1\",\n      \"generatedAt\": \"2026-07-22T14:41:11.949Z\",\n      \"errors\": [\n        \"Duplicate IDs in ontology_entity.csv: 1\",\n        \"Duplicate IDs in ontology_relation.csv: 3\",\n        \"Duplicate IDs in workflow_pattern.csv: 1\",\n        \"Duplicate IDs in chunk.csv: 2\",\n        \"Promoted drafts without visible chunks: 66\"\n      ],\n      \"warnings\": [],\n      \"files\": [\n        {\n          \"fileName\": \"ontology_entity.csv\",\n          \"exists\": true,\n          \"rowCount\": 68,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"canonicalName\",\n            \"ontologyId\",\n            \"verificationStatus\",\n            \"confidenceLevel\",\n            \"businessDomain\",\n            \"mainTable\",\n            \"mcpReadTools\",\n            \"mcpWriteTools\",\n            \"aliases\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"ontology_field.csv\",\n          \"exists\": true,\n          \"rowCount\": 109,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"entityRefId\",\n            \"fieldName\",\n            \"mssqlColumn\",\n            \"mcpField\",\n            \"sqlType\",\n            \"nullable\",\n            \"keyRole\",\n            \"mappingStatus\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"ontology_relation.csv\",\n          \"exists\": true,\n          \"rowCount\": 149,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceEntityRefId\",\n            \"targetEntityRefId\",\n            \"predicate\",\n            \"cardinality\",\n            \"relationType\",\n            \"joinCondition\",\n            \"status\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"workflow_pattern.csv\",\n          \"exists\": true,\n          \"rowCount\": 133,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"workflowName\",\n            \"sourceEntityRefId\",\n            \"targetEntityRefId\",\n            \"mcpTool\",\n            \"mode\",\n            \"status\",\n            \"summary\"\n          ]\n        },\n        {\n          \"fileName\": \"chunk.csv\",\n          \"exists\": true,\n          \"rowCount\": 192,\n          \"columns\": [\n            \"id\",\n            \"name\",\n            \"description\",\n            \"semanticType\",\n            \"sourceDocumentRefId\",\n            \"sourcePath\",\n            \"sectionHeading\",\n            \"sectionOrder\",\n            \"content\"\n          ]\n        }\n      ],\n      \"jobs\": [\n        {\n          \"id\": 462,\n          \"fileName\": \"ontology_entity.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"OWAO OntologyEntity CSV Import\",\n          \"gmtModified\": \"2026-07-22 16:41:49\"\n        },\n        {\n          \"id\": 463,\n          \"fileName\": \"ontology_field.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"OWAO OntologyField CSV Import\",\n          \"gmtModified\": \"2026-07-22 16:42:29\"\n        },\n        {\n          \"id\": 464,\n          \"fileName\": \"ontology_relation.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"OWAO OntologyRelation CSV Import\",\n          \"gmtModified\": \"2026-07-22 16:43:10\"\n        },\n        {\n          \"id\": 465,\n          \"fileName\": \"workflow_pattern.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"OWAO WorkflowPattern CSV Import\",\n          \"gmtModified\": \"2026-07-22 16:43:45\"\n        },\n        {\n          \"id\": 466,\n          \"fileName\": \"chunk.csv\",\n          \"status\": \"FINISH\",\n          \"jobName\": \"OWAO Chunk CSV Import\",\n          \"gmtModified\": \"2026-07-22 16:44:27\"\n        }\n      ]\n    }\n  ]\n}\n",
       "stderr": ""
     }
   ]

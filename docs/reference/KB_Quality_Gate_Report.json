@@ -1,106 +1,67 @@
 {
-  "generatedAt": "2026-07-20T11:45:32.385Z",
-  "overall": "FAIL",
+  "generatedAt": "2026-07-30T08:44:44.248Z",
+  "overall": "PASS",
   "results": [
     {
-      "namespace": "OWAOntology",
-      "kbName": "OWA Platform Optima Ontology",
-      "verdict": "FAIL",
-      "exportDir": "exports/owa_ontology/v1",
-      "generatedAt": "2026-07-20T11:42:29.058Z",
-      "errors": [
-        "Promoted drafts without visible chunks: 35"
-      ],
+      "namespace": "TaxbellLegalReference",
+      "kbName": "Taxbell Legal Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/taxbell_legal_reference/v1",
+      "generatedAt": "2026-07-30T08:43:18.085Z",
+      "errors": [],
       "warnings": [],
       "files": [
         {
-          "fileName": "ontology_entity.csv",
+          "fileName": "reference_document.csv",
           "exists": true,
-          "rowCount": 68,
+          "rowCount": 72,
           "columns": [
             "id",
             "name",
             "description",
             "semanticType",
-            "canonicalName",
-            "ontologyId",
-            "verificationStatus",
-            "confidenceLevel",
-            "businessDomain",
-            "mainTable",
-            "mcpReadTools",
-            "mcpWriteTools",
-            "aliases",
+            "sourceUrl",
+            "sourceDomain",
+            "sourceTier",
+            "documentCategory",
+            "topicArea",
+            "audienceMode",
+            "riskLevel",
+            "publishedAt",
+            "lastModified",
+            "retrievedAt",
+            "localSnapshotPath",
+            "contentHash",
             "summary"
           ]
         },
         {
-          "fileName": "ontology_field.csv",
+          "fileName": "source_topic.csv",
           "exists": true,
-          "rowCount": 109,
+          "rowCount": 5,
           "columns": [
             "id",
             "name",
             "description",
             "semanticType",
-            "entityRefId",
-            "fieldName",
-            "mssqlColumn",
-            "mcpField",
-            "sqlType",
-            "nullable",
-            "keyRole",
-            "mappingStatus",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "ontology_relation.csv",
-          "exists": true,
-          "rowCount": 149,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceEntityRefId",
-            "targetEntityRefId",
-            "predicate",
-            "cardinality",
-            "relationType",
-            "joinCondition",
-            "status",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "workflow_pattern.csv",
-          "exists": true,
-          "rowCount": 133,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "workflowName",
-            "sourceEntityRefId",
-            "targetEntityRefId",
-            "mcpTool",
-            "mode",
-            "status",
+            "topicSlug",
+            "topicGroup",
+            "sourceTier",
+            "usageCount",
             "summary"
           ]
         },
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 192,
+          "rowCount": 389,
           "columns": [
             "id",
             "name",
             "description",
             "semanticType",
             "sourceDocumentRefId",
+            "sourceUrl",
             "sourcePath",
             "sectionHeading",
             "sectionOrder",
@@ -110,39 +71,36 @@
       ],
       "jobs": [
         {
-          "id": 414,
-          "fileName": "ontology_entity.csv",
+          "id": 248,
+          "fileName": "source_topic.csv",
           "status": "FINISH",
-          "jobName": "OWAO OntologyEntity CSV Import",
-          "gmtModified": "2026-07-20 13:43:05"
+          "jobName": "TBLG SourceTopic CSV Import"
         },
         {
-          "id": 415,
-          "fileName": "ontology_field.csv",
+          "id": 249,
+          "fileName": "knowledge_route.csv",
           "status": "FINISH",
-          "jobName": "OWAO OntologyField CSV Import",
-          "gmtModified": "2026-07-20 13:43:44"
+          "jobName": "TBLG KnowledgeRoute CSV Import"
         },
         {
-          "id": 416,
-          "fileName": "ontology_relation.csv",
+          "id": 250,
+          "fileName": "entry_guide.csv",
           "status": "FINISH",
-          "jobName": "OWAO OntologyRelation CSV Import",
-          "gmtModified": "2026-07-20 13:44:20"
+          "jobName": "TBLG EntryGuide CSV Import"
         },
         {
-          "id": 417,
-          "fileName": "workflow_pattern.csv",
-          "status": "FINISH",
-          "jobName": "OWAO WorkflowPattern CSV Import",
-          "gmtModified": "2026-07-20 13:44:54"
-        },
-        {
-          "id": 418,
+          "id": 549,
           "fileName": "chunk.csv",
           "status": "FINISH",
-          "jobName": "OWAO Chunk CSV Import",
-          "gmtModified": "2026-07-20 13:45:31"
+          "jobName": "TBLG Chunk CSV Import",
+          "gmtModified": "2026-07-30 07:36:57"
+        },
+        {
+          "id": 554,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "TBLG ReferenceDocument CSV Import",
+          "gmtModified": "2026-07-30 10:44:00"
         }
       ]
     }

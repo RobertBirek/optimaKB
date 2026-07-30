@@ -65,6 +65,10 @@ export const TARGET_KBS = {
     kbName: 'OWA Platform Optima Ontology',
     namespace: 'OWAOntology',
   },
+  InsERTGTSchema: {
+    kbName: 'InsERT GT MSSQL Schema',
+    namespace: 'InsERTGTSchema',
+  },
 };
 
 function ensureDir(dirPath) {

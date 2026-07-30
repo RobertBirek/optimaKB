@@ -14,7 +14,8 @@
     "ComarchOptimaReference",
     "ComarchOptimaPartnerTechnical",
     "ComarchBetterflyReference",
-    "ComarchUniversalKnowledge"
+    "ComarchUniversalKnowledge",
+    "InsERTGTSchema"
   ],
   "routes": [
     {
@@ -286,6 +287,27 @@
         "paymentdetails",
         "advanceinvoices",
         "profitmargininvoices"
+      ]
+    },
+    {
+      "intent": "insert_gt_schema_sql",
+      "primaryKb": "InsERTGTSchema",
+      "supportKbs": [],
+      "keywords": [
+        "insert",
+        "subiekt",
+        "rewizor",
+        "gratyfikant",
+        "gt",
+        "insert gt",
+        "subiekt gt",
+        "rewizor gt",
+        "gratyfikant gt",
+        "pomagier",
+        "kh_",
+        "tw_",
+        "dok_",
+        "adr__"
       ]
     }
   ],

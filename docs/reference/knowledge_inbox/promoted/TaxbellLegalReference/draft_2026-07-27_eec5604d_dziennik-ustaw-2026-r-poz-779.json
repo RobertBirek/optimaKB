@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-07-27_eec5604d_dziennik-ustaw-2026-r-poz-779",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Dziennik Ustaw 2026 r. poz. 779",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy orzecznictwo zmiany 2026\nSource: https://dziennikustaw.gov.pl/DU/2026/779\nTier: official\nDiscovery confidence: 0.95\n\nDziennik Ustaw 2026 r. poz. 779\n- Dziennik Ustaw\n- Monitor Polski\n- Wyszukiwanie\n- Lista certyfikatów\n- Kontakt\n- Pomoc\nDzienniki Urzędowe Rządowe Centrum Legislacji\nTu jesteś: Dziennik Ustaw 2026 r. poz. 779\nPrzejdź\nSzukaj\n# Dziennik Ustaw 2026 r. poz. 779\n---\n## Ustawa z dnia 15 maja 2026 r. o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez osoby fizyczne\nPobierz plik:\nplik 1\n| Data ogłoszenia: | 2026-06-15 |\n| --- | --- |\n| Nazwa dziennika: | Dziennik Ustaw |\n| Rok: | 2026 |\n| Pozycja: | 779 |\n---\nUżywamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki. Więcej informacji w naszej polityce prywatności. Deklaracja dostępności serwisu dziennikustaw.gov.pl\n\nReview this draft before promotion.",
+  "sourceUrl": "https://dziennikustaw.gov.pl/DU/2026/779",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia",
+    "orzecznictwo"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-07-15T02:47:13.476Z",
+    "discoveryCandidateId": "candidate_b69e4965-f07",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-07-15T02-47-05-842Z_00fe8680",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "3ad906558064696dd9564fc40c80aa377143a169828f313129e75d8d21378d57"
+  },
+  "createdAt": "2026-07-27T10:04:58.772Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-30T08:43:16.947Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-27/draft_2026-07-27_eec5604d_dziennik-ustaw-2026-r-poz-779.json"
+}

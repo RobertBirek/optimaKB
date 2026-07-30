@@ -4,6 +4,12 @@ import { handleJsonRpcRequest } from './lib/erp_knowledge_mcp_core.mjs';
 
 const MAX_FRAME_BYTES = Number(process.env.ERP_KB_MCP_MAX_FRAME_BYTES || 1048576);
 
+// Deny-by-default: this stdio entrypoint has no auth/profile layer (unlike the
+// HTTP bridge), so write tools are blocked unless explicitly opted into.
+const STDIO_CONTEXT = {
+  writeAllowed: process.env.ERP_KB_MCP_WRITE_ALLOWED === 'true',
+};
+
 function writeMessage(message) {
   const payload = JSON.stringify(message);
   process.stdout.write(`Content-Length: ${Buffer.byteLength(payload, 'utf8')}\r\n\r\n${payload}`);
@@ -19,7 +25,7 @@ async function processQueue() {
   while (requestQueue.length) {
     const request = requestQueue.shift();
     try {
-      const response = await handleJsonRpcRequest(request);
+      const response = await handleJsonRpcRequest(request, STDIO_CONTEXT);
       if (response) writeMessage(response);
     } catch (error) {
       writeMessage({

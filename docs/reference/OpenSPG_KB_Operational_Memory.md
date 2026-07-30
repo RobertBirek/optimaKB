@@ -1983,3 +1983,80 @@ The first production briefing after that change reported:
 The semi-automatic gate remained correctly blocked because it had only `15/30`
 required decisions, `0/7` observation days, and production discovery still had
 forced dry-run enabled.
+
+## InsERT GT Schema KB
+
+### Purpose
+
+- KB name: `InsERT GT MSSQL Schema`
+- Namespace: `InsERTGTSchema`
+- Project id: `17`
+- Scope:
+  - InsERT GT (Subiekt GT, Rewizor GT, Gratyfikant GT) MSSQL database schema metadata
+  - database `pomagier` on `10.10.254.87\OPTIMA`
+  - official InsERT GT documentation from Google Drive
+- Do not ingest live business rows or sensitive operational data.
+
+### Active local source files
+
+- Schema: `docs/reference/InsERTGTSchema.schema`
+- SQL templates: `docs/reference/InsERTGTSchema.extract_metadata.sql`
+- Export script: `scripts/export_insert_gt_schema.mjs`
+- Build script: `scripts/build_insert_gt_schema.mjs`
+- Staging directory: `exports/insert_gt_schema/v1/`
+- Local drive corpus: `downloads/google_drive/insert_gt/`
+- Extracted SQL scripts: `downloads/google_drive/insert_gt/extracted/Skrypty_SQL_1_89_HF1/`
+- XML documentation: `downloads/google_drive/insert_gt/extracted/Dokumentacja_bazy_danych_1_89_HF1/Dokumentacja_DB.xml`
+
+### Current export set
+
+- `database_instance.csv` - `1`
+- `table.csv` - `956`
+- `column.csv` - `8302`
+- `primary_key.csv` - `877`
+- `foreign_key.csv` - `1071`
+- `index.csv` - `136`
+- `constraint.csv` - `235`
+- `view.csv` - `367`
+- `stored_procedure.csv` - `602`
+- `function.csv` - `127`
+- `trigger.csv` - `0`
+- `parameter.csv` - `0`
+- `table_query_guide.csv` - `956`
+- `join_path_guide.csv` - `1071`
+- `sql_object_guide.csv` - `1096`
+- `reference_document.csv` - `17`
+- `chunk.csv` - `519`
+
+### Current execution history
+
+- Project `17` created successfully through `POST /v1/projects`
+- Schema push to project `17` succeeded through `POST /v1/schemas?projectId=17`
+- Job `443` - `DatabaseInstance` - `FINISH`
+- Job `444` - `Table` - `FINISH`
+- Job `445` - `Column` - `FINISH`
+- Job `446` - `PrimaryKey` - `FINISH`
+- Job `447` - `ForeignKey` - `FINISH`
+- Job `448` - `Index` - `FINISH`
+- Job `449` - `Constraint` - `FINISH`
+- Job `450` - `View` - `FINISH`
+- Job `451` - `StoredProcedure` - `FINISH`
+- Job `452` - `Function` - `FINISH`
+- Job `453` - `TableQueryGuide` - `FINISH`
+- Job `454` - `JoinPathGuide` - `FINISH`
+- Job `455` - `SqlObjectGuide` - `FINISH`
+- Job `456` - `ReferenceDocument` - `FINISH`
+- Job `457` - `Chunk` - `FINISH`
+
+### Current implementation notes
+
+- First build completed on `2026-07-22` from offline-extracted SQL scripts + XML documentation
+- No live MSSQL connection available yet (port blocked); pool operates on exported source files
+- Export parses `963` table SQL files, `370` views, `604` procedures, `185` functions from `Skrypty_SQL_1_89_HF1`
+- Table/column descriptions sourced from InsERT DBDokumentator3 XML (`Dokumentacja_DB.xml`, `603` documented tables with `11225` fields)
+- PDF reference documents converted via Stirling PDF API to markdown chunks
+- Drive corpus contains `18` PDFs (documentation, guides, COM/XML examples)
+- 1 ZIP contains InsERT GT COM example (Subiekt_GT_Zmiana_Stawek_VAT)
+- InsERT GT table naming uses prefix conventions (`kh_`=kontrahenci, `tw_`=towary, `dok_`=dokumenty, `adr_`=adresy, `gr_`/`grat_`=kadry-płace)
+- No triggers found in the current extraction
+- MCP profile `insert-gt-technical-mcp` on port `3427` with tools `insert_gt_schema.search`, `insert_gt_object.get`, `insert_gt_join_path.find`

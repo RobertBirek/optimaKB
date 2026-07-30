@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "erp-kb": {
+      "command": "node",
+      "args": ["/docker/openspg/scripts/erp_knowledge_mcp_server.mjs"],
+      "env": {
+        "ROOT": "/docker/openspg"
+      }
+    }
+  }
+}

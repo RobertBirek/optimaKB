@@ -1,7 +1,7 @@
 # Official Reference Delta Refresh Report
 
-Generated at: 2026-07-20T03:36:03.171Z
-Overall: `OK`
+Generated at: 2026-07-27T03:38:11.856Z
+Overall: `FAIL`
 
 ## Options
 
@@ -66,5 +66,5 @@ Commands:
 ## Follow-up Checks
 
 - `source freshness`: `OK`
-- `quality gate`: `OK`
+- `quality gate`: `FAIL 2`
 

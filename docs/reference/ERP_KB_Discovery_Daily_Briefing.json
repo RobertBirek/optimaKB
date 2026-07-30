@@ -1,19 +1,38 @@
 {
-  "generatedAt": "2026-07-20T16:04:46.333Z",
+  "generatedAt": "2026-07-30T06:24:12.347Z",
   "totals": {
-    "candidates": 148,
-    "pending": 56,
-    "duplicates": 0,
-    "reviewed": 92,
-    "activeQueries": 36,
-    "alerts": 4
+    "candidates": 224,
+    "pending": 89,
+    "duplicates": 1,
+    "reviewed": 121,
+    "activeQueries": 10,
+    "alerts": 1
   },
   "topCandidates": [
     {
-      "id": "candidate_b69e4965-f07",
-      "title": "Dziennik Ustaw 2026 r. poz. 779",
+      "id": "candidate_5929f266-39b",
+      "title": "Nowe regulacje dotyczące substancji reprotoksycznych w środowisku pracy - Państwowa Inspekcja Pracy",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "canonicalUrl": "https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/nowe-regulacje-dotyczace-substancji-reprotoksycznych-w-srodowisku-pracy?tmpl=pdf",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 100,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 9,
+        "kbPending": 13
+      }
+    },
+    {
+      "id": "candidate_cfc02b4a-9fe",
+      "title": "Deregulacja 2.0: przyjazna administracja skarbowa i pewność prawa podatkowego - Ministerstwo Finansów - Portal Gov.pl",
       "kbNamespace": "TaxbellLegalReference",
-      "canonicalUrl": "https://dziennikustaw.gov.pl/DU/2026/779",
+      "canonicalUrl": "https://www.gov.pl/web/finanse/deregulacja-20-przyjazna-administracja-skarbowa-i-pewnosc-prawa-podatkowego",
       "action": "CREATE_DRAFT",
       "priority": {
         "score": 100,
@@ -25,222 +44,191 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 6,
-        "kbPending": 19
+        "ageDays": 0,
+        "kbPending": 27
       }
     },
     {
-      "id": "candidate_9f68eef3-e45",
-      "title": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
-      "kbNamespace": "ComarchOptimaReference",
-      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
+      "id": "candidate_d76896a1-40e",
+      "title": "Jak dodać dokument sprzedaży przez OCR&KSeF? - Baza Wiedzy programu Comarch Betterfly",
+      "kbNamespace": "ComarchBetterflyReference",
+      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-dodac-dokument-sprzedazy-przez-ocrksef/",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 93,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 9,
+        "kbPending": 6
+      }
+    },
+    {
+      "id": "candidate_57a9ecc6-711",
+      "title": "Obowiązkowy KSeF odroczony do 1 lutego 2026 r.",
+      "kbNamespace": "TaxbellLegalReference",
+      "canonicalUrl": "https://www.gov.pl/web/finanse/obowiazkowy-ksef-odroczony-do-1-lutego-2026-r",
       "action": "CREATE_DRAFT",
       "priority": {
-        "score": 100,
+        "score": 92,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 179,
+        "kbPending": 27
+      }
+    },
+    {
+      "id": "candidate_66d0fbb7-7a4",
+      "title": "Nowe zmiany w szkoleniach BHP – co przynosi ...",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "canonicalUrl": "https://gdansk.pip.gov.pl/aktualnosci/nowe-zmiany-w-szkoleniach-bhp-co-przynosi-rozporzadzenie-z-listopada-2025-r",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 92,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 230,
+        "kbPending": 13
+      }
+    },
+    {
+      "id": "candidate_52c080fa-f4f",
+      "title": "Jak rozpocząć współpracę z Biurem Rachunkowym? - Baza Wiedzy programu Comarch Betterfly",
+      "kbNamespace": "ComarchBetterflyReference",
+      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-rozpoczac-wspolprace-z-biurem-rachunkowym/",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 90,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 9,
+        "kbPending": 6
+      }
+    },
+    {
+      "id": "candidate_d3dde7f5-317",
+      "title": "KSeF obowiązkowy od 1 lutego 2026 r. - Podatki.gov.pl",
+      "kbNamespace": "TaxbellLegalReference",
+      "canonicalUrl": "https://ksef.podatki.gov.pl/konsultacje/",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 90,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 449,
+        "kbPending": 27
+      }
+    },
+    {
+      "id": "candidate_500b0f58-82e",
+      "title": "Parametry wydruku faktury – Baza Wiedzy programu Comarch ERP Optima",
+      "kbNamespace": "ComarchOptimaSprint",
+      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/parametry-wydruku-faktury/",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 90,
         "level": "HIGH",
         "reasons": [
           "oficjalne źródło",
           "wysoka pewność LLM",
-          "rekomendowana akcja",
           "świeża publikacja",
-          "niska liczba kandydatów dla KB"
+          "wysoka akceptacja operatora",
+          "domena pomoc.comarch.pl: kara 12%"
         ],
         "ageDays": 2,
-        "kbPending": 2
+        "kbPending": 9
       }
     },
     {
-      "id": "candidate_63079754-bc7",
-      "title": "Ustawa o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez ",
-      "kbNamespace": "TaxbellLegalReference",
-      "canonicalUrl": "https://www.inforlex.pl/dok/tresc,DZU.2026.166.0000779,USTAWA-z-dnia-15-maja-2026-r-o-zmianie-ustawy-o-podatku-dochodowym-od-osob-fizycznych-ustawy-o-podatku-dochodowym-od-osob-prawnych-oraz-ustawy.html",
+      "id": "candidate_ba5112eb-817",
+      "title": "Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy – Kodeks pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "canonicalUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/25/text.pdf",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 88,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 9,
+        "kbPending": 13
+      }
+    },
+    {
+      "id": "candidate_2cbabfc9-bd3",
+      "title": "Zmiany w przepisach prawa pracy w 2026 roku",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "canonicalUrl": "https://bydgoszcz.pip.gov.pl/aktualnosci/zmiany-w-przepisach-prawa-pracy-w-2026-roku",
       "action": "CREATE_DRAFT",
       "priority": {
         "score": 88,
         "level": "HIGH",
         "reasons": [
-          "wysoka pewność LLM",
+          "oficjalne źródło",
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 36,
-        "kbPending": 19
-      }
-    },
-    {
-      "id": "candidate_95409e88-fc6",
-      "title": "Projekt ustawy o zmianie ustawy o podatku od towarów i usług - Kancelaria Prezesa Rady Ministrów - Portal Gov.pl",
-      "kbNamespace": "TaxbellAccountingVATReference",
-      "canonicalUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-zmianie-ustawy-o-podatku-od-towarow-i-uslug14",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 86,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "niska liczba kandydatów dla KB",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 44,
-        "kbPending": 2
-      }
-    },
-    {
-      "id": "candidate_54415bca-84b",
-      "title": "Konfiguracja wydruków – Baza Wiedzy programu Comarch ERP Optima",
-      "kbNamespace": "ComarchOptimaSprint",
-      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2025/dokumentacja/konfiguracja-wydrukow/",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 85,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "niska liczba kandydatów dla KB",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 3279,
-        "kbPending": 1
-      }
-    },
-    {
-      "id": "candidate_5c6dd096-47e",
-      "title": "Projekt ustawy o zmianie ustawy - Ordynacja podatkowa oraz niektórych innych ustaw - Kancelaria Prezesa Rady Ministrów - Portal Gov.pl",
-      "kbNamespace": "TaxbellLegalReference",
-      "canonicalUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-zmianie-ustawy--ordynacja-podatkowa-oraz-niektorych-innych-ustaw6",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 83,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 38,
-        "kbPending": 19
-      }
-    },
-    {
-      "id": "candidate_2cd9db80-7bb",
-      "title": "Jawność wynagrodzeń w czerwcu 2026 r.? To nierealne. Pracodawcy kazali czekać z podwyżkami i co teraz? - Infor.pl",
-      "kbNamespace": "TaxbellPayrollHRReference",
-      "canonicalUrl": "https://kadry.infor.pl/wynagrodzenie/ochrona-wynagrodzenia/7568285,jawnosc-wynagrodzen-w-czerwcu-2026-r-to-nierealne-pracodawcy-kazali-czekac-z-podwyzkami-i-co-teraz.html",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 82,
-        "level": "HIGH",
-        "reasons": [
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 88,
-        "kbPending": 7
-      }
-    },
-    {
-      "id": "candidate_689cfa59-33c",
-      "title": "XL014 – Konfiguracja wydruków kodów kreskowych – Baza wiedzy Comarch ERP XL 2024",
-      "kbNamespace": "ComarchOptimaAdditionalFunctions",
-      "canonicalUrl": "https://pomoc.comarch.pl/xl/2024/index.php/dokumentacja/xl014-konfiguracja-wydrukow-kodow-kreskowych/",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 82,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 2239,
-        "kbPending": 8
-      }
-    },
-    {
-      "id": "candidate_4a246f5a-9ba",
-      "title": "Article Category: Nowości i zmiany w wersji 2026.1.1",
-      "kbNamespace": "ComarchOptimaSchema",
-      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/nowosci-i-zmiany-w-wersji-2026-1-1/?ct=YTo1OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGFpZ24uZXZlbnQiO2k6MTtpOjYzNDQ1O31zOjU6ImVtYWlsIjtpOjkyNTk7czo0OiJzdGF0IjtzOjIyOiI2OTQyZDYxZmRkMmY3MDM4MjA5MzkzIjtzOjQ6ImxlYWQiO3M6ODoiMjkzMjI1MjQiO3M6NzoiY2hhbm5lbCI7YToxOntzOjU6ImVtYWlsIjtpOjkyNTk7fX0%3D&print=print-search",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 81,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "niska liczba kandydatów dla KB",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 201,
-        "kbPending": 3
-      }
-    },
-    {
-      "id": "candidate_1764418d-579",
-      "title": "XL014 – Konfiguracja wydruków kodów kreskowych – Baza wiedzy Comarch ERP XL 2023",
-      "kbNamespace": "ComarchOptimaAdditionalFunctions",
-      "canonicalUrl": "https://pomoc.comarch.pl/xl/2023/index.php/dokumentacja/xl014-konfiguracja-wydrukow-kodow-kreskowych/",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 80,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 2239,
-        "kbPending": 8
+        "ageDays": 199,
+        "kbPending": 13
       }
     }
   ],
   "queryIssues": [
     {
+      "id": "seed_ComarchOptimaAdditionalFunctions",
+      "kbNamespace": "ComarchOptimaAdditionalFunctions",
+      "query": "Comarch ERP Optima funkcje dodatkowe XML XPT przykłady 2026",
+      "analytics": {
+        "candidates": 4,
+        "pending": 3,
+        "reviewed": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "duplicates": 0,
+        "duplicateRate": 1,
+        "acceptanceRate": 1,
+        "efficiencyScore": 60,
+        "health": "DUPLICATE_HEAVY",
+        "recommendation": "REFINE"
+      }
+    },
+    {
       "id": "seed_ComarchOptimaSchema",
       "kbNamespace": "ComarchOptimaSchema",
       "query": "Comarch ERP Optima struktura bazy danych tabele procedury klucze obce TraNag TraElem 2026",
       "analytics": {
-        "candidates": 1,
+        "candidates": 4,
         "pending": 1,
-        "reviewed": 0,
+        "reviewed": 3,
         "accepted": 0,
-        "rejected": 0,
+        "rejected": 3,
         "duplicates": 0,
-        "duplicateRate": 1,
-        "acceptanceRate": null,
-        "efficiencyScore": 45,
-        "health": "DUPLICATE_HEAVY",
-        "recommendation": "REFINE"
-      }
-    },
-    {
-      "id": "seed_ComarchOptimaSprint",
-      "kbNamespace": "ComarchOptimaSprint",
-      "query": "Comarch ERP Optima sPrint konfigurator danych szablonu parametry subszablony SQL 2026",
-      "analytics": {
-        "candidates": 0,
-        "pending": 0,
-        "reviewed": 0,
-        "accepted": 0,
-        "rejected": 0,
-        "duplicates": 0,
-        "duplicateRate": 1,
-        "acceptanceRate": null,
-        "efficiencyScore": 45,
-        "health": "DUPLICATE_HEAVY",
-        "recommendation": "REFINE"
-      }
-    },
-    {
-      "id": "seed_ComarchOptimaReference",
-      "kbNamespace": "ComarchOptimaReference",
-      "query": "Comarch ERP Optima instrukcja obsługi konfiguracja personalizacja kolumny użytkownika 2026",
-      "analytics": {
-        "candidates": 1,
-        "pending": 1,
-        "reviewed": 0,
-        "accepted": 0,
-        "rejected": 0,
-        "duplicates": 0,
-        "duplicateRate": 1,
-        "acceptanceRate": null,
-        "efficiencyScore": 45,
-        "health": "DUPLICATE_HEAVY",
+        "duplicateRate": 0.3333333333333333,
+        "acceptanceRate": 0,
+        "efficiencyScore": 67,
+        "health": "LOW_ACCEPTANCE",
         "recommendation": "REFINE"
       }
     }
@@ -249,44 +237,21 @@
     {
       "level": "warn",
       "type": "query_duplicate_rate",
-      "resourceId": "seed_ComarchOptimaSchema",
-      "kbNamespace": "ComarchOptimaSchema",
+      "resourceId": "seed_ComarchOptimaAdditionalFunctions",
+      "kbNamespace": "ComarchOptimaAdditionalFunctions",
       "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
-    },
-    {
-      "level": "warn",
-      "type": "query_duplicate_rate",
-      "resourceId": "seed_ComarchOptimaSprint",
-      "kbNamespace": "ComarchOptimaSprint",
-      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
-    },
-    {
-      "level": "warn",
-      "type": "query_duplicate_rate",
-      "resourceId": "seed_ComarchOptimaReference",
-      "kbNamespace": "ComarchOptimaReference",
-      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
-    },
-    {
-      "level": "warn",
-      "type": "unknown_domains",
-      "resourceId": "",
-      "kbNamespace": "",
-      "message": "1 kandydatów pochodzi z domen spoza profili zaufania."
     }
   ],
   "semiAuto": {
-    "configured": false,
+    "configured": true,
     "eligible": true,
-    "active": false,
-    "blockers": [
-      "Tryb półautomatyczny jest wyłączony."
-    ],
+    "active": true,
+    "blockers": [],
     "metrics": {
-      "reviewed": 92,
+      "reviewed": 121,
       "agreement": 1,
       "falsePositiveRate": 0,
-      "observationDays": 36.2,
+      "observationDays": 53.1,
       "minimumConfidence": 0.95,
       "maxPerRun": 3,
       "allowedNamespaces": [

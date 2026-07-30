@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-07-28_9e081823_nsa-wy-udzenie-towaru-nie-stanowi-dostawy-towaru-na-gruncie-vat",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "NSA: Wyłudzenie towaru nie stanowi dostawy towaru na gruncie VAT",
+  "content": "Automated source-discovery draft.\n\nQuery: interpretacje podatkowe 2026 wyroki NSA VAT CIT lipiec\nSource: https://www.prawo.pl/podatki/nsa-wyludzenie-towaru-nie-stanowi-dostawy-towaru-na-gruncie-vat,1546794.html\nTier: professional\nDiscovery confidence: 0.95\n\nNSA: Wyłudzenie towaru nie stanowi dostawy towaru na gruncie VAT\nPL\nZmień język strony\n- English (EN)\n- Українська (UA)\n# NSA: Wyłudzenie towaru nie stanowi dostawy na gruncie VAT\nŻeby transakcja stanowiła dostawę w rozumieniu ustawy o VAT, musi mieć charakter odpłatny i przenosić na inny podmiot prawo do rozporządzania towarami. Wydanie towaru podmiotowi podszywającemu się pod kontrahenta nie stanowi dostawy opodatkowanej VAT – stwierdził niedawno Naczelny Sąd Administracyjny.\nŹródło: iStock\nW rozpoznawanej sprawie spółka zaskarżyła do WSA w Krakowie interpretację dyrektora Krajowej Informacji Skarbowej, który uznał za nieprawidłowe jej stanowisko przedstawione we wniosku o tę interpretację. Dotyczyło ono podatku od towarów i usług w zakresie nieuznania czynności wydania towarów podmiotowi podszywającemu się pod kontrahenta za dostawę towarów opodatkowaną VAT i prawa do odliczenia VAT naliczonego przy wytworzeniu lub nabyciu towarów wydanych temu podmiotowi.\n## Spółka dochowała należytej staranności\nSpółka wskazała, że zainteresowanie współpracą z nią zgłosiła osoba podająca się za przedstawiciela podmiotu mającego siedzibę we Francji. Podjęcie współpracy z kontrahentem zostało poprzedzone jego weryfikacją polegającą na potwierdzeniu jego statusu jako zarejestrowanego podatnika w bazie VIES. Spółka otrzymała złożone w imieniu kontrahenta zamówienie na dostarczenie towaru.\nPo jego akceptacji do spółki zgłosił się przewoźnik po odbiór towaru. Firma wydała towar, dzia\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.prawo.pl/podatki/nsa-wyludzenie-towaru-nie-stanowi-dostawy-towaru-na-gruncie-vat,1546794.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia",
+    "orzecznictwo"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-07-21T02:52:15.686Z",
+    "discoveryCandidateId": "candidate_86d24f82-2cf",
+    "discoveryQueryId": "generated_TaxbellLegalReference_d519847f02",
+    "discoveryRunId": "discovery_daily_2026-07-21T02-49-46-759Z_36c2e3db",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "05627f0565a4f0bf700c8568114f1becd8a246a523ae8d3d72ec2911fc80a534"
+  },
+  "createdAt": "2026-07-28T04:02:38.367Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-29T08:10:15.077Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-28/draft_2026-07-28_9e081823_nsa-wy-udzenie-towaru-nie-stanowi-dostawy-towaru-na-gruncie-vat.json"
+}

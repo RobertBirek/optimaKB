@@ -1,27 +1,27 @@
 # ERP KB Discovery Coverage Report
 
-Generated: `2026-07-20T16:04:45.757Z`
+Generated: `2026-07-30T06:24:10.436Z`
 
 - Overall: `PASS`
 - Coverage: `10/10`
-- Active queries: `36`
-- Candidates: `148`
-- Drafted: `92`
-- Corpus duplicates: `0`
-- Operator decisions: `92`
-- Calibration: `17/30`
+- Active queries: `10`
+- Candidates: `224`
+- Drafted: `110`
+- Corpus duplicates: `1`
+- Operator decisions: `121`
+- Calibration: `21/30`
 - Agreement: `100%`
 - Dry run: `false`
 
 | KB | Mode | Queries | Candidates | Drafted | Pending | Routed |
 |---|---|---:|---:|---:|---:|---:|
-| ComarchOptimaSchema | CANDIDATE_ONLY | 4 | 3 | 0 | 3 | 0 |
-| ComarchOptimaAdditionalFunctions | CANDIDATE_ONLY | 4 | 14 | 6 | 8 | 0 |
-| ComarchOptimaSprint | CANDIDATE_ONLY | 4 | 7 | 6 | 1 | 0 |
-| ComarchOptimaReference | DIRECT_DRAFT | 1 | 11 | 9 | 2 | 0 |
-| ComarchOptimaPartnerTechnical | PARTNER_ROUTE | 4 | 4 | 0 | 4 | 0 |
-| ComarchBetterflyReference | DIRECT_DRAFT | 4 | 7 | 7 | 0 | 0 |
-| ComarchCommunityNews | DIRECT_DRAFT | 4 | 18 | 8 | 10 | 0 |
-| TaxbellLegalReference | DIRECT_DRAFT | 4 | 36 | 17 | 19 | 0 |
-| TaxbellPayrollHRReference | DIRECT_DRAFT | 4 | 28 | 21 | 7 | 0 |
-| TaxbellAccountingVATReference | DIRECT_DRAFT | 3 | 20 | 18 | 2 | 0 |
+| ComarchOptimaSchema | CANDIDATE_ONLY | 1 | 7 | 0 | 4 | 0 |
+| ComarchOptimaAdditionalFunctions | CANDIDATE_ONLY | 1 | 17 | 6 | 11 | 0 |
+| ComarchOptimaSprint | CANDIDATE_ONLY | 1 | 15 | 6 | 9 | 0 |
+| ComarchOptimaReference | DIRECT_DRAFT | 1 | 12 | 11 | 1 | 0 |
+| ComarchOptimaPartnerTechnical | PARTNER_ROUTE | 1 | 15 | 0 | 0 | 7 |
+| ComarchBetterflyReference | DIRECT_DRAFT | 1 | 13 | 7 | 6 | 0 |
+| ComarchCommunityNews | DIRECT_DRAFT | 1 | 23 | 8 | 12 | 0 |
+| TaxbellLegalReference | DIRECT_DRAFT | 1 | 56 | 27 | 27 | 0 |
+| TaxbellPayrollHRReference | DIRECT_DRAFT | 1 | 40 | 26 | 13 | 0 |
+| TaxbellAccountingVATReference | DIRECT_DRAFT | 1 | 26 | 19 | 6 | 0 |

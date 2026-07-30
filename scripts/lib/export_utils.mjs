@@ -39,6 +39,6 @@ export function slug(value) {
 }
 
 export function makeId(prefix, value) {
-  const body = slug(value).slice(0, 110) || 'ITEM';
+  const body = slug(value).slice(0, 106) || 'ITEM';
   return `${prefix}_${body}`;
 }

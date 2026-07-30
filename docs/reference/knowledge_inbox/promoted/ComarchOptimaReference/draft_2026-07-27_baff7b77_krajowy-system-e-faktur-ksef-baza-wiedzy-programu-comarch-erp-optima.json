@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "Comarch Optima Reference",
+  "kbNamespace": "ComarchOptimaReference",
+  "title": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: Comarch ERP Optima instrukcje aktualizacje KSeF 2026\nSource: https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/\nTier: official\nDiscovery confidence: 0.95\n\nKrajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima\n# Jak możemy Ci pomóc?\nSearch For Wyszukaj\nPrzejdź do spisu treści lub pobierz dokumentację\n1. Strona główna\n2. Ogólne i Kasa/Bank\n3. KSeF\n4. KSeF - informacje ogólne\n5. Krajowy System e-Faktur (KSeF)\nData aktualizacji: 29-01-2026\n### Program Comarch ERP Optima już teraz jest gotowy na integrację z Krajowym Systemem e-Faktur!\nJeśli Państwa firma nie ma obowiązku wystawiania faktur w KSeF od lutego, obowiązek ten może już dotyczyć Państwa dostawców (np. operatorów telekomunikacyjnych, hurtowni, dostawców energii, stacji paliw). Oznacza to, że:\n- faktury zakupowe mogą być wystawiane w systemie KSeF,\n- jako przedsiębiorca powinni Państwo mieć możliwość ich odebrania oraz zaksięgowania,\n- faktury te nie będą już przesyłane w tradycyjnej formie (np. e-mail), chyba że zostanie to uzgodnione z dostawcą w inny sposób.\nInformacja\nIntegracja z KSeF 2.0 w wersji produkcyjnej oraz możliwość wskazania certyfikatów do uwierzytelnienia będzie możliwa w Programie Comarch ERP Optima od 01.02.2026.\n### Aby móc odbierać Faktury z KSeF w Comarch ERP Optima, należy:\n1. W Aplikacji Podatnika KSeF 2.0 należy nadać stosowne uprawnienia osobie odbierającej faktury lub biuru rachunkowemu, a następnie należy wygenerować Token lub Certyfikat KSeF.\n2. Dokonać odpowiednich ustawień w konfiguracji Comarch ERP Optima: W tym celu należy przejść do menu Start/ Konfiguracja/ Firma/ Dane firmy/ KSeF, zaznaczyć parametr Aktywuj\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
+  "tags": [
+    "discovery",
+    "official",
+    "instrukcje",
+    "aktualizacje",
+    "KSeF",
+    "obsługa programu"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-07-19T02:49:16.450Z",
+    "discoveryCandidateId": "candidate_9f68eef3-e45",
+    "discoveryQueryId": "seed_ComarchOptimaReference",
+    "discoveryRunId": "discovery_daily_2026-07-19T02-48-58-803Z_0d414759",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "64ec30fd62ca50c1615e51ef35ed44bda6d7700f7016c9048576f96ffcfa208c"
+  },
+  "createdAt": "2026-07-27T10:04:58.990Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-30T05:57:00.555Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-27/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json"
+}

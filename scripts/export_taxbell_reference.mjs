@@ -127,8 +127,11 @@ function exportConfig(config) {
     });
     referenceIdBySourceUrl.set(entry.url, id);
     chunksFor(entry.content).forEach((content, index) => {
+      const chunkSuffix = `_${index + 1}`;
+      const maxBase = 106 - chunkSuffix.length;
+      const chunkBase = id.length > maxBase ? id.slice(0, maxBase) : id;
       chunkRows.push({
-        id: makeId('TBCHUNK', `${id}_${index + 1}`),
+        id: makeId('TBCHUNK', `${chunkBase}${chunkSuffix}`),
         name: `${entry.title || entry.url} #${index + 1}`,
         description: truncate(content, 240),
         semanticType: 'taxbell_external_chunk',
@@ -171,8 +174,11 @@ function exportConfig(config) {
       });
     }
     chunksFor(draft.content).forEach((content, index) => {
+      const chunkSuffix = `_${index + 1}`;
+      const maxBase = 106 - chunkSuffix.length;
+      const chunkBase = draft.id.length > maxBase ? draft.id.slice(0, maxBase) : draft.id;
       chunkRows.push({
-        id: makeId('TBCHUNK_PROMOTED', `${draft.id}_${index + 1}`),
+        id: makeId('TBCHUNK_PROMOTED', `${chunkBase}${chunkSuffix}`),
         name: `${draft.title} #${index + 1}`,
         description: truncate(content, 240),
         semanticType: 'taxbell_promoted_chunk',
@@ -186,17 +192,19 @@ function exportConfig(config) {
     });
   }
 
-  const topicRows = [...topicCounts.entries()].map(([name, count]) => ({
-    id: makeId('TBTOPIC', `${config.namespace}_${name}`),
-    name,
-    description: `Taxbell topic ${name}`,
-    semanticType: 'taxbell_topic',
-    topicSlug: slug(name).toLowerCase(),
-    topicGroup: config.category,
-    sourceTier: 'mixed',
-    usageCount: String(count),
-    summary: `Temat ${name} w ${config.kbName}. Liczba dokumentów: ${count}.`,
-  }));
+  const topicRows = [...topicCounts.entries()]
+    .map(([name, count]) => ({
+      id: makeId('TBTOPIC', `${config.namespace}_${name}`),
+      name,
+      description: `Taxbell topic ${name}`,
+      semanticType: 'taxbell_topic',
+      topicSlug: slug(name).toLowerCase(),
+      topicGroup: config.category,
+      sourceTier: 'mixed',
+      usageCount: String(count),
+      summary: `Temat ${name} w ${config.kbName}. Liczba dokumentów: ${count}.`,
+    }))
+    .filter((row, i, arr) => arr.findIndex((r) => r.id === row.id) === i);
 
   const routeRows = [{
     id: makeId('TBROUTE', config.namespace),

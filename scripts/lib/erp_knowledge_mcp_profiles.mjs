@@ -51,6 +51,11 @@ const profiles = {
     namespaces: null, scopes: ['kb.editorial.write'], port: 3426, host: '127.0.0.1',
     tools: ['search_external_sources', 'submit_knowledge_draft', 'draft_external_source', ...commonReadTools],
   },
+  'insert-gt-technical-mcp': {
+    id: 'insert-gt-technical-mcp', serverName: 'insert-gt-technical-mcp', mode: 'read-only',
+    namespaces: ['InsERTGTSchema'], scopes: ['kb.insertgt.technical.read'], port: 3427,
+    tools: ['insert_gt_schema.search', 'insert_gt_object.get', 'insert_gt_join_path.find', ...commonReadTools],
+  },
 };
 
 export function getMcpProfile(id = 'legacy') {

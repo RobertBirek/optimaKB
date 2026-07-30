@@ -168,6 +168,17 @@ export const KB_DETAILS = {
       'downloads/knowledge_inbox/2026-07-17/',
     ],
   },
+  InsERTGTSchema: {
+    projectId: 17,
+    namespace: 'InsERTGTSchema',
+    summary: 'InsERT GT MSSQL schema (Subiekt, Rewizor, Gratyfikant): tabele, kolumny, obiekty SQL, złączenia, zależności.',
+    artifacts: [
+      'exports/insert_gt_schema/v1/table_query_guide.csv',
+      'exports/insert_gt_schema/v1/join_path_guide.csv',
+      'exports/insert_gt_schema/v1/sql_object_guide.csv',
+      'exports/insert_gt_schema/v1/chunk.csv',
+    ],
+  },
 };
 
 const BLENDED_RULES = [

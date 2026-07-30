@@ -1,0 +1,31 @@
+{
+  "id": "draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Nowe wzory struktur JPK_VAT dostępne na ePUAP",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap\n\nSummary:\n- The page announces updated JPK_VAT structure templates now available on ePUAP. This relates to VAT JPK (JPK_VAT) reporting requirements for taxpayers in Poland and provides access to the new formats via the tax authority portal.\n- It sits under the “Aktualności” (News) section and is part of the broader Tax Service portal, which also offers guides, online services, and tools for individuals and businesses.\n- If you need the latest VAT JPK_VAT templates for 2026 specifically, this page indicates that updated forms/templates are now released and accessible through ePUAP for electronic submission.\nNote: The page listing provided highlights indicates broader sections (PIT/CIT/VAT/JPK, etc.) but does not show direct links to the 2026 VAT JPK templates. For precise download or submission steps, visit the Polish Ministry of Finance/tax portal’s Aktualności or ePUAP sections and se...",
+  "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap",
+  "tags": [
+    "podatki",
+    "vat",
+    "jpk",
+    "ksef",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_302deb2d",
+    "sourceType": "exa_query",
+    "sourceTier": "operator_draft",
+    "scanRunId": "source_scan_2026-07-24T02-25-02-351Z_4c928fbd",
+    "retrievedAt": "2026-07-24T02:25:09.839Z",
+    "contentHash": "8d05ff05df3732c5e52b8f8df100a6b8c857c1f3869cd8e480a210560d8f4b32",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-07-24T02:25:11.736Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-29T07:54:48.298Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-24/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.json"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-07-28_fcc01279_faktura-wystawiona-poza-ksef-a-koszty-uzyskania-przychodow-jak-ocenia-to-skarbow",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Faktura wystawiona poza KSeF a koszty uzyskania przychodów – jak ocenia to Skarbówka - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: interpretacje podatkowe 2026 wyroki NSA VAT CIT lipiec\nSource: https://ksiegowosc.infor.pl/podatki/vat/faktura/7620306,faktura-wystawiona-poza-ksef-a-koszty-uzyskania-przychodow-jak-ocenia-to-skarbowka.html\nTier: professional\nDiscovery confidence: 0.95\n\nFaktura wystawiona poza KSeF a koszty uzyskania przychodów – jak ocenia to Skarbówka - Infor.pl\n# Faktura wystawiona poza KSeF a koszty uzyskania przychodów – jak ocenia to Skarbówka\n10 lipca 2026, 07:43\nFaktury wystawiane poza KSeF a koszty uzyskania przychodów – jak to interpretuje Skarbówka\nWprowadzenie obowiązkowego Krajowego Systemu e-Faktur (KSeF) budzi liczne pytania o konsekwencje uchybień w nowym systemie dokumentowania transakcji. W jednej z najnowszych interpretacji indywidualnych Dyrektor Krajowej Informacji Skarbowej wyjaśnił, czy faktura wystawiona niezgodnie z nowymi przepisami nadal może stanowić podstawę do ujęcia wydatku w kosztach podatkowych.\n- Stan faktyczny i wątpliwości podatnika\n- Tezy i rozstrzygnięcie Dyrektora KIS\n- Argumentacja organu: CIT niezależny od technologii KSeF\n- Ponowne przesłanie faktury przez KSeF\n- Potwierdzenie dotychczasowej linii interpretacyjnej\n## Stan faktyczny i wątpliwości podatnika\nZ wnioskiem o interpretację wystąpiła do Dyrektora KIS spółka, będąca czynnym podatnikiem VAT i CIT, prowadząca działalność usługową w ramach międzynarodowej grupy kapitałowej. Od 1 lutego 2026 r. Spółka jest zobowiązana do otrzymywania faktur ustrukturyzowanych za pośrednictwem systemu KSeF. Jednak Spółka wskazała, że mimo ustawowego obowiązku, niektórzy dostawcy wystawiają i mogą nadal wystawi\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksiegowosc.infor.pl/podatki/vat/faktura/7620306,faktura-wystawiona-poza-ksef-a-koszty-uzyskania-przychodow-jak-ocenia-to-skarbowka.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia",
+    "orzecznictwo"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-07-21T02:52:15.687Z",
+    "discoveryCandidateId": "candidate_9ac86a4d-700",
+    "discoveryQueryId": "generated_TaxbellLegalReference_d519847f02",
+    "discoveryRunId": "discovery_daily_2026-07-21T02-49-46-759Z_36c2e3db",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "253fc38ef14928f9ce6bac04793642d614f62c74084cdff60d3c8ca23c40a8b5"
+  },
+  "createdAt": "2026-07-28T04:02:38.153Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-30T05:35:29.721Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-28/draft_2026-07-28_fcc01279_faktura-wystawiona-poza-ksef-a-koszty-uzyskania-przychodow-jak-ocenia-to-skarbow.json"
+}

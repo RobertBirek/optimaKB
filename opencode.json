@@ -1,10 +1,17 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"],
-  "instructions": ["AGENTS.md"],
+  "plugin": [
+    "superpowers@git+https://github.com/obra/superpowers.git"
+  ],
+  "instructions": [
+    "AGENTS.md"
+  ],
   "small_model": "google/gemini-2.0-flash",
   "skills": {
-    "paths": [".agents/skills", ".opencode/skills"]
+    "paths": [
+      ".agents/skills",
+      ".opencode/skills"
+    ]
   },
   "references": {
     "docs": {
@@ -40,20 +47,6 @@
       "docker *": "allow",
       "node *": "allow",
       "*": "ask"
-    }
-  },
-  "mcp": {
-    "OWAOntology": {
-      "type": "local",
-      "command": ["node", "scripts/owa_ontology_mcp_server.mjs"],
-      "enabled": true,
-      "env": {
-        "OPTIMAKB_MCP_URL": "https://optima.kag.taxbell.pl/mcp",
-        "OPTIMAKB_API_KEY": "sk-Vd0BGT7jO-Cvrtmqprh_UGUy4_EU7Cab",
-        "EXA_API_KEY": "a792b402-aaa5-4cf7-ba92-e7d6cb052d09",
-        "OPENSPG_COOKIE_FILE": "/etc/erp-kb-openspg.cookie",
-        "ROOT": "/docker/openspg"
-      }
     }
   },
   "formatter": true

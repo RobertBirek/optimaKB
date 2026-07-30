@@ -1,12 +1,12 @@
 # ERP KB Discovery Daily Briefing
 
-Generated: `2026-07-20T16:04:46.333Z`
+Generated: `2026-07-30T06:24:12.347Z`
 
-- Pending candidates: `56`
-- Corpus duplicates: `0`
-- Operator decisions: `92`
-- Quality alerts: `4`
-- Semi-auto active: `false`
+- Pending candidates: `89`
+- Corpus duplicates: `1`
+- Operator decisions: `121`
+- Quality alerts: `1`
+- Semi-auto active: `true`
   - ComarchOptimaSchema: threshold=0.95 (not eligible)
   - ComarchOptimaAdditionalFunctions: threshold=0.95 (not eligible)
   - ComarchOptimaSprint: threshold=0.95 (not eligible)
@@ -20,19 +20,18 @@ Generated: `2026-07-20T16:04:46.333Z`
 
 ## Top candidates
 
-- **100** [Dziennik Ustaw 2026 r. poz. 779](https://dziennikustaw.gov.pl/DU/2026/779) → `TaxbellLegalReference`
-- **100** [Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima](https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/) → `ComarchOptimaReference`
-- **88** [Ustawa o zmianie ustawy o podatku dochodowym od osób fizycznych, ustawy o podatku dochodowym od osób prawnych oraz ustawy o zryczałtowanym podatku dochodowym od niektórych przychodów osiąganych przez ](https://www.inforlex.pl/dok/tresc,DZU.2026.166.0000779,USTAWA-z-dnia-15-maja-2026-r-o-zmianie-ustawy-o-podatku-dochodowym-od-osob-fizycznych-ustawy-o-podatku-dochodowym-od-osob-prawnych-oraz-ustawy.html) → `TaxbellLegalReference`
-- **86** [Projekt ustawy o zmianie ustawy o podatku od towarów i usług - Kancelaria Prezesa Rady Ministrów - Portal Gov.pl](https://www.gov.pl/web/premier/projekt-ustawy-o-zmianie-ustawy-o-podatku-od-towarow-i-uslug14) → `TaxbellAccountingVATReference`
-- **85** [Konfiguracja wydruków – Baza Wiedzy programu Comarch ERP Optima](https://pomoc.comarch.pl/optima/pl/2025/dokumentacja/konfiguracja-wydrukow/) → `ComarchOptimaSprint`
-- **83** [Projekt ustawy o zmianie ustawy - Ordynacja podatkowa oraz niektórych innych ustaw - Kancelaria Prezesa Rady Ministrów - Portal Gov.pl](https://www.gov.pl/web/premier/projekt-ustawy-o-zmianie-ustawy--ordynacja-podatkowa-oraz-niektorych-innych-ustaw6) → `TaxbellLegalReference`
-- **82** [Jawność wynagrodzeń w czerwcu 2026 r.? To nierealne. Pracodawcy kazali czekać z podwyżkami i co teraz? - Infor.pl](https://kadry.infor.pl/wynagrodzenie/ochrona-wynagrodzenia/7568285,jawnosc-wynagrodzen-w-czerwcu-2026-r-to-nierealne-pracodawcy-kazali-czekac-z-podwyzkami-i-co-teraz.html) → `TaxbellPayrollHRReference`
-- **82** [XL014 – Konfiguracja wydruków kodów kreskowych – Baza wiedzy Comarch ERP XL 2024](https://pomoc.comarch.pl/xl/2024/index.php/dokumentacja/xl014-konfiguracja-wydrukow-kodow-kreskowych/) → `ComarchOptimaAdditionalFunctions`
-- **81** [Article Category: Nowości i zmiany w wersji 2026.1.1](https://pomoc.comarch.pl/optima/pl/2026/kategorie/nowosci-i-zmiany-w-wersji-2026-1-1/?ct=YTo1OntzOjY6InNvdXJjZSI7YToyOntpOjA7czoxNDoiY2FtcGFpZ24uZXZlbnQiO2k6MTtpOjYzNDQ1O31zOjU6ImVtYWlsIjtpOjkyNTk7czo0OiJzdGF0IjtzOjIyOiI2OTQyZDYxZmRkMmY3MDM4MjA5MzkzIjtzOjQ6ImxlYWQiO3M6ODoiMjkzMjI1MjQiO3M6NzoiY2hhbm5lbCI7YToxOntzOjU6ImVtYWlsIjtpOjkyNTk7fX0%3D&print=print-search) → `ComarchOptimaSchema`
-- **80** [XL014 – Konfiguracja wydruków kodów kreskowych – Baza wiedzy Comarch ERP XL 2023](https://pomoc.comarch.pl/xl/2023/index.php/dokumentacja/xl014-konfiguracja-wydrukow-kodow-kreskowych/) → `ComarchOptimaAdditionalFunctions`
+- **100** [Nowe regulacje dotyczące substancji reprotoksycznych w środowisku pracy - Państwowa Inspekcja Pracy](https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/nowe-regulacje-dotyczace-substancji-reprotoksycznych-w-srodowisku-pracy?tmpl=pdf) → `TaxbellPayrollHRReference`
+- **100** [Deregulacja 2.0: przyjazna administracja skarbowa i pewność prawa podatkowego - Ministerstwo Finansów - Portal Gov.pl](https://www.gov.pl/web/finanse/deregulacja-20-przyjazna-administracja-skarbowa-i-pewnosc-prawa-podatkowego) → `TaxbellLegalReference`
+- **93** [Jak dodać dokument sprzedaży przez OCR&KSeF? - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-dodac-dokument-sprzedazy-przez-ocrksef/) → `ComarchBetterflyReference`
+- **92** [Obowiązkowy KSeF odroczony do 1 lutego 2026 r.](https://www.gov.pl/web/finanse/obowiazkowy-ksef-odroczony-do-1-lutego-2026-r) → `TaxbellLegalReference`
+- **92** [Nowe zmiany w szkoleniach BHP – co przynosi ...](https://gdansk.pip.gov.pl/aktualnosci/nowe-zmiany-w-szkoleniach-bhp-co-przynosi-rozporzadzenie-z-listopada-2025-r) → `TaxbellPayrollHRReference`
+- **90** [Jak rozpocząć współpracę z Biurem Rachunkowym? - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-rozpoczac-wspolprace-z-biurem-rachunkowym/) → `ComarchBetterflyReference`
+- **90** [KSeF obowiązkowy od 1 lutego 2026 r. - Podatki.gov.pl](https://ksef.podatki.gov.pl/konsultacje/) → `TaxbellLegalReference`
+- **90** [Parametry wydruku faktury – Baza Wiedzy programu Comarch ERP Optima](https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/parametry-wydruku-faktury/) → `ComarchOptimaSprint`
+- **88** [Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy – Kodeks pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych](https://api.sejm.gov.pl/eli/acts/DU/2026/25/text.pdf) → `TaxbellPayrollHRReference`
+- **88** [Zmiany w przepisach prawa pracy w 2026 roku](https://bydgoszcz.pip.gov.pl/aktualnosci/zmiany-w-przepisach-prawa-pracy-w-2026-roku) → `TaxbellPayrollHRReference`
 
 ## Query issues
 
-- `seed_ComarchOptimaSchema`: DUPLICATE_HEAVY, efficiency 45
-- `seed_ComarchOptimaSprint`: DUPLICATE_HEAVY, efficiency 45
-- `seed_ComarchOptimaReference`: DUPLICATE_HEAVY, efficiency 45
+- `seed_ComarchOptimaAdditionalFunctions`: DUPLICATE_HEAVY, efficiency 60
+- `seed_ComarchOptimaSchema`: LOW_ACCEPTANCE, efficiency 67

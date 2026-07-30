@@ -241,6 +241,9 @@ const DOMAIN_TOOL_DESCRIPTIONS = {
   'payroll_guidance.search': 'Search curated payroll guidance.',
   'hr_rule.explain': 'Explain an HR or employment rule with provenance and validity warnings.',
   'social_insurance_rule.explain': 'Explain a social-insurance rule with provenance and validity warnings.',
+  'insert_gt_schema.search': 'Search InsERT GT (Subiekt GT, Rewizor GT, Gratyfikant GT) tables, columns, and schema evidence.',
+  'insert_gt_object.get': 'Get technical evidence about an InsERT GT database object.',
+  'insert_gt_join_path.find': 'Find documented join paths between InsERT GT database objects.',
 };
 
 const LIVE_TOOLS = new Set(['legal_live_source.search']);
@@ -255,6 +258,7 @@ function domainFromProfile(profile) {
   if (id === 'optima-technical-mcp') return 'optima_technical';
   if (id === 'optima-product-mcp') return 'optima_product';
   if (id === 'knowledge-editorial-mcp') return 'editorial';
+  if (id === 'insert-gt-technical-mcp') return 'insert_gt';
   return 'erp_knowledge';
 }
 
@@ -523,7 +527,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
       return { jsonrpc: '2.0', id, error: { code: -32601, message: `Tool is not available in this MCP profile: ${name}` } };
     }
     const writeTools = new Set(['submit_knowledge_draft', 'draft_external_source']);
-    if (writeTools.has(name) && context.writeAllowed === false) {
+    if (writeTools.has(name) && context.writeAllowed !== true) {
       return writeToolDenied(id, name);
     }
 

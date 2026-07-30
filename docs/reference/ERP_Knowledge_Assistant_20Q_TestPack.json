@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T11:41:56.942Z",
+  "generatedAt": "2026-07-30T08:45:51.176Z",
   "requestedSize": 20,
   "size": 20,
   "questionCount": 250,
@@ -36,19 +36,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 46,
-              "score": 3,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podmiotyview,CDN.PodmiotyView Query Guide,Query design helper for table CDN.PodmiotyView.,table_query_guide,CDN_TEST:TABLE:CDN.PodmiotyView,CDN.PodmiotyView,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,27,0,Pod_PodId; Pod_PodmiotTyp,N..."
-            },
-            {
-              "line": 165,
+              "line": 201,
               "score": 3,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
             },
             {
-              "line": 21,
+              "line": 6,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_practeczkidokumenty,CDN.PracTeczkiDokumenty Query Guide,Query design helper for table CDN.PracTeczkiDokumenty.,table_query_guide,CDN_TEST:TABLE:CDN.PracTeczkiDokumenty,CDN.PracTeczkiDokumenty,KADRY_PLACE,REGISTER,HR_PAYROLL,HIGH,QUERY_DESIGN,0,1,..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.DetalPlatnosciDokumentu Query Guide,Query design helper for table CDN.DetalPlatnosciDokumentu.,table_query_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN.DetalPlatnosciDokumentu,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QU..."
+            },
+            {
+              "line": 89,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_dokumentydostawynag,CDN.DokumentyDostawyNag Query Guide,Query design helper for table CDN.DokumentyDostawyNag.,table_query_guide,CDN_TEST:TABLE:CDN.DokumentyDostawyNag,CDN.DokumentyDostawyNag,HANDEL,HEADER,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,2,2,DD..."
             }
           ]
         },
@@ -58,19 +58,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 69,
+              "line": 35,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajbnkzdarzenie,CDN.DodajBnkZdarzenie Guide,Query-design helper for stored_procedure CDN.DodajBnkZdarzenie.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajBnkZdarzenie,STORED_PROCEDURE,WORKFLOW_INTEGRATION,OGOLNE,MEDIUM,\"WORKFLOW_INTEGRATION | ..."
             },
             {
-              "line": 92,
+              "line": 43,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpka,CDN.DetalStan_WydrukiNaglowekPKA Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekPKA.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekPKA,STORED_PROCEDURE,SPRINT_PRINT,OG..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_korektakursuwalutkb,CDN.KorektaKursuWalutKB Guide,Query-design helper for stored_procedure CDN.KorektaKursuWalutKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KorektaKursuWalutKB,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJEC..."
             },
             {
-              "line": 102,
+              "line": 44,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekfa,CDN.DetalStan_WydrukiNaglowekFA Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekFA.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekFA,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_ex_hamag,CDN.OFF_Ex_HaMag Guide,Query-design helper for stored_procedure CDN.OFF_Ex_HaMag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_Ex_HaMag,STORED_PROCEDURE,WORKFLOW_INTEGRATION,HANDEL_MAGAZYN,MEDIUM,\"WORKFLOW_INTEGRATION | HANDEL_MAGAZ..."
             }
           ]
         },
@@ -80,17 +80,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 1147,
-              "score": 3,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.CRMDokumenty_InsertUpdateHandler=>U :CDN.TraNag,CRMDokumenty_InsertUpdateHandler => TraNag,Heuristic SQL-text dependency from CDN.CRMDokumenty_InsertUpdateHandler to CDN.TraNag.,object_dependency,CDN_TEST:TRIGGER:CDN.CRMDokumenty_InsertUpda..."
-            },
-            {
-              "line": 1148,
+              "line": 676,
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.CRMDokumenty_InsertUpdateHandler=>U :CDN.CRMDokumenty,CRMDokumenty_InsertUpdateHandler => CRMDokumenty,Heuristic SQL-text dependency from CDN.CRMDokumenty_InsertUpdateHandler to CDN.CRMDokumenty.,object_dependency,CDN_TEST:TRIGGER:CDN.CRMDo..."
             },
             {
-              "line": 1707,
+              "line": 677,
+              "score": 3,
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.CRMDokumenty_InsertUpdateHandler=>U :CDN.TraNag,CRMDokumenty_InsertUpdateHandler => TraNag,Heuristic SQL-text dependency from CDN.CRMDokumenty_InsertUpdateHandler to CDN.TraNag.,object_dependency,CDN_TEST:TRIGGER:CDN.CRMDokumenty_InsertUpda..."
+            },
+            {
+              "line": 1264,
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.TraNag_DeleteHandler=>U :CDN.CRMDokumenty,TraNag_DeleteHandler => CRMDokumenty,Heuristic SQL-text dependency from CDN.TraNag_DeleteHandler to CDN.CRMDokumenty.,object_dependency,CDN_TEST:TRIGGER:CDN.TraNag_DeleteHandler,CDN_TEST:TABLE:CDN.C..."
             }
@@ -102,17 +102,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 11867,
+              "line": 4030,
               "score": 3,
               "snippet": "CDN_TEST:TRIGGER:CDN.CRMDokumenty_InsertUpdateHandler,CRMDokumenty_InsertUpdateHandler,Trigger CDN.CRMDokumenty_InsertUpdateHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.CRMDokumenty_InsertUpdateHandler,CDN_TEST:TABLE:CDN.CRMDokumenty,OBJECT_OR_COLUMN,\"CR..."
             },
             {
-              "line": 11886,
+              "line": 4049,
               "score": 3,
               "snippet": "\",\"CREATE TRIGGER CDN.CRMDokumenty_InsertUpdateHandler"
             },
             {
-              "line": 16951,
+              "line": 21179,
               "score": 3,
               "snippet": "RAISERROR('##OPT32351##', 16, 1) -- RAISERROR('Nie można usunąć pieczątki firmy powiązanej z dokumentem handlowo-magazynowym.', 16, 1)"
             }
@@ -124,19 +124,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 75,
+              "line": 47,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dlgdokumentydlgelem,CDN.DlgDokumenty -> CDN.DlgElem,Direct join path from CDN.DlgDokumenty to CDN.DlgElem based on FK_DlgDokumentyDlgElem.,join_path_guide,CDN_TEST:TABLE:CDN.DlgDokumenty,CDN_TEST:TABLE:CDN.DlgElem,CDN_TEST:FOREIGN_KEY:CDN..."
+            },
+            {
+              "line": 323,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_crdcrmkontakty,CDN.CRMDokumenty -> CDN.CRMKontakty,Direct join path from CDN.CRMDokumenty to CDN.CRMKontakty based on FK_CRDCRMKontakty.,join_path_guide,CDN_TEST:TABLE:CDN.CRMDokumenty,CDN_TEST:TABLE:CDN.CRMKontakty,CDN_TEST:FOREIGN_KEY:C..."
             },
             {
-              "line": 176,
+              "line": 431,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dpldtranagds,CDN.DetalPlatnosciDokumentu -> CDN.DetalTraNag,Direct join path from CDN.DetalPlatnosciDokumentu to CDN.DetalTraNag based on FK_DPlDTraNagDS.,join_path_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN_TEST:TABLE:CDN.Detal..."
-            },
-            {
-              "line": 184,
-              "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dstranag,CDN.DetalStanPlatnosciDokumentu -> CDN.DetalStanTraNag,Direct join path from CDN.DetalStanPlatnosciDokumentu to CDN.DetalStanTraNag based on FK_DSTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.DetalStanPlatnosciDokumentu,CDN_TEST:TAB..."
             }
           ]
         }
@@ -160,19 +160,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 372,
+              "line": 232,
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_usunieteobiekty,CDN.UsunieteObiekty Query Guide,Query design helper for table CDN.UsunieteObiekty.,table_query_guide,CDN_TEST:TABLE:CDN.UsunieteObiekty,CDN.UsunieteObiekty,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,0,,,Role OTHER in GENERAL_E..."
             },
             {
-              "line": 10,
+              "line": 6,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_tranagrelacje,CDN.TraNagRelacje Query Guide,Query design helper for table CDN.TraNagRelacje.,table_query_guide,CDN_TEST:TABLE:CDN.TraNagRelacje,CDN.TraNagRelacje,HANDEL,RELATION,TRADE_DOCUMENTS,MEDIUM,QUERY_DESIGN,0,0,,,Role RELATION in TRADE_DOC..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.DetalPlatnosciDokumentu Query Guide,Query design helper for table CDN.DetalPlatnosciDokumentu.,table_query_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN.DetalPlatnosciDokumentu,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QU..."
             },
             {
               "line": 14,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podarkuszinwennag,CDN.PodArkuszInwenNag Query Guide,Query design helper for table CDN.PodArkuszInwenNag.,table_query_guide,CDN_TEST:TABLE:CDN.PodArkuszInwenNag,CDN.PodArkuszInwenNag,HANDEL_MAGAZYN,HEADER,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,1,1,P..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_magazyny,CDN.Magazyny Query Guide,Query design helper for table CDN.Magazyny.,table_query_guide,CDN_TEST:TABLE:CDN.Magazyny,CDN.Magazyny,HANDEL_MAGAZYN,MASTER,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,9,0,Mag_MagId,ProdElem; ProdSkladniki; SrsZlecenia..."
             }
           ]
         },
@@ -182,19 +182,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 5,
+              "line": 199,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trnpieczatka,CDN.TraNag -> CDN.Pieczatki,Direct join path from CDN.TraNag to CDN.Pieczatki based on FK_TrNPieczatka.,join_path_guide,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:TABLE:CDN.Pieczatki,CDN_TEST:FOREIGN_KEY:CDN.FK_TrNPieczatka,1,DIRECT_..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_tretranag,CDN.TraElem -> CDN.TraNag,Direct join path from CDN.TraElem to CDN.TraNag based on FK_TrETraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_TrETraNag,1,DIRECT_FOREIGN_KEY,FRO..."
             },
             {
-              "line": 9,
+              "line": 215,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trnpieczatkajs,CDN.TraNag -> CDN.PieczatkiJS,Direct join path from CDN.TraNag to CDN.PieczatkiJS based on FK_TrNPieczatkaJS.,join_path_guide,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:TABLE:CDN.PieczatkiJS,CDN_TEST:FOREIGN_KEY:CDN.FK_TrNPieczatka..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_fakzaltranag,CDN.TraFakZaliczkowe -> CDN.TraNag,Direct join path from CDN.TraFakZaliczkowe to CDN.TraNag based on FK_FakZalTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraFakZaliczkowe,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_F..."
             },
             {
-              "line": 13,
+              "line": 219,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_treatranag,CDN.TraeSklepAukcje -> CDN.TraNag,Direct join path from CDN.TraeSklepAukcje to CDN.TraNag based on FK_TrEATraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraeSklepAukcje,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_TrEATraN..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trnpodmiot,CDN.TraNag -> CDN.PodmiotyView,Direct join path from CDN.TraNag to CDN.PodmiotyView based on FK_TrNPodmiot.,join_path_guide,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:TABLE:CDN.PodmiotyView,CDN_TEST:FOREIGN_KEY:CDN.FK_TrNPodmiot,1,DIRE..."
             }
           ]
         },
@@ -204,19 +204,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 5,
+              "line": 4,
               "score": 1,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wz_getvattablesprinten,CDN.WZ_GetVATTableSprintEN Guide,Query-design helper for stored_procedure CDN.WZ_GetVATTableSprintEN.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZ_GetVATTableSprintEN,STORED_PROCEDURE,SPRINT_PRINT,KSIEGOWOSC_COMPLIANCE,HIGH..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_dodajparagon,CDN.DetalStan_DodajParagon Guide,Query-design helper for stored_procedure CDN.DetalStan_DodajParagon.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_DodajParagon,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENER..."
             },
             {
-              "line": 9,
+              "line": 11,
               "score": 1,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_esklep_eksportptw,CDN.ESKLEP_EksportPtw Guide,Query-design helper for stored_procedure CDN.ESKLEP_EksportPtw.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ESKLEP_EksportPtw,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | previ..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_dodajnaglowekmm,CDN.OFF_DodajNaglowekMM Guide,Query-design helper for stored_procedure CDN.OFF_DodajNaglowekMM.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJEC..."
             },
             {
-              "line": 17,
+              "line": 14,
               "score": 1,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wzkor_getreportcontent,CDN.WZKOR_GetReportContent Guide,Query-design helper for stored_procedure CDN.WZKOR_GetReportContent.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZKOR_GetReportContent,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT ..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_pobierzzamknieteparagonybezfaktury,CDN.DetalStan_PobierzZamknieteParagonyBezFaktury Guide,Query-design helper for stored_procedure CDN.DetalStan_PobierzZamknieteParagonyBezFaktury.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_Pob..."
             }
           ]
         },
@@ -226,19 +226,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 202,
+              "line": 213,
               "score": 1,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.TrNZaokraglenieNB=>U :CDN.TraNag,TrNZaokraglenieNB => TraNag,Heuristic SQL-text dependency from CDN.TrNZaokraglenieNB to CDN.TraNag.,object_dependency,CDN_TEST:FUNCTION:CDN.TrNZaokraglenieNB,CDN_TEST:TABLE:CDN.TraNag,FUNCTION,TABLE,HEURISTI..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.FzPz=>U :CDN.TraNagRelacje,FzPz => TraNagRelacje,Heuristic SQL-text dependency from CDN.FzPz to CDN.TraNagRelacje.,object_dependency,CDN_TEST:FUNCTION:CDN.FzPz,CDN_TEST:TABLE:CDN.TraNagRelacje,FUNCTION,TABLE,HEURISTIC_SQL_TEXT_MATCH,CDN.Tra..."
             },
             {
-              "line": 227,
+              "line": 214,
               "score": 1,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DokDefinicje_InsertUpdate_Trigger=>U :CDN.TraNag,DokDefinicje_InsertUpdate_Trigger => TraNag,Heuristic SQL-text dependency from CDN.DokDefinicje_InsertUpdate_Trigger to CDN.TraNag.,object_dependency,CDN_TEST:TRIGGER:CDN.DokDefinicje_InsertU..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.FzPz=>U :CDN.TraNag,FzPz => TraNag,Heuristic SQL-text dependency from CDN.FzPz to CDN.TraNag.,object_dependency,CDN_TEST:FUNCTION:CDN.FzPz,CDN_TEST:TABLE:CDN.TraNag,FUNCTION,TABLE,HEURISTIC_SQL_TEXT_MATCH,CDN.TraNag"
             },
             {
-              "line": 248,
+              "line": 221,
               "score": 1,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.TraKwoty=>U :CDN.TraNagRelacje,TraKwoty => TraNagRelacje,Heuristic SQL-text dependency from CDN.TraKwoty to CDN.TraNagRelacje.,object_dependency,CDN_TEST:FUNCTION:CDN.TraKwoty,CDN_TEST:TABLE:CDN.TraNagRelacje,FUNCTION,TABLE,HEURISTIC_SQL_TE..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.FormyPlatnosci_InsertUpdateDelete_Trigger=>U :CDN.TraNag,FormyPlatnosci_InsertUpdateDelete_Trigger => TraNag,Heuristic SQL-text dependency from CDN.FormyPlatnosci_InsertUpdateDelete_Trigger to CDN.TraNag.,object_dependency,CDN_TEST:TRIGGER:..."
             }
           ]
         },
@@ -248,19 +248,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 195,
+              "line": 274,
               "score": 1,
-              "snippet": "-- Sprawdzenie, czy zmieniono symbol, numerację lub klasę w definicji wykorzystanej w TraNag"
+              "snippet": "-- Sprawdzenie, czy zmieniono nazwę lub typ w formie wykorzystanej w TraNag"
             },
             {
-              "line": 198,
+              "line": 277,
               "score": 1,
-              "snippet": "JOIN CDN.TraNag ON deleted.DDf_DDfId = CDN.TraNag.TrN_DDfId"
+              "snippet": "JOIN CDN.TraNag ON deleted.FPl_FPlID = CDN.TraNag.TrN_FPlId"
             },
             {
-              "line": 202,
+              "line": 280,
               "score": 1,
-              "snippet": "RAISERROR('##OPT32296##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana w nagłówkach transakcji (TraNag). Nie można zmieniać jej symbolu, schematu numeracji ani klasy.',16,1)"
+              "snippet": "RAISERROR('##OPT32325##', 16, 1) -- RAISERROR('Forma płatności jest używana w nagłówkach transakcji (TraNag). Nie można zmieniać jej typu ani nazwy.',16,1)"
             }
           ]
         }
@@ -284,19 +284,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 140,
+              "line": 461,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_mobile_eksportptw,CDN.Mobile_EksportPtw Guide,Query-design helper for stored_procedure CDN.Mobile_EksportPtw.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Mobile_EksportPtw,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | previ..."
+            },
+            {
+              "line": 604,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_pobierzstatystykizmiany,CDN.DetalStan_PobierzStatystykiZmiany Guide,Query-design helper for stored_procedure CDN.DetalStan_PobierzStatystykiZmiany.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_PobierzStatystykiZmiany,STORED_PROCE..."
             },
             {
-              "line": 151,
+              "line": 615,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_pobierzstatystykizmianydlaoperatora,CDN.DetalStan_PobierzStatystykiZmianyDlaOperatora Guide,Query-design helper for stored_procedure CDN.DetalStan_PobierzStatystykiZmianyDlaOperatora.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_..."
-            },
-            {
-              "line": 523,
-              "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajhamag,CDN.DodajHaMag Guide,Query-design helper for stored_procedure CDN.DodajHaMag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajHaMag,STORED_PROCEDURE,SPECIAL_FUNCTION,HANDEL_MAGAZYN,MEDIUM,\"SPECIAL_FUNCTION | HANDEL_MAGAZYN | preview:CRE..."
             }
           ]
         },
@@ -306,17 +306,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 2337,
+              "line": 1662,
               "score": 3,
               "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
             },
             {
-              "line": 8071,
+              "line": 8083,
               "score": 3,
               "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
             },
             {
-              "line": 8194,
+              "line": 8206,
               "score": 3,
               "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
             }
@@ -328,19 +328,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 43,
+              "line": 153,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelem,CDN.TraElem Query Guide,Query design helper for table CDN.TraElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraElem,CDN.TraElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,5,4,TrE_PodID; TrE_PodmiotTyp; TrE_TrNId; TrE_TwrId; TrE_KatID; TrE_..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantowary,CDN.DetalStanTowary Query Guide,Query design helper for table CDN.DetalStanTowary.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTowary,CDN.DetalStanTowary,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,MEDIUM,QUERY_DESIGN,3,0,DSTwr_DSTw..."
             },
             {
-              "line": 45,
+              "line": 183,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traselemdost,CDN.TraSElemDost Query Guide,Query design helper for table CDN.TraSElemDost.,table_query_guide,CDN_TEST:TABLE:CDN.TraSElemDost,CDN.TraSElemDost,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TsD_TrEId,TraElem,Role LINE in TRADE_DO..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantraelem,CDN.DetalStanTraElem Query Guide,Query design helper for table CDN.DetalStanTraElem.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraElem,CDN.DetalStanTraElem,OGOLNE,LINE,GENERAL_ERP,HIGH,QUERY_DESIGN,0,2,DSTrE_TwrId; DSTrE_DSTr..."
             },
             {
-              "line": 65,
+              "line": 201,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelemkorzbiorcza,CDN.TraElemKorZbiorcza Query Guide,Query design helper for table CDN.TraElemKorZbiorcza.,table_query_guide,CDN_TEST:TABLE:CDN.TraElemKorZbiorcza,CDN.TraElemKorZbiorcza,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TreZ_TrNI..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
             }
           ]
         },
@@ -350,19 +350,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 21,
-              "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstraelemc,CDN.TraSElemCechy -> CDN.TraSElem,Direct join path from CDN.TraSElemCechy to CDN.TraSElem based on FK_TrSTraElemC.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElemCechy,CDN_TEST:TABLE:CDN.TraSElem,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTra..."
-            },
-            {
               "line": 25,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstraelemd,CDN.TraSElemDost -> CDN.TraElem,Direct join path from CDN.TraSElemDost to CDN.TraElem based on FK_TrSTraElemD.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElemDost,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTraElemD,..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdetraelem,CDN.ProdElem -> CDN.TraElem,Direct join path from CDN.ProdElem to CDN.TraElem based on FK_PdETraElem.,join_path_guide,CDN_TEST:TABLE:CDN.ProdElem,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:FOREIGN_KEY:CDN.FK_PdETraElem,1,DIRECT_FOREIG..."
             },
             {
-              "line": 29,
+              "line": 195,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_treztranag,CDN.TraElemKorZbiorcza -> CDN.TraNag,Direct join path from CDN.TraElemKorZbiorcza to CDN.TraNag based on FK_TreZTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElemKorZbiorcza,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trepodmiot,CDN.TraElem -> CDN.PodmiotyView,Direct join path from CDN.TraElem to CDN.PodmiotyView based on FK_TrEPodmiot.,join_path_guide,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:TABLE:CDN.PodmiotyView,CDN_TEST:FOREIGN_KEY:CDN.FK_TrEPodmiot,1,D..."
+            },
+            {
+              "line": 199,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_tretranag,CDN.TraElem -> CDN.TraNag,Direct join path from CDN.TraElem to CDN.TraNag based on FK_TrETraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_TrETraNag,1,DIRECT_FOREIGN_KEY,FRO..."
             }
           ]
         },
@@ -372,19 +372,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 199,
+              "line": 246,
               "score": 2,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.TrNZaokraglenieNB=>U :CDN.TraElem,TrNZaokraglenieNB => TraElem,Heuristic SQL-text dependency from CDN.TrNZaokraglenieNB to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.TrNZaokraglenieNB,CDN_TEST:TABLE:CDN.TraElem,FUNCTION,TABLE,HEUR..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.DokZawieraTylkoUslugi=>U :CDN.TraElem,DokZawieraTylkoUslugi => TraElem,Heuristic SQL-text dependency from CDN.DokZawieraTylkoUslugi to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.DokZawieraTylkoUslugi,CDN_TEST:TABLE:CDN.TraElem,FUN..."
             },
             {
-              "line": 249,
+              "line": 254,
               "score": 2,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.TraKwoty=>U :CDN.TraElem,TraKwoty => TraElem,Heuristic SQL-text dependency from CDN.TraKwoty to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.TraKwoty,CDN_TEST:TABLE:CDN.TraElem,FUNCTION,TABLE,HEURISTIC_SQL_TEXT_MATCH,CDN.TraElem"
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TF:CDN.ListaZasobow=>U :CDN.TraElem,ListaZasobow => TraElem,Heuristic SQL-text dependency from CDN.ListaZasobow to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.ListaZasobow,CDN_TEST:TABLE:CDN.TraElem,FUNCTION,TABLE,HEURISTIC_SQL_TEXT_MATCH..."
             },
             {
-              "line": 353,
+              "line": 325,
               "score": 2,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.OplataCukrowaRazemDlaFa=>U :CDN.TraElem,OplataCukrowaRazemDlaFa => TraElem,Heuristic SQL-text dependency from CDN.OplataCukrowaRazemDlaFa to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.OplataCukrowaRazemDlaFa,CDN_TEST:TABLE:CDN.Tra..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.TraCykliczne_InsertUpdate_Trigger=>U :CDN.TraElem,TraCykliczne_InsertUpdate_Trigger => TraElem,Heuristic SQL-text dependency from CDN.TraCykliczne_InsertUpdate_Trigger to CDN.TraElem.,object_dependency,CDN_TEST:TRIGGER:CDN.TraCykliczne_Inse..."
             }
           ]
         }
@@ -408,17 +408,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 176,
+              "line": 431,
               "score": 4,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dpldtranagds,CDN.DetalPlatnosciDokumentu -> CDN.DetalTraNag,Direct join path from CDN.DetalPlatnosciDokumentu to CDN.DetalTraNag based on FK_DPlDTraNagDS.,join_path_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN_TEST:TABLE:CDN.Detal..."
             },
             {
-              "line": 184,
+              "line": 439,
               "score": 4,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dstranag,CDN.DetalStanPlatnosciDokumentu -> CDN.DetalStanTraNag,Direct join path from CDN.DetalStanPlatnosciDokumentu to CDN.DetalStanTraNag based on FK_DSTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.DetalStanPlatnosciDokumentu,CDN_TEST:TAB..."
             },
             {
-              "line": 229,
+              "line": 488,
               "score": 4,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ddndokdef,CDN.DokumentyDostawyNag -> CDN.DokDefinicje,Direct join path from CDN.DokumentyDostawyNag to CDN.DokDefinicje based on FK_DDNDokDef.,join_path_guide,CDN_TEST:TABLE:CDN.DokumentyDostawyNag,CDN_TEST:TABLE:CDN.DokDefinicje,CDN_TEST..."
             }
@@ -432,17 +432,17 @@
             {
               "line": 2572,
               "score": 4,
-              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_trigger_cdn_dokdefinicje_delete_trigger,CDN.DokDefinicje_Delete_Trigger Guide,Query-design helper for trigger CDN.DokDefinicje_Delete_Trigger.,sql_object_guide,CDN_KNF_Konfiguracja:TRIGGER:CDN.DokDefinicje_Delete_Trigger,TRIGGER,WORKFLOW_INTEGRAT..."
+              "snippet": "SQL_GUIDE:cdn_konfiguracja_trigger_cdn_dokdefinicje_delete_trigger,CDN.DokDefinicje_Delete_Trigger Guide,Query-design helper for trigger CDN.DokDefinicje_Delete_Trigger.,sql_object_guide,CDN_Konfiguracja:TRIGGER:CDN.DokDefinicje_Delete_Trigger,TRIGGER,WORKFLOW_INTEGRATION,HAND..."
             },
             {
-              "line": 58,
+              "line": 11,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci,CDN.DetalStan_WydrukiPlatnosci Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPlatnosci,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIG..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_dodajnaglowekmm,CDN.OFF_DodajNaglowekMM Guide,Query-design helper for stored_procedure CDN.OFF_DodajNaglowekMM.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJEC..."
             },
             {
-              "line": 95,
+              "line": 385,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_getplatnwyplaty,CDN.GetPlatnWyplaty Guide,Query-design helper for stored_procedure CDN.GetPlatnWyplaty.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.GetPlatnWyplaty,STORED_PROCEDURE,GENERAL_SQL_OBJECT,KADRY_PLACE,NORMAL,GENERAL_SQL_OBJECT | KADRY_PL..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_crmdanedokskojarzonych,CDN.CrmDaneDokSkojarzonych Guide,Query-design helper for stored_procedure CDN.CrmDaneDokSkojarzonych.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.CrmDaneDokSkojarzonych,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENER..."
             }
           ]
         },
@@ -452,19 +452,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 116,
+              "line": 6,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.DetalPlatnosciDokumentu Query Guide,Query design helper for table CDN.DetalPlatnosciDokumentu.,table_query_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN.DetalPlatnosciDokumentu,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QU..."
+            },
+            {
+              "line": 89,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_dokumentydostawynag,CDN.DokumentyDostawyNag Query Guide,Query design helper for table CDN.DokumentyDostawyNag.,table_query_guide,CDN_TEST:TABLE:CDN.DokumentyDostawyNag,CDN.DokumentyDostawyNag,HANDEL,HEADER,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,2,2,DD..."
+            },
+            {
+              "line": 139,
               "score": 3,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstanplatnoscidokumentu,CDN.DetalStanPlatnosciDokumentu Query Guide,Query design helper for table CDN.DetalStanPlatnosciDokumentu.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanPlatnosciDokumentu,CDN.DetalStanPlatnosciDokumentu,OGOLNE,OTHER,G..."
-            },
-            {
-              "line": 165,
-              "score": 3,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
-            },
-            {
-              "line": 231,
-              "score": 3,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detaltranag,CDN.DetalTraNag Query Guide,Query design helper for table CDN.DetalTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalTraNag,CDN.DetalTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,0,DTrN_DSTrNID; DTrN_StanDetalID,DetalPlatnosciD..."
             }
           ]
         },
@@ -474,19 +474,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 4468,
+              "line": 3926,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_mobile_eksportptw:READ:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.Mobile_EksportPtw reads CDN.DetalPlatnosciDokumentu,Definition-derived read dependency from CDN.Mobile_EksportPtw to CDN.DetalPlatnosciDokumentu.,object_dependency,CDN_TEST:PROCEDU..."
+              "snippet": "DEP:cdn_test_procedure_cdn_modyfikujzdarzeniakbdokumentu:EXEC:cdn_test_procedure_cdn_rejestroperacjidodajex,CDN.ModyfikujZdarzeniaKBDokumentu execs CDN.RejestrOperacjiDodajEx,Definition-derived procedure call from CDN.ModyfikujZdarzeniaKBDokumentu to CDN.RejestrOperacjiDodajEx..."
             },
             {
-              "line": 4691,
+              "line": 4083,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_mobile_importcashrecordsettlement:READ:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.Mobile_ImportCashRecordSettlement reads CDN.DetalPlatnosciDokumentu,Definition-derived read dependency from CDN.Mobile_ImportCashRecordSettlement to CDN.DetalPlatno..."
+              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_pobierzpelnynrdokumentu:READ:cdn_test_table_cdn_detalstantranag,CDN.DetalStan_PobierzPelnyNrDokumentu reads CDN.DetalStanTraNag,Definition-derived read dependency from CDN.DetalStan_PobierzPelnyNrDokumentu to CDN.DetalStanTraNag.,object_dep..."
             },
             {
-              "line": 4693,
+              "line": 4112,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_mobile_importcashrecordsettlement:WRITE:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.Mobile_ImportCashRecordSettlement writes CDN.DetalPlatnosciDokumentu,Definition-derived write dependency from CDN.Mobile_ImportCashRecordSettlement to CDN.DetalPla..."
+              "snippet": "DEP:cdn_test_procedure_cdn_dodajbnkzdarzenie:EXEC:cdn_test_procedure_cdn_modyfikujzdarzeniakbdokumentu,CDN.DodajBnkZdarzenie execs CDN.ModyfikujZdarzeniaKBDokumentu,Definition-derived procedure call from CDN.DodajBnkZdarzenie to CDN.ModyfikujZdarzeniaKBDokumentu.,object_depend..."
             }
           ]
         },
@@ -496,19 +496,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 184,
+              "line": 12,
               "score": 3,
-              "snippet": "RAISERROR('##OPT32295##', 16, 1) -- RAISERROR('Nie można mieć aktywnych dwóch definicji dokumentów o takim samym symbolu', 16,1);"
+              "snippet": "RAISERROR('##OPT32319##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana na stanowiskach Detalu lub sprzedaży mobilnej. ',16,1)"
             },
             {
-              "line": 202,
+              "line": 21,
               "score": 3,
-              "snippet": "RAISERROR('##OPT32296##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana w nagłówkach transakcji (TraNag). Nie można zmieniać jej symbolu, schematu numeracji ani klasy.',16,1)"
+              "snippet": "RAISERROR('##OPT32319##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana na stanowiskach Detalu lub sprzedaży mobilnej.',16,1)"
             },
             {
-              "line": 214,
+              "line": 30,
               "score": 3,
-              "snippet": "RAISERROR('##OPT32297##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana na stanowiskach Detalu lub sprzedaży mobilnej. Nie można zmieniać jej symbolu, schematu numeracji ani klasy.',16,1)"
+              "snippet": "RAISERROR('##OPT32319##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana na stanowiskach Detalu lub sprzedaży mobilnej.',16,1)"
             }
           ]
         }
@@ -532,17 +532,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 6351,
+              "line": 4533,
               "score": 4,
               "snippet": "DEP:cdn_test_procedure_cdn_anonimizujkontrahenta:READ:cdn_test_table_cdn_bnkzapisy,CDN.AnonimizujKontrahenta reads CDN.BnkZapisy,Definition-derived read dependency from CDN.AnonimizujKontrahenta to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.AnonimizujKontrahenta,C..."
             },
             {
-              "line": 6387,
+              "line": 4569,
               "score": 4,
               "snippet": "DEP:cdn_test_procedure_cdn_anonimizujkontrahenta:WRITE:cdn_test_table_cdn_bnkzapisy,CDN.AnonimizujKontrahenta writes CDN.BnkZapisy,Definition-derived write dependency from CDN.AnonimizujKontrahenta to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.AnonimizujKontrahent..."
             },
             {
-              "line": 3352,
+              "line": 3192,
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.BnkZapisy_InsertUpdateDelete_Trigger=>U :CDN.Kontrahenci,BnkZapisy_InsertUpdateDelete_Trigger => Kontrahenci,Heuristic SQL-text dependency from CDN.BnkZapisy_InsertUpdateDelete_Trigger to CDN.Kontrahenci.,object_dependency,CDN_TEST:TRIGGER:..."
             }
@@ -554,19 +554,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 2729,
+              "line": 2622,
               "score": 4,
               "snippet": "-- Kiedy już wykorzystaliśmy zmienione kwoty limitów ustawiane z zewnątrz (w triggerze BnkZdarzenia lub BnkZapisy) na kontrahentach podrzędnych do ustawienia limitów na kontrahentach nadrzędnych"
             },
             {
-              "line": 2754,
+              "line": 2647,
               "score": 4,
               "snippet": "-- Kiedy już wykorzystaliśmy zmienione kwoty limitów ustawiane z zewnątrz (w triggerze BnkZdarzenia lub BnkZapisy) na kontrahentach podrzędnych do ustawienia limitów na kontrahentach nadrzędnych"
             },
             {
-              "line": 276,
+              "line": 313,
               "score": 2,
-              "snippet": "--Sprawdzenie, czy zmieniono symbol, numerację lub klasę w definicji wykorzystanej w BnkZapisy"
+              "snippet": "RAISERROR('##OPT32328##', 16, 1) -- RAISERROR('Forma płatności jest używana w kontrahentach (Kontrahenci). Nie można zmieniać jej typu ani nazwy.',16,1)"
             }
           ]
         },
@@ -576,19 +576,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 259,
+              "line": 174,
               "score": 3,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnknazwy,CDN.BnkNazwy Query Guide,Query design helper for table CDN.BnkNazwy.,table_query_guide,CDN_TEST:TABLE:CDN.BnkNazwy,CDN.BnkNazwy,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,10,1,BNa_KatID; BNa_BNaId,Kategorie; BnkCertyfikaty; PracEtaty..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podmiotyview,CDN.PodmiotyView Query Guide,Query design helper for table CDN.PodmiotyView.,table_query_guide,CDN_TEST:TABLE:CDN.PodmiotyView,CDN.PodmiotyView,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,27,0,Pod_PodId; Pod_PodmiotTyp,V..."
             },
             {
-              "line": 287,
-              "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kartykredytowe,CDN.KartyKredytowe Query Guide,Query design helper for table CDN.KartyKredytowe.,table_query_guide,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN.KartyKredytowe,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,NORMAL,QUERY_DESIGN,2,0,KKr_KKrId,BnkRa..."
+              "line": 277,
+              "score": 3,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnknazwy,CDN.BnkNazwy Query Guide,Query design helper for table CDN.BnkNazwy.,table_query_guide,CDN_TEST:TABLE:CDN.BnkNazwy,CDN.BnkNazwy,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,10,1,BNa_KatID; BNa_BNaId,Kategorie; UrzRachunki; SchematPlatn..."
             },
             {
-              "line": 313,
+              "line": 132,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnkrachunki,CDN.BnkRachunki Query Guide,Query design helper for table CDN.BnkRachunki.,table_query_guide,CDN_TEST:TABLE:CDN.BnkRachunki,CDN.BnkRachunki,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,8,3,BRa_KKrID; BRa_DDfID; BRa_BNaID; BRa_BRaID,..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_urzrachunki,CDN.UrzRachunki Query Guide,Query design helper for table CDN.UrzRachunki.,table_query_guide,CDN_TEST:TABLE:CDN.UrzRachunki,CDN.UrzRachunki,OGOLNE,OTHER,GENERAL_ERP,MEDIUM,QUERY_DESIGN,2,3,URa_PraId; URa_UrzId; URa_BNaId; URa_URaId,Pr..."
             }
           ]
         },
@@ -598,19 +598,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 190,
+              "line": 128,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_ex_raporty,CDN.OFF_Ex_Raporty Guide,Query-design helper for stored_procedure CDN.OFF_Ex_Raporty.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_Ex_Raporty,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUNCTION | OGOLNE | preview:CRE..."
+            },
+            {
+              "line": 136,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_ex_bnkzapisy,CDN.OFF_Ex_BnkZapisy Guide,Query-design helper for stored_procedure CDN.OFF_Ex_BnkZapisy.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_Ex_BnkZapisy,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | preview:C..."
+            },
+            {
+              "line": 444,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_fz_getreportheader,CDN.FZ_GetReportHeader Guide,Query-design helper for stored_procedure CDN.FZ_GetReportHeader.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.FZ_GetReportHeader,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT | HANDEL | previ..."
-            },
-            {
-              "line": 215,
-              "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_importrapkaszapis,CDN.ImportRapKasZapis Guide,Query-design helper for stored_procedure CDN.ImportRapKasZapis.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ImportRapKasZapis,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | previ..."
-            },
-            {
-              "line": 431,
-              "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_eslkep_importkntzgodypdflinkikontrola,CDN.ESLKEP_ImportKntZgodyPDFLinkiKontrola Guide,Query-design helper for stored_procedure CDN.ESLKEP_ImportKntZgodyPDFLinkiKontrola.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ESLKEP_ImportKntZgodyPDFLinkiKontr..."
             }
           ]
         },
@@ -620,17 +620,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 459,
+              "line": 158,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dorbnkzapis,CDN.Zaliczki -> CDN.BnkZapisy,Direct join path from CDN.Zaliczki to CDN.BnkZapisy based on FK_DoRBnkZapis.,join_path_guide,CDN_TEST:TABLE:CDN.Zaliczki,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:FOREIGN_KEY:CDN.FK_DoRBnkZapis,1,DIRE..."
             },
             {
-              "line": 480,
+              "line": 177,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzppodmiot,CDN.BnkZapisy -> CDN.PodmiotyView,Direct join path from CDN.BnkZapisy to CDN.PodmiotyView based on FK_BZpPodmiot.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.PodmiotyView,CDN_TEST:FOREIGN_KEY:CDN.FK_BZpPodmi..."
             },
             {
-              "line": 485,
+              "line": 181,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzpkartatyp,CDN.BnkZapisy -> CDN.KartyKredytowe,Direct join path from CDN.BnkZapisy to CDN.KartyKredytowe based on FK_BZpKartaTyp.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
             }
@@ -656,17 +656,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 764,
+              "line": 733,
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_macierzrabatowa,CDN.MacierzRabatowa Guide,Query-design helper for stored_procedure CDN.MacierzRabatowa.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.MacierzRabatowa,STORED_PROCEDURE,SPECIAL_FUNCTION,HANDEL_MAGAZYN,MEDIUM,\"SPECIAL_FUNCTION | HANDEL_M..."
             },
             {
-              "line": 2256,
+              "line": 2271,
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_trigger_cdn_traelemrelacje_insert_trigger,CDN.TraElemRelacje_Insert_Trigger Guide,Query-design helper for trigger CDN.TraElemRelacje_Insert_Trigger.,sql_object_guide,CDN_TEST:TRIGGER:CDN.TraElemRelacje_Insert_Trigger,TRIGGER,GENERAL_SQL_OBJECT,HANDEL,NORMAL,..."
             },
             {
-              "line": 2260,
+              "line": 2274,
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_trigger_cdn_traelemrelacje_delete_trigger,CDN.TraElemRelacje_Delete_Trigger Guide,Query-design helper for trigger CDN.TraElemRelacje_Delete_Trigger.,sql_object_guide,CDN_TEST:TRIGGER:CDN.TraElemRelacje_Delete_Trigger,TRIGGER,GENERAL_SQL_OBJECT,HANDEL,NORMAL,..."
             }
@@ -678,19 +678,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 9101,
+              "line": 9347,
               "score": 2,
-              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             },
             {
-              "line": 9122,
+              "line": 9368,
               "score": 2,
-              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             },
             {
-              "line": 9614,
+              "line": 9572,
               "score": 2,
-              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             }
           ]
         },
@@ -700,7 +700,7 @@
           "type": "csv",
           "hits": [
             {
-              "line": 64,
+              "line": 356,
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_ksefodbiorkolejnoscwyszukiwaniapozycji,CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji Query Guide,Query design helper for table CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji.,table_query_guide,CDN_TEST:TABLE:CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji,CD..."
             }
@@ -712,19 +712,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 19,
+              "line": 20,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pcpenaglowek,CDN.PaczkiPrzelewowElem -> CDN.PaczkiPrzelewowNag,Direct join path from CDN.PaczkiPrzelewowElem to CDN.PaczkiPrzelewowNag based on FK_PcPENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.PaczkiPrzelewowElem,CDN_TEST:TABLE:CDN.Pac..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_edenaglowek,CDN.EwidDodElem -> CDN.EwidDodNag,Direct join path from CDN.EwidDodElem to CDN.EwidDodNag based on FK_EDENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.EwidDodElem,CDN_TEST:TABLE:CDN.EwidDodNag,CDN_TEST:FOREIGN_KEY:CDN.FK_EDENag..."
             },
             {
-              "line": 23,
+              "line": 33,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pcpanaglowek,CDN.PaczkiPrzelewowAkceptacje -> CDN.PaczkiPrzelewowNag,Direct join path from CDN.PaczkiPrzelewowAkceptacje to CDN.PaczkiPrzelewowNag based on FK_PcPANaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.PaczkiPrzelewowAkceptacje,CDN_..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_va7naglowek,CDN.VatTab7 -> CDN.VatNag,Direct join path from CDN.VatTab7 to CDN.VatNag based on FK_Va7Naglowek.,join_path_guide,CDN_TEST:TABLE:CDN.VatTab7,CDN_TEST:TABLE:CDN.VatNag,CDN_TEST:FOREIGN_KEY:CDN.FK_Va7Naglowek,1,DIRECT_FOREIGN_K..."
             },
             {
-              "line": 31,
+              "line": 50,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_boenaglowek,CDN.BOElem -> CDN.BONag,Direct join path from CDN.BOElem to CDN.BONag based on FK_BOENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.BOElem,CDN_TEST:TABLE:CDN.BONag,CDN_TEST:FOREIGN_KEY:CDN.FK_BOENaglowek,1,DIRECT_FOREIGN_KEY,FRO..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_fcenaglowek,CDN.FaCyklElem -> CDN.FaCyklNag,Direct join path from CDN.FaCyklElem to CDN.FaCyklNag based on FK_FcENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.FaCyklElem,CDN_TEST:TABLE:CDN.FaCyklNag,CDN_TEST:FOREIGN_KEY:CDN.FK_FcENaglowek,..."
             }
           ]
         },
@@ -734,19 +734,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 3,
+              "line": 21,
               "score": 1,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.MailIdentyfikatory_UpdateHandler=>U :CDN.MailKontaEMail,MailIdentyfikatory_UpdateHandler => MailKontaEMail,Heuristic SQL-text dependency from CDN.MailIdentyfikatory_UpdateHandler to CDN.MailKontaEMail.,object_dependency,CDN_KNF_..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.BazZakazy_InsertUpdateHandler=>U :CDN.Bazy,BazZakazy_InsertUpdateHandler => Bazy,Heuristic SQL-text dependency from CDN.BazZakazy_InsertUpdateHandler to CDN.Bazy.,object_dependency,CDN_Konfiguracja:TRIGGER:CDN.BazZakazy_InsertUpdate..."
             },
             {
-              "line": 4,
+              "line": 22,
               "score": 1,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.MailIdentyfikatory_UpdateHandler=>U :CDN.MailIdentyfikatory,MailIdentyfikatory_UpdateHandler => MailIdentyfikatory,Heuristic SQL-text dependency from CDN.MailIdentyfikatory_UpdateHandler to CDN.MailIdentyfikatory.,object_depende..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.BazZakazy_InsertUpdateHandler=>U :CDN.BazZakazy,BazZakazy_InsertUpdateHandler => BazZakazy,Heuristic SQL-text dependency from CDN.BazZakazy_InsertUpdateHandler to CDN.BazZakazy.,object_dependency,CDN_Konfiguracja:TRIGGER:CDN.BazZaka..."
             },
             {
-              "line": 6,
+              "line": 25,
               "score": 1,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.MailIdentyfikatory_InsertHandler=>U :CDN.MailKontaEMail,MailIdentyfikatory_InsertHandler => MailKontaEMail,Heuristic SQL-text dependency from CDN.MailIdentyfikatory_InsertHandler to CDN.MailKontaEMail.,object_dependency,CDN_KNF_..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Bazy_DeleteHandler=>U :CDN.Bazy,Bazy_DeleteHandler => Bazy,Heuristic SQL-text dependency from CDN.Bazy_DeleteHandler to CDN.Bazy.,object_dependency,CDN_Konfiguracja:TRIGGER:CDN.Bazy_DeleteHandler,CDN_Konfiguracja:TABLE:CDN.Bazy,TRIG..."
             }
           ]
         }
@@ -770,19 +770,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 9,
+              "line": 19,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_esklep_eksportptw,CDN.ESKLEP_EksportPtw Guide,Query-design helper for stored_procedure CDN.ESKLEP_EksportPtw.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ESKLEP_EksportPtw,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | previ..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_aktualizujplatnosci,CDN.OFF_AktualizujPlatnosci Guide,Query-design helper for stored_procedure CDN.OFF_AktualizujPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_AktualizujPlatnosci,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPE..."
             },
             {
-              "line": 20,
+              "line": 26,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_esklep_eksportptw_ver2,CDN.ESKLEP_EksportPtw_ver2 Guide,Query-design helper for stored_procedure CDN.ESKLEP_EksportPtw_ver2.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ESKLEP_EksportPtw_ver2,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXP..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_anonimizacjadokblokujaceknt,CDN.AnonimizacjaDokBlokujaceKnt Guide,Query-design helper for stored_procedure CDN.AnonimizacjaDokBlokujaceKnt.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.AnonimizacjaDokBlokujaceKnt,STORED_PROCEDURE,GENERAL_SQL_OBJECT,..."
             },
             {
-              "line": 27,
+              "line": 28,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_ecodawizopackingsequencelinesxml,CDN.EcodAwizoPackingSequenceLinesXml Guide,Query-design helper for stored_procedure CDN.EcodAwizoPackingSequenceLinesXml.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.EcodAwizoPackingSequenceLinesXml,STORED_PROCEDURE..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_dodajgidy,CDN.OFF_DodajGidy Guide,Query-design helper for stored_procedure CDN.OFF_DodajGidy.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_DodajGidy,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CRE..."
             }
           ]
         },
@@ -792,19 +792,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 3942,
+              "line": 3990,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_korektapodatkudochodowegozd_pozycjekorekty_roczneex2:READ:cdn_test_table_cdn_kontrahenci,CDN.KorektaPodatkuDochodowegoZD_PozycjeKorekty_RoczneEx2 reads CDN.Kontrahenci,Definition-derived read dependency from CDN.KorektaPodatkuDochodowegoZD_PozycjeKor..."
+              "snippet": "DEP:cdn_test_procedure_cdn_off_aktualizujplatnosci:READ:cdn_test_table_cdn_kontrahenci,CDN.OFF_AktualizujPlatnosci reads CDN.Kontrahenci,Definition-derived read dependency from CDN.OFF_AktualizujPlatnosci to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_Aktuali..."
             },
             {
-              "line": 3957,
+              "line": 4028,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_sprawdzczymoznakorzbiorcza:READ:cdn_test_table_cdn_kontrahenci,CDN.SprawdzCzyMoznaKorZbiorcza reads CDN.Kontrahenci,Definition-derived read dependency from CDN.SprawdzCzyMoznaKorZbiorcza to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN.Sp..."
+              "snippet": "DEP:cdn_test_procedure_cdn_anonimizacjadokblokujaceknt:READ:cdn_test_table_cdn_kontrahenci,CDN.AnonimizacjaDokBlokujaceKnt reads CDN.Kontrahenci,Definition-derived read dependency from CDN.AnonimizacjaDokBlokujaceKnt to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN..."
             },
             {
-              "line": 4001,
+              "line": 4060,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_dokkorzbiorcza:READ:cdn_test_table_cdn_kontrahenci,CDN.DokKorZbiorcza reads CDN.Kontrahenci,Definition-derived read dependency from CDN.DokKorZbiorcza to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN.DokKorZbiorcza,CDN_TEST:TABLE:CDN.Kont..."
+              "snippet": "DEP:cdn_test_procedure_cdn_off_dodajgidy:READ:cdn_test_table_cdn_kontrahenci,CDN.OFF_DodajGidy reads CDN.Kontrahenci,Definition-derived read dependency from CDN.OFF_DodajGidy to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_DodajGidy,CDN_TEST:TABLE:CDN.Kontrahe..."
             }
           ]
         },
@@ -816,17 +816,17 @@
             {
               "line": 22,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kontazakazy,CDN.KontaZakazy Query Guide,Query design helper for table CDN.KontaZakazy.,table_query_guide,CDN_TEST:TABLE:CDN.KontaZakazy,CDN.KontaZakazy,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,0,1,AcZ_AccId,Konta,Role MASTER in CO..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_umowyb2b,CDN.UmowyB2B Query Guide,Query design helper for table CDN.UmowyB2B.,table_query_guide,CDN_TEST:TABLE:CDN.UmowyB2B,CDN.UmowyB2B,KADRY_PLACE,OTHER,HR_PAYROLL,MEDIUM,QUERY_DESIGN,0,4,UMB_DdfId; UMB_PraId; UMB_DkmIdStanowisko; UMB_KntId,Dok..."
             },
             {
-              "line": 30,
+              "line": 60,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kontrahenci,CDN.Kontrahenci Query Guide,Query design helper for table CDN.Kontrahenci.,table_query_guide,CDN_TEST:TABLE:CDN.Kontrahenci,CDN.Kontrahenci,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,15,7,Knt_OdbiorcaId; Knt_FplID; Knt_B..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstankontrahenci,CDN.DetalStanKontrahenci Query Guide,Query design helper for table CDN.DetalStanKontrahenci.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanKontrahenci,CDN.DetalStanKontrahenci,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,1,0,..."
             },
             {
-              "line": 32,
+              "line": 62,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_typwyplata,CDN.TypWyplata Query Guide,Query design helper for table CDN.TypWyplata.,table_query_guide,CDN_TEST:TABLE:CDN.TypWyplata,CDN.TypWyplata,KADRY_PLACE,DICTIONARY,HR_PAYROLL,HIGH,QUERY_DESIGN,11,5,TWP_PdpId; TWP_PdzId; TWP_PPKUmowaId; TWP_..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_konfigtext,CDN.KonfigText Query Guide,Query design helper for table CDN.KonfigText.,table_query_guide,CDN_TEST:TABLE:CDN.KonfigText,CDN.KonfigText,CRM_KONTRAHENCI,CONFIG,CONTRACTORS_CRM,MEDIUM,QUERY_DESIGN,0,0,,,Role CONFIG in CONTRACTORS_CRM. Ou..."
             }
           ]
         },
@@ -836,19 +836,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 4,
+              "line": 78,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kesknt,CDN.KntESklepy -> CDN.Kontrahenci,Direct join path from CDN.KntESklepy to CDN.Kontrahenci based on FK_KESKnt.,join_path_guide,CDN_TEST:TABLE:CDN.KntESklepy,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_KESKnt,1,DIRECT_..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kwrhknt,CDN.KntWeryfRachHist -> CDN.Kontrahenci,Direct join path from CDN.KntWeryfRachHist to CDN.Kontrahenci based on FK_KWRHKNT.,join_path_guide,CDN_TEST:TABLE:CDN.KntWeryfRachHist,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN..."
             },
             {
-              "line": 12,
+              "line": 148,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kespknt,CDN.KntESklepyPrzedstawiciele -> CDN.Kontrahenci,Direct join path from CDN.KntESklepyPrzedstawiciele to CDN.Kontrahenci based on FK_KESPKnt.,join_path_guide,CDN_TEST:TABLE:CDN.KntESklepyPrzedstawiciele,CDN_TEST:TABLE:CDN.Kontrahen..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_knokontrahent,CDN.KntOsoby -> CDN.Kontrahenci,Direct join path from CDN.KntOsoby to CDN.Kontrahenci based on FK_KnOKontrahent.,join_path_guide,CDN_TEST:TABLE:CDN.KntOsoby,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_KnOKontr..."
             },
             {
-              "line": 48,
+              "line": 160,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_krd2knt,CDN.Krd -> CDN.Kontrahenci,Direct join path from CDN.Krd to CDN.Kontrahenci based on FK_Krd2Knt.,join_path_guide,CDN_TEST:TABLE:CDN.Krd,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_Krd2Knt,1,DIRECT_FOREIGN_KEY,FROM C..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kntformaplatnosci,CDN.Kontrahenci -> CDN.FormyPlatnosci,Direct join path from CDN.Kontrahenci to CDN.FormyPlatnosci based on FK_KntFormaPlatnosci.,join_path_guide,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:TABLE:CDN.FormyPlatnosci,CDN_TEST:F..."
             }
           ]
         },
@@ -858,17 +858,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 927,
+              "line": 307,
               "score": 2,
               "snippet": "-- Sprawdzenie, czy zmieniono nazwę lub typ w formie wykorzystanej w Kontrahenci"
             },
             {
-              "line": 930,
+              "line": 310,
               "score": 2,
               "snippet": "JOIN CDN.Kontrahenci ON deleted.FPl_FPlID = CDN.Kontrahenci.Knt_FPlId"
             },
             {
-              "line": 933,
+              "line": 313,
               "score": 2,
               "snippet": "RAISERROR('##OPT32328##', 16, 1) -- RAISERROR('Forma płatności jest używana w kontrahentach (Kontrahenci). Nie można zmieniać jej typu ani nazwy.',16,1)"
             }
@@ -894,19 +894,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 599,
+              "line": 544,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_detalfunkcjeprac,CDN.DetalFunkcjePrac Query Guide,Query design helper for table CDN.DetalFunkcjePrac.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.DetalFunkcjePrac,CDN.DetalFunkcjePrac,KADRY_PLACE,OTHER,HR_PAYROLL,NORMAL,QUERY_DES..."
-            },
-            {
-              "line": 5,
-              "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podarkuszinwenelem,CDN.PodArkuszInwenElem Query Guide,Query design helper for table CDN.PodArkuszInwenElem.,table_query_guide,CDN_TEST:TABLE:CDN.PodArkuszInwenElem,CDN.PodArkuszInwenElem,HANDEL_MAGAZYN,LINE,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,0,..."
+              "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_detalfunkcjeprac,CDN.DetalFunkcjePrac Query Guide,Query design helper for table CDN.DetalFunkcjePrac.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.DetalFunkcjePrac,CDN.DetalFunkcjePrac,KADRY_PLACE,OTHER,HR_PAYROLL,NORMAL,QUERY_DESIGN,0,0,..."
             },
             {
               "line": 19,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traselem,CDN.TraSElem Query Guide,Query design helper for table CDN.TraSElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraSElem,CDN.TraSElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,2,2,TrS_TwrId; TrS_TrSIdDost; TrS_TrSID,Towary; TraSElem; TraSE..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_twratrybuty,CDN.TwrAtrybuty Query Guide,Query design helper for table CDN.TwrAtrybuty.,table_query_guide,CDN_TEST:TABLE:CDN.TwrAtrybuty,CDN.TwrAtrybuty,HANDEL_MAGAZYN,RELATION,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,1,5,TwA_SrZId; TwA_SrRId; TwA_SrU..."
+            },
+            {
+              "line": 28,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kodycn,CDN.KodyCN Query Guide,Query design helper for table CDN.KodyCN.,table_query_guide,CDN_TEST:TABLE:CDN.KodyCN,CDN.KodyCN,HANDEL_MAGAZYN,DICTIONARY,PRODUCTS_WAREHOUSE,MEDIUM,QUERY_DESIGN,1,0,KCN_KCNId,Towary,Role DICTIONARY in PRODUCTS_WAREH..."
             }
           ]
         },
@@ -916,19 +916,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 1341,
+              "line": 1352,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_procedure_cdn_detal_pobierzoperatorow,CDN.Detal_PobierzOperatorow Guide,Query-design helper for stored_procedure CDN.Detal_PobierzOperatorow.,sql_object_guide,CDN_KNF_Konfiguracja:PROCEDURE:CDN.Detal_PobierzOperatorow,STORED_PROCEDURE,SPECIAL_FUN..."
+              "snippet": "SQL_GUIDE:cdn_konfiguracja_procedure_cdn_detal_pobierzoperatorow,CDN.Detal_PobierzOperatorow Guide,Query-design helper for stored_procedure CDN.Detal_PobierzOperatorow.,sql_object_guide,CDN_Konfiguracja:PROCEDURE:CDN.Detal_PobierzOperatorow,STORED_PROCEDURE,SPECIAL_FUNCTION,OG..."
             },
             {
-              "line": 2580,
+              "line": 2555,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_trigger_cdn_detalfunkcjeprac_delete_trigger,CDN.DetalFunkcjePrac_Delete_Trigger Guide,Query-design helper for trigger CDN.DetalFunkcjePrac_Delete_Trigger.,sql_object_guide,CDN_KNF_Konfiguracja:TRIGGER:CDN.DetalFunkcjePrac_Delete_Trigger,TRIGGER,S..."
+              "snippet": "SQL_GUIDE:cdn_konfiguracja_trigger_cdn_detalfunkcjeprac_insertupdatedelete_trigger,CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger Guide,Query-design helper for trigger CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger.,sql_object_guide,CDN_Konfiguracja:TRIGGER:CDN.DetalFunkcjeP..."
             },
             {
-              "line": 2595,
+              "line": 2581,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_trigger_cdn_detalfunkcjeprac_insertupdatedelete_trigger,CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger Guide,Query-design helper for trigger CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger.,sql_object_guide,CDN_KNF_Konfiguracja:TRIGGER:CDN.Detal..."
+              "snippet": "SQL_GUIDE:cdn_konfiguracja_trigger_cdn_detalfunkcjeprac_delete_trigger,CDN.DetalFunkcjePrac_Delete_Trigger Guide,Query-design helper for trigger CDN.DetalFunkcjePrac_Delete_Trigger.,sql_object_guide,CDN_Konfiguracja:TRIGGER:CDN.DetalFunkcjePrac_Delete_Trigger,TRIGGER,SPECIAL_F..."
             }
           ]
         },
@@ -938,19 +938,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 87,
+              "line": 14,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_Delete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_Delete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_Delete_Trigger to CDN.DetalFunkcjePrac.,object_dependency,CDN_K..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_InsertUpdateDelete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.DetalFunk..."
             },
             {
-              "line": 139,
+              "line": 15,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.RejestrOperacji,DetalFunkcjePrac_InsertUpdateDelete_Trigger => RejestrOperacji,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.Rejestr..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.RejestrOperacji,DetalFunkcjePrac_InsertUpdateDelete_Trigger => RejestrOperacji,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.RejestrOper..."
             },
             {
-              "line": 140,
+              "line": 81,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_InsertUpdateDelete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.Detal..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_Delete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_Delete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_Delete_Trigger to CDN.DetalFunkcjePrac.,object_dependency,CDN_Konfi..."
             }
           ]
         },
@@ -960,19 +960,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 34997,
+              "line": 33564,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:TRIGGER:CDN.DetalFunkcjePrac_Delete_Trigger,DetalFunkcjePrac_Delete_Trigger,Trigger CDN.DetalFunkcjePrac_Delete_Trigger in configuration database CDN_KNF_Konfiguracja.,trigger,CDN_KNF_Konfiguracja:DATABASE,CDN.DetalFunkcjePrac_Delete_Trigger,CDN_KNF_Konfig..."
+              "snippet": "CDN_Konfiguracja:TRIGGER:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger,DetalFunkcjePrac_InsertUpdateDelete_Trigger,Trigger CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger in configuration database CDN_Konfiguracja.,trigger,CDN_Konfiguracja:DATABASE,CDN.DetalFunkcjePrac_Inser..."
             },
             {
-              "line": 34998,
+              "line": 33565,
               "score": 2,
               "snippet": "ON [CDN].[DetalFunkcjePrac]"
             },
             {
-              "line": 35012,
+              "line": 33626,
               "score": 2,
-              "snippet": "\",\"CREATE  TRIGGER [CDN].[DetalFunkcjePrac_Delete_Trigger]"
+              "snippet": "\",\"CREATE TRIGGER [CDN].[DetalFunkcjePrac_InsertUpdateDelete_Trigger]"
             }
           ]
         },
@@ -982,19 +982,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 17,
+              "line": 22,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstowar,CDN.TraSElem -> CDN.Towary,Direct join path from CDN.TraSElem to CDN.Towary based on FK_TrSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElem,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTowar,1,DIRECT_FOREIGN_KEY,FRO..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdetowar,CDN.ProdElem -> CDN.Towary,Direct join path from CDN.ProdElem to CDN.Towary based on FK_PdETowar.,join_path_guide,CDN_TEST:TABLE:CDN.ProdElem,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdETowar,1,DIRECT_FOREIGN_KEY,FRO..."
             },
             {
-              "line": 36,
+              "line": 31,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ztwtwrkod,CDN.ZestawyTwr -> CDN.Towary,Direct join path from CDN.ZestawyTwr to CDN.Towary based on FK_ZTwTwrKod.,join_path_guide,CDN_TEST:TABLE:CDN.ZestawyTwr,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_ZTwTwrKod,1,DIRECT_FOREIG..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdrtwrkod,CDN.ProdReceptury -> CDN.Towary,Direct join path from CDN.ProdReceptury to CDN.Towary based on FK_PdRTwrKod.,join_path_guide,CDN_TEST:TABLE:CDN.ProdReceptury,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdRTwrKod,1,DIRE..."
             },
             {
-              "line": 40,
+              "line": 34,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ztstowar,CDN.ZestawyTwrSkladniki -> CDN.Towary,Direct join path from CDN.ZestawyTwrSkladniki to CDN.Towary based on FK_ZTSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.ZestawyTwrSkladniki,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdstowar,CDN.ProdSkladniki -> CDN.Towary,Direct join path from CDN.ProdSkladniki to CDN.Towary based on FK_PdSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.ProdSkladniki,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdSTowar,1,DIRECT_..."
             }
           ]
         }
@@ -1018,19 +1018,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 43,
+              "line": 153,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelem,CDN.TraElem Query Guide,Query design helper for table CDN.TraElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraElem,CDN.TraElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,5,4,TrE_PodID; TrE_PodmiotTyp; TrE_TrNId; TrE_TwrId; TrE_KatID; TrE_..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantowary,CDN.DetalStanTowary Query Guide,Query design helper for table CDN.DetalStanTowary.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTowary,CDN.DetalStanTowary,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,MEDIUM,QUERY_DESIGN,3,0,DSTwr_DSTw..."
             },
             {
-              "line": 45,
+              "line": 183,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traselemdost,CDN.TraSElemDost Query Guide,Query design helper for table CDN.TraSElemDost.,table_query_guide,CDN_TEST:TABLE:CDN.TraSElemDost,CDN.TraSElemDost,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TsD_TrEId,TraElem,Role LINE in TRADE_DO..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantraelem,CDN.DetalStanTraElem Query Guide,Query design helper for table CDN.DetalStanTraElem.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraElem,CDN.DetalStanTraElem,OGOLNE,LINE,GENERAL_ERP,HIGH,QUERY_DESIGN,0,2,DSTrE_TwrId; DSTrE_DSTr..."
             },
             {
-              "line": 65,
+              "line": 201,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelemkorzbiorcza,CDN.TraElemKorZbiorcza Query Guide,Query design helper for table CDN.TraElemKorZbiorcza.,table_query_guide,CDN_TEST:TABLE:CDN.TraElemKorZbiorcza,CDN.TraElemKorZbiorcza,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TreZ_TrNI..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
             }
           ]
         },
@@ -1040,19 +1040,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 21,
-              "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstraelemc,CDN.TraSElemCechy -> CDN.TraSElem,Direct join path from CDN.TraSElemCechy to CDN.TraSElem based on FK_TrSTraElemC.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElemCechy,CDN_TEST:TABLE:CDN.TraSElem,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTra..."
-            },
-            {
               "line": 25,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstraelemd,CDN.TraSElemDost -> CDN.TraElem,Direct join path from CDN.TraSElemDost to CDN.TraElem based on FK_TrSTraElemD.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElemDost,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTraElemD,..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdetraelem,CDN.ProdElem -> CDN.TraElem,Direct join path from CDN.ProdElem to CDN.TraElem based on FK_PdETraElem.,join_path_guide,CDN_TEST:TABLE:CDN.ProdElem,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:FOREIGN_KEY:CDN.FK_PdETraElem,1,DIRECT_FOREIG..."
             },
             {
-              "line": 29,
+              "line": 195,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_treztranag,CDN.TraElemKorZbiorcza -> CDN.TraNag,Direct join path from CDN.TraElemKorZbiorcza to CDN.TraNag based on FK_TreZTraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElemKorZbiorcza,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trepodmiot,CDN.TraElem -> CDN.PodmiotyView,Direct join path from CDN.TraElem to CDN.PodmiotyView based on FK_TrEPodmiot.,join_path_guide,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:TABLE:CDN.PodmiotyView,CDN_TEST:FOREIGN_KEY:CDN.FK_TrEPodmiot,1,D..."
+            },
+            {
+              "line": 199,
+              "score": 2,
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_tretranag,CDN.TraElem -> CDN.TraNag,Direct join path from CDN.TraElem to CDN.TraNag based on FK_TrETraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_TrETraNag,1,DIRECT_FOREIGN_KEY,FRO..."
             }
           ]
         },
@@ -1062,19 +1062,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 17,
+              "line": 11,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wzkor_getreportcontent,CDN.WZKOR_GetReportContent Guide,Query-design helper for stored_procedure CDN.WZKOR_GetReportContent.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZKOR_GetReportContent,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT ..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_dodajnaglowekmm,CDN.OFF_DodajNaglowekMM Guide,Query-design helper for stored_procedure CDN.OFF_DodajNaglowekMM.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJEC..."
             },
             {
-              "line": 18,
+              "line": 16,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_ecodawizoheaderxml,CDN.EcodAwizoHeaderXml Guide,Query-design helper for stored_procedure CDN.EcodAwizoHeaderXml.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.EcodAwizoHeaderXml,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | p..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_ustawrezerwacje,CDN.UstawRezerwacje Guide,Query-design helper for stored_procedure CDN.UstawRezerwacje.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.UstawRezerwacje,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | pre..."
             },
             {
-              "line": 26,
+              "line": 25,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wzkor_getreportcontenten,CDN.WZKOR_GetReportContentEN Guide,Query-design helper for stored_procedure CDN.WZKOR_GetReportContentEN.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZKOR_GetReportContentEN,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRIN..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_ustawstatusrezerwacji,CDN.UstawStatusRezerwacji Guide,Query-design helper for stored_procedure CDN.UstawStatusRezerwacji.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.UstawStatusRezerwacji,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_S..."
             }
           ]
         },
@@ -1084,19 +1084,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 87,
+              "line": 14,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_Delete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_Delete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_Delete_Trigger to CDN.DetalFunkcjePrac.,object_dependency,CDN_K..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_InsertUpdateDelete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.DetalFunk..."
             },
             {
-              "line": 139,
+              "line": 15,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.RejestrOperacji,DetalFunkcjePrac_InsertUpdateDelete_Trigger => RejestrOperacji,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.Rejestr..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.RejestrOperacji,DetalFunkcjePrac_InsertUpdateDelete_Trigger => RejestrOperacji,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.RejestrOper..."
             },
             {
-              "line": 140,
+              "line": 81,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_InsertUpdateDelete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.Detal..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_Delete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_Delete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_Delete_Trigger to CDN.DetalFunkcjePrac.,object_dependency,CDN_Konfi..."
             }
           ]
         },
@@ -1106,19 +1106,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 2331,
+              "line": 1105,
               "score": 2,
-              "snippet": "--obsługa sprawdzania relacji restrict do tabeli CDN.TraElem"
+              "snippet": "select @Towary = (SELECT TrE_TwrNazwa + ', ' from cdn.traelem where tre_trnID = @TrnId  For xml path (''))"
             },
             {
-              "line": 2333,
+              "line": 1153,
               "score": 2,
-              "snippet": "SELECT * FROM CDN.TraElem, deleted"
+              "snippet": "select @Towary = (SELECT TrE_TwrNazwa + ', ' from cdn.traelem where tre_trnID = @TrnId  For xml path (''))"
             },
             {
-              "line": 2337,
+              "line": 1656,
               "score": 2,
-              "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
+              "snippet": "-- obsługa sprawdzania relacji restrict do tabeli CDN.TraElem"
             }
           ]
         }
@@ -1142,19 +1142,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 324,
+              "line": 33,
               "score": 3,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_va7naglowek,CDN.VatTab7 -> CDN.VatNag,Direct join path from CDN.VatTab7 to CDN.VatNag based on FK_Va7Naglowek.,join_path_guide,CDN_TEST:TABLE:CDN.VatTab7,CDN_TEST:TABLE:CDN.VatNag,CDN_TEST:FOREIGN_KEY:CDN.FK_Va7Naglowek,1,DIRECT_FOREIGN_K..."
             },
             {
-              "line": 19,
+              "line": 20,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pcpenaglowek,CDN.PaczkiPrzelewowElem -> CDN.PaczkiPrzelewowNag,Direct join path from CDN.PaczkiPrzelewowElem to CDN.PaczkiPrzelewowNag based on FK_PcPENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.PaczkiPrzelewowElem,CDN_TEST:TABLE:CDN.Pac..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_edenaglowek,CDN.EwidDodElem -> CDN.EwidDodNag,Direct join path from CDN.EwidDodElem to CDN.EwidDodNag based on FK_EDENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.EwidDodElem,CDN_TEST:TABLE:CDN.EwidDodNag,CDN_TEST:FOREIGN_KEY:CDN.FK_EDENag..."
             },
             {
-              "line": 23,
+              "line": 50,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pcpanaglowek,CDN.PaczkiPrzelewowAkceptacje -> CDN.PaczkiPrzelewowNag,Direct join path from CDN.PaczkiPrzelewowAkceptacje to CDN.PaczkiPrzelewowNag based on FK_PcPANaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.PaczkiPrzelewowAkceptacje,CDN_..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_fcenaglowek,CDN.FaCyklElem -> CDN.FaCyklNag,Direct join path from CDN.FaCyklElem to CDN.FaCyklNag based on FK_FcENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.FaCyklElem,CDN_TEST:TABLE:CDN.FaCyklNag,CDN_TEST:FOREIGN_KEY:CDN.FK_FcENaglowek,..."
             }
           ]
         },
@@ -1164,19 +1164,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 764,
+              "line": 11,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_dodajnaglowekmm,CDN.OFF_DodajNaglowekMM Guide,Query-design helper for stored_procedure CDN.OFF_DodajNaglowekMM.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJEC..."
+            },
+            {
+              "line": 733,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_macierzrabatowa,CDN.MacierzRabatowa Guide,Query-design helper for stored_procedure CDN.MacierzRabatowa.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.MacierzRabatowa,STORED_PROCEDURE,SPECIAL_FUNCTION,HANDEL_MAGAZYN,MEDIUM,\"SPECIAL_FUNCTION | HANDEL_M..."
             },
             {
-              "line": 928,
+              "line": 890,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_generujrws,CDN.GenerujRWS Guide,Query-design helper for stored_procedure CDN.GenerujRWS.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.GenerujRWS,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
-            },
-            {
-              "line": 960,
-              "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_naliczajkws,CDN.NaliczajKWS Guide,Query-design helper for stored_procedure CDN.NaliczajKWS.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.NaliczajKWS,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROC..."
             }
           ]
         },
@@ -1186,19 +1186,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 6064,
+              "line": 3944,
               "score": 3,
               "snippet": "DEP:cdn_test_procedure_cdn_off_dodajnaglowekmm:WRITE:cdn_test_table_cdn_travat,CDN.OFF_DodajNaglowekMM writes CDN.TraVat,Definition-derived write dependency from CDN.OFF_DodajNaglowekMM to CDN.TraVat.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,CDN_TEST:TABLE:..."
             },
             {
-              "line": 735,
+              "line": 521,
               "score": 2,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TF:CDN.VATZD_PozycjeVat=>U :CDN.VatTab,VATZD_PozycjeVat => VatTab,Heuristic SQL-text dependency from CDN.VATZD_PozycjeVat to CDN.VatTab.,object_dependency,CDN_TEST:FUNCTION:CDN.VATZD_PozycjeVat,CDN_TEST:TABLE:CDN.VatTab,FUNCTION,TABLE,HEURISTIC_SQ..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.KorektaPodatku_PozycjeVAT=>U :CDN.VatTab,KorektaPodatku_PozycjeVAT => VatTab,Heuristic SQL-text dependency from CDN.KorektaPodatku_PozycjeVAT to CDN.VatTab.,object_dependency,CDN_TEST:FUNCTION:CDN.KorektaPodatku_PozycjeVAT,CDN_TEST:TABLE:CD..."
             },
             {
-              "line": 736,
+              "line": 819,
               "score": 2,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TF:CDN.VATZD_PozycjeVat=>TF:CDN.VATZD_Zobowiazania,VATZD_PozycjeVat => VATZD_Zobowiazania,Heuristic SQL-text dependency from CDN.VATZD_PozycjeVat to CDN.VATZD_Zobowiazania.,object_dependency,CDN_TEST:FUNCTION:CDN.VATZD_PozycjeVat,CDN_TEST:FUNCTION..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TF:CDN.VIUDO_Pozycje_Korekta=>U :CDN.VatNag,VIUDO_Pozycje_Korekta => VatNag,Heuristic SQL-text dependency from CDN.VIUDO_Pozycje_Korekta to CDN.VatNag.,object_dependency,CDN_TEST:FUNCTION:CDN.VIUDO_Pozycje_Korekta,CDN_TEST:TABLE:CDN.VatNag,FUNCTIO..."
             }
           ]
         },
@@ -1208,19 +1208,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 9101,
+              "line": 9347,
               "score": 3,
-              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             },
             {
-              "line": 9122,
+              "line": 9368,
               "score": 3,
-              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             },
             {
-              "line": 9614,
+              "line": 9572,
               "score": 3,
-              "snippet": "--Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
+              "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             }
           ]
         },
@@ -1230,19 +1230,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 37,
+              "line": 10,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_vattab,CDN.VatTab Query Guide,Query design helper for table CDN.VatTab.,table_query_guide,CDN_TEST:TABLE:CDN.VatTab,CDN.VatTab,KSIEGOWOSC_COMPLIANCE,LINE,COMPLIANCE_ACCOUNTING,HIGH,QUERY_DESIGN,0,3,VaT_KatID; VaT_Kat2ID; VaT_VaNID,Kategorie; VatN..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_wyposazenie,CDN.Wyposazenie Query Guide,Query design helper for table CDN.Wyposazenie.,table_query_guide,CDN_TEST:TABLE:CDN.Wyposazenie,CDN.Wyposazenie,KADRY_PLACE,OTHER,HR_PAYROLL,MEDIUM,QUERY_DESIGN,3,2,Wyp_PrcID; Wyp_KatID; Wyp_WypID,PracKod; ..."
             },
             {
-              "line": 64,
+              "line": 32,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_ksefodbiorkolejnoscwyszukiwaniapozycji,CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji Query Guide,Query design helper for table CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji.,table_query_guide,CDN_TEST:TABLE:CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji,CD..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_wyposazeniepowiazania,CDN.WyposazeniePowiazania Query Guide,Query design helper for table CDN.WyposazeniePowiazania.,table_query_guide,CDN_TEST:TABLE:CDN.WyposazeniePowiazania,CDN.WyposazeniePowiazania,KADRY_PLACE,RELATION,HR_PAYROLL,MEDIUM,QUERY..."
             },
             {
-              "line": 73,
+              "line": 108,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_travat,CDN.TraVat Query Guide,Query design helper for table CDN.TraVat.,table_query_guide,CDN_TEST:TABLE:CDN.TraVat,CDN.TraVat,HANDEL,REGISTER,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,0,1,TrV_TrNID,TraNag,Role REGISTER in TRADE_DOCUMENTS. Outbound forei..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_twrstawkivat,CDN.TwrStawkiVAT Query Guide,Query design helper for table CDN.TwrStawkiVAT.,table_query_guide,CDN_TEST:TABLE:CDN.TwrStawkiVAT,CDN.TwrStawkiVAT,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,NORMAL,QUERY_DESIGN,0,1,TwV_TwrID,Towary,Role OTH..."
             }
           ]
         }
@@ -1266,19 +1266,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 46,
-              "score": 3,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podmiotyview,CDN.PodmiotyView Query Guide,Query design helper for table CDN.PodmiotyView.,table_query_guide,CDN_TEST:TABLE:CDN.PodmiotyView,CDN.PodmiotyView,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,27,0,Pod_PodId; Pod_PodmiotTyp,N..."
-            },
-            {
-              "line": 165,
+              "line": 201,
               "score": 3,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
             },
             {
               "line": 22,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kontazakazy,CDN.KontaZakazy Query Guide,Query design helper for table CDN.KontaZakazy.,table_query_guide,CDN_TEST:TABLE:CDN.KontaZakazy,CDN.KontaZakazy,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,0,1,AcZ_AccId,Konta,Role MASTER in CO..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_umowyb2b,CDN.UmowyB2B Query Guide,Query design helper for table CDN.UmowyB2B.,table_query_guide,CDN_TEST:TABLE:CDN.UmowyB2B,CDN.UmowyB2B,KADRY_PLACE,OTHER,HR_PAYROLL,MEDIUM,QUERY_DESIGN,0,4,UMB_DdfId; UMB_PraId; UMB_DkmIdStanowisko; UMB_KntId,Dok..."
+            },
+            {
+              "line": 60,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstankontrahenci,CDN.DetalStanKontrahenci Query Guide,Query design helper for table CDN.DetalStanKontrahenci.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanKontrahenci,CDN.DetalStanKontrahenci,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,1,0,..."
             }
           ]
         },
@@ -1288,19 +1288,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 69,
+              "line": 35,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajbnkzdarzenie,CDN.DodajBnkZdarzenie Guide,Query-design helper for stored_procedure CDN.DodajBnkZdarzenie.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajBnkZdarzenie,STORED_PROCEDURE,WORKFLOW_INTEGRATION,OGOLNE,MEDIUM,\"WORKFLOW_INTEGRATION | ..."
             },
             {
-              "line": 92,
+              "line": 43,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpka,CDN.DetalStan_WydrukiNaglowekPKA Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekPKA.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekPKA,STORED_PROCEDURE,SPRINT_PRINT,OG..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_korektakursuwalutkb,CDN.KorektaKursuWalutKB Guide,Query-design helper for stored_procedure CDN.KorektaKursuWalutKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KorektaKursuWalutKB,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJEC..."
             },
             {
-              "line": 102,
+              "line": 44,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekfa,CDN.DetalStan_WydrukiNaglowekFA Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekFA.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekFA,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_ex_hamag,CDN.OFF_Ex_HaMag Guide,Query-design helper for stored_procedure CDN.OFF_Ex_HaMag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_Ex_HaMag,STORED_PROCEDURE,WORKFLOW_INTEGRATION,HANDEL_MAGAZYN,MEDIUM,\"WORKFLOW_INTEGRATION | HANDEL_MAGAZ..."
             }
           ]
         },
@@ -1310,17 +1310,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 443,
+              "line": 423,
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.Kontrahenci_Delete_Trigger=>U :CDN.CfgKlucze,Kontrahenci_Delete_Trigger => CfgKlucze,Heuristic SQL-text dependency from CDN.Kontrahenci_Delete_Trigger to CDN.CfgKlucze.,object_dependency,CDN_TEST:TRIGGER:CDN.Kontrahenci_Delete_Trigger,CDN_T..."
             },
             {
-              "line": 1368,
+              "line": 913,
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.Kontrahenci_DeleteHandler=>U :CDN.Kontrahenci,Kontrahenci_DeleteHandler => Kontrahenci,Heuristic SQL-text dependency from CDN.Kontrahenci_DeleteHandler to CDN.Kontrahenci.,object_dependency,CDN_TEST:TRIGGER:CDN.Kontrahenci_DeleteHandler,CDN..."
             },
             {
-              "line": 1369,
+              "line": 914,
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.Kontrahenci_DeleteHandler=>U :CDN.TwrDost,Kontrahenci_DeleteHandler => TwrDost,Heuristic SQL-text dependency from CDN.Kontrahenci_DeleteHandler to CDN.TwrDost.,object_dependency,CDN_TEST:TRIGGER:CDN.Kontrahenci_DeleteHandler,CDN_TEST:TABLE:..."
             }
@@ -1332,17 +1332,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 14909,
+              "line": 7541,
               "score": 3,
               "snippet": "CDN_TEST:TRIGGER:CDN.Kontrahenci_DeleteHandler,Kontrahenci_DeleteHandler,Trigger CDN.Kontrahenci_DeleteHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.Kontrahenci_DeleteHandler,CDN_TEST:TABLE:CDN.Kontrahenci,OBJECT_OR_COLUMN,\"CREATE TRIGGER CDN.Kontrahenci_..."
             },
             {
-              "line": 14929,
+              "line": 7561,
               "score": 3,
               "snippet": "\",\"CREATE TRIGGER CDN.Kontrahenci_DeleteHandler"
             },
             {
-              "line": 15792,
+              "line": 7704,
               "score": 3,
               "snippet": "CDN_TEST:TRIGGER:CDN.Kontrahenci_InsertUpdateHandler,Kontrahenci_InsertUpdateHandler,Trigger CDN.Kontrahenci_InsertUpdateHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.Kontrahenci_InsertUpdateHandler,CDN_TEST:TABLE:CDN.Kontrahenci,OBJECT_OR_COLUMN,\"CREATE ..."
             }
@@ -1354,19 +1354,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 4,
+              "line": 78,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kesknt,CDN.KntESklepy -> CDN.Kontrahenci,Direct join path from CDN.KntESklepy to CDN.Kontrahenci based on FK_KESKnt.,join_path_guide,CDN_TEST:TABLE:CDN.KntESklepy,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_KESKnt,1,DIRECT_..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kwrhknt,CDN.KntWeryfRachHist -> CDN.Kontrahenci,Direct join path from CDN.KntWeryfRachHist to CDN.Kontrahenci based on FK_KWRHKNT.,join_path_guide,CDN_TEST:TABLE:CDN.KntWeryfRachHist,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN..."
             },
             {
-              "line": 12,
+              "line": 148,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kespknt,CDN.KntESklepyPrzedstawiciele -> CDN.Kontrahenci,Direct join path from CDN.KntESklepyPrzedstawiciele to CDN.Kontrahenci based on FK_KESPKnt.,join_path_guide,CDN_TEST:TABLE:CDN.KntESklepyPrzedstawiciele,CDN_TEST:TABLE:CDN.Kontrahen..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_knokontrahent,CDN.KntOsoby -> CDN.Kontrahenci,Direct join path from CDN.KntOsoby to CDN.Kontrahenci based on FK_KnOKontrahent.,join_path_guide,CDN_TEST:TABLE:CDN.KntOsoby,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_KnOKontr..."
             },
             {
-              "line": 48,
+              "line": 160,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_krd2knt,CDN.Krd -> CDN.Kontrahenci,Direct join path from CDN.Krd to CDN.Kontrahenci based on FK_Krd2Knt.,join_path_guide,CDN_TEST:TABLE:CDN.Krd,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN.FK_Krd2Knt,1,DIRECT_FOREIGN_KEY,FROM C..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kntformaplatnosci,CDN.Kontrahenci -> CDN.FormyPlatnosci,Direct join path from CDN.Kontrahenci to CDN.FormyPlatnosci based on FK_KntFormaPlatnosci.,join_path_guide,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:TABLE:CDN.FormyPlatnosci,CDN_TEST:F..."
             }
           ]
         }
@@ -1390,19 +1390,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 1899,
+              "line": 1451,
               "score": 4,
               "snippet": "SQL_GUIDE:cdn_test_function_cdn_dekldradopoliczenia,CDN.DeklDRADoPoliczenia Guide,Query-design helper for function CDN.DeklDRADoPoliczenia.,sql_object_guide,CDN_TEST:FUNCTION:CDN.DeklDRADoPoliczenia,FUNCTION,COMPLIANCE_REPORTING,KSIEGOWOSC_COMPLIANCE,HIGH,\"COMPLIANCE_REPORTING..."
             },
             {
-              "line": 2153,
+              "line": 2117,
               "score": 4,
               "snippet": "SQL_GUIDE:cdn_test_view_cdn_pracownicyview,CDN.PracownicyView Guide,Query-design helper for view CDN.PracownicyView.,sql_object_guide,CDN_TEST:VIEW:CDN.PracownicyView,VIEW,IMPORT_EXPORT,KADRY_PLACE,MEDIUM,\"IMPORT_EXPORT | KADRY_PLACE | preview:create view CDN.PracownicyView ( ..."
             },
             {
-              "line": 11,
+              "line": 15,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_czaspracypracownikowwroku,CDN.CzasPracyPracownikowWRoku Guide,Query-design helper for stored_procedure CDN.CzasPracyPracownikowWRoku.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.CzasPracyPracownikowWRoku,STORED_PROCEDURE,IMPORT_EXPORT,KADRY_PLACE,M..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_altum_dodajpracownika,CDN.Altum_DodajPracownika Guide,Query-design helper for stored_procedure CDN.Altum_DodajPracownika.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Altum_DodajPracownika,STORED_PROCEDURE,IMPORT_EXPORT,KADRY_PLACE,MEDIUM,\"IMPORT_EX..."
             }
           ]
         },
@@ -1412,19 +1412,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 2932,
+              "line": 440,
               "score": 4,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:V :CDN.PracownicyView=>U :CDN.PracEtaty,PracownicyView => PracEtaty,Heuristic SQL-text dependency from CDN.PracownicyView to CDN.PracEtaty.,object_dependency,CDN_TEST:VIEW:CDN.PracownicyView,CDN_TEST:TABLE:CDN.PracEtaty,VIEW,TABLE,HEURISTIC_SQL_TE..."
             },
             {
-              "line": 8920,
+              "line": 12391,
               "score": 4,
               "snippet": "DEP:cdn_test_view_cdn_pracownicyview:READ:cdn_test_table_cdn_pracetaty,CDN.PracownicyView reads CDN.PracEtaty,Definition-derived read dependency from CDN.PracownicyView to CDN.PracEtaty.,object_dependency,CDN_TEST:VIEW:CDN.PracownicyView,CDN_TEST:TABLE:CDN.PracEtaty,VIEW,TABLE..."
             },
             {
-              "line": 4301,
+              "line": 3963,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_dodajdokumentdoteczkipracownika:READ:cdn_test_table_cdn_pracetaty,CDN.DodajDokumentDoTeczkiPracownika reads CDN.PracEtaty,Definition-derived read dependency from CDN.DodajDokumentDoTeczkiPracownika to CDN.PracEtaty.,object_dependency,CDN_TEST:PROCEDU..."
+              "snippet": "DEP:cdn_test_procedure_cdn_altum_dodajpracownika:READ:cdn_test_table_cdn_pracetaty,CDN.Altum_DodajPracownika reads CDN.PracEtaty,Definition-derived read dependency from CDN.Altum_DodajPracownika to CDN.PracEtaty.,object_dependency,CDN_TEST:PROCEDURE:CDN.Altum_DodajPracownika,C..."
             }
           ]
         },
@@ -1434,19 +1434,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 211,
+              "line": 469,
               "score": 3,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pre_dkmidpracodawca,CDN.PracEtaty -> CDN.DaneKadMod,Direct join path from CDN.PracEtaty to CDN.DaneKadMod based on FK_PRE_DkmIdPracodawca.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.DaneKadMod,CDN_TEST:FOREIGN_KEY:CDN..."
             },
             {
-              "line": 163,
+              "line": 43,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_prezrgid,CDN.PracEtaty -> CDN.ZestawyRegul,Direct join path from CDN.PracEtaty to CDN.ZestawyRegul based on FK_PREZrgId.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.ZestawyRegul,CDN_TEST:FOREIGN_KEY:CDN.FK_PREZrgId,1,D..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_prgprelink,CDN.Progi -> CDN.PracEtaty,Direct join path from CDN.Progi to CDN.PracEtaty based on FK_PRGPreLink.,join_path_guide,CDN_TEST:TABLE:CDN.Progi,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:FOREIGN_KEY:CDN.FK_PRGPreLink,1,DIRECT_FOREIGN_K..."
             },
             {
-              "line": 167,
+              "line": 379,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_prekategoria,CDN.PracEtaty -> CDN.Kategorie,Direct join path from CDN.PracEtaty to CDN.Kategorie based on FK_PREKategoria.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.Kategorie,CDN_TEST:FOREIGN_KEY:CDN.FK_PREKategoria,..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_prewlasciciellink,CDN.PracEtaty -> CDN.PracKod,Direct join path from CDN.PracEtaty to CDN.PracKod based on FK_PREWlascicielLink.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.PracKod,CDN_TEST:FOREIGN_KEY:CDN.FK_PREWlasci..."
             }
           ]
         },
@@ -1456,19 +1456,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 3,
-              "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_zestawyregul,CDN.ZestawyRegul Query Guide,Query design helper for table CDN.ZestawyRegul.,table_query_guide,CDN_TEST:TABLE:CDN.ZestawyRegul,CDN.ZestawyRegul,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,3,0,ZRG_ZrgId,PracEtaty; Dzialy; ZestawyR..."
-            },
-            {
               "line": 36,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_danekadmod,CDN.DaneKadMod Query Guide,Query design helper for table CDN.DaneKadMod.,table_query_guide,CDN_TEST:TABLE:CDN.DaneKadMod,CDN.DaneKadMod,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,14,0,DKM_DkmId,DaneKadModRelacje; PracEtaty; PracTe..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_danekadmod,CDN.DaneKadMod Query Guide,Query design helper for table CDN.DaneKadMod.,table_query_guide,CDN_TEST:TABLE:CDN.DaneKadMod,CDN.DaneKadMod,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,14,0,DKM_DkmId,PracSchorzenia; Harmonogram; HisZatr..."
             },
             {
-              "line": 59,
+              "line": 58,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_prackod,CDN.PracKod Query Guide,Query design helper for table CDN.PracKod.,table_query_guide,CDN_TEST:TABLE:CDN.PracKod,CDN.PracKod,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,43,0,PRA_PraId,Trwale; OAtrybuty; CentraKierownicy; OpisKadry; Dek..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_dzialy,CDN.Dzialy Query Guide,Query design helper for table CDN.Dzialy.,table_query_guide,CDN_TEST:TABLE:CDN.Dzialy,CDN.Dzialy,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,9,3,DZL_ZrgId; DZL_LokId; DZL_ParentId; DZL_DzlId,ZestawyRegul; Lokaliz..."
+            },
+            {
+              "line": 232,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_usunieteobiekty,CDN.UsunieteObiekty Query Guide,Query design helper for table CDN.UsunieteObiekty.,table_query_guide,CDN_TEST:TABLE:CDN.UsunieteObiekty,CDN.UsunieteObiekty,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,0,,,Role OTHER in GENERAL_E..."
             }
           ]
         },
@@ -1478,19 +1478,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 1882,
+              "line": 1164,
               "score": 2,
-              "snippet": "--Sprawdzenie obecności wierszy w tabeli nadrzędnej PracEtaty"
+              "snippet": "-- Sprawdzenie obecności wierszy w tabeli nadrzędnej PracEtaty"
             },
             {
-              "line": 1883,
+              "line": 1165,
               "score": 2,
-              "snippet": "IFEXISTS (SELECT * FROM inserted LEFT OUTER JOIN CDN.PracEtaty ON WPS_ZrodloId = PRE_PreId"
+              "snippet": "IF EXISTS (SELECT * FROM inserted LEFT OUTER JOIN CDN.PracEtaty ON WPS_ZrodloId = PRE_PreId"
             },
             {
-              "line": 1887,
+              "line": 1169,
               "score": 2,
-              "snippet": "--RAISERROR('Nie istnieje zapis w tabeli nadrzędnej (powiązanie z tabelą PracEtaty). ', 16, 1)--ERR_SQL_Place_NieIstniejePowiazanieWPSPRE 32560"
+              "snippet": "--RAISERROR('Nie istnieje zapis w tabeli nadrzędnej (powiązanie z tabelą  PracEtaty). ', 16, 1)--ERR_SQL_Place_NieIstniejePowiazanieWPSPRE 32560"
             }
           ]
         }
@@ -1514,19 +1514,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 5,
-              "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podarkuszinwenelem,CDN.PodArkuszInwenElem Query Guide,Query design helper for table CDN.PodArkuszInwenElem.,table_query_guide,CDN_TEST:TABLE:CDN.PodArkuszInwenElem,CDN.PodArkuszInwenElem,HANDEL_MAGAZYN,LINE,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,0,..."
-            },
-            {
               "line": 19,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traselem,CDN.TraSElem Query Guide,Query design helper for table CDN.TraSElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraSElem,CDN.TraSElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,2,2,TrS_TwrId; TrS_TrSIdDost; TrS_TrSID,Towary; TraSElem; TraSE..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_twratrybuty,CDN.TwrAtrybuty Query Guide,Query design helper for table CDN.TwrAtrybuty.,table_query_guide,CDN_TEST:TABLE:CDN.TwrAtrybuty,CDN.TwrAtrybuty,HANDEL_MAGAZYN,RELATION,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,1,5,TwA_SrZId; TwA_SrRId; TwA_SrU..."
             },
             {
-              "line": 43,
+              "line": 28,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_traelem,CDN.TraElem Query Guide,Query design helper for table CDN.TraElem.,table_query_guide,CDN_TEST:TABLE:CDN.TraElem,CDN.TraElem,HANDEL,LINE,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,5,4,TrE_PodID; TrE_PodmiotTyp; TrE_TrNId; TrE_TwrId; TrE_KatID; TrE_..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kodycn,CDN.KodyCN Query Guide,Query design helper for table CDN.KodyCN.,table_query_guide,CDN_TEST:TABLE:CDN.KodyCN,CDN.KodyCN,HANDEL_MAGAZYN,DICTIONARY,PRODUCTS_WAREHOUSE,MEDIUM,QUERY_DESIGN,1,0,KCN_KCNId,Towary,Role DICTIONARY in PRODUCTS_WAREH..."
+            },
+            {
+              "line": 31,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_twresklep,CDN.TwrESklep Query Guide,Query design helper for table CDN.TwrESklep.,table_query_guide,CDN_TEST:TABLE:CDN.TwrESklep,CDN.TwrESklep,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,NORMAL,QUERY_DESIGN,0,2,Twes_TwrID; Twes_ESklepId,Towary; eSklep..."
             }
           ]
         },
@@ -1536,19 +1536,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 17,
+              "line": 22,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trstowar,CDN.TraSElem -> CDN.Towary,Direct join path from CDN.TraSElem to CDN.Towary based on FK_TrSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.TraSElem,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_TrSTowar,1,DIRECT_FOREIGN_KEY,FRO..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdetowar,CDN.ProdElem -> CDN.Towary,Direct join path from CDN.ProdElem to CDN.Towary based on FK_PdETowar.,join_path_guide,CDN_TEST:TABLE:CDN.ProdElem,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdETowar,1,DIRECT_FOREIGN_KEY,FRO..."
             },
             {
-              "line": 36,
+              "line": 31,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ztwtwrkod,CDN.ZestawyTwr -> CDN.Towary,Direct join path from CDN.ZestawyTwr to CDN.Towary based on FK_ZTwTwrKod.,join_path_guide,CDN_TEST:TABLE:CDN.ZestawyTwr,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_ZTwTwrKod,1,DIRECT_FOREIG..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdrtwrkod,CDN.ProdReceptury -> CDN.Towary,Direct join path from CDN.ProdReceptury to CDN.Towary based on FK_PdRTwrKod.,join_path_guide,CDN_TEST:TABLE:CDN.ProdReceptury,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdRTwrKod,1,DIRE..."
             },
             {
-              "line": 40,
+              "line": 34,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ztstowar,CDN.ZestawyTwrSkladniki -> CDN.Towary,Direct join path from CDN.ZestawyTwrSkladniki to CDN.Towary based on FK_ZTSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.ZestawyTwrSkladniki,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
+              "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdstowar,CDN.ProdSkladniki -> CDN.Towary,Direct join path from CDN.ProdSkladniki to CDN.Towary based on FK_PdSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.ProdSkladniki,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdSTowar,1,DIRECT_..."
             }
           ]
         },
@@ -1558,19 +1558,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 12,
+              "line": 49,
               "score": 1,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_aktualizujopakelem,CDN.DetalStan_AktualizujOpakElem Guide,Query-design helper for stored_procedure CDN.DetalStan_AktualizujOpakElem.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_AktualizujOpakElem,STORED_PROCEDURE,GENERAL_SQL_OBJ..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_ro_getreportcontent,CDN.RO_GetReportContent Guide,Query-design helper for stored_procedure CDN.RO_GetReportContent.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.RO_GetReportContent,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIGH,\"SPRINT_PRINT | OGOLNE | p..."
             },
             {
-              "line": 17,
+              "line": 50,
               "score": 1,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_wzkor_getreportcontent,CDN.WZKOR_GetReportContent Guide,Query-design helper for stored_procedure CDN.WZKOR_GetReportContent.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.WZKOR_GetReportContent,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT ..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_cfgcenauzyta,CDN.CfgCenaUzyta Guide,Query-design helper for stored_procedure CDN.CfgCenaUzyta.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.CfgCenaUzyta,STORED_PROCEDURE,IMPORT_EXPORT,KONFIGURACJA,MEDIUM,\"IMPORT_EXPORT | KONFIGURACJA | preview:CREAT..."
             },
             {
-              "line": 22,
+              "line": 91,
               "score": 1,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detal_eksportopakelem,CDN.Detal_EksportOpakElem Guide,Query-design helper for stored_procedure CDN.Detal_EksportOpakElem.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Detal_EksportOpakElem,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT ..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_fa_getreportcontenten,CDN.FA_GetReportContentEN Guide,Query-design helper for stored_procedure CDN.FA_GetReportContentEN.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.FA_GetReportContentEN,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIGH,\"SPRINT_PRINT | OG..."
             }
           ]
         },
@@ -1580,19 +1580,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 269,
+              "line": 209,
               "score": 1,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrybuty_Update_Trigger=>U :CDN.Towary,DefAtrybuty_Update_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrybuty_Update_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrybuty_Update_Trigger,CDN_TEST:TABLE..."
             },
             {
-              "line": 338,
+              "line": 247,
               "score": 1,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrElem_Update_Trigger=>U :CDN.Towary,DefAtrElem_Update_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrElem_Update_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrElem_Update_Trigger,CDN_TEST:TABLE:CDN..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.DokZawieraTylkoUslugi=>U :CDN.Towary,DokZawieraTylkoUslugi => Towary,Heuristic SQL-text dependency from CDN.DokZawieraTylkoUslugi to CDN.Towary.,object_dependency,CDN_TEST:FUNCTION:CDN.DokZawieraTylkoUslugi,CDN_TEST:TABLE:CDN.Towary,FUNCTIO..."
             },
             {
-              "line": 360,
+              "line": 274,
               "score": 1,
-              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrElem_Delete_Trigger=>U :CDN.Towary,DefAtrElem_Delete_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrElem_Delete_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrElem_Delete_Trigger,CDN_TEST:TABLE:CDN..."
+              "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrElem_Update_Trigger=>U :CDN.Towary,DefAtrElem_Update_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrElem_Update_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrElem_Update_Trigger,CDN_TEST:TABLE:CDN..."
             }
           ]
         },
@@ -1602,17 +1602,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 650,
+              "line": 209,
               "score": 1,
               "snippet": "join cdn.Towary on TwTS_TwrId = Twr_TwrId"
             },
             {
-              "line": 655,
+              "line": 214,
               "score": 1,
               "snippet": "select Twr_TwrId,GETDATE() from cdn.Towary"
             },
             {
-              "line": 1278,
+              "line": 637,
               "score": 1,
               "snippet": "join cdn.Towary on TwTS_TwrId = Twr_TwrId"
             }
@@ -1638,19 +1638,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 21,
+              "line": 203,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_sprawdzkonto,CDN.SprawdzKonto Guide,Query-design helper for stored_procedure CDN.SprawdzKonto.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.SprawdzKonto,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:Create ..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_uaktualnijczasykonfiguracji,CDN.DetalStan_UaktualnijCzasyKonfiguracji Guide,Query-design helper for stored_procedure CDN.DetalStan_UaktualnijCzasyKonfiguracji.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_UaktualnijCzasyKonfigura..."
             },
             {
-              "line": 188,
+              "line": 374,
+              "score": 2,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_mobile_eksportkonfig,CDN.Mobile_EksportKonfig Guide,Query-design helper for stored_procedure CDN.Mobile_EksportKonfig.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Mobile_EksportKonfig,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUNCTIO..."
+            },
+            {
+              "line": 406,
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_obrotykbmw,CDN.ObrotyKBMW Guide,Query-design helper for stored_procedure CDN.ObrotyKBMW.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ObrotyKBMW,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
-            },
-            {
-              "line": 350,
-              "score": 2,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_kontoslownikowe,CDN.KontoSlownikowe Guide,Query-design helper for stored_procedure CDN.KontoSlownikowe.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KontoSlownikowe,STORED_PROCEDURE,GENERAL_SQL_OBJECT,CRM_KONTRAHENCI,NORMAL,\"GENERAL_SQL_OBJECT | CRM..."
             }
           ]
         },
@@ -1660,19 +1660,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 6052,
+              "line": 5125,
               "score": 2,
               "snippet": "DEP:cdn_test_procedure_cdn_detalstan_uaktualnijczasykonfiguracji:WRITE:cdn_test_table_cdn_detalstankonfiguracja,CDN.DetalStan_UaktualnijCzasyKonfiguracji writes CDN.DetalStanKonfiguracja,Definition-derived write dependency from CDN.DetalStan_UaktualnijCzasyKonfiguracji to CDN...."
             },
             {
-              "line": 10656,
-              "score": 2,
-              "snippet": "DEP:cdn_test_procedure_cdn_sprawdzkonto:EXEC:cdn_test_procedure_cdn_kontoslownikowe,CDN.SprawdzKonto execs CDN.KontoSlownikowe,Definition-derived procedure call from CDN.SprawdzKonto to CDN.KontoSlownikowe.,object_dependency,CDN_TEST:PROCEDURE:CDN.SprawdzKonto,CDN_TEST:PROCEDU..."
-            },
-            {
-              "line": 12278,
+              "line": 10515,
               "score": 2,
               "snippet": "DEP:cdn_test_procedure_cdn_kontoslownikowe:READ:cdn_test_table_cdn_konta,CDN.KontoSlownikowe reads CDN.Konta,Definition-derived read dependency from CDN.KontoSlownikowe to CDN.Konta.,object_dependency,CDN_TEST:PROCEDURE:CDN.KontoSlownikowe,CDN_TEST:TABLE:CDN.Konta,PROCEDURE,TA..."
+            },
+            {
+              "line": 10516,
+              "score": 2,
+              "snippet": "DEP:cdn_test_procedure_cdn_kontoslownikowe:READ:cdn_test_table_cdn_podmiotyview,CDN.KontoSlownikowe reads CDN.PodmiotyView,Definition-derived read dependency from CDN.KontoSlownikowe to CDN.PodmiotyView.,object_dependency,CDN_TEST:PROCEDURE:CDN.KontoSlownikowe,CDN_TEST:TABLE:C..."
             }
           ]
         },
@@ -1682,19 +1682,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 944,
+              "line": 324,
               "score": 2,
               "snippet": "RAISERROR('##OPT32329##', 16, 1) -- RAISERROR('Forma płatności jest używana w konfiguracji Detalu. Nie można zmieniać jej typu ani nazwy.',16,1)"
             },
             {
-              "line": 15152,
+              "line": 15225,
               "score": 2,
               "snippet": "-- Czy konto nadrzędne nie jest słownikowe a podrzędne niewalutowe"
             },
             {
-              "line": 27985,
+              "line": 27243,
               "score": 2,
-              "snippet": "--kontrola grup w konfiguracji"
+              "snippet": "-- kontrola grup w konfiguracji"
             }
           ]
         },
@@ -1704,19 +1704,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 39,
+              "line": 42,
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstankonfiguracja,CDN.DetalStanKonfiguracja Query Guide,Query design helper for table CDN.DetalStanKonfiguracja.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanKonfiguracja,CDN.DetalStanKonfiguracja,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN..."
             },
             {
-              "line": 57,
+              "line": 62,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfginpostkontaallegro,CDN.CfgInpostKontaAllegro Query Guide,Query design helper for table CDN.CfgInpostKontaAllegro.,table_query_guide,CDN_TEST:TABLE:CDN.CfgInpostKontaAllegro,CDN.CfgInpostKontaAllegro,KONFIGURACJA,CONFIG,CONFIGURATION_ADMIN,MEDI..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_konfigtext,CDN.KonfigText Query Guide,Query design helper for table CDN.KonfigText.,table_query_guide,CDN_TEST:TABLE:CDN.KonfigText,CDN.KonfigText,CRM_KONTRAHENCI,CONFIG,CONTRACTORS_CRM,MEDIUM,QUERY_DESIGN,0,0,,,Role CONFIG in CONTRACTORS_CRM. Ou..."
             },
             {
-              "line": 81,
+              "line": 98,
               "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfgtowarautonumerserie,CDN.CfgTowarAutonumerSerie Query Guide,Query design helper for table CDN.CfgTowarAutonumerSerie.,table_query_guide,CDN_TEST:TABLE:CDN.CfgTowarAutonumerSerie,CDN.CfgTowarAutonumerSerie,KONFIGURACJA,CONFIG,CONFIGURATION_ADMIN..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfgkurierzydefpaczki,CDN.CfgKurierzyDefPaczki Query Guide,Query design helper for table CDN.CfgKurierzyDefPaczki.,table_query_guide,CDN_TEST:TABLE:CDN.CfgKurierzyDefPaczki,CDN.CfgKurierzyDefPaczki,KONFIGURACJA,CONFIG,CONFIGURATION_ADMIN,MEDIUM,QU..."
             }
           ]
         },
@@ -1726,19 +1726,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 76,
+              "line": 324,
               "score": 1,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_anksp_ankgp,CDN.AnkSlownikPytan -> CDN.AnkGrupyPytan,Direct join path from CDN.AnkSlownikPytan to CDN.AnkGrupyPytan based on FK_AnkSp_AnkGp.,join_path_guide,CDN_TEST:TABLE:CDN.AnkSlownikPytan,CDN_TEST:TABLE:CDN.AnkGrupyPytan,CDN_TEST:FORE..."
             },
             {
-              "line": 80,
+              "line": 328,
               "score": 1,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ankspo_anksp,CDN.AnkSlownikPytanOdp -> CDN.AnkSlownikPytan,Direct join path from CDN.AnkSlownikPytanOdp to CDN.AnkSlownikPytan based on FK_AnkSpO_AnkSp.,join_path_guide,CDN_TEST:TABLE:CDN.AnkSlownikPytanOdp,CDN_TEST:TABLE:CDN.AnkSlownikPy..."
             },
             {
-              "line": 547,
+              "line": 549,
               "score": 1,
-              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_rsckategoria,CDN.RCSesje -> CDN.RCKategorie,Direct join path from CDN.RCSesje to CDN.RCKategorie based on FK_RSCKategoria.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.RCSesje,CDN_KNF_Konfiguracja:TABLE:CDN.RCKategorie,CDN_K..."
+              "snippet": "JOIN_GUIDE:cdn_konfiguracja_foreign_key_cdn_fk_mszpmsz,CDN.MailSzablonyPodlaczenia -> CDN.MailSzablony,Direct join path from CDN.MailSzablonyPodlaczenia to CDN.MailSzablony based on FK_MSzPMSz.,join_path_guide,CDN_Konfiguracja:TABLE:CDN.MailSzablonyPodlaczenia,CDN_Konfiguracja..."
             }
           ]
         }
@@ -1762,19 +1762,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 274,
+              "line": 298,
               "score": 4,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfgklucze,CDN.CfgKlucze Query Guide,Query design helper for table CDN.CfgKlucze.,table_query_guide,CDN_TEST:TABLE:CDN.CfgKlucze,CDN.CfgKlucze,KONFIGURACJA,DICTIONARY,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,2,1,CFK_ParentId; CFK_CfkId,CfgKlucze; C..."
             },
             {
-              "line": 298,
+              "line": 320,
               "score": 4,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfgwartosci,CDN.CfgWartosci Query Guide,Query design helper for table CDN.CfgWartosci.,table_query_guide,CDN_TEST:TABLE:CDN.CfgWartosci,CDN.CfgWartosci,KONFIGURACJA,CONFIG,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,1,CFW_CfkId,CfgKlucze,Role CONFI..."
             },
             {
-              "line": 585,
+              "line": 523,
               "score": 4,
-              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_cfgklucze,CDN.CfgKlucze Query Guide,Query design helper for table CDN.CfgKlucze.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.CfgKlucze,CDN.CfgKlucze,KONFIGURACJA,DICTIONARY,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,2,1,CFK_ParentId..."
+              "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_cfgklucze,CDN.CfgKlucze Query Guide,Query design helper for table CDN.CfgKlucze.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.CfgKlucze,CDN.CfgKlucze,KONFIGURACJA,DICTIONARY,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,2,1,CFK_ParentId; CFK_Cf..."
             }
           ]
         },
@@ -1784,17 +1784,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 67,
+              "line": 314,
               "score": 4,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_cfwcfklink,CDN.CfgWartosci -> CDN.CfgKlucze,Direct join path from CDN.CfgWartosci to CDN.CfgKlucze based on FK_CFWCfkLink.,join_path_guide,CDN_TEST:TABLE:CDN.CfgWartosci,CDN_TEST:TABLE:CDN.CfgKlucze,CDN_TEST:FOREIGN_KEY:CDN.FK_CFWCfkLink,..."
             },
             {
-              "line": 582,
+              "line": 566,
               "score": 4,
-              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_cfwcfklink,CDN.CfgWartosci -> CDN.CfgKlucze,Direct join path from CDN.CfgWartosci to CDN.CfgKlucze based on FK_CFWCfkLink.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.CfgWartosci,CDN_KNF_Konfiguracja:TABLE:CDN.CfgKlucze,CDN..."
+              "snippet": "JOIN_GUIDE:cdn_konfiguracja_foreign_key_cdn_fk_cfwcfklink,CDN.CfgWartosci -> CDN.CfgKlucze,Direct join path from CDN.CfgWartosci to CDN.CfgKlucze based on FK_CFWCfkLink.,join_path_guide,CDN_Konfiguracja:TABLE:CDN.CfgWartosci,CDN_Konfiguracja:TABLE:CDN.CfgKlucze,CDN_Konfiguracj..."
             },
             {
-              "line": 621,
+              "line": 623,
               "score": 4,
               "snippet": "JOIN_GUIDE:curated:company_config_key_value,CDN.CfgWartosci -> CDN.CfgKlucze,Curated business join path from CDN.CfgWartosci to CDN.CfgKlucze.,join_path_guide,CDN_TEST:TABLE:CDN.CfgWartosci,CDN_TEST:TABLE:CDN.CfgKlucze,CDN_TEST:FOREIGN_KEY:CDN.FK_CFWCfkLink,1,CURATED_BUSINESS_..."
             }
@@ -1806,17 +1806,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 16,
+              "line": 70,
               "score": 4,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_configupdate,CDN.ConfigUpdate Guide,Query-design helper for stored_procedure CDN.ConfigUpdate.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ConfigUpdate,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUNCTION | OGOLNE | preview:CREATE Proc..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_oparametrywspolpracy,CDN.OParametryWspolpracy Guide,Query-design helper for stored_procedure CDN.OParametryWspolpracy.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OParametryWspolpracy,STORED_PROCEDURE,SPECIAL_FUNCTION,KADRY_PLACE,MEDIUM,\"SPECIAL_FU..."
             },
             {
-              "line": 343,
+              "line": 286,
               "score": 4,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_kartaczasupracycalc,CDN.KartaCzasuPracyCalc Guide,Query-design helper for stored_procedure CDN.KartaCzasuPracyCalc.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KartaCzasuPracyCalc,STORED_PROCEDURE,COMPLIANCE_REPORTING,KADRY_PLACE,HIGH,\"COMPLIANCE_R..."
             },
             {
-              "line": 384,
+              "line": 330,
               "score": 4,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_z3_mies,CDN.Z3_Mies Guide,Query-design helper for stored_procedure CDN.Z3_Mies.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Z3_Mies,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUNCTION | OGOLNE | preview:CREATE PROCEDURE CDN.Z3_Mies @D..."
             }
@@ -1828,19 +1828,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 2430,
+              "line": 1755,
               "score": 4,
-              "snippet": "IFEXISTS (SELECT * FROM CDN.CfgKlucze JOIN CDN.CfgWartosci ON CFW_CfkId = CFK_CfkId WHERE CFK_Nazwa = 'PPKInstytucjaFinansowa' AND CFW_Wartosc IN (SELECT CONVERT(NVARCHAR(4000), deleted.Knt_KntID) FROM deleted))"
+              "snippet": "IF EXISTS (SELECT * FROM CDN.CfgKlucze JOIN CDN.CfgWartosci ON CFW_CfkId = CFK_CfkId WHERE CFK_Nazwa = 'PPKInstytucjaFinansowa' AND CFW_Wartosc IN (SELECT CONVERT(NVARCHAR(4000), deleted.Knt_KntID) FROM deleted))"
             },
             {
-              "line": 8,
+              "line": 1787,
+              "score": 2,
+              "snippet": "Delete From CDN.eSklepKntRelacje Where"
+            },
+            {
+              "line": 1790,
               "score": 2,
               "snippet": "DELETE CDN.DokRelacje"
-            },
-            {
-              "line": 9,
-              "score": 2,
-              "snippet": "FROM CDN.DokRelacje JOIN deleted ON DoR_DokumentTyp=904 AND DoR_DokumentId=deleted.SrU_SrUId"
             }
           ]
         },
@@ -1850,19 +1850,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 46,
+              "line": 11,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.CfgKlucze_Update_Trigger=>U :CDN.CfgKlucze,CfgKlucze_Update_Trigger => CfgKlucze,Heuristic SQL-text dependency from CDN.CfgKlucze_Update_Trigger to CDN.CfgKlucze.,object_dependency,CDN_KNF_Konfiguracja:TRIGGER:CDN.CfgKlucze_Upda..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TF:CDN.CfgDietyRyczalty=>U :CDN.CfgKlucze,CfgDietyRyczalty => CfgKlucze,Heuristic SQL-text dependency from CDN.CfgDietyRyczalty to CDN.CfgKlucze.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.CfgDietyRyczalty,CDN_Konfiguracja:TABLE:CDN.C..."
             },
             {
-              "line": 62,
+              "line": 12,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TF:CDN.CfgDietyRyczalty=>U :CDN.CfgKlucze,CfgDietyRyczalty => CfgKlucze,Heuristic SQL-text dependency from CDN.CfgDietyRyczalty to CDN.CfgKlucze.,object_dependency,CDN_KNF_Konfiguracja:FUNCTION:CDN.CfgDietyRyczalty,CDN_KNF_Konfiguracja..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TF:CDN.CfgDietyRyczalty=>U :CDN.CfgWartosci,CfgDietyRyczalty => CfgWartosci,Heuristic SQL-text dependency from CDN.CfgDietyRyczalty to CDN.CfgWartosci.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.CfgDietyRyczalty,CDN_Konfiguracja:TABLE..."
             },
             {
-              "line": 63,
+              "line": 19,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TF:CDN.CfgDietyRyczalty=>U :CDN.CfgWartosci,CfgDietyRyczalty => CfgWartosci,Heuristic SQL-text dependency from CDN.CfgDietyRyczalty to CDN.CfgWartosci.,object_dependency,CDN_KNF_Konfiguracja:FUNCTION:CDN.CfgDietyRyczalty,CDN_KNF_Konfig..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.DokRelacjeValidType=>U :CDN.DokRelacje,DokRelacjeValidType => DokRelacje,Heuristic SQL-text dependency from CDN.DokRelacjeValidType to CDN.DokRelacje.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.DokRelacjeValidType,CDN_Konfigura..."
             }
           ]
         }
@@ -1886,17 +1886,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 1309,
+              "line": 1300,
               "score": 4,
-              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_procedure_cdn_wydruk_dodaj,CDN.Wydruk_Dodaj Guide,Query-design helper for stored_procedure CDN.Wydruk_Dodaj.,sql_object_guide,CDN_KNF_Konfiguracja:PROCEDURE:CDN.Wydruk_Dodaj,STORED_PROCEDURE,SPRINT_PRINT,KONFIGURACJA,HIGH,\"SPRINT_PRINT | KONFIGUR..."
+              "snippet": "SQL_GUIDE:cdn_konfiguracja_procedure_cdn_wydruk_dodaj,CDN.Wydruk_Dodaj Guide,Query-design helper for stored_procedure CDN.Wydruk_Dodaj.,sql_object_guide,CDN_Konfiguracja:PROCEDURE:CDN.Wydruk_Dodaj,STORED_PROCEDURE,SPRINT_PRINT,KONFIGURACJA,HIGH,\"SPRINT_PRINT | KONFIGURACJA | p..."
             },
             {
-              "line": 1310,
+              "line": 1301,
               "score": 4,
-              "snippet": "SQL_GUIDE:cdn_knf_konfiguracja_procedure_cdn_wydruk_zmien,CDN.Wydruk_Zmien Guide,Query-design helper for stored_procedure CDN.Wydruk_Zmien.,sql_object_guide,CDN_KNF_Konfiguracja:PROCEDURE:CDN.Wydruk_Zmien,STORED_PROCEDURE,SPRINT_PRINT,KONFIGURACJA,HIGH,\"SPRINT_PRINT | KONFIGUR..."
+              "snippet": "SQL_GUIDE:cdn_konfiguracja_procedure_cdn_wydruk_zmien,CDN.Wydruk_Zmien Guide,Query-design helper for stored_procedure CDN.Wydruk_Zmien.,sql_object_guide,CDN_Konfiguracja:PROCEDURE:CDN.Wydruk_Zmien,STORED_PROCEDURE,SPRINT_PRINT,KONFIGURACJA,HIGH,\"SPRINT_PRINT | KONFIGURACJA | p..."
             },
             {
-              "line": 58,
+              "line": 524,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci,CDN.DetalStan_WydrukiPlatnosci Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPlatnosci,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIG..."
             }
@@ -1908,19 +1908,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 5176,
+              "line": 6751,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpakor:READ:cdn_test_table_cdn_detalstantranag,CDN.DetalStan_WydrukiNaglowekPAKOR reads CDN.DetalStanTraNag,Definition-derived read dependency from CDN.DetalStan_WydrukiNaglowekPAKOR to CDN.DetalStanTraNag.,object_dependency,C..."
+              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci:READ:cdn_test_table_cdn_detalstanplatnoscidokumentu,CDN.DetalStan_WydrukiPlatnosci reads CDN.DetalStanPlatnosciDokumentu,Definition-derived read dependency from CDN.DetalStan_WydrukiPlatnosci to CDN.DetalStanPlatnosciDokume..."
             },
             {
-              "line": 5177,
+              "line": 6752,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpakor:READ:cdn_test_table_cdn_detalstankontrahenci,CDN.DetalStan_WydrukiNaglowekPAKOR reads CDN.DetalStanKontrahenci,Definition-derived read dependency from CDN.DetalStan_WydrukiNaglowekPAKOR to CDN.DetalStanKontrahenci.,obje..."
+              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci:READ:cdn_test_table_cdn_detalstanformyplatnosci,CDN.DetalStan_WydrukiPlatnosci reads CDN.DetalStanFormyPlatnosci,Definition-derived read dependency from CDN.DetalStan_WydrukiPlatnosci to CDN.DetalStanFormyPlatnosci.,object_..."
             },
             {
-              "line": 5178,
+              "line": 6788,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukinaglowekpakor:READ:cdn_test_table_cdn_detalstanoperatorzy,CDN.DetalStan_WydrukiNaglowekPAKOR reads CDN.DetalStanOperatorzy,Definition-derived read dependency from CDN.DetalStan_WydrukiNaglowekPAKOR to CDN.DetalStanOperatorzy.,object_..."
+              "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukipozycjedokumentow:READ:cdn_test_table_cdn_detalstantraelem,CDN.DetalStan_WydrukiPozycjeDokumentow reads CDN.DetalStanTraElem,Definition-derived read dependency from CDN.DetalStan_WydrukiPozycjeDokumentow to CDN.DetalStanTraElem.,obje..."
             }
           ]
         },
@@ -1930,19 +1930,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 610,
+              "line": 630,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_wydruki,CDN.Wydruki Query Guide,Query design helper for table CDN.Wydruki.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.Wydruki,CDN.Wydruki,KONFIGURACJA,TEMPLATE,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,0,,,Role TEMPLATE in CONFI..."
+              "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_wydruki,CDN.Wydruki Query Guide,Query design helper for table CDN.Wydruki.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.Wydruki,CDN.Wydruki,KONFIGURACJA,TEMPLATE,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,0,,,Role TEMPLATE in CONFIGURATION..."
             },
             {
-              "line": 289,
+              "line": 35,
+              "score": 1,
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_doknagprocesetapy,CDN.DokNagProcesEtapy Query Guide,Query design helper for table CDN.DokNagProcesEtapy.,table_query_guide,CDN_TEST:TABLE:CDN.DokNagProcesEtapy,CDN.DokNagProcesEtapy,HANDEL,REGISTER,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,1,1,DnPr_DoNID..."
+            },
+            {
+              "line": 118,
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_eskleprocechy,CDN.eSklepROCechy Query Guide,Query design helper for table CDN.eSklepROCechy.,table_query_guide,CDN_TEST:TABLE:CDN.eSklepROCechy,CDN.eSklepROCechy,OGOLNE,DICTIONARY,GENERAL_ERP,MEDIUM,QUERY_DESIGN,0,0,,,Role DICTIONARY in GENERAL_E..."
-            },
-            {
-              "line": 385,
-              "score": 1,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_doknag,CDN.DokNag Query Guide,Query design helper for table CDN.DokNag.,table_query_guide,CDN_TEST:TABLE:CDN.DokNag,CDN.DokNag,HANDEL,HEADER,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,3,0,DoN_DoNID,DokNagEtapyHistoria; DokNagPliki; DokNagProcesEtapy,Role ..."
             }
           ]
         },
@@ -1952,19 +1952,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 26350,
+              "line": 22485,
               "score": 2,
               "snippet": "-- uruchamiamy procedurę obsługi zasobów, jesli są podmieniane jakiekolwiek pola za wyjatkiem TrE_LpPow"
             },
             {
-              "line": 28076,
+              "line": 27533,
               "score": 2,
-              "snippet": "IFEXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
+              "snippet": "IF EXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
             },
             {
-              "line": 28090,
+              "line": 27547,
               "score": 2,
-              "snippet": "IFEXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
+              "snippet": "IF EXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
             }
           ]
         },
@@ -2000,19 +2000,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 506,
+              "line": 505,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_prozakazy,CDN.ProZakazy Query Guide,Query design helper for table CDN.ProZakazy.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.ProZakazy,CDN.ProZakazy,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,1,PZa_OpeID,Operatorzy,Role OTHER..."
-            },
-            {
-              "line": 509,
-              "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_rcsesje,CDN.RCSesje Query Guide,Query design helper for table CDN.RCSesje.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.RCSesje,CDN.RCSesje,OGOLNE,OTHER,GENERAL_ERP,MEDIUM,QUERY_DESIGN,0,4,RCS_RCKId; RCS_StaId; RCS_BazId; RCS_OpeI..."
+              "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_opeustawienia,CDN.OpeUstawienia Query Guide,Query design helper for table CDN.OpeUstawienia.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.OpeUstawienia,CDN.OpeUstawienia,KONFIGURACJA,OTHER,CONFIGURATION_ADMIN,NORMAL,QUERY_DESIGN,0,1,OpU_O..."
             },
             {
               "line": 511,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_seketapoperatorzy,CDN.SekEtapOperatorzy Query Guide,Query design helper for table CDN.SekEtapOperatorzy.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.SekEtapOperatorzy,CDN.SekEtapOperatorzy,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DE..."
+              "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_bazy,CDN.Bazy Query Guide,Query design helper for table CDN.Bazy.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.Bazy,CDN.Bazy,KONFIGURACJA,MASTER,CONFIGURATION_ADMIN,HIGH,QUERY_DESIGN,8,0,Baz_BazID,OpeInfoBaza; RCSesje; Sync; CrmAutomatyWi..."
+            },
+            {
+              "line": 513,
+              "score": 2,
+              "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_prozakazy,CDN.ProZakazy Query Guide,Query design helper for table CDN.ProZakazy.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.ProZakazy,CDN.ProZakazy,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,1,PZa_OpeID,Operatorzy,Role OTHER in GENE..."
             }
           ]
         },
@@ -2022,19 +2022,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 549,
+              "line": 557,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_seoetap,CDN.SekEtapOperatorzy -> CDN.SekEtapy,Direct join path from CDN.SekEtapOperatorzy to CDN.SekEtapy based on FK_SEOEtap.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.SekEtapOperatorzy,CDN_KNF_Konfiguracja:TABLE:CDN.Sek..."
+              "snippet": "JOIN_GUIDE:cdn_konfiguracja_foreign_key_cdn_fk_bmobaza,CDN.BazModulyOperatora -> CDN.Bazy,Direct join path from CDN.BazModulyOperatora to CDN.Bazy based on FK_BMOBaza.,join_path_guide,CDN_Konfiguracja:TABLE:CDN.BazModulyOperatora,CDN_Konfiguracja:TABLE:CDN.Bazy,CDN_Konfiguracj..."
             },
             {
-              "line": 579,
+              "line": 563,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_bmobaza,CDN.BazModulyOperatora -> CDN.Bazy,Direct join path from CDN.BazModulyOperatora to CDN.Bazy based on FK_BMOBaza.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.BazModulyOperatora,CDN_KNF_Konfiguracja:TABLE:CDN.Bazy,CDN..."
+              "snippet": "JOIN_GUIDE:cdn_konfiguracja_foreign_key_cdn_fk_seoetap,CDN.SekEtapOperatorzy -> CDN.SekEtapy,Direct join path from CDN.SekEtapOperatorzy to CDN.SekEtapy based on FK_SEOEtap.,join_path_guide,CDN_Konfiguracja:TABLE:CDN.SekEtapOperatorzy,CDN_Konfiguracja:TABLE:CDN.SekEtapy,CDN_Ko..."
             },
             {
-              "line": 584,
+              "line": 571,
               "score": 2,
-              "snippet": "JOIN_GUIDE:cdn_knf_konfiguracja_foreign_key_cdn_fk_kazopeid,CDN.KAtrybutyKlasyZakaz -> CDN.Operatorzy,Direct join path from CDN.KAtrybutyKlasyZakaz to CDN.Operatorzy based on FK_KAZOpeId.,join_path_guide,CDN_KNF_Konfiguracja:TABLE:CDN.KAtrybutyKlasyZakaz,CDN_KNF_Konfiguracja:T..."
+              "snippet": "JOIN_GUIDE:cdn_konfiguracja_foreign_key_cdn_fk_ofdsd_ope,CDN.OfertySzablonyDomyslne -> CDN.Operatorzy,Direct join path from CDN.OfertySzablonyDomyslne to CDN.Operatorzy based on FK_OfdSD_Ope.,join_path_guide,CDN_Konfiguracja:TABLE:CDN.OfertySzablonyDomyslne,CDN_Konfiguracja:TA..."
             }
           ]
         },
@@ -2044,19 +2044,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 188,
+              "line": 105,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_obrotykbmw,CDN.ObrotyKBMW Guide,Query-design helper for stored_procedure CDN.ObrotyKBMW.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ObrotyKBMW,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_zwrockrajelistazwielomapodstawowymistawkamioss,CDN.ZwrocKrajeListaZWielomaPodstawowymiStawkamiOSS Guide,Query-design helper for stored_procedure CDN.ZwrocKrajeListaZWielomaPodstawowymiStawkamiOSS.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ZwrocKr..."
             },
             {
-              "line": 417,
+              "line": 114,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajkorektedopzdlanieokreslonejwartosci,CDN.DodajKorekteDoPZDlaNieokreslonejWartosci Guide,Query-design helper for stored_procedure CDN.DodajKorekteDoPZDlaNieokreslonejWartosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajKorekteDoPZDlaNieokr..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajusunstawkivatoss,CDN.DodajUsunStawkiVatOSS Guide,Query-design helper for stored_procedure CDN.DodajUsunStawkiVatOSS.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajUsunStawkiVatOSS,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUN..."
             },
             {
-              "line": 483,
+              "line": 203,
               "score": 2,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_dodajbnkzdarzenia,CDN.DodajBnkZdarzenia Guide,Query-design helper for stored_procedure CDN.DodajBnkZdarzenia.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajBnkZdarzenia,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOL..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_uaktualnijczasykonfiguracji,CDN.DetalStan_UaktualnijCzasyKonfiguracji Guide,Query-design helper for stored_procedure CDN.DetalStan_UaktualnijCzasyKonfiguracji.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_UaktualnijCzasyKonfigura..."
             }
           ]
         },
@@ -2066,19 +2066,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 22,
+              "line": 2,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Operatorzy_Update_TS_Zgody=>U :CDN.Operatorzy,Operatorzy_Update_TS_Zgody => Operatorzy,Heuristic SQL-text dependency from CDN.Operatorzy_Update_TS_Zgody to CDN.Operatorzy.,object_dependency,CDN_KNF_Konfiguracja:TRIGGER:CDN.Opera..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.fn_Anl_ZablokowaniOperatorzy=>U :CDN.AnlZakazy,fn_Anl_ZablokowaniOperatorzy => AnlZakazy,Heuristic SQL-text dependency from CDN.fn_Anl_ZablokowaniOperatorzy to CDN.AnlZakazy.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.fn_Anl_Za..."
             },
             {
-              "line": 49,
+              "line": 3,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OperatorPrawoZmianNaKarcieTowaru=>U :CDN.ProZakazy,OperatorPrawoZmianNaKarcieTowaru => ProZakazy,Heuristic SQL-text dependency from CDN.OperatorPrawoZmianNaKarcieTowaru to CDN.ProZakazy.,object_dependency,CDN_KNF_Konfiguracja:FU..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.fn_WdZ_ZablokowaniOperatorzy=>U :CDN.WdrZakazyDoZestawow,fn_WdZ_ZablokowaniOperatorzy => WdrZakazyDoZestawow,Heuristic SQL-text dependency from CDN.fn_WdZ_ZablokowaniOperatorzy to CDN.WdrZakazyDoZestawow.,object_dependency,CDN_Konfi..."
             },
             {
-              "line": 50,
+              "line": 4,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OperatorPrawoZmianNaKarcieTowaru=>U :CDN.Operatorzy,OperatorPrawoZmianNaKarcieTowaru => Operatorzy,Heuristic SQL-text dependency from CDN.OperatorPrawoZmianNaKarcieTowaru to CDN.Operatorzy.,object_dependency,CDN_KNF_Konfiguracja..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.fn_Wdr_ZablokowaniOperatorzy=>U :CDN.WdrZakazyDoWydrukow,fn_Wdr_ZablokowaniOperatorzy => WdrZakazyDoWydrukow,Heuristic SQL-text dependency from CDN.fn_Wdr_ZablokowaniOperatorzy to CDN.WdrZakazyDoWydrukow.,object_dependency,CDN_Konfi..."
             }
           ]
         },
@@ -2088,19 +2088,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 944,
+              "line": 324,
               "score": 2,
               "snippet": "RAISERROR('##OPT32329##', 16, 1) -- RAISERROR('Forma płatności jest używana w konfiguracji Detalu. Nie można zmieniać jej typu ani nazwy.',16,1)"
             },
             {
-              "line": 27985,
+              "line": 27243,
               "score": 2,
-              "snippet": "--kontrola grup w konfiguracji"
+              "snippet": "-- kontrola grup w konfiguracji"
             },
             {
-              "line": 28059,
+              "line": 27317,
               "score": 2,
-              "snippet": "--kontrola grup w konfiguracji"
+              "snippet": "-- kontrola grup w konfiguracji"
             }
           ]
         }
@@ -2124,14 +2124,14 @@
           "type": "csv",
           "hits": [
             {
-              "line": 372,
+              "line": 232,
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_usunieteobiekty,CDN.UsunieteObiekty Query Guide,Query design helper for table CDN.UsunieteObiekty.,table_query_guide,CDN_TEST:TABLE:CDN.UsunieteObiekty,CDN.UsunieteObiekty,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,0,,,Role OTHER in GENERAL_E..."
             },
             {
-              "line": 610,
+              "line": 630,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_knf_konfiguracja_table_cdn_wydruki,CDN.Wydruki Query Guide,Query design helper for table CDN.Wydruki.,table_query_guide,CDN_KNF_Konfiguracja:TABLE:CDN.Wydruki,CDN.Wydruki,KONFIGURACJA,TEMPLATE,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,0,,,Role TEMPLATE in CONFI..."
+              "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_wydruki,CDN.Wydruki Query Guide,Query design helper for table CDN.Wydruki.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.Wydruki,CDN.Wydruki,KONFIGURACJA,TEMPLATE,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,0,,,Role TEMPLATE in CONFIGURATION..."
             }
           ]
         },
@@ -2141,7 +2141,7 @@
           "type": "csv",
           "hits": [
             {
-              "line": 294,
+              "line": 264,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_skrzwiazane,CDN.SchKsiRelac -> CDN.SchKsiNag,Direct join path from CDN.SchKsiRelac to CDN.SchKsiNag based on FK_SKRZwiazane.,join_path_guide,CDN_TEST:TABLE:CDN.SchKsiRelac,CDN_TEST:TABLE:CDN.SchKsiNag,CDN_TEST:FOREIGN_KEY:CDN.FK_SKRZwiaza..."
             }
@@ -2153,17 +2153,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 58,
+              "line": 524,
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci,CDN.DetalStan_WydrukiPlatnosci Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPlatnosci,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIG..."
             },
             {
-              "line": 71,
+              "line": 534,
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukipozycjedokumentow,CDN.DetalStan_WydrukiPozycjeDokumentow Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPozycjeDokumentow.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPozycjeDokumentow,STORED_P..."
             },
             {
-              "line": 83,
+              "line": 544,
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekkb,CDN.DetalStan_WydrukiNaglowekKB Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekKB,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE..."
             }
@@ -2175,19 +2175,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 166,
+              "line": 106,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrDomyslne,Wydruki_Delete_Trigger => WdrDomyslne,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrDomyslne.,object_dependency,CDN_KNF_Konfiguracja:TRIGGER:CDN.Wydruki_Delete..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrDomyslne,Wydruki_Delete_Trigger => WdrDomyslne,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrDomyslne.,object_dependency,CDN_Konfiguracja:TRIGGER:CDN.Wydruki_Delete_Trigger..."
             },
             {
-              "line": 167,
+              "line": 107,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrPodlaczeniaWydrukow,Wydruki_Delete_Trigger => WdrPodlaczeniaWydrukow,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrPodlaczeniaWydrukow.,object_dependency,CDN_KNF_Konfig..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrPodlaczeniaWydrukow,Wydruki_Delete_Trigger => WdrPodlaczeniaWydrukow,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrPodlaczeniaWydrukow.,object_dependency,CDN_Konfiguracja:T..."
             },
             {
-              "line": 168,
+              "line": 108,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrZakazyDoWydrukow,Wydruki_Delete_Trigger => WdrZakazyDoWydrukow,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrZakazyDoWydrukow.,object_dependency,CDN_KNF_Konfiguracja:TR..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrZakazyDoWydrukow,Wydruki_Delete_Trigger => WdrZakazyDoWydrukow,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrZakazyDoWydrukow.,object_dependency,CDN_Konfiguracja:TRIGGER:CD..."
             }
           ]
         },
@@ -2197,19 +2197,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 2630,
+              "line": 1952,
               "score": 2,
               "snippet": "RAISERROR('##OPT32341##', 16, 1) -- RAISERROR('Nie można kasować kontrahenta związanego z e-Sklep', 16, 1)"
             },
             {
-              "line": 2645,
+              "line": 1967,
               "score": 2,
               "snippet": "RAISERROR('##OPT32341##', 16, 1) -- RAISERROR('Nie można kasować kontrahenta związanego z e-Sklep', 16, 1)"
             },
             {
-              "line": 2718,
+              "line": 2611,
               "score": 2,
-              "snippet": "--(sytuacja ma miejsce podczas dodawania, zmiany lub usuwania zdarzenia związanego z kontrahentem -"
+              "snippet": "-- (sytuacja ma miejsce podczas dodawania, zmiany lub usuwania zdarzenia związanego z kontrahentem -"
             }
           ]
         }
@@ -2233,19 +2233,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 142,
+              "line": 51,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_kalendarzkb,CDN.KalendarzKB Guide,Query-design helper for stored_procedure CDN.KalendarzKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KalendarzKB,STORED_PROCEDURE,SPECIAL_FUNCTION,KADRY_PLACE,MEDIUM,\"SPECIAL_FUNCTION | KADRY_PLACE | preview:CREAT..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_anonimizacja_bnkzapisy_blokujaceknt,CDN.Anonimizacja_BnkZapisy_BlokujaceKnt Guide,Query-design helper for stored_procedure CDN.Anonimizacja_BnkZapisy_BlokujaceKnt.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Anonimizacja_BnkZapisy_BlokujaceKnt,STOR..."
             },
             {
-              "line": 153,
+              "line": 60,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_kalendarzkbplus,CDN.KalendarzKBPlus Guide,Query-design helper for stored_procedure CDN.KalendarzKBPlus.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.KalendarzKBPlus,STORED_PROCEDURE,SPECIAL_FUNCTION,KADRY_PLACE,MEDIUM,\"SPECIAL_FUNCTION | KADRY_PLACE..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_anonimizacja_bnkzapisy_stare_nierozliczone,CDN.Anonimizacja_BnkZapisy_Stare_Nierozliczone Guide,Query-design helper for stored_procedure CDN.Anonimizacja_BnkZapisy_Stare_Nierozliczone.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Anonimizacja_BnkZap..."
             },
             {
-              "line": 188,
+              "line": 61,
               "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_obrotykbmw,CDN.ObrotyKBMW Guide,Query-design helper for stored_procedure CDN.ObrotyKBMW.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ObrotyKBMW,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_sprawdzrozliczeniazapisukb,CDN.SprawdzRozliczeniaZapisuKB Guide,Query-design helper for stored_procedure CDN.SprawdzRozliczeniaZapisuKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.SprawdzRozliczeniaZapisuKB,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,ME..."
             }
           ]
         },
@@ -2255,19 +2255,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 4200,
+              "line": 3993,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_getrozliczdoknum:READ:cdn_test_table_cdn_bnkzapisy,CDN.GetRozliczDokNum reads CDN.BnkZapisy,Definition-derived read dependency from CDN.GetRozliczDokNum to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.GetRozliczDokNum,CDN_TEST:TABLE:CDN.Bn..."
+              "snippet": "DEP:cdn_test_procedure_cdn_off_aktualizujplatnosci:READ:cdn_test_table_cdn_bnkzapisy,CDN.OFF_AktualizujPlatnosci reads CDN.BnkZapisy,Definition-derived read dependency from CDN.OFF_AktualizujPlatnosci to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_AktualizujPla..."
             },
             {
-              "line": 4467,
+              "line": 4034,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_mobile_eksportptw:READ:cdn_test_table_cdn_bnkzapisy,CDN.Mobile_EksportPtw reads CDN.BnkZapisy,Definition-derived read dependency from CDN.Mobile_EksportPtw to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.Mobile_EksportPtw,CDN_TEST:TABLE:CD..."
+              "snippet": "DEP:cdn_test_procedure_cdn_anonimizacjadokblokujaceknt:READ:cdn_test_table_cdn_bnkzapisy,CDN.AnonimizacjaDokBlokujaceKnt reads CDN.BnkZapisy,Definition-derived read dependency from CDN.AnonimizacjaDokBlokujaceKnt to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.Anoni..."
             },
             {
-              "line": 4496,
+              "line": 4183,
               "score": 3,
-              "snippet": "DEP:cdn_test_procedure_cdn_sprawdzzaleglosci:READ:cdn_test_table_cdn_bnkzapisy,CDN.SprawdzZaleglosci reads CDN.BnkZapisy,Definition-derived read dependency from CDN.SprawdzZaleglosci to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.SprawdzZaleglosci,CDN_TEST:TABLE:CD..."
+              "snippet": "DEP:cdn_test_procedure_cdn_anonimizacja_bnkzapisy_blokujaceknt:READ:cdn_test_table_cdn_bnkzapisy,CDN.Anonimizacja_BnkZapisy_BlokujaceKnt reads CDN.BnkZapisy,Definition-derived read dependency from CDN.Anonimizacja_BnkZapisy_BlokujaceKnt to CDN.BnkZapisy.,object_dependency,CDN_..."
             }
           ]
         },
@@ -2277,19 +2277,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 259,
+              "line": 132,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnknazwy,CDN.BnkNazwy Query Guide,Query design helper for table CDN.BnkNazwy.,table_query_guide,CDN_TEST:TABLE:CDN.BnkNazwy,CDN.BnkNazwy,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,10,1,BNa_KatID; BNa_BNaId,Kategorie; BnkCertyfikaty; PracEtaty..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_urzrachunki,CDN.UrzRachunki Query Guide,Query design helper for table CDN.UrzRachunki.,table_query_guide,CDN_TEST:TABLE:CDN.UrzRachunki,CDN.UrzRachunki,OGOLNE,OTHER,GENERAL_ERP,MEDIUM,QUERY_DESIGN,2,3,URa_PraId; URa_UrzId; URa_BNaId; URa_URaId,Pr..."
             },
             {
-              "line": 287,
+              "line": 174,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kartykredytowe,CDN.KartyKredytowe Query Guide,Query design helper for table CDN.KartyKredytowe.,table_query_guide,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN.KartyKredytowe,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,NORMAL,QUERY_DESIGN,2,0,KKr_KKrId,BnkRa..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_podmiotyview,CDN.PodmiotyView Query Guide,Query design helper for table CDN.PodmiotyView.,table_query_guide,CDN_TEST:TABLE:CDN.PodmiotyView,CDN.PodmiotyView,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,27,0,Pod_PodId; Pod_PodmiotTyp,V..."
             },
             {
-              "line": 313,
+              "line": 193,
               "score": 2,
-              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_bnkrachunki,CDN.BnkRachunki Query Guide,Query design helper for table CDN.BnkRachunki.,table_query_guide,CDN_TEST:TABLE:CDN.BnkRachunki,CDN.BnkRachunki,KASA_BANK,REGISTER,BANK_CASH,HIGH,QUERY_DESIGN,8,3,BRa_KKrID; BRa_DDfID; BRa_BNaID; BRa_BRaID,..."
+              "snippet": "TABLE_GUIDE:cdn_test_table_cdn_zaliczki,CDN.Zaliczki Query Guide,Query design helper for table CDN.Zaliczki.,table_query_guide,CDN_TEST:TABLE:CDN.Zaliczki,CDN.Zaliczki,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,1,Zal_BZpId,BnkZapisy,Role OTHER in GENERAL_ERP. Outbound fore..."
             }
           ]
         },
@@ -2299,17 +2299,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 459,
+              "line": 158,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dorbnkzapis,CDN.Zaliczki -> CDN.BnkZapisy,Direct join path from CDN.Zaliczki to CDN.BnkZapisy based on FK_DoRBnkZapis.,join_path_guide,CDN_TEST:TABLE:CDN.Zaliczki,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:FOREIGN_KEY:CDN.FK_DoRBnkZapis,1,DIRE..."
             },
             {
-              "line": 480,
+              "line": 177,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzppodmiot,CDN.BnkZapisy -> CDN.PodmiotyView,Direct join path from CDN.BnkZapisy to CDN.PodmiotyView based on FK_BZpPodmiot.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.PodmiotyView,CDN_TEST:FOREIGN_KEY:CDN.FK_BZpPodmi..."
             },
             {
-              "line": 485,
+              "line": 181,
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzpkartatyp,CDN.BnkZapisy -> CDN.KartyKredytowe,Direct join path from CDN.BnkZapisy to CDN.KartyKredytowe based on FK_BZpKartaTyp.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
             }
@@ -2321,19 +2321,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 276,
+              "line": 859,
               "score": 2,
-              "snippet": "--Sprawdzenie, czy zmieniono symbol, numerację lub klasę w definicji wykorzystanej w BnkZapisy"
+              "snippet": "( SELECT * FROM inserted LEFT OUTER JOIN CDN.BnkZapisy ON"
             },
             {
-              "line": 279,
+              "line": 860,
               "score": 2,
-              "snippet": "JOIN CDN.BnkZapisy ON deleted.DDf_DDfId = CDN.BnkZapisy.BZp_DDfId"
+              "snippet": "inserted.BOE_DokumentId = CDN.BnkZapisy.BZp_BZpId"
             },
             {
-              "line": 283,
+              "line": 861,
               "score": 2,
-              "snippet": "RAISERROR('##OPT32299##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana w zapisach kasowo-bankowych (BnkZapisy). Nie można zmieniać jej symbolu, schematu numeracji ani klasy.',16,1)"
+              "snippet": "WHERE CDN.BnkZapisy.BZp_BZpId IS NULL AND (inserted.BOE_DokumentTyp=2)"
             }
           ]
         }
@@ -2357,17 +2357,17 @@
           "type": "csv",
           "hits": [
             {
-              "line": 681,
-              "score": 3,
-              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_oblicztravat,CDN.DetalStan_ObliczTraVAT Guide,Query-design helper for stored_procedure CDN.DetalStan_ObliczTraVAT.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_ObliczTraVAT,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL..."
-            },
-            {
-              "line": 944,
+              "line": 898,
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_aktualizujtravattranag,CDN.AktualizujTraVATTraNag Guide,Query-design helper for stored_procedure CDN.AktualizujTraVATTraNag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.AktualizujTraVATTraNag,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL..."
             },
             {
-              "line": 1051,
+              "line": 1212,
+              "score": 3,
+              "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_oblicztravat,CDN.DetalStan_ObliczTraVAT Guide,Query-design helper for stored_procedure CDN.DetalStan_ObliczTraVAT.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_ObliczTraVAT,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL..."
+            },
+            {
+              "line": 26,
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_anonimizacjadokblokujaceknt,CDN.AnonimizacjaDokBlokujaceKnt Guide,Query-design helper for stored_procedure CDN.AnonimizacjaDokBlokujaceKnt.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.AnonimizacjaDokBlokujaceKnt,STORED_PROCEDURE,GENERAL_SQL_OBJECT,..."
             }
@@ -2379,19 +2379,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 129,
+              "line": 133,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>U :CDN.RejestrOperacjiTypyObiektow,OptimaNazwaObiektuEx => RejestrOperacjiTypyObiektow,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.RejestrOperacjiTypyObiektow.,object_dependency,CDN_K..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>U :CDN.RejestrOperacjiTypyObiektow,OptimaNazwaObiektuEx => RejestrOperacjiTypyObiektow,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.RejestrOperacjiTypyObiektow.,object_dependency,CDN_Konfi..."
             },
             {
-              "line": 130,
+              "line": 134,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>FN:CDN.UI_LCID,OptimaNazwaObiektuEx => UI_LCID,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.UI_LCID.,object_dependency,CDN_KNF_Konfiguracja:FUNCTION:CDN.OptimaNazwaObiektuEx,CDN_KNF_Ko..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>FN:CDN.UI_LCID,OptimaNazwaObiektuEx => UI_LCID,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.UI_LCID.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.OptimaNazwaObiektuEx,CDN_Konfiguracja:F..."
             },
             {
-              "line": 131,
+              "line": 135,
               "score": 2,
-              "snippet": "CDN_KNF_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>FN:CDN.OptimaNazwaObiektu,OptimaNazwaObiektuEx => OptimaNazwaObiektu,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.OptimaNazwaObiektu.,object_dependency,CDN_KNF_Konfiguracja:FUNCTION:CD..."
+              "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>FN:CDN.OptimaNazwaObiektu,OptimaNazwaObiektuEx => OptimaNazwaObiektu,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.OptimaNazwaObiektu.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.Optima..."
             }
           ]
         },
@@ -2401,19 +2401,19 @@
           "type": "csv",
           "hits": [
             {
-              "line": 6197,
+              "line": 11055,
               "score": 2,
-              "snippet": "--obsługa kaskadowego uaktualniania zapisów źródłowych Handlowych"
+              "snippet": "-- obsługa kaskadowego uaktualniania zapisów źródłowych Handlowych"
             },
             {
-              "line": 13253,
+              "line": 13501,
               "score": 2,
               "snippet": "-- Zależności czasowe"
             },
             {
-              "line": 15702,
+              "line": 23476,
               "score": 2,
-              "snippet": "-- Jeśli ustawił, to pewnie wie co robi - za chwilę mogą być updatowane kolejne rozliczenia i ważne żeby na końcu wszystko się zgadzało - w takim przypadku nie mieszamy w obliczeniach obiektu (TFSID=13780)"
+              "snippet": "-- Liczenie kosztu usługi dla RWS (na pozostałych wewnętrznych koszt usługi jest zapisywany z obiektu)"
             }
           ]
         },

@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-07-22_8bbe6dfb_podrecznik",
+  "kbName": "ComarchOptimaBusinessSemantics",
+  "kbNamespace": "ComarchOptimaBusinessSemantics",
+  "title": "Podręcznik",
+  "content": "External source discovered via Exa query: Wyjasnij proces faktury i jego skutki VAT\nTitle: Podręcznik\nURL: https://ksef.podatki.gov.pl/media/3zidazbw/podrecznik-ksef-2-0-cz-ii-wystawianie-i-otrzymywane-faktur-w-ksef.pdf\nTier: official\nSummary:\nWyjaśnienie procesu faktury w KSeF i jego skutków podatkowych (VAT):\n- Wysyłka faktury do KSeF:\n- Po dodaniu pliku XML do KSeF system weryfikuje strukturę faktury (od 1 lutego 2026 obowiązuje struktura FA(3) dla faktur ustrukturyzowanych).\n- Jeśli XML zawiera błędy lub brakuje wymaganych pól, plik zostanie odrzucony i nie nadany zostanie numer KSeF. Konieczna jest ponowna wysyłka po poprawie danych.\n- Po zaakceptowaniu pliku KSeF nadaje unikalny identyfikator (numer identyfikacyjny faktury) i faktura wchodzi do obrotu prawnego.\n- Edycja i korekty:\n- Po wysłaniu pliku i nadaniu numeru identyfikacyjnego nie ma możliwości edytowania wystawionej faktury w KSeF.\n- Od 1 lutego 2026 r. przepisy dotyczące not korygujących będą uchylone. W praktyce korekty będą dokonywane wyłącznie poprzez wystawienie faktury korygującej w KSeF.\n- Jeśli po identyfikacji błędów w fakturze wystąpi konieczność po...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://ksef.podatki.gov.pl/media/3zidazbw/podrecznik-ksef-2-0-cz-ii-wystawianie-i-otrzymywane-faktur-w-ksef.pdf",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "weak_local_evidence"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Wyjasnij proces faktury i jego skutki VAT",
+    "sourceTier": "official",
+    "retrievedAt": "2026-07-22T07:30:26.465Z"
+  },
+  "createdAt": "2026-07-22T07:30:26.713Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-22T14:41:08.605Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Bulk approved 33 drafts from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-22/draft_2026-07-22_8bbe6dfb_podrecznik.json"
+}

@@ -117,6 +117,15 @@
       "buildManifestPath": "exports/owa_ontology/v1/build_owa_ontology_jobs_manifest.json",
       "primaryFiles": ["ontology_entity.csv", "ontology_field.csv", "ontology_relation.csv", "workflow_pattern.csv", "chunk.csv"],
       "enabled": true
+    },
+    {
+      "namespace": "InsERTGTSchema",
+      "kbName": "InsERT GT MSSQL Schema",
+      "category": "InsERT",
+      "exportDir": "exports/insert_gt_schema/v1",
+      "buildManifestPath": "exports/insert_gt_schema/v1/build_insert_gt_schema_jobs_manifest.json",
+      "primaryFiles": ["table.csv", "column.csv", "chunk.csv"],
+      "enabled": true
     }
   ]
 }
