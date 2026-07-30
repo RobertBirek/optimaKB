@@ -1,8 +1,8 @@
 # KB Quality Gate Report
 
-Generated at: 2026-07-30T12:08:48.824Z
+Generated at: 2026-07-30T13:13:24.715Z
 
-Overall: `FAIL`
+Overall: `WARN`
 
 ## ComarchOptimaSchema
 
@@ -35,16 +35,12 @@ Overall: `FAIL`
 
 ## ComarchOptimaAdditionalFunctions
 
-- Verdict: `FAIL`
+- Verdict: `PASS`
 - Export dir: `exports/optima_additional_functions/v1`
-- Staging generatedAt: `2026-07-30T11:25:58.680Z`
-- Errors:
-  - Duplicate IDs in implementation_example.csv: 15
-  - Duplicate IDs in configuration_catalog_entry.csv: 1
-  - Duplicate IDs in chunk.csv: 15
+- Staging generatedAt: `2026-07-30T13:08:49.847Z`
 - Required files:
   - `reference_document.csv`: exists `true`, rows `153`
-  - `chunk.csv`: exists `true`, rows `248`
+  - `chunk.csv`: exists `true`, rows `233`
 - Jobs:
   - `undefined` `FINISH` `additional_function_capability.csv`
   - `undefined` `FINISH` `additional_function_entry_point.csv`
@@ -67,16 +63,14 @@ Overall: `FAIL`
 
 ## ComarchOptimaSprint
 
-- Verdict: `FAIL`
+- Verdict: `WARN`
 - Export dir: `exports/optima_sprint/v1`
-- Staging generatedAt: `2026-07-30T11:27:21.677Z`
-- Errors:
-  - Duplicate IDs in chunk.csv: 3
+- Staging generatedAt: `2026-07-30T13:08:44.176Z`
 - Warnings:
   - Duplicate sourceUrl values in reference_document.csv: 1
 - Required files:
   - `reference_document.csv`: exists `true`, rows `172`
-  - `chunk.csv`: exists `true`, rows `315`
+  - `chunk.csv`: exists `true`, rows `312`
 - Jobs:
   - `88` `FINISH` `print_technology.csv`
   - `89` `FINISH` `print_workflow.csv`
@@ -98,13 +92,11 @@ Overall: `FAIL`
 
 ## ComarchOptimaReference
 
-- Verdict: `FAIL`
+- Verdict: `PASS`
 - Export dir: `exports/optima_reference/v1`
-- Staging generatedAt: `2026-07-30T11:26:41.098Z`
-- Errors:
-  - Duplicate IDs in reference_document.csv: 1
+- Staging generatedAt: `2026-07-30T13:09:03.763Z`
 - Required files:
-  - `reference_document.csv`: exists `true`, rows `3370`
+  - `reference_document.csv`: exists `true`, rows `3369`
   - `chunk.csv`: exists `true`, rows `456`
 - Jobs:
   - `102` `FINISH` `help_category.csv`
@@ -118,15 +110,13 @@ Overall: `FAIL`
 
 ## ComarchOptimaBusinessSemantics
 
-- Verdict: `FAIL`
+- Verdict: `PASS`
 - Export dir: `exports/optima_business_semantics/v1`
-- Staging generatedAt: `2026-07-30T11:26:44.605Z`
-- Errors:
-  - Required CSV has zero rows: code_meaning.csv
+- Staging generatedAt: `2026-07-30T13:12:18.455Z`
 - Required files:
   - `business_domain.csv`: exists `true`, rows `8`
   - `business_description.csv`: exists `true`, rows `630`
-  - `code_meaning.csv`: exists `true`, rows `0`
+  - `code_meaning.csv`: exists `true`, rows `12`
   - `business_rule.csv`: exists `true`, rows `21`
 - Jobs:
   - `336` `FINISH` `business_domain.csv`
@@ -136,11 +126,9 @@ Overall: `FAIL`
 
 ## ComarchOptimaPartnerTechnical
 
-- Verdict: `FAIL`
+- Verdict: `PASS`
 - Export dir: `exports/optima_partner_technical/v1`
-- Staging generatedAt: `2026-07-30T11:26:50.394Z`
-- Errors:
-  - Duplicate IDs in cfg_entry.csv: 3
+- Staging generatedAt: `2026-07-30T13:09:02.307Z`
 - Required files:
   - `reference_document.csv`: exists `true`, rows `126`
   - `partner_asset.csv`: exists `true`, rows `548`
@@ -185,11 +173,9 @@ Overall: `FAIL`
 
 ## ComarchCommunityNews
 
-- Verdict: `FAIL`
+- Verdict: `PASS`
 - Export dir: `exports/community_news/v1`
-- Staging generatedAt: `2026-07-30T03:15:14.157Z`
-- Errors:
-  - Duplicate IDs in chunk.csv: 78
+- Staging generatedAt: `2026-07-30T13:08:15.081Z`
 - Required files:
   - `reference_document.csv`: exists `true`, rows `167`
   - `news_topic.csv`: exists `true`, rows `37`
@@ -217,6 +203,22 @@ Overall: `FAIL`
   - `250` `FINISH` `entry_guide.csv`
   - `549` `FINISH` `chunk.csv`
   - `554` `FINISH` `reference_document.csv`
+
+## TaxbellPayrollHRReference
+
+- Verdict: `PASS`
+- Export dir: `exports/taxbell_payroll_hr_reference/v1`
+- Staging generatedAt: `2026-07-30T12:06:40.445Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `70`
+  - `source_topic.csv`: exists `true`, rows `10`
+  - `chunk.csv`: exists `true`, rows `577`
+- Jobs:
+  - `253` `FINISH` `source_topic.csv`
+  - `254` `FINISH` `knowledge_route.csv`
+  - `255` `FINISH` `entry_guide.csv`
+  - `556` `FINISH` `reference_document.csv`
+  - `557` `FINISH` `chunk.csv`
 
 ## TaxbellAccountingVATReference
 
@@ -248,41 +250,19 @@ Overall: `FAIL`
 
 ## OWAOntology
 
-- Verdict: `FAIL`
+- Verdict: `PASS`
 - Export dir: `exports/owa_ontology/v1`
-- Staging generatedAt: `2026-07-30T11:27:24.370Z`
-- Errors:
-  - Duplicate IDs in ontology_entity.csv: 1
-  - Duplicate IDs in ontology_relation.csv: 3
-  - Duplicate IDs in workflow_pattern.csv: 1
-  - Duplicate IDs in chunk.csv: 2
-  - Promoted drafts without visible chunks: 66
+- Staging generatedAt: `2026-07-30T13:08:56.973Z`
 - Required files:
-  - `ontology_entity.csv`: exists `true`, rows `68`
+  - `ontology_entity.csv`: exists `true`, rows `67`
   - `ontology_field.csv`: exists `true`, rows `109`
-  - `ontology_relation.csv`: exists `true`, rows `149`
-  - `workflow_pattern.csv`: exists `true`, rows `133`
-  - `chunk.csv`: exists `true`, rows `192`
+  - `ontology_relation.csv`: exists `true`, rows `147`
+  - `workflow_pattern.csv`: exists `true`, rows `132`
+  - `chunk.csv`: exists `true`, rows `190`
 - Jobs:
   - `462` `FINISH` `ontology_entity.csv`
   - `463` `FINISH` `ontology_field.csv`
   - `464` `FINISH` `ontology_relation.csv`
   - `465` `FINISH` `workflow_pattern.csv`
   - `466` `FINISH` `chunk.csv`
-
-## TaxbellPayrollHRReference
-
-- Verdict: `PASS`
-- Export dir: `exports/taxbell_payroll_hr_reference/v1`
-- Staging generatedAt: `2026-07-30T12:06:40.445Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `70`
-  - `source_topic.csv`: exists `true`, rows `10`
-  - `chunk.csv`: exists `true`, rows `577`
-- Jobs:
-  - `253` `FINISH` `source_topic.csv`
-  - `254` `FINISH` `knowledge_route.csv`
-  - `255` `FINISH` `entry_guide.csv`
-  - `556` `FINISH` `reference_document.csv`
-  - `557` `FINISH` `chunk.csv`
 

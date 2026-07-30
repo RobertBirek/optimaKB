@@ -179,6 +179,22 @@ function parseInValues(definition) {
   return values.length > 0 ? values : null;
 }
 
+function parseEqualityChainValues(definition) {
+  if (!definition) return null;
+  const matches = [...definition.matchAll(/\[?([a-zA-Z_]+)\]?\s*=\s*\(([^)]+)\)/g)];
+  if (!matches.length) return null;
+  const byColumn = new Map();
+  for (const match of matches) {
+    const col = match[1];
+    const value = match[2].trim().replace(/^'([^']*)'$/, '$1');
+    if (!value) continue;
+    const key = col.toLowerCase();
+    if (!byColumn.has(key)) byColumn.set(key, { colName: col, values: [] });
+    byColumn.get(key).values.push(value);
+  }
+  return [...byColumn.values()].find((entry) => entry.values.length > 1) || null;
+}
+
 async function detectLookupTables(Connection, Request, config) {
   const query = `
     SELECT
@@ -605,21 +621,23 @@ async function main() {
   for (const check of allCheckConstraints) {
     const def = check.constraint_definition || '';
     const inVals = parseInValues(def);
-    if (!inVals) continue;
+    const colMatch = inVals ? def.match(/\(([a-zA-Z_]+)\s+IN\s*\(/) : null;
+    const enumMatch = inVals && colMatch ? null : parseEqualityChainValues(def);
 
-    const colMatch = def.match(/\(([a-zA-Z_]+)\s+IN\s*\(/);
-    if (!colMatch) continue;
+    const colName = colMatch ? colMatch[1] : enumMatch?.colName;
+    const values = colMatch ? inVals : enumMatch?.values;
+    if (!colName || !values) continue;
 
-    const colName = colMatch[1];
     const crId = columnRefId(`CDN_${check.database}`, check.schema_name, check.table_name, colName);
 
-    for (const codeVal of inVals) {
+    for (const codeVal of values) {
       const key = `${crId}:${codeVal}`;
       if (codeSeen.has(key)) continue;
       codeSeen.add(key);
 
+      const idSafeCodeVal = codeVal.replace(/^-/, 'NEG_');
       codeRows.push({
-        id: makeId('CM', key),
+        id: makeId('CM', `${crId}:${idSafeCodeVal}`),
         name: `${check.table_name}.${colName}=${codeVal}`,
         columnRefId: crId,
         codeValue: codeVal,

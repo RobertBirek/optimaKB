@@ -812,7 +812,7 @@ function dictionaryEntries(extractionStateById, assetsById) {
           const configLabel = row.Opis || row.Description || '';
           const configType = row.Typ || row.Type || '';
           cfgEntries.push({
-            id: `CFG_${slug(`${assetId}_${configKey}`)}`,
+            id: makeId('CFG', `${assetId}_${configKey}_${configLabel}`),
             name: configLabel || configKey,
             description: `Partner technical configuration dictionary entry ${configKey}.`,
             semanticType: 'partnerConfigEntry',

@@ -138,6 +138,10 @@ function snapshotSlug(filePath) {
   return base.replace(/_print$/i, '').replace(/_/g, '-');
 }
 
+function canonicalSlugKey(value) {
+  return String(value || '').toLowerCase().replace(/[-_]+/g, '-');
+}
+
 function inferModuleScope(value) {
   const lower = String(value || '').toLowerCase();
   if (/handel|magazyn|towar|kontrah|cennik|faktur|paragon/.test(lower)) return 'TradeAndWarehouse';
@@ -233,12 +237,18 @@ const snapshotPages = pageFiles.map((filePath) => {
   };
 });
 
-const snapshotBySlug = new Map(snapshotPages.map((page) => [page.slug, page]));
+const snapshotBySlug = new Map();
+for (const page of snapshotPages) {
+  const key = canonicalSlugKey(page.slug);
+  if (!snapshotBySlug.has(key)) snapshotBySlug.set(key, page);
+}
 const referenceMap = new Map();
+const matchedSnapshotPaths = new Set();
 
 for (const entry of articleEntries) {
   const articleSlug = slugFromUrl(entry.loc);
-  const snapshot = snapshotBySlug.get(articleSlug);
+  const snapshot = snapshotBySlug.get(canonicalSlugKey(articleSlug));
+  if (snapshot) matchedSnapshotPaths.add(snapshot.relPath);
   const title = snapshot?.title || humanizeSlug(articleSlug);
   const moduleScope = inferModuleScope(entry.loc);
   const documentCategory = inferDocumentCategory(entry.loc);
@@ -266,6 +276,7 @@ for (const entry of articleEntries) {
 }
 
 for (const page of snapshotPages) {
+  if (matchedSnapshotPaths.has(page.relPath)) continue;
   const sourceUrl = `https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/${page.slug}/`;
   if (!referenceMap.has(sourceUrl)) {
     const moduleScope = inferModuleScope(page.slug);

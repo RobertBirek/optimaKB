@@ -1336,7 +1336,7 @@ files.push(
   writeCsv(EXPORT_DIR, 
     'chunk.csv',
     ['id', 'name', 'description', 'sourceObjectRefId', 'sourceDocument', 'sourceSection', 'semanticType', 'content'],
-    chunks,
+    dedupeById(chunks),
   ),
 );
 

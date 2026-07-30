@@ -15,6 +15,10 @@ function normalize(value) {
   return String(value || '').replace(/\r/g, '').trim();
 }
 
+function titleDedupeKey(value) {
+  return normalize(value).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+}
+
 function parseListValue(content, label) {
   const match = content.match(new RegExp(`-\\s+${label}:\\s+` + '`?([^`\n]+)`?', 'i'));
   return normalize(match?.[1] || '');
@@ -121,7 +125,7 @@ function latestOntologyDrafts() {
   const drafts = findRawDrafts().filter((draft) => draft.kbNamespace === TARGET_NAMESPACE);
   const byTitle = new Map();
   for (const draft of drafts) {
-    const key = normalize(draft.title).toLowerCase();
+    const key = titleDedupeKey(draft.title);
     const existing = byTitle.get(key);
     const draftLen = String(draft.content || '').length;
     const existingLen = existing ? String(existing.content || '').length : -1;
@@ -207,7 +211,7 @@ function parseEntityDraft(draft) {
       summary: truncate(`${row[3] || ''} ${row[7] || ''}`.trim(), 1200),
     })),
     relations: relationRows.map((row, index) => ({
-      id: makeId('OWA_REL', `${canonicalName}_${row[0] || index}`),
+      id: makeId('OWA_REL', `${canonicalName}_${row[0] || index}_${row[2] || row[1] || index}`),
       name: normalize(row[0] || `Relation ${index + 1}`),
       description: normalize(row[5] || ''),
       semanticType: 'ontology_relation',

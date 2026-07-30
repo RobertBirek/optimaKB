@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T12:08:48.824Z",
-  "overall": "FAIL",
+  "generatedAt": "2026-07-30T13:13:24.715Z",
+  "overall": "WARN",
   "results": [
     {
       "namespace": "ComarchOptimaSchema",
@@ -201,14 +201,10 @@
     {
       "namespace": "ComarchOptimaAdditionalFunctions",
       "kbName": "Comarch Optima Additional Functions",
-      "verdict": "FAIL",
+      "verdict": "PASS",
       "exportDir": "exports/optima_additional_functions/v1",
-      "generatedAt": "2026-07-30T11:25:58.680Z",
-      "errors": [
-        "Duplicate IDs in implementation_example.csv: 15",
-        "Duplicate IDs in configuration_catalog_entry.csv: 1",
-        "Duplicate IDs in chunk.csv: 15"
-      ],
+      "generatedAt": "2026-07-30T13:08:49.847Z",
+      "errors": [],
       "warnings": [],
       "files": [
         {
@@ -232,7 +228,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 248,
+          "rowCount": 233,
           "columns": [
             "id",
             "name",
@@ -343,12 +339,10 @@
     {
       "namespace": "ComarchOptimaSprint",
       "kbName": "Comarch Optima Sprint and Prints",
-      "verdict": "FAIL",
+      "verdict": "WARN",
       "exportDir": "exports/optima_sprint/v1",
-      "generatedAt": "2026-07-30T11:27:21.677Z",
-      "errors": [
-        "Duplicate IDs in chunk.csv: 3"
-      ],
+      "generatedAt": "2026-07-30T13:08:44.176Z",
+      "errors": [],
       "warnings": [
         "Duplicate sourceUrl values in reference_document.csv: 1"
       ],
@@ -373,7 +367,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 315,
+          "rowCount": 312,
           "columns": [
             "id",
             "name",
@@ -496,18 +490,16 @@
     {
       "namespace": "ComarchOptimaReference",
       "kbName": "Comarch Optima Reference",
-      "verdict": "FAIL",
+      "verdict": "PASS",
       "exportDir": "exports/optima_reference/v1",
-      "generatedAt": "2026-07-30T11:26:41.098Z",
-      "errors": [
-        "Duplicate IDs in reference_document.csv: 1"
-      ],
+      "generatedAt": "2026-07-30T13:09:03.763Z",
+      "errors": [],
       "warnings": [],
       "files": [
         {
           "fileName": "reference_document.csv",
           "exists": true,
-          "rowCount": 3370,
+          "rowCount": 3369,
           "columns": [
             "id",
             "name",
@@ -599,12 +591,10 @@
     {
       "namespace": "ComarchOptimaBusinessSemantics",
       "kbName": "Comarch Optima Business Semantics",
-      "verdict": "FAIL",
+      "verdict": "PASS",
       "exportDir": "exports/optima_business_semantics/v1",
-      "generatedAt": "2026-07-30T11:26:44.605Z",
-      "errors": [
-        "Required CSV has zero rows: code_meaning.csv"
-      ],
+      "generatedAt": "2026-07-30T13:12:18.455Z",
+      "errors": [],
       "warnings": [],
       "files": [
         {
@@ -637,7 +627,7 @@
         {
           "fileName": "code_meaning.csv",
           "exists": true,
-          "rowCount": 0,
+          "rowCount": 12,
           "columns": [
             "id",
             "name",
@@ -701,12 +691,10 @@
     {
       "namespace": "ComarchOptimaPartnerTechnical",
       "kbName": "Comarch Optima Partner Technical",
-      "verdict": "FAIL",
+      "verdict": "PASS",
       "exportDir": "exports/optima_partner_technical/v1",
-      "generatedAt": "2026-07-30T11:26:50.394Z",
-      "errors": [
-        "Duplicate IDs in cfg_entry.csv: 3"
-      ],
+      "generatedAt": "2026-07-30T13:09:02.307Z",
+      "errors": [],
       "warnings": [],
       "files": [
         {
@@ -1022,12 +1010,10 @@
     {
       "namespace": "ComarchCommunityNews",
       "kbName": "Comarch Community News",
-      "verdict": "FAIL",
+      "verdict": "PASS",
       "exportDir": "exports/community_news/v1",
-      "generatedAt": "2026-07-30T03:15:14.157Z",
-      "errors": [
-        "Duplicate IDs in chunk.csv: 78"
-      ],
+      "generatedAt": "2026-07-30T13:08:15.081Z",
+      "errors": [],
       "warnings": [],
       "files": [
         {
@@ -1232,6 +1218,108 @@
       ]
     },
     {
+      "namespace": "TaxbellPayrollHRReference",
+      "kbName": "Taxbell Payroll HR Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/taxbell_payroll_hr_reference/v1",
+      "generatedAt": "2026-07-30T12:06:40.445Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 70,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceDomain",
+            "sourceTier",
+            "documentCategory",
+            "topicArea",
+            "audienceMode",
+            "riskLevel",
+            "publishedAt",
+            "lastModified",
+            "retrievedAt",
+            "localSnapshotPath",
+            "contentHash",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "source_topic.csv",
+          "exists": true,
+          "rowCount": 10,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "topicSlug",
+            "topicGroup",
+            "sourceTier",
+            "usageCount",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 577,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 253,
+          "fileName": "source_topic.csv",
+          "status": "FINISH",
+          "jobName": "TBHR SourceTopic CSV Import"
+        },
+        {
+          "id": 254,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "TBHR KnowledgeRoute CSV Import"
+        },
+        {
+          "id": 255,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "TBHR EntryGuide CSV Import"
+        },
+        {
+          "id": 556,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "TBHR ReferenceDocument CSV Import",
+          "gmtModified": "2026-07-30 13:49:33"
+        },
+        {
+          "id": 557,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "TBHR Chunk CSV Import",
+          "gmtModified": "2026-07-30 13:50:34"
+        }
+      ]
+    },
+    {
       "namespace": "TaxbellAccountingVATReference",
       "kbName": "Taxbell Accounting VAT Reference",
       "verdict": "PASS",
@@ -1383,22 +1471,16 @@
     {
       "namespace": "OWAOntology",
       "kbName": "OWA Platform Optima Ontology",
-      "verdict": "FAIL",
+      "verdict": "PASS",
       "exportDir": "exports/owa_ontology/v1",
-      "generatedAt": "2026-07-30T11:27:24.370Z",
-      "errors": [
-        "Duplicate IDs in ontology_entity.csv: 1",
-        "Duplicate IDs in ontology_relation.csv: 3",
-        "Duplicate IDs in workflow_pattern.csv: 1",
-        "Duplicate IDs in chunk.csv: 2",
-        "Promoted drafts without visible chunks: 66"
-      ],
+      "generatedAt": "2026-07-30T13:08:56.973Z",
+      "errors": [],
       "warnings": [],
       "files": [
         {
           "fileName": "ontology_entity.csv",
           "exists": true,
-          "rowCount": 68,
+          "rowCount": 67,
           "columns": [
             "id",
             "name",
@@ -1439,7 +1521,7 @@
         {
           "fileName": "ontology_relation.csv",
           "exists": true,
-          "rowCount": 149,
+          "rowCount": 147,
           "columns": [
             "id",
             "name",
@@ -1458,7 +1540,7 @@
         {
           "fileName": "workflow_pattern.csv",
           "exists": true,
-          "rowCount": 133,
+          "rowCount": 132,
           "columns": [
             "id",
             "name",
@@ -1476,7 +1558,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 192,
+          "rowCount": 190,
           "columns": [
             "id",
             "name",
@@ -1525,108 +1607,6 @@
           "status": "FINISH",
           "jobName": "OWAO Chunk CSV Import",
           "gmtModified": "2026-07-22 16:44:27"
-        }
-      ]
-    },
-    {
-      "namespace": "TaxbellPayrollHRReference",
-      "kbName": "Taxbell Payroll HR Reference",
-      "verdict": "PASS",
-      "exportDir": "exports/taxbell_payroll_hr_reference/v1",
-      "generatedAt": "2026-07-30T12:06:40.445Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 70,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceDomain",
-            "sourceTier",
-            "documentCategory",
-            "topicArea",
-            "audienceMode",
-            "riskLevel",
-            "publishedAt",
-            "lastModified",
-            "retrievedAt",
-            "localSnapshotPath",
-            "contentHash",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "source_topic.csv",
-          "exists": true,
-          "rowCount": 10,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "topicSlug",
-            "topicGroup",
-            "sourceTier",
-            "usageCount",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 577,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 253,
-          "fileName": "source_topic.csv",
-          "status": "FINISH",
-          "jobName": "TBHR SourceTopic CSV Import"
-        },
-        {
-          "id": 254,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "TBHR KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 255,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "TBHR EntryGuide CSV Import"
-        },
-        {
-          "id": 556,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "TBHR ReferenceDocument CSV Import",
-          "gmtModified": "2026-07-30 13:49:33"
-        },
-        {
-          "id": 557,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "TBHR Chunk CSV Import",
-          "gmtModified": "2026-07-30 13:50:34"
         }
       ]
     }

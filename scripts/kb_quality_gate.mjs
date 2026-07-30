@@ -199,9 +199,31 @@ function duplicateSourceUrls(rows, namespace) {
     .map(([sourceUrl, count]) => ({ sourceUrl, count }));
 }
 
+function canonicalDraftsByTitle(drafts) {
+  const byTitleKey = new Map();
+  for (const draft of drafts) {
+    const key = String(draft.title || '').replace(/\r/g, '').trim().toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+    const existing = byTitleKey.get(key);
+    const draftLen = String(draft.content || '').length;
+    const existingLen = existing ? String(existing.content || '').length : -1;
+    const draftAt = Date.parse(draft.createdAt || draft.promotedAt || '') || 0;
+    const existingAt = existing ? Date.parse(existing.createdAt || existing.promotedAt || '') || 0 : -1;
+    if (!existing || draftLen > existingLen || (draftLen === existingLen && draftAt > existingAt)) {
+      byTitleKey.set(key, draft);
+    }
+  }
+  return [...byTitleKey.values()];
+}
+
 function promotedDraftChunkMatches(namespace, chunkRows) {
   const promoted = loadPromotedKnowledge(namespace);
   if (!promoted.length) return { promotedCount: 0, missing: [] };
+  // export_owa_ontology.mjs intentionally consolidates multiple promoted
+  // revisions of the same conceptual entity into one canonical draft per
+  // title (keeping the longest/most-recent); superseded revisions never get
+  // their own chunk rows by design, so only the canonical drafts should be
+  // checked here.
+  const candidates = namespace === 'OWAOntology' ? canonicalDraftsByTitle(promoted) : promoted;
   const haystack = chunkRows.map((row) => [
     row.sourceUrl,
     row.sourcePath,
@@ -211,7 +233,7 @@ function promotedDraftChunkMatches(namespace, chunkRows) {
     row.content,
   ].join('\n')).join('\n');
   const haystackLower = haystack.toLowerCase();
-  const missing = promoted
+  const missing = candidates
     .filter((draft) => {
       const sluggedId = slug(draft.id).slice(0, 96);
       const schemaChunkId = namespace === 'ComarchOptimaSchema'

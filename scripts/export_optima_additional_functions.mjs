@@ -582,7 +582,15 @@ function loadManualExportDefinitions() {
     summary: truncate(`Direct Optima export with ${parsed.records.length} records. Type families: ${comboSummary}. Definition kinds: ${kindSummary}.`, 1200),
   });
 
-  for (const record of parsed.records) {
+  const seenRecordKeys = new Set();
+  const dedupedRecords = parsed.records.filter((record) => {
+    const baseKey = `${record.setName}_${record.WDR_ID || ''}_${record.WDR_NAZWA || record.printNameAttr || ''}`;
+    if (seenRecordKeys.has(baseKey)) return false;
+    seenRecordKeys.add(baseKey);
+    return true;
+  });
+
+  for (const record of dedupedRecords) {
     const baseKey = `${record.setName}_${record.WDR_ID || ''}_${record.WDR_NAZWA || record.printNameAttr || ''}`;
     const docId = makeId('AF_DOC_MANUAL_DEF', baseKey);
     const exampleId = makeId('AF_EXAMPLE_MANUAL', baseKey);
@@ -674,7 +682,7 @@ function loadDictionaryRows() {
       const [keyName, label, configType] = cols.map((value) => normalizeWhitespace(value));
       if (!keyName) continue;
       configurationEntries.push({
-        id: makeId('AF_CFG', keyName),
+        id: makeId('AF_CFG', `${keyName}_${label}`),
         name: keyName,
         description: label || 'Configuration dictionary entry',
         semanticType: 'configuration_catalog_entry',
