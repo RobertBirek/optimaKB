@@ -7,6 +7,9 @@ x-security-defaults: &security_defaults
 services:
   mysql:
     <<: *security_defaults
+    cap_add:
+      - SETUID
+      - SETGID
     image: ${OPENSPG_MYSQL_IMAGE:?OPENSPG_MYSQL_IMAGE is required}
     container_name: release-openspg-mysql
     restart: always
@@ -31,6 +34,12 @@ services:
       - spg
   neo4j:
     <<: *security_defaults
+    cap_add:
+      - CHOWN
+      - SETUID
+      - SETGID
+      - DAC_OVERRIDE
+      - FOWNER
     image: ${OPENSPG_NEO4J_IMAGE:?OPENSPG_NEO4J_IMAGE is required}
     container_name: release-openspg-neo4j
     restart: always
