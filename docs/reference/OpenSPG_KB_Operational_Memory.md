@@ -1337,6 +1337,30 @@ Execution artifacts:
   - `limit={n}`
 - `start=0` causes a backend SQL bug producing negative offset.
 
+### Auth / cookie file permissions
+
+- `scripts/openspg_login.mjs` always writes the refreshed session cookie to
+  `/etc/erp-kb-openspg.cookie` with mode `0600` (owner-only), hardcoded at
+  `scripts/openspg_login.mjs:83` — this has been true since the script was
+  first added and does not depend on who runs it.
+- The dashboard server (`scripts/erp_kb_dashboard_server.mjs`) runs as OS user
+  `mcpbot`, not root. Its approve/build preflight check
+  (`openspg_cookie_file`) and the build runners (`scripts/build_kb_runner.mjs`
+  via `readOpenSpgCookie()`) need to *read* this same file.
+- Consequence: if `openspg_login.mjs` is ever run as `root` (e.g. manually,
+  or via a root cron job) without a follow-up permission fix, the cookie file
+  ends up `root:root 0600` and every dashboard approve/build action fails
+  preflight with `EACCES: permission denied, access '/etc/erp-kb-openspg.cookie'`
+  — even though the login itself succeeded and the cookie is valid.
+- Fix after any manual/root login refresh: `chmod 644 /etc/erp-kb-openspg.cookie`
+  (world-readable is intentional here — this is a short-lived session cookie,
+  not the account password; `/etc/erp-kb-openspg-login.env`, which does hold
+  the real credentials, stays `0600` and is never read by the dashboard).
+- First observed and fixed 2026-07-31, after a manual `openspg_login.mjs` run
+  (done to force-refresh the KB build for `TaxbellPayrollHRReference`) broke
+  approve/build preflight for an unrelated draft in
+  `TaxbellAccountingVATReference`.
+
 ## Reconstructed FILE_EXTRACT contract
 
 The current UI task editor submits structured CSV imports as:
