@@ -1,8 +1,8 @@
 # ERP KB Dashboard Canary Readiness Report
 
-Generated: `2026-07-30T13:11:05.865Z`
+Generated: `2026-07-31T05:27:17.741Z`
 
-- Status: `READY`
+- Status: `BLOCKED`
 - Unique live samples: `8/8`
 - Adjudicated decisions: `8`
 - Accuracy: `100%`
@@ -11,7 +11,7 @@ Generated: `2026-07-30T13:11:05.865Z`
 
 ## Blockers
 
-- Admin publication approval is still required.
+- Automation must be enabled and resumed.
 
 ## Queue
 

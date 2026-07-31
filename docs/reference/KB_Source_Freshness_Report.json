@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T08:45:54.652Z",
+  "generatedAt": "2026-07-31T05:37:05.593Z",
   "staleDays": 14,
   "overall": "WARN",
   "results": [
@@ -9,19 +9,19 @@
       "refreshPolicy": "weekly or after a new Optima version",
       "sourceRoot": "downloads/official/optima_reference",
       "sourceFileCount": 31,
-      "newestSource": "2026-07-30T05:57:02.237Z",
+      "newestSource": "2026-07-30T13:09:03.759Z",
       "oldestSource": "2026-05-24T07:05:55.661Z",
-      "sourceAgeDays": 0,
+      "sourceAgeDays": 1,
       "exportManifest": "exports/optima_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-30T05:57:02.241Z",
-      "exportAgeDays": 0,
+      "exportGeneratedAt": "2026-07-30T13:09:03.763Z",
+      "exportAgeDays": 1,
       "exportBehindSource": false,
       "stale": false,
       "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/official/optima_reference/meta/source_registry.json",
-          "sha256": "4355319bd889a13c355923fae1b20a1d0755338cb5abb969d0e0d2387e6d6b8d"
+          "sha256": "a93a14e8223412ae4dc124b7f812b5998e72c8ba4977ecdad7af6f6add5efec0"
         },
         {
           "path": "downloads/official/optima_reference/pages/aktualizacje_po_wydaniu_wersji_36_print.html",
@@ -101,18 +101,18 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-07-30T05:57:01.924Z",
-      "registrySourceCount": 3400,
+      "registryGeneratedAt": "2026-07-30T13:09:03.451Z",
+      "registrySourceCount": 3399,
       "registryUpdatedCount": 30,
-      "registryHashCount": 3400,
+      "registryHashCount": 3399,
       "registryStatusCounts": {
         "sitemap": 3,
         "official_help_snapshot": 27,
-        "official_help_sitemap": 3337,
+        "official_help_sitemap": 3336,
         "official_help_print_snapshot": 27,
         "promoted_knowledge_draft": 6
       },
-      "registryAgeDays": 0
+      "registryAgeDays": 1
     },
     {
       "namespace": "ComarchBetterflyReference",
@@ -122,10 +122,10 @@
       "sourceFileCount": 32,
       "newestSource": "2026-07-27T03:35:41.890Z",
       "oldestSource": "2026-05-25T19:16:33.988Z",
-      "sourceAgeDays": 3,
+      "sourceAgeDays": 4,
       "exportManifest": "exports/betterfly_reference/v1/_manifest.json",
       "exportGeneratedAt": "2026-07-27T03:35:41.907Z",
-      "exportAgeDays": 3,
+      "exportAgeDays": 4,
       "exportBehindSource": false,
       "stale": false,
       "warnings": [],
@@ -219,7 +219,7 @@
       "registryStatusCounts": {
         "unknown": 31
       },
-      "registryAgeDays": 3
+      "registryAgeDays": 4
     },
     {
       "namespace": "ComarchCommunityNews",
@@ -227,11 +227,11 @@
       "refreshPolicy": "daily cron",
       "sourceRoot": "downloads/community_news",
       "sourceFileCount": 221,
-      "newestSource": "2026-07-30T03:15:13.259Z",
+      "newestSource": "2026-07-31T03:15:12.920Z",
       "oldestSource": "2026-06-09T03:15:29.758Z",
       "sourceAgeDays": 0,
       "exportManifest": "exports/community_news/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-30T03:15:14.157Z",
+      "exportGeneratedAt": "2026-07-31T03:15:13.920Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
@@ -239,11 +239,11 @@
       "sampleHashes": [
         {
           "path": "downloads/community_news/api/categories.json",
-          "sha256": "b4483209cc2fbad656f7770bb1c266ed7d5db30ffc4f12f49e4ca4866c60fc43"
+          "sha256": "7df204f49c01ef700df6c3839a50bd5cb772e6be178d63f4e7b166fad56da906"
         },
         {
           "path": "downloads/community_news/api/posts_index.json",
-          "sha256": "ce32e80e857269b9856c976f4f1b7d8bd0369e889fe08ad07339a3ed645f5d5c"
+          "sha256": "e170504a3478c1dce4a2b51b9cce07620f64cb944c4c047440920b8016e392b1"
         },
         {
           "path": "downloads/community_news/api/posts/73367.json",
@@ -319,7 +319,7 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-07-30T03:15:13.229Z",
+      "registryGeneratedAt": "2026-07-31T03:15:12.896Z",
       "registrySourceCount": 218,
       "registryUpdatedCount": 218,
       "registryHashCount": 218,
@@ -334,17 +334,15 @@
       "refreshPolicy": "manual authenticated pass",
       "sourceRoot": "downloads/partner/optima_technical",
       "sourceFileCount": 322,
-      "newestSource": "2026-07-10T06:01:37.733Z",
+      "newestSource": "2026-07-30T13:09:01.570Z",
       "oldestSource": "2026-05-24T13:48:17.817Z",
-      "sourceAgeDays": 20,
+      "sourceAgeDays": 1,
       "exportManifest": "exports/optima_partner_technical/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-10T06:01:38.808Z",
-      "exportAgeDays": 20,
+      "exportGeneratedAt": "2026-07-30T13:09:02.307Z",
+      "exportAgeDays": 1,
       "exportBehindSource": false,
-      "stale": true,
-      "warnings": [
-        "Newest source is older than 14 days."
-      ],
+      "stale": false,
+      "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/partner/optima_technical/api/categories.json",
@@ -428,7 +426,7 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-07-10T06:01:37.645Z",
+      "registryGeneratedAt": "2026-07-30T13:09:01.526Z",
       "registrySourceCount": 674,
       "registryUpdatedCount": 548,
       "registryHashCount": 674,
@@ -440,7 +438,7 @@
         "promoted_knowledge_draft": 4,
         "unknown": 548
       },
-      "registryAgeDays": 20
+      "registryAgeDays": 1
     },
     {
       "namespace": "ComarchOptimaAdditionalFunctions",
@@ -448,17 +446,15 @@
       "refreshPolicy": "manual file-driven refresh",
       "sourceRoot": "downloads/google_drive/additional_functions",
       "sourceFileCount": 58,
-      "newestSource": "2026-07-08T05:30:30.589Z",
+      "newestSource": "2026-07-30T13:08:49.845Z",
       "oldestSource": "2026-05-23T18:27:51.000Z",
-      "sourceAgeDays": 22,
+      "sourceAgeDays": 1,
       "exportManifest": "exports/optima_additional_functions/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-08T05:30:30.591Z",
-      "exportAgeDays": 22,
+      "exportGeneratedAt": "2026-07-30T13:08:49.847Z",
+      "exportAgeDays": 1,
       "exportBehindSource": false,
-      "stale": true,
-      "warnings": [
-        "Newest source is older than 14 days."
-      ],
+      "stale": false,
+      "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/google_drive/additional_functions/comarch_erp_optima_funkcje_dodatkowe_README.md",
@@ -506,7 +502,7 @@
         },
         {
           "path": "downloads/google_drive/additional_functions/meta/source_registry.json",
-          "sha256": "ca9cbafe70dbf4e34bf93e14430d3ee06706facceb6817fdd1851f41bef57db3"
+          "sha256": "185188e74db4d39abae15dad06244ee47bb04b3c143d15d13a84ab5e3b9f400b"
         },
         {
           "path": "downloads/google_drive/additional_functions/Problemy-z-ladowaniem-zaleznosci-w-zewnetrznej-aplikacji-korzystajacej-z-API-Comarch-ERP-Optima-.pdf",
@@ -542,7 +538,7 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-07-08T05:30:26.881Z",
+      "registryGeneratedAt": "2026-07-30T13:08:47.659Z",
       "registrySourceCount": 214,
       "registryUpdatedCount": 61,
       "registryHashCount": 214,
@@ -555,7 +551,7 @@
         "local_drive_pdf": 3,
         "promoted_knowledge_draft": 10
       },
-      "registryAgeDays": 22
+      "registryAgeDays": 1
     },
     {
       "namespace": "ComarchOptimaSprint",
@@ -563,17 +559,15 @@
       "refreshPolicy": "manual file-driven refresh",
       "sourceRoot": "downloads/google_drive/sprint",
       "sourceFileCount": 11,
-      "newestSource": "2026-07-07T09:03:00.506Z",
+      "newestSource": "2026-07-30T13:08:44.174Z",
       "oldestSource": "2026-05-23T18:22:57.000Z",
-      "sourceAgeDays": 23,
+      "sourceAgeDays": 1,
       "exportManifest": "exports/optima_sprint/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-07T09:03:00.508Z",
-      "exportAgeDays": 23,
+      "exportGeneratedAt": "2026-07-30T13:08:44.176Z",
+      "exportAgeDays": 1,
       "exportBehindSource": false,
-      "stale": true,
-      "warnings": [
-        "Newest source is older than 14 days."
-      ],
+      "stale": false,
+      "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/google_drive/sprint/comarch-optima-sprint-kb.md",
@@ -617,11 +611,11 @@
         },
         {
           "path": "downloads/google_drive/sprint/meta/source_registry.json",
-          "sha256": "d1ae3629329c2e1f08d02e54d4dd846b45df634a98b5d7728c8140048fc04a4c"
+          "sha256": "5fa65bd1794d7059d98f50299756ff6cdaefdb9eb847da93e86dba8264343cec"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-07-07T09:02:57.640Z",
+      "registryGeneratedAt": "2026-07-30T13:08:41.339Z",
       "registrySourceCount": 186,
       "registryUpdatedCount": 14,
       "registryHashCount": 186,
@@ -632,7 +626,7 @@
         "official_web": 12,
         "promoted_knowledge_draft": 8
       },
-      "registryAgeDays": 23
+      "registryAgeDays": 1
     },
     {
       "namespace": "TaxbellLegalReference",
@@ -642,9 +636,9 @@
       "sourceFileCount": 46,
       "newestSource": "2026-06-05T14:40:36.234Z",
       "oldestSource": "2026-06-05T14:40:36.160Z",
-      "sourceAgeDays": 55,
+      "sourceAgeDays": 56,
       "exportManifest": "exports/taxbell_legal_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-30T08:43:18.085Z",
+      "exportGeneratedAt": "2026-07-31T05:34:47.214Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": true,
@@ -741,7 +735,7 @@
       "registryStatusCounts": {
         "unknown": 44
       },
-      "registryAgeDays": 55
+      "registryAgeDays": 56
     },
     {
       "namespace": "TaxbellPayrollHRReference",
@@ -751,9 +745,9 @@
       "sourceFileCount": 49,
       "newestSource": "2026-06-05T14:40:42.666Z",
       "oldestSource": "2026-06-05T14:40:42.587Z",
-      "sourceAgeDays": 55,
+      "sourceAgeDays": 56,
       "exportManifest": "exports/taxbell_payroll_hr_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-30T08:43:18.496Z",
+      "exportGeneratedAt": "2026-07-31T05:34:47.473Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": true,
@@ -850,7 +844,7 @@
       "registryStatusCounts": {
         "unknown": 47
       },
-      "registryAgeDays": 55
+      "registryAgeDays": 56
     },
     {
       "namespace": "TaxbellAccountingVATReference",
@@ -860,9 +854,9 @@
       "sourceFileCount": 46,
       "newestSource": "2026-06-05T14:40:53.725Z",
       "oldestSource": "2026-06-05T14:40:53.662Z",
-      "sourceAgeDays": 55,
+      "sourceAgeDays": 56,
       "exportManifest": "exports/taxbell_accounting_vat_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-30T08:43:18.740Z",
+      "exportGeneratedAt": "2026-07-31T05:34:47.633Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": true,
@@ -959,7 +953,7 @@
       "registryStatusCounts": {
         "unknown": 44
       },
-      "registryAgeDays": 55
+      "registryAgeDays": 56
     }
   ]
 }

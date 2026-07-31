@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-07-24_eed0f4c5_informacja-dotyczaca-rozliczenia-podatku",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "INFORMACJA DOTYCZĄCA ROZLICZENIA PODATKU",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - PIT CIT i rozliczenia\nURL: https://www.podatki.gov.pl/media/itin0muf/informacja-cit-za-2024-r.pdf\n\nSummary:\n- This official document from the Ministry of Finance (Departament Podatków Dochodowych, Warszawa) outlines PIT/CIT settlements for legal persons (CIT) for the year 2024, with content relevant to corporate income tax and to enterprise-level tax settlements.\n- It includes sections on: general data, revenues and costs, income, exemptions, deductions from income, reductions from tax base, and tax due, as well as comparative data and contact information.\n- The material appears to be a formal guidance or information bulletin (Wstęp and Spis treści) for corporate taxpayers, detailing eligible entities, tax bases, and applicable deductions and exemptions, with references to “Estoniskiego CIT” (likely a placeholder or typographical variant related to corporate tax information).\nNotes:\n- The page seems to be an official 2025 update (dated December 2025) but discusses tax year 2024 rul...",
+  "sourceUrl": "https://www.podatki.gov.pl/media/itin0muf/informacja-cit-za-2024-r.pdf",
+  "tags": [
+    "pit",
+    "cit",
+    "podatki",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_5603dd29",
+    "sourceType": "exa_query",
+    "sourceTier": "operator_draft",
+    "scanRunId": "source_scan_2026-07-24T02-25-33-979Z_86d2e65b",
+    "retrievedAt": "2026-07-24T02:25:38.100Z",
+    "contentHash": "605de715b5f18bed79233d0bf9b2e453a531fc2b56e50c98ccfd940ac115ab3c",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-07-24T02:25:38.501Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-31T05:24:12.595Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-24/draft_2026-07-24_eed0f4c5_informacja-dotyczaca-rozliczenia-podatku.json"
+}

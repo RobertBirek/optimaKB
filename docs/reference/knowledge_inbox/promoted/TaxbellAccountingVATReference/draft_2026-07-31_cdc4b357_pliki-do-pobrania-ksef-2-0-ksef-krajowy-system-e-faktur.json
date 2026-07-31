@@ -1,0 +1,31 @@
+{
+  "id": "draft_2026-07-31_cdc4b357_pliki-do-pobrania-ksef-2-0-ksef-krajowy-system-e-faktur",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Pliki do pobrania KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://ksef.podatki.gov.pl/pliki-do-pobrania-ksef-20/\n\nSummary:\nThis page on podatki.gov.pl provides downloadable resources for KSeF 2.0 (Krajowy System e-Faktur). It includes:\n- KSeF 2.0 manuals (Parts I–IV) covering getting started, creating/receiving invoices, additional features, KSeF in JST/GV and other access models, and guidance for NGOs.\n- Documents section with sample files for the e-invoice structure FA(3) in a ZIP, plus JPK_VAT with declaration case studies showing usage of JPK_VAT with declaration markers.\n- Tax explanations (Objaśnienia podatkowe) from 28 Jan 2026 on determining permanent establishment for VAT purposes when issuing invoices using KSeF.\n- Informational brochure about the FA(3) logical structure (and an English title/version).\n- “Środy z KSeF” downloads: slides (PDF) and YouTube videos from the Ministry of Finance Whatsit sessions.\nIf your goal is specifically VAT/JPK/KSeF updates for 2026, key items are the Ob...",
+  "sourceUrl": "https://ksef.podatki.gov.pl/pliki-do-pobrania-ksef-20/",
+  "tags": [
+    "podatki",
+    "vat",
+    "jpk",
+    "ksef",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_302deb2d",
+    "sourceType": "exa_query",
+    "sourceTier": "operator_draft",
+    "scanRunId": "source_scan_2026-07-31T02-25-02-496Z_a3fd14f2",
+    "retrievedAt": "2026-07-31T02:25:07.675Z",
+    "contentHash": "bad334197a15dc1526ab78d69dcf8feea7a5151b3828d6f7d92a386324b70fa2",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-07-31T02:25:09.810Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-31T05:28:49.535Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-31/draft_2026-07-31_cdc4b357_pliki-do-pobrania-ksef-2-0-ksef-krajowy-system-e-faktur.json"
+}

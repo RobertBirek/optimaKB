@@ -1,0 +1,37 @@
+{
+  "id": "draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Od lipca prostsze zasady składania wniosków o zasiłki",
+  "content": "Automated source-discovery draft.\n\nQuery: ZUS składki 2026 zmiany od lipca nowe świadczenia\nSource: https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki\nTier: official\nDiscovery confidence: 0.9\n\nOd lipca prostsze zasady składania wniosków o zasiłki - ZUS\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy",
+    "BHP",
+    "zatrudnienie"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-07-21T02:52:12.874Z",
+    "discoveryCandidateId": "candidate_cde0da9f-657",
+    "discoveryQueryId": "generated_TaxbellPayrollHRReference_1b793a650f",
+    "discoveryRunId": "discovery_daily_2026-07-21T02-49-46-759Z_36c2e3db",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "ef54cf1b2bf7ce0b29222a77c53f4789c579dbde0bb51b173b58b9aeff500895"
+  },
+  "createdAt": "2026-07-30T06:22:47.777Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-31T05:34:46.564Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-30/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.json"
+}

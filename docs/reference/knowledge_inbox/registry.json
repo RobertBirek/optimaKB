@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T11:48:49.140Z",
+  "generatedAt": "2026-07-31T05:37:59.383Z",
   "entries": [
     {
       "draftId": "draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note",
@@ -4135,6 +4135,20 @@
       "reviewNote": "Bulk approved 33 drafts from dashboard"
     },
     {
+      "draftId": "draft_2026-07-24_6f0d4f03_jpk-vat-z-deklaracja-stosowanie-znacznikow",
+      "status": "promoted",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "title": "JPK_VAT z deklaracją - stosowanie znaczników",
+      "sourceUrl": "https://www.podatki.gov.pl/media/lzafohup/jpk_vat-z-deklaracja-stosowanie-znacznikow.pdf",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-24/draft_2026-07-24_6f0d4f03_jpk-vat-z-deklaracja-stosowanie-znacznikow.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_6f0d4f03_jpk-vat-z-deklaracja-stosowanie-znacznikow.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_6f0d4f03_jpk-vat-z-deklaracja-stosowanie-znacznikow.md",
+      "promotedAt": "2026-07-31T05:14:32.203Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved from inbox row"
+    },
+    {
       "draftId": "draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap",
       "status": "promoted",
       "kbName": "Taxbell Accounting VAT Reference",
@@ -4145,6 +4159,20 @@
       "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.json",
       "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.md",
       "promotedAt": "2026-07-29T07:54:48.298Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-07-24_eed0f4c5_informacja-dotyczaca-rozliczenia-podatku",
+      "status": "promoted",
+      "kbName": "Taxbell Legal Reference",
+      "kbNamespace": "TaxbellLegalReference",
+      "title": "INFORMACJA DOTYCZĄCA ROZLICZENIA PODATKU",
+      "sourceUrl": "https://www.podatki.gov.pl/media/itin0muf/informacja-cit-za-2024-r.pdf",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-24/draft_2026-07-24_eed0f4c5_informacja-dotyczaca-rozliczenia-podatku.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-24_eed0f4c5_informacja-dotyczaca-rozliczenia-podatku.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-24_eed0f4c5_informacja-dotyczaca-rozliczenia-podatku.md",
+      "promotedAt": "2026-07-31T05:24:12.595Z",
       "promotedBy": "mcpbot",
       "reviewNote": "Approved and exported from dashboard"
     },
@@ -4163,6 +4191,18 @@
       "reviewNote": "Approved and exported from dashboard"
     },
     {
+      "draftId": "draft_2026-07-26_b022d174_zapraszamy-na-konsultacje-dotyczace-zmian-w-ksef",
+      "status": "rejected",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "title": "Zapraszamy na konsultacje dotyczące zmian w KSeF",
+      "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/zapraszamy-na-konsultacje-dotyczace-zmian-w-ksef-03062026",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-26/draft_2026-07-26_b022d174_zapraszamy-na-konsultacje-dotyczace-zmian-w-ksef.json",
+      "rejectedAt": "2026-07-31T05:28:18.140Z",
+      "rejectedBy": "mcpbot",
+      "reviewNote": "Rejected from inbox row"
+    },
+    {
       "draftId": "draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny",
       "status": "promoted",
       "kbName": "Taxbell Legal Reference",
@@ -4178,17 +4218,26 @@
     },
     {
       "draftId": "draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Comarch Optima Reference",
       "kbNamespace": "ComarchOptimaReference",
       "title": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
       "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-27/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md",
-      "promotedAt": "2026-07-30T05:57:00.555Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Approved and exported from dashboard"
+      "withdrawnAt": "2026-07-31T02:25:36.110Z",
+      "withdrawnBy": "cron",
+      "reviewNote": "Auto-withdrawn duplicate source URL",
+      "previousPromotedAt": "2026-07-30T05:57:00.555Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-27_eec5604d_dziennik-ustaw-2026-r-poz-779",
@@ -4287,6 +4336,34 @@
       "reviewNote": "Rejected from inbox row"
     },
     {
+      "draftId": "draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-",
+      "status": "promoted",
+      "kbName": "Comarch Optima Reference",
+      "kbNamespace": "ComarchOptimaReference",
+      "title": "OPT074 – Dodawanie kolumn użytkownika na listach – Baza Wiedzy programu Comarch ERP Optima",
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/opt074-dodawanie-kolumn-uzytkownika-na-listach/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-30/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.md",
+      "promotedAt": "2026-07-31T05:37:59.378Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved from inbox row"
+    },
+    {
+      "draftId": "draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "Od lipca prostsze zasady składania wniosków o zasiłki",
+      "sourceUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-30/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.md",
+      "promotedAt": "2026-07-31T05:34:46.564Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
       "draftId": "draft_2026-07-30_8bdfc9ca_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy",
       "status": "rejected",
       "kbName": "Taxbell Payroll HR Reference",
@@ -4299,6 +4376,20 @@
       "reviewNote": "Rejected from inbox row"
     },
     {
+      "draftId": "draft_2026-07-30_a7d62c67_odpowiedzialnosc-i-podstawowe-obowiazki-pracodawcy-panstwowa-inspekcja-pracy",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "Odpowiedzialność i podstawowe obowiązki pracodawcy - Państwowa Inspekcja Pracy",
+      "sourceUrl": "https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/odpowiedzialnosc-i-podstawowe-obowiazki-pracodawcy",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-30/draft_2026-07-30_a7d62c67_odpowiedzialnosc-i-podstawowe-obowiazki-pracodawcy-panstwowa-inspekcja-pracy.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_a7d62c67_odpowiedzialnosc-i-podstawowe-obowiazki-pracodawcy-panstwowa-inspekcja-pracy.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_a7d62c67_odpowiedzialnosc-i-podstawowe-obowiazki-pracodawcy-panstwowa-inspekcja-pracy.md",
+      "promotedAt": "2026-07-31T05:32:14.321Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
       "draftId": "draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy",
       "status": "promoted",
       "kbName": "Taxbell Payroll HR Reference",
@@ -4309,6 +4400,20 @@
       "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy.json",
       "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_e09738cb_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy.md",
       "promotedAt": "2026-07-30T11:48:49.136Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-07-31_cdc4b357_pliki-do-pobrania-ksef-2-0-ksef-krajowy-system-e-faktur",
+      "status": "promoted",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "title": "Pliki do pobrania KSeF 2.0 - KSeF (Krajowy System e-Faktur)",
+      "sourceUrl": "https://ksef.podatki.gov.pl/pliki-do-pobrania-ksef-20/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-31/draft_2026-07-31_cdc4b357_pliki-do-pobrania-ksef-2-0-ksef-krajowy-system-e-faktur.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-31_cdc4b357_pliki-do-pobrania-ksef-2-0-ksef-krajowy-system-e-faktur.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-31_cdc4b357_pliki-do-pobrania-ksef-2-0-ksef-krajowy-system-e-faktur.md",
+      "promotedAt": "2026-07-31T05:28:49.535Z",
       "promotedBy": "mcpbot",
       "reviewNote": "Approved and exported from dashboard"
     }

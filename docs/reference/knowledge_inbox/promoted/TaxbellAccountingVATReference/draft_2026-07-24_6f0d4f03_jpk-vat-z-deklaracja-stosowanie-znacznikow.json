@@ -1,0 +1,31 @@
+{
+  "id": "draft_2026-07-24_6f0d4f03_jpk-vat-z-deklaracja-stosowanie-znacznikow",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "JPK_VAT z deklaracją - stosowanie znaczników",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://www.podatki.gov.pl/media/lzafohup/jpk_vat-z-deklaracja-stosowanie-znacznikow.pdf\n\nThis page from podatki.gov.pl explains how to use “JPK_VAT z deklaracją” with the ewidencyjna part (data of invoices) when issuing JPK_VAT with declaration. It focuses on marking invoices that involve Krajowy System e-Faktur (KSeF) and the scenarios you must indicate in the field “Dane z faktur lub oznaczenia dotyczące występowania faktur w KSeF” for sales.\nKey points:\n- When to fill the KSeF indicator: if invoices have a KSeF number by the filing date (even if sent via offline mode, during outage, or system unavailability). In such cases, mark the entry with the KSeF number for all modes.\n- Exemption scenario: if the invoice was issued under outage conditions and has no KSeF number, you may use the indicator for invoices without KSeF, per art. 106nf(1).\n- Paper invoices: apply the mark to sales that are paper invoices or issued outside KSeF (non-KSeF mode), including certain transiti...",
+  "sourceUrl": "https://www.podatki.gov.pl/media/lzafohup/jpk_vat-z-deklaracja-stosowanie-znacznikow.pdf",
+  "tags": [
+    "podatki",
+    "vat",
+    "jpk",
+    "ksef",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_302deb2d",
+    "sourceType": "exa_query",
+    "sourceTier": "operator_draft",
+    "scanRunId": "source_scan_2026-07-24T02-25-02-351Z_4c928fbd",
+    "retrievedAt": "2026-07-24T02:25:09.841Z",
+    "contentHash": "ce5ff3f501990007b7daa82493480f5a3233818dda39d1b6faef1f0a27a186bf",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-07-24T02:25:12.059Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-31T05:14:32.203Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-24/draft_2026-07-24_6f0d4f03_jpk-vat-z-deklaracja-stosowanie-znacznikow.json"
+}

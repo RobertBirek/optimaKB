@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T10:03:18.885Z",
+  "generatedAt": "2026-07-31T04:02:58.768Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
   "dryRun": false,
@@ -1535,6 +1535,46 @@
   ],
   "recentRuns": [
     {
+      "id": "discovery_autodraft_2026-07-31T04-02-58-073Z_6a16117c",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-07-31T04:02:58.073Z",
+      "finishedAt": "2026-07-31T04:02:58.692Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": ""
+    },
+    {
+      "id": "discovery_daily_2026-07-31T02-49-00-937Z_638e9909",
+      "type": "daily",
+      "ok": false,
+      "startedAt": "2026-07-31T02:49:00.937Z",
+      "finishedAt": "2026-07-31T02:49:25.345Z",
+      "resultCount": 30,
+      "draftedCount": 0,
+      "error": ""
+    },
+    {
+      "id": "discovery_autodraft_2026-07-30T22-00-45-774Z_a415ca34",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-07-30T22:00:45.774Z",
+      "finishedAt": "2026-07-30T22:00:46.719Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": ""
+    },
+    {
+      "id": "discovery_autodraft_2026-07-30T16-03-58-000Z_00a4815c",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-07-30T16:03:58.000Z",
+      "finishedAt": "2026-07-30T16:03:58.602Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": ""
+    },
+    {
       "id": "discovery_autodraft_2026-07-30T10-03-18-150Z_f0a17281",
       "type": "autodraft",
       "ok": true,
@@ -1592,46 +1632,6 @@
       "finishedAt": "2026-07-29T10:02:58.896Z",
       "resultCount": 0,
       "draftedCount": 1,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-07-29T04-02-15-822Z_b81676af",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-07-29T04:02:15.822Z",
-      "finishedAt": "2026-07-29T04:02:18.032Z",
-      "resultCount": 0,
-      "draftedCount": 3,
-      "error": ""
-    },
-    {
-      "id": "discovery_daily_2026-07-29T02-48-05-844Z_bd7d6b50",
-      "type": "daily",
-      "ok": true,
-      "startedAt": "2026-07-29T02:48:05.844Z",
-      "finishedAt": "2026-07-29T02:48:49.156Z",
-      "resultCount": 30,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-07-28T22-04-15-732Z_25a2b441",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-07-28T22:04:15.732Z",
-      "finishedAt": "2026-07-28T22:04:17.002Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-07-28T16-01-45-695Z_fea41aca",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-07-28T16:01:45.695Z",
-      "finishedAt": "2026-07-28T16:01:46.946Z",
-      "resultCount": 0,
-      "draftedCount": 0,
       "error": ""
     }
   ]

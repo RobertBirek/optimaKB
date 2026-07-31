@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-30T10:03:20.374Z",
+  "generatedAt": "2026-07-31T04:03:00.272Z",
   "totals": {
     "candidates": 224,
     "pending": 89,
     "duplicates": 1,
     "reviewed": 121,
     "activeQueries": 10,
-    "alerts": 1
+    "alerts": 2
   },
   "topCandidates": [
     {
@@ -24,7 +24,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 9,
+        "ageDays": 10,
         "kbPending": 13
       }
     },
@@ -44,7 +44,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 0,
+        "ageDays": 1,
         "kbPending": 27
       }
     },
@@ -62,7 +62,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 9,
+        "ageDays": 10,
         "kbPending": 6
       }
     },
@@ -80,7 +80,7 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 179,
+        "ageDays": 180,
         "kbPending": 27
       }
     },
@@ -98,7 +98,7 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 230,
+        "ageDays": 231,
         "kbPending": 13
       }
     },
@@ -116,7 +116,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 9,
+        "ageDays": 10,
         "kbPending": 6
       }
     },
@@ -134,7 +134,7 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 449,
+        "ageDays": 450,
         "kbPending": 27
       }
     },
@@ -154,7 +154,7 @@
           "wysoka akceptacja operatora",
           "domena pomoc.comarch.pl: kara 12%"
         ],
-        "ageDays": 2,
+        "ageDays": 3,
         "kbPending": 9
       }
     },
@@ -172,7 +172,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 9,
+        "ageDays": 10,
         "kbPending": 13
       }
     },
@@ -190,7 +190,7 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 199,
+        "ageDays": 200,
         "kbPending": 13
       }
     }
@@ -203,6 +203,24 @@
       "analytics": {
         "candidates": 4,
         "pending": 3,
+        "reviewed": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "duplicates": 0,
+        "duplicateRate": 1,
+        "acceptanceRate": 1,
+        "efficiencyScore": 60,
+        "health": "DUPLICATE_HEAVY",
+        "recommendation": "REFINE"
+      }
+    },
+    {
+      "id": "seed_ComarchOptimaReference",
+      "kbNamespace": "ComarchOptimaReference",
+      "query": "Comarch ERP Optima instrukcja obsługi konfiguracja personalizacja kolumny użytkownika 2026",
+      "analytics": {
+        "candidates": 2,
+        "pending": 0,
         "reviewed": 1,
         "accepted": 1,
         "rejected": 0,
@@ -239,6 +257,13 @@
       "type": "query_duplicate_rate",
       "resourceId": "seed_ComarchOptimaAdditionalFunctions",
       "kbNamespace": "ComarchOptimaAdditionalFunctions",
+      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
+    },
+    {
+      "level": "warn",
+      "type": "query_duplicate_rate",
+      "resourceId": "seed_ComarchOptimaReference",
+      "kbNamespace": "ComarchOptimaReference",
       "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
     }
   ],

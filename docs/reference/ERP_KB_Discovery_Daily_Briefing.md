@@ -1,11 +1,11 @@
 # ERP KB Discovery Daily Briefing
 
-Generated: `2026-07-30T10:03:20.374Z`
+Generated: `2026-07-31T04:03:00.272Z`
 
 - Pending candidates: `89`
 - Corpus duplicates: `1`
 - Operator decisions: `121`
-- Quality alerts: `1`
+- Quality alerts: `2`
 - Semi-auto active: `true`
   - ComarchOptimaSchema: threshold=0.95 (not eligible)
   - ComarchOptimaAdditionalFunctions: threshold=0.95 (not eligible)
@@ -34,4 +34,5 @@ Generated: `2026-07-30T10:03:20.374Z`
 ## Query issues
 
 - `seed_ComarchOptimaAdditionalFunctions`: DUPLICATE_HEAVY, efficiency 60
+- `seed_ComarchOptimaReference`: DUPLICATE_HEAVY, efficiency 60
 - `seed_ComarchOptimaSchema`: LOW_ACCEPTANCE, efficiency 67
