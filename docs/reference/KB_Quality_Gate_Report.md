@@ -1,6 +1,6 @@
 # KB Quality Gate Report
 
-Generated at: 2026-07-31T05:36:49.165Z
+Generated at: 2026-07-31T05:48:41.812Z
 
 Overall: `WARN`
 
@@ -218,22 +218,6 @@ Overall: `WARN`
   - `465` `FINISH` `workflow_pattern.csv`
   - `466` `FINISH` `chunk.csv`
 
-## TaxbellLegalReference
-
-- Verdict: `PASS`
-- Export dir: `exports/taxbell_legal_reference/v1`
-- Staging generatedAt: `2026-07-31T05:24:13.147Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `73`
-  - `source_topic.csv`: exists `true`, rows `5`
-  - `chunk.csv`: exists `true`, rows `390`
-- Jobs:
-  - `248` `FINISH` `source_topic.csv`
-  - `249` `FINISH` `knowledge_route.csv`
-  - `250` `FINISH` `entry_guide.csv`
-  - `566` `FINISH` `reference_document.csv`
-  - `567` `FINISH` `chunk.csv`
-
 ## TaxbellAccountingVATReference
 
 - Verdict: `PASS`
@@ -265,4 +249,20 @@ Overall: `WARN`
   - `255` `FINISH` `entry_guide.csv`
   - `572` `FINISH` `reference_document.csv`
   - `573` `FINISH` `chunk.csv`
+
+## TaxbellLegalReference
+
+- Verdict: `PASS`
+- Export dir: `exports/taxbell_legal_reference/v1`
+- Staging generatedAt: `2026-07-31T05:47:23.373Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `74`
+  - `source_topic.csv`: exists `true`, rows `5`
+  - `chunk.csv`: exists `true`, rows `391`
+- Jobs:
+  - `248` `FINISH` `source_topic.csv`
+  - `249` `FINISH` `knowledge_route.csv`
+  - `250` `FINISH` `entry_guide.csv`
+  - `576` `FINISH` `reference_document.csv`
+  - `577` `FINISH` `chunk.csv`
 

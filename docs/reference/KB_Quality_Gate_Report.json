@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T05:36:49.165Z",
+  "generatedAt": "2026-07-31T05:48:41.812Z",
   "overall": "WARN",
   "results": [
     {
@@ -1305,108 +1305,6 @@
       ]
     },
     {
-      "namespace": "TaxbellLegalReference",
-      "kbName": "Taxbell Legal Reference",
-      "verdict": "PASS",
-      "exportDir": "exports/taxbell_legal_reference/v1",
-      "generatedAt": "2026-07-31T05:24:13.147Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 73,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceDomain",
-            "sourceTier",
-            "documentCategory",
-            "topicArea",
-            "audienceMode",
-            "riskLevel",
-            "publishedAt",
-            "lastModified",
-            "retrievedAt",
-            "localSnapshotPath",
-            "contentHash",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "source_topic.csv",
-          "exists": true,
-          "rowCount": 5,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "topicSlug",
-            "topicGroup",
-            "sourceTier",
-            "usageCount",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 390,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 248,
-          "fileName": "source_topic.csv",
-          "status": "FINISH",
-          "jobName": "TBLG SourceTopic CSV Import"
-        },
-        {
-          "id": 249,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "TBLG KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 250,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "TBLG EntryGuide CSV Import"
-        },
-        {
-          "id": 566,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "TBLG ReferenceDocument CSV Import",
-          "gmtModified": "2026-07-31 07:24:52"
-        },
-        {
-          "id": 567,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "TBLG Chunk CSV Import",
-          "gmtModified": "2026-07-31 07:25:56"
-        }
-      ]
-    },
-    {
       "namespace": "TaxbellAccountingVATReference",
       "kbName": "Taxbell Accounting VAT Reference",
       "verdict": "PASS",
@@ -1607,6 +1505,108 @@
           "status": "FINISH",
           "jobName": "TBHR Chunk CSV Import",
           "gmtModified": "2026-07-31 07:36:36"
+        }
+      ]
+    },
+    {
+      "namespace": "TaxbellLegalReference",
+      "kbName": "Taxbell Legal Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/taxbell_legal_reference/v1",
+      "generatedAt": "2026-07-31T05:47:23.373Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 74,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceDomain",
+            "sourceTier",
+            "documentCategory",
+            "topicArea",
+            "audienceMode",
+            "riskLevel",
+            "publishedAt",
+            "lastModified",
+            "retrievedAt",
+            "localSnapshotPath",
+            "contentHash",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "source_topic.csv",
+          "exists": true,
+          "rowCount": 5,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "topicSlug",
+            "topicGroup",
+            "sourceTier",
+            "usageCount",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 391,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 248,
+          "fileName": "source_topic.csv",
+          "status": "FINISH",
+          "jobName": "TBLG SourceTopic CSV Import"
+        },
+        {
+          "id": 249,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "TBLG KnowledgeRoute CSV Import"
+        },
+        {
+          "id": 250,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "TBLG EntryGuide CSV Import"
+        },
+        {
+          "id": 576,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "TBLG ReferenceDocument CSV Import",
+          "gmtModified": "2026-07-31 07:47:52"
+        },
+        {
+          "id": 577,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "TBLG Chunk CSV Import",
+          "gmtModified": "2026-07-31 07:48:36"
         }
       ]
     }
