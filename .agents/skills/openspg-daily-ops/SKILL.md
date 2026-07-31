@@ -88,3 +88,8 @@ curl -s http://10.10.254.42:3410/panel/api/discovery
 - **MCP bridge down**: `curl http://10.10.254.42:3400/health` — if dead, restart via `sudo systemctl restart erp-kb-mcp-bridge`
 - **Build jobs stuck**: check OpenSPG job list directly — `GET /public/v1/builder/job/list?projectId=N&start=1`
 - **Disk or ownership issues**: `sudo chown -R mcpbot:mcpbot /docker/openspg/data/dashboard/ /docker/openspg/docs/reference/`
+- **Approve/build preflight fails with `openspg_cookie_file: FAIL ... EACCES`**: someone ran
+  `scripts/openspg_login.mjs` as root, which resets `/etc/erp-kb-openspg.cookie` to `root:root 0600`
+  (the dashboard runs as `mcpbot` and can no longer read it). Fix:
+  `chmod 644 /etc/erp-kb-openspg.cookie`. See
+  `docs/reference/OpenSPG_KB_Operational_Memory.md` → "Auth / cookie file permissions".

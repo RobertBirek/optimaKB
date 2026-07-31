@@ -93,6 +93,32 @@ The force-refresh bypasses `existingByJobName` reuse for forced files.
 - `node fetch` may fail with `connect EPERM ...:8887` while `curl` works — use `curl` as fallback
 - Sprint build runner maps entity names from `GET /v1/schemas/graph/{projectId}` — check both fully qualified and short names if an entity type is reported missing
 - If a matching partner-style job is already in `INIT`, `WAITING`, or `RUNNING`, reuse that active job and wait instead of submitting another duplicate
+- **Every submitted job is `action: 'UPSERT'`** (`scripts/lib/build_runner_core.mjs:36`) — there is no
+  delete/reconcile step anywhere in the pipeline. If an export script's id-generation scheme changes
+  for existing rows (e.g. a bug fix), the old-id nodes are never removed by a rebuild; they sit as
+  orphans in Neo4j. No generic cleanup script exists for this — confirm the orphan count with a
+  read-only Cypher query and get explicit operator sign-off before any `DETACH DELETE`.
+
+### Id-generation gotcha (makeId / chunk ids)
+
+`makeId(prefix, value)` (`scripts/lib/export_utils.mjs`) truncates long slugs safely by hashing the
+**full, untruncated** input when it exceeds the length cap. Never manually truncate or re-slice a
+string that already came out of `makeId()` before feeding it into another `makeId()` call (e.g. to
+build a derived chunk id from a document id) — that strips off exactly the hash suffix that made it
+unique, and can silently collapse distinct rows onto the same id. This exact bug produced ~60-90
+duplicate `chunk.csv` ids in `TaxbellPayrollHRReference` (fixed 2026-07-30). If duplicate ids show up
+in an export that don't reproduce after re-running the export script, it may just be a stale
+pre-fix CSV rather than a live bug — `ComarchCommunityNews` hit exactly that.
+
+### Auth cookie file permissions
+
+`scripts/openspg_login.mjs` always writes `/etc/erp-kb-openspg.cookie` with mode `0600`. The
+dashboard server runs as OS user `mcpbot`, not root. Running `openspg_login.mjs` as root (e.g. to
+force-refresh a stale session before a manual build) leaves the cookie file `root:root 0600`, which
+`mcpbot` can't read — every dashboard approve/build action then fails preflight with
+`EACCES: permission denied`. Fix: `chmod 644 /etc/erp-kb-openspg.cookie` afterward (it's a
+short-lived session cookie, not a credential — `/etc/erp-kb-openspg-login.env`, which holds the real
+account/password, must stay `0600` and is untouched by this).
 
 ### Thinker pipeline
 
@@ -101,7 +127,11 @@ The force-refresh bypasses `existingByJobName` reuse for forced files.
 
 ## Active KBs reference
 
-| ID | Namespace | Export script | Build script |
+Most `build_{namespace}.mjs` scripts are thin shims around the shared `scripts/build_kb_runner.mjs`
+engine, which selects behavior via `OPENSPG_BUILD_PROFILE`/`--profile` (see the `PROFILES` object at
+`scripts/build_kb_runner.mjs:28` for the authoritative list — this table can drift, that can't).
+
+| ID | Namespace | Export script | Build invocation |
 |----|-----------|---------------|--------------|
 | 4 | `ComarchOptimaSchema` | `export_optima_schema_metadata.mjs` | `build_optima_schema_metadata.mjs` |
 | 6 | `ComarchOptimaAdditionalFunctions` | `export_optima_additional_functions.mjs` | `build_optima_additional_functions.mjs` |
@@ -109,6 +139,17 @@ The force-refresh bypasses `existingByJobName` reuse for forced files.
 | 8 | `ComarchOptimaReference` | `export_optima_reference.mjs` | `build_optima_reference.mjs` |
 | 9 | `ComarchOptimaPartnerTechnical` | `export_optima_partner_technical.mjs` | `build_optima_partner_technical.mjs` |
 | 10 | `ComarchBetterflyReference` | `export_betterfly_reference.mjs` | `build_betterfly_reference.mjs` |
+| 11 | `ComarchCommunityNews` | `export_comarch_community_news.mjs` | `build_kb_runner.mjs --profile community_news` |
+| 12 | `TaxbellLegalReference` | `export_taxbell_reference.mjs --kb TaxbellLegalReference` | `build_taxbell_legal_reference.mjs` |
+| 13 | `TaxbellPayrollHRReference` | `export_taxbell_reference.mjs --kb TaxbellPayrollHRReference` | `build_taxbell_payroll_hr_reference.mjs` |
+| 14 | `TaxbellAccountingVATReference` | `export_taxbell_reference.mjs --kb TaxbellAccountingVATReference` | `build_taxbell_accounting_vat_reference.mjs` |
+| 15 | `ComarchOptimaBusinessSemantics` | `export_optima_business_semantics.mjs` | `build_optima_business_semantics.mjs` |
+| 16 | `OWAOntology` | `export_owa_ontology.mjs` | `build_kb_runner.mjs --profile owa_ontology` |
+| 17 | `InsERTGTSchema` | (InsERT GT export scripts) | `build_kb_runner.mjs --profile insert_gt_schema` |
+
+The three Taxbell namespaces share one `taxbell_reference` profile and one export script
+(`export_taxbell_reference.mjs`, selected via `--kb <Namespace>`); their project ids live in
+`docs/reference/Taxbell_KB_Project_Map.json`, not in `build_kb_runner.mjs` itself.
 
 ## Data ingestion path
 
