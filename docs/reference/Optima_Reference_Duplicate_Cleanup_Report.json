@@ -1,107 +1,12 @@
 {
-  "generatedAt": "2026-07-31T02:25:35.572Z",
-  "overall": "REMEDIATED",
+  "generatedAt": "2026-08-02T02:25:35.972Z",
+  "overall": "OK",
   "root": "/docker/openspg",
   "dryRun": false,
-  "candidateCount": 1,
-  "withdrawnCount": 1,
+  "candidateCount": 0,
+  "withdrawnCount": 0,
   "skippedCount": 0,
-  "candidates": [
-    {
-      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
-      "draftId": "draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima",
-      "title": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json",
-      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md",
-      "officialDocuments": [
-        {
-          "id": "REF_DOC_PROMOTED_DRAFT_2026_07_27_BAFF7B77_KRAJOWY_SYSTEM_E_FAKTUR_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
-          "name": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
-          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
-          "sourceType": "promoted_knowledge_draft",
-          "raw": {
-            "id": "REF_DOC_PROMOTED_DRAFT_2026_07_27_BAFF7B77_KRAJOWY_SYSTEM_E_FAKTUR_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
-            "name": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
-            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
-            "semanticType": "reference_document",
-            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
-            "sourceType": "promoted_knowledge_draft",
-            "documentCategory": "promoted_knowledge",
-            "moduleScope": "TradeAndWarehouse",
-            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
-            "versionHint": "2026",
-            "lastModified": "2026-07-30T05:57:00.555Z",
-            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md",
-            "sourceOrigin": "KnowledgeInboxPromoted",
-            "summary": "Automated source-discovery draft.\n\nQuery: Comarch ERP Optima instrukcje aktualizacje KSeF 2026\nSource: https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/\nTier: official\nDiscovery confidence: 0.95\n\nKrajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima\n# Jak możemy Ci pomóc?\nSearch For Wyszukaj\nPrzejdź do spisu treści lub pobierz dokumentację\n1. Strona główna\n2. O..."
-          }
-        }
-      ],
-      "officialDocumentIds": [
-        "REF_DOC_PROMOTED_DRAFT_2026_07_27_BAFF7B77_KRAJOWY_SYSTEM_E_FAKTUR_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA"
-      ]
-    }
-  ],
-  "withdrawn": [
-    {
-      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
-      "draftId": "draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima",
-      "title": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json",
-      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md",
-      "officialDocuments": [
-        {
-          "id": "REF_DOC_PROMOTED_DRAFT_2026_07_27_BAFF7B77_KRAJOWY_SYSTEM_E_FAKTUR_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
-          "name": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
-          "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
-          "sourceType": "promoted_knowledge_draft",
-          "raw": {
-            "id": "REF_DOC_PROMOTED_DRAFT_2026_07_27_BAFF7B77_KRAJOWY_SYSTEM_E_FAKTUR_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA",
-            "name": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
-            "description": "Promoted knowledge inbox draft for Comarch Optima Reference.",
-            "semanticType": "reference_document",
-            "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
-            "sourceType": "promoted_knowledge_draft",
-            "documentCategory": "promoted_knowledge",
-            "moduleScope": "TradeAndWarehouse",
-            "categoryHint": "discovery; official; instrukcje; aktualizacje; KSeF; obsługa programu",
-            "versionHint": "2026",
-            "lastModified": "2026-07-30T05:57:00.555Z",
-            "localSnapshotPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md",
-            "sourceOrigin": "KnowledgeInboxPromoted",
-            "summary": "Automated source-discovery draft.\n\nQuery: Comarch ERP Optima instrukcje aktualizacje KSeF 2026\nSource: https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/\nTier: official\nDiscovery confidence: 0.95\n\nKrajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima\n# Jak możemy Ci pomóc?\nSearch For Wyszukaj\nPrzejdź do spisu treści lub pobierz dokumentację\n1. Strona główna\n2. O..."
-          }
-        }
-      ],
-      "officialDocumentIds": [
-        "REF_DOC_PROMOTED_DRAFT_2026_07_27_BAFF7B77_KRAJOWY_SYSTEM_E_FAKTUR_KSEF_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA"
-      ],
-      "withdrawnAt": "2026-07-31T02:25:36.110Z",
-      "withdrawnBy": "cron",
-      "registryEntry": {
-        "draftId": "draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima",
-        "status": "withdrawn",
-        "kbName": "Comarch Optima Reference",
-        "kbNamespace": "ComarchOptimaReference",
-        "title": "Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima",
-        "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/",
-        "rawJsonPath": "downloads/knowledge_inbox/2026-07-27/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json",
-        "withdrawnAt": "2026-07-31T02:25:36.110Z",
-        "withdrawnBy": "cron",
-        "reviewNote": "Auto-withdrawn duplicate source URL",
-        "previousPromotedAt": "2026-07-30T05:57:00.555Z",
-        "movedPaths": [
-          {
-            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json",
-            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.json"
-          },
-          {
-            "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md",
-            "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima.md"
-          }
-        ]
-      }
-    }
-  ],
+  "candidates": [],
+  "withdrawn": [],
   "skipped": []
 }

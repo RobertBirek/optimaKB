@@ -1,6 +1,6 @@
 # KB Quality Gate Report
 
-Generated at: 2026-07-31T05:48:41.812Z
+Generated at: 2026-07-31T07:41:20.984Z
 
 Overall: `WARN`
 
@@ -89,24 +89,6 @@ Overall: `WARN`
   - `202` `FINISH` `sql_pattern.csv`
   - `387` `FINISH` `reference_document.csv`
   - `390` `FINISH` `chunk.csv`
-
-## ComarchOptimaReference
-
-- Verdict: `PASS`
-- Export dir: `exports/optima_reference/v1`
-- Staging generatedAt: `2026-07-30T13:09:03.763Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `3369`
-  - `chunk.csv`: exists `true`, rows `456`
-- Jobs:
-  - `102` `FINISH` `help_category.csv`
-  - `103` `FINISH` `module_area.csv`
-  - `109` `FINISH` `learning_guide.csv`
-  - `110` `FINISH` `knowledge_route.csv`
-  - `112` `FINISH` `entry_guide.csv`
-  - `227` `FINISH` `version_topic.csv`
-  - `363` `FINISH` `chunk.csv`
-  - `552` `FINISH` `reference_document.csv`
 
 ## ComarchOptimaBusinessSemantics
 
@@ -254,15 +236,33 @@ Overall: `WARN`
 
 - Verdict: `PASS`
 - Export dir: `exports/taxbell_legal_reference/v1`
-- Staging generatedAt: `2026-07-31T05:47:23.373Z`
+- Staging generatedAt: `2026-07-31T06:10:44.540Z`
 - Required files:
-  - `reference_document.csv`: exists `true`, rows `74`
+  - `reference_document.csv`: exists `true`, rows `75`
   - `source_topic.csv`: exists `true`, rows `5`
-  - `chunk.csv`: exists `true`, rows `391`
+  - `chunk.csv`: exists `true`, rows `392`
 - Jobs:
   - `248` `FINISH` `source_topic.csv`
   - `249` `FINISH` `knowledge_route.csv`
   - `250` `FINISH` `entry_guide.csv`
-  - `576` `FINISH` `reference_document.csv`
-  - `577` `FINISH` `chunk.csv`
+  - `578` `FINISH` `reference_document.csv`
+  - `579` `FINISH` `chunk.csv`
+
+## ComarchOptimaReference
+
+- Verdict: `PASS`
+- Export dir: `exports/optima_reference/v1`
+- Staging generatedAt: `2026-07-31T05:38:01.012Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `3369`
+  - `chunk.csv`: exists `true`, rows `456`
+- Jobs:
+  - `102` `FINISH` `help_category.csv`
+  - `103` `FINISH` `module_area.csv`
+  - `109` `FINISH` `learning_guide.csv`
+  - `110` `FINISH` `knowledge_route.csv`
+  - `112` `FINISH` `entry_guide.csv`
+  - `227` `FINISH` `version_topic.csv`
+  - `363` `FINISH` `chunk.csv`
+  - `574` `FINISH` `reference_document.csv`
 

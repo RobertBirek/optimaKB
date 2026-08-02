@@ -1,13 +1,11 @@
 # Optima Reference Duplicate Cleanup Report
 
-Generated at: 2026-07-31T02:25:35.572Z
+Generated at: 2026-08-02T02:25:35.972Z
 
-Overall: `REMEDIATED`
-Candidates: `1`
-Withdrawn: `1`
+Overall: `OK`
+Candidates: `0`
+Withdrawn: `0`
 Skipped: `0`
 
-## Withdrawn
-
-- `draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima` Krajowy System e-Faktur (KSeF) – Baza Wiedzy programu Comarch ERP Optima -> https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/krajowy-system-e-faktur-ksef/
+No duplicate promoted drafts matched official Optima Reference URLs.
 

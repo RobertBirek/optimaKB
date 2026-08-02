@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-07-29_fca199ae_ustawa-z-dnia-9-maja-2024-r-zmieniajaca-ustawe-o-zmianie-ustawy-o-podatku-od-tow",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Ustawa z dnia 9 maja 2024 r. zmieniająca ustawę o zmianie ustawy o podatku od towarów i usług oraz niektórych innych\n            ustaw",
+  "content": "Automated source-discovery draft.\n\nQuery: zmiany w ustawie o VAT 2026 nowelizacje KSeF obowiązki\nSource: https://api.sejm.gov.pl/eli/acts/DU/2024/852/text.html\nTier: official\nDiscovery confidence: 0.95\n\n# Ustawaz dnia 9 maja 2024 r.zmieniająca ustawę o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw\n## Treść ustawy\n### Art. 1.\nW ustawie z dnia 16 czerwca 2023 r. o zmianie ustawy o podatku od towarów i usług oraz niektórych innych ustaw (Dz. U. poz. 1598) wprowadza się następujące zmiany:\n### 1)\nw art. 1:\n### a)\nw pkt 34:\n-\nw art. 145l:\n-\n- ust. 1 otrzymuje brzmienie:\n„\n### 1.\nW okresie od dnia 1 lutego 2026 r. do dnia 31 lipca 2026 r. podatnicy obowiązani do wystawiania faktur ustrukturyzowanych dokonujący czynności dokumentowanych fakturami, o których mowa w art. 106e ust. 5 pkt 3, w tym paragonami fiskalnymi uznanymi za faktury, mogą wystawiać faktury elektroniczne lub faktury w postaci papierowej.\n”\n,\n-\n- w ust. 2 wyrazy „od dnia 1 lipca 2024 r. do dnia 31 grudnia 2024 r.” zastępuje się wyrazami „od dnia 1 lutego 2026 r. do dnia 31 lipca 2026 r.”,\n-\nw art. 145m wyrazy „od dnia 1 lipca 2024 r. do dnia 31 grudnia 2024 r.” zastępuje się wyrazami „od dnia 1 lutego 2026 r. do dnia 31 lipca 2026 r.”,\n### b)\nuchyla się pkt 35;\n### 2)\nw art. 13 wyrazy „po dniu 30 czerwca 2024 r.” zastępuje się wyrazami „po dniu 31 stycznia 2026 r.”;\n### 3)\nw art. 17 wyrazy „od dnia 1 stycznia 2025 r.” zastępuje się wyrazami „od dnia 1 sierpnia 2026 r.”;\n### 4)\nużyte w art. 18 w ust. 2, w art. 19 w ust. 2 oraz w art. 20 w ust. 2 wyrazy „od dnia wejścia w życie niniejszej ustawy.” zastępuje się wyrazami „od dnia 1 lipca 2024 r.”;\n### 5)\nw art.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/852/text.html",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia",
+    "orzecznictwo"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-07-22T02:48:57.789Z",
+    "discoveryCandidateId": "candidate_df1aaf96-c50",
+    "discoveryQueryId": "generated_TaxbellLegalReference_56af4a2c3c",
+    "discoveryRunId": "discovery_daily_2026-07-22T02-47-47-713Z_5b9d54bc",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "e2a0b4c3d99c4009385463ecf629f8e9874c068f2ef7824cb7c51fdbb98869ab"
+  },
+  "createdAt": "2026-07-29T04:02:17.812Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-31T05:47:22.788Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-29/draft_2026-07-29_fca199ae_ustawa-z-dnia-9-maja-2024-r-zmieniajaca-ustawe-o-zmianie-ustawy-o-podatku-od-tow.json"
+}

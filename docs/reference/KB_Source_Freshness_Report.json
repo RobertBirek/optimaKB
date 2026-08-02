@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T05:37:05.593Z",
+  "generatedAt": "2026-07-31T07:42:24.823Z",
   "staleDays": 14,
   "overall": "WARN",
   "results": [
@@ -9,19 +9,19 @@
       "refreshPolicy": "weekly or after a new Optima version",
       "sourceRoot": "downloads/official/optima_reference",
       "sourceFileCount": 31,
-      "newestSource": "2026-07-30T13:09:03.759Z",
+      "newestSource": "2026-07-31T05:38:01.008Z",
       "oldestSource": "2026-05-24T07:05:55.661Z",
-      "sourceAgeDays": 1,
+      "sourceAgeDays": 0,
       "exportManifest": "exports/optima_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-30T13:09:03.763Z",
-      "exportAgeDays": 1,
+      "exportGeneratedAt": "2026-07-31T05:38:01.012Z",
+      "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
       "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/official/optima_reference/meta/source_registry.json",
-          "sha256": "a93a14e8223412ae4dc124b7f812b5998e72c8ba4977ecdad7af6f6add5efec0"
+          "sha256": "3f94c03b26b0ad0318766892a914cdc46090ce225523b88a36a4d246b041158d"
         },
         {
           "path": "downloads/official/optima_reference/pages/aktualizacje_po_wydaniu_wersji_36_print.html",
@@ -101,7 +101,7 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-07-30T13:09:03.451Z",
+      "registryGeneratedAt": "2026-07-31T05:38:00.668Z",
       "registrySourceCount": 3399,
       "registryUpdatedCount": 30,
       "registryHashCount": 3399,
@@ -112,7 +112,7 @@
         "official_help_print_snapshot": 27,
         "promoted_knowledge_draft": 6
       },
-      "registryAgeDays": 1
+      "registryAgeDays": 0
     },
     {
       "namespace": "ComarchBetterflyReference",
@@ -638,7 +638,7 @@
       "oldestSource": "2026-06-05T14:40:36.160Z",
       "sourceAgeDays": 56,
       "exportManifest": "exports/taxbell_legal_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-31T05:34:47.214Z",
+      "exportGeneratedAt": "2026-07-31T06:10:44.540Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": true,
@@ -747,7 +747,7 @@
       "oldestSource": "2026-06-05T14:40:42.587Z",
       "sourceAgeDays": 56,
       "exportManifest": "exports/taxbell_payroll_hr_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-31T05:34:47.473Z",
+      "exportGeneratedAt": "2026-07-31T06:10:44.777Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": true,
@@ -856,7 +856,7 @@
       "oldestSource": "2026-06-05T14:40:53.662Z",
       "sourceAgeDays": 56,
       "exportManifest": "exports/taxbell_accounting_vat_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-31T05:34:47.633Z",
+      "exportGeneratedAt": "2026-07-31T06:10:44.934Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": true,

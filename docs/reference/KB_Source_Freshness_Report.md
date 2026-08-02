@@ -1,6 +1,6 @@
 # KB Source Freshness Report
 
-Generated at: 2026-07-31T05:37:05.593Z
+Generated at: 2026-07-31T07:42:24.823Z
 Stale threshold: `14` days
 
 Overall: `WARN`
@@ -9,9 +9,9 @@ Overall: `WARN`
 
 - Policy: weekly or after a new Optima version
 - Source files: `31`
-- Newest source: `2026-07-30T13:09:03.759Z`
-- Source age days: `1`
-- Export generatedAt: `2026-07-30T13:09:03.763Z`
+- Newest source: `2026-07-31T05:38:01.008Z`
+- Source age days: `0`
+- Export generatedAt: `2026-07-31T05:38:01.012Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `3399`
@@ -83,7 +83,7 @@ Overall: `WARN`
 - Source files: `46`
 - Newest source: `2026-06-05T14:40:36.234Z`
 - Source age days: `56`
-- Export generatedAt: `2026-07-31T05:34:47.214Z`
+- Export generatedAt: `2026-07-31T06:10:44.540Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `44`
@@ -97,7 +97,7 @@ Overall: `WARN`
 - Source files: `49`
 - Newest source: `2026-06-05T14:40:42.666Z`
 - Source age days: `56`
-- Export generatedAt: `2026-07-31T05:34:47.473Z`
+- Export generatedAt: `2026-07-31T06:10:44.777Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `47`
@@ -111,7 +111,7 @@ Overall: `WARN`
 - Source files: `46`
 - Newest source: `2026-06-05T14:40:53.725Z`
 - Source age days: `56`
-- Export generatedAt: `2026-07-31T05:34:47.633Z`
+- Export generatedAt: `2026-07-31T06:10:44.934Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `44`

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T05:37:59.383Z",
+  "generatedAt": "2026-08-01T02:25:38.411Z",
   "entries": [
     {
       "draftId": "draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note",
@@ -4310,6 +4310,34 @@
       "reviewNote": "Approved and exported from dashboard"
     },
     {
+      "draftId": "draft_2026-07-29_eac4ff94_9-cit-a-przekroczenie-limitu-2-mln-euro-wyrok-nsa-wtedy",
+      "status": "promoted",
+      "kbName": "Taxbell Legal Reference",
+      "kbNamespace": "TaxbellLegalReference",
+      "title": "9% CIT a przekroczenie limitu 2 mln euro – wyrok NSA: wtedy ...",
+      "sourceUrl": "https://ksiegowosc.infor.pl/wiadomosci/7576480,9-procent-cit-przekroczenie-limitu-przychodow-wyrok-nsa-2026.html",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-29/draft_2026-07-29_eac4ff94_9-cit-a-przekroczenie-limitu-2-mln-euro-wyrok-nsa-wtedy.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-29_eac4ff94_9-cit-a-przekroczenie-limitu-2-mln-euro-wyrok-nsa-wtedy.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-29_eac4ff94_9-cit-a-przekroczenie-limitu-2-mln-euro-wyrok-nsa-wtedy.md",
+      "promotedAt": "2026-07-31T06:10:43.971Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-07-29_fca199ae_ustawa-z-dnia-9-maja-2024-r-zmieniajaca-ustawe-o-zmianie-ustawy-o-podatku-od-tow",
+      "status": "promoted",
+      "kbName": "Taxbell Legal Reference",
+      "kbNamespace": "TaxbellLegalReference",
+      "title": "Ustawa z dnia 9 maja 2024 r. zmieniająca ustawę o zmianie ustawy o podatku od towarów i usług oraz niektórych innych\n            ustaw",
+      "sourceUrl": "https://api.sejm.gov.pl/eli/acts/DU/2024/852/text.html",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-07-29/draft_2026-07-29_fca199ae_ustawa-z-dnia-9-maja-2024-r-zmieniajaca-ustawe-o-zmianie-ustawy-o-podatku-od-tow.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-29_fca199ae_ustawa-z-dnia-9-maja-2024-r-zmieniajaca-ustawe-o-zmianie-ustawy-o-podatku-od-tow.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-29_fca199ae_ustawa-z-dnia-9-maja-2024-r-zmieniajaca-ustawe-o-zmianie-ustawy-o-podatku-od-tow.md",
+      "promotedAt": "2026-07-31T05:47:22.788Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
       "draftId": "draft_2026-07-30_40bc2972_art-14e-ord-podatk-ordynacja-podatkowa",
       "status": "promoted",
       "kbName": "Taxbell Legal Reference",
@@ -4337,17 +4365,26 @@
     },
     {
       "draftId": "draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Comarch Optima Reference",
       "kbNamespace": "ComarchOptimaReference",
       "title": "OPT074 – Dodawanie kolumn użytkownika na listach – Baza Wiedzy programu Comarch ERP Optima",
       "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/opt074-dodawanie-kolumn-uzytkownika-na-listach/",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-30/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.md",
-      "promotedAt": "2026-07-31T05:37:59.378Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Approved from inbox row"
+      "withdrawnAt": "2026-08-01T02:25:38.404Z",
+      "withdrawnBy": "cron",
+      "reviewNote": "Auto-withdrawn duplicate source URL",
+      "previousPromotedAt": "2026-07-31T05:37:59.378Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaReference/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaReference/draft_2026-07-30_45ef2616_opt074-dodawanie-kolumn-uzytkownika-na-listach-baza-wiedzy-programu-comarch-erp-.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki",

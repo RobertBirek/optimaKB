@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T04:02:58.768Z",
+  "generatedAt": "2026-08-02T10:02:58.469Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
   "dryRun": false,
@@ -10,16 +10,16 @@
   "totals": {
     "queries": 10,
     "activeQueries": 10,
-    "candidates": 224,
-    "drafted": 110,
-    "pending": 89,
+    "candidates": 227,
+    "drafted": 111,
+    "pending": 91,
     "routed": 7,
     "rejected": 17,
     "duplicates": 1
   },
   "feedback": {
     "overall": {
-      "candidates": 224,
+      "candidates": 227,
       "reviewed": 121,
       "duplicates": 1,
       "accepted": 103,
@@ -98,7 +98,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaAdditionalFunctions": {
-        "candidates": 17,
+        "candidates": 18,
         "reviewed": 6,
         "duplicates": 0,
         "accepted": 6,
@@ -163,7 +163,7 @@
         "falseNegatives": 0
       },
       "TaxbellAccountingVATReference": {
-        "candidates": 26,
+        "candidates": 27,
         "reviewed": 19,
         "duplicates": 1,
         "accepted": 18,
@@ -176,7 +176,7 @@
         "falseNegatives": 0
       },
       "TaxbellLegalReference": {
-        "candidates": 56,
+        "candidates": 57,
         "reviewed": 19,
         "duplicates": 0,
         "accepted": 17,
@@ -217,7 +217,7 @@
         "falseNegatives": 0
       },
       "official": {
-        "candidates": 136,
+        "candidates": 139,
         "reviewed": 87,
         "duplicates": 1,
         "accepted": 81,
@@ -258,7 +258,7 @@
     },
     "byAction": {
       "CANDIDATE_ONLY": {
-        "candidates": 113,
+        "candidates": 114,
         "reviewed": 30,
         "duplicates": 0,
         "accepted": 30,
@@ -271,7 +271,7 @@
         "falseNegatives": 0
       },
       "CREATE_DRAFT": {
-        "candidates": 87,
+        "candidates": 89,
         "reviewed": 67,
         "duplicates": 1,
         "accepted": 66,
@@ -1144,7 +1144,7 @@
         "falseNegatives": 0
       },
       "seed_ComarchOptimaAdditionalFunctions": {
-        "candidates": 4,
+        "candidates": 5,
         "reviewed": 1,
         "duplicates": 0,
         "accepted": 1,
@@ -1209,7 +1209,7 @@
         "falseNegatives": 0
       },
       "seed_TaxbellAccountingVATReference": {
-        "candidates": 4,
+        "candidates": 5,
         "reviewed": 1,
         "duplicates": 0,
         "accepted": 1,
@@ -1222,7 +1222,7 @@
         "falseNegatives": 0
       },
       "seed_TaxbellLegalReference": {
-        "candidates": 27,
+        "candidates": 28,
         "reviewed": 9,
         "duplicates": 0,
         "accepted": 9,
@@ -1412,13 +1412,13 @@
       "mode": "CANDIDATE_ONLY",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 17,
+      "candidates": 18,
       "drafted": 6,
-      "pending": 11,
+      "pending": 12,
       "routed": 0,
       "rejected": 0,
       "duplicates": 0,
-      "lastCandidateAt": "2026-07-21T02:51:32.913Z"
+      "lastCandidateAt": "2026-08-01T02:47:17.676Z"
     },
     {
       "kbNamespace": "ComarchOptimaSprint",
@@ -1496,13 +1496,13 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 56,
+      "candidates": 57,
       "drafted": 27,
-      "pending": 27,
+      "pending": 28,
       "routed": 0,
       "rejected": 2,
       "duplicates": 0,
-      "lastCandidateAt": "2026-07-30T02:50:08.215Z"
+      "lastCandidateAt": "2026-08-01T02:47:09.496Z"
     },
     {
       "kbNamespace": "TaxbellPayrollHRReference",
@@ -1524,114 +1524,114 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 26,
-      "drafted": 19,
+      "candidates": 27,
+      "drafted": 20,
       "pending": 6,
       "routed": 0,
       "rejected": 0,
       "duplicates": 1,
-      "lastCandidateAt": "2026-07-29T02:48:49.146Z"
+      "lastCandidateAt": "2026-08-01T02:47:14.790Z"
     }
   ],
   "recentRuns": [
     {
-      "id": "discovery_autodraft_2026-07-31T04-02-58-073Z_6a16117c",
+      "id": "discovery_autodraft_2026-08-02T10-02-57-379Z_fd2b3686",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-07-31T04:02:58.073Z",
-      "finishedAt": "2026-07-31T04:02:58.692Z",
+      "startedAt": "2026-08-02T10:02:57.379Z",
+      "finishedAt": "2026-08-02T10:02:58.377Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": ""
     },
     {
-      "id": "discovery_daily_2026-07-31T02-49-00-937Z_638e9909",
-      "type": "daily",
+      "id": "discovery_autodraft_2026-08-02T04-03-33-190Z_fc86caf7",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-02T04:03:33.190Z",
+      "finishedAt": "2026-08-02T04:03:34.373Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": ""
+    },
+    {
+      "id": "discovery_weekly_2026-08-02T03-37-05-895Z_29a64066",
+      "type": "weekly",
       "ok": false,
-      "startedAt": "2026-07-31T02:49:00.937Z",
-      "finishedAt": "2026-07-31T02:49:25.345Z",
-      "resultCount": 30,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-07-30T22-00-45-774Z_a415ca34",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-07-30T22:00:45.774Z",
-      "finishedAt": "2026-07-30T22:00:46.719Z",
+      "startedAt": "2026-08-02T03:37:05.895Z",
+      "finishedAt": "2026-08-02T03:37:42.470Z",
       "resultCount": 0,
       "draftedCount": 0,
-      "error": ""
+      "error": "Discovery LLM did not return an answer"
     },
     {
-      "id": "discovery_autodraft_2026-07-30T16-03-58-000Z_00a4815c",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-07-30T16:03:58.000Z",
-      "finishedAt": "2026-07-30T16:03:58.602Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-07-30T10-03-18-150Z_f0a17281",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-07-30T10:03:18.150Z",
-      "finishedAt": "2026-07-30T10:03:18.809Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-07-30T04-02-58-015Z_089db26f",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-07-30T04:02:58.015Z",
-      "finishedAt": "2026-07-30T04:02:58.993Z",
-      "resultCount": 0,
-      "draftedCount": 1,
-      "error": ""
-    },
-    {
-      "id": "discovery_daily_2026-07-30T02-49-28-865Z_8f566111",
+      "id": "discovery_daily_2026-08-02T02-45-17-527Z_0a579d0e",
       "type": "daily",
       "ok": true,
-      "startedAt": "2026-07-30T02:49:28.865Z",
-      "finishedAt": "2026-07-30T02:50:08.217Z",
+      "startedAt": "2026-08-02T02:45:17.528Z",
+      "finishedAt": "2026-08-02T02:45:37.854Z",
       "resultCount": 30,
       "draftedCount": 0,
       "error": ""
     },
     {
-      "id": "discovery_autodraft_2026-07-29T22-02-57-953Z_84018f89",
+      "id": "discovery_autodraft_2026-08-01T22-00-08-846Z_b413a02f",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-07-29T22:02:57.953Z",
-      "finishedAt": "2026-07-29T22:02:58.527Z",
+      "startedAt": "2026-08-01T22:00:08.846Z",
+      "finishedAt": "2026-08-01T22:00:09.961Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": ""
     },
     {
-      "id": "discovery_autodraft_2026-07-29T16-00-55-728Z_3109c6f9",
+      "id": "discovery_autodraft_2026-08-01T16-02-05-877Z_0880271e",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-07-29T16:00:55.728Z",
-      "finishedAt": "2026-07-29T16:00:56.306Z",
+      "startedAt": "2026-08-01T16:02:05.877Z",
+      "finishedAt": "2026-08-01T16:02:06.817Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": ""
     },
     {
-      "id": "discovery_autodraft_2026-07-29T10-02-58-040Z_86d37fde",
+      "id": "discovery_autodraft_2026-08-01T10-01-38-890Z_9df1950b",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-07-29T10:02:58.040Z",
-      "finishedAt": "2026-07-29T10:02:58.896Z",
+      "startedAt": "2026-08-01T10:01:38.890Z",
+      "finishedAt": "2026-08-01T10:01:39.920Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": ""
+    },
+    {
+      "id": "discovery_autodraft_2026-08-01T04-00-55-751Z_0c05b915",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-01T04:00:55.751Z",
+      "finishedAt": "2026-08-01T04:00:56.845Z",
       "resultCount": 0,
       "draftedCount": 1,
+      "error": ""
+    },
+    {
+      "id": "discovery_daily_2026-08-01T02-46-11-881Z_7d25b07c",
+      "type": "daily",
+      "ok": true,
+      "startedAt": "2026-08-01T02:46:11.882Z",
+      "finishedAt": "2026-08-01T02:47:19.105Z",
+      "resultCount": 30,
+      "draftedCount": 0,
+      "error": ""
+    },
+    {
+      "id": "discovery_autodraft_2026-07-31T22-02-58-128Z_b2850d12",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-07-31T22:02:58.128Z",
+      "finishedAt": "2026-07-31T22:02:59.001Z",
+      "resultCount": 0,
+      "draftedCount": 0,
       "error": ""
     }
   ]

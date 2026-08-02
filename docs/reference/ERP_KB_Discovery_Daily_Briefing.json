@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-31T04:03:00.272Z",
+  "generatedAt": "2026-08-02T10:03:00.236Z",
   "totals": {
-    "candidates": 224,
-    "pending": 89,
+    "candidates": 227,
+    "pending": 91,
     "duplicates": 1,
     "reviewed": 121,
     "activeQueries": 10,
@@ -24,7 +24,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 10,
+        "ageDays": 12,
         "kbPending": 13
       }
     },
@@ -44,8 +44,28 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
+        "ageDays": 3,
+        "kbPending": 28
+      }
+    },
+    {
+      "id": "candidate_b40bf414-284",
+      "title": "Publiczny Portal Informacji o Prawie - Aktprawnydetail Skorowidz",
+      "kbNamespace": "TaxbellLegalReference",
+      "canonicalUrl": "https://ppiop.rcl.gov.pl/index.php?id_akt_prawny=306265&r=skorowidz%2Faktprawnydetail",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 100,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "wysoka pewność LLM",
+          "rekomendowana akcja",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
         "ageDays": 1,
-        "kbPending": 27
+        "kbPending": 28
       }
     },
     {
@@ -62,7 +82,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 10,
+        "ageDays": 12,
         "kbPending": 6
       }
     },
@@ -80,8 +100,8 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 180,
-        "kbPending": 27
+        "ageDays": 182,
+        "kbPending": 28
       }
     },
     {
@@ -98,7 +118,7 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 231,
+        "ageDays": 233,
         "kbPending": 13
       }
     },
@@ -116,7 +136,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 10,
+        "ageDays": 12,
         "kbPending": 6
       }
     },
@@ -134,8 +154,8 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 450,
-        "kbPending": 27
+        "ageDays": 452,
+        "kbPending": 28
       }
     },
     {
@@ -154,44 +174,27 @@
           "wysoka akceptacja operatora",
           "domena pomoc.comarch.pl: kara 12%"
         ],
-        "ageDays": 3,
+        "ageDays": 5,
         "kbPending": 9
       }
     },
     {
-      "id": "candidate_ba5112eb-817",
-      "title": "Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy – Kodeks pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych",
-      "kbNamespace": "TaxbellPayrollHRReference",
-      "canonicalUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/25/text.pdf",
+      "id": "candidate_b99257e4-9ff",
+      "title": "Eksport i import dokumentów przez pliki XML – Baza Wiedzy programu Comarch ERP Optima",
+      "kbNamespace": "ComarchOptimaAdditionalFunctions",
+      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/eksport-i-import-dokumentow-przez-pliki-xml/",
       "action": "CANDIDATE_ONLY",
       "priority": {
-        "score": 88,
+        "score": 89,
         "level": "HIGH",
         "reasons": [
           "oficjalne źródło",
           "świeża publikacja",
-          "wysoka akceptacja operatora"
+          "wysoka akceptacja operatora",
+          "domena pomoc.comarch.pl: kara 12%"
         ],
-        "ageDays": 10,
-        "kbPending": 13
-      }
-    },
-    {
-      "id": "candidate_2cbabfc9-bd3",
-      "title": "Zmiany w przepisach prawa pracy w 2026 roku",
-      "kbNamespace": "TaxbellPayrollHRReference",
-      "canonicalUrl": "https://bydgoszcz.pip.gov.pl/aktualnosci/zmiany-w-przepisach-prawa-pracy-w-2026-roku",
-      "action": "CREATE_DRAFT",
-      "priority": {
-        "score": 88,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "rekomendowana akcja",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 200,
-        "kbPending": 13
+        "ageDays": 1,
+        "kbPending": 12
       }
     }
   ],
@@ -201,8 +204,8 @@
       "kbNamespace": "ComarchOptimaAdditionalFunctions",
       "query": "Comarch ERP Optima funkcje dodatkowe XML XPT przykłady 2026",
       "analytics": {
-        "candidates": 4,
-        "pending": 3,
+        "candidates": 5,
+        "pending": 4,
         "reviewed": 1,
         "accepted": 1,
         "rejected": 0,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T05:48:41.812Z",
+  "generatedAt": "2026-07-31T07:41:20.984Z",
   "overall": "WARN",
   "results": [
     {
@@ -484,107 +484,6 @@
           "status": "FINISH",
           "jobName": "COSP Chunk CSV Import",
           "gmtModified": "2026-06-30 10:50:44"
-        }
-      ]
-    },
-    {
-      "namespace": "ComarchOptimaReference",
-      "kbName": "Comarch Optima Reference",
-      "verdict": "PASS",
-      "exportDir": "exports/optima_reference/v1",
-      "generatedAt": "2026-07-30T13:09:03.763Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 3369,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceType",
-            "documentCategory",
-            "moduleScope",
-            "categoryHint",
-            "versionHint",
-            "lastModified",
-            "localSnapshotPath",
-            "sourceOrigin",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 456,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 102,
-          "fileName": "help_category.csv",
-          "status": "FINISH",
-          "jobName": "CORF HelpCategory CSV Import"
-        },
-        {
-          "id": 103,
-          "fileName": "module_area.csv",
-          "status": "FINISH",
-          "jobName": "CORF ModuleArea CSV Import"
-        },
-        {
-          "id": 109,
-          "fileName": "learning_guide.csv",
-          "status": "FINISH",
-          "jobName": "CORF LearningGuide CSV Import"
-        },
-        {
-          "id": 110,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "CORF KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 112,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "CORF EntryGuide CSV Import"
-        },
-        {
-          "id": 227,
-          "fileName": "version_topic.csv",
-          "status": "FINISH",
-          "jobName": "CORF VersionTopic CSV Import"
-        },
-        {
-          "id": 363,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "CORF Chunk CSV Import",
-          "gmtModified": "2026-06-12 15:34:04"
-        },
-        {
-          "id": 552,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "CORF ReferenceDocument CSV Import",
-          "gmtModified": "2026-07-30 08:00:42"
         }
       ]
     },
@@ -1513,14 +1412,14 @@
       "kbName": "Taxbell Legal Reference",
       "verdict": "PASS",
       "exportDir": "exports/taxbell_legal_reference/v1",
-      "generatedAt": "2026-07-31T05:47:23.373Z",
+      "generatedAt": "2026-07-31T06:10:44.540Z",
       "errors": [],
       "warnings": [],
       "files": [
         {
           "fileName": "reference_document.csv",
           "exists": true,
-          "rowCount": 74,
+          "rowCount": 75,
           "columns": [
             "id",
             "name",
@@ -1560,7 +1459,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 391,
+          "rowCount": 392,
           "columns": [
             "id",
             "name",
@@ -1595,18 +1494,119 @@
           "jobName": "TBLG EntryGuide CSV Import"
         },
         {
-          "id": 576,
+          "id": 578,
           "fileName": "reference_document.csv",
           "status": "FINISH",
           "jobName": "TBLG ReferenceDocument CSV Import",
-          "gmtModified": "2026-07-31 07:47:52"
+          "gmtModified": "2026-07-31 08:11:22"
         },
         {
-          "id": 577,
+          "id": 579,
           "fileName": "chunk.csv",
           "status": "FINISH",
           "jobName": "TBLG Chunk CSV Import",
-          "gmtModified": "2026-07-31 07:48:36"
+          "gmtModified": "2026-07-31 08:12:01"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchOptimaReference",
+      "kbName": "Comarch Optima Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/optima_reference/v1",
+      "generatedAt": "2026-07-31T05:38:01.012Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 3369,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceType",
+            "documentCategory",
+            "moduleScope",
+            "categoryHint",
+            "versionHint",
+            "lastModified",
+            "localSnapshotPath",
+            "sourceOrigin",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 456,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 102,
+          "fileName": "help_category.csv",
+          "status": "FINISH",
+          "jobName": "CORF HelpCategory CSV Import"
+        },
+        {
+          "id": 103,
+          "fileName": "module_area.csv",
+          "status": "FINISH",
+          "jobName": "CORF ModuleArea CSV Import"
+        },
+        {
+          "id": 109,
+          "fileName": "learning_guide.csv",
+          "status": "FINISH",
+          "jobName": "CORF LearningGuide CSV Import"
+        },
+        {
+          "id": 110,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "CORF KnowledgeRoute CSV Import"
+        },
+        {
+          "id": 112,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "CORF EntryGuide CSV Import"
+        },
+        {
+          "id": 227,
+          "fileName": "version_topic.csv",
+          "status": "FINISH",
+          "jobName": "CORF VersionTopic CSV Import"
+        },
+        {
+          "id": 363,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "CORF Chunk CSV Import",
+          "gmtModified": "2026-06-12 15:34:04"
+        },
+        {
+          "id": 574,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "CORF ReferenceDocument CSV Import",
+          "gmtModified": "2026-07-31 07:41:13"
         }
       ]
     }

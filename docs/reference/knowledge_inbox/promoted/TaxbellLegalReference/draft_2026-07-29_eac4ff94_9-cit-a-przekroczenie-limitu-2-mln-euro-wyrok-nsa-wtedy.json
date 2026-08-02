@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-07-29_eac4ff94_9-cit-a-przekroczenie-limitu-2-mln-euro-wyrok-nsa-wtedy",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "9% CIT a przekroczenie limitu 2 mln euro – wyrok NSA: wtedy ...",
+  "content": "Automated source-discovery draft.\n\nQuery: interpretacje podatkowe 2026 wyroki NSA VAT CIT lipiec\nSource: https://ksiegowosc.infor.pl/wiadomosci/7576480,9-procent-cit-przekroczenie-limitu-przychodow-wyrok-nsa-2026.html\nTier: professional\nDiscovery confidence: 0.95\n\n9% CIT a przekroczenie limitu 2 mln euro – wyrok NSA: wtedy cały dochód opodatkowany 19% - Infor.pl\n# Przekroczysz w 2026 limit choćby o złotówkę, a w 2027 zapłacisz wtedy ponad dwa razy wyższy podatek\n08 maja 2026, 22:13\nOd 2025 roku w redakcji Infor.pl, a od 2017 roku posiada tytuł zawodowy radcy prawnego. Pisze teksty związane głównie z nowościami prawnymi, a także z obszaru prawa cywilnego, gospodarczego, nowych technologii, pracy, ubezpieczeń społecznych, nieruchomości.\nPrzekroczysz w 2026 limit choćby o złotówkę, a w 2027 zapłacisz wtedy ponad dwa razy wyższy podatek\nNaczelny Sąd Administracyjny wydał wyrok, który powinni przeczytać wszyscy mali podatnicy korzystający z preferencyjnej stawki CIT. Sprawa dotyczy pozornie prostego pytania: co się dzieje, gdy firma przekroczy roczny limit przychodów uprawniający do stosowania 9 procent podatku dochodowego? Czy można wówczas podzielić dochód i zastosować dwie stawki? NSA odpowiedział jednoznacznie – i niekoniecznie po myśli przedsiębiorców.\n- Najważniejsza informacja po wyroku NSA: przekraczasz pułap przychodu, wpadasz w stawkę 19% - bez proporcjonalnego opodatkowania\n- Spółka złożyła korektę. Chciała odzyskać podatek, który uważała za nadpłacony\n- Fiskus powiedział twarde „NIE\". I był konsekwentny po odwołaniu\n- WSA w Gliwicach przyznał rację organom - kiedy utrata praw\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksiegowosc.infor.pl/wiadomosci/7576480,9-procent-cit-przekroczenie-limitu-przychodow-wyrok-nsa-2026.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia",
+    "orzecznictwo"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-07-21T02:52:15.686Z",
+    "discoveryCandidateId": "candidate_217111ca-0ef",
+    "discoveryQueryId": "generated_TaxbellLegalReference_d519847f02",
+    "discoveryRunId": "discovery_daily_2026-07-21T02-49-46-759Z_36c2e3db",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "f5d8c377b39a351fca8c085a9718b076053615fa932f92154b2ab0789e9d7abc"
+  },
+  "createdAt": "2026-07-29T04:02:17.544Z",
+  "status": "promoted",
+  "promotedAt": "2026-07-31T06:10:43.971Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-29/draft_2026-07-29_eac4ff94_9-cit-a-przekroczenie-limitu-2-mln-euro-wyrok-nsa-wtedy.json"
+}
