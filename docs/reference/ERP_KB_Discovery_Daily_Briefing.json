@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-02T10:03:00.236Z",
+  "generatedAt": "2026-08-04T05:44:38.126Z",
   "totals": {
-    "candidates": 227,
-    "pending": 91,
+    "candidates": 228,
+    "pending": 65,
     "duplicates": 1,
-    "reviewed": 121,
+    "reviewed": 146,
     "activeQueries": 10,
-    "alerts": 2
+    "alerts": 0
   },
   "topCandidates": [
     {
@@ -24,48 +24,8 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 12,
-        "kbPending": 13
-      }
-    },
-    {
-      "id": "candidate_cfc02b4a-9fe",
-      "title": "Deregulacja 2.0: przyjazna administracja skarbowa i pewność prawa podatkowego - Ministerstwo Finansów - Portal Gov.pl",
-      "kbNamespace": "TaxbellLegalReference",
-      "canonicalUrl": "https://www.gov.pl/web/finanse/deregulacja-20-przyjazna-administracja-skarbowa-i-pewnosc-prawa-podatkowego",
-      "action": "CREATE_DRAFT",
-      "priority": {
-        "score": 100,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "wysoka pewność LLM",
-          "rekomendowana akcja",
-          "świeża publikacja",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 3,
-        "kbPending": 28
-      }
-    },
-    {
-      "id": "candidate_b40bf414-284",
-      "title": "Publiczny Portal Informacji o Prawie - Aktprawnydetail Skorowidz",
-      "kbNamespace": "TaxbellLegalReference",
-      "canonicalUrl": "https://ppiop.rcl.gov.pl/index.php?id_akt_prawny=306265&r=skorowidz%2Faktprawnydetail",
-      "action": "CREATE_DRAFT",
-      "priority": {
-        "score": 100,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "wysoka pewność LLM",
-          "rekomendowana akcja",
-          "świeża publikacja",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 1,
-        "kbPending": 28
+        "ageDays": 14,
+        "kbPending": 10
       }
     },
     {
@@ -82,26 +42,8 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 12,
+        "ageDays": 14,
         "kbPending": 6
-      }
-    },
-    {
-      "id": "candidate_57a9ecc6-711",
-      "title": "Obowiązkowy KSeF odroczony do 1 lutego 2026 r.",
-      "kbNamespace": "TaxbellLegalReference",
-      "canonicalUrl": "https://www.gov.pl/web/finanse/obowiazkowy-ksef-odroczony-do-1-lutego-2026-r",
-      "action": "CREATE_DRAFT",
-      "priority": {
-        "score": 92,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "rekomendowana akcja",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 182,
-        "kbPending": 28
       }
     },
     {
@@ -118,8 +60,8 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 233,
-        "kbPending": 13
+        "ageDays": 235,
+        "kbPending": 10
       }
     },
     {
@@ -136,8 +78,27 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 12,
+        "ageDays": 14,
         "kbPending": 6
+      }
+    },
+    {
+      "id": "candidate_57a9ecc6-711",
+      "title": "Obowiązkowy KSeF odroczony do 1 lutego 2026 r.",
+      "kbNamespace": "TaxbellLegalReference",
+      "canonicalUrl": "https://www.gov.pl/web/finanse/obowiazkowy-ksef-odroczony-do-1-lutego-2026-r",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 90,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "wysoka akceptacja operatora",
+          "domena www.gov.pl: kara 6%"
+        ],
+        "ageDays": 184,
+        "kbPending": 23
       }
     },
     {
@@ -154,28 +115,8 @@
           "rekomendowana akcja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 452,
-        "kbPending": 28
-      }
-    },
-    {
-      "id": "candidate_500b0f58-82e",
-      "title": "Parametry wydruku faktury – Baza Wiedzy programu Comarch ERP Optima",
-      "kbNamespace": "ComarchOptimaSprint",
-      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/parametry-wydruku-faktury/",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 90,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "wysoka pewność LLM",
-          "świeża publikacja",
-          "wysoka akceptacja operatora",
-          "domena pomoc.comarch.pl: kara 12%"
-        ],
-        "ageDays": 5,
-        "kbPending": 9
+        "ageDays": 454,
+        "kbPending": 23
       }
     },
     {
@@ -185,63 +126,81 @@
       "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/eksport-i-import-dokumentow-przez-pliki-xml/",
       "action": "CANDIDATE_ONLY",
       "priority": {
-        "score": 89,
+        "score": 90,
         "level": "HIGH",
         "reasons": [
           "oficjalne źródło",
           "świeża publikacja",
           "wysoka akceptacja operatora",
-          "domena pomoc.comarch.pl: kara 12%"
+          "domena pomoc.comarch.pl: kara 22%"
         ],
-        "ageDays": 1,
-        "kbPending": 12
+        "ageDays": 3,
+        "kbPending": 6
+      }
+    },
+    {
+      "id": "candidate_c1fb0d08-646",
+      "title": "Jak pobrać / odebrać fakturę sprzedaży z Krajowego Systemu e-Faktur w module eFaktury. - Baza Wiedzy programu Comarch Betterfly",
+      "kbNamespace": "ComarchCommunityNews",
+      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-odebrac-fakture-sprzedazy-z-krajowego-systemu-e-faktur/",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 89,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 13,
+        "kbPending": 5
+      }
+    },
+    {
+      "id": "candidate_ba5112eb-817",
+      "title": "Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy – Kodeks pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "canonicalUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/25/text.pdf",
+      "action": "CANDIDATE_ONLY",
+      "priority": {
+        "score": 88,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 14,
+        "kbPending": 10
+      }
+    },
+    {
+      "id": "candidate_2cbabfc9-bd3",
+      "title": "Zmiany w przepisach prawa pracy w 2026 roku",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "canonicalUrl": "https://bydgoszcz.pip.gov.pl/aktualnosci/zmiany-w-przepisach-prawa-pracy-w-2026-roku",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 88,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 204,
+        "kbPending": 10
       }
     }
   ],
   "queryIssues": [
     {
-      "id": "seed_ComarchOptimaAdditionalFunctions",
-      "kbNamespace": "ComarchOptimaAdditionalFunctions",
-      "query": "Comarch ERP Optima funkcje dodatkowe XML XPT przykłady 2026",
-      "analytics": {
-        "candidates": 5,
-        "pending": 4,
-        "reviewed": 1,
-        "accepted": 1,
-        "rejected": 0,
-        "duplicates": 0,
-        "duplicateRate": 1,
-        "acceptanceRate": 1,
-        "efficiencyScore": 60,
-        "health": "DUPLICATE_HEAVY",
-        "recommendation": "REFINE"
-      }
-    },
-    {
-      "id": "seed_ComarchOptimaReference",
-      "kbNamespace": "ComarchOptimaReference",
-      "query": "Comarch ERP Optima instrukcja obsługi konfiguracja personalizacja kolumny użytkownika 2026",
-      "analytics": {
-        "candidates": 2,
-        "pending": 0,
-        "reviewed": 1,
-        "accepted": 1,
-        "rejected": 0,
-        "duplicates": 0,
-        "duplicateRate": 1,
-        "acceptanceRate": 1,
-        "efficiencyScore": 60,
-        "health": "DUPLICATE_HEAVY",
-        "recommendation": "REFINE"
-      }
-    },
-    {
       "id": "seed_ComarchOptimaSchema",
       "kbNamespace": "ComarchOptimaSchema",
       "query": "Comarch ERP Optima struktura bazy danych tabele procedury klucze obce TraNag TraElem 2026",
       "analytics": {
-        "candidates": 4,
-        "pending": 1,
+        "candidates": 5,
+        "pending": 2,
         "reviewed": 3,
         "accepted": 0,
         "rejected": 3,
@@ -254,32 +213,17 @@
       }
     }
   ],
-  "alerts": [
-    {
-      "level": "warn",
-      "type": "query_duplicate_rate",
-      "resourceId": "seed_ComarchOptimaAdditionalFunctions",
-      "kbNamespace": "ComarchOptimaAdditionalFunctions",
-      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
-    },
-    {
-      "level": "warn",
-      "type": "query_duplicate_rate",
-      "resourceId": "seed_ComarchOptimaReference",
-      "kbNamespace": "ComarchOptimaReference",
-      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
-    }
-  ],
+  "alerts": [],
   "semiAuto": {
     "configured": true,
     "eligible": true,
     "active": true,
     "blockers": [],
     "metrics": {
-      "reviewed": 121,
+      "reviewed": 146,
       "agreement": 1,
       "falsePositiveRate": 0,
-      "observationDays": 53.1,
+      "observationDays": 57.2,
       "minimumConfidence": 0.95,
       "maxPerRun": 3,
       "allowedNamespaces": [

@@ -1,6 +1,6 @@
 # KB Quality Gate Report
 
-Generated at: 2026-07-31T07:41:20.984Z
+Generated at: 2026-08-03T03:43:50.220Z
 
 Overall: `WARN`
 
@@ -90,6 +90,24 @@ Overall: `WARN`
   - `387` `FINISH` `reference_document.csv`
   - `390` `FINISH` `chunk.csv`
 
+## ComarchOptimaReference
+
+- Verdict: `PASS`
+- Export dir: `exports/optima_reference/v1`
+- Staging generatedAt: `2026-08-03T03:35:16.062Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `3368`
+  - `chunk.csv`: exists `true`, rows `456`
+- Jobs:
+  - `102` `FINISH` `help_category.csv`
+  - `103` `FINISH` `module_area.csv`
+  - `109` `FINISH` `learning_guide.csv`
+  - `110` `FINISH` `knowledge_route.csv`
+  - `112` `FINISH` `entry_guide.csv`
+  - `227` `FINISH` `version_topic.csv`
+  - `363` `FINISH` `chunk.csv`
+  - `574` `FINISH` `reference_document.csv`
+
 ## ComarchOptimaBusinessSemantics
 
 - Verdict: `PASS`
@@ -136,11 +154,11 @@ Overall: `WARN`
 
 - Verdict: `PASS`
 - Export dir: `exports/betterfly_reference/v1`
-- Staging generatedAt: `2026-07-27T03:35:41.907Z`
+- Staging generatedAt: `2026-08-03T03:38:00.837Z`
 - Required files:
   - `reference_document.csv`: exists `true`, rows `40`
   - `api_resource.csv`: exists `true`, rows `25`
-  - `api_pattern.csv`: exists `true`, rows `70`
+  - `api_pattern.csv`: exists `true`, rows `80`
   - `chunk.csv`: exists `true`, rows `264`
 - Jobs:
   - `167` `FINISH` `help_category.csv`
@@ -157,7 +175,7 @@ Overall: `WARN`
 
 - Verdict: `PASS`
 - Export dir: `exports/community_news/v1`
-- Staging generatedAt: `2026-07-30T13:08:15.081Z`
+- Staging generatedAt: `2026-08-03T03:17:10.470Z`
 - Required files:
   - `reference_document.csv`: exists `true`, rows `167`
   - `news_topic.csv`: exists `true`, rows `37`
@@ -165,10 +183,58 @@ Overall: `WARN`
 - Jobs:
   - `209` `FINISH` `knowledge_route.csv`
   - `210` `FINISH` `entry_guide.csv`
-  - `542` `FINISH` `reference_document.csv`
-  - `543` `FINISH` `news_topic.csv`
-  - `544` `FINISH` `community_attachment.csv`
-  - `545` `FINISH` `chunk.csv`
+  - `580` `FINISH` `reference_document.csv`
+  - `581` `FINISH` `news_topic.csv`
+  - `582` `FINISH` `community_attachment.csv`
+  - `583` `FINISH` `chunk.csv`
+
+## TaxbellLegalReference
+
+- Verdict: `PASS`
+- Export dir: `exports/taxbell_legal_reference/v1`
+- Staging generatedAt: `2026-07-31T06:10:44.540Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `75`
+  - `source_topic.csv`: exists `true`, rows `5`
+  - `chunk.csv`: exists `true`, rows `392`
+- Jobs:
+  - `248` `FINISH` `source_topic.csv`
+  - `249` `FINISH` `knowledge_route.csv`
+  - `250` `FINISH` `entry_guide.csv`
+  - `578` `FINISH` `reference_document.csv`
+  - `579` `FINISH` `chunk.csv`
+
+## TaxbellPayrollHRReference
+
+- Verdict: `PASS`
+- Export dir: `exports/taxbell_payroll_hr_reference/v1`
+- Staging generatedAt: `2026-07-31T06:10:44.777Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `72`
+  - `source_topic.csv`: exists `true`, rows `10`
+  - `chunk.csv`: exists `true`, rows `579`
+- Jobs:
+  - `253` `FINISH` `source_topic.csv`
+  - `254` `FINISH` `knowledge_route.csv`
+  - `255` `FINISH` `entry_guide.csv`
+  - `572` `FINISH` `reference_document.csv`
+  - `573` `FINISH` `chunk.csv`
+
+## TaxbellAccountingVATReference
+
+- Verdict: `PASS`
+- Export dir: `exports/taxbell_accounting_vat_reference/v1`
+- Staging generatedAt: `2026-07-31T06:10:44.934Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `77`
+  - `source_topic.csv`: exists `true`, rows `6`
+  - `chunk.csv`: exists `true`, rows `418`
+- Jobs:
+  - `258` `FINISH` `source_topic.csv`
+  - `259` `FINISH` `knowledge_route.csv`
+  - `260` `FINISH` `entry_guide.csv`
+  - `568` `FINISH` `reference_document.csv`
+  - `569` `FINISH` `chunk.csv`
 
 ## ComarchUniversalKnowledge
 
@@ -199,70 +265,4 @@ Overall: `WARN`
   - `464` `FINISH` `ontology_relation.csv`
   - `465` `FINISH` `workflow_pattern.csv`
   - `466` `FINISH` `chunk.csv`
-
-## TaxbellAccountingVATReference
-
-- Verdict: `PASS`
-- Export dir: `exports/taxbell_accounting_vat_reference/v1`
-- Staging generatedAt: `2026-07-31T05:28:50.532Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `77`
-  - `source_topic.csv`: exists `true`, rows `6`
-  - `chunk.csv`: exists `true`, rows `418`
-- Jobs:
-  - `258` `FINISH` `source_topic.csv`
-  - `259` `FINISH` `knowledge_route.csv`
-  - `260` `FINISH` `entry_guide.csv`
-  - `568` `FINISH` `reference_document.csv`
-  - `569` `FINISH` `chunk.csv`
-
-## TaxbellPayrollHRReference
-
-- Verdict: `PASS`
-- Export dir: `exports/taxbell_payroll_hr_reference/v1`
-- Staging generatedAt: `2026-07-31T05:34:47.473Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `72`
-  - `source_topic.csv`: exists `true`, rows `10`
-  - `chunk.csv`: exists `true`, rows `579`
-- Jobs:
-  - `253` `FINISH` `source_topic.csv`
-  - `254` `FINISH` `knowledge_route.csv`
-  - `255` `FINISH` `entry_guide.csv`
-  - `572` `FINISH` `reference_document.csv`
-  - `573` `FINISH` `chunk.csv`
-
-## TaxbellLegalReference
-
-- Verdict: `PASS`
-- Export dir: `exports/taxbell_legal_reference/v1`
-- Staging generatedAt: `2026-07-31T06:10:44.540Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `75`
-  - `source_topic.csv`: exists `true`, rows `5`
-  - `chunk.csv`: exists `true`, rows `392`
-- Jobs:
-  - `248` `FINISH` `source_topic.csv`
-  - `249` `FINISH` `knowledge_route.csv`
-  - `250` `FINISH` `entry_guide.csv`
-  - `578` `FINISH` `reference_document.csv`
-  - `579` `FINISH` `chunk.csv`
-
-## ComarchOptimaReference
-
-- Verdict: `PASS`
-- Export dir: `exports/optima_reference/v1`
-- Staging generatedAt: `2026-07-31T05:38:01.012Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `3369`
-  - `chunk.csv`: exists `true`, rows `456`
-- Jobs:
-  - `102` `FINISH` `help_category.csv`
-  - `103` `FINISH` `module_area.csv`
-  - `109` `FINISH` `learning_guide.csv`
-  - `110` `FINISH` `knowledge_route.csv`
-  - `112` `FINISH` `entry_guide.csv`
-  - `227` `FINISH` `version_topic.csv`
-  - `363` `FINISH` `chunk.csv`
-  - `574` `FINISH` `reference_document.csv`
 

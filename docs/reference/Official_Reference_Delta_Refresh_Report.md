@@ -1,7 +1,7 @@
 # Official Reference Delta Refresh Report
 
-Generated at: 2026-07-27T03:38:11.856Z
-Overall: `FAIL`
+Generated at: 2026-08-04T05:12:02.267Z
+Overall: `OK`
 
 ## Options
 
@@ -27,7 +27,7 @@ Overall: `FAIL`
 - Changed sources: `27`
 - Failed sources: `0`
 - Changed source files: `27`
-- Changed export files: `chunk.csv, reference_document.csv`
+- Changed export files: `api_pattern.csv, api_resource.csv, chunk.csv, reference_document.csv`
 - Build triggered: `true`
 
 Changed local source files:
@@ -62,9 +62,4 @@ Changed local source files:
 Commands:
 - `betterfly: export`: `OK`
 - `betterfly: build`: `OK`
-
-## Follow-up Checks
-
-- `source freshness`: `OK`
-- `quality gate`: `FAIL 2`
 

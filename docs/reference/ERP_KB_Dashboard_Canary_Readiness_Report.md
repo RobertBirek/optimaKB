@@ -1,6 +1,6 @@
 # ERP KB Dashboard Canary Readiness Report
 
-Generated: `2026-08-02T10:26:54.730Z`
+Generated: `2026-08-04T06:17:46.933Z`
 
 - Status: `BLOCKED`
 - Unique live samples: `8/8`

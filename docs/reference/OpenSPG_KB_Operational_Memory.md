@@ -1361,6 +1361,73 @@ Execution artifacts:
   approve/build preflight for an unrelated draft in
   `TaxbellAccountingVATReference`.
 
+### Host memory / OOM incident (2026-08-03 — 2026-08-04)
+
+- The Proxmox VM hosting this stack ran with only **11 GB RAM + 4 GB swap**,
+  while `compose.yaml` `mem_limit` values summed to **21 GB** across
+  `mysql` (2g) + `neo4j` (10g) + `minio` (1g) + `tika` (2g) + `server` (6g) —
+  a large overcommit with no relation to actual usage (mysql/minio/tika were
+  each using well under 20% of their limit; the real consumers were `neo4j`
+  (heap 4G + pagecache 2G, ~3.6-3.9 GiB RSS) and `server` (Xmx 4096m,
+  ~2.5 GiB RSS).
+- Confirmed via `journalctl -k` that the Linux **global** OOM killer
+  (`constraint=CONSTRAINT_NONE`, i.e. host-wide memory exhaustion, not a
+  per-container cgroup limit hit) killed the `server` or `neo4j` Java
+  process roughly **once a day each**, alternating, from at least
+  2026-07-31 through 2026-08-04.
+- This was the root cause of two separate-looking symptoms that are actually
+  the same issue:
+  - `Official_Reference_Delta_Refresh_Report` (`ComarchOptimaReference` /
+    `ComarchBetterflyReference`) failing its build step with
+    `TypeError: fetch failed ... ECONNREFUSED 10.10.254.42:8887` — the
+    `server` container had just been OOM-killed and was mid-restart when the
+    cron-driven refresh hit it.
+  - Builder jobs for `ComarchOptimaReference` (`CORF Chunk CSV Import`)
+    permanently stuck in `RUNNING`/`INIT` (job ids 553, 575, 384) for days —
+    the worker thread died with the OOM-killed process and OpenSPG has no
+    reconciliation step to mark an orphaned job `FAILED` after a restart.
+    These stuck jobs were never resolved/cancelled, just superseded by the
+    fix below; if `build_optima_reference.mjs`'s job-resume-by-name logic
+    ever appears to skip work it shouldn't, check `GET
+    /public/v1/builder/job/list?projectId=8&start=1&limit=N` for stuck
+    non-FINISH jobs with the same name first.
+- **Fix applied 2026-08-04**: host RAM was raised in Proxmox (guest-visible
+  min/max target 16/24 GB) and the VM was rebooted. Guest now sees
+  **~19-20 GB RAM**, swap dropped from >99% full to fully free. Both
+  OpenSPG (`docker compose -f /docker/openspg/compose.yaml`) and n8n
+  (`docker compose -f /docker/n8n/compose.yaml`) stacks were stopped
+  gracefully (`compose stop`, not `down`, so `restart: always` containers
+  would come back automatically) before the reboot.
+- **Gotcha found during recovery**: `openspg-tika` and the entire n8n stack
+  (`n8n`, `n8n-postgres`, `n8n-redis`) use `restart: unless-stopped`, not
+  `always`. Because they were manually `compose stop`'d before the reboot,
+  Docker treated that as an intentional stop and did **not** auto-start
+  them after the host came back — unlike `mysql`/`neo4j`/`minio`/`server`
+  (all `restart: always`), which did auto-start. Had to bring them up
+  manually with `docker compose up -d` on both stacks post-reboot.
+- **Not yet applied** (proposed but deferred): right-sizing the
+  `compose.yaml` `mem_limit` values themselves (e.g. `mysql` 2g→1g, `tika`
+  2g→768m, `minio` 1g→512m, `neo4j` heap 4G→3G / pagecache 2G→1.5G /
+  `mem_limit` 10g→6g, `server` `mem_limit` 6g→5g) and doubling host swap to
+  8 GB. The RAM increase + reboot resolved the immediate crisis, but if OOM
+  kills recur, this tuning is the next lever — check `journalctl -k | grep
+  -i oom` and `free -h` first to confirm the same pattern before reapplying.
+- **Stuck jobs 553/575/384 confirmed harmless, no fix needed/possible**:
+  decompiled the live server jar (`docker exec release-openspg-server`, jar
+  at `/arks-sofaboot-0.0.1-SNAPSHOT-executable.jar` →
+  `BOOT-INF/lib/com.antgroup.openspgapp-api-http-server-*.jar` →
+  `com/antgroup/openspgapp/api/http/server/builder/BuilderJobController.class`)
+  and confirmed the builder job REST API only exposes `getById`, `list`,
+  `submit` — **no cancel/delete/abort/update endpoint exists**, so these
+  orphaned rows cannot be cleared via the API (and shouldn't be edited
+  directly in MySQL). This turns out not to matter:
+  `scripts/build_kb_runner.mjs` (`isReusableActiveJob`, ~line 391) only
+  treats an `INIT`/`WAITING`/`RUNNING` job as reusable if its age is
+  `<= OPENSPG_ACTIVE_JOB_MAX_AGE_MINUTES` (default **60 minutes**). Jobs
+  553/575/384 are days-to-weeks old, so any future build for this KB will
+  log `Skipping stale builder job {id} ({status})...` and submit a fresh
+  job rather than waiting on them. No action needed; leave them as-is.
+
 ## Reconstructed FILE_EXTRACT contract
 
 The current UI task editor submits structured CSV imports as:
