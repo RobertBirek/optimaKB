@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T09:06:44.788Z",
+  "generatedAt": "2026-08-08T09:32:16.156Z",
   "apiBase": "http://10.10.254.42:8887",
   "appId": 2,
   "sampleSize": 12,
@@ -11,10 +11,10 @@
       "id": "Q001",
       "category": "schema",
       "question": "Jak połączyć TraNag z TraElem i Towary?",
-      "sessionId": 24,
+      "sessionId": 43,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 441,
-      "dialogTaskId": 442,
+      "baseTaskId": 6041,
+      "dialogTaskId": 6042,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -64,24 +64,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -95,10 +77,10 @@
       "id": "Q026",
       "category": "additional_functions",
       "question": "Kiedy użyć funkcji dodatkowej zamiast kolumny użytkownika?",
-      "sessionId": 25,
+      "sessionId": 44,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 443,
-      "dialogTaskId": 444,
+      "baseTaskId": 6043,
+      "dialogTaskId": 6044,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -148,24 +130,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -179,10 +143,10 @@
       "id": "Q046",
       "category": "sprint",
       "question": "Jak zacząć wydruk sPrint z nagłówkiem i pozycjami?",
-      "sessionId": 26,
+      "sessionId": 45,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 445,
-      "dialogTaskId": 446,
+      "baseTaskId": 6045,
+      "dialogTaskId": 6046,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -232,24 +196,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -263,10 +209,10 @@
       "id": "Q061",
       "category": "reference",
       "question": "Gdzie w dokumentacji Optimy znajdę onboarding modułu Handel?",
-      "sessionId": 27,
+      "sessionId": 46,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 447,
-      "dialogTaskId": 448,
+      "baseTaskId": 6047,
+      "dialogTaskId": 6048,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -316,24 +262,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -347,10 +275,10 @@
       "id": "Q071",
       "category": "partner",
       "question": "Jakie partnerowe procedury dotyczą funkcji dodatkowych?",
-      "sessionId": 28,
+      "sessionId": 47,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 449,
-      "dialogTaskId": 450,
+      "baseTaskId": 6049,
+      "dialogTaskId": 6050,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -400,24 +328,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -431,10 +341,10 @@
       "id": "Q086",
       "category": "betterfly",
       "question": "Jak działa token Betterfly API?",
-      "sessionId": 29,
+      "sessionId": 48,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 451,
-      "dialogTaskId": 452,
+      "baseTaskId": 6051,
+      "dialogTaskId": 6052,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -484,24 +394,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -515,10 +407,10 @@
       "id": "Q103",
       "category": "schema",
       "question": "Jakie procedury raportowe dotykają wydruków handlowych?",
-      "sessionId": 30,
+      "sessionId": 49,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 453,
-      "dialogTaskId": 454,
+      "baseTaskId": 6053,
+      "dialogTaskId": 6054,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -568,24 +460,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -599,10 +473,10 @@
       "id": "Q130",
       "category": "additional_functions",
       "question": "Jakie przykłady COM mamy dla wydruków i zmiennych dynamicznych?",
-      "sessionId": 31,
+      "sessionId": 50,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 455,
-      "dialogTaskId": 456,
+      "baseTaskId": 6055,
+      "dialogTaskId": 6056,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -652,24 +526,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -683,10 +539,10 @@
       "id": "Q148",
       "category": "sprint",
       "question": "Jak znaleźć wydruki typu sPrint?",
-      "sessionId": 32,
+      "sessionId": 51,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 457,
-      "dialogTaskId": 458,
+      "baseTaskId": 6057,
+      "dialogTaskId": 6058,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -736,24 +592,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -767,10 +605,10 @@
       "id": "Q162",
       "category": "reference",
       "question": "Jak znaleźć oficjalne informacje o funkcjach dodatkowych w dokumentacji?",
-      "sessionId": 33,
+      "sessionId": 52,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 459,
-      "dialogTaskId": 460,
+      "baseTaskId": 6059,
+      "dialogTaskId": 6060,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -820,24 +658,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -851,10 +671,10 @@
       "id": "Q175",
       "category": "partner",
       "question": "Jakie partnerowe COM sample dotyczą wydruków i raportowania?",
-      "sessionId": 34,
+      "sessionId": 53,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 461,
-      "dialogTaskId": 462,
+      "baseTaskId": 6061,
+      "dialogTaskId": 6062,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -904,24 +724,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,
@@ -935,10 +737,10 @@
       "id": "Q194",
       "category": "betterfly",
       "question": "Jak wygląda finalize flow dla advanceInvoices?",
-      "sessionId": 35,
+      "sessionId": 54,
       "userNo": "erpknowledgeassistant_5fd8163d8421e749",
-      "baseTaskId": 463,
-      "dialogTaskId": 464,
+      "baseTaskId": 6063,
+      "dialogTaskId": 6064,
       "terminalStatus": "RUNNING_TIMEOUT",
       "polls": [
         {
@@ -988,24 +790,6 @@
         },
         {
           "tick": 6,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 7,
-          "status": "RUNNING",
-          "resultMessage": "[]",
-          "reactionType": null,
-          "hasTable": false,
-          "nodeCount": 0,
-          "edgeCount": 0
-        },
-        {
-          "tick": 8,
           "status": "RUNNING",
           "resultMessage": "[]",
           "reactionType": null,

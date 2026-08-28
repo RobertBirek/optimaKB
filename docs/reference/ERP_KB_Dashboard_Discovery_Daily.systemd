@@ -9,10 +9,11 @@ User=mcpbot
 Group=mcpbot
 WorkingDirectory=/docker/openspg
 EnvironmentFile=/etc/erp-kb-dashboard.env
+LoadCredential=openspg.cookie:/etc/erp-kb-openspg.cookie
 Environment=OPENSPG_LLM_APP_ID=4
-Environment=OPENSPG_LLM_SESSION_ID=23
-Environment=OPENSPG_LLM_MODEL=deepseek-reasoner
-Environment=OPENSPG_COOKIE_FILE=/etc/erp-kb-openspg.cookie
+Environment=OPENSPG_LLM_SESSION_ID=57
+Environment=OPENSPG_LLM_MODEL=gpt-5.4-mini
+Environment=OPENSPG_COOKIE_FILE=%d/openspg.cookie
 Environment=ERP_KB_DISCOVERY_DRY_RUN=1
 ExecStart=/usr/bin/node /docker/openspg/scripts/run_dashboard_discovery.mjs --daily --dry-run --limit 3
 UMask=0027

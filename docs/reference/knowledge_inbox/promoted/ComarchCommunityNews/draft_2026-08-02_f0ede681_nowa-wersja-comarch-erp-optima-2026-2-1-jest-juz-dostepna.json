@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Nowa wersja Comarch ERP Optima 2026.2.1 jest już dostępna!",
+  "content": "Automated source-discovery draft.\n\nQuery: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465\nTier: community\nDiscovery confidence: 0.9\n\nNowa wersja Comarch ERP Optima 2026.2.1 jest już dostępna!\n\nReview this draft before promotion.",
+  "sourceUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+  "tags": [
+    "discovery",
+    "community",
+    "pytania społeczności",
+    "KSeF",
+    "Optima",
+    "Betterfly"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "community",
+    "retrievedAt": "2026-06-10T02:49:23.634Z",
+    "discoveryCandidateId": "candidate_dd05dad2-a66",
+    "discoveryQueryId": "seed_ComarchCommunityNews",
+    "discoveryRunId": "discovery_daily_2026-06-10T02-49-13-742Z_99c5b3d4",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.9,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "af8973a17cd80a847e2c93ffdf2acb394ff235f2615df5ae1b3a7e649767dd53"
+  },
+  "createdAt": "2026-08-02T10:55:04.165Z",
+  "status": "promoted",
+  "promotedAt": "2026-08-04T09:31:01.167Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-02/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.json"
+}

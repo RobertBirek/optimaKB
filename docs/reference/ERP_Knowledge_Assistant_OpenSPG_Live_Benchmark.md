@@ -1,6 +1,6 @@
 # ERP Knowledge Assistant OpenSPG Live Benchmark
 
-Date: `2026-06-11`
+Date: `2026-08-08`
 
 ## Summary
 
@@ -12,9 +12,9 @@ Date: `2026-06-11`
 
 - Category: `schema`
 - Question: Jak połączyć TraNag z TraElem i Towary?
-- Session: `24`
-- Base task: `441`
-- Dialog task: `442`
+- Session: `43`
+- Base task: `6041`
+- Dialog task: `6042`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -22,9 +22,9 @@ Date: `2026-06-11`
 
 - Category: `additional_functions`
 - Question: Kiedy użyć funkcji dodatkowej zamiast kolumny użytkownika?
-- Session: `25`
-- Base task: `443`
-- Dialog task: `444`
+- Session: `44`
+- Base task: `6043`
+- Dialog task: `6044`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -32,9 +32,9 @@ Date: `2026-06-11`
 
 - Category: `sprint`
 - Question: Jak zacząć wydruk sPrint z nagłówkiem i pozycjami?
-- Session: `26`
-- Base task: `445`
-- Dialog task: `446`
+- Session: `45`
+- Base task: `6045`
+- Dialog task: `6046`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -42,9 +42,9 @@ Date: `2026-06-11`
 
 - Category: `reference`
 - Question: Gdzie w dokumentacji Optimy znajdę onboarding modułu Handel?
-- Session: `27`
-- Base task: `447`
-- Dialog task: `448`
+- Session: `46`
+- Base task: `6047`
+- Dialog task: `6048`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -52,9 +52,9 @@ Date: `2026-06-11`
 
 - Category: `partner`
 - Question: Jakie partnerowe procedury dotyczą funkcji dodatkowych?
-- Session: `28`
-- Base task: `449`
-- Dialog task: `450`
+- Session: `47`
+- Base task: `6049`
+- Dialog task: `6050`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -62,9 +62,9 @@ Date: `2026-06-11`
 
 - Category: `betterfly`
 - Question: Jak działa token Betterfly API?
-- Session: `29`
-- Base task: `451`
-- Dialog task: `452`
+- Session: `48`
+- Base task: `6051`
+- Dialog task: `6052`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -72,9 +72,9 @@ Date: `2026-06-11`
 
 - Category: `schema`
 - Question: Jakie procedury raportowe dotykają wydruków handlowych?
-- Session: `30`
-- Base task: `453`
-- Dialog task: `454`
+- Session: `49`
+- Base task: `6053`
+- Dialog task: `6054`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -82,9 +82,9 @@ Date: `2026-06-11`
 
 - Category: `additional_functions`
 - Question: Jakie przykłady COM mamy dla wydruków i zmiennych dynamicznych?
-- Session: `31`
-- Base task: `455`
-- Dialog task: `456`
+- Session: `50`
+- Base task: `6055`
+- Dialog task: `6056`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -92,9 +92,9 @@ Date: `2026-06-11`
 
 - Category: `sprint`
 - Question: Jak znaleźć wydruki typu sPrint?
-- Session: `32`
-- Base task: `457`
-- Dialog task: `458`
+- Session: `51`
+- Base task: `6057`
+- Dialog task: `6058`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -102,9 +102,9 @@ Date: `2026-06-11`
 
 - Category: `reference`
 - Question: Jak znaleźć oficjalne informacje o funkcjach dodatkowych w dokumentacji?
-- Session: `33`
-- Base task: `459`
-- Dialog task: `460`
+- Session: `52`
+- Base task: `6059`
+- Dialog task: `6060`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -112,9 +112,9 @@ Date: `2026-06-11`
 
 - Category: `partner`
 - Question: Jakie partnerowe COM sample dotyczą wydruków i raportowania?
-- Session: `34`
-- Base task: `461`
-- Dialog task: `462`
+- Session: `53`
+- Base task: `6061`
+- Dialog task: `6062`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 
@@ -122,9 +122,9 @@ Date: `2026-06-11`
 
 - Category: `betterfly`
 - Question: Jak wygląda finalize flow dla advanceInvoices?
-- Session: `35`
-- Base task: `463`
-- Dialog task: `464`
+- Session: `54`
+- Base task: `6063`
+- Dialog task: `6064`
 - Last polled status: `RUNNING`
 - Result message: `[]`
 

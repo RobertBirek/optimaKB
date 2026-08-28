@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-08-03_5e8fc394_deregulacja-2-0-przyjazna-administracja-skarbowa-i-pewnosc-prawa-podatkowego-min",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Deregulacja 2.0: przyjazna administracja skarbowa i pewność prawa podatkowego - Ministerstwo Finansów - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy orzecznictwo zmiany 2026\nSource: https://www.gov.pl/web/finanse/deregulacja-20-przyjazna-administracja-skarbowa-i-pewnosc-prawa-podatkowego\nTier: official\nDiscovery confidence: 0.95\n\nDeregulacja 2.0: przyjazna administracja skarbowa i pewność prawa podatkowego - Ministerstwo Finansów - Portal Gov.pl\n## Deregulacja 2.0: przyjazna administracja skarbowa i pewność prawa podatkowego\n06.07.2026\n- 6 lipca br. minister do spraw nadzoru nad wdrażaniem polityki rządu Maciej Berek oraz minister finansów i gospodarki Andrzej Domański przedstawili pakiet zmian w systemie podatkowym.\n- Celem jest uproszczenie rozliczeń oraz poprawa relacji między administracją skarbową a podatnikami i przedsiębiorcami.\n- Propozycje to efekt szerokich konsultacji społecznych, w ramach których przeanalizowano wszystkie zgłoszone rozwiązania.\n- Nowe przepisy dotyczą jednolitych i pewnych interpretacji podatkowych, jasnych oraz ograniczonych w czasie procedur kontaktu z administracją, rozszerzenia zasady „milczącej zgody” oraz dalszej cyfryzacji rozliczeń.\nMa być prościej i ma być pewniej. Pewne interpretacje podatkowe. Po drugie rozszerzenie milczącej zgody. Po trzecie jasne, czytelne procedury kontaktu z administracją. I po czwarte, być może najważniejsze: wykorzystanie tej olbrzymiej rewolucji cyfrowej, którą wszyscy obserwujemy do tego, aby podatnikom było prościej prowadzić biznes.\n- powiedział minister finansów i gospodarki Andrzej Domański.\n### Aplikacja online zamiast kasy fiskalnej\nZamiast fizycznej kasy fiskalnej podatnicy będą mogli korzystać z prostej, darmowej aplikacji na dowolnym urządzeniu mobilnym do wystawiania paragonów. Rozwiązanie ograniczy papierologię oraz do\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/finanse/deregulacja-20-przyjazna-administracja-skarbowa-i-pewnosc-prawa-podatkowego",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia",
+    "orzecznictwo"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-07-30T02:49:35.008Z",
+    "discoveryCandidateId": "candidate_cfc02b4a-9fe",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-07-30T02-49-28-865Z_8f566111",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "5dd28e6c955a92748f818ae8651a3bb1deacf16e9daf138012990123bf15e852"
+  },
+  "createdAt": "2026-08-03T04:01:58.978Z",
+  "status": "promoted",
+  "promotedAt": "2026-08-04T09:25:44.209Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-03/draft_2026-08-03_5e8fc394_deregulacja-2-0-przyjazna-administracja-skarbowa-i-pewnosc-prawa-podatkowego-min.json"
+}

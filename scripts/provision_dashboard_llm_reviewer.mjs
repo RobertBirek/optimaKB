@@ -36,14 +36,26 @@ async function api(method, endpoint, body) {
   return json.result;
 }
 
+async function listAllPages(endpoint) {
+  const items = [];
+  let pageNo = 1;
+  for (;;) {
+    const result = await api('GET', `${endpoint}?pageNo=${pageNo}&pageSize=100`);
+    const page = Array.isArray(result) ? result : result?.data || [];
+    items.push(...page);
+    const total = Array.isArray(result) ? items.length : Number(result?.total || items.length);
+    if (items.length >= total || page.length === 0) break;
+    pageNo += 1;
+  }
+  return items;
+}
+
 async function listApps() {
-  const result = await api('GET', '/v1/app/list?page=1&size=100');
-  return Array.isArray(result) ? result : result?.data || [];
+  return listAllPages('/v1/app/list');
 }
 
 async function listProjects() {
-  const result = await api('GET', '/v1/projects/list?page=1&size=100');
-  return Array.isArray(result) ? result : result?.data || [];
+  return listAllPages('/v1/projects/list');
 }
 
 async function createCandidate(index) {

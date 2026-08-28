@@ -1,19 +1,39 @@
 {
-  "generatedAt": "2026-08-04T05:44:38.126Z",
+  "generatedAt": "2026-08-28T22:02:13.918Z",
   "totals": {
-    "candidates": 228,
-    "pending": 65,
+    "candidates": 306,
+    "pending": 139,
     "duplicates": 1,
     "reviewed": 146,
     "activeQueries": 10,
-    "alerts": 0
+    "alerts": 1
   },
   "topCandidates": [
     {
-      "id": "candidate_5929f266-39b",
-      "title": "Nowe regulacje dotyczące substancji reprotoksycznych w środowisku pracy - Państwowa Inspekcja Pracy",
+      "id": "candidate_8ced99c6-dae",
+      "title": "Rozporządzenia wykonawcze do Krajowego Systemu e-Faktur - Ministerstwo Finansów - Portal Gov.pl",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "canonicalUrl": "https://www.gov.pl/web/finanse/rozporzadzenia-wykonawcze-do-krajowego-systemu-e-faktur",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 100,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "świeża publikacja",
+          "wysoka akceptacja operatora",
+          "domena www.gov.pl: kara 6%"
+        ],
+        "ageDays": 23,
+        "kbPending": 8
+      }
+    },
+    {
+      "id": "candidate_f6eb9508-35c",
+      "title": "Dziennik Ustaw 2026 r. poz. 25",
       "kbNamespace": "TaxbellPayrollHRReference",
-      "canonicalUrl": "https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/nowe-regulacje-dotyczace-substancji-reprotoksycznych-w-srodowisku-pracy?tmpl=pdf",
+      "canonicalUrl": "https://www.dziennikustaw.gov.pl/DU/2026/25",
       "action": "CREATE_DRAFT",
       "priority": {
         "score": 100,
@@ -24,183 +44,190 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 14,
-        "kbPending": 10
+        "ageDays": 23,
+        "kbPending": 18
       }
     },
     {
-      "id": "candidate_d76896a1-40e",
-      "title": "Jak dodać dokument sprzedaży przez OCR&KSeF? - Baza Wiedzy programu Comarch Betterfly",
+      "id": "candidate_9ba2aafa-da1",
+      "title": "Jak pobrać / odebrać faktury z Krajowego Systemu e-Faktur (KSeF) oraz przenieść do faktur kosztowych lub faktur zakupu. - Baza Wiedzy programu Comarch Betterfly",
       "kbNamespace": "ComarchBetterflyReference",
-      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-dodac-dokument-sprzedazy-przez-ocrksef/",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 93,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "świeża publikacja",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 14,
-        "kbPending": 6
-      }
-    },
-    {
-      "id": "candidate_66d0fbb7-7a4",
-      "title": "Nowe zmiany w szkoleniach BHP – co przynosi ...",
-      "kbNamespace": "TaxbellPayrollHRReference",
-      "canonicalUrl": "https://gdansk.pip.gov.pl/aktualnosci/nowe-zmiany-w-szkoleniach-bhp-co-przynosi-rozporzadzenie-z-listopada-2025-r",
+      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-pobrac-faktury-z-krajowego-systemu-e-faktur-ksef-oraz-przeniesc-do-rejestru-vat-zakupu/",
       "action": "CREATE_DRAFT",
       "priority": {
-        "score": 92,
+        "score": 100,
         "level": "HIGH",
         "reasons": [
           "oficjalne źródło",
           "rekomendowana akcja",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 235,
-        "kbPending": 10
-      }
-    },
-    {
-      "id": "candidate_52c080fa-f4f",
-      "title": "Jak rozpocząć współpracę z Biurem Rachunkowym? - Baza Wiedzy programu Comarch Betterfly",
-      "kbNamespace": "ComarchBetterflyReference",
-      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-rozpoczac-wspolprace-z-biurem-rachunkowym/",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 90,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 14,
-        "kbPending": 6
+        "ageDays": 21,
+        "kbPending": 13
       }
     },
     {
-      "id": "candidate_57a9ecc6-711",
-      "title": "Obowiązkowy KSeF odroczony do 1 lutego 2026 r.",
-      "kbNamespace": "TaxbellLegalReference",
-      "canonicalUrl": "https://www.gov.pl/web/finanse/obowiazkowy-ksef-odroczony-do-1-lutego-2026-r",
+      "id": "candidate_51a6a11a-dd7",
+      "title": "Jak pobrać / odebrać fakturę kosztową z Krajowego Systemu e-Faktur (KSeF) w module eFaktury. - Baza Wiedzy programu Comarch Betterfly",
+      "kbNamespace": "ComarchBetterflyReference",
+      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-pobrac-fakture-kosztowa-z-krajowego-systemu-e-faktur-ksef/",
       "action": "CREATE_DRAFT",
       "priority": {
-        "score": 90,
+        "score": 100,
         "level": "HIGH",
         "reasons": [
           "oficjalne źródło",
           "rekomendowana akcja",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 15,
+        "kbPending": 13
+      }
+    },
+    {
+      "id": "candidate_fb002483-474",
+      "title": "Jak pobrać fakturę kosztową z KSeF do ewidencji kosztów (podatnik zwolniony z VAT pakiet eFaktury)? - Baza Wiedzy programu Comarch Betterfly",
+      "kbNamespace": "ComarchBetterflyReference",
+      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-pobrac-fakture-kosztowa-z-ksef-do-ewidencji-kosztow-podatnik-zwolniony-z-vat-pakiet-efaktury/",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 100,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 12,
+        "kbPending": 13
+      }
+    },
+    {
+      "id": "candidate_1df5c849-382",
+      "title": "Jak skonfigurować wymianę z bankami za pomocą webservice? - Baza Wiedzy programu Comarch Betterfly",
+      "kbNamespace": "ComarchBetterflyReference",
+      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-skonfigurowac-wymiane-z-bankami-za-pomoca-webservice/",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 100,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 12,
+        "kbPending": 13
+      }
+    },
+    {
+      "id": "candidate_87d3f714-676",
+      "title": "Krajowy System e-Faktur (KSeF) w Comarch ERP",
+      "kbNamespace": "ComarchOptimaReference",
+      "canonicalUrl": "https://www.comarch.pl/erp/ksef/",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 100,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "świeża publikacja",
+          "wysoka akceptacja operatora"
+        ],
+        "ageDays": 12,
+        "kbPending": 6
+      }
+    },
+    {
+      "id": "candidate_fb99c08f-a77",
+      "title": "Rozporządzenia wykonawcze do Krajowego Systemu e-Faktur - Ministerstwo Finansów - Krajowa Administracja Skarbowa - Portal Gov.pl",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "canonicalUrl": "https://www.gov.pl/web/kas/rozporzadzenia-wykonawcze-do-krajowego-systemu-e-faktur",
+      "action": "CREATE_DRAFT",
+      "priority": {
+        "score": 100,
+        "level": "HIGH",
+        "reasons": [
+          "oficjalne źródło",
+          "rekomendowana akcja",
+          "świeża publikacja",
           "wysoka akceptacja operatora",
           "domena www.gov.pl: kara 6%"
         ],
-        "ageDays": 184,
-        "kbPending": 23
+        "ageDays": 12,
+        "kbPending": 8
       }
     },
     {
-      "id": "candidate_d3dde7f5-317",
-      "title": "KSeF obowiązkowy od 1 lutego 2026 r. - Podatki.gov.pl",
+      "id": "candidate_5168f0b5-9f1",
+      "title": "Dziennik Ustaw 2026 r. poz. 825",
       "kbNamespace": "TaxbellLegalReference",
-      "canonicalUrl": "https://ksef.podatki.gov.pl/konsultacje/",
+      "canonicalUrl": "https://dziennikustaw.gov.pl/DU/2026/825",
       "action": "CREATE_DRAFT",
       "priority": {
-        "score": 90,
+        "score": 100,
         "level": "HIGH",
         "reasons": [
           "oficjalne źródło",
           "rekomendowana akcja",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 454,
-        "kbPending": 23
-      }
-    },
-    {
-      "id": "candidate_b99257e4-9ff",
-      "title": "Eksport i import dokumentów przez pliki XML – Baza Wiedzy programu Comarch ERP Optima",
-      "kbNamespace": "ComarchOptimaAdditionalFunctions",
-      "canonicalUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/eksport-i-import-dokumentow-przez-pliki-xml/",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 90,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "świeża publikacja",
-          "wysoka akceptacja operatora",
-          "domena pomoc.comarch.pl: kara 22%"
-        ],
-        "ageDays": 3,
-        "kbPending": 6
-      }
-    },
-    {
-      "id": "candidate_c1fb0d08-646",
-      "title": "Jak pobrać / odebrać fakturę sprzedaży z Krajowego Systemu e-Faktur w module eFaktury. - Baza Wiedzy programu Comarch Betterfly",
-      "kbNamespace": "ComarchCommunityNews",
-      "canonicalUrl": "https://pomoc.comarchbetterfly.pl/dokumentacja/jak-odebrac-fakture-sprzedazy-z-krajowego-systemu-e-faktur/",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 89,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 13,
-        "kbPending": 5
+        "ageDays": 12,
+        "kbPending": 36
       }
     },
     {
-      "id": "candidate_ba5112eb-817",
-      "title": "Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy – Kodeks pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych",
-      "kbNamespace": "TaxbellPayrollHRReference",
-      "canonicalUrl": "https://api.sejm.gov.pl/eli/acts/DU/2026/25/text.pdf",
-      "action": "CANDIDATE_ONLY",
-      "priority": {
-        "score": 88,
-        "level": "HIGH",
-        "reasons": [
-          "oficjalne źródło",
-          "świeża publikacja",
-          "wysoka akceptacja operatora"
-        ],
-        "ageDays": 14,
-        "kbPending": 10
-      }
-    },
-    {
-      "id": "candidate_2cbabfc9-bd3",
-      "title": "Zmiany w przepisach prawa pracy w 2026 roku",
-      "kbNamespace": "TaxbellPayrollHRReference",
-      "canonicalUrl": "https://bydgoszcz.pip.gov.pl/aktualnosci/zmiany-w-przepisach-prawa-pracy-w-2026-roku",
+      "id": "candidate_32b1c5c0-fad",
+      "title": "Dziennik Ustaw 2026 r. poz. 846",
+      "kbNamespace": "TaxbellLegalReference",
+      "canonicalUrl": "https://dziennikustaw.gov.pl/DU/2026/846",
       "action": "CREATE_DRAFT",
       "priority": {
-        "score": 88,
+        "score": 100,
         "level": "HIGH",
         "reasons": [
           "oficjalne źródło",
           "rekomendowana akcja",
+          "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 204,
-        "kbPending": 10
+        "ageDays": 12,
+        "kbPending": 36
       }
     }
   ],
   "queryIssues": [
     {
+      "id": "seed_ComarchOptimaAdditionalFunctions",
+      "kbNamespace": "ComarchOptimaAdditionalFunctions",
+      "query": "Comarch ERP Optima funkcje dodatkowe XML XPT przykłady 2026",
+      "analytics": {
+        "candidates": 6,
+        "pending": 4,
+        "reviewed": 2,
+        "accepted": 2,
+        "rejected": 0,
+        "duplicates": 0,
+        "duplicateRate": 1,
+        "acceptanceRate": 1,
+        "efficiencyScore": 60,
+        "health": "DUPLICATE_HEAVY",
+        "recommendation": "REFINE"
+      }
+    },
+    {
       "id": "seed_ComarchOptimaSchema",
       "kbNamespace": "ComarchOptimaSchema",
       "query": "Comarch ERP Optima struktura bazy danych tabele procedury klucze obce TraNag TraElem 2026",
       "analytics": {
-        "candidates": 5,
-        "pending": 2,
+        "candidates": 7,
+        "pending": 4,
         "reviewed": 3,
         "accepted": 0,
         "rejected": 3,
@@ -213,7 +240,15 @@
       }
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "level": "warn",
+      "type": "query_duplicate_rate",
+      "resourceId": "seed_ComarchOptimaAdditionalFunctions",
+      "kbNamespace": "ComarchOptimaAdditionalFunctions",
+      "message": "Zapytanie ma 100% duplikatów w ostatnim przebiegu."
+    }
+  ],
   "semiAuto": {
     "configured": true,
     "eligible": true,

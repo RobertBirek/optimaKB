@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-08-03_f98b1657_podatki-2026-najwazniejsze-zmiany-ksef-vat-limity-dla-samochodow-s-uzbowych-info",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Podatki 2026 - najważniejsze zmiany [KSeF, VAT, limity dla samochodów służbowych] - Infor.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: zmiany w ustawach podatkowych 2026\nSource: https://ksiegowosc.infor.pl/wiadomosci/7546789,podatki-2026-najwazniejsze-zmiany-ksef-vat-limity-dla-samochodow-sluzbowych.html\nTier: professional\nDiscovery confidence: 0.85\n\nNajważniejsze zmiany podatkowe na 2026 rok (według .pl):\n- KSeF (reforma faktur 2026–2027): nowy sposób wystawiania i rozliczania faktur. Zmiany wpłyną na procedury księgowe i ewidencjonowanie dokumentów.\n- VAT: wprowadzenie limitów zwolnienia podmiotowego z VAT. Istnieje możliwość zwolnienia do określonego progu 240 tys. zł, ale należy uważać na pułapki interpretacyjne i praktyczne konsekwencje.\n- Limity dla samochodów służbowych: zmiany dotyczą sposobu rozliczania i opodatkowania użytkowania pojazdów firmowych, co może wpływać na koszty i rozliczenia przedsiębiorców.\nDodatkowo artykuł omawia praktyczne skutki tych przepisów dla przedsiębiorców oraz które z nich mogą być mniej korzystne. Autor, Jacek Dziuba, podkreśla, które regulacje przyniosą korzyści, a które mogą generować wyzwania w codziennym prowadzeniu księgowości.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://ksiegowosc.infor.pl/wiadomosci/7546789,podatki-2026-najwazniejsze-zmiany-ksef-vat-limity-dla-samochodow-sluzbowych.html",
+  "tags": [
+    "discovery",
+    "professional",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "professional_commentary",
+    "retrievedAt": "2026-06-06T20:11:46.265Z",
+    "discoveryCandidateId": "candidate_9b4f96b6-ccf",
+    "discoveryQueryId": "generated_TaxbellLegalReference_03bbb07043",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.85,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "8f03d93dd097830b4ab8414471557cd358799ccab0eaae8acd80afe147bf6406"
+  },
+  "createdAt": "2026-08-03T08:32:14.201Z",
+  "status": "promoted",
+  "promotedAt": "2026-08-04T09:03:53.476Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-03/draft_2026-08-03_f98b1657_podatki-2026-najwazniejsze-zmiany-ksef-vat-limity-dla-samochodow-s-uzbowych-info.json"
+}

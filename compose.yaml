@@ -114,6 +114,9 @@ services:
     container_name: release-openspg-server
     restart: always
     mem_limit: 6g
+    entrypoint: ["/bin/sh", "-lc"]
+    command:
+      - /home/admin/miniconda3/bin/python /opt/openspg/patch_openspg_openai_client.py && exec java -jar arks-sofaboot-0.0.1-SNAPSHOT-executable.jar
     ports:
       - "${OPENSPG_BIND_ADDRESS:-127.0.0.1}:${OPENSPG_PORT:-8887}:8887"
     environment:
@@ -131,6 +134,8 @@ services:
       CLOUDEXT_OBJECTSTORAGE_URL: minio://release-openspg-minio:9000?accessKey=${MINIO_ROOT_USER:?MINIO_ROOT_USER is required}&secretKey=${MINIO_ROOT_PASSWORD_URLENCODED:?MINIO_ROOT_PASSWORD_URLENCODED is required}
       LOGGING_LEVEL_COM_ANTGROUP_OPENSPG_SERVER_ARKS_SOFABOOT: WARN
       LOGGING_LEVEL_COM_ANTGROUP_OPENSPGAPP_ARKS_SOFABOOT: WARN
+      # Model validation otherwise logs provider configs, including API keys.
+      LOGGING_LEVEL_COM_ANTGROUP_OPENSPG_COMMON_UTIL_PEMJA: "OFF"
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS -I --max-time 5 http://127.0.0.1:8887/ >/dev/null"]
       interval: 30s
@@ -139,6 +144,7 @@ services:
       start_period: 90s
     volumes:
       - /etc/localtime:/etc/localtime:ro
+      - ./scripts/patch_openspg_openai_client.py:/opt/openspg/patch_openspg_openai_client.py:ro
     depends_on:
       mysql:
         condition: service_healthy

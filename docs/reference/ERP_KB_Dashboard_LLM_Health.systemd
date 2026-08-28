@@ -9,10 +9,11 @@ User=mcpbot
 Group=mcpbot
 WorkingDirectory=/docker/openspg
 EnvironmentFile=/etc/erp-kb-dashboard.env
+LoadCredential=openspg.cookie:/etc/erp-kb-openspg.cookie
 Environment=OPENSPG_LLM_APP_ID=4
-Environment=OPENSPG_LLM_SESSION_ID=23
-Environment=OPENSPG_LLM_MODEL=deepseek-reasoner
-Environment=OPENSPG_COOKIE_FILE=/etc/erp-kb-openspg.cookie
+Environment=OPENSPG_LLM_SESSION_ID=57
+Environment=OPENSPG_LLM_MODEL=gpt-5.4-mini
+Environment=OPENSPG_COOKIE_FILE=%d/openspg.cookie
 Environment=ERP_KB_AUTOMATION_ALLOWED_NAMESPACES=ComarchCommunityNews
 Environment=ERP_KB_AUTOMATION_SHADOW_ONLY=1
 ExecStart=/usr/bin/node /docker/openspg/scripts/check_dashboard_llm_health.mjs

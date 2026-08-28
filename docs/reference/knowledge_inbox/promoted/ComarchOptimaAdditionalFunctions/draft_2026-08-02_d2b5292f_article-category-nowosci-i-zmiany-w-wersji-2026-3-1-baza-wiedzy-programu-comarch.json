@@ -1,0 +1,35 @@
+{
+  "id": "draft_2026-08-02_d2b5292f_article-category-nowosci-i-zmiany-w-wersji-2026-3-1-baza-wiedzy-programu-comarch",
+  "kbName": "Comarch Optima Additional Functions",
+  "kbNamespace": "ComarchOptimaAdditionalFunctions",
+  "title": "Article Category: Nowości i zmiany w wersji 2026.3.1 - Baza Wiedzy programu Comarch ERP Optima",
+  "content": "Automated source-discovery draft.\n\nQuery: XML XPT Optima nowości funkcje\nSource: https://pomoc.comarch.pl/optima/pl/2026/kategorie/nowosci-i-zmiany-w-wersji-2026-3-1/?print=print-search\nTier: official\nDiscovery confidence: 0.6\n\nNowe funkcje w Comarch ERP Optima w wersji 2026.3.1 (sekcja Księgowość). Kluczowa aktualizacja: dodano obsługę JPK_V7(3) dla plików od lutego 2026, w tym drukowanie i wysyłkę do e-Deklaracje. Nowe obowiązkowe pola i kody w części ewidencyjnej JPK_V7(3) obejmują:\n- uwzględnienie numeru KSeF,\n- nowe kody JPK: OFF (faktury offline oczekujące na numer KSeF), BFK (faktury papierowe lub spoza KSeF), DI (dokumenty niebędące fakturami, takie jak dokumenty wewnętrzne, SAD, raporty fiskalne RO lub faktury offline bez KSeF),\n- kody są pobierane z dokumentów rejestru VAT i muszą być stosowane nawet jeśli podatnik nie korzysta z KSeF (należy użyć BFK lub DI),\n- instrukcja obejmuje miejsce stosowania tych kodów w JPK_V7(3) oraz scenariusz, gdy kod występuje na dokumencie.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/kategorie/nowosci-i-zmiany-w-wersji-2026-3-1/?print=print-search",
+  "tags": [
+    "discovery",
+    "official",
+    "funkcje dodatkowe",
+    "XML",
+    "XPT",
+    "przykłady"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-06-06T20:09:11.001Z",
+    "discoveryCandidateId": "candidate_459f06c5-9bb",
+    "discoveryQueryId": "generated_ComarchOptimaAdditionalFunctions_155dc19ea4",
+    "discoveryRunId": "discovery_daily_2026-06-06T20-08-19-295Z_a00c321f",
+    "discoveryAction": "CANDIDATE_ONLY",
+    "discoveryConfidence": 0.6,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "5dfc382c6ec7bec293d477bede537a6a20ecefb75f4e075fb7a75a66e485b2d4"
+  },
+  "createdAt": "2026-08-02T10:57:30.031Z",
+  "status": "promoted",
+  "promotedAt": "2026-08-04T09:28:59.060Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-02/draft_2026-08-02_d2b5292f_article-category-nowosci-i-zmiany-w-wersji-2026-3-1-baza-wiedzy-programu-comarch.json"
+}

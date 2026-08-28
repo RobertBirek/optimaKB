@@ -1,7 +1,7 @@
 # Official Reference Delta Refresh Report
 
-Generated at: 2026-08-04T05:12:02.267Z
-Overall: `OK`
+Generated at: 2026-08-24T03:39:50.825Z
+Overall: `WARN`
 
 ## Options
 
@@ -14,11 +14,21 @@ Overall: `OK`
 
 - Known sources: `29`
 - Checked sources: `29`
-- Changed sources: `0`
-- Failed sources: `0`
-- Changed source files: `0`
+- Changed sources: `1`
+- Failed sources: `2`
+- Changed source files: `1`
 - Changed export files: `none`
 - Build triggered: `false`
+
+Changed local source files:
+- `downloads/official/optima_reference/pages/opt057_strojenie_mssql_print.html`
+
+Failed fetches:
+- `404` https://pomoc.comarch.pl/optima/pl/2026/wp-sitemap-posts-ht_kb-1.xml -> downloads/official/optima_reference/sitemaps/optima_ht_kb_1.xml
+- `404` https://pomoc.comarch.pl/optima/pl/2026/wp-sitemap-taxonomies-ht_kb_category-1.xml -> downloads/official/optima_reference/sitemaps/optima_ht_kb_categories.xml
+
+Commands:
+- `optima: export`: `OK`
 
 ## ComarchBetterflyReference
 
@@ -27,7 +37,7 @@ Overall: `OK`
 - Changed sources: `27`
 - Failed sources: `0`
 - Changed source files: `27`
-- Changed export files: `api_pattern.csv, api_resource.csv, chunk.csv, reference_document.csv`
+- Changed export files: `chunk.csv`
 - Build triggered: `true`
 
 Changed local source files:
@@ -62,4 +72,9 @@ Changed local source files:
 Commands:
 - `betterfly: export`: `OK`
 - `betterfly: build`: `OK`
+
+## Follow-up Checks
+
+- `source freshness`: `OK`
+- `quality gate`: `OK`
 

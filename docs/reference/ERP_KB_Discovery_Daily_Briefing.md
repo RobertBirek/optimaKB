@@ -1,11 +1,11 @@
 # ERP KB Discovery Daily Briefing
 
-Generated: `2026-08-04T05:44:38.126Z`
+Generated: `2026-08-28T22:02:13.918Z`
 
-- Pending candidates: `65`
+- Pending candidates: `139`
 - Corpus duplicates: `1`
 - Operator decisions: `146`
-- Quality alerts: `0`
+- Quality alerts: `1`
 - Semi-auto active: `true`
   - ComarchOptimaSchema: threshold=0.95 (not eligible)
   - ComarchOptimaAdditionalFunctions: threshold=0.95 (not eligible)
@@ -20,17 +20,18 @@ Generated: `2026-08-04T05:44:38.126Z`
 
 ## Top candidates
 
-- **100** [Nowe regulacje dotyczące substancji reprotoksycznych w środowisku pracy - Państwowa Inspekcja Pracy](https://www.pip.gov.pl/dla-pracodawcow/porady-prawne/nowe-regulacje-dotyczace-substancji-reprotoksycznych-w-srodowisku-pracy?tmpl=pdf) → `TaxbellPayrollHRReference`
-- **93** [Jak dodać dokument sprzedaży przez OCR&KSeF? - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-dodac-dokument-sprzedazy-przez-ocrksef/) → `ComarchBetterflyReference`
-- **92** [Nowe zmiany w szkoleniach BHP – co przynosi ...](https://gdansk.pip.gov.pl/aktualnosci/nowe-zmiany-w-szkoleniach-bhp-co-przynosi-rozporzadzenie-z-listopada-2025-r) → `TaxbellPayrollHRReference`
-- **90** [Jak rozpocząć współpracę z Biurem Rachunkowym? - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-rozpoczac-wspolprace-z-biurem-rachunkowym/) → `ComarchBetterflyReference`
-- **90** [Obowiązkowy KSeF odroczony do 1 lutego 2026 r.](https://www.gov.pl/web/finanse/obowiazkowy-ksef-odroczony-do-1-lutego-2026-r) → `TaxbellLegalReference`
-- **90** [KSeF obowiązkowy od 1 lutego 2026 r. - Podatki.gov.pl](https://ksef.podatki.gov.pl/konsultacje/) → `TaxbellLegalReference`
-- **90** [Eksport i import dokumentów przez pliki XML – Baza Wiedzy programu Comarch ERP Optima](https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/eksport-i-import-dokumentow-przez-pliki-xml/) → `ComarchOptimaAdditionalFunctions`
-- **89** [Jak pobrać / odebrać fakturę sprzedaży z Krajowego Systemu e-Faktur w module eFaktury. - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-odebrac-fakture-sprzedazy-z-krajowego-systemu-e-faktur/) → `ComarchCommunityNews`
-- **88** [Ustawa z dnia 4 grudnia 2025 r. o zmianie ustawy – Kodeks pracy oraz ustawy o zakładowym funduszu świadczeń socjalnych](https://api.sejm.gov.pl/eli/acts/DU/2026/25/text.pdf) → `TaxbellPayrollHRReference`
-- **88** [Zmiany w przepisach prawa pracy w 2026 roku](https://bydgoszcz.pip.gov.pl/aktualnosci/zmiany-w-przepisach-prawa-pracy-w-2026-roku) → `TaxbellPayrollHRReference`
+- **100** [Rozporządzenia wykonawcze do Krajowego Systemu e-Faktur - Ministerstwo Finansów - Portal Gov.pl](https://www.gov.pl/web/finanse/rozporzadzenia-wykonawcze-do-krajowego-systemu-e-faktur) → `TaxbellAccountingVATReference`
+- **100** [Dziennik Ustaw 2026 r. poz. 25](https://www.dziennikustaw.gov.pl/DU/2026/25) → `TaxbellPayrollHRReference`
+- **100** [Jak pobrać / odebrać faktury z Krajowego Systemu e-Faktur (KSeF) oraz przenieść do faktur kosztowych lub faktur zakupu. - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-pobrac-faktury-z-krajowego-systemu-e-faktur-ksef-oraz-przeniesc-do-rejestru-vat-zakupu/) → `ComarchBetterflyReference`
+- **100** [Jak pobrać / odebrać fakturę kosztową z Krajowego Systemu e-Faktur (KSeF) w module eFaktury. - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-pobrac-fakture-kosztowa-z-krajowego-systemu-e-faktur-ksef/) → `ComarchBetterflyReference`
+- **100** [Jak pobrać fakturę kosztową z KSeF do ewidencji kosztów (podatnik zwolniony z VAT pakiet eFaktury)? - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-pobrac-fakture-kosztowa-z-ksef-do-ewidencji-kosztow-podatnik-zwolniony-z-vat-pakiet-efaktury/) → `ComarchBetterflyReference`
+- **100** [Jak skonfigurować wymianę z bankami za pomocą webservice? - Baza Wiedzy programu Comarch Betterfly](https://pomoc.comarchbetterfly.pl/dokumentacja/jak-skonfigurowac-wymiane-z-bankami-za-pomoca-webservice/) → `ComarchBetterflyReference`
+- **100** [Krajowy System e-Faktur (KSeF) w Comarch ERP](https://www.comarch.pl/erp/ksef/) → `ComarchOptimaReference`
+- **100** [Rozporządzenia wykonawcze do Krajowego Systemu e-Faktur - Ministerstwo Finansów - Krajowa Administracja Skarbowa - Portal Gov.pl](https://www.gov.pl/web/kas/rozporzadzenia-wykonawcze-do-krajowego-systemu-e-faktur) → `TaxbellAccountingVATReference`
+- **100** [Dziennik Ustaw 2026 r. poz. 825](https://dziennikustaw.gov.pl/DU/2026/825) → `TaxbellLegalReference`
+- **100** [Dziennik Ustaw 2026 r. poz. 846](https://dziennikustaw.gov.pl/DU/2026/846) → `TaxbellLegalReference`
 
 ## Query issues
 
+- `seed_ComarchOptimaAdditionalFunctions`: DUPLICATE_HEAVY, efficiency 60
 - `seed_ComarchOptimaSchema`: LOW_ACCEPTANCE, efficiency 67

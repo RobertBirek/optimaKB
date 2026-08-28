@@ -2151,3 +2151,46 @@ forced dry-run enabled.
 - InsERT GT table naming uses prefix conventions (`kh_`=kontrahenci, `tw_`=towary, `dok_`=dokumenty, `adr_`=adresy, `gr_`/`grat_`=kadry-płace)
 - No triggers found in the current extraction
 - MCP profile `insert-gt-technical-mcp` on port `3427` with tools `insert_gt_schema.search`, `insert_gt_object.get`, `insert_gt_join_path.find`
+
+## OpenSPG native app `2` — re-confirmed still broken (2026-08-08)
+
+- Re-ran `scripts/run_openspg_app_live_benchmark.mjs` (6 questions) during daily ops
+- Result: `6/6 RUNNING_TIMEOUT`, `0` terminal `FINISH` — unchanged from the original
+  2026-06-02 finding above
+- `docker exec release-openspg-server` log tail of `/logs/openspgapp/completions.log`
+  still shows the same `IllegalArgumentException: 2 is not exists` followed by
+  `NullPointerException` on every task
+- conclusion: the app-to-project id resolution bug in the native OpenSPG App UI
+  reasoner path is still present six weeks later; not something this repo's code
+  can fix (server-side OpenSPG bug). The dashboard's static `WARN` tile for
+  "ERP Knowledge Assistant" (`erp_kb_dashboard_server.mjs:1018`) is accurate, not
+  stale.
+- this does not affect production Q&A: the actual serving path is the custom
+  MCP/assistant layer (`erp_knowledge_assistant.mjs`, `erp_knowledge_mcp_http_bridge.mjs`
+  instances), which never goes through `/public/v1/reasoner/*` for app id `2`
+- re-check by re-running the benchmark script above; do not consider this fixed
+  until it returns terminal `FINISH` results
+
+## 2026-08-29 OpenAI model rotation and runtime compatibility
+
+- the active model registry contains `gpt-5.4-mini` for chat and
+  `text-embedding-3-small` for 1536-dimensional embeddings; legacy DeepSeek
+  model records are no longer active
+- applications `2` and `4` use `gpt-5.4-mini`; dashboard reviewer session `57`
+  remains valid for application `4`
+- `scripts/patch_openspg_openai_client.py` is mounted read-only and executed on
+  every server start; it removes unsupported OpenAI request fields, uses
+  `max_completion_tokens`, omits unsupported temperature, and matches only the
+  exact `https://api.openai.com/v1` endpoint
+- the same startup patch replaces KAG's full `pipeline_config` error log and
+  the bridge's full solver-arguments print with secret-free messages; the patch
+  fails closed when the installed KAG source no longer matches either the
+  original or already-patched form
+- dashboard health and discovery systemd units use
+  `LoadCredential=openspg.cookie:/etc/erp-kb-openspg.cookie`; do not weaken the
+  source cookie from `root:root 0600`
+- post-rotation verification: direct chat HTTP 200 in 3.1 seconds, direct
+  embedding HTTP 200 with 1536 dimensions in 2.1 seconds, and the final
+  application `4` systemd health probe passed in 13.5 seconds
+- no builder jobs, KB rebuilds, discovery runs, or re-vectorization were used
+  for this validation

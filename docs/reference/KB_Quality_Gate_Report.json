@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T03:43:50.220Z",
+  "generatedAt": "2026-08-24T03:39:50.569Z",
   "overall": "WARN",
   "results": [
     {
@@ -203,14 +203,14 @@
       "kbName": "Comarch Optima Additional Functions",
       "verdict": "PASS",
       "exportDir": "exports/optima_additional_functions/v1",
-      "generatedAt": "2026-07-30T13:08:49.847Z",
+      "generatedAt": "2026-08-04T09:29:10.108Z",
       "errors": [],
       "warnings": [],
       "files": [
         {
           "fileName": "reference_document.csv",
           "exists": true,
-          "rowCount": 153,
+          "rowCount": 154,
           "columns": [
             "id",
             "name",
@@ -228,7 +228,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 233,
+          "rowCount": 234,
           "columns": [
             "id",
             "name",
@@ -323,16 +323,18 @@
           "jobName": "COAF ImplementationExample CSV Import"
         },
         {
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "COAF Chunk CSV Import"
-        },
-        {
-          "id": 391,
+          "id": 600,
           "fileName": "reference_document.csv",
           "status": "FINISH",
           "jobName": "COAF ReferenceDocument CSV Import",
-          "gmtModified": "2026-06-30 11:20:08"
+          "gmtModified": "2026-08-04 11:29:53"
+        },
+        {
+          "id": 601,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "COAF Chunk CSV Import",
+          "gmtModified": "2026-08-04 11:30:25"
         }
       ]
     },
@@ -492,7 +494,7 @@
       "kbName": "Comarch Optima Reference",
       "verdict": "PASS",
       "exportDir": "exports/optima_reference/v1",
-      "generatedAt": "2026-08-03T03:35:16.062Z",
+      "generatedAt": "2026-08-24T03:35:16.994Z",
       "errors": [],
       "warnings": [],
       "files": [
@@ -859,7 +861,7 @@
       "kbName": "Comarch Betterfly Reference",
       "verdict": "PASS",
       "exportDir": "exports/betterfly_reference/v1",
-      "generatedAt": "2026-08-03T03:38:00.837Z",
+      "generatedAt": "2026-08-24T03:35:44.453Z",
       "errors": [],
       "warnings": [],
       "files": [
@@ -926,7 +928,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 264,
+          "rowCount": 267,
           "columns": [
             "id",
             "name",
@@ -957,20 +959,6 @@
           "gmtModified": "2026-05-25 21:32:55"
         },
         {
-          "id": 186,
-          "fileName": "api_resource.csv",
-          "status": "FINISH",
-          "jobName": "CBRF ApiResource CSV Import",
-          "gmtModified": "2026-05-26 09:04:46"
-        },
-        {
-          "id": 192,
-          "fileName": "api_pattern.csv",
-          "status": "FINISH",
-          "jobName": "CBRF ApiPattern CSV Import",
-          "gmtModified": "2026-05-26 09:25:23"
-        },
-        {
           "id": 193,
           "fileName": "learning_guide.csv",
           "status": "FINISH",
@@ -992,18 +980,32 @@
           "gmtModified": "2026-06-10 11:00:51"
         },
         {
-          "id": 522,
+          "id": 590,
           "fileName": "reference_document.csv",
           "status": "FINISH",
           "jobName": "CBRF ReferenceDocument CSV Import",
-          "gmtModified": "2026-07-27 05:36:20"
+          "gmtModified": "2026-08-04 07:09:59"
         },
         {
-          "id": 523,
+          "id": 591,
+          "fileName": "api_resource.csv",
+          "status": "FINISH",
+          "jobName": "CBRF ApiResource CSV Import",
+          "gmtModified": "2026-08-04 07:10:29"
+        },
+        {
+          "id": 592,
+          "fileName": "api_pattern.csv",
+          "status": "FINISH",
+          "jobName": "CBRF ApiPattern CSV Import",
+          "gmtModified": "2026-08-04 07:11:07"
+        },
+        {
+          "id": 663,
           "fileName": "chunk.csv",
           "status": "FINISH",
           "jobName": "CBRF Chunk CSV Import",
-          "gmtModified": "2026-07-27 05:37:04"
+          "gmtModified": "2026-08-24 05:36:52"
         }
       ]
     },
@@ -1012,14 +1014,14 @@
       "kbName": "Comarch Community News",
       "verdict": "PASS",
       "exportDir": "exports/community_news/v1",
-      "generatedAt": "2026-08-03T03:17:10.470Z",
+      "generatedAt": "2026-08-24T03:15:28.985Z",
       "errors": [],
       "warnings": [],
       "files": [
         {
           "fileName": "reference_document.csv",
           "exists": true,
-          "rowCount": 167,
+          "rowCount": 168,
           "columns": [
             "id",
             "name",
@@ -1057,7 +1059,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 597,
+          "rowCount": 593,
           "columns": [
             "id",
             "name",
@@ -1086,32 +1088,32 @@
           "jobName": "CCN EntryGuide CSV Import"
         },
         {
-          "id": 580,
+          "id": 659,
           "fileName": "reference_document.csv",
           "status": "FINISH",
           "jobName": "CCN ReferenceDocument CSV Import",
-          "gmtModified": "2026-08-01 05:17:18"
+          "gmtModified": "2026-08-24 05:28:36"
         },
         {
-          "id": 581,
+          "id": 660,
           "fileName": "news_topic.csv",
           "status": "FINISH",
           "jobName": "CCN NewsTopic CSV Import",
-          "gmtModified": "2026-08-01 05:17:56"
+          "gmtModified": "2026-08-24 05:29:57"
         },
         {
-          "id": 582,
+          "id": 661,
           "fileName": "community_attachment.csv",
           "status": "FINISH",
           "jobName": "CCN CommunityAttachment CSV Import",
-          "gmtModified": "2026-08-01 05:18:43"
+          "gmtModified": "2026-08-24 05:32:13"
         },
         {
-          "id": 583,
+          "id": 662,
           "fileName": "chunk.csv",
           "status": "FINISH",
           "jobName": "CCN Chunk CSV Import",
-          "gmtModified": "2026-08-01 05:19:45"
+          "gmtModified": "2026-08-24 05:34:18"
         }
       ]
     },
@@ -1120,14 +1122,14 @@
       "kbName": "Taxbell Legal Reference",
       "verdict": "PASS",
       "exportDir": "exports/taxbell_legal_reference/v1",
-      "generatedAt": "2026-07-31T06:10:44.540Z",
+      "generatedAt": "2026-08-04T09:25:44.791Z",
       "errors": [],
       "warnings": [],
       "files": [
         {
           "fileName": "reference_document.csv",
           "exists": true,
-          "rowCount": 75,
+          "rowCount": 78,
           "columns": [
             "id",
             "name",
@@ -1167,7 +1169,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 392,
+          "rowCount": 395,
           "columns": [
             "id",
             "name",
@@ -1202,18 +1204,18 @@
           "jobName": "TBLG EntryGuide CSV Import"
         },
         {
-          "id": 578,
+          "id": 598,
           "fileName": "reference_document.csv",
           "status": "FINISH",
           "jobName": "TBLG ReferenceDocument CSV Import",
-          "gmtModified": "2026-07-31 08:11:22"
+          "gmtModified": "2026-08-04 11:26:20"
         },
         {
-          "id": 579,
+          "id": 599,
           "fileName": "chunk.csv",
           "status": "FINISH",
           "jobName": "TBLG Chunk CSV Import",
-          "gmtModified": "2026-07-31 08:12:01"
+          "gmtModified": "2026-08-04 11:27:06"
         }
       ]
     },
@@ -1222,7 +1224,7 @@
       "kbName": "Taxbell Payroll HR Reference",
       "verdict": "PASS",
       "exportDir": "exports/taxbell_payroll_hr_reference/v1",
-      "generatedAt": "2026-07-31T06:10:44.777Z",
+      "generatedAt": "2026-08-04T09:25:45.007Z",
       "errors": [],
       "warnings": [],
       "files": [
@@ -1324,7 +1326,7 @@
       "kbName": "Taxbell Accounting VAT Reference",
       "verdict": "PASS",
       "exportDir": "exports/taxbell_accounting_vat_reference/v1",
-      "generatedAt": "2026-07-31T06:10:44.934Z",
+      "generatedAt": "2026-08-04T09:25:45.154Z",
       "errors": [],
       "warnings": [],
       "files": [
