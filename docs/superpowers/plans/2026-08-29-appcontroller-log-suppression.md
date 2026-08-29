@@ -17,7 +17,10 @@
 - Do not run discovery, builders, ingestion, KB builds, or re-vectorization.
 - Recreate only `release-openspg-server`; do not recreate or restart MySQL, Neo4j, MinIO, or Tika.
 - Keep `erp-kb-dashboard-llm-health.timer` inactive and enabled.
-- Preserve historical Docker logs and the current OpenAI key.
+- Original requirement: preserve historical Docker logs and the current OpenAI
+  key. The key remained unchanged, but the log-preservation requirement was
+  not met and was explicitly waived by the user on 2026-08-29 after the loss
+  was identified; see **Post-Implementation Retention Outcome** below.
 - Preserve all unrelated worktree changes.
 
 ---
@@ -213,3 +216,24 @@ docs/superpowers/plans/2026-08-29-appcontroller-log-suppression.md
 ```
 
 Expected commit subject: `fix: suppress AppController request logging`.
+
+---
+
+## Post-Implementation Retention Outcome
+
+This section records an implementation outcome discovered after the original
+plan was executed; it is not a change to what the plan originally intended.
+
+The forced recreation in Step 5 removed the prior
+`release-openspg-server` container and its Docker-managed log history. Six
+known historical `AppController` lines therefore became unavailable through
+`docker logs`. Docker provides no technical recovery for the removed
+container's logs unless an independent backup or log collector retained them.
+
+On 2026-08-29, the user explicitly accepted this irreversible loss, authorized
+continuation, and waived the original historical-log preservation requirement.
+The OpenAI key remained unchanged. The retention loss does not invalidate the
+other completed runtime verification: the exact logger override remains
+active, the server returned healthy, dependency container IDs remained
+unchanged, the health timer remained inactive and enabled, and the read-only
+probe added no `AppController` line.

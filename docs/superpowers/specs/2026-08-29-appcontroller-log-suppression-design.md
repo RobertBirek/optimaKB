@@ -41,10 +41,21 @@ builders, ingestion, KB builds, or application updates.
 
 ## Security Boundary
 
-This change prevents future `AppController` payload logging. It does not erase
-historical Docker logs. The operator chose to keep the current OpenAI key and
-accepted the residual exposure in those historical lines. Verification must
-not print the key, application access tokens, session cookies, or API response
+This change prevents future `AppController` payload logging. The original
+design expected the existing Docker-managed log history to remain available,
+but the forced recreation of `release-openspg-server` removed the prior
+container and its Docker-managed logs. Consequently, six known historical
+`AppController` lines are no longer available through `docker logs`. There is
+no technical recovery path from Docker unless an independent backup or log
+collector retained those lines.
+
+On 2026-08-29, after the loss was identified, the user explicitly accepted the
+irreversible loss and waived the historical-log preservation requirement. The
+OpenAI key remained unchanged. This waiver does not alter the verified runtime
+result: the exact logger override is active, the server is healthy, dependency
+containers were not recreated, the timer state is unchanged, and the
+read-only probe produced no new `AppController` line. Verification must not
+print the key, application access tokens, session cookies, or API response
 bodies.
 
 ## Rollback
