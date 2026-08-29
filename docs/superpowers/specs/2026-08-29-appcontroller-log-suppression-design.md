@@ -13,17 +13,29 @@ application update requests at INFO level. The current Compose logger rule
 targets `com.antgroup.openspgapp.arks.sofaboot`, so it does not cover this
 controller.
 
+The first implementation added
+`LOGGING_LEVEL_COM_ANTGROUP_OPENSPGAPP_API_HTTP_SERVER_APP_APPCONTROLLER=OFF`.
+Spring Boot 2.7 relaxed binding lowercases environment-variable logger names,
+so that form can configure packages but cannot reliably configure the
+case-sensitive `AppController` class logger. The live container accepted the
+environment string, but that did not prove the class logger was disabled.
+Spring Boot documents this limitation and recommends `SPRING_APPLICATION_JSON`
+for individual class loggers:
+<https://docs.spring.io/spring-boot/reference/features/logging.html>.
+
 ## Change
 
-Add one environment variable to the OpenSPG `server` service in
-`compose.yaml`:
+Use Spring Boot's case-preserving JSON property source in the OpenSPG `server`
+service:
 
 ```yaml
-LOGGING_LEVEL_COM_ANTGROUP_OPENSPGAPP_API_HTTP_SERVER_APP_APPCONTROLLER: "OFF"
+SPRING_APPLICATION_JSON: '{"logging.level.com.antgroup.openspgapp.api.http.server.app.AppController":"OFF"}'
 ```
 
-Spring Boot maps this variable to the exact controller class. The change does
-not alter other controller logs, server-wide logging, request payloads, model
+Remove the ineffective `LOGGING_LEVEL_...APPCONTROLLER` variable. Spring Boot
+parses `SPRING_APPLICATION_JSON` without lowercasing its property key, so the
+exact class name retains its uppercase letters. The change does not alter
+other controller logs, server-wide logging, request payloads, model
 configuration, credentials, or application state.
 
 ## Deployment
@@ -32,12 +44,15 @@ configuration, credentials, or application state.
 2. Recreate only the `server` container so Spring Boot loads the new logger
    level.
 3. Wait for the server health check to report healthy.
-4. Confirm the exact environment variable exists in the recreated container.
-5. Perform a read-only API request while discarding its response body.
-6. Confirm the request does not add an `AppController` log line.
+4. Confirm `SPRING_APPLICATION_JSON` resolves to the exact class logger and
+   `OFF` value without printing unrelated environment variables.
+5. Send an authenticated `PUT /v1/app/-1` with the benign body `{}` and discard
+   the response body. The negative ID cannot identify an existing application,
+   and the payload contains no credential.
+6. Confirm the controlled request adds no `AppController` log line.
 
 The health timer remains stopped. The deployment does not run discovery,
-builders, ingestion, KB builds, or application updates.
+builders, ingestion, KB builds, or updates to existing application state.
 
 ## Security Boundary
 
@@ -52,23 +67,28 @@ collector retained those lines.
 On 2026-08-29, after the loss was identified, the user explicitly accepted the
 irreversible loss and waived the historical-log preservation requirement. The
 OpenAI key remained unchanged. This waiver does not alter the verified runtime
-result: the exact logger override is active, the server is healthy, dependency
-containers were not recreated, the timer state is unchanged, and the
-read-only probe produced no new `AppController` line. Verification must not
-print the key, application access tokens, session cookies, or API response
-bodies.
+results for server health, dependency isolation, and timer state. The first
+logger override and read-only GET probe did not prove class-level suppression.
+
+The operator approved one more server-only recreation for the corrected
+configuration and accepted the resulting loss of the current container's
+Docker-managed log history. Verification must not print the key, application
+access tokens, session cookies, API response bodies, or matching log lines.
 
 ## Rollback
 
-Remove the exact logger environment variable, validate Compose, and recreate
-only the `server` container. Rollback restores upstream logging behavior and
-therefore restores the credential-exposure risk.
+Remove `SPRING_APPLICATION_JSON`, validate Compose, and recreate only the
+`server` container. Do not restore the ineffective class-level environment
+variable. Rollback restores upstream logging behavior and therefore restores
+the credential-exposure risk.
 
 ## Success Criteria
 
 - `docker compose config` succeeds.
 - The server returns to healthy state after recreation.
-- Runtime environment contains the exact logger override with value `OFF`.
-- A read-only API request does not create a new `AppController` log line.
+- Runtime JSON contains the exact case-sensitive class logger with value
+  `OFF`.
+- A controlled `PUT /v1/app/-1` with body `{}` does not create a new
+  `AppController` log line.
 - The health timer remains inactive.
 - No unrelated service or OpenSPG application configuration changes.
