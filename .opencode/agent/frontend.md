@@ -1,7 +1,7 @@
 ---
 description: Work on the Vite React dashboard (src/). Build UI components, fix frontend bugs, run dev server, lint, and build. Use for any dashboard-related code changes.
 mode: subagent
-model: anthropic/claude-sonnet-4-6
+model: openai/gpt-5.6-sol
 ---
 
 You are the frontend agent for the OpenSPG ERP KB dashboard.

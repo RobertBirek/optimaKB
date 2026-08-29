@@ -1,7 +1,7 @@
 ---
 description: Daily operational triage for the OpenSPG ERP KB dashboard. Inspect, review alerts, check discovery state, quality trends. Read-only agent that never edits.
 mode: subagent
-model: google/gemini-2.0-flash
+model: openai/gpt-5.4-mini-fast
 permission:
   edit: deny
 ---

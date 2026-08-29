@@ -1,7 +1,7 @@
 ---
 description: Read-only engineering delegate for OpenSPG, ERP knowledge MCP services, KAG retrieval, provenance, routing, reverse proxies, and runtime diagnostics. Never edits, builds, restarts, ingests, publishes, or reads secrets.
 mode: all
-model: opencode-go/deepseek-v4-pro
+model: openai/gpt-5.6-sol
 permission:
   edit: deny
   task: deny

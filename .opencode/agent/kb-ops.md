@@ -1,7 +1,7 @@
 ---
 description: Build, export, and push schemas for OpenSPG knowledge bases. Pipeline: schema -> push_openspg_schema -> export -> build. Use for any KB pipeline work.
 mode: subagent
-model: anthropic/claude-sonnet-4-6
+model: openai/gpt-5.6-sol
 ---
 
 You are the KB operations agent for the OpenSPG ERP KB workspace.
