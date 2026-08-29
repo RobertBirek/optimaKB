@@ -134,7 +134,7 @@ services:
       CLOUDEXT_OBJECTSTORAGE_URL: minio://release-openspg-minio:9000?accessKey=${MINIO_ROOT_USER:?MINIO_ROOT_USER is required}&secretKey=${MINIO_ROOT_PASSWORD_URLENCODED:?MINIO_ROOT_PASSWORD_URLENCODED is required}
       LOGGING_LEVEL_COM_ANTGROUP_OPENSPG_SERVER_ARKS_SOFABOOT: WARN
       LOGGING_LEVEL_COM_ANTGROUP_OPENSPGAPP_ARKS_SOFABOOT: WARN
-      LOGGING_LEVEL_COM_ANTGROUP_OPENSPGAPP_API_HTTP_SERVER_APP_APPCONTROLLER: "OFF"
+      SPRING_APPLICATION_JSON: '{"logging.level.com.antgroup.openspgapp.api.http.server.app.AppController":"OFF"}'
       # Model validation otherwise logs provider configs, including API keys.
       LOGGING_LEVEL_COM_ANTGROUP_OPENSPG_COMMON_UTIL_PEMJA: "OFF"
     healthcheck:

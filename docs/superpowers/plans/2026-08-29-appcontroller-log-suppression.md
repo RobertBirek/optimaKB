@@ -35,7 +35,7 @@
 - Consumes: Docker Compose `server.environment`, Spring Boot relaxed environment-variable binding, `/etc/erp-kb-openspg.cookie` for a read-only probe.
 - Produces: a recreated healthy server with the exact `AppController` logger disabled.
 
-- [ ] **Step 1: Record isolation state without reading secrets**
+- [x] **Step 1: Record isolation state without reading secrets**
 
 Run:
 
@@ -49,7 +49,7 @@ systemctl is-enabled erp-kb-dashboard-llm-health.timer
 Expected: four container names and IDs; timer output is `inactive` followed by
 `enabled`. Save the IDs in the task report for the post-deployment comparison.
 
-- [ ] **Step 2: Run the failing Compose assertion**
+- [x] **Step 2: Run the failing Compose assertion**
 
 Run:
 
@@ -67,7 +67,7 @@ process.stdin.on("data", chunk => raw += chunk).on("end", () => {
 
 Expected: FAIL with output `missing`.
 
-- [ ] **Step 3: Add the exact logger override**
+- [x] **Step 3: Add the exact logger override**
 
 Add this line immediately after the two existing OpenSPG package logger rules
 in `compose.yaml`:
@@ -78,7 +78,7 @@ in `compose.yaml`:
 
 Do not change any other Compose field.
 
-- [ ] **Step 4: Run the Compose assertion again**
+- [x] **Step 4: Run the Compose assertion again**
 
 Run the command from Step 2.
 
@@ -92,7 +92,7 @@ docker compose config --quiet
 
 Expected: exit code 0 and no output.
 
-- [ ] **Step 5: Recreate only the server container**
+- [x] **Step 5: Recreate only the server container**
 
 Run:
 
@@ -103,7 +103,7 @@ docker compose up -d --no-deps --force-recreate server
 Expected: `release-openspg-server` is recreated and started; no other service
 is recreated.
 
-- [ ] **Step 6: Wait for a condition-based health result**
+- [x] **Step 6: Wait for a condition-based health result**
 
 Run:
 
@@ -125,7 +125,7 @@ test "$(docker inspect release-openspg-server --format '{{.State.Health.Status}}
 
 Expected: `healthy` within five minutes and final exit code 0.
 
-- [ ] **Step 7: Verify runtime logger configuration without dumping environment**
+- [x] **Step 7: Verify runtime logger configuration without dumping environment**
 
 Run:
 
@@ -145,7 +145,7 @@ process.stdin.on("data", chunk => raw += chunk).on("end", () => {
 Expected: the exact logger assignment and exit code 0. The command prints no
 other environment variables.
 
-- [ ] **Step 8: Run a read-only API probe without printing its body**
+- [x] **Step 8: Run a read-only API probe without printing its body**
 
 Run:
 
@@ -179,7 +179,7 @@ process.stdin.on("data", chunk => raw += chunk).on("end", () => {
 Expected: `status=200` and `appControllerLines=0`. Do not print the response
 body, cookie, or matching historical log lines.
 
-- [ ] **Step 9: Verify service isolation and project checks**
+- [x] **Step 9: Verify service isolation and project checks**
 
 Run the container-ID command from Step 1 and compare all four IDs with the
 recorded values. Expected: every ID is unchanged.
@@ -197,7 +197,7 @@ git diff --check -- compose.yaml docs/superpowers/plans/2026-08-29-appcontroller
 Expected: timer is `inactive` and `enabled`; all five Compose services are up
 and healthy; syntax checks pass; diff check has no output.
 
-- [ ] **Step 10: Commit only the logger override and plan**
+- [x] **Step 10: Commit only the logger override and plan**
 
 Run:
 
