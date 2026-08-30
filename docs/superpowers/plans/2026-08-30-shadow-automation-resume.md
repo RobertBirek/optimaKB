@@ -40,8 +40,17 @@ free -h
 swapon --show --bytes
 docker inspect release-openspg-neo4j release-openspg-server \
   --format '{{.Name}} {{.Id}} restart={{.RestartCount}} oom={{.State.OOMKilled}} health={{.State.Health.Status}}'
-systemctl is-active erp-kb-dashboard-llm-health.timer
-systemctl is-enabled erp-kb-dashboard-llm-health.timer
+for timer in \
+  erp-kb-dashboard-llm-health.timer \
+  erp-kb-discovery-autodraft.timer \
+  erp-kb-dashboard-discovery-daily.timer \
+  erp-kb-dashboard-discovery-weekly.timer
+do
+  active="$(systemctl is-active "$timer")"
+  enabled="$(systemctl is-enabled "$timer")"
+  printf '%s active=%s enabled=%s\n' "$timer" "$active" "$enabled"
+  [ "$active" = active ] && [ "$enabled" = enabled ] || exit 1
+done
 journalctl -k --since '2026-08-29 00:00:00' --no-pager -o short-iso 2>/dev/null |
 node -e '
 let raw = "";
@@ -54,9 +63,9 @@ process.stdin.on("data", chunk => raw += chunk).on("end", () => {
 ```
 
 Expected: at least 10 GiB available RAM, zero swap usage, both containers
-healthy with zero restarts and no OOM flag, health timer `active` and `enabled`,
-and `{"oomRelatedLines":0}`. Stop before the API update if any requirement
-fails.
+healthy with zero restarts and no OOM flag, the LLM-health timer and all three
+discovery timers `active` and `enabled`, and `{"oomRelatedLines":0}`. Stop
+before the API update if any requirement fails.
 
 - [x] **Step 2: Apply and verify the API transaction**
 
@@ -99,7 +108,7 @@ async function getJson(pathname) {
   return json;
 }
 
-async function patchConfig(csrfToken, body) {
+async function patchConfig(csrfToken, body, onAccepted = () => {}) {
   const response = await fetch(`${baseUrl}/api/automation/config`, {
     method: "PATCH",
     headers: {
@@ -109,9 +118,9 @@ async function patchConfig(csrfToken, body) {
     },
     body: JSON.stringify(body),
   });
-  const json = await response.json();
-  if (!response.ok) throw new Error(`config patch returned HTTP ${response.status}: ${json.error || "unknown"}`);
-  return json;
+  if (!response.ok) throw new Error(`config patch returned HTTP ${response.status}`);
+  onAccepted();
+  return response.json();
 }
 
 function summarize(payload) {
@@ -119,7 +128,7 @@ function summarize(payload) {
   const config = automation.config || {};
   const health = automation.llmHealth || {};
   const jobs = Array.isArray(automation.jobs) ? automation.jobs : [];
-  const activeJobs = jobs.filter(job => ["STARTING", "RUNNING", "ROLLING_BACK"].includes(String(job.status || ""))).length;
+  const active = Array.isArray(automation.active) ? automation.active : [];
   return {
     enabled: config.enabled,
     paused: config.paused,
@@ -129,7 +138,7 @@ function summarize(payload) {
     llmHealth: health.status,
     consecutiveFailures: health.consecutiveFailures,
     jobCount: jobs.length,
-    activeJobs,
+    canonicalActiveCount: active.length,
   };
 }
 
@@ -145,33 +154,43 @@ if (before.enabled !== true || before.paused !== true || before.pauseReasonType 
   throw new Error("automation preflight state does not match the approved baseline");
 }
 
-await patchConfig(csrfToken, {
-  paused: false,
-  shadowOnly: true,
-  publicationApproved: false,
-});
-
-const afterPayload = await getJson("/api/automation");
-const after = summarize(afterPayload);
-console.log(JSON.stringify({ after }));
-const valid = after.enabled === true
-  && after.paused === false
-  && after.pauseReasonType === "none"
-  && after.shadowOnly === true
-  && after.publicationApproved === false
-  && after.llmHealth === "PASS"
-  && after.consecutiveFailures === 0
-  && after.jobCount === before.jobCount
-  && after.activeJobs === before.activeJobs;
-
-if (!valid) {
+let updateAccepted = false;
+try {
   await patchConfig(csrfToken, {
-    paused: true,
-    pauseReason: "Shadow automation resume verification failed",
+    paused: false,
     shadowOnly: true,
     publicationApproved: false,
+  }, () => {
+    updateAccepted = true;
   });
-  throw new Error("final automation state failed validation; pause restored");
+
+  const afterPayload = await getJson("/api/automation");
+  const after = summarize(afterPayload);
+  console.log(JSON.stringify({ after }));
+  const valid = after.enabled === true
+    && after.paused === false
+    && after.pauseReasonType === "none"
+    && after.shadowOnly === true
+    && after.publicationApproved === false
+    && after.llmHealth === "PASS"
+    && after.consecutiveFailures === 0
+    && after.jobCount === before.jobCount
+    && after.canonicalActiveCount === before.canonicalActiveCount;
+
+  if (!valid) throw new Error("final automation state failed validation");
+} catch (error) {
+  if (!updateAccepted) throw error;
+  try {
+    await patchConfig(csrfToken, {
+      paused: true,
+      pauseReason: "Shadow resume verification failed",
+      shadowOnly: true,
+      publicationApproved: false,
+    });
+  } catch {
+    throw new Error("final automation validation and rollback both failed");
+  }
+  throw error;
 }
 '
 ```
@@ -180,14 +199,14 @@ Expected: two JSON lines. `before` has `paused=true`, pause reason type
 `llm-health`, shadow mode, LLM health PASS, and zero consecutive failures.
 `after` has `paused=false`, pause reason type `none`, shadow mode,
 `publicationApproved=false`, LLM health PASS, zero consecutive failures, and
-unchanged job and active-job counts.
+unchanged job and canonical active counts.
 
 - [x] **Step 3: Verify infrastructure remained stable**
 
 Run the commands from Step 1 again and compare Neo4j and server container IDs
 with the recorded values. Expected: IDs are unchanged, health remains healthy,
-restart and OOM fields remain zero/false, timer remains active/enabled, swap
-usage remains zero, and kernel OOM count remains zero.
+restart and OOM fields remain zero/false, all four timers remain active/enabled,
+swap usage remains zero, and kernel OOM count remains zero.
 
 Run:
 
@@ -222,3 +241,13 @@ Expected staged and committed path:
 ```text
 docs/superpowers/plans/2026-08-30-shadow-automation-resume.md
 ```
+
+## Post-Review Correction
+
+The successful runtime state remains unchanged. This correction only hardens
+the recorded transaction and verification procedure; it does not repeat the
+configuration PATCH. The original rollback branch was not exercised during the
+successful operation. Current `automation.active` evidence was gathered through
+a read-only request and uses the canonical active array. The LLM-health timer
+and all three discovery timers were verified active and enabled through
+read-only systemd queries.
