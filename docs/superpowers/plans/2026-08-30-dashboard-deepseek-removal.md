@@ -108,7 +108,7 @@ Expected: the commit contains only the tracked drop-in.
 - Consumes: `docs/reference/ERP_KB_Dashboard_LLM_Reviewer.conf` from Task 1.
 - Produces: active dashboard reviewer requests on `gpt-5.4-mini`, verified OpenAI health, and durable operational evidence.
 
-- [ ] **Step 1: Capture preflight state without secrets**
+- [x] **Step 1: Capture preflight state without secrets**
 
 Verify:
 
@@ -132,7 +132,7 @@ Expected: safe automation state, zero active jobs, apps `2` and `4` on
 DeepSeek record or another active DeepSeek reference exists, stop and report it;
 do not delete it in this task.
 
-- [ ] **Step 2: Re-run direct OpenAI probes**
+- [x] **Step 2: Re-run direct OpenAI probes**
 
 Run:
 
@@ -144,7 +144,7 @@ node scripts/rotate_openspg_chat_model.mjs --model gpt-5.6-luna --display-name "
 Expected: each result has `applied=false`, HTTP status `200`, and does not
 contain key material.
 
-- [ ] **Step 3: Install the tracked drop-in and restart only the dashboard**
+- [x] **Step 3: Install the tracked drop-in and restart only the dashboard**
 
 Run:
 
@@ -157,7 +157,7 @@ systemctl restart erp-kb-dashboard.service
 Poll `systemctl is-active erp-kb-dashboard.service` and dashboard `/api/status`
 for up to 60 seconds. Do not continue until both are healthy.
 
-- [ ] **Step 4: Apply rollback on any failed post-restart gate**
+- [x] **Step 4: Apply rollback on any failed post-restart gate**
 
 If service health, API health, model state, integrated LLM health, timers, or
 automation safety fields fail, run:
@@ -170,7 +170,7 @@ systemctl restart erp-kb-dashboard.service
 
 Then verify the dashboard is active and stop. Do not attempt model deletion.
 
-- [ ] **Step 5: Verify the integrated OpenAI path**
+- [x] **Step 5: Verify the integrated OpenAI path**
 
 Run:
 
@@ -182,7 +182,7 @@ systemctl show erp-kb-dashboard-llm-health.service -p Result -p ExecMainStatus -
 Expected: `Result=success`, `ExecMainStatus=0`, LLM health `PASS`, model
 `gpt-5.4-mini`, and zero consecutive failures.
 
-- [ ] **Step 6: Verify final runtime invariants**
+- [x] **Step 6: Verify final runtime invariants**
 
 Require:
 
@@ -199,7 +199,7 @@ Search active repository configuration and installed service environments for
 `deepseek-reasoner`. Ignore matches under historical draft metadata and old
 specs/plans. Expected: no active match.
 
-- [ ] **Step 7: Review drafts through dashboard APIs**
+- [x] **Step 7: Review drafts through dashboard APIs**
 
 Report without changing draft status:
 
@@ -215,7 +215,7 @@ Expected baseline: 63 pending inbox drafts, no missing titles or sources, 139
 pending discovery candidates, one duplicate-rate warning, and zero active
 automation jobs. Explain any drift; do not approve, reject, promote, or build.
 
-- [ ] **Step 8: Record and commit operational evidence**
+- [x] **Step 8: Record and commit operational evidence**
 
 Append a dated note to `docs/reference/OpenSPG_KB_Operational_Memory.md` with
 the root cause, selected model, direct and integrated probe outcomes, dashboard

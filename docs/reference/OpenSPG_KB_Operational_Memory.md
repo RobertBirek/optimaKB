@@ -2229,3 +2229,39 @@ forced dry-run enabled.
   another app update. Do not reuse the rotation command until AppController
   request logging is suppressed/redacted or the app update contract is proven
   to preserve credentials when only a masked value is sent.
+
+## 2026-08-30 Dashboard reviewer OpenAI cutover
+
+- Root cause: the installed, untracked dashboard systemd drop-in still set
+  `OPENSPG_LLM_MODEL=deepseek-reasoner`, although OpenSPG applications `2` and
+  `4` and the active chat-model registry had already moved to OpenAI.
+- Installed the tracked reviewer drop-in with `gpt-5.4-mini` byte-for-byte and
+  restarted only `erp-kb-dashboard.service` (main PID `950` to `90976`). The
+  service and authenticated dashboard status endpoint became healthy within the
+  60-second gate; rollback was not used.
+- Direct, non-applying OpenAI probes returned HTTP `200` for `gpt-5.4-mini` in
+  `2098 ms` and `gpt-5.6-luna` in `2402 ms`. The integrated dashboard health
+  service completed successfully at `2026-08-30 12:00:24 CEST`; dashboard LLM
+  health was `PASS` on `gpt-5.4-mini` with zero consecutive failures.
+- Final model registry contained only OpenAI `gpt-5.6-luna`,
+  `gpt-5.4-mini`, and `text-embedding-3-small`; no DeepSeek record existed and
+  no model record was deleted. Applications `2` and `4` remained on
+  `gpt-5.4-mini` and their key fields matched the current key file without
+  exposing key material.
+- Automation remained `enabled=true`, `paused=false`, `shadowOnly=true`, and
+  `publicationApproved=false`, with `56` jobs and `0` active jobs. The LLM
+  health timer and both discovery timers remained active and enabled. Active
+  repository configuration and installed service environments had no
+  `deepseek-reasoner` match; remaining repository matches were historical draft
+  metadata or the cutover specification and plan.
+- Inbox state remained `63` pending, `288` promoted, `19` rejected, and `13`
+  withdrawn, with no pending draft missing a title or source. Pending drafts by
+  KB were: Community News `3`, Additional Functions `1`, Business Semantics
+  `3`, Optima Reference `1`, Optima Schema `5`, Optima Sprint `1`, Taxbell
+  Accounting/VAT `20`, Taxbell Legal `26`, and Taxbell Payroll/HR `3`.
+  Discovery remained at `139` pending candidates and `130` drafted candidates;
+  semi-automatic drafting was active and eligible, with one duplicate-rate
+  warning.
+- No automation or discovery run endpoint, draft approval/rejection/promotion,
+  builder, ingestion, KB build, publication, re-vectorization, or model deletion
+  ran during this switch.
