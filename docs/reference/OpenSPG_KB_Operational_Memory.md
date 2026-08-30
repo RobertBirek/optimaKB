@@ -2247,13 +2247,22 @@ forced dry-run enabled.
   `gpt-5.4-mini`, and `text-embedding-3-small`; no DeepSeek record existed and
   no model record was deleted. Applications `2` and `4` remained on
   `gpt-5.4-mini` and their key fields matched the current key file without
-  exposing key material.
+  exposing key material. The `/etc/openspg-openai.key` mtime was
+  `2026-08-28 21:06:10 +0200`, before the documented `2026-08-29`
+  AppController exposure, so the current key was not rotated after that
+  exposure. It still matched applications `2` and `4` and passed the direct and
+  integrated tests. The user explicitly selected `Akceptuję obecny klucz`,
+  accepting this residual risk without disclosing any key value, hash, suffix,
+  or token.
 - Automation remained `enabled=true`, `paused=false`, `shadowOnly=true`, and
-  `publicationApproved=false`, with `56` jobs and `0` active jobs. The LLM
-  health timer and both discovery timers remained active and enabled. Active
-  repository configuration and installed service environments had no
-  `deepseek-reasoner` match; remaining repository matches were historical draft
-  metadata or the cutover specification and plan.
+  `publicationApproved=false`, with `56` jobs and `0` active jobs. All four
+  controllers were active and enabled: `erp-kb-dashboard-llm-health.timer`,
+  `erp-kb-dashboard-discovery-daily.timer`,
+  `erp-kb-dashboard-discovery-weekly.timer`, and
+  `erp-kb-discovery-autodraft.timer`. Active repository configuration and
+  installed service environments had no `deepseek-reasoner` match; remaining
+  repository matches were historical draft metadata or the cutover
+  specification and plan.
 - Inbox state remained `63` pending, `288` promoted, `19` rejected, and `13`
   withdrawn, with no pending draft missing a title or source. Pending drafts by
   KB were: Community News `3`, Additional Functions `1`, Business Semantics
