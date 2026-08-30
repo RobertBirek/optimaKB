@@ -14,15 +14,13 @@ export function buildModelRequest({ apiKey, model, displayName }) {
     provider: 'OpenAI',
     visibility: 'PUBLIC_READ',
     name: displayName,
-    config: [{
+    config: {
       api_key: apiKey,
-      modelId: model,
       base_url: OPENAI_BASE_URL,
       model,
       modelType: 'chat',
-      type: 'maas',
       customize: {},
-    }],
+    },
   };
 }
 
@@ -90,16 +88,23 @@ export function parseOptions(args) {
 }
 
 export function validateModelMatch(match, { apiKey, model }) {
-  const valid = match?.group?.provider === 'OpenAI'
-    && match?.group?.visibility === 'PUBLIC_READ'
-    && match?.entry?.api_key === apiKey
-    && match?.entry?.model === model
-    && match?.entry?.base_url === OPENAI_BASE_URL
-    && match?.entry?.modelType === 'chat'
-    && match?.entry?.type === 'maas'
-    && Boolean(match?.entry?.modelId);
-  if (!valid) {
-    throw new Error(`${model} does not match the required OpenAI chat configuration`);
+  const checks = {
+    provider: match?.group?.provider === 'OpenAI',
+    visibility: match?.group?.visibility === 'PUBLIC_READ',
+    api_key: match?.entry?.api_key === apiKey || match?.entry?.api_key === '******',
+    model: match?.entry?.model === model,
+    base_url: match?.entry?.base_url === OPENAI_BASE_URL,
+    modelType: match?.entry?.modelType === 'chat',
+    type: match?.entry?.type === 'maas',
+    modelId: Boolean(match?.entry?.modelId),
+  };
+  const mismatches = Object.entries(checks)
+    .filter(([, valid]) => !valid)
+    .map(([field]) => field);
+  if (mismatches.length) {
+    throw new Error(
+      `${model} does not match the required OpenAI chat configuration: ${mismatches.join(', ')}`,
+    );
   }
   return match;
 }

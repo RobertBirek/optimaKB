@@ -2194,3 +2194,38 @@ forced dry-run enabled.
   application `4` systemd health probe passed in 13.5 seconds
 - no builder jobs, KB rebuilds, discovery runs, or re-vectorization were used
   for this validation
+
+### 2026-08-29 GPT-5.6 Luna attempted cutover and rollback
+
+- `gpt-5.6-luna` was created successfully as
+  `8e778b95d04845efb1835f6b2bdac23f@gpt-5.6-luna`; its direct OpenAI chat probe
+  returned HTTP 200 in 2.3 seconds. The model remains registered as an unused
+  candidate after rollback.
+- applications `2` and `4` were temporarily deployed with Luna. The first app
+  `4` health probe passed in 59.7 seconds, but the second completed server-side
+  in 90.4 seconds after the 90-second health-client timeout. This failed the
+  required two-consecutive-pass gate.
+- the guarded rollback completed: applications `2` and `4`, plus the installed
+  health/daily/weekly systemd services, again use `gpt-5.4-mini`. The
+  `text-embedding-3-small` model ID and all KB/vector state remained unchanged.
+- the rollback health probe was blocked by a separate infrastructure failure:
+  the VM exposed only about 8.1 GiB RAM with all 4 GiB swap consumed, while
+  Neo4j repeatedly reached about 4.4 GiB RSS and was killed by the global OOM
+  killer. OpenSPG then failed schema retrieval with `No routing server
+  available` and crossed the health timeout.
+- to stop repeated global OOM kills, `release-openspg-neo4j` was stopped without
+  removing its container or volumes. The health timer remains enabled but
+  inactive, and dashboard automation remains paused after two health failures.
+  Restore the documented 16/24 GiB VM memory target or explicitly approve the
+  deferred Neo4j right-sizing from the 2026-08-03 OOM note before starting
+  Neo4j, clearing the pause, and resuming the health timer.
+- this cutover did not invoke discovery, builder jobs, KB builds, ingestion, or
+  re-vectorization. Scheduled discovery/report files changed concurrently and
+  were deliberately left untouched.
+- post-run secret scanning found that OpenSPG `AppController` logs the complete
+  application update request at INFO level. The rollback payload therefore
+  exposed the OpenAI key in two Docker log lines even though the Node command
+  itself redacted output. Treat the key as compromised and rotate it before
+  another app update. Do not reuse the rotation command until AppController
+  request logging is suppressed/redacted or the app update contract is proven
+  to preserve credentials when only a masked value is sent.

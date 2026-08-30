@@ -22,15 +22,13 @@ assert.deepEqual(request, {
   provider: 'OpenAI',
   visibility: 'PUBLIC_READ',
   name: 'OpenAI GPT-5.6 Luna',
-  config: [{
+  config: {
     api_key: apiKey,
-    modelId: model,
     base_url: 'https://api.openai.com/v1',
     model,
     modelType: 'chat',
-    type: 'maas',
     customize: {},
-  }],
+  },
 });
 
 const llm = rotation.buildLlmConfig({ apiKey, model, modelId });
@@ -127,12 +125,23 @@ const modelMatch = {
   },
 };
 assert.doesNotThrow(() => rotation.validateModelMatch(modelMatch, { apiKey, model }));
+assert.doesNotThrow(() => rotation.validateModelMatch({
+  ...modelMatch,
+  entry: { ...modelMatch.entry, api_key: '******' },
+}, { apiKey, model }));
+assert.throws(
+  () => rotation.validateModelMatch({
+    ...modelMatch,
+    entry: { ...modelMatch.entry, api_key: 'different-key' },
+  }, { apiKey, model }),
+  /does not match the required OpenAI chat configuration: api_key/,
+);
 assert.throws(
   () => rotation.validateModelMatch({
     ...modelMatch,
     entry: { ...modelMatch.entry, base_url: 'https://example.invalid/v1' },
   }, { apiKey, model }),
-  /does not match the required OpenAI chat configuration/,
+  /does not match the required OpenAI chat configuration: base_url/,
 );
 
 assert.equal(rotation.assertMutationResult(true, 'deploy app 4'), true);
@@ -203,5 +212,29 @@ assert.equal(
   true,
   'new model must be deleted when snapshot capture fails',
 );
+
+const rejectedCreateCalls = [];
+await assert.rejects(
+  () => rotation.rotate({
+    model,
+    displayName: 'OpenAI GPT-5.6 Luna',
+    appIds: [2, 4],
+    apply: true,
+  }, {
+    api: async (method, endpoint) => {
+      rejectedCreateCalls.push(`${method} ${endpoint}`);
+      if (method === 'GET' && endpoint === '/v1/model/list/') return [];
+      if (method === 'POST' && endpoint === '/v1/model') throw new Error('create rejected');
+      throw new Error(`unexpected fake API call: ${method} ${endpoint}`);
+    },
+    apiKey,
+    testModel: async () => ({ status: 200, latencyMs: 1 }),
+  }),
+  /create rejected/,
+);
+assert.deepEqual(rejectedCreateCalls, [
+  'GET /v1/model/list/',
+  'POST /v1/model',
+]);
 
 console.log('rotate_openspg_chat_model tests: PASS');
