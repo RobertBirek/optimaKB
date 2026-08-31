@@ -250,6 +250,15 @@ function promotedDraftChunkMatches(namespace, chunkRows) {
   return { promotedCount: promoted.length, missing };
 }
 
+function promotedDraftDescriptionMatches(namespace, descriptionRows) {
+  const promoted = loadPromotedKnowledge(namespace);
+  const ids = new Set(descriptionRows.map((row) => row.id));
+  const missing = promoted
+    .filter((draft) => !ids.has(makePromotedId('BD_PROMOTED', `${draft.id}_1`)))
+    .map((draft) => ({ draftId: draft.id, sourceUrl: draft.sourceUrl || '', title: draft.title }));
+  return { promotedCount: promoted.length, missing };
+}
+
 function assessNamespace(namespace) {
   const target = TARGETS[namespace];
   if (!target) {
@@ -338,6 +347,14 @@ function assessNamespace(namespace) {
     const promotedCoverage = promotedDraftChunkMatches(namespace, chunkCsv.rows);
     if (promotedCoverage.missing.length) {
       errors.push(`Promoted drafts without visible chunks: ${promotedCoverage.missing.length}`);
+    }
+  }
+
+  if (namespace === 'ComarchOptimaBusinessSemantics') {
+    const descriptionCsv = parseCsv(path.join(exportDir, 'business_description.csv'));
+    const promotedCoverage = promotedDraftDescriptionMatches(namespace, descriptionCsv.rows);
+    if (promotedCoverage.missing.length) {
+      errors.push(`Promoted drafts without visible business descriptions: ${promotedCoverage.missing.length}`);
     }
   }
 
