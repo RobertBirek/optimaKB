@@ -478,7 +478,8 @@ export function reopenPromotedDraft(draftId, options = {}) {
   }
 
   const reopenedAt = new Date().toISOString();
-  const targetParent = path.join(WITHDRAWN_ROOT, draft.kbNamespace, draftId);
+  const archiveNamespace = existing.kbNamespace || draft.kbNamespace;
+  const targetParent = path.join(WITHDRAWN_ROOT, archiveNamespace, draftId);
   ensureDir(targetParent);
   let targetDir = path.join(targetParent, reopenedAt);
   for (let offset = 1; fs.existsSync(targetDir); offset += 1) {
@@ -487,6 +488,11 @@ export function reopenPromotedDraft(draftId, options = {}) {
   ensureDir(targetDir);
 
   const movedPaths = [];
+  const previousRegistry = {
+    ...registry,
+    entries: [...(registry.entries || [])],
+  };
+  let registrySaveAttempted = false;
   try {
     for (const key of ['promotedJsonPath', 'promotedMarkdownPath']) {
       const relativePath = existing[key];
@@ -498,44 +504,83 @@ export function reopenPromotedDraft(draftId, options = {}) {
         to: path.relative(ROOT, destinationPath).replaceAll(path.sep, '/'),
       });
     }
+
+    const nextEntry = {
+      draftId,
+      status: 'pending',
+      kbName: existing.kbName || draft.kbName,
+      kbNamespace: existing.kbNamespace || draft.kbNamespace,
+      title: existing.title || draft.title,
+      sourceUrl: existing.sourceUrl || draft.sourceUrl || '',
+      rawJsonPath: existing.rawJsonPath || path.relative(ROOT, draft.rawJsonPath).replaceAll(path.sep, '/'),
+      reopenedAt,
+      reopenedBy: options.reopenedBy || process.env.USER || 'operator',
+      reviewNote: options.reviewNote || '',
+      previousPromotedAt: existing.promotedAt || '',
+      movedPaths,
+    };
+
+    registry.entries = [
+      ...(registry.entries || []).filter((entry) => entry.draftId !== draftId),
+      nextEntry,
+    ];
+    registrySaveAttempted = true;
+    saveRegistry(registry);
+    appendDashboardAudit({
+      actor: nextEntry.reopenedBy,
+      role: 'operator',
+      action: 'knowledge_draft.reopen',
+      resourceType: 'knowledge_draft',
+      resourceId: draftId,
+      before: existing,
+      after: nextEntry,
+    });
+    return nextEntry;
   } catch (error) {
-    for (const movedPath of [...movedPaths].reverse()) {
-      fs.renameSync(path.join(ROOT, movedPath.to), path.join(ROOT, movedPath.from));
+    const compensationErrors = [];
+    if (registrySaveAttempted) {
+      try {
+        saveRegistry(previousRegistry);
+      } catch (compensationError) {
+        compensationErrors.push(new Error(
+          `Registry compensation failed: ${compensationError.message}`,
+          { cause: compensationError },
+        ));
+      }
     }
-    fs.rmSync(targetDir, { recursive: true, force: true });
+
+    let snapshotsRestored = true;
+    for (const movedPath of [...movedPaths].reverse()) {
+      try {
+        fs.renameSync(path.join(ROOT, movedPath.to), path.join(ROOT, movedPath.from));
+      } catch (compensationError) {
+        snapshotsRestored = false;
+        compensationErrors.push(new Error(
+          `Snapshot compensation failed for ${movedPath.from}: ${compensationError.message}`,
+          { cause: compensationError },
+        ));
+      }
+    }
+    if (snapshotsRestored) {
+      try {
+        fs.rmSync(targetDir, { recursive: true, force: true });
+      } catch (compensationError) {
+        compensationErrors.push(new Error(
+          `Archive cleanup compensation failed: ${compensationError.message}`,
+          { cause: compensationError },
+        ));
+      }
+    }
+
+    if (compensationErrors.length) {
+      throw new AggregateError(
+        compensationErrors,
+        `Reopen compensation failed after original failure: ${error.message}`,
+        { cause: error },
+      );
+    }
     throw error;
   }
-
-  const nextEntry = {
-    draftId,
-    status: 'pending',
-    kbName: existing.kbName || draft.kbName,
-    kbNamespace: existing.kbNamespace || draft.kbNamespace,
-    title: existing.title || draft.title,
-    sourceUrl: existing.sourceUrl || draft.sourceUrl || '',
-    rawJsonPath: existing.rawJsonPath || path.relative(ROOT, draft.rawJsonPath).replaceAll(path.sep, '/'),
-    reopenedAt,
-    reopenedBy: options.reopenedBy || process.env.USER || 'operator',
-    reviewNote: options.reviewNote || '',
-    previousPromotedAt: existing.promotedAt || '',
-    movedPaths,
-  };
-
-  registry.entries = [
-    ...(registry.entries || []).filter((entry) => entry.draftId !== draftId),
-    nextEntry,
-  ];
-  saveRegistry(registry);
-  appendDashboardAudit({
-    actor: nextEntry.reopenedBy,
-    role: 'operator',
-    action: 'knowledge_draft.reopen',
-    resourceType: 'knowledge_draft',
-    resourceId: draftId,
-    before: existing,
-    after: nextEntry,
-  });
-  return nextEntry;
 }
 
 export function listInboxDrafts() {
