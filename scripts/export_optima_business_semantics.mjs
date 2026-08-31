@@ -5,8 +5,14 @@ import path from 'path';
 import crypto from 'crypto';
 import { createRequire } from 'module';
 import { ensureDir, writeCsv, writeJson, makeId } from './lib/export_utils.mjs';
+import {
+  loadPromotedKnowledge,
+  makePromotedId,
+  splitDraftContent,
+  truncate,
+} from './lib/promoted_knowledge.mjs';
 
-const ROOT = '/docker/openspg';
+const ROOT = process.env.ROOT || '/docker/openspg';
 const EXPORT_DIR = path.join(ROOT, 'exports/optima_business_semantics/v1');
 const MANIFEST_PATH = path.join(EXPORT_DIR, '_manifest.json');
 const SCHEMA_EXPORT_DIR = path.join(ROOT, 'exports/optima_schema/v1');
@@ -612,6 +618,29 @@ async function main() {
     });
   }
 
+  const promotedDrafts = loadPromotedKnowledge('ComarchOptimaBusinessSemantics');
+  let promotedDescriptionCount = 0;
+  for (const draft of promotedDrafts) {
+    const segments = splitDraftContent(draft.content, 1800);
+    segments.forEach((description, index) => {
+      const segmentNumber = index + 1;
+      descriptionRows.push({
+        id: makePromotedId('BD_PROMOTED', `${draft.id}_${segmentNumber}`),
+        name: segments.length === 1 ? draft.title : `${draft.title} (${segmentNumber}/${segments.length})`,
+        description,
+        descriptionPreview: truncate(description, 800),
+        descriptionHash: sha256hex(description),
+        descriptionLength: String(description.length),
+        tableRefId: '',
+        columnRefId: '',
+        source: 'promoted_knowledge_draft',
+        language: draft.metadata?.language || 'pl',
+        domainName: draft.metadata?.businessDomain || 'Ogólne',
+      });
+      promotedDescriptionCount += 1;
+    });
+  }
+
   const descColumns = ['id', 'name', 'description', 'descriptionPreview', 'descriptionHash', 'descriptionLength', 'tableRefId', 'columnRefId', 'source', 'language', 'domainName'];
   const descFile = writeCsv(EXPORT_DIR, 'business_description.csv', descColumns, descriptionRows);
 
@@ -743,6 +772,8 @@ async function main() {
     generatedAt: new Date().toISOString(),
     namespace: 'ComarchOptimaBusinessSemantics',
     mode: HELPER_ONLY ? 'helper_only' : 'live_mssql',
+    promotedDraftCount: promotedDrafts.length,
+    promotedDescriptionCount,
     files: [domainFile, descFile, codeFile, ruleFile].map((f) => ({
       fileName: f.fileName,
       rowCount: f.rowCount,
@@ -754,6 +785,8 @@ async function main() {
   console.error(`Exported to ${EXPORT_DIR}`);
   console.error(`  domains: ${domainFile.rowCount}`);
   console.error(`  descriptions: ${descFile.rowCount}`);
+  console.error(`  promoted drafts: ${promotedDrafts.length}`);
+  console.error(`  promoted descriptions: ${promotedDescriptionCount}`);
   console.error(`  code meanings: ${codeFile.rowCount}`);
   console.error(`  rules: ${ruleFile.rowCount}`);
 }
