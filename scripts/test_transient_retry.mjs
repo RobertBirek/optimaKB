@@ -12,6 +12,9 @@ assert.strictEqual(isTransientNetworkError(new TypeError('fetch failed')), true)
 assert.strictEqual(isTransientNetworkError(httpError('rate limited', 429)), true);
 assert.strictEqual(isTransientNetworkError(httpError('upstream failed', 503)), true);
 assert.strictEqual(isTransientNetworkError(httpError('bad request', 400)), false);
+assert.strictEqual(isTransientNetworkError(httpError('authentication timed out', 401)), false);
+assert.strictEqual(isTransientNetworkError(httpError('invalid timeout configuration', 400)), false);
+assert.strictEqual(isTransientNetworkError(httpError('invalid HTTP status', 600)), false);
 assert.strictEqual(isTransientNetworkError(new SyntaxError('invalid JSON')), false);
 
 let recoveredAttempts = 0;

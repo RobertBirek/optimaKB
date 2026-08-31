@@ -13,11 +13,14 @@ export function httpError(message, statusCode) {
 
 export function isTransientNetworkError(error) {
   if (!error) return false;
+  const statusCode = Number(error.statusCode);
+  if (Number.isFinite(statusCode)) {
+    return statusCode === 408 || statusCode === 429 || (statusCode >= 500 && statusCode <= 599);
+  }
   if (error.name === 'AbortError') return true;
   const message = String(error.message || error);
   if (/fetch failed|timed out|timeout/i.test(message)) return true;
-  const statusCode = Number(error.statusCode || 0);
-  return statusCode === 408 || statusCode === 429 || statusCode >= 500;
+  return false;
 }
 
 export async function withTransientRetry(operation, {
