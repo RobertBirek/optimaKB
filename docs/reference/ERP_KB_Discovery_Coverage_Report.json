@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-30T06:57:46.470Z",
+  "generatedAt": "2026-08-31T16:05:07.274Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
-  "dryRun": true,
+  "dryRun": false,
   "coverage": {
     "configuredKbs": 10,
     "coveredKbs": 10
@@ -10,16 +10,16 @@
   "totals": {
     "queries": 10,
     "activeQueries": 10,
-    "candidates": 307,
+    "candidates": 308,
     "drafted": 130,
-    "pending": 139,
+    "pending": 140,
     "routed": 7,
     "rejected": 30,
     "duplicates": 1
   },
   "feedback": {
     "overall": {
-      "candidates": 307,
+      "candidates": 308,
       "reviewed": 146,
       "duplicates": 1,
       "accepted": 115,
@@ -150,7 +150,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaSprint": {
-        "candidates": 22,
+        "candidates": 23,
         "reviewed": 7,
         "duplicates": 0,
         "accepted": 7,
@@ -217,7 +217,7 @@
         "falseNegatives": 0
       },
       "official": {
-        "candidates": 196,
+        "candidates": 197,
         "reviewed": 98,
         "duplicates": 1,
         "accepted": 86,
@@ -258,7 +258,7 @@
     },
     "byAction": {
       "CANDIDATE_ONLY": {
-        "candidates": 143,
+        "candidates": 144,
         "reviewed": 55,
         "duplicates": 0,
         "accepted": 42,
@@ -1521,7 +1521,7 @@
         "falseNegatives": 0
       },
       "seed_ComarchOptimaSprint": {
-        "candidates": 10,
+        "candidates": 11,
         "reviewed": 0,
         "duplicates": 0,
         "accepted": 0,
@@ -1751,13 +1751,13 @@
       "mode": "CANDIDATE_ONLY",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 22,
+      "candidates": 23,
       "drafted": 7,
-      "pending": 15,
+      "pending": 16,
       "routed": 0,
       "rejected": 0,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-26T02:47:07.599Z"
+      "lastCandidateAt": "2026-08-31T14:37:55.827Z"
     },
     {
       "kbNamespace": "ComarchOptimaReference",
@@ -1860,6 +1860,122 @@
   ],
   "recentRuns": [
     {
+      "id": "discovery_autodraft_2026-08-31T16-05-07-155Z_44994f4c",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-31T16:05:07.155Z",
+      "finishedAt": "2026-08-31T16:05:07.163Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_daily_2026-08-31T14-41-59-569Z_79d4f180",
+      "type": "daily",
+      "ok": true,
+      "startedAt": "2026-08-31T14:41:59.569Z",
+      "finishedAt": "2026-08-31T14:42:01.999Z",
+      "resultCount": 30,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_daily_2026-08-31T14-37-18-134Z_c8671f2a",
+      "type": "daily",
+      "ok": false,
+      "startedAt": "2026-08-31T14:37:18.134Z",
+      "finishedAt": "2026-08-31T14:38:20.598Z",
+      "resultCount": 27,
+      "draftedCount": 0,
+      "error": "",
+      "errors": [
+        {
+          "queryId": "seed_ComarchOptimaAdditionalFunctions",
+          "stage": "search",
+          "message": "This operation was aborted"
+        }
+      ]
+    },
+    {
+      "id": "discovery_autodraft_2026-08-31T10-02-13-831Z_36fb6907",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-31T10:02:13.831Z",
+      "finishedAt": "2026-08-31T10:02:13.840Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_daily_2026-08-31T05-18-12-801Z_7d126db3",
+      "type": "daily",
+      "ok": false,
+      "startedAt": "2026-08-31T05:18:12.802Z",
+      "finishedAt": "2026-08-31T05:18:53.698Z",
+      "resultCount": 27,
+      "draftedCount": 0,
+      "error": "",
+      "errors": [
+        {
+          "queryId": "seed_TaxbellPayrollHRReference",
+          "message": "This operation was aborted",
+          "stage": "query"
+        },
+        {
+          "queryId": "seed_ComarchOptimaSprint",
+          "message": "fetch failed",
+          "stage": "query"
+        }
+      ]
+    },
+    {
+      "id": "discovery_autodraft_2026-08-31T05-17-42-034Z_4d653e28",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-31T05:17:42.034Z",
+      "finishedAt": "2026-08-31T05:17:42.104Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_autodraft_2026-08-30T22-01-13-935Z_869c632e",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-30T22:01:13.935Z",
+      "finishedAt": "2026-08-30T22:01:13.945Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_autodraft_2026-08-30T16-01-03-809Z_ab2df38e",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-30T16:01:03.809Z",
+      "finishedAt": "2026-08-30T16:01:03.817Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_autodraft_2026-08-30T10-01-55-461Z_54c148e7",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-30T10:01:55.461Z",
+      "finishedAt": "2026-08-30T10:01:55.473Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
       "id": "discovery_weekly_2026-08-30T06-56-16-076Z_f7ef79c6",
       "type": "weekly",
       "ok": false,
@@ -1867,97 +1983,8 @@
       "finishedAt": "2026-08-30T06:57:46.338Z",
       "resultCount": 0,
       "draftedCount": 0,
-      "error": "This operation was aborted"
-    },
-    {
-      "id": "discovery_autodraft_2026-08-30T06-52-11-323Z_7dde8d50",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-30T06:52:11.323Z",
-      "finishedAt": "2026-08-30T06:52:11.418Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_daily_2026-08-30T06-52-11-316Z_beae172b",
-      "type": "daily",
-      "ok": false,
-      "startedAt": "2026-08-30T06:52:11.316Z",
-      "finishedAt": "2026-08-30T06:52:51.287Z",
-      "resultCount": 24,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-08-29T22-00-55-504Z_b2caecbd",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-29T22:00:55.504Z",
-      "finishedAt": "2026-08-29T22:00:55.516Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-08-29T16-04-39-377Z_c8a8e93d",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-29T16:04:39.377Z",
-      "finishedAt": "2026-08-29T16:04:39.386Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-08-29T10-00-54-508Z_2ba127eb",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-29T10:00:54.508Z",
-      "finishedAt": "2026-08-29T10:00:54.516Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-08-29T09-26-14-285Z_a53d247e",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-29T09:26:14.285Z",
-      "finishedAt": "2026-08-29T09:26:14.295Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-08-29T09-25-01-361Z_46e22b2d",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-29T09:25:01.361Z",
-      "finishedAt": "2026-08-29T09:25:01.425Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": ""
-    },
-    {
-      "id": "discovery_autodraft_2026-08-29T04-04-53-339Z_26154913",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-29T04:04:53.339Z",
-      "finishedAt": "2026-08-29T04:04:54.607Z",
-      "resultCount": 0,
-      "draftedCount": 1,
-      "error": ""
-    },
-    {
-      "id": "discovery_daily_2026-08-29T02-48-14-469Z_ebd6ffef",
-      "type": "daily",
-      "ok": false,
-      "startedAt": "2026-08-29T02:48:14.482Z",
-      "finishedAt": "2026-08-29T02:50:04.042Z",
-      "resultCount": 30,
-      "draftedCount": 0,
-      "error": ""
+      "error": "This operation was aborted",
+      "errors": []
     }
   ]
 }

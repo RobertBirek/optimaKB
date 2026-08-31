@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-30T06:57:48.789Z",
+  "generatedAt": "2026-08-31T16:05:10.248Z",
   "totals": {
-    "candidates": 307,
-    "pending": 139,
+    "candidates": 308,
+    "pending": 140,
     "duplicates": 1,
     "reviewed": 146,
     "activeQueries": 10,
@@ -25,7 +25,7 @@
           "wysoka akceptacja operatora",
           "domena www.gov.pl: kara 6%"
         ],
-        "ageDays": 24,
+        "ageDays": 26,
         "kbPending": 8
       }
     },
@@ -44,7 +44,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 24,
+        "ageDays": 26,
         "kbPending": 18
       }
     },
@@ -63,7 +63,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 22,
+        "ageDays": 24,
         "kbPending": 13
       }
     },
@@ -82,7 +82,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 16,
+        "ageDays": 18,
         "kbPending": 13
       }
     },
@@ -101,7 +101,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 13,
+        "ageDays": 15,
         "kbPending": 13
       }
     },
@@ -120,7 +120,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 13,
+        "ageDays": 15,
         "kbPending": 13
       }
     },
@@ -139,7 +139,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 13,
+        "ageDays": 15,
         "kbPending": 6
       }
     },
@@ -159,7 +159,7 @@
           "wysoka akceptacja operatora",
           "domena www.gov.pl: kara 6%"
         ],
-        "ageDays": 13,
+        "ageDays": 15,
         "kbPending": 8
       }
     },
@@ -178,7 +178,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 13,
+        "ageDays": 15,
         "kbPending": 36
       }
     },
@@ -197,7 +197,7 @@
           "świeża publikacja",
           "wysoka akceptacja operatora"
         ],
-        "ageDays": 13,
+        "ageDays": 15,
         "kbPending": 36
       }
     }
@@ -232,9 +232,9 @@
         "accepted": 0,
         "rejected": 3,
         "duplicates": 0,
-        "duplicateRate": 0,
+        "duplicateRate": 0.3333333333333333,
         "acceptanceRate": 0,
-        "efficiencyScore": 85,
+        "efficiencyScore": 67,
         "health": "LOW_ACCEPTANCE",
         "recommendation": "REFINE"
       }
@@ -252,10 +252,8 @@
   "semiAuto": {
     "configured": true,
     "eligible": true,
-    "active": false,
-    "blockers": [
-      "Discovery działa w wymuszonym trybie dry-run."
-    ],
+    "active": true,
+    "blockers": [],
     "metrics": {
       "reviewed": 146,
       "agreement": 1,
