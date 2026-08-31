@@ -469,6 +469,75 @@ export function withdrawPromotedDraft(draftId, options = {}) {
   return nextEntry;
 }
 
+export function reopenPromotedDraft(draftId, options = {}) {
+  const draft = findRawDraftById(draftId);
+  const registry = loadRegistry();
+  const existing = registryEntryFor(registry, draftId);
+  if (existing?.status !== 'promoted') {
+    throw new Error(`Only promoted drafts can be reopened. Current status: ${existing?.status || 'pending'}`);
+  }
+
+  const reopenedAt = new Date().toISOString();
+  const targetParent = path.join(WITHDRAWN_ROOT, draft.kbNamespace, draftId);
+  ensureDir(targetParent);
+  let targetDir = path.join(targetParent, reopenedAt);
+  for (let offset = 1; fs.existsSync(targetDir); offset += 1) {
+    targetDir = path.join(targetParent, new Date(Date.parse(reopenedAt) + offset).toISOString());
+  }
+  ensureDir(targetDir);
+
+  const movedPaths = [];
+  try {
+    for (const key of ['promotedJsonPath', 'promotedMarkdownPath']) {
+      const relativePath = existing[key];
+      const sourcePath = path.join(ROOT, relativePath);
+      const destinationPath = path.join(targetDir, path.basename(sourcePath));
+      fs.renameSync(sourcePath, destinationPath);
+      movedPaths.push({
+        from: relativePath,
+        to: path.relative(ROOT, destinationPath).replaceAll(path.sep, '/'),
+      });
+    }
+  } catch (error) {
+    for (const movedPath of [...movedPaths].reverse()) {
+      fs.renameSync(path.join(ROOT, movedPath.to), path.join(ROOT, movedPath.from));
+    }
+    fs.rmSync(targetDir, { recursive: true, force: true });
+    throw error;
+  }
+
+  const nextEntry = {
+    draftId,
+    status: 'pending',
+    kbName: existing.kbName || draft.kbName,
+    kbNamespace: existing.kbNamespace || draft.kbNamespace,
+    title: existing.title || draft.title,
+    sourceUrl: existing.sourceUrl || draft.sourceUrl || '',
+    rawJsonPath: existing.rawJsonPath || path.relative(ROOT, draft.rawJsonPath).replaceAll(path.sep, '/'),
+    reopenedAt,
+    reopenedBy: options.reopenedBy || process.env.USER || 'operator',
+    reviewNote: options.reviewNote || '',
+    previousPromotedAt: existing.promotedAt || '',
+    movedPaths,
+  };
+
+  registry.entries = [
+    ...(registry.entries || []).filter((entry) => entry.draftId !== draftId),
+    nextEntry,
+  ];
+  saveRegistry(registry);
+  appendDashboardAudit({
+    actor: nextEntry.reopenedBy,
+    role: 'operator',
+    action: 'knowledge_draft.reopen',
+    resourceType: 'knowledge_draft',
+    resourceId: draftId,
+    before: existing,
+    after: nextEntry,
+  });
+  return nextEntry;
+}
+
 export function listInboxDrafts() {
   const registry = loadRegistry();
   const statusById = new Map((registry.entries || []).map((entry) => [entry.draftId, entry]));
