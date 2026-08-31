@@ -13,6 +13,7 @@ export function httpError(message, statusCode) {
 
 export function isTransientNetworkError(error) {
   if (!error) return false;
+  if (error.nonRetryable === true) return false;
   const statusCode = Number(error.statusCode);
   if (Number.isFinite(statusCode)) {
     return statusCode === 408 || statusCode === 429 || (statusCode >= 500 && statusCode <= 599);

@@ -166,7 +166,9 @@ async function searchViaApi({ query, numResults, includeDomains = [], type = 'au
     try {
       json = JSON.parse(textBody);
     } catch {
-      throw httpError(`Exa API returned non-JSON response: ${textBody.slice(0, 300)}`, response.status);
+      const error = httpError(`Exa API returned non-JSON response: ${textBody.slice(0, 300)}`, response.status);
+      error.nonRetryable = true;
+      throw error;
     }
     if (!response.ok) {
       throw httpError(
@@ -308,7 +310,11 @@ async function searchViaMcp({ query, numResults, includeDomains = [] }) {
         },
       },
     });
-    if (toolResponse.error) throw new Error(toolResponse.error.message || 'Exa MCP tool call failed');
+    if (toolResponse.error) {
+      const error = new Error(toolResponse.error.message || 'Exa MCP tool call failed');
+      error.nonRetryable = true;
+      throw error;
+    }
     return {
       provider: 'mcp',
       requestId: '',

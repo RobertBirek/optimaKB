@@ -58,6 +58,8 @@ function sendJson(res, payload, status = 200) {
 
 let timeoutRequestCount = 0;
 let clientErrorRequestCount = 0;
+let malformedServerErrorRequestCount = 0;
+let validServerErrorRequestCount = 0;
 
 const server = http.createServer(async (req, res) => {
   if (req.method !== 'POST' || req.url !== '/search') {
@@ -82,6 +84,23 @@ const server = http.createServer(async (req, res) => {
     clientErrorRequestCount += 1;
     sendJson(res, { error: 'bad request' }, 400);
     return;
+  }
+  if (payload.query === 'no retry malformed server error') {
+    malformedServerErrorRequestCount += 1;
+    const body = 'upstream timeout page is not JSON';
+    res.writeHead(503, {
+      'Content-Type': 'text/plain',
+      'Content-Length': Buffer.byteLength(body, 'utf8'),
+    });
+    res.end(body);
+    return;
+  }
+  if (payload.query === 'retry valid server error') {
+    validServerErrorRequestCount += 1;
+    if (validServerErrorRequestCount === 1) {
+      sendJson(res, { error: 'temporary upstream failure' }, 503);
+      return;
+    }
   }
   sendJson(res, {
     requestId: 'mock-req-1',
@@ -142,6 +161,16 @@ await assert.rejects(
 );
 assert.strictEqual(clientErrorRequestCount, 1);
 
+await assert.rejects(
+  () => searchExternalSources({ query: 'no retry malformed server error', numResults: 1 }),
+  /non-JSON response/,
+);
+assert.strictEqual(malformedServerErrorRequestCount, 1);
+
+const validServerErrorSearch = await searchExternalSources({ query: 'retry valid server error', numResults: 1 });
+assert.strictEqual(validServerErrorSearch.ok, true);
+assert.strictEqual(validServerErrorRequestCount, 2);
+
 const malformedMcp = runMcpCase('malformed');
 assert.strictEqual(malformedMcp.output.ok, false);
 assert.match(malformedMcp.output.message, /malformed.*JSON/i);
@@ -164,6 +193,11 @@ const retriedMcp = runMcpCase('timeout-then-success');
 assert.strictEqual(retriedMcp.output.ok, true);
 assert.strictEqual(retriedMcp.output.result.provider, 'mcp');
 assert.strictEqual(retriedMcp.count, 2);
+
+const toolErrorMcp = runMcpCase('tool-error-timeout');
+assert.strictEqual(toolErrorMcp.output.ok, false);
+assert.match(toolErrorMcp.output.message, /tool timeout configuration error/i);
+assert.strictEqual(toolErrorMcp.count, 1);
 
 const searchResult = await searchExternalSources({
   query: 'Czy były ostatnio newsy o Comarch Betterfly?',

@@ -42,6 +42,14 @@ process.stdin.on('data', (chunk) => {
       process.stdout.write('Content-Length: 1\r\n\r\n{');
       continue;
     }
+    if (mode === 'tool-error-timeout' && request.method === 'tools/call') {
+      writeFrame({
+        jsonrpc: '2.0',
+        id: request.id,
+        error: { code: -32000, message: 'Responsive MCP tool timeout configuration error' },
+      });
+      continue;
+    }
     writeFrame({
       jsonrpc: '2.0',
       id: request.id,

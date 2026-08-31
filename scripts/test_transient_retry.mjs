@@ -16,6 +16,9 @@ assert.strictEqual(isTransientNetworkError(httpError('authentication timed out',
 assert.strictEqual(isTransientNetworkError(httpError('invalid timeout configuration', 400)), false);
 assert.strictEqual(isTransientNetworkError(httpError('invalid HTTP status', 600)), false);
 assert.strictEqual(isTransientNetworkError(new SyntaxError('invalid JSON')), false);
+const nonRetryableServerError = httpError('malformed upstream response', 503);
+nonRetryableServerError.nonRetryable = true;
+assert.strictEqual(isTransientNetworkError(nonRetryableServerError), false);
 
 let recoveredAttempts = 0;
 const recovered = await withTransientRetry(async () => {
