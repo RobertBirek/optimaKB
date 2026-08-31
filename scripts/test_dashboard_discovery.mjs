@@ -407,6 +407,22 @@ try {
     finishedAt: '9999-01-01T00:00:01.000Z',
     errors: [{ queryId: 'legacy_query', message: 'Legacy query failure.' }],
   });
+  discovery.writeDiscoveryRun({
+    id: 'candidate_run_error',
+    type: 'autodraft',
+    ok: false,
+    startedAt: '9999-01-02T00:00:00.000Z',
+    finishedAt: '9999-01-02T00:00:01.000Z',
+    errors: [{ candidateId: 'candidate_failed_draft', operationId: 'draft_17', message: 'Candidate draft failure.' }],
+  });
+  discovery.writeDiscoveryRun({
+    id: 'query_run_error',
+    type: 'daily',
+    ok: false,
+    startedAt: '9999-01-03T00:00:00.000Z',
+    finishedAt: '9999-01-03T00:00:01.000Z',
+    errors: [{ queryId: 'query_failed_search', stage: 'search', message: 'Query search failure.' }],
+  });
   const report = discovery.refreshDiscoveryReport();
   assert.strictEqual(report.overall, 'PASS');
   assert.deepStrictEqual(report.coverage, { configuredKbs: 10, coveredKbs: 10 });
@@ -422,6 +438,20 @@ try {
   assert.deepStrictEqual(
     report.recentRuns.find((run) => run.id === 'legacy_run_error_without_stage').errors,
     [{ queryId: 'legacy_query', stage: 'query', message: 'Legacy query failure.' }],
+  );
+  assert.deepStrictEqual(
+    report.recentRuns.find((run) => run.id === 'candidate_run_error').errors,
+    [{
+      candidateId: 'candidate_failed_draft',
+      operationId: 'draft_17',
+      queryId: '',
+      stage: 'query',
+      message: 'Candidate draft failure.',
+    }],
+  );
+  assert.deepStrictEqual(
+    report.recentRuns.find((run) => run.id === 'query_run_error').errors,
+    [{ queryId: 'query_failed_search', stage: 'search', message: 'Query search failure.' }],
   );
   const priority = discovery.discoveryCandidatePriority(
     discovery.readDiscoveryCandidate('candidate_undo_route'),

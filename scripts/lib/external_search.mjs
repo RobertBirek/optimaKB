@@ -221,7 +221,7 @@ async function searchViaMcp({ query, numResults, includeDomains = [] }) {
       if (headerEnd === -1) break;
       const header = stdoutBuffer.slice(0, headerEnd).toString('utf8');
       const match = header.match(/Content-Length:\s*(\d+)/i);
-      if (!match) break;
+      if (!match) throw new Error('Malformed Exa MCP frame: missing Content-Length header');
       const length = Number(match[1]);
       const total = headerEnd + 4 + length;
       if (stdoutBuffer.length < total) break;
@@ -229,8 +229,8 @@ async function searchViaMcp({ query, numResults, includeDomains = [] }) {
       stdoutBuffer = stdoutBuffer.slice(total);
       try {
         frames.push(JSON.parse(body));
-      } catch {
-        // ignore malformed frame
+      } catch (error) {
+        throw new Error(`Malformed Exa MCP JSON frame: ${error.message}`);
       }
     }
     return frames;
@@ -239,25 +239,47 @@ async function searchViaMcp({ query, numResults, includeDomains = [] }) {
   const call = (request) => new Promise((resolve, reject) => {
     const payload = JSON.stringify(request);
     const frame = `Content-Length: ${Buffer.byteLength(payload, 'utf8')}\r\n\r\n${payload}`;
-    const timeout = setTimeout(() => reject(new Error(`Timed out waiting for Exa MCP response for ${request.method}`)), EXA_MCP_TIMEOUT_MS);
+    let settled = false;
+    let timeout;
+    const cleanup = () => {
+      clearTimeout(timeout);
+      child.stdout.off('data', onData);
+      child.off('error', onChildError);
+      child.off('exit', onChildExit);
+    };
+    const settle = (callback, value) => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      callback(value);
+    };
     const onData = () => {
-      const frames = readFrames();
-      for (const response of frames) {
-        if (response.id === request.id) {
-            clearTimeout(timeout);
-            child.stdout.off('data', onData);
-            resolve(response);
+      try {
+        const frames = readFrames();
+        for (const response of frames) {
+          if (response.id === request.id) {
+            settle(resolve, response);
             return;
           }
         }
-    };
-    child.stdout.on('data', onData);
-    child.stdin.write(frame, (error) => {
-      if (error) {
-        clearTimeout(timeout);
-        child.stdout.off('data', onData);
-        reject(error);
+      } catch (error) {
+        settle(reject, error);
       }
+    };
+    const onChildError = (error) => settle(reject, error);
+    const onChildExit = (code, signal) => settle(
+      reject,
+      new Error(`Exa MCP process exited before responding to ${request.method} (code ${code ?? 'null'}, signal ${signal || 'none'})`),
+    );
+    timeout = setTimeout(
+      () => settle(reject, new Error(`Timed out waiting for Exa MCP response for ${request.method}`)),
+      EXA_MCP_TIMEOUT_MS,
+    );
+    child.stdout.on('data', onData);
+    child.once('error', onChildError);
+    child.once('exit', onChildExit);
+    child.stdin.write(frame, (error) => {
+      if (error) settle(reject, error);
     });
   });
 

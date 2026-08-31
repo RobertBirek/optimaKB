@@ -2,6 +2,50 @@
 
 import http from 'http';
 import assert from 'assert';
+import fs from 'fs';
+import os from 'os';
+import path from 'path';
+import { spawnSync } from 'child_process';
+import { fileURLToPath } from 'url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const MCP_FIXTURE = path.join(ROOT, 'scripts/fixtures/external_search_mcp_fixture.mjs');
+
+function runMcpCase(mode) {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), `external-search-mcp-${mode}-`));
+  const counterPath = path.join(os.tmpdir(), `external-search-mcp-${mode}-${process.pid}.count`);
+  const script = `
+    import fs from 'fs';
+    const search = await import('./scripts/lib/external_search.mjs');
+    if (process.env.MCP_CASE === 'spawn-error') fs.rmSync(process.env.ROOT, { recursive: true, force: true });
+    try {
+      const result = await search.searchExternalSources({ query: 'MCP regression test', numResults: 1 });
+      process.stdout.write(JSON.stringify({ ok: true, result }));
+    } catch (error) {
+      process.stdout.write(JSON.stringify({ ok: false, message: error.message }));
+    }
+  `;
+  const result = spawnSync(process.execPath, ['--input-type=module', '-e', script], {
+    cwd: ROOT,
+    env: {
+      ...process.env,
+      ROOT: root,
+      MCP_CASE: mode,
+      EXA_PROVIDER: 'mcp',
+      EXA_API_KEY: '',
+      EXA_MCP_COMMAND: `${process.execPath} ${JSON.stringify(MCP_FIXTURE)} ${mode} ${JSON.stringify(counterPath)}`,
+      EXA_MCP_TIMEOUT_MS: '500',
+      ERP_KB_TRANSIENT_RETRY_DELAY_MS: '0',
+    },
+    encoding: 'utf8',
+    timeout: 5000,
+  });
+  const count = fs.existsSync(counterPath) ? Number(fs.readFileSync(counterPath, 'utf8')) : 0;
+  fs.rmSync(root, { recursive: true, force: true });
+  fs.rmSync(counterPath, { force: true });
+  assert.strictEqual(result.status, 0, result.stderr || result.stdout);
+  return { output: JSON.parse(result.stdout), count };
+}
 
 function sendJson(res, payload, status = 200) {
   const body = JSON.stringify(payload);
@@ -98,6 +142,29 @@ await assert.rejects(
 );
 assert.strictEqual(clientErrorRequestCount, 1);
 
+const malformedMcp = runMcpCase('malformed');
+assert.strictEqual(malformedMcp.output.ok, false);
+assert.match(malformedMcp.output.message, /malformed.*JSON/i);
+assert.doesNotMatch(malformedMcp.output.message, /timed out/i);
+assert.strictEqual(malformedMcp.count, 1);
+
+const exitedMcp = runMcpCase('exit');
+assert.strictEqual(exitedMcp.output.ok, false);
+assert.match(exitedMcp.output.message, /exited.*17/i);
+assert.doesNotMatch(exitedMcp.output.message, /timed out/i);
+assert.strictEqual(exitedMcp.count, 1);
+
+const spawnErrorMcp = runMcpCase('spawn-error');
+assert.strictEqual(spawnErrorMcp.output.ok, false);
+assert.match(spawnErrorMcp.output.message, /spawn.*ENOENT/i);
+assert.doesNotMatch(spawnErrorMcp.output.message, /timed out/i);
+assert.strictEqual(spawnErrorMcp.count, 0);
+
+const retriedMcp = runMcpCase('timeout-then-success');
+assert.strictEqual(retriedMcp.output.ok, true);
+assert.strictEqual(retriedMcp.output.result.provider, 'mcp');
+assert.strictEqual(retriedMcp.count, 2);
+
 const searchResult = await searchExternalSources({
   query: 'Czy były ostatnio newsy o Comarch Betterfly?',
   kbName: 'ComarchCommunityNews',
@@ -135,4 +202,5 @@ process.stdout.write(`${JSON.stringify({
   topSourceType: searchResult.results[0].sourceType,
   answerEvidenceSource: answerResult.answer.evidenceSource,
   externalEvidenceCount: answerResult.answer.externalEvidence.length,
+  mcpTimeoutAttempts: retriedMcp.count,
 }, null, 2)}\n`);

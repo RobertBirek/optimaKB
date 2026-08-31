@@ -1597,6 +1597,7 @@ export function refreshDiscoveryReport() {
       error: run.error || '',
       errors: Array.isArray(run.errors)
         ? run.errors.map((error) => ({
+          ...error,
           queryId: String(error.queryId || ''),
           stage: ['search', 'llm', 'query'].includes(error.stage) ? error.stage : 'query',
           message: String(error.message || ''),
