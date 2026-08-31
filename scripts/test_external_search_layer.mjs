@@ -73,12 +73,7 @@ const server = http.createServer(async (req, res) => {
   const payload = JSON.parse(Buffer.concat(chunks).toString('utf8'));
   if (payload.query === 'retry timeout') {
     timeoutRequestCount += 1;
-    if (timeoutRequestCount === 1) {
-      setTimeout(() => {
-        if (!res.destroyed) sendJson(res, { results: [] });
-      }, 75);
-      return;
-    }
+    if (timeoutRequestCount === 1) return;
   }
   if (payload.query === 'no retry client error') {
     clientErrorRequestCount += 1;
@@ -138,10 +133,10 @@ process.env.EXA_PROVIDER = 'api';
 process.env.EXA_API_KEY = 'test-key';
 process.env.EXA_API_URL = `http://127.0.0.1:${port}/search`;
 process.env.EXA_DEFAULT_NUM_RESULTS = '5';
-process.env.EXA_REQUEST_TIMEOUT_MS = '25';
+process.env.EXA_REQUEST_TIMEOUT_MS = '500';
 process.env.ERP_KB_TRANSIENT_RETRY_DELAY_MS = '0';
 
-// Warm Node 18's fetch path so the 25 ms limit measures provider response time.
+// Warm Node 18's fetch path before exercising the provider timeout retry.
 const warmupResponse = await fetch(process.env.EXA_API_URL, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
