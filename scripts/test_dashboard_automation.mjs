@@ -201,6 +201,9 @@ try {
   delete process.env.ERP_KB_AUTOMATION_SHADOW_ONLY;
   delete process.env.ERP_KB_AUTOMATION_ENABLED;
   const automation = await import(`./lib/dashboard_automation.mjs?test=${Date.now()}`);
+  const { deriveAutomationLearningState } = await import(
+    `./lib/feedback_learning.mjs?test=${Date.now()}`
+  );
   const adjudicatedReroute = automation.adjudicateAutomationJob(
     reroutePayload.id,
     'reroute',
@@ -454,6 +457,13 @@ try {
   const stableCanaryMarkdown = fs.readFileSync(canaryMarkdownPath);
   const stableCanaryReport = JSON.parse(stableCanaryJson.toString('utf8'));
   await new Promise((resolve) => setTimeout(resolve, 25));
+  const nextGeneratedAt = new Date().toISOString();
+  assert.notStrictEqual(nextGeneratedAt, stableCanaryReport.generatedAt);
+  const nextLearningGeneratedAt = deriveAutomationLearningState(
+    automation.listAutomationJobs(500),
+    { persist: false },
+  ).generatedAt;
+  assert.notStrictEqual(nextLearningGeneratedAt, stableCanaryReport.learning.generatedAt);
   const unchangedCanaryReport = automation.refreshAutomationCanaryReport();
   assert.deepStrictEqual(unchangedCanaryReport, stableCanaryReport);
   assert.deepStrictEqual(fs.readFileSync(canaryJsonPath), stableCanaryJson);
