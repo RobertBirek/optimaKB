@@ -78,6 +78,41 @@ function startSlowLlmServer(fixtures, delayMs) {
   });
 }
 
+function startAssessmentServer({ url, failuresBeforeSuccess }) {
+  let requestCount = 0;
+  const server = http.createServer((req, res) => {
+    if (req.method !== 'POST') {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
+    requestCount += 1;
+    if (requestCount <= failuresBeforeSuccess) {
+      req.socket.destroy();
+      return;
+    }
+    const answer = JSON.stringify([{
+      url,
+      action: 'CANDIDATE_ONLY',
+      targetKb: 'ComarchOptimaSprint',
+      confidence: 0.99,
+      novelty: 'high',
+      duplicateRisk: 'low',
+      contentRisk: 'low',
+      reasons: ['Transient retry fixture.'],
+    }]);
+    const body = `data: ${JSON.stringify({ success: true, answer })}\n\n`;
+    res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8' });
+    res.end(body);
+  });
+  return new Promise((resolve) => {
+    server.listen(0, '127.0.0.1', () => resolve({
+      server,
+      requestCount: () => requestCount,
+    }));
+  });
+}
+
 const fixtures = {
   ComarchOptimaSchema: 'https://pomoc.comarch.pl/test/schema-2026',
   ComarchOptimaAdditionalFunctions: 'https://pomoc.comarch.pl/test/additional-functions-2026',
@@ -94,6 +129,10 @@ const fixtures = {
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'erp-kb-dashboard-discovery-'));
 const today = new Date().toISOString().slice(0, 10);
 let slowServer;
+let retryServer;
+let failedServer;
+let retryRoot;
+let failedRoot;
 try {
   writeJson(path.join(root, 'docs/reference/knowledge_inbox/registry.json'), {
     generatedAt: new Date().toISOString(),
@@ -162,6 +201,85 @@ try {
   const weeklyTimeoutOverrideResult = JSON.parse(weeklyTimeoutOverride.stdout);
   assert.strictEqual(weeklyTimeoutOverrideResult.result.ok, true, weeklyTimeoutOverride.stdout);
   assert.strictEqual(weeklyTimeoutOverrideResult.result.resultCount, 10);
+
+  const retryUrl = 'https://pomoc.comarch.pl/test/sprint-retry-2026';
+  const retrySearchPayload = Object.fromEntries(Object.keys(fixtures).map((namespace) => [namespace, []]));
+  retrySearchPayload.ComarchOptimaSprint = [{
+    title: 'Transient Sprint fixture',
+    url: retryUrl,
+    snippet: 'Current Sprint source requiring a transient LLM retry.',
+    text: 'Detailed Sprint retry fixture content.',
+    sourceType: 'official',
+    publishedDate: '2026-06-06T08:00:00.000Z',
+    retrievedAt: '2026-06-06T09:00:00.000Z',
+  }];
+
+  retryRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'erp-kb-dashboard-discovery-retry-'));
+  writeJson(path.join(retryRoot, 'docs/reference/knowledge_inbox/registry.json'), {
+    generatedAt: new Date().toISOString(),
+    entries: [],
+  });
+  const retrySearchMock = path.join(retryRoot, 'search.json');
+  writeJson(retrySearchMock, retrySearchPayload);
+  retryServer = await startAssessmentServer({ url: retryUrl, failuresBeforeSuccess: 1 });
+  const { port: retryPort } = retryServer.server.address();
+  const retryEnv = {
+    ...process.env,
+    ROOT: retryRoot,
+    OPENSPG_API_BASE: `http://127.0.0.1:${retryPort}`,
+    OPENSPG_LLM_ENDPOINT: '/v1/chat/completions',
+    OPENSPG_LLM_APP_ID: '4',
+    OPENSPG_LLM_SESSION_ID: '4',
+    OPENSPG_COOKIE: 'test-cookie=1',
+    ERP_KB_DISCOVERY_LLM_TIMEOUT_MS: '500',
+    ERP_KB_TRANSIENT_RETRY_DELAY_MS: '0',
+    ERP_KB_DISCOVERY_SEARCH_MOCK_FILE: retrySearchMock,
+  };
+  const retryRun = await runDiscoveryAsync(retryEnv, ['--daily', '--dry-run', '--limit', '1']);
+  assert.strictEqual(retryRun.status, 0, retryRun.stderr || retryRun.stdout);
+  const retryResult = JSON.parse(retryRun.stdout).result;
+  assert.strictEqual(retryResult.ok, true);
+  assert.strictEqual(retryResult.candidateCount, 1);
+  assert.deepStrictEqual(retryResult.errors, []);
+  assert.strictEqual(retryServer.requestCount(), 2);
+  assert.strictEqual(
+    fs.readdirSync(path.join(retryRoot, 'data/dashboard/discovery/candidates')).length,
+    1,
+  );
+
+  failedRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'erp-kb-dashboard-discovery-failed-'));
+  writeJson(path.join(failedRoot, 'docs/reference/knowledge_inbox/registry.json'), {
+    generatedAt: new Date().toISOString(),
+    entries: [],
+  });
+  const failedSearchMock = path.join(failedRoot, 'search.json');
+  writeJson(failedSearchMock, retrySearchPayload);
+  failedServer = await startAssessmentServer({ url: retryUrl, failuresBeforeSuccess: 2 });
+  const { port: failedPort } = failedServer.server.address();
+  const failedRun = await runDiscoveryAsync({
+    ...retryEnv,
+    ROOT: failedRoot,
+    OPENSPG_API_BASE: `http://127.0.0.1:${failedPort}`,
+    ERP_KB_DISCOVERY_SEARCH_MOCK_FILE: failedSearchMock,
+  }, ['--daily', '--dry-run', '--limit', '1']);
+  assert.strictEqual(failedRun.status, 1);
+  const failedResult = JSON.parse(failedRun.stdout).result;
+  assert.strictEqual(failedResult.ok, false);
+  assert.strictEqual(failedResult.errors.length, 1);
+  assert.strictEqual(failedResult.errors[0].queryId, 'seed_ComarchOptimaSprint');
+  assert.strictEqual(failedResult.errors[0].stage, 'llm');
+  assert.strictEqual(failedServer.requestCount(), 2);
+  assert.strictEqual(
+    fs.existsSync(path.join(failedRoot, 'data/dashboard/discovery/candidates')),
+    false,
+  );
+
+  const failedReport = JSON.parse(fs.readFileSync(
+    path.join(failedRoot, 'docs/reference/ERP_KB_Discovery_Coverage_Report.json'),
+    'utf8',
+  ));
+  assert.deepStrictEqual(failedReport.recentRuns[0].errors, failedResult.errors);
+  assert.strictEqual(failedReport.overall, 'PASS');
 
   const daily = runDiscovery(root, ['--daily', '--dry-run', '--limit', '1'], llmMock, searchMock);
   assert.strictEqual(daily.status, 0, daily.stderr || daily.stdout);
@@ -281,6 +399,14 @@ try {
   assert.strictEqual(duplicateCandidate.status, 'DUPLICATE');
   assert.strictEqual(duplicateCandidate.duplicateType, 'existing_corpus');
 
+  discovery.writeDiscoveryRun({
+    id: 'legacy_run_error_without_stage',
+    type: 'daily',
+    ok: false,
+    startedAt: '9999-01-01T00:00:00.000Z',
+    finishedAt: '9999-01-01T00:00:01.000Z',
+    errors: [{ queryId: 'legacy_query', message: 'Legacy query failure.' }],
+  });
   const report = discovery.refreshDiscoveryReport();
   assert.strictEqual(report.overall, 'PASS');
   assert.deepStrictEqual(report.coverage, { configuredKbs: 10, coveredKbs: 10 });
@@ -293,6 +419,10 @@ try {
   assert.strictEqual(report.feedback.calibration.size, 15);
   assert.strictEqual(report.feedback.recentNotes.length, 2);
   assert.strictEqual(report.totals.duplicates, 1);
+  assert.deepStrictEqual(
+    report.recentRuns.find((run) => run.id === 'legacy_run_error_without_stage').errors,
+    [{ queryId: 'legacy_query', stage: 'query', message: 'Legacy query failure.' }],
+  );
   const priority = discovery.discoveryCandidatePriority(
     discovery.readDiscoveryCandidate('candidate_undo_route'),
   );
@@ -423,8 +553,16 @@ try {
     autoDraftPassed,
   }, null, 2)}\n`);
 } finally {
+  if (retryServer) {
+    await new Promise((resolve) => retryServer.server.close(resolve));
+  }
+  if (failedServer) {
+    await new Promise((resolve) => failedServer.server.close(resolve));
+  }
   if (slowServer) {
     await new Promise((resolve) => slowServer.close(resolve));
   }
+  if (retryRoot) fs.rmSync(retryRoot, { recursive: true, force: true });
+  if (failedRoot) fs.rmSync(failedRoot, { recursive: true, force: true });
   fs.rmSync(root, { recursive: true, force: true });
 }

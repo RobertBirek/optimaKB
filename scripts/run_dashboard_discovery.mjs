@@ -42,6 +42,7 @@ import { contentHash, findExistingDraftBySourceUrl, normalizeUrl } from './lib/d
 import { TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { OPENSPG_API_BASE } from './lib/config.mjs';
 import { evaluateAutopilotDecisions, applyAutopilotDecisions, loadAutopilotState, effectiveThreshold, isKbFrozen, isDomainFrozen, autopilotSummary } from './lib/dashboard_autopilot.mjs';
+import { httpError, withTransientRetry } from './lib/transient_retry.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const API_BASE = OPENSPG_API_BASE;
@@ -111,28 +112,32 @@ async function callLlm(prompt, mockKeys = [], timeoutMs = TIMEOUT_MS) {
   }
   const cookie = readOpenSpgCookie({ required: true });
   if (!APP_ID || !SESSION_ID) throw new Error('Discovery LLM app/session is not configured');
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const response = await fetch(`${API_BASE}${ENDPOINT}`, {
-      method: 'POST',
-      headers: { Cookie: cookie, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        ...(MODEL ? { model: MODEL } : {}),
-        app_id: /^\d+$/.test(APP_ID) ? Number(APP_ID) : APP_ID,
-        session_id: /^\d+$/.test(SESSION_ID) ? Number(SESSION_ID) : SESSION_ID,
-        prompt: [{ type: 'text', content: prompt }],
-        thinking_enabled: false,
-        search_enabled: false,
-      }),
-      signal: controller.signal,
-    });
-    const body = await response.text();
-    if (!response.ok) throw new Error(`Discovery LLM HTTP ${response.status}: ${body.slice(0, 300)}`);
-    return parseJson(parseSseAnswer(body));
-  } finally {
-    clearTimeout(timer);
-  }
+  return withTransientRetry(async () => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const response = await fetch(`${API_BASE}${ENDPOINT}`, {
+        method: 'POST',
+        headers: { Cookie: cookie, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...(MODEL ? { model: MODEL } : {}),
+          app_id: /^\d+$/.test(APP_ID) ? Number(APP_ID) : APP_ID,
+          session_id: /^\d+$/.test(SESSION_ID) ? Number(SESSION_ID) : SESSION_ID,
+          prompt: [{ type: 'text', content: prompt }],
+          thinking_enabled: false,
+          search_enabled: false,
+        }),
+        signal: controller.signal,
+      });
+      const body = await response.text();
+      if (!response.ok) {
+        throw httpError(`Discovery LLM HTTP ${response.status}: ${body.slice(0, 300)}`, response.status);
+      }
+      return parseJson(parseSseAnswer(body));
+    } finally {
+      clearTimeout(timer);
+    }
+  });
 }
 
 function searchMock(query) {
@@ -256,8 +261,10 @@ async function runDaily(options) {
     async (query) => {
     const profile = profileForNamespace(query.kbNamespace, policy);
     run.queryCount += 1;
+    let stage = 'search';
     try {
       const search = await searchQuery(query, profile, options.limit);
+      stage = 'query';
       const results = search.results || [];
       let corpusDuplicateCount = 0;
       run.resultCount += results.length;
@@ -281,7 +288,9 @@ async function runDaily(options) {
         claimedUrls.add(canonicalUrl);
         unseenResults.push(result);
       }
+      stage = 'llm';
       const assessments = await assessResults(query, profile, unseenResults, learningState);
+      stage = 'query';
       for (const { result, assessment } of assessments) {
         const canonicalUrl = normalizeUrl(result.url);
         const targetProfile = profileForNamespace(assessment.targetKb, policy) || profile;
@@ -364,7 +373,7 @@ async function runDaily(options) {
       }
     } catch (error) {
       run.ok = false;
-      run.errors.push({ queryId: query.id, message: error.message });
+      run.errors.push({ queryId: query.id, stage, message: error.message });
     }
     },
   );

@@ -1595,6 +1595,13 @@ export function refreshDiscoveryReport() {
       resultCount: run.resultCount || 0,
       draftedCount: run.draftedCount || 0,
       error: run.error || '',
+      errors: Array.isArray(run.errors)
+        ? run.errors.map((error) => ({
+          queryId: String(error.queryId || ''),
+          stage: ['search', 'llm', 'query'].includes(error.stage) ? error.stage : 'query',
+          message: String(error.message || ''),
+        }))
+        : [],
     })),
   };
   fs.writeFileSync(DISCOVERY_REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
