@@ -444,6 +444,20 @@ try {
     )),
     true,
   );
+  const canaryJsonPath = path.join(
+    root,
+    'docs/reference/ERP_KB_Dashboard_Canary_Readiness_Report.json',
+  );
+  const canaryMarkdownPath = canaryJsonPath.replace(/\.json$/, '.md');
+  automation.refreshAutomationCanaryReport();
+  const stableCanaryJson = fs.readFileSync(canaryJsonPath);
+  const stableCanaryMarkdown = fs.readFileSync(canaryMarkdownPath);
+  const stableCanaryReport = JSON.parse(stableCanaryJson.toString('utf8'));
+  await new Promise((resolve) => setTimeout(resolve, 25));
+  const unchangedCanaryReport = automation.refreshAutomationCanaryReport();
+  assert.deepStrictEqual(unchangedCanaryReport, stableCanaryReport);
+  assert.deepStrictEqual(fs.readFileSync(canaryJsonPath), stableCanaryJson);
+  assert.deepStrictEqual(fs.readFileSync(canaryMarkdownPath), stableCanaryMarkdown);
 
   const automationModule = await import(`./lib/dashboard_automation.mjs?test=${Date.now()}`);
   assert.throws(
@@ -478,6 +492,7 @@ try {
       'audit_malformed_line_detection',
       'audit_origin_deletion_detection',
       'canary_readiness_report',
+      'canary_readiness_report_timestamp_stability',
       'auto_reroute_threshold_rejection',
     ],
   }, null, 2)}\n`);

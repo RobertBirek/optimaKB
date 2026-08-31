@@ -74,6 +74,17 @@ function readJson(filePath, fallback = null) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
+function reportSemanticValue(value) {
+  if (Array.isArray(value)) return value.map(reportSemanticValue);
+  if (!value || typeof value !== 'object') return value;
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => key !== 'generatedAt')
+      .sort(([left], [right]) => left.localeCompare(right))
+      .map(([key, nestedValue]) => [key, reportSemanticValue(nestedValue)]),
+  );
+}
+
 function clampConfidence(value) {
   const number = Number(value);
   if (!Number.isFinite(number)) return DEFAULT_CONFIG.minimumConfidence;
@@ -681,6 +692,14 @@ export function refreshAutomationCanaryReport(options = {}) {
       })),
     },
   };
+  const existingReport = readJson(AUTOMATION_CANARY_REPORT_PATH, null);
+  if (
+    existingReport
+    && JSON.stringify(reportSemanticValue(existingReport))
+      === JSON.stringify(reportSemanticValue(report))
+  ) {
+    return existingReport;
+  }
   fs.writeFileSync(
     AUTOMATION_CANARY_REPORT_PATH,
     `${JSON.stringify(report, null, 2)}\n`,
