@@ -653,6 +653,7 @@ export function classifyQuestion(question, routing, allowedNamespaces) {
   const q = normalizeText(question);
   const hasNewsContext = hasAny(q, [
     'news',
+    'newsy',
     'spolecznosc',
     'aktualnosci',
     'aktualnosc',
