@@ -1,6 +1,6 @@
 # KB Quality Gate Report
 
-Generated at: 2026-08-24T03:39:50.569Z
+Generated at: 2026-08-31T18:07:56.698Z
 
 Overall: `WARN`
 
@@ -112,17 +112,17 @@ Overall: `WARN`
 
 - Verdict: `PASS`
 - Export dir: `exports/optima_business_semantics/v1`
-- Staging generatedAt: `2026-07-30T13:12:18.455Z`
+- Staging generatedAt: `2026-08-31T17:40:31.938Z`
 - Required files:
   - `business_domain.csv`: exists `true`, rows `8`
-  - `business_description.csv`: exists `true`, rows `630`
+  - `business_description.csv`: exists `true`, rows `639`
   - `code_meaning.csv`: exists `true`, rows `12`
   - `business_rule.csv`: exists `true`, rows `21`
 - Jobs:
   - `336` `FINISH` `business_domain.csv`
-  - `337` `FINISH` `business_description.csv`
   - `338` `FINISH` `code_meaning.csv`
   - `339` `FINISH` `business_rule.csv`
+  - `681` `FINISH` `business_description.csv`
 
 ## ComarchOptimaPartnerTechnical
 
@@ -175,18 +175,18 @@ Overall: `WARN`
 
 - Verdict: `PASS`
 - Export dir: `exports/community_news/v1`
-- Staging generatedAt: `2026-08-24T03:15:28.985Z`
+- Staging generatedAt: `2026-08-29T03:15:27.213Z`
 - Required files:
-  - `reference_document.csv`: exists `true`, rows `168`
+  - `reference_document.csv`: exists `true`, rows `167`
   - `news_topic.csv`: exists `true`, rows `37`
-  - `chunk.csv`: exists `true`, rows `593`
+  - `chunk.csv`: exists `true`, rows `590`
 - Jobs:
   - `209` `FINISH` `knowledge_route.csv`
   - `210` `FINISH` `entry_guide.csv`
-  - `659` `FINISH` `reference_document.csv`
-  - `660` `FINISH` `news_topic.csv`
-  - `661` `FINISH` `community_attachment.csv`
-  - `662` `FINISH` `chunk.csv`
+  - `676` `FINISH` `reference_document.csv`
+  - `677` `FINISH` `news_topic.csv`
+  - `678` `FINISH` `community_attachment.csv`
+  - `679` `FINISH` `chunk.csv`
 
 ## TaxbellLegalReference
 
@@ -252,7 +252,7 @@ Overall: `WARN`
 
 - Verdict: `PASS`
 - Export dir: `exports/owa_ontology/v1`
-- Staging generatedAt: `2026-07-30T13:08:56.973Z`
+- Staging generatedAt: `2026-08-31T17:18:32.273Z`
 - Required files:
   - `ontology_entity.csv`: exists `true`, rows `67`
   - `ontology_field.csv`: exists `true`, rows `109`

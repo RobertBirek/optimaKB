@@ -1,0 +1,18 @@
+# Zestawy promocyjne – Baza Wiedzy programu Comarch ERP Optima
+- draftId: `draft_2026-08-28_542b7ff6_zestawy-promocyjne-baza-wiedzy-programu-comarch-erp-optima`
+- kbNamespace: `ComarchOptimaBusinessSemantics`
+- status: `promoted`
+- promotedAt: `2026-08-31T17:38:56.737Z`
+- sourceUrl: https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/zestawy-promocyjne/
+- tags: `exa`, `auto-draft`, `recency_question`
+- reviewNote: Corrected to source-faithful Zestawy Promocyjne scope; unsupported COM/SQL claims removed.
+## Content
+Zestawy Promocyjne pozwalają podczas sprzedaży towaru głównego lub usługi objętej promocją zaoferować klientowi pakiet dodatkowych towarów i usług w obniżonej cenie. Po wybraniu zestawu program dodaje jego elementy w ustalonych ilościach, jednostkach i cenach.
+
+Zestaw można dodać do Rezerwacji Odbiorcy, Faktury Pro Forma, Faktury Sprzedaży, Paragonu i Wydania Zewnętrznego. Na pustym dokumencie lub bez wskazanej pozycji lista pokazuje promocje aktywne w bieżącym momencie; filtr pozwala wybrać zestaw obowiązujący w innym okresie. Gdy kursor wskazuje towar na dokumencie, program ogranicza listę aktualnych promocji do tego towaru, a po wyborze usuwa wskazaną pozycję i dodaje cały zestaw na końcu listy. Wskazanie elementu dodanego wcześniej zestawu nie ogranicza listy do tego towaru.
+
+Kolumna Kod zestawu identyfikuje pozycje pakietu, a symbol [v] oznacza towar główny. Dla każdego elementu można zmienić kategorię, PKWiU i stawkę VAT. Dla towaru głównego można też zmienić ilość i magazyn. Zmiana ilości towaru głównego przelicza ilości pozostałych elementów. Zmiana jego magazynu obejmuje cały pakiet, ponieważ wszystkie elementy zestawu muszą pochodzić z jednego magazynu. Nazwę i opis pozycji można edytować zgodnie z ustawieniem na karcie towaru.
+
+Rabat z nagłówka dokumentu ani rabaty z menu Ogólne/Rabaty nie zmieniają ceny zestawu. Program nie agreguje zestawów: po wielokrotnym dodaniu tego samego zestawu każdy z nich przechodzi osobno na dokument docelowy. Cały zestaw usuwa się z pozycji towaru głównego; pojedynczych elementów nie można usuwać.
+
+Brak jednego z elementów może zablokować dodanie lub zapis zestawu, zależnie od ustawienia kontroli ilości. Dokument WZ albo FS/PA z pobraniem wymaga usunięcia całego niekompletnego zestawu. Przy konwersji RO/PF z pobieraniem ilości dostępnej program nie przenosi niekompletnego zestawu na dokument docelowy. Na korektach kolumna Kod zestawu wskazuje pochodzenie pozycji, a elementy koryguje się tak jak pozostałe towary.

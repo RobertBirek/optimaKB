@@ -1,0 +1,9 @@
+name,description
+Handel,"Dokumenty handlowe — sprzedaż, zakup, korekty, zamówienia, paragony."
+Magazyn,"Gospodarka magazynowa — towary, stany, dostawy, ceny."
+Kontrahenci,"Kontrahenci — dane firmowe, adresy, dane kontaktowe."
+Kadry-Płace,"Kadry i płace — pracownicy, umowy, wynagrodzenia, urlopy."
+Finanse-Księgowość,"Finanse i księgowość — dekrety, konta, rejestry VAT, płatności."
+Administracja,"Administracja systemu — operatorzy, konfiguracja, bazy, uprawnienia."
+CRM,"Zarządzanie relacjami z klientami — leady, oferty, serwis."
+Ogólne,Tabele ogólne i pomocnicze.

@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-06-11T12:49:05.608Z",
+  "projectId": 15,
+  "namespace": "ComarchOptimaBusinessSemantics",
+  "files": [
+    {
+      "fileName": "business_domain.csv",
+      "rowCount": 8,
+      "columns": [
+        "name",
+        "description"
+      ],
+      "uploadedUrl": "http://release-openspg-minio:9000/builder/upload/05a4bb9bbeeb2958b974d7f738bb233f/business_domain.csv"
+    },
+    {
+      "fileName": "code_meaning.csv",
+      "rowCount": 832,
+      "columns": [
+        "id",
+        "name",
+        "columnRefId",
+        "codeValue",
+        "label",
+        "source",
+        "domainName"
+      ],
+      "uploadedUrl": "http://release-openspg-minio:9000/builder/upload/08ebdd9bd32f911fe605ef459d38ba02/code_meaning.csv"
+    },
+    {
+      "fileName": "business_rule.csv",
+      "rowCount": 2412,
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "descriptionPreview",
+        "descriptionHash",
+        "descriptionLength",
+        "tableRefId",
+        "ruleType",
+        "expression",
+        "isHardConstraint",
+        "domainName"
+      ],
+      "uploadedUrl": "http://release-openspg-minio:9000/builder/upload/1ff56e00d743b106d9df191a85d9200e/business_rule.csv"
+    },
+    {
+      "fileName": "business_description.csv",
+      "rowCount": 639,
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "descriptionPreview",
+        "descriptionHash",
+        "descriptionLength",
+        "tableRefId",
+        "columnRefId",
+        "source",
+        "language",
+        "domainName"
+      ],
+      "uploadedUrl": "http://release-openspg-minio:9000/builder/upload/5de389eca91a4b10a34881be2e08b598/business_description.csv"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-08-31T17:40:31.938Z",
+  "namespace": "ComarchOptimaBusinessSemantics",
+  "mode": "helper_only",
+  "promotedDraftCount": 4,
+  "promotedDescriptionCount": 9,
+  "files": [
+    {
+      "fileName": "business_domain.csv",
+      "rowCount": 8,
+      "columns": [
+        "name",
+        "description"
+      ]
+    },
+    {
+      "fileName": "business_description.csv",
+      "rowCount": 639,
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "descriptionPreview",
+        "descriptionHash",
+        "descriptionLength",
+        "tableRefId",
+        "columnRefId",
+        "source",
+        "language",
+        "domainName"
+      ]
+    },
+    {
+      "fileName": "code_meaning.csv",
+      "rowCount": 12,
+      "columns": [
+        "id",
+        "name",
+        "columnRefId",
+        "codeValue",
+        "label",
+        "source",
+        "domainName"
+      ]
+    },
+    {
+      "fileName": "business_rule.csv",
+      "rowCount": 21,
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "descriptionPreview",
+        "descriptionHash",
+        "descriptionLength",
+        "tableRefId",
+        "ruleType",
+        "expression",
+        "isHardConstraint",
+        "domainName"
+      ]
+    }
+  ]
+}

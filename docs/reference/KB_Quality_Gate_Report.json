@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T03:39:50.569Z",
+  "generatedAt": "2026-08-31T18:07:56.698Z",
   "overall": "WARN",
   "results": [
     {
@@ -595,7 +595,7 @@
       "kbName": "Comarch Optima Business Semantics",
       "verdict": "PASS",
       "exportDir": "exports/optima_business_semantics/v1",
-      "generatedAt": "2026-07-30T13:12:18.455Z",
+      "generatedAt": "2026-08-31T17:40:31.938Z",
       "errors": [],
       "warnings": [],
       "files": [
@@ -611,7 +611,7 @@
         {
           "fileName": "business_description.csv",
           "exists": true,
-          "rowCount": 630,
+          "rowCount": 639,
           "columns": [
             "id",
             "name",
@@ -668,13 +668,6 @@
           "gmtModified": "2026-06-11 14:49:31"
         },
         {
-          "id": 337,
-          "fileName": "business_description.csv",
-          "status": "FINISH",
-          "jobName": "COBS BusinessDescription CSV Import",
-          "gmtModified": "2026-06-11 14:50:33"
-        },
-        {
           "id": 338,
           "fileName": "code_meaning.csv",
           "status": "FINISH",
@@ -687,6 +680,13 @@
           "status": "FINISH",
           "jobName": "COBS BusinessRule CSV Import",
           "gmtModified": "2026-06-11 14:53:43"
+        },
+        {
+          "id": 681,
+          "fileName": "business_description.csv",
+          "status": "FINISH",
+          "jobName": "COBS BusinessDescription CSV Import",
+          "gmtModified": "2026-08-31 19:44:21"
         }
       ]
     },
@@ -1014,14 +1014,14 @@
       "kbName": "Comarch Community News",
       "verdict": "PASS",
       "exportDir": "exports/community_news/v1",
-      "generatedAt": "2026-08-24T03:15:28.985Z",
+      "generatedAt": "2026-08-29T03:15:27.213Z",
       "errors": [],
       "warnings": [],
       "files": [
         {
           "fileName": "reference_document.csv",
           "exists": true,
-          "rowCount": 168,
+          "rowCount": 167,
           "columns": [
             "id",
             "name",
@@ -1059,7 +1059,7 @@
         {
           "fileName": "chunk.csv",
           "exists": true,
-          "rowCount": 593,
+          "rowCount": 590,
           "columns": [
             "id",
             "name",
@@ -1088,32 +1088,32 @@
           "jobName": "CCN EntryGuide CSV Import"
         },
         {
-          "id": 659,
+          "id": 676,
           "fileName": "reference_document.csv",
           "status": "FINISH",
           "jobName": "CCN ReferenceDocument CSV Import",
-          "gmtModified": "2026-08-24 05:28:36"
+          "gmtModified": "2026-08-28 05:25:42"
         },
         {
-          "id": 660,
+          "id": 677,
           "fileName": "news_topic.csv",
           "status": "FINISH",
           "jobName": "CCN NewsTopic CSV Import",
-          "gmtModified": "2026-08-24 05:29:57"
+          "gmtModified": "2026-08-28 05:27:37"
         },
         {
-          "id": 661,
+          "id": 678,
           "fileName": "community_attachment.csv",
           "status": "FINISH",
           "jobName": "CCN CommunityAttachment CSV Import",
-          "gmtModified": "2026-08-24 05:32:13"
+          "gmtModified": "2026-08-28 05:28:43"
         },
         {
-          "id": 662,
+          "id": 679,
           "fileName": "chunk.csv",
           "status": "FINISH",
           "jobName": "CCN Chunk CSV Import",
-          "gmtModified": "2026-08-24 05:34:18"
+          "gmtModified": "2026-08-28 05:30:08"
         }
       ]
     },
@@ -1475,7 +1475,7 @@
       "kbName": "OWA Platform Optima Ontology",
       "verdict": "PASS",
       "exportDir": "exports/owa_ontology/v1",
-      "generatedAt": "2026-07-30T13:08:56.973Z",
+      "generatedAt": "2026-08-31T17:18:32.273Z",
       "errors": [],
       "warnings": [],
       "files": [
