@@ -469,6 +469,30 @@ try {
   assert.deepStrictEqual(fs.readFileSync(canaryJsonPath), stableCanaryJson);
   assert.deepStrictEqual(fs.readFileSync(canaryMarkdownPath), stableCanaryMarkdown);
 
+  fs.writeFileSync(canaryMarkdownPath, '# stale canary report\n', 'utf8');
+  const staleMarkdownRepair = automation.refreshAutomationCanaryReport();
+  assert.deepStrictEqual(staleMarkdownRepair, stableCanaryReport);
+  assert.deepStrictEqual(fs.readFileSync(canaryJsonPath), stableCanaryJson);
+  assert.deepStrictEqual(fs.readFileSync(canaryMarkdownPath), stableCanaryMarkdown);
+
+  fs.rmSync(canaryMarkdownPath);
+  const missingMarkdownRepair = automation.refreshAutomationCanaryReport();
+  assert.deepStrictEqual(missingMarkdownRepair, stableCanaryReport);
+  assert.deepStrictEqual(fs.readFileSync(canaryJsonPath), stableCanaryJson);
+  assert.deepStrictEqual(fs.readFileSync(canaryMarkdownPath), stableCanaryMarkdown);
+
+  fs.writeFileSync(canaryJsonPath, '{malformed\n', 'utf8');
+  const recoveredCanaryReport = automation.refreshAutomationCanaryReport();
+  const recoveredCanaryJson = fs.readFileSync(canaryJsonPath);
+  assert.deepStrictEqual(JSON.parse(recoveredCanaryJson.toString('utf8')), recoveredCanaryReport);
+  assert.strictEqual(
+    fs.readFileSync(canaryMarkdownPath, 'utf8'),
+    stableCanaryMarkdown.toString('utf8').replace(
+      stableCanaryReport.generatedAt,
+      recoveredCanaryReport.generatedAt,
+    ),
+  );
+
   const automationModule = await import(`./lib/dashboard_automation.mjs?test=${Date.now()}`);
   assert.throws(
     () => automationModule.applyAutomationRerouteAuto({ id: 'x', kbNamespace: 'Src', status: 'REVIEWED' }, {}),
@@ -503,6 +527,7 @@ try {
       'audit_origin_deletion_detection',
       'canary_readiness_report',
       'canary_readiness_report_timestamp_stability',
+      'canary_readiness_report_artifact_recovery',
       'auto_reroute_threshold_rejection',
     ],
   }, null, 2)}\n`);

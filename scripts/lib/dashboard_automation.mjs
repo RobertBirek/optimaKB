@@ -85,6 +85,32 @@ function reportSemanticValue(value) {
   );
 }
 
+function renderAutomationCanaryMarkdown(report) {
+  const { gate, queue } = report;
+  return [
+    '# ERP KB Dashboard Canary Readiness Report',
+    '',
+    `Generated: \`${report.generatedAt}\``,
+    '',
+    `- Status: \`${report.overall}\``,
+    `- Unique live samples: \`${gate.metrics.samples}/${gate.requirements.minimumSamples}\``,
+    `- Adjudicated decisions: \`${gate.metrics.decisions}\``,
+    `- Accuracy: \`${Math.round(gate.metrics.accuracy * 100)}%\``,
+    `- False-positive publishes: \`${gate.metrics.falsePositives}\``,
+    `- Pending adjudications: \`${queue.pending}\``,
+    '',
+    ...(gate.blockers.length ? ['## Blockers', '', ...gate.blockers.map((item) => `- ${item}`), ''] : []),
+    '## Queue',
+    '',
+    '| Job | Draft | Status | Suggested | Priority |',
+    '|---|---|---|---|---:|',
+    ...queue.items.map((item) => (
+      `| ${item.jobId} | ${item.draftId} | ${item.status} | ${item.recommendedAction} | ${item.priority} |`
+    )),
+    '',
+  ].join('\n');
+}
+
 function clampConfidence(value) {
   const number = Number(value);
   if (!Number.isFinite(number)) return DEFAULT_CONFIG.minimumConfidence;
@@ -692,12 +718,26 @@ export function refreshAutomationCanaryReport(options = {}) {
       })),
     },
   };
-  const existingReport = readJson(AUTOMATION_CANARY_REPORT_PATH, null);
+  const markdownPath = AUTOMATION_CANARY_REPORT_PATH.replace(/\.json$/, '.md');
+  let existingReport = null;
+  try {
+    existingReport = readJson(AUTOMATION_CANARY_REPORT_PATH, null);
+  } catch (error) {
+    if (!(error instanceof SyntaxError)) throw error;
+    // A malformed generated artifact is equivalent to no existing report.
+  }
   if (
     existingReport
     && JSON.stringify(reportSemanticValue(existingReport))
       === JSON.stringify(reportSemanticValue(report))
   ) {
+    const expectedMarkdown = renderAutomationCanaryMarkdown(existingReport);
+    const existingMarkdown = fs.existsSync(markdownPath)
+      ? fs.readFileSync(markdownPath, 'utf8')
+      : null;
+    if (existingMarkdown !== expectedMarkdown) {
+      fs.writeFileSync(markdownPath, expectedMarkdown, 'utf8');
+    }
     return existingReport;
   }
   fs.writeFileSync(
@@ -705,29 +745,7 @@ export function refreshAutomationCanaryReport(options = {}) {
     `${JSON.stringify(report, null, 2)}\n`,
     { encoding: 'utf8', mode: 0o640 },
   );
-  const lines = [
-    '# ERP KB Dashboard Canary Readiness Report',
-    '',
-    `Generated: \`${report.generatedAt}\``,
-    '',
-    `- Status: \`${report.overall}\``,
-    `- Unique live samples: \`${gate.metrics.samples}/${gate.requirements.minimumSamples}\``,
-    `- Adjudicated decisions: \`${gate.metrics.decisions}\``,
-    `- Accuracy: \`${Math.round(gate.metrics.accuracy * 100)}%\``,
-    `- False-positive publishes: \`${gate.metrics.falsePositives}\``,
-    `- Pending adjudications: \`${queue.length}\``,
-    '',
-    ...(gate.blockers.length ? ['## Blockers', '', ...gate.blockers.map((item) => `- ${item}`), ''] : []),
-    '## Queue',
-    '',
-    '| Job | Draft | Status | Suggested | Priority |',
-    '|---|---|---|---|---:|',
-    ...report.queue.items.map((item) => (
-      `| ${item.jobId} | ${item.draftId} | ${item.status} | ${item.recommendedAction} | ${item.priority} |`
-    )),
-    '',
-  ];
-  fs.writeFileSync(AUTOMATION_CANARY_REPORT_PATH.replace(/\.json$/, '.md'), lines.join('\n'), 'utf8');
+  fs.writeFileSync(markdownPath, renderAutomationCanaryMarkdown(report), 'utf8');
   return report;
 }
 
