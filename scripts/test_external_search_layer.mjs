@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 
 import http from 'http';
+import assert from 'assert';
 
-function sendJson(res, payload) {
+function sendJson(res, payload, status = 200) {
   const body = JSON.stringify(payload);
-  res.writeHead(200, {
+  res.writeHead(status, {
     'Content-Type': 'application/json',
     'Content-Length': Buffer.byteLength(body, 'utf8'),
   });
   res.end(body);
 }
+
+let timeoutRequestCount = 0;
+let clientErrorRequestCount = 0;
 
 const server = http.createServer(async (req, res) => {
   if (req.method !== 'POST' || req.url !== '/search') {
@@ -21,6 +25,20 @@ const server = http.createServer(async (req, res) => {
   const chunks = [];
   for await (const chunk of req) chunks.push(chunk);
   const payload = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+  if (payload.query === 'retry timeout') {
+    timeoutRequestCount += 1;
+    if (timeoutRequestCount === 1) {
+      setTimeout(() => {
+        if (!res.destroyed) sendJson(res, { results: [] });
+      }, 75);
+      return;
+    }
+  }
+  if (payload.query === 'no retry client error') {
+    clientErrorRequestCount += 1;
+    sendJson(res, { error: 'bad request' }, 400);
+    return;
+  }
   sendJson(res, {
     requestId: 'mock-req-1',
     resolvedSearchType: payload.type || 'auto',
@@ -57,9 +75,28 @@ process.env.EXA_PROVIDER = 'api';
 process.env.EXA_API_KEY = 'test-key';
 process.env.EXA_API_URL = `http://127.0.0.1:${port}/search`;
 process.env.EXA_DEFAULT_NUM_RESULTS = '5';
+process.env.EXA_REQUEST_TIMEOUT_MS = '25';
+process.env.ERP_KB_TRANSIENT_RETRY_DELAY_MS = '0';
 
+// Warm Node 18's fetch path so the 25 ms limit measures provider response time.
+const warmupResponse = await fetch(process.env.EXA_API_URL, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ query: 'warmup' }),
+});
+await warmupResponse.text();
 const { searchExternalSources } = await import('./lib/external_search.mjs');
 const { answerQuestion } = await import('./erp_knowledge_answer.mjs');
+
+const retriedSearch = await searchExternalSources({ query: 'retry timeout', numResults: 1 });
+assert.strictEqual(retriedSearch.ok, true);
+assert.strictEqual(timeoutRequestCount, 2);
+
+await assert.rejects(
+  () => searchExternalSources({ query: 'no retry client error', numResults: 1 }),
+  /HTTP 400/,
+);
+assert.strictEqual(clientErrorRequestCount, 1);
 
 const searchResult = await searchExternalSources({
   query: 'Czy były ostatnio newsy o Comarch Betterfly?',

@@ -7,6 +7,7 @@ import { submitKnowledgeDraft } from './knowledge_inbox.mjs';
 import { TARGET_KBS, loadPromotedKnowledge, listInboxDrafts } from './promoted_knowledge.mjs';
 import { cleanBoilerplate } from './content_cleaner.mjs';
 import { loadProviderSecrets } from './provider_secrets.mjs';
+import { httpError, withTransientRetry } from './transient_retry.mjs';
 import {
   buildExternalCitationLine,
   classifySourceTier,
@@ -165,10 +166,13 @@ async function searchViaApi({ query, numResults, includeDomains = [], type = 'au
     try {
       json = JSON.parse(textBody);
     } catch {
-      throw new Error(`Exa API returned non-JSON response: ${textBody.slice(0, 300)}`);
+      throw httpError(`Exa API returned non-JSON response: ${textBody.slice(0, 300)}`, response.status);
     }
     if (!response.ok) {
-      throw new Error(`Exa API search failed with HTTP ${response.status}: ${textBody.slice(0, 300)}`);
+      throw httpError(
+        `Exa API search failed with HTTP ${response.status}: ${textBody.slice(0, 300)}`,
+        response.status,
+      );
     }
     const rawResults = Array.isArray(json.results) ? json.results : [];
     return {
@@ -327,9 +331,11 @@ export async function searchExternalSources({
 
   const provider = status.activeProvider;
   const effectiveDomains = includeDomains.length ? includeDomains : [];
-  const searchResult = provider === 'api'
-    ? await searchViaApi({ query, numResults, includeDomains: effectiveDomains, type, category, text })
-    : await searchViaMcp({ query, numResults, includeDomains: effectiveDomains });
+  const searchResult = await withTransientRetry(() => (
+    provider === 'api'
+      ? searchViaApi({ query, numResults, includeDomains: effectiveDomains, type, category, text })
+      : searchViaMcp({ query, numResults, includeDomains: effectiveDomains })
+  ));
   const preferredDomains = preferredDomainsForKb(kbName);
   const filteredResults = allowedSourceTiers.length
     ? searchResult.results.filter((item) => allowedSourceTiers.includes(item.sourceType))
