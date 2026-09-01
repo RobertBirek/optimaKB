@@ -5,6 +5,9 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'optima-duplicate-cleanup-'));
 const day = '2026-06-19';
@@ -67,8 +70,8 @@ fs.writeFileSync(path.join(root, 'docs/reference/knowledge_inbox/registry.json')
   }],
 }, null, 2));
 
-const run = spawnSync(process.execPath, [path.join('/docker/openspg', 'scripts/cleanup_optima_reference_duplicates.mjs')], {
-  cwd: '/docker/openspg',
+const run = spawnSync(process.execPath, [path.join(repoRoot, 'scripts/cleanup_optima_reference_duplicates.mjs')], {
+  cwd: repoRoot,
   env: {
     ...process.env,
     ROOT: root,

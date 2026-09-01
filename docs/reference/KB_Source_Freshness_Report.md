@@ -1,6 +1,6 @@
 # KB Source Freshness Report
 
-Generated at: 2026-08-31T18:06:59.839Z
+Generated at: 2026-09-01T05:33:01.983Z
 Stale threshold: `14` days
 
 Overall: `ACTION_NEEDED`
@@ -46,7 +46,7 @@ Overall: `ACTION_NEEDED`
 - Policy: manual authenticated pass
 - Source files: `322`
 - Newest source: `2026-07-30T13:09:01.570Z`
-- Source age days: `32`
+- Source age days: `33`
 - Export generatedAt: `2026-07-30T13:09:02.307Z`
 - Export behind source: `false`
 - Registry present: `true`
@@ -60,7 +60,7 @@ Overall: `ACTION_NEEDED`
 - Policy: manual file-driven refresh
 - Source files: `58`
 - Newest source: `2026-08-04T09:29:10.108Z`
-- Source age days: `27`
+- Source age days: `28`
 - Export generatedAt: `2026-08-04T09:29:10.108Z`
 - Export behind source: `false`
 - Registry present: `true`
@@ -74,7 +74,7 @@ Overall: `ACTION_NEEDED`
 - Policy: manual file-driven refresh
 - Source files: `11`
 - Newest source: `2026-07-30T13:08:44.174Z`
-- Source age days: `32`
+- Source age days: `33`
 - Export generatedAt: `2026-07-30T13:08:44.176Z`
 - Export behind source: `false`
 - Registry present: `true`

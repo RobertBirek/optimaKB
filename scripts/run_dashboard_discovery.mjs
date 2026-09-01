@@ -397,8 +397,8 @@ async function runDaily(options) {
     const automationLearningPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
     const discoveryLearningPath = path.join(ROOT, 'data/dashboard/learning/discovery_learning_state.json');
     let autoLs = null, discLs = null;
-    try { autoLs = JSON.parse(fs.readFileSync(automationLearningPath, 'utf8')); } catch {}
-    try { discLs = JSON.parse(fs.readFileSync(discoveryLearningPath, 'utf8')); } catch {}
+    try { autoLs = JSON.parse(fs.readFileSync(automationLearningPath, 'utf8')); } catch { /* optional state file */ }
+    try { discLs = JSON.parse(fs.readFileSync(discoveryLearningPath, 'utf8')); } catch { /* optional state file */ }
     const autopilotDecisions = evaluateAutopilotDecisions(autoLs, discLs);
     if (autopilotDecisions.freezeKb.length || autopilotDecisions.freezeDomain.length || autopilotDecisions.throttle.length) {
       applyAutopilotDecisions(autopilotDecisions);
@@ -606,7 +606,7 @@ async function runAutoDraft(options = {}) {
     try {
       const hostname = new URL(candidate.canonicalUrl || '').hostname;
       if (isDomainFrozen(hostname, autopilotState)) continue;
-    } catch {}
+    } catch { /* malformed URLs are not eligible for domain freezes */ }
     const confidence = Number(candidate.assessment?.confidence || 0);
     const tier = candidate.sourceTier;
     if (tier !== 'official' && tier !== 'professional') continue;

@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 
-import { handleJsonRpcRequest } from './lib/erp_knowledge_mcp_core.mjs';
-import { listKnowledgeBases } from './erp_knowledge_assistant.mjs';
+import path from 'node:path';
+import process from 'node:process';
+import { fileURLToPath } from 'node:url';
+
+const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
+process.env.ROOT = process.env.ROOT || path.resolve(scriptDirectory, '..');
+const { handleJsonRpcRequest } = await import('./lib/erp_knowledge_mcp_core.mjs');
+const { listKnowledgeBases } = await import('./erp_knowledge_assistant.mjs');
 
 function sortNamespaces(items) {
   return items.map((item) => item.namespace).sort();

@@ -6,9 +6,10 @@ import os from 'os';
 import path from 'path';
 import process from 'process';
 import { spawnSync } from 'child_process';
+import { fileURLToPath } from 'url';
 import { assertSafeHttpUrl } from './lib/safe_http.mjs';
 
-const REPO_ROOT = process.env.ROOT || '/docker/openspg';
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function writeJson(filePath, value) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
@@ -230,7 +231,11 @@ try {
     Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 50);
     postRerouteReview = automation.readAutomationJob(appliedReroute.reviewJob.id);
   }
-  assert.strictEqual(postRerouteReview.status, 'SHADOW_COMPLETE');
+  assert.strictEqual(
+    postRerouteReview.status,
+    'SHADOW_COMPLETE',
+    JSON.stringify(postRerouteReview, null, 2),
+  );
   const reroutedRawDraft = JSON.parse(fs.readFileSync(
     rerouteDraft.rawJsonPath || path.join(
       root,

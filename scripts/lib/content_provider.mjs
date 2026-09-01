@@ -178,7 +178,7 @@ export function detectCleanerProfile(sourceUrl) {
     const hostname = new URL(url).hostname;
     const newsDomains = ['infor.pl', 'forsal.pl', 'gazetaprawna.pl', 'dziennik.pl', 'rp.pl', 'bankier.pl', 'money.pl', 'businessinsider.com.pl', 'wysokieobcasy.pl', 'wyborcza.pl'];
     if (newsDomains.some((d) => hostname === d || hostname.endsWith('.' + d))) return 'news';
-  } catch { }
+  } catch { /* non-URL inputs use the default profile */ }
   return 'blog';
 }
 

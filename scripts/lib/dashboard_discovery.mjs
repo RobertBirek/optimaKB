@@ -864,7 +864,7 @@ export function appendTrendSnapshot() {
     const feedback = discoveryFeedbackSummary(candidates);
     const autoLearningPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
     let automationState = null;
-    try { automationState = JSON.parse(fs.readFileSync(autoLearningPath, 'utf8')); } catch {}
+    try { automationState = JSON.parse(fs.readFileSync(autoLearningPath, 'utf8')); } catch { /* optional state file */ }
     const lines = [];
     for (const profile of policy.profiles) {
       const ns = profile.kbNamespace;
@@ -896,8 +896,8 @@ export function detectAnomalies() {
     const autoPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
     const discPath = path.join(ROOT, 'data/dashboard/learning/discovery_learning_state.json');
     let autoState = null, discState = null;
-    try { autoState = JSON.parse(fs.readFileSync(autoPath, 'utf8')); } catch {}
-    try { discState = JSON.parse(fs.readFileSync(discPath, 'utf8')); } catch {}
+    try { autoState = JSON.parse(fs.readFileSync(autoPath, 'utf8')); } catch { /* optional state file */ }
+    try { discState = JSON.parse(fs.readFileSync(discPath, 'utf8')); } catch { /* optional state file */ }
 
     // FP rate spikes per KB
     if (autoState?.byKbNamespace) {
@@ -1662,7 +1662,7 @@ export function fireAnomalyWebhook() {
   try {
     const configPath = path.join(ROOT, 'data/dashboard/automation/config.json');
     let webhookUrl = '';
-    try { webhookUrl = JSON.parse(fs.readFileSync(configPath, 'utf8')).anomalyWebhookUrl || ''; } catch {}
+    try { webhookUrl = JSON.parse(fs.readFileSync(configPath, 'utf8')).anomalyWebhookUrl || ''; } catch { /* optional config file */ }
     if (!webhookUrl) return;
     const alerts = detectAnomalies();
     if (!alerts.length) return;
@@ -1693,7 +1693,7 @@ export function generateQualityReport() {
     }
     const autoPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
     let autoState = null;
-    try { autoState = JSON.parse(fs.readFileSync(autoPath, 'utf8')); } catch {}
+    try { autoState = JSON.parse(fs.readFileSync(autoPath, 'utf8')); } catch { /* optional state file */ }
     if (autoState?.byKbNamespace) {
       report.push(`## Per-KB Learning State\n\n`);
       report.push(`| KB | Tuned Baseline | FP Rate | Window | Reviewed |\n`);

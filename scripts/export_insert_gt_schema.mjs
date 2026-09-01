@@ -200,15 +200,6 @@ function extractTableColumns(fullText) {
   const pkName = pkMatch ? pkMatch[1] : '';
   const pkColumns = pkMatch ? pkMatch[2].split(',').map((c) => stripBrackets(c.trim().split(' ')[0])) : [];
 
-  const colRegex = /\s*\[([^\]]+)\]\s*\[?([^\]]+)?\]?\s*([\w()]+)\s*(?:COLLATE\s+\w+\s*)?(NOT\s+NULL|NULL)?\s*(?:CONSTRAINT\s+\[([^\]]+)\]\s+DEFAULT\s+(.+?))?(?:CONSTRAINT\s+\[([^\]]+)\]\s+CHECK\s+)?\s*?(?:\,|$|(?=\))|(?=\s*CONSTRAINT)|(?=\s*PRIMARY)|(?=\s*UNIQUE)|(?=INDEX)|(?=CHECK)|(?=\s*\))|(?=ROWGUIDCOL)|(?=IDENTITY))/gmis;
-  let pos = 0;
-  let colMatch;
-
-  const udtMatch = fullText.match(/\[dbo\]\.\[(\w+)\]\s*(NOT\s+NULL|NULL)?\s*(?:CONSTRAINT\s+\[([^\]]+)\]\s+DEFAULT\s+(.+?))?\s*[,\)]/g);
-
-  const parts = fullText
-    .match(/\s*\[([^\]]+)\]\s*(\[(?:dbo\]\.)?\[[^\]]+\])\s*(NOT\s+NULL|NULL)?\s*(?:CONSTRAINT\s+\[([^\]]+)\]\s+DEFAULT\s*(.+?))?(?=\s*[,\]\)])/g);
-
   const identityCols = new Set();
   const identityMatch = fullText.match(/\[([^\]]+)\]\s*\[?\w+\]?\s*IDENTITY/g);
   if (identityMatch) {
@@ -547,7 +538,7 @@ function processZipExamples() {
   for (const dirName of extractDirs) {
     const dirPath = path.join(extractedRoot, dirName);
     const files = [];
-    function walk(d) {
+    const walk = (d) => {
       for (const entry of fs.readdirSync(d)) {
         const fullPath = path.join(d, entry);
         if (fs.statSync(fullPath).isDirectory()) { walk(fullPath); continue; }
@@ -556,7 +547,7 @@ function processZipExamples() {
           files.push({ path: fullPath, name: entry, ext });
         }
       }
-    }
+    };
     walk(dirPath);
 
     if (files.length === 0) continue;
@@ -607,23 +598,23 @@ async function main() {
   console.log(`  Found ${xmlDocs.size} documented tables with ${[...xmlDocs.values()].reduce((sum, t) => sum + t.fields.length, 0)} fields`);
 
   let dedupDeps;
-  let depSeen;
-
-  if (!HELPER_ONLY) {
-  // Parse all table SQL files
-  console.log('Parsing table SQL files...');
-  const tablesDir = path.join(SQL_ROOT, 'Tables');
-  const tableFiles = fs.readdirSync(tablesDir).filter((f) => f.endsWith('.sql')).sort();
   const tables = [];
   const allColumns = [];
   const allPKs = [];
   const allFKs = [];
   const allIndexes = [];
   const allConstraints = [];
-  let colIdx = 0;
-  let fkIdx = 0;
-  let idxIdx = 0;
-  let ctrIdx = 0;
+  const views = [];
+  const storedProcedures = [];
+  const allParameters = [];
+  const allDependencies = [];
+  const functions = [];
+
+  if (!HELPER_ONLY) {
+  // Parse all table SQL files
+  console.log('Parsing table SQL files...');
+  const tablesDir = path.join(SQL_ROOT, 'Tables');
+  const tableFiles = fs.readdirSync(tablesDir).filter((f) => f.endsWith('.sql')).sort();
 
   for (const file of tableFiles) {
     const parsed = parseCreateTable(path.join(tablesDir, file));
@@ -647,7 +638,6 @@ async function main() {
     });
 
     for (let i = 0; i < parsed.columns.length; i += 1) {
-      colIdx += 1;
       const col = parsed.columns[i];
       const xmlField = xmlDoc?.fields?.find((f) => f.name === col.name);
       allColumns.push({
@@ -685,7 +675,6 @@ async function main() {
     }
 
     for (const fk of parsed.fkRefs) {
-      fkIdx += 1;
       allFKs.push({
         id: `${DB_NAME}:FOREIGN_KEY:${parsed.schema}.${fk.name}`,
         name: fk.name,
@@ -702,7 +691,6 @@ async function main() {
     }
 
     for (const idx of parsed.indexRefs) {
-      idxIdx += 1;
       allIndexes.push({
         id: `${DB_NAME}:INDEX:${parsed.schema}.${parsed.tableName}.${idx.name}`,
         name: idx.name,
@@ -719,7 +707,6 @@ async function main() {
     }
 
     for (const chk of parsed.checkConstraints) {
-      ctrIdx += 1;
       allConstraints.push({
         id: `${DB_NAME}:CONSTRAINT:${parsed.schema}.${parsed.tableName}.${chk.name}`,
         name: chk.name,
@@ -740,7 +727,6 @@ async function main() {
   console.log('Parsing views...');
   const viewsDir = path.join(SQL_ROOT, 'Views');
   const viewFiles = fs.readdirSync(viewsDir).filter((f) => f.endsWith('.sql')).sort();
-  const views = [];
   for (const file of viewFiles) {
     const parsed = parseSqlFile(path.join(viewsDir, file));
     if (!parsed || parsed.name.startsWith('__')) continue;
@@ -774,9 +760,6 @@ async function main() {
   console.log('Parsing stored procedures...');
   const spDir = path.join(SQL_ROOT, 'Stored Procedures');
   const spFiles = fs.readdirSync(spDir).filter((f) => f.endsWith('.sql')).sort();
-  const storedProcedures = [];
-  const allParameters = [];
-  const allDependencies = [];
   for (const file of spFiles) {
     const parsed = parseSqlFile(path.join(spDir, file));
     if (!parsed || parsed.name.startsWith('__')) continue;
@@ -814,7 +797,6 @@ async function main() {
   console.log('Parsing functions...');
   const funcDir = path.join(SQL_ROOT, 'Functions');
   const funcFiles = fs.readdirSync(funcDir).filter((f) => f.endsWith('.sql')).sort();
-  const functions = [];
   for (const file of funcFiles) {
     const parsed = parseSqlFile(path.join(funcDir, file));
     if (!parsed || parsed.name.startsWith('__')) continue;
@@ -851,7 +833,7 @@ async function main() {
 
   // Build object dependencies from procedure/function/view definitions
   console.log('Extracting object dependencies...');
-  const knownTableIds = new Set(tablesForHelpers.map((t) => t.id));
+  const knownTableIds = new Set(tables.map((t) => t.id));
   const spsForDeps = HELPER_ONLY ? parseCsvRows(path.join(OUTPUT_DIR, 'stored_procedure.csv')) : storedProcedures;
   const fnsForDeps = HELPER_ONLY ? parseCsvRows(path.join(OUTPUT_DIR, 'function.csv')) : functions;
   const vwsForDeps = HELPER_ONLY ? parseCsvRows(path.join(OUTPUT_DIR, 'view.csv')) : views;
@@ -873,7 +855,6 @@ async function main() {
     dedupDeps2.push(dep);
   }
   dedupDeps = dedupDeps2;
-  depSeen = depSeen2;
   console.log(`  Extracted ${allDependencies.length} raw dependencies, ${dedupDeps2.length} unique`);
 
   } // end if !HELPER_ONLY

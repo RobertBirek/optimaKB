@@ -42,7 +42,7 @@ export default function AutomationPage({ overview }) {
       const penalties = Object.entries(result.penalties || {}).map(([domain, value]) => ({ domain, ...value }));
       setLearningThresholds(thresholds);
       setLearningPenalties(penalties);
-    } catch { }
+    } catch { /* learning status is optional on initial load */ }
   }
 
   async function resetLearning(target) {

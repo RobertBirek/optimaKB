@@ -7,9 +7,10 @@ import os from 'os';
 import path from 'path';
 import process from 'process';
 import { spawn, spawnSync } from 'child_process';
+import { fileURLToPath } from 'url';
 import { deriveDiscoveryAutoDraftState } from './lib/feedback_learning.mjs';
 
-const REPO_ROOT = process.env.ROOT || '/docker/openspg';
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function writeJson(filePath, value) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });

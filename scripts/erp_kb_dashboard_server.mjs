@@ -2257,8 +2257,8 @@ async function handlePatchAutomationLearning(req, res) {
   }
   try {
     if (fields.reset === 'full') {
-      try { fs.rmSync(DISCOVERY_LEARNING_PATH, { force: true }); } catch { }
-      try { fs.rmSync(AUTOMATION_LEARNING_PATH, { force: true }); } catch { }
+      try { fs.rmSync(DISCOVERY_LEARNING_PATH, { force: true }); } catch { /* optional state file */ }
+      try { fs.rmSync(AUTOMATION_LEARNING_PATH, { force: true }); } catch { /* optional state file */ }
       appendDashboardAudit({
         actor: req.dashboardUser || process.env.USER || 'dashboard',
         role: 'admin',
@@ -2275,7 +2275,7 @@ async function handlePatchAutomationLearning(req, res) {
         state.byKbNamespace = {};
         state.highlights = { guardedKbNamespaces: [], reroutePairs: [] };
         fs.writeFileSync(AUTOMATION_LEARNING_PATH, JSON.stringify(state, null, 2) + '\n', { encoding: 'utf8', mode: 0o640 });
-      } catch { }
+      } catch { /* optional state file */ }
       return sendJson(res, 200, { ok: true, message: 'Threshold learning state reset.' });
     }
     if (fields.reset === 'penalties') {
@@ -2284,7 +2284,7 @@ async function handlePatchAutomationLearning(req, res) {
         state.byDomain = {};
         state.highlights = { strongestDomains: [], weakestQueries: [] };
         fs.writeFileSync(DISCOVERY_LEARNING_PATH, JSON.stringify(state, null, 2) + '\n', { encoding: 'utf8', mode: 0o640 });
-      } catch { }
+      } catch { /* optional state file */ }
       return sendJson(res, 200, { ok: true, message: 'Domain penalty learning state reset.' });
     }
     if (fields.domainOverride) {
@@ -2368,7 +2368,7 @@ async function handleGetTrends(req, res) {
             const dedupKey = `${entry.date}|${entry.kbNamespace}`;
             latestPerDay[dedupKey] = entry;
           }
-        } catch {}
+        } catch { /* skip malformed historical trend row */ }
       }
       for (const entry of Object.values(latestPerDay)) {
         (grouped[entry.kbNamespace] = grouped[entry.kbNamespace] || []).push(entry);

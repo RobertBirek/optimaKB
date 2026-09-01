@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "ComarchOptimaSchema",
+  "kbNamespace": "ComarchOptimaSchema",
+  "title": "Bazy danych – Baza Wiedzy programu Comarch ERP Optima",
+  "content": "External source discovered via Exa query: Dla Comarch ERP Optima 2026.5.1 x64 ustal zależności i zachowanie usuwania encji Term = harmonogram Informacji bieżących z CDN_Konfiguracja.CDN.Terminy (OT41), w szczególności: jakie obiekty/funkcje mogą używać terminu, jakie tabele i kolumny SQL odwołują się do Tmi_TmiId, jak bezpiecznie utworzyć zależność przez GUI w CDN_TEST, czy GUI/COM blokuje delete używanego terminu, jaki komunikat pokazuje, czy wykonuje DELETE/deaktywację/brak DML, oraz jak potwierdzić to profilerem i read-only SQL. Podaj dokładny COM ProgID/kolekcję, lookup po ID/kodzie, Delete/Save i ograniczenia biznesowe. COM/SDK/SQL schema, without tax advice. Rozdziel POTWIERDZONE fakty, WNIOSKI i HIPOTEZY; nie zgaduj.\nTitle: Bazy danych – Baza Wiedzy programu Comarch ERP Optima\nURL: https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/bazy-danych/\nTier: official\nPublished: 2026-05-06T00:00:00.000Z\nSummary:\nSummary:\nPobrany artykuł z Bazy Wiedzy Comarch ERP Optima 2026.5 dotyczącą operacji baz danych, archiwizacji i odtwarzania kopii, oraz narzędzi zarządzania bazą danych (odłączanie, skasowanie, konwersje formatów, archiwum, procedury xp_) nie zawiera żadnych informacji na temat zależności terminów Term = harmonogram Informacji bieżących z CDN_Konfiguracja.CDN.Terminy (OT41), ani o sposobach ich użycia w Comarch ERP Optima 2026.5.1 x64.\nWnioski (na podstawie dostarczonego materiału):\n- Tekst opisuje operacje zarządzania bazą danych: odłączanie/skasowanie bazy, tworzenie i weryfikacja kopii bezpieczeństwa, odtwarzanie kopii do nowej/nazwanej bazy, konwersje formatu bazy w zależności od wersji programu.\n- Wyraźnie omawia procesy archiwizacji (kopia bezpieczeństwa w katalogu firmy, nazwa pliku z datą, weryfikacja archiwum) oraz opcje odtworzeniowe (nazwa nowej bazy, możliwość odtworzenia p...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/bazy-danych/",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Dla Comarch ERP Optima 2026.5.1 x64 ustal zależności i zachowanie usuwania encji Term = harmonogram Informacji bieżących z CDN_Konfiguracja.CDN.Terminy (OT41), w szczególności: jakie obiekty/funkcje mogą używać terminu, jakie tabele i kolumny SQL odwołują się do Tmi_TmiId, jak bezpiecznie utworzyć zależność przez GUI w CDN_TEST, czy GUI/COM blokuje delete używanego terminu, jaki komunikat pokazuje, czy wykonuje DELETE/deaktywację/brak DML, oraz jak potwierdzić to profilerem i read-only SQL. Podaj dokładny COM ProgID/kolekcję, lookup po ID/kodzie, Delete/Save i ograniczenia biznesowe. COM/SDK/SQL schema, without tax advice. Rozdziel POTWIERDZONE fakty, WNIOSKI i HIPOTEZY; nie zgaduj.",
+    "sourceTier": "official",
+    "retrievedAt": "2026-08-29T06:36:03.886Z"
+  },
+  "createdAt": "2026-08-29T06:36:07.117Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T05:08:27.006Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-29/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.json"
+}

@@ -5,6 +5,7 @@ import path from 'path';
 import { createRequire } from 'module';
 import { loadPromotedKnowledge, makePromotedId } from './lib/promoted_knowledge.mjs';
 import { csvEscape } from './lib/export_utils.mjs';
+import { writeFileAtomically } from './lib/atomic_file.mjs';
 import {
   assertUniqueIds,
   deduplicateIdenticalRowsById,
@@ -232,7 +233,7 @@ function writeCsvRows(outPath, headers, rows) {
   for (const row of rows) {
     lines.push(headers.map((header) => csvEscape(row[header])).join(','));
   }
-  fs.writeFileSync(outPath, `${lines.join('\n')}\n`, 'utf8');
+  writeFileAtomically(outPath, `${lines.join('\n')}\n`);
 }
 
 function parseCsvRows(filePath) {
@@ -1713,7 +1714,7 @@ async function main() {
     columns: sqlObjectGuideHeaders,
   });
 
-  fs.writeFileSync(MANIFEST_FILE, JSON.stringify(manifest, null, 2) + '\n', 'utf8');
+  writeFileAtomically(MANIFEST_FILE, JSON.stringify(manifest, null, 2) + '\n');
 }
 
 main().catch((error) => {

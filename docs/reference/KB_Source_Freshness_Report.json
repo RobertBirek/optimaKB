@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T18:06:59.839Z",
+  "generatedAt": "2026-09-01T05:33:01.983Z",
   "staleDays": 14,
   "overall": "ACTION_NEEDED",
   "results": [
@@ -336,10 +336,10 @@
       "sourceFileCount": 322,
       "newestSource": "2026-07-30T13:09:01.570Z",
       "oldestSource": "2026-05-24T13:48:17.817Z",
-      "sourceAgeDays": 32,
+      "sourceAgeDays": 33,
       "exportManifest": "exports/optima_partner_technical/v1/_manifest.json",
       "exportGeneratedAt": "2026-07-30T13:09:02.307Z",
-      "exportAgeDays": 32,
+      "exportAgeDays": 33,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -440,7 +440,7 @@
         "promoted_knowledge_draft": 4,
         "unknown": 548
       },
-      "registryAgeDays": 32
+      "registryAgeDays": 33
     },
     {
       "namespace": "ComarchOptimaAdditionalFunctions",
@@ -450,10 +450,10 @@
       "sourceFileCount": 58,
       "newestSource": "2026-08-04T09:29:10.108Z",
       "oldestSource": "2026-05-23T18:27:51.000Z",
-      "sourceAgeDays": 27,
+      "sourceAgeDays": 28,
       "exportManifest": "exports/optima_additional_functions/v1/_manifest.json",
       "exportGeneratedAt": "2026-08-04T09:29:10.108Z",
-      "exportAgeDays": 27,
+      "exportAgeDays": 28,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -555,7 +555,7 @@
         "local_drive_pdf": 3,
         "promoted_knowledge_draft": 11
       },
-      "registryAgeDays": 27
+      "registryAgeDays": 28
     },
     {
       "namespace": "ComarchOptimaSprint",
@@ -565,10 +565,10 @@
       "sourceFileCount": 11,
       "newestSource": "2026-07-30T13:08:44.174Z",
       "oldestSource": "2026-05-23T18:22:57.000Z",
-      "sourceAgeDays": 32,
+      "sourceAgeDays": 33,
       "exportManifest": "exports/optima_sprint/v1/_manifest.json",
       "exportGeneratedAt": "2026-07-30T13:08:44.176Z",
-      "exportAgeDays": 32,
+      "exportAgeDays": 33,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -632,7 +632,7 @@
         "official_web": 12,
         "promoted_knowledge_draft": 8
       },
-      "registryAgeDays": 32
+      "registryAgeDays": 33
     },
     {
       "namespace": "TaxbellLegalReference",
@@ -645,7 +645,7 @@
       "sourceAgeDays": 8,
       "exportManifest": "exports/taxbell_legal_reference/v1/_manifest.json",
       "exportGeneratedAt": "2026-08-04T09:25:44.791Z",
-      "exportAgeDays": 27,
+      "exportAgeDays": 28,
       "exportBehindSource": true,
       "stale": false,
       "warnings": [
@@ -754,7 +754,7 @@
       "sourceAgeDays": 8,
       "exportManifest": "exports/taxbell_payroll_hr_reference/v1/_manifest.json",
       "exportGeneratedAt": "2026-08-04T09:25:45.007Z",
-      "exportAgeDays": 27,
+      "exportAgeDays": 28,
       "exportBehindSource": true,
       "stale": false,
       "warnings": [
@@ -863,7 +863,7 @@
       "sourceAgeDays": 8,
       "exportManifest": "exports/taxbell_accounting_vat_reference/v1/_manifest.json",
       "exportGeneratedAt": "2026-08-04T09:25:45.154Z",
-      "exportAgeDays": 27,
+      "exportAgeDays": 28,
       "exportBehindSource": true,
       "stale": false,
       "warnings": [

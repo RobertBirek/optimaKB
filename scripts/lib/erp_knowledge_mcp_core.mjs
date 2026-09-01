@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
+import path from 'path';
 import { answerQuestion, renderAnswerMarkdown } from '../erp_knowledge_answer.mjs';
 import { buildResponse, classifyQuestion, listKnowledgeBases, loadRouting, renderMarkdown } from '../erp_knowledge_assistant.mjs';
 import { submitKnowledgeDraft } from './knowledge_inbox.mjs';
@@ -11,6 +12,7 @@ import {
 } from './external_search.mjs';
 
 const routing = loadRouting();
+const ROOT = process.env.ROOT || '/docker/openspg';
 
 export const SERVER_INFO = { name: 'erp-knowledge-assistant', version: '1.1.0' };
 export const PROTOCOL_VERSION = '2025-03-26';
@@ -22,7 +24,10 @@ export function formatLegacySseEndpoint(path) {
   return `event: endpoint\ndata: ${path}\n\n`;
 }
 
-const KB_NAME_REGISTRY_PATH = '/docker/openspg/docs/reference/ERP_KB_Dashboard_KB_Registry.json';
+const KB_NAME_REGISTRY_PATH = path.join(
+  ROOT,
+  'docs/reference/ERP_KB_Dashboard_KB_Registry.json',
+);
 
 function loadKbNameMap() {
   try {
@@ -407,8 +412,14 @@ async function draftExternalSourceTool({ kbName, kbNamespace, query, url, title,
 }
 
 function runCommunityThreadTest() {
-  const jsonPath = '/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Community_FullThread_TestPack.json';
-  const mdPath = '/docker/openspg/docs/reference/ERP_Knowledge_Assistant_Community_FullThread_TestPack.md';
+  const jsonPath = path.join(
+    ROOT,
+    'docs/reference/ERP_Knowledge_Assistant_Community_FullThread_TestPack.json',
+  );
+  const mdPath = path.join(
+    ROOT,
+    'docs/reference/ERP_Knowledge_Assistant_Community_FullThread_TestPack.md',
+  );
   if (!fs.existsSync(jsonPath) || !fs.existsSync(mdPath)) {
     return {
       text: 'Community full-thread benchmark artifacts are missing. Run node scripts/run_community_thread_test.mjs first.',

@@ -101,6 +101,7 @@ For this OpenSPG instance, the datasource API only supports `ODPS` and `SLS` (no
 - `Chunk` rows with giant content (>8192 OpenAI tokens) are rejected at build time; exclude oversized documents from chunking.
 - Partner assets behind Comarch SSO may return `AUTH_REDIRECT_HTML` — `PHPSESSID` alone is insufficient; a full browser cookie is needed.
 - Sprint build runner maps entity names from `GET /v1/schemas/graph/{projectId}` — check both fully qualified and short names if an entity type is reported missing.
+- Never leave dashboard-mutated artifacts inaccessible to `mcpbot` after root-run repairs. This includes `docs/reference/knowledge_inbox/registry.json` and helper files in `exports/optima_schema/v1/`. Atomic writers now prevent the common replacement failure; still verify `registry.json` with `sudo -u mcpbot test -w .../registry.json`. See the permissions sections in `OpenSPG_KB_Operational_Memory.md`.
 
 ## Files the agent should read first
 

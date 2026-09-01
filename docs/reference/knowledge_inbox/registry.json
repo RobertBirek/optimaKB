@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T17:39:15.207Z",
+  "generatedAt": "2026-09-01T05:08:27.010Z",
   "entries": [
     {
       "draftId": "draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note",
@@ -4576,26 +4576,17 @@
     },
     {
       "draftId": "draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima",
-      "status": "pending",
+      "status": "promoted",
       "kbName": "Comarch Optima ERP MSSQL Schema",
       "kbNamespace": "ComarchOptimaSchema",
       "title": "Bazy danych – Baza Wiedzy programu Comarch ERP Optima",
       "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/bazy-danych/",
       "rawJsonPath": "downloads/knowledge_inbox/2026-08-29/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.json",
-      "reopenedAt": "2026-08-31T17:39:15.205Z",
-      "reopenedBy": "mcpbot",
-      "reviewNote": "Official database-management article does not support the requested CDN.Terminy claim; returned to pending review.",
-      "previousPromotedAt": "2026-08-30T13:18:20.885Z",
-      "movedPaths": [
-        {
-          "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.json",
-          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaSchema/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima/2026-08-31T17:39:15.205Z/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.json"
-        },
-        {
-          "from": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.md",
-          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchOptimaSchema/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima/2026-08-31T17:39:15.205Z/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.md"
-        }
-      ]
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.md",
+      "promotedAt": "2026-09-01T05:08:27.006Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
     }
   ]
 }

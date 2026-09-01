@@ -1,37 +1,8 @@
 # KB Quality Gate Report
 
-Generated at: 2026-08-31T18:07:56.698Z
+Generated at: 2026-09-01T05:31:15.755Z
 
 Overall: `WARN`
-
-## ComarchOptimaSchema
-
-- Verdict: `PASS`
-- Export dir: `exports/optima_schema/v1`
-- Staging generatedAt: `2026-07-21T16:27:57.821Z`
-- Required files:
-  - `table.csv`: exists `true`, rows `630`
-  - `column.csv`: exists `true`, rows `12441`
-  - `chunk.csv`: exists `true`, rows `13122`
-- Jobs:
-  - `419` `FINISH` `database_instance.csv`
-  - `420` `FINISH` `table.csv`
-  - `421` `FINISH` `column.csv`
-  - `422` `FINISH` `primary_key.csv`
-  - `423` `FINISH` `foreign_key.csv`
-  - `424` `FINISH` `index.csv`
-  - `425` `FINISH` `constraint.csv`
-  - `426` `FINISH` `view.csv`
-  - `427` `FINISH` `stored_procedure.csv`
-  - `428` `FINISH` `function.csv`
-  - `429` `FINISH` `trigger.csv`
-  - `430` `FINISH` `parameter.csv`
-  - `432` `FINISH` `schema_change.csv`
-  - `434` `FINISH` `table_query_guide.csv`
-  - `435` `FINISH` `join_path_guide.csv`
-  - `436` `FINISH` `object_dependency.csv`
-  - `437` `FINISH` `sql_object_guide.csv`
-  - `438` `FINISH` `chunk.csv`
 
 ## ComarchOptimaAdditionalFunctions
 
@@ -265,4 +236,33 @@ Overall: `WARN`
   - `464` `FINISH` `ontology_relation.csv`
   - `465` `FINISH` `workflow_pattern.csv`
   - `466` `FINISH` `chunk.csv`
+
+## ComarchOptimaSchema
+
+- Verdict: `PASS`
+- Export dir: `exports/optima_schema/v1`
+- Staging generatedAt: `2026-09-01T05:20:36.766Z`
+- Required files:
+  - `table.csv`: exists `true`, rows `630`
+  - `column.csv`: exists `true`, rows `12441`
+  - `chunk.csv`: exists `true`, rows `13126`
+- Jobs:
+  - `419` `FINISH` `database_instance.csv`
+  - `420` `FINISH` `table.csv`
+  - `421` `FINISH` `column.csv`
+  - `422` `FINISH` `primary_key.csv`
+  - `423` `FINISH` `foreign_key.csv`
+  - `424` `FINISH` `index.csv`
+  - `425` `FINISH` `constraint.csv`
+  - `426` `FINISH` `view.csv`
+  - `427` `FINISH` `stored_procedure.csv`
+  - `428` `FINISH` `function.csv`
+  - `429` `FINISH` `trigger.csv`
+  - `430` `FINISH` `parameter.csv`
+  - `432` `FINISH` `schema_change.csv`
+  - `434` `FINISH` `table_query_guide.csv`
+  - `435` `FINISH` `join_path_guide.csv`
+  - `436` `FINISH` `object_dependency.csv`
+  - `437` `FINISH` `sql_object_guide.csv`
+  - `682` `FINISH` `chunk.csv`
 

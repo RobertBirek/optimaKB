@@ -1,203 +1,7 @@
 {
-  "generatedAt": "2026-08-31T18:07:56.698Z",
+  "generatedAt": "2026-09-01T05:31:15.755Z",
   "overall": "WARN",
   "results": [
-    {
-      "namespace": "ComarchOptimaSchema",
-      "kbName": "Comarch Optima ERP MSSQL Schema",
-      "verdict": "PASS",
-      "exportDir": "exports/optima_schema/v1",
-      "generatedAt": "2026-07-21T16:27:57.821Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "table.csv",
-          "exists": true,
-          "rowCount": 630,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "databaseRefId",
-            "sqlName",
-            "schemaName",
-            "objectKind",
-            "documentationRef",
-            "moduleHint"
-          ]
-        },
-        {
-          "fileName": "column.csv",
-          "exists": true,
-          "rowCount": 12441,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "tableRefId",
-            "sqlName",
-            "ordinalPosition",
-            "dataType",
-            "fullDataType",
-            "nullable",
-            "defaultDefinition",
-            "defaultDefinitionAccessState",
-            "computedDefinition",
-            "computedDefinitionAccessState",
-            "collationName",
-            "isIdentity",
-            "isComputed",
-            "keyRole"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 13122,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "content",
-            "sourceDocument",
-            "sourceSection",
-            "sourceObjectRefId",
-            "semanticType"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 419,
-          "fileName": "database_instance.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema DatabaseInstance CSV Import",
-          "gmtModified": "2026-07-21 16:48:23"
-        },
-        {
-          "id": 420,
-          "fileName": "table.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema Table CSV Import",
-          "gmtModified": "2026-07-21 16:49:03"
-        },
-        {
-          "id": 421,
-          "fileName": "column.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema Column CSV Import",
-          "gmtModified": "2026-07-21 16:53:44"
-        },
-        {
-          "id": 422,
-          "fileName": "primary_key.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema PrimaryKey CSV Import",
-          "gmtModified": "2026-07-21 16:54:31"
-        },
-        {
-          "id": 423,
-          "fileName": "foreign_key.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema ForeignKey CSV Import",
-          "gmtModified": "2026-07-21 16:55:15"
-        },
-        {
-          "id": 424,
-          "fileName": "index.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema Index CSV Import",
-          "gmtModified": "2026-07-21 16:56:21"
-        },
-        {
-          "id": 425,
-          "fileName": "constraint.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema Constraint CSV Import",
-          "gmtModified": "2026-07-21 16:57:45"
-        },
-        {
-          "id": 426,
-          "fileName": "view.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema View CSV Import",
-          "gmtModified": "2026-07-21 16:58:22"
-        },
-        {
-          "id": 427,
-          "fileName": "stored_procedure.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema StoredProcedure CSV Import",
-          "gmtModified": "2026-07-21 16:59:28"
-        },
-        {
-          "id": 428,
-          "fileName": "function.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema Function CSV Import",
-          "gmtModified": "2026-07-21 17:00:31"
-        },
-        {
-          "id": 429,
-          "fileName": "trigger.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema Trigger CSV Import",
-          "gmtModified": "2026-07-21 17:01:21"
-        },
-        {
-          "id": 430,
-          "fileName": "parameter.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema Parameter CSV Import",
-          "gmtModified": "2026-07-21 17:05:13"
-        },
-        {
-          "id": 432,
-          "fileName": "schema_change.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema SchemaChange CSV Import",
-          "gmtModified": "2026-07-21 17:10:17"
-        },
-        {
-          "id": 434,
-          "fileName": "table_query_guide.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema TableQueryGuide CSV Import",
-          "gmtModified": "2026-07-21 17:16:54"
-        },
-        {
-          "id": 435,
-          "fileName": "join_path_guide.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema JoinPathGuide CSV Import",
-          "gmtModified": "2026-07-21 17:17:37"
-        },
-        {
-          "id": 436,
-          "fileName": "object_dependency.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema ObjectDependency CSV Import",
-          "gmtModified": "2026-07-21 17:22:09"
-        },
-        {
-          "id": 437,
-          "fileName": "sql_object_guide.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema SqlObjectGuide CSV Import",
-          "gmtModified": "2026-07-21 17:23:54"
-        },
-        {
-          "id": 438,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaSchema Chunk CSV Import",
-          "gmtModified": "2026-07-21 18:49:21"
-        }
-      ]
-    },
     {
       "namespace": "ComarchOptimaAdditionalFunctions",
       "kbName": "Comarch Optima Additional Functions",
@@ -1609,6 +1413,202 @@
           "status": "FINISH",
           "jobName": "OWAO Chunk CSV Import",
           "gmtModified": "2026-07-22 16:44:27"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchOptimaSchema",
+      "kbName": "Comarch Optima ERP MSSQL Schema",
+      "verdict": "PASS",
+      "exportDir": "exports/optima_schema/v1",
+      "generatedAt": "2026-09-01T05:20:36.766Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "table.csv",
+          "exists": true,
+          "rowCount": 630,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "databaseRefId",
+            "sqlName",
+            "schemaName",
+            "objectKind",
+            "documentationRef",
+            "moduleHint"
+          ]
+        },
+        {
+          "fileName": "column.csv",
+          "exists": true,
+          "rowCount": 12441,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "tableRefId",
+            "sqlName",
+            "ordinalPosition",
+            "dataType",
+            "fullDataType",
+            "nullable",
+            "defaultDefinition",
+            "defaultDefinitionAccessState",
+            "computedDefinition",
+            "computedDefinitionAccessState",
+            "collationName",
+            "isIdentity",
+            "isComputed",
+            "keyRole"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 13126,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "content",
+            "sourceDocument",
+            "sourceSection",
+            "sourceObjectRefId",
+            "semanticType"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 419,
+          "fileName": "database_instance.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema DatabaseInstance CSV Import",
+          "gmtModified": "2026-07-21 16:48:23"
+        },
+        {
+          "id": 420,
+          "fileName": "table.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema Table CSV Import",
+          "gmtModified": "2026-07-21 16:49:03"
+        },
+        {
+          "id": 421,
+          "fileName": "column.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema Column CSV Import",
+          "gmtModified": "2026-07-21 16:53:44"
+        },
+        {
+          "id": 422,
+          "fileName": "primary_key.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema PrimaryKey CSV Import",
+          "gmtModified": "2026-07-21 16:54:31"
+        },
+        {
+          "id": 423,
+          "fileName": "foreign_key.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema ForeignKey CSV Import",
+          "gmtModified": "2026-07-21 16:55:15"
+        },
+        {
+          "id": 424,
+          "fileName": "index.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema Index CSV Import",
+          "gmtModified": "2026-07-21 16:56:21"
+        },
+        {
+          "id": 425,
+          "fileName": "constraint.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema Constraint CSV Import",
+          "gmtModified": "2026-07-21 16:57:45"
+        },
+        {
+          "id": 426,
+          "fileName": "view.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema View CSV Import",
+          "gmtModified": "2026-07-21 16:58:22"
+        },
+        {
+          "id": 427,
+          "fileName": "stored_procedure.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema StoredProcedure CSV Import",
+          "gmtModified": "2026-07-21 16:59:28"
+        },
+        {
+          "id": 428,
+          "fileName": "function.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema Function CSV Import",
+          "gmtModified": "2026-07-21 17:00:31"
+        },
+        {
+          "id": 429,
+          "fileName": "trigger.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema Trigger CSV Import",
+          "gmtModified": "2026-07-21 17:01:21"
+        },
+        {
+          "id": 430,
+          "fileName": "parameter.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema Parameter CSV Import",
+          "gmtModified": "2026-07-21 17:05:13"
+        },
+        {
+          "id": 432,
+          "fileName": "schema_change.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema SchemaChange CSV Import",
+          "gmtModified": "2026-07-21 17:10:17"
+        },
+        {
+          "id": 434,
+          "fileName": "table_query_guide.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema TableQueryGuide CSV Import",
+          "gmtModified": "2026-07-21 17:16:54"
+        },
+        {
+          "id": 435,
+          "fileName": "join_path_guide.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema JoinPathGuide CSV Import",
+          "gmtModified": "2026-07-21 17:17:37"
+        },
+        {
+          "id": 436,
+          "fileName": "object_dependency.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema ObjectDependency CSV Import",
+          "gmtModified": "2026-07-21 17:22:09"
+        },
+        {
+          "id": 437,
+          "fileName": "sql_object_guide.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema SqlObjectGuide CSV Import",
+          "gmtModified": "2026-07-21 17:23:54"
+        },
+        {
+          "id": 682,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaSchema Chunk CSV Import",
+          "gmtModified": "2026-09-01 07:30:28"
         }
       ]
     }

@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { createHash } from 'node:crypto';
 import { appendDashboardAudit } from './dashboard_audit.mjs';
+import { writeFileAtomically } from './atomic_file.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 export const RAW_INBOX_ROOT = path.join(ROOT, 'downloads/knowledge_inbox');
@@ -81,10 +82,7 @@ function readJsonIfExists(filePath, fallback) {
 }
 
 function writeJson(filePath, value) {
-  ensureDir(path.dirname(filePath));
-  const tempPath = `${filePath}.${process.pid}.tmp`;
-  fs.writeFileSync(tempPath, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
-  fs.renameSync(tempPath, filePath);
+  writeFileAtomically(filePath, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 function rawDraftMarkdown(draft) {

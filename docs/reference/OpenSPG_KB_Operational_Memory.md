@@ -1361,6 +1361,56 @@ Execution artifacts:
   approve/build preflight for an unrelated draft in
   `TaxbellAccountingVATReference`.
 
+### Knowledge inbox registry permissions
+
+- The dashboard runs as OS user `mcpbot` and its approve/build preflight needs
+  owner-write access to `docs/reference/knowledge_inbox/registry.json`.
+- Root cause of the recurring failure: a maintenance or repair command run as
+  `root` calls the atomic registry writer in
+  `scripts/lib/promoted_knowledge.mjs`. The writer creates a temporary file and
+  renames it over `registry.json`, so the replacement can become
+  `root:root 0644` even when the parent directory remains writable by
+  `mcpbot`.
+- Symptom: every dashboard draft approval stops before mutation with
+  `knowledge_inbox_registry: FAIL ... registry.json: EACCES: permission denied`.
+- Fix only the affected file; a recursive ownership change is not required:
+
+  ```bash
+  sudo chown mcpbot:mcpbot /docker/openspg/docs/reference/knowledge_inbox/registry.json
+  sudo chmod 0664 /docker/openspg/docs/reference/knowledge_inbox/registry.json
+  sudo -u mcpbot test -r /docker/openspg/docs/reference/knowledge_inbox/registry.json
+  sudo -u mcpbot test -w /docker/openspg/docs/reference/knowledge_inbox/registry.json
+  ```
+
+- Prevention: run commands that mutate the knowledge inbox registry as
+  `mcpbot`. If a repair must run as `root`, restore and verify the ownership
+  immediately afterward, before asking the operator to approve a draft.
+- Reproduced and fixed again on 2026-09-01 after root-run registry repairs.
+
+### Schema helper export permissions
+
+- Dashboard promotion for `ComarchOptimaSchema` runs
+  `export_optima_schema_metadata.mjs` with `OPENSPG_HELPER_ONLY=1`. This refreshes
+  `chunk.csv`, helper CSVs, and `_manifest.json` without a live MSSQL export.
+- A full schema export run as `root` can leave those existing artifacts as
+  `root:root 0644`. Before the 2026-09-01 fix, helper mode used direct
+  `writeFileSync()` calls, so `mcpbot` failed at the export step even though
+  preflight correctly reported the export directory as writable.
+- Symptom: the draft becomes `promoted`, but the action ends with
+  `scripts/export_optima_schema_metadata.mjs exited with 1`; no builder job is
+  submitted. Check the dashboard action log before retrying because promotion
+  is not rolled back automatically.
+- Durable fix: helper CSVs, manifests, and the knowledge inbox registry now use
+  `scripts/lib/atomic_file.mjs`. Replacement requires write access to the
+  parent directory rather than the old file, and a root-run repair preserves
+  the existing file owner. Regression coverage lives in
+  `scripts/test_atomic_file.mjs`.
+- Recovery for a partially completed action: rerun the same inbox pipeline for
+  the already promoted draft. The pipeline detects `alreadyPromoted`, refreshes
+  the helper export, forces `chunk.csv`, and continues with build and gates.
+- First recovered build: OpenSPG project `4`, chunk job `682`, `FINISH` on
+  2026-09-01; regression result `20 PASS / 0 PARTIAL / 0 MISS`.
+
 ### Host memory / OOM incident (2026-08-03 — 2026-08-04)
 
 - The Proxmox VM hosting this stack ran with only **11 GB RAM + 4 GB swap**,
