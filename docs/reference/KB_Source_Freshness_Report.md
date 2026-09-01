@@ -1,6 +1,6 @@
 # KB Source Freshness Report
 
-Generated at: 2026-09-01T09:24:01.300Z
+Generated at: 2026-09-01T10:23:14.467Z
 Stale threshold: `14` days
 
 Overall: `WARN`
@@ -89,7 +89,7 @@ Overall: `WARN`
 - Source files: `82`
 - Newest source: `2026-08-24T03:50:46.754Z`
 - Source age days: `8`
-- Export generatedAt: `2026-09-01T09:11:04.833Z`
+- Export generatedAt: `2026-09-01T09:32:29.529Z`
 - Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `42`
