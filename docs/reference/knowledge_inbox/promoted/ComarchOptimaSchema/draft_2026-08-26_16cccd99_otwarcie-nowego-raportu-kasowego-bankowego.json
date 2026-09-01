@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-08-26_16cccd99_otwarcie-nowego-raportu-kasowego-bankowego",
+  "kbName": "ComarchOptimaSchema",
+  "kbNamespace": "ComarchOptimaSchema",
+  "title": "Otwarcie nowego raportu kasowego/bankowego",
+  "content": "External source discovered via Exa query: Dla Comarch ERP Optima 2026.5.1 x64 wykonaj szeroki audyt encji raportu kasowego/bankowego, roboczo nazywanej CashBankReport, bez ograniczania domen wiedzy. COM/SDK/SQL schema, without tax advice.\n\nObejmij:\n1) znaczenie biznesowe raportu kasowego/bankowego i jego granice względem rejestru kasowego/bankowego (BankAccount), zapisu kasowego/bankowego (Payment) i Settlement;\n2) pełną, dokładną ścieżkę GUI oraz wszystkie istotne akcje: utworzenie/otwarcie, zamknięcie, ponowne otwarcie, edycja, usunięcie, blokady i komunikaty;\n3) COM/SDK: ProgID, interfejs, kolekcję, AddNew, wartości domyślne, pola wymagane, lookup/enumerację po ID, numerze i rejestrze, wszystkie istotne właściwości zapisywalne/odczytywalne, podkolekcje, Update/Delete/dezaktywację/zamknięcie/Save/Session.Save;\n4) SQL: tabele główne i zależne, pełne klucze główne, unikalne indeksy, FK, triggery, join paths, kolumny statusu otwarcia/zamknięcia, daty, numeracji, waluty, sald i relacji do zapisów oraz rejestru;\n5) warunki blokujące update/delete/zamknięcie/ponowne otwarcie, w tym istniejące zapisy, księgowanie, rozliczenia, okresy i formy płatności;\n6) pola GUI-only, COM-only i SQL-only oraz rekomendowany minimalny kontrakt CRUD/MVP dla REST i MCP.\n\nOddziel odpowiedź dokładnie na sekcje POTWIERDZONE, WNIOSEK i HIPOTEZA. Przy każdym twierdzeniu podaj źródło albo wskaż, czego brakuje do potwierdzenia. Nie udzielaj porad podatkowych.\nTitle: Otwarcie nowego raportu kasowego/bankowego\nURL: https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/otwarcie-nowego-raportu-kasowegobankowego/\nTier: official\nPublished: 2025-01-29T00:00:00.000Z\nSummary:\nPOTWIERDZONE\n- Cel i zakres raportu kasowego/bankowego w Comarch ERP Optima 2026.5.1 x64 (CashBankReport) obejmuje otwieranie, prowadzenie i powiązanie z dokumentami z Biblioteki oraz możliwość dodawania załączników. Źródło: artykuł pomocy o otwieraniu nowego raportu kasowego/bankowego, pola Formularza raportu (Rejestr, Numer, Numer obcy, Data otwarcia, Status, Data zamknięcia) i operacje załączników (Dokumenty zakładane na raport; “Dodaj nowy” / “Dodaj istniejący”). Brak pełnej definicji modelu danych, nie dostarczono pełnego zestawu API COM/SDK ani schematu SQL w tej publikacji. Wniosek: potwierdzono ogólne działanie GUI i powiązania z dokumentami; brak potwierdzenia pełnej specyfikacji API/DB w podanym źródle.\n- Znaczenie biznesowe: raport kasowy/bankowy służy do prowadzenia formalnego zapisu operacji kasowych i bankowych w określonym rejestrze (Rejestr) z możliwością powiązania z ...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/otwarcie-nowego-raportu-kasowegobankowego/",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Dla Comarch ERP Optima 2026.5.1 x64 wykonaj szeroki audyt encji raportu kasowego/bankowego, roboczo nazywanej CashBankReport, bez ograniczania domen wiedzy. COM/SDK/SQL schema, without tax advice.\n\nObejmij:\n1) znaczenie biznesowe raportu kasowego/bankowego i jego granice względem rejestru kasowego/bankowego (BankAccount), zapisu kasowego/bankowego (Payment) i Settlement;\n2) pełną, dokładną ścieżkę GUI oraz wszystkie istotne akcje: utworzenie/otwarcie, zamknięcie, ponowne otwarcie, edycja, usunięcie, blokady i komunikaty;\n3) COM/SDK: ProgID, interfejs, kolekcję, AddNew, wartości domyślne, pola wymagane, lookup/enumerację po ID, numerze i rejestrze, wszystkie istotne właściwości zapisywalne/odczytywalne, podkolekcje, Update/Delete/dezaktywację/zamknięcie/Save/Session.Save;\n4) SQL: tabele główne i zależne, pełne klucze główne, unikalne indeksy, FK, triggery, join paths, kolumny statusu otwarcia/zamknięcia, daty, numeracji, waluty, sald i relacji do zapisów oraz rejestru;\n5) warunki blokujące update/delete/zamknięcie/ponowne otwarcie, w tym istniejące zapisy, księgowanie, rozliczenia, okresy i formy płatności;\n6) pola GUI-only, COM-only i SQL-only oraz rekomendowany minimalny kontrakt CRUD/MVP dla REST i MCP.\n\nOddziel odpowiedź dokładnie na sekcje POTWIERDZONE, WNIOSEK i HIPOTEZA. Przy każdym twierdzeniu podaj źródło albo wskaż, czego brakuje do potwierdzenia. Nie udzielaj porad podatkowych.",
+    "sourceTier": "official",
+    "retrievedAt": "2026-08-26T19:30:02.561Z"
+  },
+  "createdAt": "2026-08-26T19:30:06.393Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T07:07:29.473Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-26/draft_2026-08-26_16cccd99_otwarcie-nowego-raportu-kasowego-bankowego.json"
+}

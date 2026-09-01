@@ -116,6 +116,22 @@ Source registries:
 
 Dashboard, inbox pipeline, quality gate, source freshness and assistant routing have been extended for these three namespaces. The dashboard now reports `10` configured KBs. Operational runbook: `docs/reference/TaxbellReferenceKBs_Runbook.md`.
 
+On `2026-09-01`, a Taxbell Legal draft approval exposed duplicate IDs in
+`reference_document.csv` and `chunk.csv`. The source registry contained URL
+spellings that differed only by path/query case or a trailing slash, while
+`makeId('TBDOC', url)` intentionally collapsed those spellings to one ID. The
+shared Taxbell exporter now groups loaded registry snapshots by generated
+document ID, keeps the snapshot with the longest content, and resolves promoted
+draft source URLs through that same generated ID instead of exact URL text.
+This prevents both duplicate rows and accidental promoted-document copies when
+the retained registry spelling differs from the draft spelling. Regression:
+`scripts/test_taxbell_reference_duplicate_ids.mjs`. The corrected Legal export
+contains `75` reference documents and `386` chunks; forced build jobs `696` and
+`697` both reached `FINISH`, and the scoped quality gate passed. Intermediate
+job `694` briefly created two zero-relationship promoted-document nodes before
+the promoted lookup correction; after explicit operator approval, both exact
+transient nodes were deleted and a follow-up query confirmed `remaining=0`.
+
 ## Betterfly Reference KB
 
 ### Purpose
@@ -1410,6 +1426,13 @@ Execution artifacts:
   the helper export, forces `chunk.csv`, and continues with build and gates.
 - First recovered build: OpenSPG project `4`, chunk job `682`, `FINISH` on
   2026-09-01; regression result `20 PASS / 0 PARTIAL / 0 MISS`.
+- A repeated approve request could previously return
+  `Only pending drafts can be promoted and exported. Current status: promoted`
+  even when the first action had completed successfully. The handler checked
+  draft status before checking an existing `RUNNING` or `FINISH` action. Since
+  2026-09-01, `promote-export` is idempotent for these states and returns the
+  existing action with `reused: true`; regression coverage lives in
+  `scripts/test_dashboard_action_idempotency.mjs`.
 
 ### Host memory / OOM incident (2026-08-03 — 2026-08-04)
 

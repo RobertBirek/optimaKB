@@ -1,0 +1,31 @@
+{
+  "id": "draft_2026-08-25_cea03c55_serwis-o-podatkach-nowa-wersja-specyfikacji-interfejsow-us-ug-jpk-11062026",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Serwis o podatkach - Nowa wersja Specyfikacji Interfejsów usług JPK 11062026",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://www.podatki.gov.pl/aktualnosci/nowa-wersja-specyfikacji-interfejsow-uslug-jpk-11062026\n\nNowa wersja Specyfikacji Interfejsów usług JPK 11062026 – aktualności i kontekst\n- Strona informuje o opublikowaniu nowej wersji Specyfikacji Interfejsów usług JPK (Jednolity Plik Kontrolny) z dnia 11.06.2026.\n- Główne tematy: zmiany w interfejsach JPK, wpływ na podmioty podatnikowe (gospodarka, przedsiębiorcy), oraz wskazówki dotyczące implementacji.\n- Zasób przydatny dla: podatników korzystających z JPK, księgowych, programistów integrujących systemy księgowe z JPK, oraz pod kątem zgodności z wymogami KSeF (Krajowy System e-Faktur) i polityk Ministerstwa Finansów.\n- Brak linków do konkretnych dokumentów w udostępnionych extras; zaleca odwiedzenie sekcji aktualności na podatki.gov.pl, aby uzyskać pełny tekst nowej wersji specyfikacji i związane materiały.",
+  "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/nowa-wersja-specyfikacji-interfejsow-uslug-jpk-11062026",
+  "tags": [
+    "podatki",
+    "vat",
+    "jpk",
+    "ksef",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_302deb2d",
+    "sourceType": "exa_query",
+    "sourceTier": "operator_draft",
+    "scanRunId": "source_scan_2026-08-25T02-25-02-580Z_15a4cc8f",
+    "retrievedAt": "2026-08-25T02:25:06.283Z",
+    "contentHash": "51b62d75eb4659fec7deacca5fc5954b856d2a06e63380522194c41c70c67378",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-08-25T02:25:11.003Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T08:01:42.664Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-25/draft_2026-08-25_cea03c55_serwis-o-podatkach-nowa-wersja-specyfikacji-interfejsow-us-ug-jpk-11062026.json"
+}

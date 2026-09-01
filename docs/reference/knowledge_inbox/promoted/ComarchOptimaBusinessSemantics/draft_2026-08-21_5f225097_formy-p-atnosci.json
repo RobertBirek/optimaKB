@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-08-21_5f225097_formy-p-atnosci",
+  "kbName": "ComarchOptimaBusinessSemantics",
+  "kbNamespace": "ComarchOptimaBusinessSemantics",
+  "title": "Formy płatności",
+  "content": "External source discovered via Exa query: Comarch ERP Optima 2026.5.1+ x64, GUI i reguły biznesowe form płatności. Bez porad podatkowych. Znajdź potwierdzone zachowanie przy dodaniu, zmianie typu, rachunku, terminu, oznaczeniu domyślnej, dezaktywacji i usunięciu formy używanej na dokumentach. Czy formy systemowe/domyslne można usuwać? Jakie komunikaty lub blokady występują? Użyj ComarchOptimaReference i BusinessSemantics, cytuj dowody; niewiadome nazwij i zaproponuj minimalny test GUI + MSSQL Profiler.\nTitle: Formy płatności\nURL: https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/formy-platnosci/\nTier: official\nPublished: 2024-06-03T18:39:25.000Z\nSummary:\nSummary:\nThis page describes the basic forms of payments in Comarch ERP Optima and how they are managed in the system. Key points relevant to your questions (behavior in 2026.5.x, GUI and business rules) are:\n- Basic forms defined: bon, czek, gotówka, inna, karta, kredyt, mobilna, przelew. All are linked to a single default KASA register created with a new database; recommendation is to create separate registers for transfers and corporate cards.\n- Where to define: Start/Konfiguracja/Firma/KasaBank/Formy płatności.\n- Changes to a payment form:\n- If a payment form has been used in any document, you cannot rename or change its type. You may adjust the default term (długoterminowy) and the default register, and indicate whether the form is active.\n- Deleting a form:\n- A form can be deleted only if no documents currently use it.\n- Additional fields and behaviors:\n- Termin (default payment...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/formy-platnosci/",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Comarch ERP Optima 2026.5.1+ x64, GUI i reguły biznesowe form płatności. Bez porad podatkowych. Znajdź potwierdzone zachowanie przy dodaniu, zmianie typu, rachunku, terminu, oznaczeniu domyślnej, dezaktywacji i usunięciu formy używanej na dokumentach. Czy formy systemowe/domyslne można usuwać? Jakie komunikaty lub blokady występują? Użyj ComarchOptimaReference i BusinessSemantics, cytuj dowody; niewiadome nazwij i zaproponuj minimalny test GUI + MSSQL Profiler.",
+    "sourceTier": "official",
+    "retrievedAt": "2026-08-21T19:14:45.366Z"
+  },
+  "createdAt": "2026-08-21T19:14:47.507Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T08:07:05.934Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-21/draft_2026-08-21_5f225097_formy-p-atnosci.json"
+}

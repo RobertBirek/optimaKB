@@ -1,0 +1,36 @@
+{
+  "id": "draft_2026-08-08_dde0e071_dziennik-ustaw-2026-r-poz-846",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Dziennik Ustaw 2026 r. poz. 846",
+  "content": "Automated source-discovery draft.\n\nQuery: prawo podatkowe interpretacje ustawy orzecznictwo zmiany 2026\nSource: https://www.dziennikustaw.gov.pl/DU/2026/846\nTier: official\nDiscovery confidence: 0.95\n\nDziennik Ustaw 2026 r. poz. 846\nDzienniki Urzędowe Rządowe Centrum Legislacji\nTu jesteś: Dziennik Ustaw 2026 r. poz. 846\nPrzejdź\nSzukaj\n# Dziennik Ustaw 2026 r. poz. 846\n---\n## Ustawa z dnia 29 maja 2026 r. o zmianie ustawy – Ordynacja podatkowa oraz niektórych innych ustaw\n| Data ogłoszenia: | 2026-06-25 |\n| --- | --- |\n| Nazwa dziennika: | Dziennik Ustaw |\n| Rok: | 2026 |\n| Pozycja: | 846 |\n| Pobierz plik: | plik 1 |\n---\nUżywamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki. Więcej informacji w naszej polityce prywatności. Deklaracja dostępności serwisu dziennikustaw.gov.pl\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.dziennikustaw.gov.pl/DU/2026/846",
+  "tags": [
+    "discovery",
+    "official",
+    "prawo podatkowe",
+    "interpretacje",
+    "ustawy",
+    "objaśnienia",
+    "orzecznictwo"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-08-08T02:49:01.633Z",
+    "discoveryCandidateId": "candidate_d65b157b-284",
+    "discoveryQueryId": "seed_TaxbellLegalReference",
+    "discoveryRunId": "discovery_daily_2026-08-08T02-48-56-378Z_957f838d",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "deepseek-reasoner",
+    "contentHash": "d5a008f7614ff6ce575bc591c33c009c8496eaac453bfe88efba810f79886e32"
+  },
+  "createdAt": "2026-08-08T04:05:04.537Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T08:50:43.728Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-08/draft_2026-08-08_dde0e071_dziennik-ustaw-2026-r-poz-846.json"
+}

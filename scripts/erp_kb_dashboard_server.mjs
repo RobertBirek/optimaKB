@@ -18,6 +18,7 @@ import { assertSafeHttpUrl, safeFetch } from './lib/safe_http.mjs';
 import { OPENSPG_API_BASE, ERP_KB_MCP_BASE_URL } from './lib/config.mjs';
 import { getGaps, updateGapStatus, gapStats } from './lib/learning.mjs';
 import { getServers, getUsers, createUser, updateUser, deleteUser, createUserApiKey, revokeUserApiKey, rotateUserApiKey, createMcpServer, deleteMcpServer } from './lib/mcp_registry.mjs';
+import { reusableDraftApprovalAction } from './lib/dashboard_action_idempotency.mjs';
 
 function generateMcpSystemd(server) {
   const mcpDir = path.join(ROOT, 'config', 'mcp', server.id);
@@ -3519,23 +3520,26 @@ async function handlePromoteExportDraft(req, res, draftId) {
   if (!draft) {
     return sendJson(res, 404, { ok: false, error: 'draft_missing', message: `Draft not found: ${draftId}` });
   }
+  const reusableAction = reusableDraftApprovalAction(draft, listActions(100));
+  if (reusableAction) {
+    const running = reusableAction.status === 'RUNNING';
+    return sendJson(res, running ? 202 : 200, {
+      ok: true,
+      reused: true,
+      actionId: reusableAction.id,
+      status: reusableAction.status,
+      draftId,
+      kbNamespace: draft.kbNamespace,
+      message: running
+        ? 'Approve/export/build action is already running.'
+        : 'Draft is already promoted and its approve/export/build action finished.',
+    });
+  }
   if (draft.status !== 'pending') {
     return sendJson(res, 409, {
       ok: false,
       error: 'draft_not_pending',
       message: `Only pending drafts can be promoted and exported. Current status: ${draft.status}`,
-    });
-  }
-
-  const runningForDraft = listActions(100).find((action) => (
-    action.draftId === draftId && ['promote_export', 'approve_export_build'].includes(action.type) && action.status === 'RUNNING'
-  ));
-  if (runningForDraft) {
-    return sendJson(res, 409, {
-      ok: false,
-      error: 'action_already_running',
-      message: `Promote/export action is already running for draft: ${draftId}`,
-      actionId: runningForDraft.id,
     });
   }
 

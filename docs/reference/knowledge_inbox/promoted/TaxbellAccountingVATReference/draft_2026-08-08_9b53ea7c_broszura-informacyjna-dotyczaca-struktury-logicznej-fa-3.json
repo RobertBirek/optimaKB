@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-08-08_9b53ea7c_broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "Broszura informacyjna dotycząca struktury logicznej FA(3)",
+  "content": "Source list scan draft.\n\nSource: KSeF podatki.gov.pl - FAQ i zasady obowiązywania\nURL: https://ksef.podatki.gov.pl/media/jknpcymf/broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3-04032026.pdf\n\nNajważniejsze informacje o broszurze FA(3) oraz kontekście KSeF (według treści strony):\n- Tytuł i temat: Broszura informacyjna dotycząca struktury logicznej FA(3) – zestaw wyjaśnień dotyczących faktury ustrukturyzowanej FA(3) w KSeF.\n- Zawartość: Szczegółowe opisy definicji faktury ustrukturyzowanej, wzoru faktury, sposobu wystawiania e-Faktury, formatów pól pliku, oraz pełna struktura schematów i elementów FA(3) (Nagłówek, Podmiot1/Podmiot2/Podmiot3, Podmiot Upoważniony, Fa, poszczególne elementy FaWiersz, Rozliczenie, Płatność, WarunkiTransakcji, Transport, Zamówienie, Stopka, Załącznik) wraz z przykładami, spisem schematów i tabel.\n- Czas publikacji: Marzec 2026.\n- Zastosowanie: Dokument służy jako przewodnik techniczny do tworzenia i interpretacji plików faktury ustrukturyzowanej FA(3 w systemie KSeF).\n- Dodatkowe akcenty: Wyjaśnienia skrótów GV, JST, KSeF użytych w broszurze.\nUwa...",
+  "sourceUrl": "https://ksef.podatki.gov.pl/media/jknpcymf/broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3-04032026.pdf",
+  "tags": [
+    "ksef",
+    "vat",
+    "faktury",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_f40caf9e",
+    "sourceType": "exa_query",
+    "sourceTier": "operator_draft",
+    "scanRunId": "source_scan_2026-08-08T02-25-15-883Z_d482ade4",
+    "retrievedAt": "2026-08-08T02:25:27.516Z",
+    "contentHash": "5285997f0f1c3a84d7797e6f7280e6173b0eb4198d1cbb09c1462a0818599555",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-08-08T02:25:28.306Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T08:13:53.137Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-08/draft_2026-08-08_9b53ea7c_broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3.json"
+}

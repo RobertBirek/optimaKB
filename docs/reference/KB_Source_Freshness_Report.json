@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-01T05:33:01.983Z",
+  "generatedAt": "2026-09-01T09:24:01.300Z",
   "staleDays": 14,
-  "overall": "ACTION_NEEDED",
+  "overall": "WARN",
   "results": [
     {
       "namespace": "ComarchOptimaReference",
@@ -644,13 +644,11 @@
       "oldestSource": "2026-06-05T14:40:36.163Z",
       "sourceAgeDays": 8,
       "exportManifest": "exports/taxbell_legal_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-08-04T09:25:44.791Z",
-      "exportAgeDays": 28,
-      "exportBehindSource": true,
+      "exportGeneratedAt": "2026-09-01T09:11:04.833Z",
+      "exportAgeDays": 0,
+      "exportBehindSource": false,
       "stale": false,
-      "warnings": [
-        "Export manifest is older than newest source file."
-      ],
+      "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/taxbell/legal_reference/meta/discovery_report.json",
@@ -753,13 +751,11 @@
       "oldestSource": "2026-06-05T14:40:42.588Z",
       "sourceAgeDays": 8,
       "exportManifest": "exports/taxbell_payroll_hr_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-08-04T09:25:45.007Z",
-      "exportAgeDays": 28,
-      "exportBehindSource": true,
+      "exportGeneratedAt": "2026-09-01T09:11:05.067Z",
+      "exportAgeDays": 0,
+      "exportBehindSource": false,
       "stale": false,
-      "warnings": [
-        "Export manifest is older than newest source file."
-      ],
+      "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/taxbell/payroll_hr_reference/meta/discovery_report.json",
@@ -862,13 +858,11 @@
       "oldestSource": "2026-06-05T14:40:53.662Z",
       "sourceAgeDays": 8,
       "exportManifest": "exports/taxbell_accounting_vat_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-08-04T09:25:45.154Z",
-      "exportAgeDays": 28,
-      "exportBehindSource": true,
+      "exportGeneratedAt": "2026-09-01T09:11:05.221Z",
+      "exportAgeDays": 0,
+      "exportBehindSource": false,
       "stale": false,
-      "warnings": [
-        "Export manifest is older than newest source file."
-      ],
+      "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/taxbell/accounting_vat_reference/meta/discovery_report.json",

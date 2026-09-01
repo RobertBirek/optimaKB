@@ -1,9 +1,9 @@
 # KB Source Freshness Report
 
-Generated at: 2026-09-01T05:33:01.983Z
+Generated at: 2026-09-01T09:24:01.300Z
 Stale threshold: `14` days
 
-Overall: `ACTION_NEEDED`
+Overall: `WARN`
 
 ## ComarchOptimaReference
 
@@ -89,13 +89,11 @@ Overall: `ACTION_NEEDED`
 - Source files: `82`
 - Newest source: `2026-08-24T03:50:46.754Z`
 - Source age days: `8`
-- Export generatedAt: `2026-08-04T09:25:44.791Z`
-- Export behind source: `true`
+- Export generatedAt: `2026-09-01T09:11:04.833Z`
+- Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `42`
 - Registry hashes: `42`
-- Warnings:
-  - Export manifest is older than newest source file.
 
 ## TaxbellPayrollHRReference
 
@@ -103,13 +101,11 @@ Overall: `ACTION_NEEDED`
 - Source files: `106`
 - Newest source: `2026-08-24T03:51:39.043Z`
 - Source age days: `8`
-- Export generatedAt: `2026-08-04T09:25:45.007Z`
-- Export behind source: `true`
+- Export generatedAt: `2026-09-01T09:11:05.067Z`
+- Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `48`
 - Registry hashes: `48`
-- Warnings:
-  - Export manifest is older than newest source file.
 
 ## TaxbellAccountingVATReference
 
@@ -117,11 +113,9 @@ Overall: `ACTION_NEEDED`
 - Source files: `89`
 - Newest source: `2026-08-24T03:52:14.707Z`
 - Source age days: `8`
-- Export generatedAt: `2026-08-04T09:25:45.154Z`
-- Export behind source: `true`
+- Export generatedAt: `2026-09-01T09:11:05.221Z`
+- Export behind source: `false`
 - Registry present: `true`
 - Registry sources: `47`
 - Registry hashes: `47`
-- Warnings:
-  - Export manifest is older than newest source file.
 

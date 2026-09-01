@@ -1,0 +1,37 @@
+{
+  "id": "draft_2026-08-29_e1ce40d5_staz-pracy-na-nowych-zasadach-ministerstwo-rodziny-pracy-i-polityki-spo-ecznej-p",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Staż pracy na nowych zasadach - Ministerstwo Rodziny, Pracy i Polityki Społecznej - Portal Gov.pl",
+  "content": "Automated source-discovery draft.\n\nQuery: kadry płace ZUS prawo pracy BHP zatrudnienie zmiany 2026\nSource: https://www.gov.pl/web/rodzina/staz-pracy-qa\nTier: official\nDiscovery confidence: 0.95\n\nStaż pracy na nowych zasadach - Ministerstwo Rodziny, Pracy i Polityki Społecznej - Portal Gov.pl\n## Staż pracy na nowych zasadach\nPracowałeś 5 lat na podstawie umowy zlecenia, a przez kolejne 7 prowadziłeś jednoosobową działalność gospodarczą? Ostatnie 10 lat pracowałaś na samozatrudnieniu? W świetle prawa Wasz staż pracy za te lata to dokładnie zero. To niesprawiedliwe - i postanowiliśmy to zmienić.\nW odpowiedzi na ten problem przygotowaliśmy w Ministerstwie Rodziny, Pracy i Polityki Społecznej projekt ustawy, który zakłada, że okresy prowadzenia jednoosobowej działalności gospodarczej oraz pracy na podstawie umowy zlecenia będą wliczały się do stażu pracy.\nNowe przepisy wejdą w życie 1 stycznia 2026 r. w sektorze publicznym, a w sektorze prywatnym 1 maja 2026 r.\nUzyskaj zaświadczenie o stażu pracy z Zakładu Ubezpieczeń Społecznych:\nKrok 1\nZaloguj się na swoje konto ZUS: www.zus.pl/ezus/logowanie.\nKrok 2\nW menu po lewej stronie wyszukaj zakładkę „Kreator wniosku «stażowe»” i kliknij, aby otworzyć.\nKrok 3\nPo wejściu w zakładkę, najedź na pole „Utwórz nowy wniosek” i kliknij „Pokaż”.\nKrok 4\nUzupełnij wniosek (częściowo uzupełniony już o Twoje dane) i wyślij.\nChcesz wiedzieć więcej? Zapoznaj się z odpowiedziami na najczęściej zadawane pytania.\n### Zakres zmian i ich działanie wstecz\n1. Czy planowane zmiany w zakresie zaliczania umów cywilnoprawnych do stażu pracy będą działały wstecz?\nOkresy pracy sprzed wejścia w życie ustawy będą wliczały się do stażu pracy.\n\nReview this draft before promotion.",
+  "sourceUrl": "https://www.gov.pl/web/rodzina/staz-pracy-qa",
+  "tags": [
+    "discovery",
+    "official",
+    "kadry",
+    "płace",
+    "ZUS",
+    "prawo pracy",
+    "BHP",
+    "zatrudnienie"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceTier": "official",
+    "retrievedAt": "2026-08-29T02:48:33.897Z",
+    "discoveryCandidateId": "candidate_e9149314-25c",
+    "discoveryQueryId": "seed_TaxbellPayrollHRReference",
+    "discoveryRunId": "discovery_daily_2026-08-29T02-48-14-469Z_ebd6ffef",
+    "discoveryAction": "CREATE_DRAFT",
+    "discoveryConfidence": 0.95,
+    "discoveryPromptVersion": "dashboard-discovery-v1",
+    "discoveryModel": "gpt-5.4-mini",
+    "contentHash": "833077eeed6294bfe39808463d6140c859646297c2330df17ed40394a0b953cd"
+  },
+  "createdAt": "2026-08-29T04:04:54.477Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T06:48:57.969Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-29/draft_2026-08-29_e1ce40d5_staz-pracy-na-nowych-zasadach-ministerstwo-rodziny-pracy-i-polityki-spo-ecznej-p.json"
+}

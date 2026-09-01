@@ -25,6 +25,8 @@
     "test:schema-export-integrity": "node scripts/test_schema_export_integrity.mjs",
     "test:mssql-connection": "node scripts/test_mssql_connection_string.mjs",
     "test:atomic-file": "node scripts/test_atomic_file.mjs",
+    "test:dashboard-action-idempotency": "node scripts/test_dashboard_action_idempotency.mjs",
+    "test:taxbell-duplicate-ids": "node scripts/test_taxbell_reference_duplicate_ids.mjs",
     "test:answer-focus": "node scripts/test_erp_knowledge_answer_focus.mjs",
     "test:order-to-cash": "node scripts/test_order_to_cash_reference.mjs",
     "verify:schema-graph": "node scripts/verify_optima_schema_graph_parity.mjs"

@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-08-27_24ed4947_jakie-informacje-znajduja-sie-na-formularzu-faktury-sprzedazy-baza-wiedzy-aplika",
+  "kbName": "ComarchOptimaSchema",
+  "kbNamespace": "ComarchOptimaSchema",
+  "title": "Jakie informacje znajdują się na formularzu faktury sprzedaży? – Baza Wiedzy aplikacji Comarch ERP Optima w przeglądarce",
+  "content": "External source discovered via Exa query: Invoice / faktura sprzedaży FS w Comarch ERP Optima 2026.5.1 x64. Runtime COM create przez CDN.DokumentyHaMag.AddNew(null) odrzuca właściwość DDfID komunikatem, że System.__ComObject nie zawiera definicji DDfID. Potrzebuję potwierdzonego sposobu ustawienia definicji dokumentu FS (ID 1), typu 302, rodzaju 302000 i bufora przy AddNew: dokładna właściwość lub właściwość zagnieżdżona, ewentualnie poprawny argument AddNew. Uwzględnij lookup definicji po ID/symbolu, wymagane pola, Save/Verify, oraz mapowanie CDN.TraNag.TrN_DDfId. COM/SDK/SQL schema, without tax advice. Odpowiedź rozdziel na POTWIERDZONE, WNIOSEK i HIPOTEZA; bez ograniczania domains.\nTitle: Jakie informacje znajdują się na formularzu faktury sprzedaży? – Baza Wiedzy aplikacji Comarch ERP Optima w przeglądarce\nURL: https://pomoc.comarch.pl/optima-online/pl/index.php/dokumentacja/jak-wystawic-fakture-sprzedazy/\nTier: official\nPublished: 2025-08-01T00:00:00.000Z\nSummary:\nPOTWIERDZONE\n- Formularz Faktury Sprzedaży w Comarch ERP Optima Online (opis w Bazie Wiedzy) zawiera zakładki: Dane podstawowe, Dane księgowe / JPK, Atrybuty, Dokumenty, KSeF.\n- W sekcji Dane transakcyjne znajdują się pola Data wystawienia/Data sprzedaży (domyślnie bieżąca data, możliwość edycji; zmiana daty wymaga potwierdzenia warunków handlowych po edycji dokumentu z pozycjami) oraz sekcja Pozycje (lista pozycji z kolumnami: Lp., Kod, Nazwa, Ilość, Jednostka, Rabat, Cena netto/brutto, Wartość).\n- Zakładka Dokumenty zawiera Dokumenty powiązane (wydanie zewnętrzne itp.), Bibliotekę dokumentów oraz Zadania i kontakty CRM (widoczność zależy od modułów).\n- Zakładka KSeF gromadzi informacje o wysyłce do Krajowego Systemu e-Faktur (statusy, numer KSeF, UPO, parametry trybu wysyłki).\n- Na dole formularza znajduje się pasek podsumowań Netto/Brutto/Zapłacono/Pozostaje i przyciski Zapisz, Zap...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima-online/pl/index.php/dokumentacja/jak-wystawic-fakture-sprzedazy/",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Invoice / faktura sprzedaży FS w Comarch ERP Optima 2026.5.1 x64. Runtime COM create przez CDN.DokumentyHaMag.AddNew(null) odrzuca właściwość DDfID komunikatem, że System.__ComObject nie zawiera definicji DDfID. Potrzebuję potwierdzonego sposobu ustawienia definicji dokumentu FS (ID 1), typu 302, rodzaju 302000 i bufora przy AddNew: dokładna właściwość lub właściwość zagnieżdżona, ewentualnie poprawny argument AddNew. Uwzględnij lookup definicji po ID/symbolu, wymagane pola, Save/Verify, oraz mapowanie CDN.TraNag.TrN_DDfId. COM/SDK/SQL schema, without tax advice. Odpowiedź rozdziel na POTWIERDZONE, WNIOSEK i HIPOTEZA; bez ograniczania domains.",
+    "sourceTier": "official",
+    "retrievedAt": "2026-08-27T20:20:30.142Z"
+  },
+  "createdAt": "2026-08-27T20:20:34.207Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T07:02:25.285Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-27/draft_2026-08-27_24ed4947_jakie-informacje-znajduja-sie-na-formularzu-faktury-sprzedazy-baza-wiedzy-aplika.json"
+}

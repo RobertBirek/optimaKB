@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T05:08:27.010Z",
+  "generatedAt": "2026-09-01T08:50:43.733Z",
   "entries": [
     {
       "draftId": "draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note",
@@ -4561,6 +4561,104 @@
       "reviewNote": "Approved and exported from dashboard"
     },
     {
+      "draftId": "draft_2026-08-08_9b53ea7c_broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3",
+      "status": "promoted",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "title": "Broszura informacyjna dotycząca struktury logicznej FA(3)",
+      "sourceUrl": "https://ksef.podatki.gov.pl/media/jknpcymf/broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3-04032026.pdf",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-08/draft_2026-08-08_9b53ea7c_broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-08-08_9b53ea7c_broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-08-08_9b53ea7c_broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3.md",
+      "promotedAt": "2026-09-01T08:13:53.137Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-08_dde0e071_dziennik-ustaw-2026-r-poz-846",
+      "status": "promoted",
+      "kbName": "Taxbell Legal Reference",
+      "kbNamespace": "TaxbellLegalReference",
+      "title": "Dziennik Ustaw 2026 r. poz. 846",
+      "sourceUrl": "https://www.dziennikustaw.gov.pl/DU/2026/846",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-08/draft_2026-08-08_dde0e071_dziennik-ustaw-2026-r-poz-846.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-08-08_dde0e071_dziennik-ustaw-2026-r-poz-846.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-08-08_dde0e071_dziennik-ustaw-2026-r-poz-846.md",
+      "promotedAt": "2026-09-01T08:50:43.728Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-21_5f225097_formy-p-atnosci",
+      "status": "promoted",
+      "kbName": "Comarch Optima Business Semantics",
+      "kbNamespace": "ComarchOptimaBusinessSemantics",
+      "title": "Formy płatności",
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/formy-platnosci/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-21/draft_2026-08-21_5f225097_formy-p-atnosci.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaBusinessSemantics/draft_2026-08-21_5f225097_formy-p-atnosci.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaBusinessSemantics/draft_2026-08-21_5f225097_formy-p-atnosci.md",
+      "promotedAt": "2026-09-01T08:07:05.934Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-25_cea03c55_serwis-o-podatkach-nowa-wersja-specyfikacji-interfejsow-us-ug-jpk-11062026",
+      "status": "promoted",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "title": "Serwis o podatkach - Nowa wersja Specyfikacji Interfejsów usług JPK 11062026",
+      "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/nowa-wersja-specyfikacji-interfejsow-uslug-jpk-11062026",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-25/draft_2026-08-25_cea03c55_serwis-o-podatkach-nowa-wersja-specyfikacji-interfejsow-us-ug-jpk-11062026.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-08-25_cea03c55_serwis-o-podatkach-nowa-wersja-specyfikacji-interfejsow-us-ug-jpk-11062026.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-08-25_cea03c55_serwis-o-podatkach-nowa-wersja-specyfikacji-interfejsow-us-ug-jpk-11062026.md",
+      "promotedAt": "2026-09-01T08:01:42.664Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-25_e93afc55_gdzie-przypisac-kody-gtu-i-procedury-ksef-do-towarow-baza-wiedzy-programu-comarc",
+      "status": "promoted",
+      "kbName": "Comarch Optima ERP MSSQL Schema",
+      "kbNamespace": "ComarchOptimaSchema",
+      "title": "Gdzie przypisać kody GTU i procedury KSeF do towarów? – Baza Wiedzy programu Comarch ERP Optima",
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/gdzie-przypisac-kody-gtu-i-procedury-ksef-do-towarow/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-25/draft_2026-08-25_e93afc55_gdzie-przypisac-kody-gtu-i-procedury-ksef-do-towarow-baza-wiedzy-programu-comarc.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-25_e93afc55_gdzie-przypisac-kody-gtu-i-procedury-ksef-do-towarow-baza-wiedzy-programu-comarc.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-25_e93afc55_gdzie-przypisac-kody-gtu-i-procedury-ksef-do-towarow-baza-wiedzy-programu-comarc.md",
+      "promotedAt": "2026-09-01T08:08:09.000Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-26_16cccd99_otwarcie-nowego-raportu-kasowego-bankowego",
+      "status": "promoted",
+      "kbName": "Comarch Optima ERP MSSQL Schema",
+      "kbNamespace": "ComarchOptimaSchema",
+      "title": "Otwarcie nowego raportu kasowego/bankowego",
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2026/dokumentacja/otwarcie-nowego-raportu-kasowegobankowego/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-26/draft_2026-08-26_16cccd99_otwarcie-nowego-raportu-kasowego-bankowego.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-26_16cccd99_otwarcie-nowego-raportu-kasowego-bankowego.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-26_16cccd99_otwarcie-nowego-raportu-kasowego-bankowego.md",
+      "promotedAt": "2026-09-01T07:07:29.473Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-27_24ed4947_jakie-informacje-znajduja-sie-na-formularzu-faktury-sprzedazy-baza-wiedzy-aplika",
+      "status": "promoted",
+      "kbName": "Comarch Optima ERP MSSQL Schema",
+      "kbNamespace": "ComarchOptimaSchema",
+      "title": "Jakie informacje znajdują się na formularzu faktury sprzedaży? – Baza Wiedzy aplikacji Comarch ERP Optima w przeglądarce",
+      "sourceUrl": "https://pomoc.comarch.pl/optima-online/pl/index.php/dokumentacja/jak-wystawic-fakture-sprzedazy/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-27/draft_2026-08-27_24ed4947_jakie-informacje-znajduja-sie-na-formularzu-faktury-sprzedazy-baza-wiedzy-aplika.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-27_24ed4947_jakie-informacje-znajduja-sie-na-formularzu-faktury-sprzedazy-baza-wiedzy-aplika.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-27_24ed4947_jakie-informacje-znajduja-sie-na-formularzu-faktury-sprzedazy-baza-wiedzy-aplika.md",
+      "promotedAt": "2026-09-01T07:02:25.285Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
       "draftId": "draft_2026-08-28_542b7ff6_zestawy-promocyjne-baza-wiedzy-programu-comarch-erp-optima",
       "status": "promoted",
       "kbName": "Comarch Optima Business Semantics",
@@ -4585,6 +4683,20 @@
       "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.json",
       "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-29_7fd2a582_bazy-danych-baza-wiedzy-programu-comarch-erp-optima.md",
       "promotedAt": "2026-09-01T05:08:27.006Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-29_e1ce40d5_staz-pracy-na-nowych-zasadach-ministerstwo-rodziny-pracy-i-polityki-spo-ecznej-p",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "Staż pracy na nowych zasadach - Ministerstwo Rodziny, Pracy i Polityki Społecznej - Portal Gov.pl",
+      "sourceUrl": "https://www.gov.pl/web/rodzina/staz-pracy-qa",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-29/draft_2026-08-29_e1ce40d5_staz-pracy-na-nowych-zasadach-ministerstwo-rodziny-pracy-i-polityki-spo-ecznej-p.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-08-29_e1ce40d5_staz-pracy-na-nowych-zasadach-ministerstwo-rodziny-pracy-i-polityki-spo-ecznej-p.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-08-29_e1ce40d5_staz-pracy-na-nowych-zasadach-ministerstwo-rodziny-pracy-i-polityki-spo-ecznej-p.md",
+      "promotedAt": "2026-09-01T06:48:57.969Z",
       "promotedBy": "mcpbot",
       "reviewNote": "Approved and exported from dashboard"
     }

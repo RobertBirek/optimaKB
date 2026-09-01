@@ -51,12 +51,19 @@ function chunksFor(content) {
 function loadRegistryEntries(config) {
   const registryPath = path.join(ROOT, config.sourceRoot, 'meta/source_registry.json');
   const registry = loadJsonIfExists(registryPath, { entries: [] });
-  return (registry.entries || []).flatMap((entry) => {
+  const entries = (registry.entries || []).flatMap((entry) => {
     const snapshotPath = path.join(ROOT, entry.localSnapshotPath || '');
     const snapshot = loadJsonIfExists(snapshotPath, null);
     if (!snapshot?.content) return [];
     return [{ ...entry, content: snapshot.content }];
   });
+  const byDocumentId = new Map();
+  for (const entry of entries) {
+    const id = makeId('TBDOC', entry.url);
+    const existing = byDocumentId.get(id);
+    if (!existing || entry.content.length > existing.content.length) byDocumentId.set(id, entry);
+  }
+  return [...byDocumentId.values()];
 }
 
 function entryGuides(config, documentRows) {
@@ -100,7 +107,7 @@ function exportConfig(config) {
   const referenceRows = [];
   const chunkRows = [];
   const topicCounts = new Map();
-  const referenceIdBySourceUrl = new Map();
+  const registryReferenceIds = new Set();
 
   for (const entry of registryEntries) {
     const id = makeId('TBDOC', entry.url);
@@ -125,7 +132,7 @@ function exportConfig(config) {
       contentHash: entry.contentHash,
       summary: truncate(entry.summary || entry.content, 1400),
     });
-    referenceIdBySourceUrl.set(entry.url, id);
+    registryReferenceIds.add(id);
     chunksFor(entry.content).forEach((content, index) => {
       chunkRows.push({
         id: makeId('TBCHUNK', `${id}_${index + 1}`),
@@ -143,9 +150,8 @@ function exportConfig(config) {
   }
 
   for (const draft of promoted) {
-    const existingReferenceId = draft.sourceUrl
-      ? referenceIdBySourceUrl.get(draft.sourceUrl)
-      : '';
+    const sourceReferenceId = draft.sourceUrl ? makeId('TBDOC', draft.sourceUrl) : '';
+    const existingReferenceId = registryReferenceIds.has(sourceReferenceId) ? sourceReferenceId : '';
     const id = existingReferenceId || makeId('TBDOC_PROMOTED', draft.id);
     const area = topicArea(config, `${draft.title} ${draft.content}`);
     if (!existingReferenceId) {
