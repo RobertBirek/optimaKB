@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-31T16:05:10.248Z",
+  "generatedAt": "2026-09-01T03:53:34.170Z",
   "totals": {
-    "candidates": 308,
-    "pending": 140,
+    "candidates": 309,
+    "pending": 141,
     "duplicates": 1,
     "reviewed": 146,
     "activeQueries": 10,
@@ -179,7 +179,7 @@
           "wysoka akceptacja operatora"
         ],
         "ageDays": 15,
-        "kbPending": 36
+        "kbPending": 37
       }
     },
     {
@@ -198,7 +198,7 @@
           "wysoka akceptacja operatora"
         ],
         "ageDays": 15,
-        "kbPending": 36
+        "kbPending": 37
       }
     }
   ],
@@ -252,8 +252,10 @@
   "semiAuto": {
     "configured": true,
     "eligible": true,
-    "active": true,
-    "blockers": [],
+    "active": false,
+    "blockers": [
+      "Discovery działa w wymuszonym trybie dry-run."
+    ],
     "metrics": {
       "reviewed": 146,
       "agreement": 1,

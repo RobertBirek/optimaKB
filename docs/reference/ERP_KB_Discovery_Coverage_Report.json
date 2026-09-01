@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-31T16:05:07.274Z",
+  "generatedAt": "2026-09-01T03:53:30.848Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
-  "dryRun": false,
+  "dryRun": true,
   "coverage": {
     "configuredKbs": 10,
     "coveredKbs": 10
@@ -10,16 +10,16 @@
   "totals": {
     "queries": 10,
     "activeQueries": 10,
-    "candidates": 308,
+    "candidates": 309,
     "drafted": 130,
-    "pending": 140,
+    "pending": 141,
     "routed": 7,
     "rejected": 30,
     "duplicates": 1
   },
   "feedback": {
     "overall": {
-      "candidates": 308,
+      "candidates": 309,
       "reviewed": 146,
       "duplicates": 1,
       "accepted": 115,
@@ -176,7 +176,7 @@
         "falseNegatives": 0
       },
       "TaxbellLegalReference": {
-        "candidates": 73,
+        "candidates": 74,
         "reviewed": 22,
         "duplicates": 0,
         "accepted": 18,
@@ -230,7 +230,7 @@
         "falseNegatives": 0
       },
       "professional": {
-        "candidates": 89,
+        "candidates": 90,
         "reviewed": 33,
         "duplicates": 0,
         "accepted": 22,
@@ -258,7 +258,7 @@
     },
     "byAction": {
       "CANDIDATE_ONLY": {
-        "candidates": 144,
+        "candidates": 145,
         "reviewed": 55,
         "duplicates": 0,
         "accepted": 42,
@@ -1547,7 +1547,7 @@
         "falseNegatives": 0
       },
       "seed_TaxbellLegalReference": {
-        "candidates": 39,
+        "candidates": 40,
         "reviewed": 10,
         "duplicates": 0,
         "accepted": 9,
@@ -1821,13 +1821,13 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 73,
+      "candidates": 74,
       "drafted": 33,
-      "pending": 36,
+      "pending": 37,
       "routed": 0,
       "rejected": 4,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-28T02:47:17.625Z"
+      "lastCandidateAt": "2026-09-01T03:53:30.752Z"
     },
     {
       "kbNamespace": "TaxbellPayrollHRReference",
@@ -1859,6 +1859,56 @@
     }
   ],
   "recentRuns": [
+    {
+      "id": "discovery_daily_2026-09-01T03-53-14-140Z_4b45944f",
+      "type": "daily",
+      "ok": true,
+      "startedAt": "2026-09-01T03:53:14.140Z",
+      "finishedAt": "2026-09-01T03:53:30.757Z",
+      "resultCount": 30,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_daily_2026-09-01T03-48-24-050Z_f56db3b8",
+      "type": "daily",
+      "ok": false,
+      "startedAt": "2026-09-01T03:48:24.050Z",
+      "finishedAt": "2026-09-01T03:51:47.857Z",
+      "resultCount": 30,
+      "draftedCount": 0,
+      "error": "",
+      "errors": [
+        {
+          "queryId": "seed_TaxbellLegalReference",
+          "stage": "llm",
+          "message": "This operation was aborted"
+        }
+      ]
+    },
+    {
+      "id": "discovery_autodraft_2026-09-01T03-46-01-065Z_0fce8749",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-09-01T03:46:01.065Z",
+      "finishedAt": "2026-09-01T03:46:01.172Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_autodraft_2026-08-31T22-05-13-910Z_88dd4dd8",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-08-31T22:05:13.910Z",
+      "finishedAt": "2026-08-31T22:05:13.919Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
     {
       "id": "discovery_autodraft_2026-08-31T16-05-07-155Z_44994f4c",
       "type": "autodraft",
@@ -1940,50 +1990,6 @@
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
-      "errors": []
-    },
-    {
-      "id": "discovery_autodraft_2026-08-30T22-01-13-935Z_869c632e",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-30T22:01:13.935Z",
-      "finishedAt": "2026-08-30T22:01:13.945Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": "",
-      "errors": []
-    },
-    {
-      "id": "discovery_autodraft_2026-08-30T16-01-03-809Z_ab2df38e",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-30T16:01:03.809Z",
-      "finishedAt": "2026-08-30T16:01:03.817Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": "",
-      "errors": []
-    },
-    {
-      "id": "discovery_autodraft_2026-08-30T10-01-55-461Z_54c148e7",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-30T10:01:55.461Z",
-      "finishedAt": "2026-08-30T10:01:55.473Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": "",
-      "errors": []
-    },
-    {
-      "id": "discovery_weekly_2026-08-30T06-56-16-076Z_f7ef79c6",
-      "type": "weekly",
-      "ok": false,
-      "startedAt": "2026-08-30T06:56:16.076Z",
-      "finishedAt": "2026-08-30T06:57:46.338Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": "This operation was aborted",
       "errors": []
     }
   ]

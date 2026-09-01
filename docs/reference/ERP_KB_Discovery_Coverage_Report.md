@@ -1,17 +1,17 @@
 # ERP KB Discovery Coverage Report
 
-Generated: `2026-08-31T16:05:07.274Z`
+Generated: `2026-09-01T03:53:30.848Z`
 
 - Overall: `PASS`
 - Coverage: `10/10`
 - Active queries: `10`
-- Candidates: `308`
+- Candidates: `309`
 - Drafted: `130`
 - Corpus duplicates: `1`
 - Operator decisions: `146`
 - Calibration: `30/30`
 - Agreement: `100%`
-- Dry run: `false`
+- Dry run: `true`
 
 | KB | Mode | Queries | Candidates | Drafted | Pending | Routed |
 |---|---|---:|---:|---:|---:|---:|
@@ -22,6 +22,6 @@ Generated: `2026-08-31T16:05:07.274Z`
 | ComarchOptimaPartnerTechnical | PARTNER_ROUTE | 1 | 22 | 0 | 7 | 7 |
 | ComarchBetterflyReference | DIRECT_DRAFT | 1 | 20 | 7 | 13 | 0 |
 | ComarchCommunityNews | DIRECT_DRAFT | 1 | 28 | 12 | 10 | 0 |
-| TaxbellLegalReference | DIRECT_DRAFT | 1 | 73 | 33 | 36 | 0 |
+| TaxbellLegalReference | DIRECT_DRAFT | 1 | 74 | 33 | 37 | 0 |
 | TaxbellPayrollHRReference | DIRECT_DRAFT | 1 | 49 | 28 | 18 | 0 |
 | TaxbellAccountingVATReference | DIRECT_DRAFT | 1 | 32 | 22 | 8 | 0 |

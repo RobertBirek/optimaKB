@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T18:31:36.610Z",
+  "generatedAt": "2026-09-01T03:52:34.848Z",
   "overall": "READY",
   "gate": {
     "eligible": true,
@@ -32,7 +32,7 @@
     "approvedBy": ""
   },
   "learning": {
-    "generatedAt": "2026-08-31T18:31:36.606Z",
+    "generatedAt": "2026-09-01T03:52:34.844Z",
     "overall": {
       "reviewed": 8,
       "kbNamespaces": 1
