@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
 import path from 'path';
 import { answerQuestion } from './erp_knowledge_answer.mjs';
 import { recordLearningGap } from './lib/learning.mjs';
+import { writeFileAtomically } from './lib/atomic_file.mjs';
 
 const ROOT = '/docker/openspg';
 const ALL_QUESTIONS = [
@@ -404,8 +404,8 @@ async function main() {
 
   const summary = summarize(results);
   const payload = { generatedAt: new Date().toISOString(), requestedSize: size, size: effectiveSize, questionCount: ALL_QUESTIONS.length, summary, results };
-  fs.writeFileSync(outJson, JSON.stringify(payload, null, 2) + '\n', 'utf8');
-  fs.writeFileSync(outMd, buildMarkdownReport(results, summary, effectiveSize) + '\n', 'utf8');
+  writeFileAtomically(outJson, JSON.stringify(payload, null, 2) + '\n');
+  writeFileAtomically(outMd, buildMarkdownReport(results, summary, effectiveSize) + '\n');
 
   console.log(JSON.stringify(summary, null, 2));
   console.log(`Wrote: ${outJson}`);

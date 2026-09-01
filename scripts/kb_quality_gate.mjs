@@ -6,6 +6,7 @@ import process from 'process';
 import { execSync } from 'child_process';
 import { loadPromotedKnowledge, makePromotedId, TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { slug } from './lib/export_utils.mjs';
+import { writeFileAtomically } from './lib/atomic_file.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const OUT_JSON = process.env.KB_QUALITY_GATE_OUT_JSON || path.join(ROOT, 'docs/reference/KB_Quality_Gate_Report.json');
@@ -509,8 +510,8 @@ try {
 
   fs.mkdirSync(path.dirname(OUT_JSON), { recursive: true });
   fs.mkdirSync(path.dirname(OUT_MD), { recursive: true });
-  fs.writeFileSync(OUT_JSON, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-  fs.writeFileSync(OUT_MD, buildMarkdown(payload), 'utf8');
+  writeFileAtomically(OUT_JSON, `${JSON.stringify(payload, null, 2)}\n`);
+  writeFileAtomically(OUT_MD, buildMarkdown(payload));
 
   process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
   if (overall === 'FAIL' || (overall === 'WARN' && hasArg(args, '--fail-on-warn'))) {

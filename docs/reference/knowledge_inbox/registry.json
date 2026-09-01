@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T08:50:43.733Z",
+  "generatedAt": "2026-09-01T10:15:44.279Z",
   "entries": [
     {
       "draftId": "draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note",
@@ -4585,6 +4585,20 @@
       "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-08-08_dde0e071_dziennik-ustaw-2026-r-poz-846.json",
       "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-08-08_dde0e071_dziennik-ustaw-2026-r-poz-846.md",
       "promotedAt": "2026-09-01T08:50:43.728Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-12_beeff7f8_formularz-kontrahenta-zak-adka-p-atnosci-baza-wiedzy-programu-comarch-erp-optima",
+      "status": "promoted",
+      "kbName": "Comarch Optima ERP MSSQL Schema",
+      "kbNamespace": "ComarchOptimaSchema",
+      "title": "Formularz kontrahenta – zakładka Płatności – Baza Wiedzy programu Comarch ERP Optima",
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2025_5/dokumentacja/formularz-kontrahenta-zakladka-platnosci/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-12/draft_2026-08-12_beeff7f8_formularz-kontrahenta-zak-adka-p-atnosci-baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-12_beeff7f8_formularz-kontrahenta-zak-adka-p-atnosci-baza-wiedzy-programu-comarch-erp-optima.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaSchema/draft_2026-08-12_beeff7f8_formularz-kontrahenta-zak-adka-p-atnosci-baza-wiedzy-programu-comarch-erp-optima.md",
+      "promotedAt": "2026-09-01T10:15:44.275Z",
       "promotedBy": "mcpbot",
       "reviewNote": "Approved and exported from dashboard"
     },

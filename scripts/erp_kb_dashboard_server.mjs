@@ -19,6 +19,7 @@ import { OPENSPG_API_BASE, ERP_KB_MCP_BASE_URL } from './lib/config.mjs';
 import { getGaps, updateGapStatus, gapStats } from './lib/learning.mjs';
 import { getServers, getUsers, createUser, updateUser, deleteUser, createUserApiKey, revokeUserApiKey, rotateUserApiKey, createMcpServer, deleteMcpServer } from './lib/mcp_registry.mjs';
 import { reusableDraftApprovalAction } from './lib/dashboard_action_idempotency.mjs';
+import { assertAtomicWriteAccess } from './lib/atomic_file.mjs';
 
 function generateMcpSystemd(server) {
   const mcpDir = path.join(ROOT, 'config', 'mcp', server.id);
@@ -2729,6 +2730,14 @@ function buildPreflight(draftOrNamespace) {
       add(name, false, `${filePath}: ${error.message}`);
     }
   }
+  function addAtomicWritablePath(name, filePath) {
+    try {
+      assertAtomicWriteAccess(filePath, { readable: true });
+      add(name, true, fs.existsSync(filePath) ? `${filePath} can be atomically replaced` : `${filePath} can be created`);
+    } catch (error) {
+      add(name, false, `${filePath}: ${error.message}`);
+    }
+  }
   function addReadableTree(name, dirPath, limit = 5000) {
     let checked = 0;
     const failures = [];
@@ -2808,7 +2817,7 @@ function buildPreflight(draftOrNamespace) {
   } catch (error) {
     add('withdrawn_dir', false, error.message);
   }
-  addWritablePath('knowledge_inbox_registry', path.join(ROOT, 'docs/reference/knowledge_inbox/registry.json'));
+  addAtomicWritablePath('knowledge_inbox_registry', path.join(ROOT, 'docs/reference/knowledge_inbox/registry.json'));
 
   const registry = loadKbRegistry();
   const registryEntry = registry.entries.find((entry) => entry.namespace === kbNamespace);
@@ -2833,7 +2842,7 @@ function buildPreflight(draftOrNamespace) {
     path.join(ROOT, REPORTS.freshness.mdPath),
   ]) {
     const reportName = path.basename(reportPath);
-    addWritablePath(`pipeline_report:${reportName}`, reportPath);
+    addAtomicWritablePath(`pipeline_report:${reportName}`, reportPath);
   }
   for (const relativePath of SOURCE_REGISTRY_WRITES[kbNamespace] || []) {
     addWritablePath(`source_registry:${path.basename(relativePath)}`, path.join(ROOT, relativePath));

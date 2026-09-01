@@ -1,6 +1,6 @@
 # KB Quality Gate Report
 
-Generated at: 2026-09-01T09:41:02.236Z
+Generated at: 2026-09-01T10:21:53.696Z
 
 Overall: `FAIL`
 
@@ -207,35 +207,6 @@ Overall: `FAIL`
   - `339` `FINISH` `business_rule.csv`
   - `681` `FINISH` `business_description.csv`
 
-## ComarchOptimaSchema
-
-- Verdict: `PASS`
-- Export dir: `exports/optima_schema/v1`
-- Staging generatedAt: `2026-09-01T08:08:09.417Z`
-- Required files:
-  - `table.csv`: exists `true`, rows `630`
-  - `column.csv`: exists `true`, rows `12441`
-  - `chunk.csv`: exists `true`, rows `13136`
-- Jobs:
-  - `419` `FINISH` `database_instance.csv`
-  - `420` `FINISH` `table.csv`
-  - `421` `FINISH` `column.csv`
-  - `422` `FINISH` `primary_key.csv`
-  - `423` `FINISH` `foreign_key.csv`
-  - `424` `FINISH` `index.csv`
-  - `425` `FINISH` `constraint.csv`
-  - `426` `FINISH` `view.csv`
-  - `427` `FINISH` `stored_procedure.csv`
-  - `428` `FINISH` `function.csv`
-  - `429` `FINISH` `trigger.csv`
-  - `430` `FINISH` `parameter.csv`
-  - `432` `FINISH` `schema_change.csv`
-  - `434` `FINISH` `table_query_guide.csv`
-  - `435` `FINISH` `join_path_guide.csv`
-  - `436` `FINISH` `object_dependency.csv`
-  - `437` `FINISH` `sql_object_guide.csv`
-  - `689` `FINISH` `chunk.csv`
-
 ## TaxbellAccountingVATReference
 
 - Verdict: `PASS`
@@ -267,4 +238,33 @@ Overall: `FAIL`
   - `250` `FINISH` `entry_guide.csv`
   - `696` `FINISH` `reference_document.csv`
   - `697` `FINISH` `chunk.csv`
+
+## ComarchOptimaSchema
+
+- Verdict: `PASS`
+- Export dir: `exports/optima_schema/v1`
+- Staging generatedAt: `2026-09-01T10:15:44.623Z`
+- Required files:
+  - `table.csv`: exists `true`, rows `630`
+  - `column.csv`: exists `true`, rows `12441`
+  - `chunk.csv`: exists `true`, rows `13138`
+- Jobs:
+  - `419` `FINISH` `database_instance.csv`
+  - `420` `FINISH` `table.csv`
+  - `421` `FINISH` `column.csv`
+  - `422` `FINISH` `primary_key.csv`
+  - `423` `FINISH` `foreign_key.csv`
+  - `424` `FINISH` `index.csv`
+  - `425` `FINISH` `constraint.csv`
+  - `426` `FINISH` `view.csv`
+  - `427` `FINISH` `stored_procedure.csv`
+  - `428` `FINISH` `function.csv`
+  - `429` `FINISH` `trigger.csv`
+  - `430` `FINISH` `parameter.csv`
+  - `432` `FINISH` `schema_change.csv`
+  - `434` `FINISH` `table_query_guide.csv`
+  - `435` `FINISH` `join_path_guide.csv`
+  - `436` `FINISH` `object_dependency.csv`
+  - `437` `FINISH` `sql_object_guide.csv`
+  - `698` `FINISH` `chunk.csv`
 

@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-08-12_beeff7f8_formularz-kontrahenta-zak-adka-p-atnosci-baza-wiedzy-programu-comarch-erp-optima",
+  "kbName": "ComarchOptimaSchema",
+  "kbNamespace": "ComarchOptimaSchema",
+  "title": "Formularz kontrahenta – zakładka Płatności – Baza Wiedzy programu Comarch ERP Optima",
+  "content": "External source discovered via Exa query: Pełny preflight encji rachunku bankowego w Comarch ERP Optima: COM/SDK/SQL schema, bez porad podatkowych.\n\nEncja kandydacka: BankAccount, COM prawdopodobnie CDN.Rachunki, SQL prawdopodobnie CDN.BnkRachunki. Proszę rozdzielić fakty potwierdzone od hipotez.\n\nPotrzebuję:\n- dokładny ProgID, interfejsy COM i metody AddNew, Save, FilterById, Update, Delete/Usun;\n- pola wymagane przy utworzeniu, pola zapisywalne/read-only (numer rachunku, nazwa, bank, waluta, IBAN, domyślny, opis);\n- klucz PK i nazwy właściwej tabeli CDN.*, foreign keys do banku/waluty/formy płatności/kontrahenta;\n- semantyka usuwania (fizyczne, soft-delete, ograniczenia zależności), aktualizacji i ustawiania domyślności;\n- zachowanie GUI: gdzie tworzyć/edytować/usuwać, komunikaty oraz ograniczenia biznesowe;\n- filtr/enumeracja po numerycznym ID.\n\nNie sugeruj bezpośrednich zapisów SQL.\nTitle: Formularz kontrahenta – zakładka Płatności – Baza Wiedzy programu Comarch ERP Optima\nURL: https://pomoc.comarch.pl/optima/pl/2025_5/dokumentacja/formularz-kontrahenta-zakladka-platnosci/\nTier: official\nPublished: 2017-07-04T00:00:00.000Z\nSummary:\nHere is a concise, fact/fiction–separated answer based on the provided content and typical Comarch ERP Optima behavior. I note where facts are confirmed by the supplied text and where items are hypothesized.\nFakty potwierdzone w dostarczonych materiałach\n- Enca: BankAccount (kandydacka) odpowiada ogólnej koncepcji kont bankowych kontrahentów.\n- Widoczne pola kolumn w liście rachunków kontrahenta: Opis, Bank, Numer rachunku, Waluta, Domyślny, Data ostatniego sprawdzenia, W wykazie (Tak/Nie), Numer rachunku (pełny NRB/IBAN częściowy), Numer konta/NRB/IBAN wsparcie, IBAN (dla polskich rachunków), Nazwa banku (autom. po zatwierdzeniu akronimu), Waluta (podpowiadana i możliwość zmiany), Informacja o tym, czy rachunek widnieje w Wykazie podatników VAT MF.\n- Domyślny rachunek: tylko jeden rachunek kontrahenta w danej walucie może być domyślny; zaznaczenie Domyślny na innym rachunku w tej sam...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2025_5/dokumentacja/formularz-kontrahenta-zakladka-platnosci/",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "recency_question"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "Pełny preflight encji rachunku bankowego w Comarch ERP Optima: COM/SDK/SQL schema, bez porad podatkowych.\n\nEncja kandydacka: BankAccount, COM prawdopodobnie CDN.Rachunki, SQL prawdopodobnie CDN.BnkRachunki. Proszę rozdzielić fakty potwierdzone od hipotez.\n\nPotrzebuję:\n- dokładny ProgID, interfejsy COM i metody AddNew, Save, FilterById, Update, Delete/Usun;\n- pola wymagane przy utworzeniu, pola zapisywalne/read-only (numer rachunku, nazwa, bank, waluta, IBAN, domyślny, opis);\n- klucz PK i nazwy właściwej tabeli CDN.*, foreign keys do banku/waluty/formy płatności/kontrahenta;\n- semantyka usuwania (fizyczne, soft-delete, ograniczenia zależności), aktualizacji i ustawiania domyślności;\n- zachowanie GUI: gdzie tworzyć/edytować/usuwać, komunikaty oraz ograniczenia biznesowe;\n- filtr/enumeracja po numerycznym ID.\n\nNie sugeruj bezpośrednich zapisów SQL.",
+    "sourceTier": "official",
+    "retrievedAt": "2026-08-12T09:00:10.966Z"
+  },
+  "createdAt": "2026-08-12T09:00:12.631Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-01T10:15:44.275Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-12/draft_2026-08-12_beeff7f8_formularz-kontrahenta-zak-adka-p-atnosci-baza-wiedzy-programu-comarch-erp-optima.json"
+}

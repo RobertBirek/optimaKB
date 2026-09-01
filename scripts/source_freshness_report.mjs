@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import process from 'process';
+import { writeFileAtomically } from './lib/atomic_file.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const OUT_JSON = path.join(ROOT, 'docs/reference/KB_Source_Freshness_Report.json');
@@ -271,8 +272,8 @@ const payload = {
   results,
 };
 
-fs.writeFileSync(OUT_JSON, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-fs.writeFileSync(OUT_MD, buildMarkdown(payload), 'utf8');
+writeFileAtomically(OUT_JSON, `${JSON.stringify(payload, null, 2)}\n`);
+writeFileAtomically(OUT_MD, buildMarkdown(payload));
 process.stdout.write(`${JSON.stringify({
   ok: true,
   overall,

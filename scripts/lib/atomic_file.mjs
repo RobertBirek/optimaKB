@@ -1,6 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+export function assertAtomicWriteAccess(filePath, { readable = false } = {}) {
+  const parentDir = path.dirname(filePath);
+  fs.accessSync(parentDir, fs.constants.W_OK | fs.constants.X_OK);
+  if (readable && fs.existsSync(filePath)) {
+    fs.accessSync(filePath, fs.constants.R_OK);
+  }
+}
+
 export function writeFileAtomically(filePath, content, encoding = 'utf8') {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   const existing = fs.existsSync(filePath) ? fs.statSync(filePath) : null;

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T04:04:45.610Z",
+  "generatedAt": "2026-09-01T10:04:31.851Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
   "dryRun": false,
@@ -1860,6 +1860,17 @@
   ],
   "recentRuns": [
     {
+      "id": "discovery_autodraft_2026-09-01T10-04-31-724Z_96c00db1",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-09-01T10:04:31.724Z",
+      "finishedAt": "2026-09-01T10:04:31.737Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
       "id": "discovery_autodraft_2026-09-01T04-04-45-490Z_4225267f",
       "type": "autodraft",
       "ok": true,
@@ -1969,28 +1980,6 @@
       "draftedCount": 0,
       "error": "",
       "errors": []
-    },
-    {
-      "id": "discovery_daily_2026-08-31T05-18-12-801Z_7d126db3",
-      "type": "daily",
-      "ok": false,
-      "startedAt": "2026-08-31T05:18:12.802Z",
-      "finishedAt": "2026-08-31T05:18:53.698Z",
-      "resultCount": 27,
-      "draftedCount": 0,
-      "error": "",
-      "errors": [
-        {
-          "queryId": "seed_TaxbellPayrollHRReference",
-          "message": "This operation was aborted",
-          "stage": "query"
-        },
-        {
-          "queryId": "seed_ComarchOptimaSprint",
-          "message": "fetch failed",
-          "stage": "query"
-        }
-      ]
     }
   ]
 }

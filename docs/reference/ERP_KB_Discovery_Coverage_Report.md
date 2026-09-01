@@ -1,6 +1,6 @@
 # ERP KB Discovery Coverage Report
 
-Generated: `2026-09-01T04:04:45.610Z`
+Generated: `2026-09-01T10:04:31.851Z`
 
 - Overall: `PASS`
 - Coverage: `10/10`
