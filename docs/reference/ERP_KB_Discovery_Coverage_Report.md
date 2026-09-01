@@ -1,6 +1,6 @@
 # ERP KB Discovery Coverage Report
 
-Generated: `2026-09-01T03:53:30.848Z`
+Generated: `2026-09-01T04:04:45.610Z`
 
 - Overall: `PASS`
 - Coverage: `10/10`
@@ -11,7 +11,7 @@ Generated: `2026-09-01T03:53:30.848Z`
 - Operator decisions: `146`
 - Calibration: `30/30`
 - Agreement: `100%`
-- Dry run: `true`
+- Dry run: `false`
 
 | KB | Mode | Queries | Candidates | Drafted | Pending | Routed |
 |---|---|---:|---:|---:|---:|---:|

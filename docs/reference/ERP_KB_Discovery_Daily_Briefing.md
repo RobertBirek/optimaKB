@@ -1,12 +1,12 @@
 # ERP KB Discovery Daily Briefing
 
-Generated: `2026-09-01T03:53:34.170Z`
+Generated: `2026-09-01T04:04:48.139Z`
 
 - Pending candidates: `141`
 - Corpus duplicates: `1`
 - Operator decisions: `146`
 - Quality alerts: `1`
-- Semi-auto active: `false`
+- Semi-auto active: `true`
   - ComarchOptimaSchema: threshold=0.95 (not eligible)
   - ComarchOptimaAdditionalFunctions: threshold=0.95 (not eligible)
   - ComarchOptimaSprint: threshold=0.95 (not eligible)

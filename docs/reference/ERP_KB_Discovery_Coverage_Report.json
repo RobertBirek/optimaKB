@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-01T03:53:30.848Z",
+  "generatedAt": "2026-09-01T04:04:45.610Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
-  "dryRun": true,
+  "dryRun": false,
   "coverage": {
     "configuredKbs": 10,
     "coveredKbs": 10
@@ -1860,6 +1860,17 @@
   ],
   "recentRuns": [
     {
+      "id": "discovery_autodraft_2026-09-01T04-04-45-490Z_4225267f",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-09-01T04:04:45.490Z",
+      "finishedAt": "2026-09-01T04:04:45.502Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
       "id": "discovery_daily_2026-09-01T03-53-14-140Z_4b45944f",
       "type": "daily",
       "ok": true,
@@ -1980,17 +1991,6 @@
           "stage": "query"
         }
       ]
-    },
-    {
-      "id": "discovery_autodraft_2026-08-31T05-17-42-034Z_4d653e28",
-      "type": "autodraft",
-      "ok": true,
-      "startedAt": "2026-08-31T05:17:42.034Z",
-      "finishedAt": "2026-08-31T05:17:42.104Z",
-      "resultCount": 0,
-      "draftedCount": 0,
-      "error": "",
-      "errors": []
     }
   ]
 }
