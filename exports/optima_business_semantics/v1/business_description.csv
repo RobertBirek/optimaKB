@@ -814,3 +814,30 @@ Zestaw można dodać do Rezerwacji Odbiorcy, Faktury Pro Forma, Faktury Sprzeda�
 
 Kolumn...",0203f1df2251b2aae3cb536f40d39505df6377c78b4c06dcef22dce26141b337,1563,,,promoted_knowledge_draft,pl,Handel
 BD_PROMOTED_DRAFT_2026_08_28_542B7FF6_ZESTAWY_PROMOCYJNE_BAZA_WIEDZY_PROGRAMU_COMARCH_ERP_OPTIMA_2,Zestawy promocyjne – Baza Wiedzy programu Comarch ERP Optima (2/2),"Brak jednego z elementów może zablokować dodanie lub zapis zestawu, zależnie od ustawienia kontroli ilości. Dokument WZ albo FS/PA z pobraniem wymaga usunięcia całego niekompletnego zestawu. Przy konwersji RO/PF z pobieraniem ilości dostępnej program nie przenosi niekompletnego zestawu na dokument docelowy. Na korektach kolumna Kod zestawu wskazuje pochodzenie pozycji, a elementy koryguje się tak jak pozostałe towary.","Brak jednego z elementów może zablokować dodanie lub zapis zestawu, zależnie od ustawienia kontroli ilości. Dokument WZ albo FS/PA z pobraniem wymaga usunięcia całego niekompletnego zestawu. Przy konwersji RO/PF z pobieraniem ilości dostępnej program nie przenosi niekompletnego zestawu na dokument docelowy. Na korektach kolumna Kod zestawu wskazuje pochodzenie pozycji, a elementy koryguje się tak jak pozostałe towary.",8edffb6d85b6b4f7b9d3d53207db88edd33d1a33715a9e766d7a0a70b47e3bae,421,,,promoted_knowledge_draft,pl,Handel
+BD_PROMOTED_DRAFT_2026_08_21_5F225097_FORMY_P_ATNOSCI_1,Formy płatności,"External source discovered via Exa query: Comarch ERP Optima 2026.5.1+ x64, GUI i reguły biznesowe form płatności. Bez porad podatkowych. Znajdź potwierdzone zachowanie przy dodaniu, zmianie typu, rachunku, terminu, oznaczeniu domyślnej, dezaktywacji i usunięciu formy używanej na dokumentach. Czy formy systemowe/domyslne można usuwać? Jakie komunikaty lub blokady występują? Użyj ComarchOptimaReference i BusinessSemantics, cytuj dowody; niewiadome nazwij i zaproponuj minimalny test GUI + MSSQL Profiler.
+Title: Formy płatności
+URL: https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/formy-platnosci/
+Tier: official
+Published: 2024-06-03T18:39:25.000Z
+Summary:
+Summary:
+This page describes the basic forms of payments in Comarch ERP Optima and how they are managed in the system. Key points relevant to your questions (behavior in 2026.5.x, GUI and business rules) are:
+- Basic forms defined: bon, czek, gotówka, inna, karta, kredyt, mobilna, przelew. All are linked to a single default KASA register created with a new database; recommendation is to create separate registers for transfers and corporate cards.
+- Where to define: Start/Konfiguracja/Firma/KasaBank/Formy płatności.
+- Changes to a payment form:
+- If a payment form has been used in any document, you cannot rename or change its type. You may adjust the default term (długoterminowy) and the default register, and indicate whether the form is active.
+- Deleting a form:
+- A form can be deleted only if no documents currently use it.
+- Additional fields and behaviors:
+- Termin (default payment...
+
+Operator notes:
+Automatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.
+This draft came from external search and requires review before promotion into a KB.","External source discovered via Exa query: Comarch ERP Optima 2026.5.1+ x64, GUI i reguły biznesowe form płatności. Bez porad podatkowych. Znajdź potwierdzone zachowanie przy dodaniu, zmianie typu, rachunku, terminu, oznaczeniu domyślnej, dezaktywacji i usunięciu formy używanej na dokumentach. Czy formy systemowe/domyslne można usuwać? Jakie komunikaty lub blokady występują? Użyj ComarchOptimaReference i BusinessSemantics, cytuj dowody; niewiadome nazwij i zaproponuj minimalny test GUI + MSSQL Profiler.
+Title: Formy płatności
+URL: https://pomoc.comarch.pl/optima/pl/2026_5/dokumentacja/formy-platnosci/
+Tier: official
+Published: 2024-06-03T18:39:25.000Z
+Summary:
+Summary:
+This page describes the basic forms of payments in Comarch ERP Optima and how they are managed in the system. Key points...",65241d02c14f14ac1ee083ba3a9abd75f1542a731f02ab68477f8a7ecbf91613,1755,,,promoted_knowledge_draft,pl,Ogólne

@@ -2347,3 +2347,31 @@ forced dry-run enabled.
 - No automation or discovery run endpoint, draft approval/rejection/promotion,
   builder, ingestion, KB build, publication, re-vectorization, or model deletion
   ran during this switch.
+
+## 2026-09-07 Sprint and Business Semantics reconciliation
+
+- Builder jobs were read back through the authenticated builder API without
+  exposing the cookie: `712` (`reference_document.csv`, `171` rows), `713`
+  (`chunk.csv`, `312` rows), and `714` (`business_description.csv`, `640`
+  rows) all finished with `FINISH` for projects `7`, `7`, and `15`.
+- The Sprint exporter now canonicalizes HTTP URLs and reuses the existing
+  official document ID for a matching promoted draft. Promoted chunk IDs and
+  content remain stable while their document reference points to the canonical
+  official document.
+- Business Semantics helper-only refresh is constrained to
+  `business_description.csv`; the build runner propagates pipeline failures and
+  README generation no longer leaves a duplicate trailing blank line.
+- Scoped quality gates for `ComarchOptimaSprint` and
+  `ComarchOptimaBusinessSemantics` both returned `PASS` with no errors or
+  warnings. Four focused regression tests and `npm run check` passed.
+- A direct readback proved that all desired CSV IDs were present, but historical
+  upserts had retained `13` stale Sprint `ReferenceDocument`, `159` stale
+  Sprint `Chunk`, and `134` stale Business Semantics `BusinessDescription`
+  nodes. The exact reconciliation inputs and hashes were placed in the
+  protected recovery snapshot before bounded deletion.
+- Final Neo4j counts are exactly `171` Sprint `ReferenceDocument`, `312` Sprint
+  `Chunk`, and `640` Business Semantics `BusinessDescription`. The repaired
+  Sprint URL has one canonical document node.
+- The repair did not modify any `McpOptima*`, `McpIntegration*`, or
+  `McpShoperReference` artifact or graph namespace. `mcpbot` retained read/write
+  access to the inbox registry and both affected export directories.

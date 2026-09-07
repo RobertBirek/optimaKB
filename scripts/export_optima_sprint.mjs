@@ -8,7 +8,7 @@ import { parseOptimaManualExport } from './lib/optima_manual_exports.mjs';
 import { loadPromotedKnowledge } from './lib/promoted_knowledge.mjs';
 import { ensureDir, writeCsv, writeJson, makeId } from './lib/export_utils.mjs';
 
-const ROOT = '/docker/openspg';
+const ROOT = process.env.ROOT || '/docker/openspg';
 const EXPORT_DIR = path.join(ROOT, 'exports/optima_sprint/v1');
 const MANIFEST_PATH = path.join(EXPORT_DIR, '_manifest.json');
 const README_PATH = path.join(EXPORT_DIR, 'README.md');
@@ -35,6 +35,21 @@ function normalizeWhitespace(value) {
     .replace(/[ \t]+/g, ' ')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+}
+
+function canonicalHttpUrl(value) {
+  try {
+    const parsed = new URL(String(value || '').trim());
+    if (!['http:', 'https:'].includes(parsed.protocol)) return '';
+    parsed.hash = '';
+    parsed.hostname = parsed.hostname.toLowerCase();
+    if (parsed.pathname.length > 1) {
+      parsed.pathname = parsed.pathname.replace(/\/+$/, '');
+    }
+    return parsed.toString();
+  } catch {
+    return '';
+  }
 }
 
 function truncate(value, limit = 1200) {
@@ -405,18 +420,35 @@ function loadManualPrintExport() {
 const manualPrintExport = loadManualPrintExport();
 referenceDocuments.push(...manualPrintExport.extraReferenceDocuments);
 const promotedKnowledge = loadPromotedKnowledge('ComarchOptimaSprint');
-referenceDocuments.push(...promotedKnowledge.map((draft) => ({
-  id: makeId('SPR_DOC_PROMOTED', draft.id),
-  name: draft.title,
-  description: `Promoted knowledge inbox draft for ${draft.kbName}.`,
-  semanticType: 'reference_document',
-  sourceUrl: draft.sourceUrl || `local://knowledge-inbox/${draft.id}`,
-  sourceType: 'promoted_knowledge_draft',
-  documentCategory: 'promoted_knowledge',
-  versionHint: draft.promotedAt ? draft.promotedAt.slice(0, 10) : 'local',
-  sourceOrigin: 'KnowledgeInboxPromoted',
-  summary: truncate(draft.content, 800),
-})));
+const officialDocumentIdByCanonicalUrl = new Map(
+  referenceDocuments
+    .filter((document) => document.sourceType === 'official_web')
+    .map((document) => [canonicalHttpUrl(document.sourceUrl), document.id])
+    .filter(([canonicalUrl]) => canonicalUrl),
+);
+const promotedDocumentIdByDraftId = new Map();
+
+for (const draft of promotedKnowledge) {
+  const officialDocumentId = officialDocumentIdByCanonicalUrl.get(
+    canonicalHttpUrl(draft.sourceUrl),
+  );
+  const documentId = officialDocumentId || makeId('SPR_DOC_PROMOTED', draft.id);
+  promotedDocumentIdByDraftId.set(draft.id, documentId);
+  if (officialDocumentId) continue;
+
+  referenceDocuments.push({
+    id: documentId,
+    name: draft.title,
+    description: `Promoted knowledge inbox draft for ${draft.kbName}.`,
+    semanticType: 'reference_document',
+    sourceUrl: draft.sourceUrl || `local://knowledge-inbox/${draft.id}`,
+    sourceType: 'promoted_knowledge_draft',
+    documentCategory: 'promoted_knowledge',
+    versionHint: draft.promotedAt ? draft.promotedAt.slice(0, 10) : 'local',
+    sourceOrigin: 'KnowledgeInboxPromoted',
+    summary: truncate(draft.content, 800),
+  });
+}
 
 const localDocIdByRelPath = new Map(localDocs.map((doc) => [doc.relPath, doc.id]));
 
@@ -1216,7 +1248,8 @@ for (const doc of localDocs) {
 }
 chunks.push(...manualPrintExport.extraChunks);
 for (const draft of promotedKnowledge) {
-  const documentId = makeId('SPR_DOC_PROMOTED', draft.id);
+  const documentId = promotedDocumentIdByDraftId.get(draft.id)
+    || makeId('SPR_DOC_PROMOTED', draft.id);
   parseMarkdownSections(`# ${draft.title}\n\n${draft.content}`).forEach((section, index) => {
     chunks.push({
       id: makeId('SPR_CHUNK_PROMOTED', `${draft.id}_${index + 1}`),

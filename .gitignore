@@ -3,6 +3,7 @@ dist/
 data/
 .env*
 !.env.example
+.claude/settings.local.json
 exports/
 downloads/
 .DS_Store

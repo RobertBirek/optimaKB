@@ -84,5 +84,5 @@ export function refreshBuildReadme({ title, readmePath, exportManifest, uploadMa
     ...(buildManifest.jobs || []).map((job) => `- \`${job.id}\` \`${job.status}\` \`${job.jobName}\``),
     '',
   ];
-  fs.writeFileSync(readmePath, `${lines.join('\n')}\n`, 'utf8');
+  fs.writeFileSync(readmePath, `${lines.join('\n').trimEnd()}\n`, 'utf8');
 }

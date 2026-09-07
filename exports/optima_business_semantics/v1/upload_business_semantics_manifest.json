@@ -46,7 +46,7 @@
     },
     {
       "fileName": "business_description.csv",
-      "rowCount": 639,
+      "rowCount": 640,
       "columns": [
         "id",
         "name",
@@ -60,7 +60,7 @@
         "language",
         "domainName"
       ],
-      "uploadedUrl": "http://release-openspg-minio:9000/builder/upload/5de389eca91a4b10a34881be2e08b598/business_description.csv"
+      "uploadedUrl": "http://release-openspg-minio:9000/builder/upload/18873664390006316aa13985da9afe85/business_description.csv"
     }
   ]
 }

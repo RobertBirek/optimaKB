@@ -247,6 +247,7 @@ const PROMOTED_FORCE_FILES = {
   ComarchOptimaAdditionalFunctions: ['reference_document.csv', 'chunk.csv'],
   ComarchOptimaSprint: ['reference_document.csv', 'chunk.csv'],
   ComarchOptimaReference: ['reference_document.csv', 'chunk.csv'],
+  ComarchOptimaBusinessSemantics: ['business_description.csv'],
   ComarchOptimaPartnerTechnical: ['reference_document.csv', 'chunk.csv'],
   ComarchBetterflyReference: ['reference_document.csv', 'chunk.csv'],
   ComarchCommunityNews: ['reference_document.csv', 'chunk.csv'],

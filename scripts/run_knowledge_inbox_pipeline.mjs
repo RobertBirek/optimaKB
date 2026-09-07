@@ -46,8 +46,9 @@ const PIPELINE_TARGETS = {
   ComarchOptimaBusinessSemantics: {
     projectId: '15',
     exportScript: 'scripts/export_optima_business_semantics.mjs',
+    exportEnv: { OPENSPG_HELPER_ONLY: '1' },
     buildScript: 'scripts/build_optima_business_semantics.mjs',
-    promotedForceFiles: ['business_domain.csv', 'business_description.csv', 'code_meaning.csv', 'business_rule.csv'],
+    promotedForceFiles: ['business_description.csv'],
   },
   ComarchOptimaPartnerTechnical: {
     projectId: '9',
@@ -407,6 +408,7 @@ try {
       pipelineSummary: `PASS ${passedReport.length} / SKIP ${skippedReport.length} / FAIL ${failedReport.length}`,
       status: statusPayload(),
     });
+    if (failedReport.length) process.exitCode = 1;
   }
 } catch (error) {
   process.stderr.write(`${error.message}\n\n${usage()}\n`);
