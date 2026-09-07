@@ -1,6 +1,7 @@
 [Unit]
 Description=Verify latest OpenSPG backup snapshot
-After=network-online.target
+After=docker.service network-online.target
+Requires=docker.service
 Wants=network-online.target
 
 [Service]
