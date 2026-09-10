@@ -2,6 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import {
   buildResponse,
@@ -102,7 +103,10 @@ export function scanArtifact(relativePath, terms, focusHints = [], limit = 4) {
     return { artifact: relativePath, type: 'directory', hits: [] };
   }
 
-  const raw = fs.readFileSync(filePath, 'utf8');
+  const bytes = fs.readFileSync(filePath);
+  const raw = bytes.toString('utf8');
+  const contentHash = `sha256:${crypto.createHash('sha256').update(bytes).digest('hex')}`;
+  const observedAt = new Date().toISOString();
   const lines = raw.split('\n');
   const hits = [];
 
@@ -125,7 +129,18 @@ export function scanArtifact(relativePath, terms, focusHints = [], limit = 4) {
     artifact: relativePath,
     type: path.extname(relativePath).slice(1) || 'text',
     hits: hits.slice(0, limit),
+    contentHash,
+    observedAt,
   };
+}
+
+function encodeArtifactPath(relativePath) {
+  return String(relativePath)
+    .replaceAll('\\', '/')
+    .split('/')
+    .filter(Boolean)
+    .map(encodeURIComponent)
+    .join('/');
 }
 
 export function gatherEvidence(response, terms, focusHints = []) {
@@ -139,11 +154,21 @@ export function gatherEvidence(response, terms, focusHints = []) {
     for (const artifact of group.artifacts) {
       const result = scanArtifact(artifact, terms, focusHints, Math.max(3, focusHints.length));
       if (result.hits.length) {
+        const locator = result.hits.map((hit) => `L${hit.line}`).join(',');
+        const sourceId = `sha256:${crypto.createHash('sha256')
+          .update(`${group.kb}\0${result.artifact}\0${result.contentHash}`)
+          .digest('hex')}`;
         evidence.push({
           kb: group.kb,
           artifact: result.artifact,
           type: result.type,
           hits: result.hits,
+          sourceId,
+          uri: `knowledge://legacy/${encodeURIComponent(group.kb)}/${encodeArtifactPath(result.artifact)}`,
+          locator,
+          contentHash: result.contentHash,
+          observedAt: result.observedAt,
+          excerpt: result.hits[0].snippet,
         });
       }
     }

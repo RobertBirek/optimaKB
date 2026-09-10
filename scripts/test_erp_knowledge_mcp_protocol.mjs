@@ -7,11 +7,19 @@ import { fileURLToPath } from 'node:url';
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 process.env.ROOT = process.env.ROOT || path.resolve(scriptDirectory, '..');
-const { formatLegacySseEndpoint, handleJsonRpcRequest, PROTOCOL_VERSION } = await import('./lib/erp_knowledge_mcp_core.mjs');
+const {
+  formatLegacySseEndpoint,
+  handleJsonRpcRequest,
+  legacyKnowledgeStatus,
+  PROTOCOL_VERSION,
+} = await import('./lib/erp_knowledge_mcp_core.mjs');
 
 assert.equal(PROTOCOL_VERSION, '2025-03-26', 'Streamable HTTP requires MCP protocol 2025-03-26 or newer.');
 assert.equal(formatLegacySseEndpoint('/mcp'), 'event: endpoint\ndata: /mcp\n\n');
 assert.throws(() => formatLegacySseEndpoint('mcp'), /absolute path/);
+assert.equal(legacyKnowledgeStatus([{ sourceId: 'source-1' }]), 'partial');
+assert.equal(legacyKnowledgeStatus([], false), 'unknown');
+assert.equal(legacyKnowledgeStatus([], true), 'partial');
 
 const initialized = await handleJsonRpcRequest({
   jsonrpc: '2.0',

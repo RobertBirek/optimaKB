@@ -450,6 +450,11 @@ function toolResultPayload(result) {
   };
 }
 
+export function legacyKnowledgeStatus(evidence, temporalWarning = false) {
+  if (temporalWarning) return 'partial';
+  return Array.isArray(evidence) && evidence.length ? 'partial' : 'unknown';
+}
+
 function writeToolDenied(id, name) {
   return {
     jsonrpc: '2.0',
@@ -564,19 +569,22 @@ export async function handleJsonRpcRequest(request, context = {}) {
       }
       const result = await answerQuestionTool(query, allowedNss);
       const temporalWarning = TEMPORAL_DOMAINS.has(domain);
+      const evidence = result.structured?.evidence || result.structured?.kbsUsed || [];
       return { jsonrpc: '2.0', id, result: toolResultPayload({
         text: result.text,
         structured: {
           domain,
           answer: result.text,
-          evidence: result.structured?.evidence || result.structured?.kbsUsed || [],
-          knowledge_status: temporalWarning ? 'partial' : (result.structured?.confidence ? 'verified' : 'unknown'),
+          evidence,
+          knowledge_status: legacyKnowledgeStatus(evidence, temporalWarning),
           validity: { valid_from: null, valid_to: null, as_of: args.as_of || null },
           warnings: temporalWarning
             ? [args.as_of
               ? 'The available evidence does not confirm effective dates for the requested date.'
               : 'Effective-date provenance is incomplete; verify the current legal or accounting status before acting.']
-            : [],
+            : evidence.length
+              ? ['Legacy retrieval evidence is not claim-level proof; treat the answer as an inference.']
+              : ['No local evidence was found for this answer.'],
           correlation_id: args.correlation_id || '',
         },
       }) };
