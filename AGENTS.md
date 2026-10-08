@@ -4,7 +4,7 @@
 
 A Docker Compose deployment workspace for OpenSPG knowledge-base services, plus a local Vite React dashboard (`src/`, `vite.config.js`). The main Compose config is `compose.yaml`. Runtime state lives in `data/` — never edit or review it manually.
 
-There is **no test suite** for this checkout. Validate with `docker compose config`, then start the stack and check `docker compose ps` + logs.
+Testy istnieją w `scripts/test_*.mjs`, a komendy są w `package.json`. Zaczynaj od `npm run check`; przed testami sprawdź, czy zapisują raporty lub wywołują runtime. Do refaktoru nie uruchamiaj ani nie restartuj stosu. Konfigurację sprawdzaj przez `docker compose config --quiet`, bez wypisywania sekretów.
 
 ## Developer commands
 
@@ -111,3 +111,9 @@ For this OpenSPG instance, the datasource API only supports `ODPS` and `SLS` (no
 - `docs/reference/ERP_Knowledge_Assistant_Routing.json` — machine-readable routing rules
 - `docs/reference/Knowledge_Inbox.md` — write-side draft workflow
 - `docs/reference/ComarchKB_Global_Audit.md` — cross-KB readiness assessment; read before building another KB
+
+## Mały kontekst zadania
+
+Zacznij od [mapy modułów](docs/module-map.json) i lokalnego AGENTS.md.
+Walidacja mapy: `python3 scripts/validate-module-map.py`. Status utrzymania nie jest dowodem runtime.
+Pamięć operacyjną i materiały referencyjne przeszukuj do konkretnego zadania.

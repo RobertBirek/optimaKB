@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "modules": [
+    {
+      "id": "dashboard",
+      "status": "ACTIVE",
+      "scope": "Dashboard i serwer HTTP; bez zmiany entrypointu systemd.",
+      "paths": [
+        "src",
+        "scripts/erp_kb_dashboard_server.mjs"
+      ],
+      "symbols": [],
+      "entrypoints": [
+        "src/main.jsx",
+        "scripts/erp_kb_dashboard_server.mjs"
+      ],
+      "dependencies": [],
+      "working_set": [
+        "src/AGENTS.md",
+        "src/App.jsx",
+        "scripts/erp_kb_dashboard_server.mjs",
+        "package.json"
+      ],
+      "validation": [
+        "npm run check",
+        "npm run lint",
+        "npm run build"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "mcp-transport",
+      "status": "SHARED",
+      "scope": "Transport i profile MCP wspólne dla usług systemd; zachowaj porty i kontrakty.",
+      "paths": [
+        "scripts/erp_knowledge_mcp_http_bridge.mjs",
+        "scripts/lib/erp_knowledge_mcp_core.mjs"
+      ],
+      "symbols": [],
+      "entrypoints": [
+        "scripts/erp_knowledge_mcp_http_bridge.mjs"
+      ],
+      "dependencies": [],
+      "working_set": [
+        "scripts/AGENTS.md",
+        "scripts/erp_knowledge_mcp_http_bridge.mjs",
+        "scripts/lib/erp_knowledge_mcp_core.mjs",
+        "scripts/lib/erp_knowledge_mcp_profiles.mjs"
+      ],
+      "validation": [
+        "npm run check",
+        "npm run test:mcp-protocol",
+        "npm run test:mcp-profiles"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "retrieval",
+      "status": "ACTIVE",
+      "scope": "Odpowiedzi i wyszukiwanie w wersji Git. Przed praca porownaj zrodla runtime; niepublikowane zmiany retrieval stanowia osobny zakres integracji.",
+      "paths": [
+        "scripts/erp_knowledge_answer.mjs",
+        "scripts/erp_knowledge_assistant.mjs"
+      ],
+      "symbols": [],
+      "entrypoints": [
+        "scripts/erp_knowledge_answer.mjs"
+      ],
+      "dependencies": [],
+      "working_set": [
+        "scripts/AGENTS.md",
+        "scripts/erp_knowledge_answer.mjs",
+        "scripts/erp_knowledge_assistant.mjs",
+        "scripts/test_erp_knowledge_answer_focus.mjs"
+      ],
+      "validation": [
+        "npm run check",
+        "npm run test:answer-focus"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "kb-pipeline",
+      "status": "SHARED",
+      "scope": "Eksport i budowanie KB; exports jest wejściem odczytów, nie katalogiem do cleanupu.",
+      "paths": [
+        "scripts/build_kb_runner.mjs",
+        "scripts/lib"
+      ],
+      "symbols": [],
+      "entrypoints": [
+        "scripts/build_kb_runner.mjs"
+      ],
+      "dependencies": [],
+      "working_set": [
+        "scripts/AGENTS.md",
+        "scripts/build_kb_runner.mjs",
+        "docs/reference/ADD_FILES_TO_KB.md"
+      ],
+      "validation": [
+        "npm run check",
+        "npm run test:build-wrapper",
+        "npm run test:schema-export-integrity"
+      ],
+      "evidence": [
+        "docs/reference/OpenSPG_KB_Operational_Memory.md"
+      ]
+    }
+  ]
+}
