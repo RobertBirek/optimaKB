@@ -18,6 +18,9 @@ import {
 } from './lib/external_search.mjs';
 import { shouldUseExternalFallback } from './lib/external_search_policy.mjs';
 import {
+  DOCUMENT_CODES, MAX_SNIPPET_LENGTH, containsTerm, findTermIndex, parseCsvRecords, selectEvidence,
+} from './lib/knowledge_retrieval.mjs';
+import {
   computeConfidenceScore,
   CONFIDENCE_LOW_THRESHOLD,
   recordLearningGap,
@@ -38,7 +41,7 @@ export function extractTerms(question) {
     .split(/[^a-z0-9_]+/)
     .map((token) => token.trim())
     .filter(Boolean)
-    .filter((token) => token.length >= 3)
+    .filter((token) => token.length >= 3 || DOCUMENT_CODES.has(token))
     .filter((token) => !STOPWORDS.has(token));
   return [...new Set(tokens)];
 }
@@ -67,8 +70,8 @@ function resolveArtifactPath(relativePath) {
 function scoreLine(lineNormalized, terms, focusHints = []) {
   let score = 0;
   for (const term of terms) {
-    if (lineNormalized.includes(term)) {
-      score += term.length > 6 ? 2 : 1;
+    if (containsTerm(lineNormalized, term)) {
+      score += DOCUMENT_CODES.has(term) ? 8 : term.length > 6 ? 2 : 1;
       continue;
     }
     if (term.length >= 8) {
@@ -80,7 +83,7 @@ function scoreLine(lineNormalized, terms, focusHints = []) {
   }
   for (const hint of focusHints) {
     if (!hint) continue;
-    if (lineNormalized.includes(hint)) {
+    if (containsTerm(lineNormalized, hint)) {
       score += 8;
       continue;
     }
@@ -107,23 +110,35 @@ export function scanArtifact(relativePath, terms, focusHints = [], limit = 4) {
   const raw = bytes.toString('utf8');
   const contentHash = `sha256:${crypto.createHash('sha256').update(bytes).digest('hex')}`;
   const observedAt = new Date().toISOString();
-  const lines = raw.split('\n');
+  const isCsv = path.extname(relativePath).toLowerCase() === '.csv';
+  const parsed = isCsv ? parseCsvRecords(raw) : null;
+  const records = parsed ? parsed.records : raw.split('\n').map((text, index) => ({ text, line: index + 1, endLine: index + 1 }));
   const hits = [];
 
-  for (let index = 0; index < lines.length; index += 1) {
-    const line = lines[index].trim();
-    if (!line) continue;
-    const normalized = normalizeText(line);
+  for (const record of records) {
+    const text = (record.cells ? record.cells.join(' | ') : record.text).replace(/\s+/g, ' ').trim();
+    if (!text) continue;
+    const normalized = normalizeText(text);
     const score = scoreLine(normalized, terms, focusHints);
-    if (score <= 0) continue;
+    if (score <= 0 || limit <= 0 || (hits.length >= limit && score <= hits.at(-1).score)) continue;
+    const matchedTerms = terms.filter(term => containsTerm(normalized, term));
+    const anchors = [...focusHints, ...terms.filter(term => DOCUMENT_CODES.has(term))];
+    const focus = [...anchors, ...matchedTerms].find(term => containsTerm(normalized, term));
+    const offset = focus ? Math.max(0, findTermIndex(normalized, focus) - 60) : 0;
+    const prefix = offset ? '...' : '';
+    const remainingLength = MAX_SNIPPET_LENGTH - prefix.length;
+    const fragment = text.slice(offset, offset + remainingLength);
+    const snippet = prefix + (text.length > offset + remainingLength ? `${fragment.slice(0, -3)}...` : fragment);
     hits.push({
-      line: index + 1,
+      line: record.line,
+      endLine: record.endLine,
       score,
-      snippet: line.length > 280 ? `${line.slice(0, 277)}...` : line,
+      snippet,
+      matchedTerms,
     });
+    hits.sort((a, b) => b.score - a.score || a.line - b.line);
+    if (hits.length > limit) hits.pop();
   }
-
-  hits.sort((a, b) => b.score - a.score || a.line - b.line);
 
   return {
     artifact: relativePath,
@@ -131,6 +146,7 @@ export function scanArtifact(relativePath, terms, focusHints = [], limit = 4) {
     hits: hits.slice(0, limit),
     contentHash,
     observedAt,
+    warnings: parsed?.warnings || [],
   };
 }
 
@@ -143,7 +159,7 @@ function encodeArtifactPath(relativePath) {
     .join('/');
 }
 
-export function gatherEvidence(response, terms, focusHints = []) {
+export function gatherEvidence(response, terms, focusHints = [], allowedNamespaces = null, diagnostics = []) {
   const evidence = [];
   const groups = [
     { kb: response.primaryKb.name, artifacts: response.primaryKb.artifacts || [] },
@@ -151,10 +167,12 @@ export function gatherEvidence(response, terms, focusHints = []) {
   ];
 
   for (const group of groups) {
+    if (allowedNamespaces && !allowedNamespaces.has(group.kb)) continue;
     for (const artifact of group.artifacts) {
       const result = scanArtifact(artifact, terms, focusHints, Math.max(3, focusHints.length));
+      for (const code of result.warnings || []) diagnostics.push({ artifact, code });
       if (result.hits.length) {
-        const locator = result.hits.map((hit) => `L${hit.line}`).join(',');
+        const locator = result.hits.map(hit => hit.endLine > hit.line ? `L${hit.line}-L${hit.endLine}` : `L${hit.line}`).join(',');
         const sourceId = `sha256:${crypto.createHash('sha256')
           .update(`${group.kb}\0${result.artifact}\0${result.contentHash}`)
           .digest('hex')}`;
@@ -177,22 +195,36 @@ export function gatherEvidence(response, terms, focusHints = []) {
   return evidence;
 }
 
-function kbPriority(response, kbName) {
-  if (kbName === response.primaryKb.name) return 0;
-  const index = response.supportKbs.findIndex((kb) => kb.name === kbName);
-  return index >= 0 ? index + 1 : 99;
-}
-
-export function buildPragmaticAnswer(question, response, evidence) {
-  const topEvidence = evidence.slice(0, 5);
+export function buildPragmaticAnswer(question, response, evidence, diagnostics = []) {
+  const topEvidence = selectEvidence(evidence);
+  const requiredTerms = [...new Set([
+    ...extractTerms(question).filter(term => DOCUMENT_CODES.has(term)),
+    ...extractFocusHints(question),
+  ])];
+  const visibleText = normalizeText(topEvidence.flatMap(item => item.hits.map(hit => hit.snippet)).join('\n'));
+  const missingTerms = requiredTerms.filter(term => !containsTerm(visibleText, term));
+  const insufficient = !topEvidence.length || missingTerms.length > 0 || diagnostics.length > 0;
   const answer = {
     question,
     primaryKb: response.primaryKb.name,
     supportKbs: response.supportKbs.map((kb) => kb.name),
-    recommendedArtifacts: [
+    recommendedArtifacts: [...new Set([
+      ...topEvidence.map(item => item.artifact),
       ...response.primaryKb.artifacts,
       ...response.supportKbs.flatMap((kb) => kb.artifacts || []),
-    ].slice(0, 8),
+    ])].slice(0, 8),
+    retrieval: { backend: 'local_artifacts', graphUsed: false, confidenceMeaning: 'heuristic_retrieval_score' },
+    evidenceAssessment: {
+      scope: 'local_artifacts',
+      status: insufficient ? 'insufficient_evidence' : 'unverified_evidence',
+      missingTerms,
+      reasons: [...new Set([
+        ...(!topEvidence.length ? ['no_local_evidence'] : []),
+        ...(missingTerms.length ? ['missing_requested_terms'] : []),
+        ...diagnostics.map(item => item.code),
+        'text_matches_do_not_verify_claims',
+      ])],
+    },
     evidence: topEvidence,
     externalEvidence: [],
     evidenceSource: topEvidence.length ? 'local' : 'none',
@@ -222,6 +254,22 @@ export function renderAnswerMarkdown(answer) {
   }
   lines.push('');
   lines.push(answer.note);
+  if (answer.retrieval) {
+    const backendLabel = answer.retrieval.backend === 'external_search'
+      ? 'zewnętrzne wyszukiwanie'
+      : answer.retrieval.backend === 'local_artifacts_with_external_search'
+        ? 'lokalne artefakty KB i zewnętrzne wyszukiwanie'
+        : 'lokalne artefakty KB';
+    lines.push(`Źródło: ${backendLabel}; bez wykonania grafu KAG/OpenSPG.`);
+    lines.push('Confidence oznacza punktację wyszukiwania, nie prawdopodobieństwo poprawności.');
+  }
+  if (answer.evidenceAssessment) {
+    lines.push(answer.evidenceAssessment.status === 'insufficient_evidence'
+      ? 'Brak wystarczających lokalnych dowodów dla pytania. Nie traktuj fragmentów jako potwierdzonej procedury.'
+      : 'Lokalne fragmenty wymagają weryfikacji; dopasowanie tekstu nie potwierdza prawdziwości twierdzeń.');
+    if (answer.evidenceAssessment.missingTerms.length) lines.push(`Brakujące terminy: ${answer.evidenceAssessment.missingTerms.join(', ')}.`);
+    if (answer.evidenceAssessment.reasons.includes('invalid_csv')) lines.push('Część źródeł CSV ma nieprawidłowy format i została pominięta.');
+  }
   lines.push('');
   if (answer.freshnessNote) {
     lines.push(`Uwaga o świeżości: ${answer.freshnessNote}`);
@@ -232,7 +280,8 @@ export function renderAnswerMarkdown(answer) {
     for (const item of answer.evidence) {
       lines.push(`- ${item.kb} -> ${item.artifact}`);
       for (const hit of item.hits) {
-        lines.push(`  - linia ${hit.line}: ${hit.snippet}`);
+        const location = hit.endLine > hit.line ? `linie ${hit.line}–${hit.endLine}` : `linia ${hit.line}`;
+        lines.push(`  - ${location}: ${hit.snippet}`);
       }
     }
     lines.push('');
@@ -271,13 +320,9 @@ export async function answerQuestion(question, allowedNamespaces = null) {
   const response = buildResponse(classified, routing, allowedNamespaces);
   const terms = extractTerms(question);
   const focusHints = extractFocusHints(question);
-  const evidence = gatherEvidence(response, terms, focusHints, allowedNamespaces);
-  evidence.sort((a, b) => {
-    const priorityDiff = kbPriority(response, a.kb) - kbPriority(response, b.kb);
-    if (priorityDiff !== 0) return priorityDiff;
-    return (b.hits[0]?.score || 0) - (a.hits[0]?.score || 0);
-  });
-  const answer = buildPragmaticAnswer(question, response, evidence);
+  const diagnostics = [];
+  const evidence = gatherEvidence(response, terms, focusHints, allowedNamespaces, diagnostics);
+  const answer = buildPragmaticAnswer(question, response, evidence, diagnostics);
   const fallbackDecision = shouldUseExternalFallback({
     questionNormalized: classified.normalizedQuestion,
     evidence,
@@ -303,6 +348,7 @@ export async function answerQuestion(question, allowedNamespaces = null) {
           citations: buildExternalCitationBlock(external.results, 5),
         };
         answer.evidenceSource = answer.evidence.length ? 'blended' : 'external';
+        answer.retrieval.backend = answer.evidence.length ? 'local_artifacts_with_external_search' : 'external_search';
         answer.freshnessNote = 'Użyto zewnętrznego wyszukiwania live, ponieważ lokalne dowody KB były słabe albo pytanie wyglądało na czasowo wrażliwe.';
         answer.note = answer.evidence.length
           ? 'Ta odpowiedź łączy lokalne artefakty KB z zewnętrznie cytowanymi wynikami wyszukiwania live.'

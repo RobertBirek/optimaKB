@@ -57,10 +57,11 @@
     {
       "id": "retrieval",
       "status": "ACTIVE",
-      "scope": "Odpowiedzi i wyszukiwanie w wersji Git. Przed praca porownaj zrodla runtime; niepublikowane zmiany retrieval stanowia osobny zakres integracji.",
+      "scope": "Odpowiedzi i wyszukiwanie lokalnych artefaktow, parser CSV i izolacja namespace. Publikacja zrodel nie oznacza wdrozenia ani uruchomienia grafu KAG.",
       "paths": [
         "scripts/erp_knowledge_answer.mjs",
-        "scripts/erp_knowledge_assistant.mjs"
+        "scripts/erp_knowledge_assistant.mjs",
+        "scripts/lib/knowledge_retrieval.mjs"
       ],
       "symbols": [],
       "entrypoints": [
@@ -71,11 +72,16 @@
         "scripts/AGENTS.md",
         "scripts/erp_knowledge_answer.mjs",
         "scripts/erp_knowledge_assistant.mjs",
-        "scripts/test_erp_knowledge_answer_focus.mjs"
+        "scripts/test_erp_knowledge_answer_focus.mjs",
+        "scripts/lib/knowledge_retrieval.mjs",
+        "scripts/test_erp_knowledge_retrieval.mjs",
+        "scripts/test_erp_knowledge_blended_routes.mjs"
       ],
       "validation": [
         "npm run check",
-        "npm run test:answer-focus"
+        "npm run test:answer-focus",
+        "npm run test:retrieval",
+        "npm run test:blended-routes"
       ],
       "evidence": []
     },

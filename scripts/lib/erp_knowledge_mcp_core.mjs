@@ -97,7 +97,7 @@ export function listTools() {
     ),
     readOnlyTool(
       'answer_question',
-      'Return a practical starter answer with evidence snippets from the routed KBs. Use after route_question to get detailed answers.',
+      'Wyszukaj fragmenty lokalnych artefaktów KB z opisem backendu i braków dowodów. Nie uruchamia grafu KAG; confidence jest punktacją wyszukiwania. Może użyć skonfigurowanego wyszukiwania zewnętrznego i auto-draft.',
       {
         type: 'object',
         properties: {
@@ -112,6 +112,15 @@ export function listTools() {
           answer: { type: 'string' },
           kbsUsed: { type: 'array', items: { type: 'object' } },
           confidence: { type: 'number' },
+          retrieval: { type: 'object', properties: {
+            backend: { type: 'string' }, graphUsed: { type: 'boolean' }, confidenceMeaning: { type: 'string' },
+          } },
+          evidenceAssessment: { type: 'object', properties: {
+            scope: { type: 'string', enum: ['local_artifacts'] },
+            status: { type: 'string', enum: ['insufficient_evidence', 'unverified_evidence'] },
+            missingTerms: { type: 'array', items: { type: 'string' } },
+            reasons: { type: 'array', items: { type: 'string' } },
+          } },
         },
       },
     ),
@@ -548,6 +557,10 @@ export async function handleJsonRpcRequest(request, context = {}) {
     }
 
     const allowedNss = context.allowedNamespaces; // Set or null
+    if (allowedNss && allowedNss.size === 0 &&
+        (name === 'route_question' || name === 'answer_question' || (DOMAIN_TOOL_DESCRIPTIONS[name] && !LIVE_TOOLS.has(name)))) {
+      return { jsonrpc: '2.0', id, error: { code: -32001, message: 'Brak dozwolonej bazy wiedzy dla tego zapytania.' } };
+    }
 
     if (DOMAIN_TOOL_DESCRIPTIONS[name]) {
       const query = String(args.query || '');
@@ -576,7 +589,10 @@ export async function handleJsonRpcRequest(request, context = {}) {
           domain,
           answer: result.text,
           evidence,
-          knowledge_status: legacyKnowledgeStatus(evidence, temporalWarning),
+          retrieval: result.structured?.retrieval,
+          evidenceAssessment: result.structured?.evidenceAssessment,
+          knowledge_status: result.structured?.evidenceAssessment?.status === 'insufficient_evidence'
+            ? 'unknown' : legacyKnowledgeStatus(evidence, temporalWarning),
           validity: { valid_from: null, valid_to: null, as_of: args.as_of || null },
           warnings: temporalWarning
             ? [args.as_of

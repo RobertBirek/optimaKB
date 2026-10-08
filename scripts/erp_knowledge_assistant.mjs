@@ -629,20 +629,22 @@ function applyMorphologyBoosts(questionNormalized, route) {
 }
 
 export function filterRouting(routing, allowedNamespaces) {
-  if (!allowedNamespaces || !allowedNamespaces.size) return routing;
+  if (!allowedNamespaces) return routing;
   const allowed = allowedNamespaces;
+  const filterRoutes = (routes) => (routes || []).map((route) => ({
+    ...route,
+    supportKbs: (route.supportKbs || []).filter((ns) => allowed.has(ns)),
+  })).filter((route) => allowed.has(route.primaryKb));
   return {
     ...routing,
     primaryKbOrder: (routing.primaryKbOrder || []).filter((ns) => allowed.has(ns)),
-    routes: (routing.routes || []).map((route) => ({
-      ...route,
-      supportKbs: (route.supportKbs || []).filter((ns) => allowed.has(ns)),
-    })).filter((route) => allowed.has(route.primaryKb)),
+    routes: filterRoutes(routing.routes),
+    blendedRoutes: filterRoutes(routing.blendedRoutes),
   };
 }
 
 export function listKnowledgeBases(allowedNamespaces) {
-  if (!allowedNamespaces || !allowedNamespaces.size) return KB_DETAILS;
+  if (!allowedNamespaces) return KB_DETAILS;
   return Object.fromEntries(
     Object.entries(KB_DETAILS).filter(([ns]) => allowedNamespaces.has(ns)),
   );
@@ -800,11 +802,20 @@ export function classifyQuestion(question, routing, allowedNamespaces) {
 }
 
 export function buildResponse(result, routing, allowedNamespaces) {
-  const kbDetails = allowedNamespaces?.size
-    ? Object.fromEntries(Object.entries(KB_DETAILS).filter(([ns]) => allowedNamespaces.has(ns)))
-    : KB_DETAILS;
+  const kbDetails = listKnowledgeBases(allowedNamespaces);
   const primaryKb = result.primaryRoute.primaryKb;
-  const supportKbs = result.supportKbs.filter((kb) => kb !== primaryKb && (!allowedNamespaces?.size || allowedNamespaces.has(kb)));
+  if (allowedNamespaces && !allowedNamespaces.has(primaryKb)) {
+    throw new Error('Brak dozwolonej bazy wiedzy dla wybranej trasy.');
+  }
+  const blendedRoutes = filterRouting({ blendedRoutes: result.blendedRoutes }, allowedNamespaces).blendedRoutes || [];
+  // Zachowujemy kolejność dotychczasowego wsparcia, a trafione trasy dodajemy
+  // w kolejności reguł. Samo trafienie trasy mieszanej nie zmienia primary KB.
+  const supportSet = new Set(result.supportKbs);
+  for (const blend of blendedRoutes) {
+    supportSet.add(blend.primaryKb);
+    for (const kb of blend.supportKbs || []) supportSet.add(kb);
+  }
+  const supportKbs = [...supportSet].filter((kb) => kb !== primaryKb && (!allowedNamespaces || allowedNamespaces.has(kb)));
   const primaryDetails = kbDetails[primaryKb] || {};
   const supportDetails = supportKbs.map((kb) => ({ kb, ...(kbDetails[kb] || {}) }));
 
@@ -829,8 +840,8 @@ export function buildResponse(result, routing, allowedNamespaces) {
     })),
     matchedIntent: result.primaryRoute.intent,
     matchedKeywords: result.primaryRoute.matched || [],
-    blendedRoutes: result.blendedRoutes,
-    topRoutes: result.routeScores.map((route) => ({
+    blendedRoutes,
+    topRoutes: result.routeScores.filter((route) => !allowedNamespaces || allowedNamespaces.has(route.primaryKb)).map((route) => ({
       intent: route.intent,
       primaryKb: route.primaryKb,
       score: route.score,
