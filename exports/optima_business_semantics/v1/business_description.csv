@@ -841,3 +841,83 @@ Published: 2024-06-03T18:39:25.000Z
 Summary:
 Summary:
 This page describes the basic forms of payments in Comarch ERP Optima and how they are managed in the system. Key points...",65241d02c14f14ac1ee083ba3a9abd75f1542a731f02ab68477f8a7ecbf91613,1755,,,promoted_knowledge_draft,pl,Ogólne
+BD_PROMOTED_DRAFT_2026_08_05_211928EF_LISTA_KONTRAHENTOW_BAZA_WIEDZY_COMARCH_ERP_XL_HR_1,Lista kontrahentów – Baza wiedzy Comarch ERP XL HR,"External source discovered via Exa query: pokaż kontrahentów
+Title: Lista kontrahentów – Baza wiedzy Comarch ERP XL HR
+URL: https://pomoc.comarch.pl/xl/hr/pl/2026/dokumentacja/lista-kontrahentow/
+Tier: official
+Published: 2017-07-04T00:00:00.000Z
+Summary:
+Pokaż kontrahentów w ewidencji:
+- Ewidencja kontrahentów gromadzi dane Dostawców i Odbiorców, umożliwiając szybkie wprowadzanie danych (np. na faktury, zapisy kasowe) i funkcjonowanie jako słownik kontrahentów.
+- Dostęp: Ogólne > Kontrahenci w programie (lub z pasku skrótów Comarch ERP XL HR/ Ogólne).
+- Wyświetlane kolumny: Należności PLN i Zobowiązania PLN — sumy nierozliczonych należności/zobowiązań w PLN; wartości z walut obcych przeliczane na PLN. Kolumny domyślnie widoczne; kolory:
+- czarne: brak przekroczonych terminów dla danej pozycji,
+- czerwone: przeterminowane należności/zobowiązania,
+- puste, jeśli brak nierozliczeń.
+- Filtry: Sekcja „Kontrahenci z nierozliczonymi płatnościami” umożliwia filtrowanie dłużników/wierzycieli według minimalnej kwoty, przeterminowania i waluty.
+- Usuwanie: kartę kontrahenta można usunąć tylko jeśli nie ma zapisów w bazie. Zaznaczeni kontrahenci ...
+
+Operator notes:
+Automatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.
+This draft came from external search and requires review before promotion into a KB.","External source discovered via Exa query: pokaż kontrahentów
+Title: Lista kontrahentów – Baza wiedzy Comarch ERP XL HR
+URL: https://pomoc.comarch.pl/xl/hr/pl/2026/dokumentacja/lista-kontrahentow/
+Tier: official
+Published: 2017-07-04T00:00:00.000Z
+Summary:
+Pokaż kontrahentów w ewidencji:
+- Ewidencja kontrahentów gromadzi dane Dostawców i Odbiorców, umożliwiając szybkie wprowadzanie danych (np. na faktury, zapisy kasowe) i funkcjonowanie jako słownik kontrahentów.
+- Dostęp: Ogólne > Kontrahenci w programie (lub z pasku skrótów Comarch ERP XL HR/ Ogólne).
+- Wyświetlane kolumny: Należności PLN i Zobowiązania PLN — sumy nierozliczonych należności/zobowiązań w PLN; wartości z walut obcych przeliczane na PLN. Kolumny domyślnie widoczne; kolory:
+- czarne: brak przekroczonych terminów dla danej ...",0e40408dbe0b71b1e75abddebd371f2079c1664cdf95d98175e988d87258b93c,1343,,,promoted_knowledge_draft,pl,Ogólne
+BD_PROMOTED_DRAFT_2026_09_29_7E238BD0_CO_OZNACZAJA_STATUSY_I_STANY_DOKUMENTOW_NA_LISTACH_BAZ_682018047FB5BB3,Co oznaczają statusy i stany dokumentów na listach? – Baza Wiedzy aplikacji Comarch ERP Optima w przeglądarce,"External source discovered via Exa query: COM/SDK/SQL schema bez porad podatkowych: kod błędu Optima HRESULT 0x800561FA = -2147130886, kod lokalny25082. Znajdź dokładny komunikat25082 oraz dokumentację DokumentHaMag.Verify() dla dokumentu zatwierdzonego Bufor0. Nie wykonuj wyszukiwania zewnętrznego ani zapisu draftów. Wyłącznie źródła lokalne.
+Title: Co oznaczają statusy i stany dokumentów na listach? – Baza Wiedzy aplikacji Comarch ERP Optima w przeglądarce
+URL: https://pomoc.comarch.pl/optima-online/pl/index.php/dokumentacja/co-oznaczaja-statusy-i-stany-dokumentow-na-listach/
+Tier: official
+Published: 2026-01-26T15:47:20.000Z
+Summary:
+Summary:
+- The page explains statuses and states of documents on lists in Comarch ERP Optima (browser version).
+- Key meanings include: Zatwierdzony (finalized, locked for editing with exceptions), and that such documents can generate payments in preliminarz and inventory movements, and can be transformed into other documents.
+- The documentation lists numerous status codes and their relations, including:
+- V, F, #F, WZ, FS, PA, RO, PF, ZL, ZD, PWP, E
+- W realizacji (partial fulfillment), Zrealizowano (full fulfillment)
+- Zrealizowano AW / W realizacji AW (awizo for Comarch EDI)
+- Notes mention: full code descriptions appear as tooltips when hovering over codes.
+- For exact interpretations of each code or to see the full list, refer to the tooltip explanations on the page.
+Important: The provided user query asks for a specific internal error message (COM/SDK/SQL schema, HRESULT 0x8005...
+
+Operator notes:
+Automatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.
+This draft came from external search and requires review before promotion into a KB.","External source discovered via Exa query: COM/SDK/SQL schema bez porad podatkowych: kod błędu Optima HRESULT 0x800561FA = -2147130886, kod lokalny25082. Znajdź dokładny komunikat25082 oraz dokumentację DokumentHaMag.Verify() dla dokumentu zatwierdzonego Bufor0. Nie wykonuj wyszukiwania zewnętrznego ani zapisu draftów. Wyłącznie źródła lokalne.
+Title: Co oznaczają statusy i stany dokumentów na listach? – Baza Wiedzy aplikacji Comarch ERP Optima w przeglądarce
+URL: https://pomoc.comarch.pl/optima-online/pl/index.php/dokumentacja/co-oznaczaja-statusy-i-stany-dokumentow-na-listach/
+Tier: official
+Published: 2026-01-26T15:47:20.000Z
+Summary:
+Summary:
+- The page explains statuses and states of documents on lists in Comarch ERP Optima (browser version).
+- Key meanings include: Zatwierdzony (fi...",023d158510fde11bc758be493d9ad7782aaf64d8528aae9e708cc1eade50fb2c,1732,,,promoted_knowledge_draft,pl,Ogólne
+BD_PROMOTED_DRAFT_2026_10_06_4439C646_WIAZANIE_DOKUMENTOW_FZ_W_BUFORZE_Z_ZATWIERDZONYMI_DOKU_511D55846AE5F92,Wiązanie dokumentów FZ w buforze z zatwierdzonymi dokumentami ZD – Baza Wiedzy programu Comarch ERP Optima,"External source discovered via Exa query: COM/SDK bez porad podatkowych: Comarch ERP Optima Session.Save COMException HRESULT -2147133958 (0x800556FA), zapis nowej FZ, wcześniej ten sam błąd przy zatwierdzaniu FZ1092. Jaki jest dokładny komunikat/znaczenie i źródło? Nie zgaduj. Czy to tryb demonstracyjny/ograniczenie dat dokumentów?
+Title: Wiązanie dokumentów FZ w buforze z zatwierdzonymi dokumentami ZD – Baza Wiedzy programu Comarch ERP Optima
+URL: https://pomoc.comarch.pl/optima/pl/2025_5/dokumentacja/wiazanie-dokumentow-fz-w-buforze-z-zatwierdzonymi-dokumentami-zd/
+Tier: official
+Published: 2025-06-23T00:00:00.000Z
+Summary:
+Summary:
+The page describes how to link (powiązać) a purchase invoice (faktura zakupu, FZ) saved in a buffer with approved supplier documents (ZD) in Comarch ERP Optima. Key points relevant to your query:
+- Function: You can bind an FZ in the buffer to ZD documents that are approved, have unreleased items, at least one item on FZ, and share the same supplier and currency. VAT calculation method must match the invoice, and warehouse alignment must be consistent.
+- Source documents: ZD options shown in the binding wizard may come from Comarch OCR uploads or KSEF-derived orders, and can be linked to an FZ still in the buffer (not yet linked to any document).
+- Constraints: The FZ must not be already linked to another document; once linked, the FZ cannot be re-bound or un-bound via the wizard. If needed, delete the FZ to remove the link.
+- Post-link behavior: After linking, you can edit F...
+
+Operator notes:
+Automatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.
+This draft came from external search and requires review before promotion into a KB.","External source discovered via Exa query: COM/SDK bez porad podatkowych: Comarch ERP Optima Session.Save COMException HRESULT -2147133958 (0x800556FA), zapis nowej FZ, wcześniej ten sam błąd przy zatwierdzaniu FZ1092. Jaki jest dokładny komunikat/znaczenie i źródło? Nie zgaduj. Czy to tryb demonstracyjny/ograniczenie dat dokumentów?
+Title: Wiązanie dokumentów FZ w buforze z zatwierdzonymi dokumentami ZD – Baza Wiedzy programu Comarch ERP Optima
+URL: https://pomoc.comarch.pl/optima/pl/2025_5/dokumentacja/wiazanie-dokumentow-fz-w-buforze-z-zatwierdzonymi-dokumentami-zd/
+Tier: official
+Published: 2025-06-23T00:00:00.000Z
+Summary:
+Summary:
+The page describes how to link (powiązać) a purchase invoice (faktura zakupu, FZ) saved in a buffer with approved supplier documents (ZD) in Comarch ERP ...",08348bf91c9fcfa0aed7ec0d71a28801498dbc78a04b9dcbbb04facb3e59df6d,1722,,,promoted_knowledge_draft,pl,Ogólne

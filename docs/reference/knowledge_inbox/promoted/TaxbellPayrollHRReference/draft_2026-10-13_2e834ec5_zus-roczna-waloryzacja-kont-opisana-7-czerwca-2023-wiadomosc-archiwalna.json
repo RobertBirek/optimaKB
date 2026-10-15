@@ -1,0 +1,41 @@
+{
+  "id": "draft_2026-10-13_2e834ec5_zus-roczna-waloryzacja-kont-opisana-7-czerwca-2023-wiadomosc-archiwalna",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "ZUS: roczna waloryzacja kont opisana 7 czerwca 2023, wiadomość archiwalna",
+  "content": "## Wiadomość z 2023 r.\nZUS opublikował informację o rocznej waloryzacji 7 czerwca 2023 r. Cytuje ówczesną prezes Gertrudę Uścińską, która relacjonuje zakończenie waloryzacji składek emerytalnych, kapitału początkowego i środków na subkontach. Data draftu z lipca 2026 r. nie zmienia roku tej wiadomości.\n\n## Kwoty i okres odniesienia\nZUS podaje wzrost kapitału o ponad 450 mld zł, wobec około 281 mld zł w poprzednim roku. Opisuje czerwcową waloryzację kapitału około 24 mln osób jako mechanizm kompensowania inflacji i procesów gospodarczych za ubiegły rok. Dla składek zapisanych na koncie i subkoncie na 31 stycznia 2022 r. przytacza wskaźniki 114,40% i 109,20%. Pierwszy dotyczy konta emerytalnego, drugi subkonta; nie są to wskaźniki ustalone w tym zadaniu dla roku 2026.\n\n## Informacja dla ubezpieczonych\nW komunikacie ZUS zapowiada udostępnienie wyników w PUE w najbliższych dniach oraz uwzględnienie ich w informacji o stanie konta według 31 grudnia 2022 r. Opisuje adresatów: osoby urodzone po 1948 r., objęte choć przez krótki czas systemem i mające zapisaną co najmniej jedną składkę. Informacja ma pokazywać wartości nominalne i po waloryzacji. ZUS przypomina, że od 2020 r. wysyła papierową informację na życzenie klienta.\n\n## Granice\nStreszczenie dotyczy archiwalnej publikacji i podanych w niej dat. Odczyt nie obejmuje aktualnych wskaźników, indywidualnych kont ani sprawdzenia późniejszego udostępnienia informacji. Nie ustalono oddzielnej daty aktualizacji strony ani aktualnej mocy prawnej opisanej procedury.",
+  "sourceUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
+  "tags": [
+    "source-correction",
+    "verified-summary",
+    "ZUS",
+    "waloryzacja",
+    "2023",
+    "historical"
+  ],
+  "metadata": {
+    "supersedesDraftId": "draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus",
+    "sourceRetrievedAt": "2026-10-13T09:33:33.634Z",
+    "sourcePublicationDate": "2023-06-07",
+    "verificationScope": "source_fidelity_only",
+    "representation": "verified_summary",
+    "historical": true,
+    "originalSourceEvidence": {
+      "path": "/tmp/opencode/remaining-9c43b46e.json",
+      "sha256": "2f76f2d9d2894ddaede30811bdc81f83ff6a8000add609f40e9c1cc97b5086ab",
+      "locator": "domSections: journal-content-article"
+    },
+    "unverifiedSections": [
+      "Wskaźniki 2026 i indywidualne konta",
+      "Data aktualizacji",
+      "Aktualna moc prawna"
+    ],
+    "correctionOrigin": "source_correction_review"
+  },
+  "createdAt": "2026-10-13T11:51:37.147Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-13T11:52:20.229Z",
+  "promotedBy": "authorized14-source-correction-controller",
+  "reviewNote": "Verified source correction; supersedes draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus; controller-authorized local phase only.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_2e834ec5_zus-roczna-waloryzacja-kont-opisana-7-czerwca-2023-wiadomosc-archiwalna.json"
+}

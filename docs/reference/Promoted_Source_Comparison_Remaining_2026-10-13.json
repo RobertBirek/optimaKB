@@ -1,0 +1,1160 @@
+{
+  "taskId": "promoted-source-comparison-remaining-2026-10-13",
+  "generatedAtUtc": "2026-10-13T09:51:26.293Z",
+  "scope": "Exact ten keys from audit.confirmed where status=promoted",
+  "excludedKeys": [
+    "de720ffd",
+    "bf920a10",
+    "d1c8371c",
+    "08cfe029"
+  ],
+  "sourceAudit": "docs/reference/Source_Contamination_Audit_2026-10-13.json",
+  "baseBranch": "main",
+  "baseCommit": "79e376d241322b2debbffb900a68bcf67ae78004",
+  "method": "Read promoted JSON + Markdown. Public Exa batch fetch for eight official URLs as reconnaissance, then direct Chromium per original URL in clean ephemeral context. Browser timestamps/status and dated rendered pages govern comparison. Open public accordion/answer/Pokaż więcej controls; reject optional cookies normally; no login, bypass or source mutation.",
+  "supplementalFetch": {
+    "method": "exa_web_fetch_exa",
+    "keys": [
+      "6b5ac5ed",
+      "dcfc95c2",
+      "93f75109",
+      "0bdb5e10",
+      "7c66353e",
+      "a939510d",
+      "9c43b46e",
+      "4ce9f131"
+    ],
+    "utcTime": null,
+    "timePrecisionNote": "Tool did not provide per-URL request timestamps/status; performed before first browser attempt at 09:33:27 UTC. Not used as authoritative live timestamp.",
+    "limitation": "Exa JPK downloads extraction had older update/version; direct browser record takes precedence."
+  },
+  "counts": {
+    "requested": 10,
+    "confirmedPromoted": 10,
+    "originalRecovered": 10,
+    "redirectOrNavigationOnly": 0,
+    "inaccessible": 0
+  },
+  "limitations": [
+    "Source fidelity comparison only; not certification of current law or product behavior.",
+    "Live source pages are not immutable snapshots from the promotion date.",
+    "Attachments and linked legal acts/product installers not fetched.",
+    "Displayed local page dates are not asserted to be UTC.",
+    "No runtime, downloads, exports, promoted bodies, registry/status/policy/services, builds, LLM calls or commits were modified/executed. Existing working-tree changes preserved."
+  ],
+  "results": [
+    {
+      "key": "6b5ac5ed",
+      "id": "draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl",
+      "namespace": "TaxbellAccountingVATReference",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/",
+      "finalUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:42:45.481Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "canonical_trailing_slash_only",
+      "sourceDates": {
+        "publication": "2025-12-15",
+        "update": "2026-09-16",
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Pięć rozwiniętych sekcji katalogu pobrań; opisy usług i etykiety plików/linki. Bez odczytu załączników XSD/PDF/ZIP.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.159Z",
+          "requestedUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat",
+          "title": "Serwis o podatkach - Pliki do pobrania JPK VAT",
+          "finishedAt": "2026-10-13T09:33:31.828Z"
+        },
+        {
+          "method": "clean Chromium; expand official page reading sections",
+          "startedAt": "2026-10-13T09:41:41.791Z",
+          "requestedUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/",
+          "actions": [
+            "Odrzuć optional cookies",
+            "Read/expand Specyfikacja interfejsów usług Jednolitego Pliku Kontrolnego",
+            "Read/expand Środowisko produkcyjne",
+            "Read/expand Środowisko testowe",
+            "Read/expand Broszury informacyjne i podręczniki",
+            "Read/expand Przykładowy plik JPK_VAT(3)"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat",
+          "finishedAt": "2026-10-13T09:41:46.846Z"
+        },
+        {
+          "method": "clean Chromium; expand official page reading sections",
+          "startedAt": "2026-10-13T09:42:40.092Z",
+          "requestedUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/",
+          "actions": [
+            "Odrzuć optional cookies",
+            "Read/expand Specyfikacja interfejsów usług Jednolitego Pliku Kontrolnego",
+            "Read/expand Środowisko produkcyjne",
+            "Read/expand Środowisko testowe",
+            "Read/expand Broszury informacyjne i podręczniki",
+            "Read/expand Przykładowy plik JPK_VAT(3)"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat",
+          "finishedAt": "2026-10-13T09:42:45.481Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.md",
+      "savedJsonBody": "Source: MF podatki.gov.pl - e-deklaracje i JPK\nURL: https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/\n- The page is a general portal on taxes for businesses and individuals, hosted by podatki.gov.pl, with sections for personal taxes, entrepreneur taxes, duties, guides, news, tools, and online filing.\n- It highlights downloadable resources and guidance related to tax forms and procedures, but it does not provide specific information about e-declarations or JPK VAT structures for 2026 on this page.\n- For detailed, up-to-date information on JPK_V7M/V7K (JPK VAT) declarations and 2026 structure changes, you should navigate to the “Jednoli” (likely JPK VAT) section under “Podatki firmowe” or use the site’s search/tools for “JPK VAT” and 2026 updates.\nIf you need, I can pull the exact 2026 JPK_VAT structure details from podatki.gov.pl or guide you to the specific subsection.",
+      "savedMarkdownBody": "Source list scan draft.\n\nSource: MF podatki.gov.pl - e-deklaracje i JPK\nURL: https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/\n\nSummary:\n- The page is a general portal on taxes for businesses and individuals, hosted by podatki.gov.pl, with sections for personal taxes, entrepreneur taxes, duties, guides, news, tools, and online filing.\n- It highlights downloadable resources and guidance related to tax forms and procedures, but it does not provide specific information about e-declarations or JPK VAT structures for 2026 on this page.\n- For detailed, up-to-date information on JPK_V7M/V7K (JPK VAT) declarations and 2026 structure changes, you should navigate to the “Jednoli” (likely JPK VAT) section under “Podatki firmowe” or use the site’s search/tools for “JPK VAT” and 2026 updates.\n\nIf you need, I can pull the exact 2026 JPK_VAT structure details from podatki.gov.pl or guide you to the specific subsection.",
+      "savedMarkdownSha256": "a643a905c3270f01f61bf04e611543d627f5b91d858686a3852a59085ef87fbf",
+      "savedJsonBodySha256": "b4684d726ec0e8ec2487d0d17ee528a2491a715eb3f43c9d34c58aaee815636c",
+      "comparison": "JSON i Markdown zawierają spekulację „likely JPK VAT” oraz ofertę „I can pull”, zamiast zawartości katalogu. JSON pomija część opakowania scan draft/Summary z Markdown, lecz wadliwa treść jest ta sama. Źródło udostępnia konkretne sekcje, dokumentację i pliki; nie jest tylko ogólną nawigacją podatkową.",
+      "recoveredFacts": [
+        "Specyfikacja interfejsów usług JPK, initupload XSD i certyfikaty produkcyjne/testowe.",
+        "Na żywej stronie etykieta specyfikacji: wersja 5.6.0.",
+        "Adresy środowisk e-dokumenty.mf.gov.pl, esb2.mf.gov.pl:5064 (status), test-e-dokumenty.mf.gov.pl.",
+        "Sekcja testowa zawiera opis mocków i parametru enableValidateQualifiedSignature.",
+        "Broszury JPK_VAT(3), JPK_VAT(3)EN oraz przykłady JPK_VAT(3)."
+      ],
+      "sourceText": "﻿\n podatki.gov.pl\nSzukaj\nAngielski\nPolski\nUkraiński\nZaloguj się do eUrzędu Skarbowego\nPodatki osobiste\nPodatki dla przedsiębiorców\nCło\nPoradniki i informatory\nAktualności\nNarzędzia\nZałatw sprawę online\nStrona Główna\nPodatki firmowe\nJednolity Plik Kontrolny\nJPK_VAT\nPliki do pobrania JPK VAT\nPliki do pobrania JPK VAT\nPliki do pobrania m.in. dokumentacja, struktury JPK, broszury informacyjne, instrukcje obsługi bezpłatnych aplikacji MF\n\nData publikacji: 15.12.2025\nData aktualizacji: 16.09.2026\n\nSpecyfikacja interfejsów usług Jednolitego Pliku Kontrolnego\n\nPrezentujemy aktualną wersję dokumentu „Specyfikacja interfejsów usług Jednolitego Pliku Kontrolnego\" wraz ze strukturą logiczną pliku metadanych (initupload), który stanowi treść żądania inicjującego. Publikujemy certyfikat klucza publicznego w formacie binarnym oraz tekstowym (Base64) do zaszyfrowania klucza szyfrującego, wykorzystywany w środowisku produkcyjnym i testowym.\n\n Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 28.05.2026 r. ZIP, 3,49 kB\n Struktura logiczna pliku metadanych (initupload) XSD, 11,32 kB\n Certyfikat klucza publicznego (certyfikat produkcyjny) - od 18.07.2025 ZIP, 3,31 kB\n Certyfikat klucza publicznego (certyfikat testowy) - od 09.07.2025 ZIP, 3,29 kB\n Certyfikat klucza publicznego (certyfikat produkcyjny) - od 20.07.2022 r. ZIP, 2,94 kB\n Certyfikat klucza publicznego_2 (certyfikat testowy) – od 18.08.2022 r. ZIP, 2,90 kB\n Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 22.04.2026 r. ZIP, 1,84 kB\n Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 23.04.2025 r. ZIP, 1,87 kB\n Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 17.04.2024 r ZIP, 1,91 kB\n Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 27.04.2023 r. ZIP, 1,92 kB\n Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 02.05.2022 r. ZIP, 1,91 kB\n Certyfikat SSL środowiska testowego usługi JPK e-dokumenty.mf.gov.pl - od 02.06.2025 r. 7Z, 1,57 kB\n Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 03.06.2024 r. ZIP, 1,62 kB\n Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 07.06.2023 r. ZIP, 1,76 kB\n Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl – od 10.06.2022 r. ZIP, 1,62 kB\n Certyfikat klucza publicznego (certyfikat produkcyjny) – od 23.08.2019 r. ZIP, 2,93 kB\n Certyfikat klucza publicznego (certyfikat testowy) – od 10.09.2019 r. ZIP, 3,64 kB\n Specyfikacja Interfejsów usług JPK wersja 5.6.0 PDF, 700,63 kB\n\n\nŚrodowisko produkcyjne\n\nŚrodowisko produkcyjne do przesyłania plików JPK znajduje się pod adresami:\n\ne-dokumenty.mf.gov.pl- autoryzacja transakcji wysyłek podpisem kwalifikowanym, Podpisem Zaufanym i danymi autoryzującymi,\n\nesb2.mf.gov.pl:5064 - środowisko realizuje tylko metodę \"status\".\n\n Certyfikat klucza publicznego (certyfikat produkcyjny) - od 18.07.2025 ZIP, 3,31 kB\n Certyfikat klucza publicznego (certyfikat produkcyjny) - od 20.07.2022 r. (ZIP, 2 kB) ZIP, 2,94 kB\n Certyfikat klucza publicznego (certyfikat produkcyjny) – od 23.08.2019 r. ZIP, 2,93 kB\n\n\nŚrodowisko testowe\n\nŚrodowisko testowe do przesyłania testowego plików JPK znajduje się pod adresem:\n\ntest-e-dokumenty.mf.gov.pl - autoryzacja transakcji wysyłek podpisem kwalifikowanym, Podpisem Zaufanym i danymi autoryzującymi.\n\nInformacje techniczne\nInformacje o działaniu mocków dla środowiska testowego:\n\nPełnomocnik\nJeżeli NIP z deklaracji kończy się na cyfrę 0, 1, 3, 4 – to pełnomocnictwo jest prawidłowe. Certyfikat nie jest sprawdzany.\nW przeciwnym przypadku pełnomocnictwo jest zweryfikowane negatywnie.\nDane autoryzujące\nNIP/PESEL w danych autoryzujących: parzyste zwracają pozytywną weryfikację, nieparzyste zwracają negatywną weryfikację.\nCRL\nUsługa CRL zawsze zwraca pozytywną weryfikację.\nWeryfikacja podpisu na Bramce\nPodatnik może wymusić sprawdzanie poprawności certyfikatu podpisu na bramce za pomocą parametru wywołania:\n{{envUrl}}/api/Storage/InitUploadSigned?enableValidateQualifiedSignature=true\n\nCertyfikat ssl wykorzystywany do połączenia ze środowiskiem testowym, można pobrać poprzez wejście na stronę: test-e-dokumenty.mf.gov.pl\n\nNależy pamiętać, że dane przesyłane w ramach testów powinny być danymi fikcyjnymi i nie powinny zawierać rzeczywistych danych osobowych. Prosimy nie wysyłać dużych ilości testowych przesyłek i danych testowych\n\n Certyfikat klucza publicznego (certyfikat testowy) - od 09.07.2025r. ZIP, 3,29 kB\n Certyfikat klucza publicznego_2 (certyfikat testowy) – od 18.08.2022 r. ZIP, 2,90 kB\n Certyfikat klucza publicznego (certyfikat testowy) – od 10.09.2019 r. ZIP, 3,64 kB\n\n\nBroszury informacyjne i podręczniki\n\n Broszura informacyjna JPK_VAT(3) PDF, 842,74 kB\n Broszura informacyjna JPK_VAT(3)EN PDF, 757,99 kB\n\n\nPrzykładowy plik JPK_VAT(3)\n\n Przykładowy plik JPK_VAT(3) w formacie xml PDF, 757,99 kB\n Przykład JPK-VAT-TEST-0001 ZIP, 10,38 kB\n\n\nStruktury JPK (link otwiera nowe okno w innym serwisie)\n\nZałatw swoją sprawę podatkową\n\nZnajdź usługę\n\nZnajdź deklarację\nZnajdź serwis\n\nZnajdź narzędzie\n\nMapa strony\nDeklaracja dostępności serwisu\nPolityka cookie\nKlauzula informacyjna Ministra Finansów i Gospodarki\nKlauzula informacyjna Szefa Krajowej Administracji Skarbowej\npodatki.gov.pl - archiwum\nSkontaktuj się z nami \n\nTreści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.\n\nUstawienia prywatności",
+      "sourceTextSha256": "93a5d0c4155e4b7345eb24e2c16cd67388c4cda66834f6ab52af397c0c9dfd3c",
+      "publicAccordionText": [
+        {
+          "text": "Od dochodu\n                                                                \n                                                                    PIT\nInformacje podstawowe\nUlgi i odliczenia\nStawki i limity\nFormularze\n                                                                \n                                                                    Wybierz swoją sytuację\n                                                                    \n                                                                        Wybierz swoją sytuację\nMam dochody z pracy\nMam dochody z pracy wykonywanej za granicą\nMam dochody z umowy zlecenia lub o dzieło\nMam dochody z praw autorskich\nMam dochody z najmu\nMam dochody z działalności nierejestrowanej\nMam dochody niani\nMam dochody z emerytury\nPotrzebuję pełnomocnictwa\n                                                                    \n                                                                    \n                                                                Od majątku\n                                                                \n                                                                    Spadki i darowizny (SD)\nCzynności cywilnoprawne (PCC)\n                                                                \n                                                                Od zakupów\n                                                                \n                                                                    Akcyza\nVAT\n                                                                \n                                                                Pozostałe\n                                                                \n                                                                    Podatek od gier\nPodatki lokalne\nInterpretacje podatkowe"
+        },
+        {
+          "text": "Podstawowe podatki dla przedsiębiorców\n                                                                        \n                                                                            \n\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tPIT\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tCIT\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tVAT\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tJPK\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tAkcyza\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\n                                                                        \n                                                                \n                                                                    \n                                                                \n                                                                Pozostałe podatki\n                                                                \n                                                                    od czynności cywilnoprawnych (PCC)\nod spadków i darowizn (SD)\ntonażowy\nod gier\nod sprzedaży detalicznej\nod wydobycia niektórych kopalin\nod niektórych instytucji finansowych\nod sprzedaży alkoholu w opakowaniach do 300 ml\nOpłata cukrowa\nKlauzula ogólna przeciwko unikaniu opodatkowania\n                                                                \n                                                                \n                                                                \n                                                                    Podatki lokalne\nPełnomocnictwa\nOpłata skarbowa\nRejestr działalności na rzecz spółek lub trustów\nRejestr działalności w zakresie walut wirtualnych\nCeny transferowe\nProgram współdziałania\nInterpretacje podatkowe\nPodatkowa współpraca międzynarodowa\nPorozumienie inwestycyjne\nWiążące informacje podatkowe i celne\n                                                                \n                                                                \n                                                                \n                                                                    eNotariusz\neSprawozdania\nZawiadomienie ZAW-NR\nWHT - Withholding Tax (podatek u źródła)\nMDR - Raportowanie schematów podatkowych\nICAP - International Compliance Assurance Programme\nETACA - European Trust And Cooperation Approac\nSME - procedura szczególna\nGLOBE - opodatkowanie wyrównawcze\nCRBR - Centralny Rejestr Beneficjentów Rzeczywistych\nProcedury TAX FREE, VAT-REFUND, VAP, OSS i IOSS"
+        },
+        {
+          "text": "Podstawowe informacje o cle\n                                                                \n                                                                    Informacje dla osób fizycznych\nInformacje dla przedsiębiorców\nOgraniczenia przywozu i wywozu towarów\nZabezpieczenie i pobór należności celnych oraz zwrot i umorzenia należności celnych\nZintegrowana Taryfa Celna \n                                                                \n                                                                Pozostałe\n                                                                \n                                                                    Agenci celni\nGwaranci celni\nKursy walut w przepisach\nAkty prawne regulujące sprawy celne\nZwolnienia\n                                                                \n                                                                    Wybierz swoją sytuację\n                                                                    \n                                                                         \n \n                                                                    \n                                                                    \n                                                                Ogólne\n                                                                \n                                                                    CBAM\nZgłoszenie celne i INTRASTAT\nBrexit a cło\nReforma celna\n                                                                \n                                                                Narzędzia\n                                                                \n                                                                    Kalkulator taryfowy\nPrzeglądarka taryfowa"
+        },
+        {
+          "text": "Kalkulatory\n                                                                \n                                                                    Kalkulator odsetek za zwłokę od zaległości podatkowych oraz opłaty prolongacyjnej\nKalkulator odsetek ustawowych\nKalkulator walut\n                                                                \n                                                                Wyszukiwarki\n                                                                \n                                                                    System Informacji Celno-Skarbowej EUREKA \nWyszukiwarka urzędów skarbowych i jednostek Krajowej Administracji Skarbowej\nWykaz podmiotów zarejestrowanych jako podatnicy VAT, niezarejestrowanych oraz wykreślonych i przywróconych do rejestru VAT\nPlik płaski\nSprawdź status NIP\nWyszukiwarka OPP 1,5%\nKaucja gwarancyjna\nWyszukiwarka uprawnień serwisantów \nPotwierdzanie numeru VAT UE (VIES)\n                                                                \n                                                                Inne narzędzia \n                                                                \n                                                                    Aplikacja mobilna eUS\nAplikacja e-Paragony\nJak pobrać Urzędowe Poświadczenie Odbioru (UPO)\nCzas oczekiwania na granicy\nWażne terminy \nRejestr zastawów skarbowych \nGłos podatnika\nKreator wniosku ORD-IN\neLicytacje"
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "Prezentujemy aktualną wersję dokumentu „Specyfikacja interfejsów usług Jednolitego Pliku Kontrolnego\" wraz ze strukturą logiczną pliku metadanych (initupload), który stanowi treść żądania inicjującego. Publikujemy certyfikat klucza publicznego w formacie binarnym oraz tekstowym (Base64) do zaszyfrowania klucza szyfrującego, wykorzystywany w środowisku produkcyjnym i testowym.\n\n\n\t\t\t\t\t\n\t\t\t\t\t\t Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 28.05.2026 r. ZIP, 3,49 kB\n\t\t\t\t\t\t Struktura logiczna pliku metadanych (initupload)  XSD, 11,32 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat produkcyjny) - od 18.07.2025 ZIP, 3,31 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat testowy) - od 09.07.2025 ZIP, 3,29 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat produkcyjny) - od 20.07.2022 r.  ZIP, 2,94 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego_2 (certyfikat testowy) – od 18.08.2022 r. ZIP, 2,90 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 22.04.2026 r. ZIP, 1,84 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 23.04.2025 r. ZIP, 1,87 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 17.04.2024 r ZIP, 1,91 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 27.04.2023 r. ZIP, 1,92 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 02.05.2022 r.  ZIP, 1,91 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska testowego usługi JPK e-dokumenty.mf.gov.pl - od 02.06.2025 r.  7Z, 1,57 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 03.06.2024 r. ZIP, 1,62 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 07.06.2023 r. ZIP, 1,76 kB\n\t\t\t\t\t\t Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl – od 10.06.2022 r. ZIP, 1,62 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat produkcyjny) – od 23.08.2019 r.  ZIP, 2,93 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat testowy) – od 10.09.2019 r. ZIP, 3,64 kB\n\t\t\t\t\t\t Specyfikacja Interfejsów usług JPK wersja 5.6.0 PDF, 700,63 kB"
+        },
+        {
+          "text": "Środowisko produkcyjne do przesyłania plików JPK znajduje się pod adresami:\ne-dokumenty.mf.gov.pl- autoryzacja transakcji wysyłek podpisem kwalifikowanym, Podpisem Zaufanym i danymi autoryzującymi,\nesb2.mf.gov.pl:5064 - środowisko realizuje tylko metodę \"status\".\n\n\n\n\t\t\t\t\t\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat produkcyjny) - od 18.07.2025 ZIP, 3,31 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat produkcyjny) - od 20.07.2022 r. (ZIP, 2 kB) ZIP, 2,94 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat produkcyjny) – od 23.08.2019 r.  ZIP, 2,93 kB"
+        },
+        {
+          "text": "Środowisko testowe do przesyłania testowego plików JPK znajduje się pod adresem:\ntest-e-dokumenty.mf.gov.pl - autoryzacja transakcji wysyłek podpisem kwalifikowanym, Podpisem Zaufanym i danymi autoryzującymi.\nInformacje techniczneInformacje o działaniu mocków dla środowiska testowego:\n\nPełnomocnikJeżeli NIP z deklaracji kończy się na cyfrę 0, 1, 3, 4 – to pełnomocnictwo jest prawidłowe. Certyfikat nie jest sprawdzany.W przeciwnym przypadku pełnomocnictwo jest zweryfikowane negatywnie.\nDane autoryzująceNIP/PESEL w danych autoryzujących: parzyste zwracają pozytywną weryfikację, nieparzyste zwracają negatywną weryfikację.\nCRLUsługa CRL zawsze zwraca pozytywną weryfikację.\nWeryfikacja podpisu na BramcePodatnik może wymusić sprawdzanie poprawności certyfikatu podpisu na bramce za pomocą parametru wywołania:{{envUrl}}/api/Storage/InitUploadSigned?enableValidateQualifiedSignature=true\n\nCertyfikat ssl wykorzystywany do połączenia ze środowiskiem testowym, można pobrać poprzez wejście na stronę: test-e-dokumenty.mf.gov.pl\nNależy pamiętać, że dane przesyłane w ramach testów powinny być danymi fikcyjnymi i nie powinny zawierać rzeczywistych danych osobowych. Prosimy nie wysyłać dużych ilości testowych przesyłek i danych testowych\n\n\n\n\t\t\t\t\t\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat testowy) - od 09.07.2025r. ZIP, 3,29 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego_2 (certyfikat testowy) – od 18.08.2022 r. ZIP, 2,90 kB\n\t\t\t\t\t\t Certyfikat klucza publicznego (certyfikat testowy) – od 10.09.2019 r. ZIP, 3,64 kB"
+        },
+        {
+          "text": "Broszura informacyjna JPK_VAT(3) PDF, 842,74 kB\n\t\t\t\t\t\t Broszura informacyjna JPK_VAT(3)EN PDF, 757,99 kB"
+        },
+        {
+          "text": "Przykładowy plik JPK_VAT(3) w formacie xml  PDF, 757,99 kB\n\t\t\t\t\t\t Przykład JPK-VAT-TEST-0001 ZIP, 10,38 kB"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "text": "JPK",
+          "url": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja"
+        },
+        {
+          "text": "JPK",
+          "url": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat-z-deklaracja"
+        },
+        {
+          "text": "JPK_VAT",
+          "url": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat"
+        },
+        {
+          "text": "Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 28.05.2026 r. ZIP, 3,49 kB",
+          "url": "https://www.podatki.gov.pl/media/bm2ivcrp/test-e-dokumentymfgovpl-od-28-maja-2026.zip"
+        },
+        {
+          "text": "Struktura logiczna pliku metadanych (initupload) XSD, 11,32 kB",
+          "url": "https://www.podatki.gov.pl/media/fmdjp0ri/initupload.xsd"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat produkcyjny) - od 18.07.2025 ZIP, 3,31 kB",
+          "url": "https://www.podatki.gov.pl/media/tqid0waq/jpk_e_dokumenty_mf_gov_pl_certum_2025.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat testowy) - od 09.07.2025 ZIP, 3,29 kB",
+          "url": "https://www.podatki.gov.pl/media/4qxjgyvn/test_e_dokumenty_mf_gov_pl_certum_2025.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat produkcyjny) - od 20.07.2022 r. ZIP, 2,94 kB",
+          "url": "https://www.podatki.gov.pl/media/zpafnelh/jpk_e_dokumenty-mf-gov-pl_certum_2022_cert.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego_2 (certyfikat testowy) – od 18.08.2022 r. ZIP, 2,90 kB",
+          "url": "https://www.podatki.gov.pl/media/rmrnqf5j/test-e-dokumenty-mf-gov-pl_2022_2.zip"
+        },
+        {
+          "text": "Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 22.04.2026 r. ZIP, 1,84 kB",
+          "url": "https://www.podatki.gov.pl/media/hvalkevm/e-dokumenty_mf_gov_pl.zip"
+        },
+        {
+          "text": "Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 23.04.2025 r. ZIP, 1,87 kB",
+          "url": "https://www.podatki.gov.pl/media/tagbdwnx/jpk-certyfikat.zip"
+        },
+        {
+          "text": "Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 17.04.2024 r ZIP, 1,91 kB",
+          "url": "https://www.podatki.gov.pl/media/hv5fmuyt/jpk-certyfikat.zip"
+        },
+        {
+          "text": "Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 27.04.2023 r. ZIP, 1,92 kB",
+          "url": "https://www.podatki.gov.pl/media/m30nqes0/jpk-certyfikatl.zip"
+        },
+        {
+          "text": "Certyfikat SSL środowiska produkcyjnego usługi JPK e-dokumenty.mf.gov.pl - od 02.05.2022 r. ZIP, 1,91 kB",
+          "url": "https://www.podatki.gov.pl/media/e23jh1mc/e-dokumenty_mf_gov_pl_od_02-05-2022.zip"
+        },
+        {
+          "text": "Certyfikat SSL środowiska testowego usługi JPK e-dokumenty.mf.gov.pl - od 02.06.2025 r. 7Z, 1,57 kB",
+          "url": "https://www.podatki.gov.pl/media/vp1duk5k/tls_test.7z"
+        },
+        {
+          "text": "Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 03.06.2024 r. ZIP, 1,62 kB",
+          "url": "https://www.podatki.gov.pl/media/rltgsc5k/certyfikat-ssl-test-e-dokumenty-mf-gov-pl-od-03-06-2024-r.zip"
+        },
+        {
+          "text": "Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl - od 07.06.2023 r. ZIP, 1,76 kB",
+          "url": "https://www.podatki.gov.pl/media/o1rfgb45/certyfikat-ssl-test-e-dokumenty-mf-gov-pl-od-07-06-2023-r.zip"
+        },
+        {
+          "text": "Certyfikat SSL środowiska testowego usługi JPK test-e-dokumenty.mf.gov.pl – od 10.06.2022 r. ZIP, 1,62 kB",
+          "url": "https://www.podatki.gov.pl/media/swqbdw3o/test-e-dokumenty-mf-gov-pl-od-10-06-2022.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat produkcyjny) – od 23.08.2019 r. ZIP, 2,93 kB",
+          "url": "https://www.podatki.gov.pl/media/bsxnxwvv/e_dokumenty-mf-gov-pl.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat testowy) – od 10.09.2019 r. ZIP, 3,64 kB",
+          "url": "https://www.podatki.gov.pl/media/fqcpfrnz/test-e_dokumenty-mf-gov-pl.zip"
+        },
+        {
+          "text": "Specyfikacja Interfejsów usług JPK wersja 5.6.0 PDF, 700,63 kB",
+          "url": "https://www.podatki.gov.pl/media/bngboylg/specyfikacja-interfejs%C3%B3w-us%C5%82ug-jpk-wersja-560.pdf"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat produkcyjny) - od 18.07.2025 ZIP, 3,31 kB",
+          "url": "https://www.podatki.gov.pl/media/z4ilrubf/jpk_e_dokumenty_mf_gov_pl_certum_2025.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat produkcyjny) - od 20.07.2022 r. (ZIP, 2 kB) ZIP, 2,94 kB",
+          "url": "https://www.podatki.gov.pl/media/qvpffq1i/jpk_e_dokumenty-mf-gov-pl_certum_2022_cert.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat produkcyjny) – od 23.08.2019 r. ZIP, 2,93 kB",
+          "url": "https://www.podatki.gov.pl/media/htupvzee/e_dokumenty-mf-gov-pl.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat testowy) - od 09.07.2025r. ZIP, 3,29 kB",
+          "url": "https://www.podatki.gov.pl/media/ciedajkd/test_e_dokumenty_mf_gov_pl_certum_2025.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego_2 (certyfikat testowy) – od 18.08.2022 r. ZIP, 2,90 kB",
+          "url": "https://www.podatki.gov.pl/media/0n0bzyng/test-e-dokumenty-mf-gov-pl_2022_2.zip"
+        },
+        {
+          "text": "Certyfikat klucza publicznego (certyfikat testowy) – od 10.09.2019 r. ZIP, 3,64 kB",
+          "url": "https://www.podatki.gov.pl/media/tgjj134c/test-e_dokumenty-mf-gov-pl.zip"
+        },
+        {
+          "text": "Broszura informacyjna JPK_VAT(3) PDF, 842,74 kB",
+          "url": "https://www.podatki.gov.pl/media/aosft1rf/broszura-jpk_vat-3-wersja-20180214.pdf"
+        },
+        {
+          "text": "Broszura informacyjna JPK_VAT(3)EN PDF, 757,99 kB",
+          "url": "https://www.podatki.gov.pl/media/vabexysu/jpk_vat-records-for-value-added-tax-styczen-2018r.pdf"
+        },
+        {
+          "text": "Przykładowy plik JPK_VAT(3) w formacie xml PDF, 757,99 kB",
+          "url": "https://www.podatki.gov.pl/media/qi4pl2hd/jpk_vat-records-for-value-added-tax-styczen-2018r.pdf"
+        },
+        {
+          "text": "Przykład JPK-VAT-TEST-0001 ZIP, 10,38 kB",
+          "url": "https://www.podatki.gov.pl/media/ebwb1gyq/jpk_vat_test_0001.zip"
+        },
+        {
+          "text": "Struktury JPK (link otwiera nowe okno w innym serwisie)",
+          "url": "https://www.gov.pl/web/kas/struktury-jpk"
+        }
+      ],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Datowany katalog techniczny: tytuł, data publikacji/aktualizacji, sekcje pobrań, dokładne etykiety i URL załączników, opis produkcji/testów. Nie utożsamiać JPK_VAT(3) z JPK_V7M(3)/V7K(3). Zastąpić cały spekulacyjny Summary tekstem źródłowym lub wiernym streszczeniem tych sekcji.",
+      "blockerOrLimit": "Brak blokady odczytu. Wersja z 16.09.2026 jest późniejsza niż promocja z czerwca; nie odzyskano historycznej migawki z dnia promocji. Exa zwróciła starszą datę 1.07.2026 i wersję 5.5.1 v2; podstawą propozycji jest bezpośredni browser, nie ta starsza ekstrakcja.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "dcfc95c2",
+      "id": "draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap",
+      "namespace": "TaxbellAccountingVATReference",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap",
+      "finalUrl": "https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:33:31.612Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2025-12-19",
+        "update": "2025-12-29",
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Cały komunikat: lead, opis struktur, numery CRWDE, oznaczenia KSeF i lista dwóch PDF. Bez pobierania załączników.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.177Z",
+          "requestedUrl": "https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap",
+          "title": "Serwis o podatkach - Nowe wzory struktur JPK_VAT dostępne na ePUAP",
+          "finishedAt": "2026-10-13T09:33:31.612Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.md",
+      "savedJsonBody": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap\n\nSummary:\n- The page announces updated JPK_VAT structure templates now available on ePUAP. This relates to VAT JPK (JPK_VAT) reporting requirements for taxpayers in Poland and provides access to the new formats via the tax authority portal.\n- It sits under the “Aktualności” (News) section and is part of the broader Tax Service portal, which also offers guides, online services, and tools for individuals and businesses.\n- If you need the latest VAT JPK_VAT templates for 2026 specifically, this page indicates that updated forms/templates are now released and accessible through ePUAP for electronic submission.\nNote: The page listing provided highlights indicates broader sections (PIT/CIT/VAT/JPK, etc.) but does not show direct links to the 2026 VAT JPK templates. For precise download or submission steps, visit the Polish Ministry of Finance/tax portal’s Aktualności or ePUAP sections and se...",
+      "savedMarkdownBody": "Source list scan draft.\n\nSource: MF podatki.gov.pl - aktualności VAT/JPK/KSeF\nURL: https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap\n\nSummary:\n- The page announces updated JPK_VAT structure templates now available on ePUAP. This relates to VAT JPK (JPK_VAT) reporting requirements for taxpayers in Poland and provides access to the new formats via the tax authority portal.\n- It sits under the “Aktualności” (News) section and is part of the broader Tax Service portal, which also offers guides, online services, and tools for individuals and businesses.\n- If you need the latest VAT JPK_VAT templates for 2026 specifically, this page indicates that updated forms/templates are now released and accessible through ePUAP for electronic submission.\nNote: The page listing provided highlights indicates broader sections (PIT/CIT/VAT/JPK, etc.) but does not show direct links to the 2026 VAT JPK templates. For precise download or submission steps, visit the Polish Ministry of Finance/tax portal’s Aktualności or ePUAP sections and se...",
+      "savedMarkdownSha256": "803ed907372d3d3f969a5d4f6fcddbce9fb3d18e6cd3139faca93d4e7608bb3f",
+      "savedJsonBodySha256": "ba164649ea116a9087b34445b4509af51fd86972ec1ed7dfdeae97ccdb93bf0e",
+      "comparison": "Zapis trafnie wskazuje ogólny temat, ale dodaje ofertowo-nawigacyjne „If you need” i twierdzi, że highlights nie pokazują konkretnych odnośników. Brakuje dat, wersji, numerów wzorów i treści oznaczeń; końcówka Markdown/JSON urywa się na „se...”.",
+      "recoveredFacts": [
+        "Komunikat o publikacji 19.12.2025 wzorów JPK_V7M(3) i JPK_V7K(3), stosowanych według komunikatu od 1.02.2026.",
+        "Wzory CRWDE odpowiednio 2025/12/19/14090 i 2025/12/19/14089.",
+        "Węzeł KSeF: NrKSeF, OFF, BFK, DI; zmiana umożliwiająca rozliczenie systemu kaucyjnego.",
+        "Dwa materiały Zestawienie Zmian JPK V7M(3)/V7K(3), PDF 0.23 MB."
+      ],
+      "sourceText": "﻿\n podatki.gov.pl\nSzukaj\nAngielski\nPolski\nUkraiński\nZaloguj się do eUrzędu Skarbowego\nPodatki osobiste\nPodatki dla przedsiębiorców\nCło\nPoradniki i informatory\nAktualności\nNarzędzia\nZałatw sprawę online\nStrona Główna\nAktualności\nNowe wzory struktur JPK_VAT dostępne na ePUAP\nAktualności\nNowe wzory struktur JPK_VAT dostępne na ePUAP\n\nData publikacji: 19.12.2025\nData aktualizacji: 29.12.2025\n\n19 grudnia 2025 r. zostały opublikowane nowe wersje struktur JPK_V7M(3) oraz JPK_V7K(3), obowiązujące od 1 lutego 2026 r., dostępne w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych na platformie ePUAP.\nZaktualizowane wzory uwzględniają zmiany wynikające z rozporządzenia Ministra Finansów i Gospodarki z dnia 12 grudnia 2025 r., w tym integrację z Krajowym Systemem e-Faktur.\nNowe struktury umożliwiają m.in. wykazywanie numerów KSeF oraz rozliczanie systemu kaucyjnego w JPK_VAT z deklaracją.\n\n19 grudnia 2025 r. w Centralnym Repozytorium Wzorów Dokumentów Elektronicznych (CRWDE) na platformie ePUAP zostały opublikowane nowe wzory Jednolitych Plików Kontrolnych z deklaracją: JPK_V7M(3) dla podatników rozliczających się miesięcznie oraz JPK_V7K(3) dla podatników rozliczających się kwartalnie. Wzory zostały udostępnione odpowiednio pod numerami 2025/12/19/14090 oraz 2025/12/19/14089 i będą stosowane do rozliczeń od 1 lutego 2026 r.\n\nZaktualizowane struktury plików uwzględniają zmiany prawne, które wejdą w życie w od 1 lutego 2026 roku - rozporządzenie Ministra Finansów i Gospodarki z dnia 12 grudnia 2025 r. w sprawie zmiany rozporządzenia zmieniającego rozporządzenie w sprawie szczegółowego zakresu danych zawartych w deklaracjach podatkowych i w ewidencji w zakresie podatku od towarów i usług.\n\nNowe wzory zawierają węzeł KSeF, który umożliwia ujmowanie danych z faktur lub oznaczenia dotyczące występowania faktur w Krajowym Systemie e-Faktur:\n\nNrKSeF - numer identyfikujący fakturę w Krajowym Systemie e-Faktur,\nOFF – faktura, o której mowa w art. 106nf ustawy, która nie posiada numeru identyfikującego w Krajowym Systemie e-Faktur na dzień złożenia ewidencji,\nBFK – faktura elektroniczna lub faktura w postaci papierowej,\nDI – dowód inny niż faktura wystawiona za pośrednictwem KSeF.\n\nDodatkowo we wzorach została wprowadzona zmiana umożliwiająca rozliczenie systemu kaucyjnego w JPK_VAT z deklaracją.\n\nSzczegółowe zestawienie modyfikacji w obu strukturach w załącznikach:\n\nMateriały\n\nZestawienie Zmian JPK​ V7M(3) (PDF, 0.23MB)\nZestawienie Zmian JPK​ V7K(3) (PDF, 0.23MB)\n\nTagi:\n\nVAT Jednoosobowa działaność gospodarcza Mały i średni przedsiębiorca Spółki i organizacje\n\nOpracowanie\nRedakcja podatki.gov.pl\n\n    \nZałatw swoją sprawę podatkową\n\nZnajdź usługę\n\nZnajdź deklarację\nZnajdź serwis\n\nZnajdź narzędzie\n\nMapa strony\nDeklaracja dostępności serwisu\nPolityka cookie\nKlauzula informacyjna Ministra Finansów i Gospodarki\nKlauzula informacyjna Szefa Krajowej Administracji Skarbowej\npodatki.gov.pl - archiwum\nSkontaktuj się z nami \n\nTreści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.\n\nUstawienia prywatności\nDbamy o Twoją prywatność\nWykorzystujemy pliki cookie w celu zapewnienia prawidłowego funkcjonowania naszej witryny oraz do analizy ruchu i optymalizacji działania strony. Dzięki nim możemy lepiej dostosować treści do potrzeb użytkowników i stale ulepszać nasze usługi. Pamiętaj, że informacje przechowywane w plikach cookie mogą pozwalać na identyfikację konkretnego urządzenia lub przeglądarki użytkownika, a więc potencjalnie stanowią dane osobowe. Polityka cookies\nOdrzuć\nSpersonalizuj \nZezwól na wszystkie",
+      "sourceTextSha256": "e0afe76ac86bd3ff2e0551a7441a7ce2e0b48dec31840b2a1a358f9c18b7d04b",
+      "publicAccordionText": [],
+      "sourceLinks": [
+        {
+          "text": "Zestawienie Zmian JPK​ V7M(3) (PDF, 0.23MB)",
+          "url": "https://www.podatki.gov.pl/media/3kcls0wv/zestawienie-zmian-jpk-_v7m-3.pdf"
+        },
+        {
+          "text": "Zestawienie Zmian JPK​ V7K(3) (PDF, 0.23MB)",
+          "url": "https://www.podatki.gov.pl/media/qogd4k3h/zestawienie-zmian-jpk-_v7k-3.pdf"
+        }
+      ],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Wierny, datowany komunikat o wydaniu struktur z nazwami, numerami CRWDE, deklarowaną datą stosowania i dokładnymi definicjami czterech oznaczeń; zachować listę materiałów. Usunąć metakomunikaty o highlights, ofertę wyszukiwania i urwany fragment.",
+      "blockerOrLimit": "Brak blokady strony; treści załączników nie sprawdzono. Data stosowania jest przytoczeniem komunikatu z grudnia 2025, nie certyfikacją aktualnych obowiązków.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "93f75109",
+      "id": "draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny",
+      "namespace": "TaxbellLegalReference",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+      "finalUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:42:53.430Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2025-12-15",
+        "update": "2026-06-24",
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Rozwinięte główne sekcje CIT i odczyt publicznych accordion-body, w tym tekst podsekcji dostępny w DOM. Nie weryfikowano ustaw ani odsyłaczy do innych artykułów.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.194Z",
+          "requestedUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+          "title": "Serwis o podatkach - Informacje podstawowe CIT klasyczny",
+          "finishedAt": "2026-10-13T09:33:31.241Z"
+        },
+        {
+          "method": "clean Chromium; expand official page reading sections",
+          "startedAt": "2026-10-13T09:41:47.168Z",
+          "requestedUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+          "actions": [
+            "Odrzuć optional cookies",
+            "Read/expand Dla kogo jest ten podatek",
+            "Read/expand Jaki jest zakres opodatkowania",
+            "Read/expand Co jest opodatkowane",
+            "Read/expand Kiedy powstaje przychód",
+            "Read/expand Co jest kosztem uzyskania przychodów",
+            "Read/expand Zwolnienia przedmiotowe dla wybranych podatników CIT",
+            "Read/expand Podstawa opodatkowania",
+            "Read/expand Stawka podatku",
+            "Read/expand Jakie złożyć zeznanie",
+            "Read/expand Podstawa prawna"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+          "finishedAt": "2026-10-13T09:41:54.027Z"
+        },
+        {
+          "method": "clean Chromium; expand official page reading sections",
+          "startedAt": "2026-10-13T09:42:45.711Z",
+          "requestedUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+          "actions": [
+            "Odrzuć optional cookies",
+            "Read/expand Dla kogo jest ten podatek",
+            "Read/expand Jaki jest zakres opodatkowania",
+            "Read/expand Co jest opodatkowane",
+            "Read/expand Kiedy powstaje przychód",
+            "Read/expand Co jest kosztem uzyskania przychodów",
+            "Read/expand Zwolnienia przedmiotowe dla wybranych podatników CIT",
+            "Read/expand Podstawa opodatkowania",
+            "Read/expand Stawka podatku",
+            "Read/expand Jakie złożyć zeznanie",
+            "Read/expand Podstawa prawna"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+          "finishedAt": "2026-10-13T09:42:53.430Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.md",
+      "savedJsonBody": "Source list scan draft.\n\nSource: MF podatki.gov.pl - PIT CIT i rozliczenia\nURL: https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny\n\nSummary:\n- The page is a section of podatki.gov.pl focused on corporate income tax (CIT) for businesses, titled “Serwis o podatkach - Informacje podstawowe CIT klasyczny.”\n- It serves as an overview hub for PIT/CIT topics relevant to entrepreneurs, including basic CIT information, tools, online handling, and guides.\n- Key areas likely covered or linked: podstawowe podatki dla przedsiębiorców, pozostałe podatki (PCC, SD, etc.), podatki od zakupów, and compliance-related items (WHT, MDR, ICAP, ETACA, SME procedures, GLOBE, CRBR, etc.).\n- Useful for entrepreneurs seeking official, government-provided information on CIT basics, filing, and related tax obligations as of 2026.\nIf you want, I can extract the specific CIT topics and direct links for filing, online services, and guidance from this page.",
+      "savedMarkdownBody": "Source list scan draft.\n\nSource: MF podatki.gov.pl - PIT CIT i rozliczenia\nURL: https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny\n\nSummary:\n- The page is a section of podatki.gov.pl focused on corporate income tax (CIT) for businesses, titled “Serwis o podatkach - Informacje podstawowe CIT klasyczny.”\n- It serves as an overview hub for PIT/CIT topics relevant to entrepreneurs, including basic CIT information, tools, online handling, and guides.\n- Key areas likely covered or linked: podstawowe podatki dla przedsiębiorców, pozostałe podatki (PCC, SD, etc.), podatki od zakupów, and compliance-related items (WHT, MDR, ICAP, ETACA, SME procedures, GLOBE, CRBR, etc.).\n- Useful for entrepreneurs seeking official, government-provided information on CIT basics, filing, and related tax obligations as of 2026.\nIf you want, I can extract the specific CIT topics and direct links for filing, online services, and guidance from this page.",
+      "savedMarkdownSha256": "f28e04920b71af9a97e65496834ab434c4ef5d6cd2ece21c24cdc5a40a861e06",
+      "savedJsonBodySha256": "ca601798b059bf86a5241e825a9d52c59afbd373028a54e081177135325fb37a",
+      "comparison": "Zapis jest spekulacją o menu ogólnym PIT/CIT/PCC/WHT/MDR zamiast treści artykułu CIT. Frazy „likely covered”, „as of 2026” i „I can extract” nie reprezentują odzyskanej informacji.",
+      "recoveredFacts": [
+        "Sekcje: podatnicy CIT i CIT-15J, zakres obowiązku podatkowego, źródła dochodu, moment przychodu, koszty, zwolnienia, podstawa opodatkowania, stawki, zeznania i podstawy prawne.",
+        "Źródło opisuje stawki ogólne 19% i warunkową 9%, ograniczenia i wyjątki oraz osobne rozbudowane przepisy dla banków/SKOK od 2026 r.",
+        "Wskazuje CIT-8/CIT-8AB do końca trzeciego miesiąca następnego roku oraz odrębny CIT-CFC."
+      ],
+      "sourceText": "﻿\n podatki.gov.pl\nSzukaj\nAngielski\nPolski\nUkraiński\nZaloguj się do eUrzędu Skarbowego\nPodatki osobiste\nPodatki dla przedsiębiorców\nCło\nPoradniki i informatory\nAktualności\nNarzędzia\nZałatw sprawę online\nStrona Główna\nPodatki firmowe\nCIT\nCIT klasyczny\nInformacje podstawowe CIT klasyczny\nInformacje podstawowe CIT klasyczny\nW tym miejscu znajdziesz kto płaci ten podatek, co jest podstawą opodatkowania, jakie są stawki podatku i inne ważne informacje.\n\nData publikacji: 15.12.2025\nData aktualizacji: 24.06.2026\n\nDla kogo jest ten podatek\n\nPodatek CIT obowiązuje:\n\nosoby prawne,\njednostki organizacyjne niemające osobowości prawnej,\nspółki kapitałowe w organizacji,\nspółki komandytowe i spółki komandytowo-akcyjne, które mają siedzibę w Polsce,\npodatkowe grupy kapitałowe,\nfundacje rodzinne w organizacji,\nspółki niemające osobowości prawnej mające siedzibę lub zarząd w innym państwie, jeżeli zgodnie z przepisami prawa podatkowego tego państwa są traktowane jak osoby prawne i podlegają w tym państwie opodatkowaniu od całości swoich dochodów bez względu na miejsce ich osiągania,\nspółki jawne, które mają siedzibę w Polsce, jeżeli wspólnikami spółki jawnej nie są wyłącznie osoby fizyczne oraz spółka jawna nie złoży informacji CIT-15J.\nKiedy złożyć CIT-15J\nJakie są wyjątki\nPodstawa prawna\nart. 1, art. 1a, art. 6 ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych\nJaki jest zakres opodatkowania\n\nUstal siedzibę lub zarząd, aby określić zakres opodatkowania.\n\nRozróżniamy:\n\nnieograniczony obowiązek podatkowy – jeśli masz siedzibę lub zarząd na terytorium Polski podlegasz obowiązkowi podatkowemu od całości dochodów, bez względu na miejsce ich osiągania,\nograniczony obowiązek podatkowy – jeśli nie masz w Polsce siedziby lub zarządu podlegasz obowiązkowi podatkowemu tylko od dochodów osiągniętych na terytorium Polski;\nPodstawa prawna\nCo jest opodatkowane\n\nOpodatkowujesz sumę dochodów uzyskanych ze źródeł przychodów.\n\nŹródła dochodów podzielone są na dwie grupy: zyski kapitałowe oraz inne źródła przychodów.\n\nDochód z danego źródła przychodów to nadwyżka sumy przychodów uzyskanych z tego źródła nad kosztami ich uzyskania - osiągnięta w roku podatkowym.\n\nJeżeli koszty uzyskania przychodów przekraczają sumę przychodów – to różnica jest stratą z danego źródła.\n\nPodatkowa Grupa Kapitałowa (PGK)\nJakie są wyjątki\nPodstawa prawna\nKiedy powstaje przychód\n\nPrzychód z działalności gospodarczej ustalasz już na poziomie przychodów należnych.\n\nPrzychód należny powstaje w dniu wydania rzeczy, zbycia prawa majątkowego lub wykonania usługi, w tym częściowego wykonania usługi, nie później niż w dniu:\n\nwystawienia faktury, albo \nuregulowania należności.\n\nW przypadku usługi rozliczanej okresowo przychód powstaje w ostatnim dniu okresu rozliczeniowego określonego w umowie lub na fakturze (nie rzadziej niż raz w roku).\n\nW odniesieniu do przychodów, do których nie mają zastosowania powyższe zasady przyjmuje się, że datą powstania przychodu jest dzień otrzymania zapłaty.\n\nJakie są wyjątki\nPodstawa prawna\nCo jest kosztem uzyskania przychodów\n\nKoszt to wydatek, który ponosisz. Wpływa on bezpośrednio na obniżenie Twojego dochodu do opodatkowania, a w konsekwencji obniżenie wysokości podatku.\n\nPoniesiony wydatek może zostać uznany za koszt uzyskania przychodów, jeśli spełnisz łącznie następujące warunki:\n\nwydatek został poniesiony, tj. w ostatecznym rozrachunku musi on zostać pokryty z Twoich zasobów majątkowych,\nponiesiony został w celu uzyskania, zachowania lub zabezpieczenia źródła przychodów,\npozostaje w związku z prowadzoną działalnością gospodarczą,\njest definitywny tj. wartość poniesionego wydatku nie została w jakikolwiek sposób zwrócona,\nzostał właściwie udokumentowany,\nwydatek nie może znajdować się w katalogu wyłączeń wymienionych literalnie w ustawie.\nKiedy rozpoznać koszt\nJakie są wyjątki\nPodstawa prawna\nZwolnienia przedmiotowe dla wybranych podatników CIT\n\nW ustawie CIT znajdziesz katalog zwolnień przedmiotowych. Zwolnienia obejmują zazwyczaj tę część dochodu, która jest przeznaczona na określone cele. Ze zwolnień najczęściej korzystają: stowarzyszenia, fundacje, wspólnoty mieszkaniowe i koła gospodyń wiejskich.\n\nStowarzyszenie\nFundacja\nWspólnota mieszkaniowa\nKoło gospodyń wiejskich (KGW)\nPodstawa prawna\nPodstawa opodatkowania\n\nCo do zasady, podstawą opodatkowania jest suma dochodów ze źródeł przychodów, po skorzystaniu z przysługujących odliczeń.\n\nCzęść dochodów opodatkujesz w sposób zryczałtowany, bez uwzględnienia kosztów uzyskania przychodów – w takiej sytuacji podstawą opodatkowania jest przychód. Do tej grupy zaliczymy np. przychody z dywidend.\n\nSzczególne zasady określenia podstawy opodatkowania dotyczą np.:\n\npodatku od dochodów zagranicznej spółki kontrolowanej,\npodatku od przerzuconych dochodów,\nIP-BOX,\npodatku od dochodów z niezrealizowanych zysków,\nopodatkowania spółek holdingowych,\nopodatkowania fundacji rodzinnych,\nprzychodów z budynków,\npodatku minimalnego.\nPodstawa prawna\nStawka podatku\n\nCo do zasady podatek wynosi:\n\n19% podstawy opodatkowania,\n9% podstawy opodatkowania od przychodów (dochodów) innych niż z zysków kapitałowych – w przypadku gdy, przychody które osiągniesz w roku podatkowym nie przekroczyły równowartości 2 mln euro.\n\nZ wyjątkiem banków dla których są przepisy szczególne od 2026 roku.\n\nJeśli Twój rok podatkowy trwa dłużej albo krócej niż 12 miesięcy, kwotę 2 mln euro ustalasz jako iloczyn 1/12 tej kwoty i liczby pełnych miesięcy w roku podatkowym (za pełny miesiąc przyjmuje się okres trwający 30 dni) – ustalenie proporcji obowiązuje od 2026 roku.\n\n9% stawkę podatku możesz stosować jeśli rozpoczynasz prowadzenie działalności lub posiadasz status małego podatnika.\n\nStatus małego podatnika określisz na podstawie wielkości przychodów ze sprzedaży wraz z należnym podatkiem VAT, uzyskanych w poprzednim roku podatkowym - suma nie może przekraczać równowartości 2 mln euro.\n\nJesteś zobowiązany do wpłacania zaliczek na podatek w trakcie roku podatkowego.\nZaliczki wpłacasz miesięcznie. Jeśli jesteś małym podatnikiem lub rozpoczynasz prowadzenie działalności gospodarczej masz możliwość wpłacania zaliczek kwartalnie.\n\nMożesz wpłacać zaliczki również w sposób uproszczony. Wtedy wysokość zaliczek jest uzależniona od podatku należnego wykazanego w zeznaniu złożonym w roku, który poprzedza dany rok podatkowy lub – w przypadku poniesienia w tym roku straty - w zeznaniu złożonym w roku, który poprzedza dany rok podatkowy o 2 lata. Jeśli wybierasz zaliczki uproszczone wpłacasz je co miesiąc.\n\nJakie są wyjątki\nPodatek dla banków (od 2026 roku)\nPodstawa prawna\nJakie złożyć zeznanie\n\nSkładasz zeznanie roczne na formularzu CIT-8 lub CIT-8AB (jeśli jesteś PGK) w terminie do końca 3-go miesiąca roku następnego. W tym terminie wpłacasz również podatek wykazany w zeznaniu.\n\nJednostki zwolnione podmiotowo z opodatkowania, co do zasady, nie składają zeznań podatkowych. Wyjątki reguluje ustawa.\n\nCIT-CFC\nPodstawa prawna\nPodstawa prawna\nZałatw swoją sprawę podatkową\n\nZnajdź usługę\n\nZnajdź deklarację\nZnajdź serwis\n\nZnajdź narzędzie\n\nMapa strony\nDeklaracja dostępności serwisu\nPolityka cookie\nKlauzula informacyjna Ministra Finansów i Gospodarki\nKlauzula informacyjna Szefa Krajowej Administracji Skarbowej\npodatki.gov.pl - archiwum\nSkontaktuj się z nami \n\nTreści zamieszczone w serwisie udostępniamy bezpłatnie. Korzystanie z treści opublikowanych w serwisie podatki.gov.pl, niezależnie od celu i sposobu korzystania, nie wymaga zgody Ministerstwa Finansów. Treści znaczone w serwisie jako treści będące przedmiotem praw autorskich, o ile nie jest to stwierdzone inaczej, są udostępniane na licencji Creative Commons Uznanie Autorstwa 3.0 Polska.\n\nUstawienia prywatności",
+      "sourceTextSha256": "606ca04eea9c25446705b581790de8a2d71ca6fc3e89c4e710aaa97202745e4c",
+      "publicAccordionText": [
+        {
+          "text": "Od dochodu\n                                                                \n                                                                    PIT\nInformacje podstawowe\nUlgi i odliczenia\nStawki i limity\nFormularze\n                                                                \n                                                                    Wybierz swoją sytuację\n                                                                    \n                                                                        Wybierz swoją sytuację\nMam dochody z pracy\nMam dochody z pracy wykonywanej za granicą\nMam dochody z umowy zlecenia lub o dzieło\nMam dochody z praw autorskich\nMam dochody z najmu\nMam dochody z działalności nierejestrowanej\nMam dochody niani\nMam dochody z emerytury\nPotrzebuję pełnomocnictwa\n                                                                    \n                                                                    \n                                                                Od majątku\n                                                                \n                                                                    Spadki i darowizny (SD)\nCzynności cywilnoprawne (PCC)\n                                                                \n                                                                Od zakupów\n                                                                \n                                                                    Akcyza\nVAT\n                                                                \n                                                                Pozostałe\n                                                                \n                                                                    Podatek od gier\nPodatki lokalne\nInterpretacje podatkowe"
+        },
+        {
+          "text": "Podstawowe podatki dla przedsiębiorców\n                                                                        \n                                                                            \n\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tPIT\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tCIT\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tVAT\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tJPK\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tAkcyza\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\n\t\n\n\n\n\n                                                                        \n                                                                \n                                                                    \n                                                                \n                                                                Pozostałe podatki\n                                                                \n                                                                    od czynności cywilnoprawnych (PCC)\nod spadków i darowizn (SD)\ntonażowy\nod gier\nod sprzedaży detalicznej\nod wydobycia niektórych kopalin\nod niektórych instytucji finansowych\nod sprzedaży alkoholu w opakowaniach do 300 ml\nOpłata cukrowa\nKlauzula ogólna przeciwko unikaniu opodatkowania\n                                                                \n                                                                \n                                                                \n                                                                    Podatki lokalne\nPełnomocnictwa\nOpłata skarbowa\nRejestr działalności na rzecz spółek lub trustów\nRejestr działalności w zakresie walut wirtualnych\nCeny transferowe\nProgram współdziałania\nInterpretacje podatkowe\nPodatkowa współpraca międzynarodowa\nPorozumienie inwestycyjne\nWiążące informacje podatkowe i celne\n                                                                \n                                                                \n                                                                \n                                                                    eNotariusz\neSprawozdania\nZawiadomienie ZAW-NR\nWHT - Withholding Tax (podatek u źródła)\nMDR - Raportowanie schematów podatkowych\nICAP - International Compliance Assurance Programme\nETACA - European Trust And Cooperation Approac\nSME - procedura szczególna\nGLOBE - opodatkowanie wyrównawcze\nCRBR - Centralny Rejestr Beneficjentów Rzeczywistych\nProcedury TAX FREE, VAT-REFUND, VAP, OSS i IOSS"
+        },
+        {
+          "text": "Podstawowe informacje o cle\n                                                                \n                                                                    Informacje dla osób fizycznych\nInformacje dla przedsiębiorców\nOgraniczenia przywozu i wywozu towarów\nZabezpieczenie i pobór należności celnych oraz zwrot i umorzenia należności celnych\nZintegrowana Taryfa Celna \n                                                                \n                                                                Pozostałe\n                                                                \n                                                                    Agenci celni\nGwaranci celni\nKursy walut w przepisach\nAkty prawne regulujące sprawy celne\nZwolnienia\n                                                                \n                                                                    Wybierz swoją sytuację\n                                                                    \n                                                                         \n \n                                                                    \n                                                                    \n                                                                Ogólne\n                                                                \n                                                                    CBAM\nZgłoszenie celne i INTRASTAT\nBrexit a cło\nReforma celna\n                                                                \n                                                                Narzędzia\n                                                                \n                                                                    Kalkulator taryfowy\nPrzeglądarka taryfowa"
+        },
+        {
+          "text": "Kalkulatory\n                                                                \n                                                                    Kalkulator odsetek za zwłokę od zaległości podatkowych oraz opłaty prolongacyjnej\nKalkulator odsetek ustawowych\nKalkulator walut\n                                                                \n                                                                Wyszukiwarki\n                                                                \n                                                                    System Informacji Celno-Skarbowej EUREKA \nWyszukiwarka urzędów skarbowych i jednostek Krajowej Administracji Skarbowej\nWykaz podmiotów zarejestrowanych jako podatnicy VAT, niezarejestrowanych oraz wykreślonych i przywróconych do rejestru VAT\nPlik płaski\nSprawdź status NIP\nWyszukiwarka OPP 1,5%\nKaucja gwarancyjna\nWyszukiwarka uprawnień serwisantów \nPotwierdzanie numeru VAT UE (VIES)\n                                                                \n                                                                Inne narzędzia \n                                                                \n                                                                    Aplikacja mobilna eUS\nAplikacja e-Paragony\nJak pobrać Urzędowe Poświadczenie Odbioru (UPO)\nCzas oczekiwania na granicy\nWażne terminy \nRejestr zastawów skarbowych \nGłos podatnika\nKreator wniosku ORD-IN\neLicytacje"
+        },
+        {
+          "text": ""
+        },
+        {
+          "text": "Podatek CIT obowiązuje:\n\nosoby prawne,\njednostki organizacyjne niemające osobowości prawnej,\nspółki kapitałowe w organizacji,\nspółki komandytowe i spółki komandytowo-akcyjne, które mają siedzibę w Polsce,\npodatkowe grupy kapitałowe,\nfundacje rodzinne w organizacji,\nspółki niemające osobowości prawnej mające siedzibę lub zarząd w innym państwie, jeżeli zgodnie z przepisami prawa podatkowego tego państwa są traktowane jak osoby prawne i podlegają w tym państwie opodatkowaniu od całości swoich dochodów bez względu na miejsce ich osiągania,\nspółki jawne, które mają siedzibę w Polsce, jeżeli wspólnikami spółki jawnej nie są wyłącznie osoby fizyczne oraz spółka jawna nie złoży informacji CIT-15J.\n\n\n\n\nKiedy złożyć CIT-15J\n\n\n\t\nprzed rozpoczęciem roku obrotowego (od 01.01.2026 r. przyjmuje się, że spółka jawna złożyła informację CIT-15J, jeżeli uprzednio złożona pozostaje aktualna)\nw przypadku zaistnienia zmian w składzie wspólników jako aktualizacja informacji\nw przypadku nowo utworzonej spółki jawnej oraz spółki jawnej powstałej z przekształcenia innej spółki\n\n\n\n\n\nJakie są wyjątki\n\n\n\tW ustawie znajdziesz wyłączenia podmiotowe. Pod przepisy ustawy nie podlegają m.in. jednostki budżetowe, jednostki samorządu terytorialnego, niektóre agencje rządowe czy fundusze. \n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 1, art. 1a, art. 6 ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "Ustal siedzibę lub zarząd, aby określić zakres opodatkowania.\nRozróżniamy:\n\nnieograniczony obowiązek podatkowy – jeśli masz siedzibę lub zarząd na terytorium Polski podlegasz obowiązkowi podatkowemu od całości dochodów, bez względu na miejsce ich osiągania,\nograniczony obowiązek podatkowy – jeśli nie masz w Polsce siedziby lub zarządu podlegasz obowiązkowi podatkowemu tylko od dochodów osiągniętych na terytorium Polski;\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 3 ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "Opodatkowujesz sumę dochodów uzyskanych ze źródeł przychodów.\nŹródła dochodów podzielone są na dwie grupy: zyski kapitałowe oraz inne źródła przychodów.\nDochód z danego źródła przychodów to nadwyżka sumy przychodów uzyskanych z tego źródła nad kosztami ich uzyskania - osiągnięta w roku podatkowym.\nJeżeli koszty uzyskania przychodów przekraczają sumę przychodów – to różnica jest stratą z danego źródła.\n\n\n\nPodatkowa Grupa Kapitałowa (PGK)\n\n\n\tW PGK dochodem ze źródła przychodów jest nadwyżka sumy dochodów wszystkich spółek tworzących grupę, uzyskanych z danego źródła przychodów, nad sumą ich strat poniesionych z tego źródła. Jeżeli suma strat poniesionych z danego źródła przychodów przez spółki, które wchodzą w skład PGK przekracza sumę dochodów uzyskanych z tego źródła – to różnica stanowi stratę PGK poniesioną ze źródła przychodów.\n\n\n\n\nJakie są wyjątki\n\n\n\tW ustawie znajdziesz katalog zwolnień przedmiotowych. Zwolnienia obejmują zazwyczaj tę część dochodu, która jest przeznaczona na określone cele. Ze zwolnień najczęściej korzystają stowarzyszenia, fundacje, wspólnoty mieszkaniowe i koła gospodyń wiejskich.\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 7, art. 7a, art. 17 ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "Przychód z działalności gospodarczej ustalasz już na poziomie przychodów należnych.\nPrzychód należny powstaje w dniu wydania rzeczy, zbycia prawa majątkowego lub wykonania usługi, w tym częściowego wykonania usługi, nie później niż w dniu:\n\nwystawienia faktury, albo \nuregulowania należności.\n\nW przypadku usługi rozliczanej okresowo przychód powstaje w ostatnim dniu okresu rozliczeniowego określonego w umowie lub na fakturze (nie rzadziej niż raz w roku).\nW odniesieniu do przychodów, do których nie mają zastosowania powyższe zasady przyjmuje się, że datą powstania przychodu jest dzień otrzymania zapłaty.\n\n\n\nJakie są wyjątki\n\n\n\tW ustawie znajdziesz katalog przychodów, które w ogóle nie są przychodami dla podatku dochodowego. W tej grupie można wymienić np. należny podatek od towarów i usług, przychody otrzymane na utworzenie lub powiększenie kapitału zakładowego w spółce.\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 12 ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "Koszt to wydatek, który ponosisz. Wpływa on bezpośrednio na obniżenie Twojego dochodu do opodatkowania, a w konsekwencji obniżenie wysokości podatku.\nPoniesiony wydatek może zostać uznany za koszt uzyskania przychodów, jeśli spełnisz łącznie następujące warunki:\n\nwydatek został poniesiony, tj. w ostatecznym rozrachunku musi on zostać pokryty z Twoich zasobów majątkowych,\nponiesiony został w celu uzyskania, zachowania lub zabezpieczenia źródła przychodów,\npozostaje w związku z prowadzoną działalnością gospodarczą,\njest definitywny tj. wartość poniesionego wydatku nie została w jakikolwiek sposób zwrócona,\nzostał właściwie udokumentowany,\nwydatek nie może znajdować się w katalogu wyłączeń wymienionych literalnie w ustawie.\n\n\n\n\nKiedy rozpoznać koszt\n\n\n\tMoment zaliczania wydatków do kosztów zależy od tego czy są to koszty bezpośrednie czy pośrednie.\nDo kosztów bezpośrednich zaliczysz koszty, które bezpośrednio biorą udział w generowaniu przychodu. Koszty te potrącisz w roku, w którym osiągnięte zostały odpowiadające im przychody.\nNatomiast koszty pośrednie to koszty inne niż bezpośrednio związane z przychodami. Koszty takie rozliczysz w roku, w którym są ponoszone. Za datę poniesienia kosztu uznaje się dzień ujęcia go w księgach rachunkowych.\nW ustawie nie ma definicji kosztów bezpośrednich i pośrednich.\n\n\n\n\nJakie są wyjątki\n\n\n\tW ustawie znajdziesz katalog zwolnień przedmiotowych. Zwolnienia obejmują zazwyczaj tę część dochodu, która jest przeznaczona na określone cele. Ze zwolnień najczęściej korzystają stowarzyszenia, fundacje, wspólnoty mieszkaniowe i koła gospodyń wiejskich.\nWięcej informacji znajdziesz w Zwolnieniach przedmiotowych dla wybranych podatników CIT\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 15 i art. 16 ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "W ustawie CIT znajdziesz katalog zwolnień przedmiotowych. Zwolnienia obejmują zazwyczaj tę część dochodu, która jest przeznaczona na określone cele. Ze zwolnień najczęściej korzystają: stowarzyszenia, fundacje, wspólnoty mieszkaniowe i koła gospodyń wiejskich.\n\n\nStowarzyszenie\n\n\n\t\n\n\n\n\n\n\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tStowarzyszenie\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\n\t\t\tJesteś stowarzyszeniem. Sprawdź, czy możesz skorzystać ze zwolnień w podatku CIT i jak się rozliczyć.\n\t\t\n\t\n\n\n\n\n\n\n\n\nFundacja\n\n\n\t\n\n\n\n\n\n\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tFundacja\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\n\t\t\tJesteś fundacją. Sprawdź, czy możesz skorzystać ze zwolnień w podatku CIT i jak się rozliczyć.\n\t\t\n\t\n\n\n\n\n\n\n\n\nWspólnota mieszkaniowa\n\n\n\t\n\n\n\n\n\n\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tWspólnota mieszkaniowa\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\n\t\t\tJesteś wspólnotą mieszkaniową. Sprawdź, czy możesz skorzystać ze zwolnień w podatku CIT i jak się rozliczyć.\n\t\t\n\t\n\n\n\n\n\n\n\n\nKoło gospodyń wiejskich (KGW)\n\n\n\t\n\n\n\n\n\n\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\tKoło gospodyń wiejskich (KGW)\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\n\t\t\tJesteś KGW. Sprawdź, czy możesz skorzystać ze zwolnień w podatku CIT i jak się rozliczyć.\n\t\t\n\t\n\n\n\n\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 17 ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "Co do zasady, podstawą opodatkowania jest suma dochodów ze źródeł przychodów, po skorzystaniu z przysługujących odliczeń.\nCzęść dochodów opodatkujesz w sposób zryczałtowany, bez uwzględnienia kosztów uzyskania przychodów – w takiej sytuacji podstawą opodatkowania jest przychód. Do tej grupy zaliczymy np. przychody z dywidend.\nSzczególne zasady określenia podstawy opodatkowania dotyczą np.:\n\npodatku od dochodów zagranicznej spółki kontrolowanej,\npodatku od przerzuconych dochodów,\nIP-BOX,\npodatku od dochodów z niezrealizowanych zysków,\nopodatkowania spółek holdingowych,\nopodatkowania fundacji rodzinnych,\nprzychodów z budynków,\npodatku minimalnego.\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 18, art. 22, art. 24a, art. 24aa, art. 24b, art. 24ca, art. 24d, art. 24f, art. 24m, art. 24q ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "Co do zasady podatek wynosi:\n\n19% podstawy opodatkowania,\n9% podstawy opodatkowania od przychodów (dochodów) innych niż z zysków kapitałowych – w przypadku gdy, przychody które osiągniesz w roku podatkowym nie przekroczyły równowartości 2 mln euro.\n\nZ wyjątkiem banków dla których są przepisy szczególne od 2026 roku.\nJeśli Twój rok podatkowy trwa dłużej albo krócej niż 12 miesięcy, kwotę 2 mln euro ustalasz jako iloczyn 1/12 tej kwoty i liczby pełnych miesięcy w roku podatkowym (za pełny miesiąc przyjmuje się okres trwający 30 dni) – ustalenie proporcji obowiązuje od 2026 roku.\n9% stawkę podatku możesz stosować jeśli rozpoczynasz prowadzenie działalności lub posiadasz status małego podatnika.\nStatus małego podatnika określisz na podstawie wielkości przychodów ze sprzedaży wraz z należnym podatkiem VAT, uzyskanych w poprzednim roku podatkowym - suma nie może przekraczać równowartości 2 mln euro.\nJesteś zobowiązany do wpłacania zaliczek na podatek w trakcie roku podatkowego. Zaliczki wpłacasz miesięcznie. Jeśli jesteś małym podatnikiem lub rozpoczynasz prowadzenie działalności gospodarczej masz możliwość wpłacania zaliczek kwartalnie.\nMożesz wpłacać zaliczki również w sposób uproszczony. Wtedy wysokość zaliczek jest uzależniona od podatku należnego wykazanego w zeznaniu złożonym w roku, który poprzedza dany rok podatkowy lub – w przypadku poniesienia w tym roku straty - w zeznaniu złożonym w roku, który poprzedza dany rok podatkowy o 2 lata. Jeśli wybierasz zaliczki uproszczone wpłacasz je co miesiąc.\n\n\n\nJakie są wyjątki\n\n\n\t\nBanki mają odrębne stawki podatkowe od 2026 roku,\nstawki 9% nie możesz stosować jeśli jesteś podatkową grupą kapitałową lub podatnikiem utworzonym w szczególnych okolicznościach (przekształcenia, aporty),\nstawka podatku dla źródła zyski kapitałowe wynosi 19%,\npodatek od praw własności intelektualnej IP-BOX wynosi 5%,\npodatek od dochodów z zagranicznej spółki kontrolowanej wynosi 19%,\njeśli jesteś zobligowany do wpłaty podatku od przychodów z budynków to wpłacasz ten podatek w wysokości 0,035% podstawy opodatkowania za każdy miesiąc,\npodatek minimalny ustalasz w wysokości 10% podstawy opodatkowania.\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 19, 38aa-38ad ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych\n\n\n\n\n\n\n\n\nPodatek dla banków (od 2026 roku)\n\n\n\t\n\n\n\nBank krajowy, bank zagraniczny, instytucja kredytowa\n\n\n\tJeśli jesteś bankiem krajowym, bankiem zagranicznym czy instytucją kredytową w rozumieniu ustawy Prawo bankowe (z wyjątkiem banków spółdzielczych) lub podatkową grupą kapitałową w skład której wchodzi bank krajowy (w części dochodu tego banku)\npodatek wynosi 23% podstawy opodatkowania.\nPrzepisy przejściowe:\nZapłacisz podatek w wysokości:\n\n30% w roku podatkowym rozpoczynającym się w:\n\n2026 r.,\n2027 r. - w przypadku gdy utworzyłeś się przed 1 stycznia 2026 r. i rok podatkowy nie rozpoczął się w 2026 r. albo rozpoczął się rok podatkowy w 2026 r. i łączny dotychczasowy okres opodatkowania stawką 30% trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych,\n2028 r. - w przypadku gdy utworzyłeś się przed 1 stycznia 2026 r. i rok podatkowy nie rozpoczął się w 2026 r. lecz rozpoczął się w 2027 i łączny dotychczasowy okres opodatkowania stawką 30% trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych;\n\n\n26% w roku podatkowym:\n\nrozpoczynającym się w 2027 r. - w przypadku utworzenia po dniu 31 grudnia 2026 r.,\nnastępującym bezpośrednio po roku, w którym zastosowano stawkę podatku w wysokości 30% - w przypadku utworzenia przed 1 stycznia 2026 r.,\nkolejno następującym po roku określonym w lit. b - w przypadku gdy łączny dotychczasowy okres opodatkowania stawką 26% trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych.\n\n\n\nPrzepisów przejściowych nie stosujesz, jeśli w danym roku podatkowym wdrażasz plan naprawy albo realizujesz program postępowania naprawczego – szczegóły określa ustawa.\n\n\n\nZaliczki w formie uproszczonej \n\n\n\tJeśli wpłacasz zaliczki w formie uproszczonej pamiętaj o wpłacie zaliczki:\n\npodwyższonej o 57,9% - w przypadku zaliczek dotyczących roku podatkowego, w którym stosujesz stawkę podatku w wysokości 30%;\npodwyższonej o 36,8% - w przypadku zaliczek dotyczących roku podatkowego, w którym stosujesz stawkę podatku w wysokości 26%;\nobniżonej o 23,3% - w przypadku zaliczek dotyczących pierwszego roku podatkowego, w którym stosujesz stawkę podatku w wysokości 23%, przy czym zaliczkę tę podwyższ o 21,1%, jeżeli ustalasz kwotę zaliczek miesięcznych za ten rok podatkowy zgodnie z zasadami określonymi w art. 25 ust. 6 albo 6a, uwzględniając podatek należny wynikający z zeznania złożonego w roku poprzedzającym ten rok podatkowy o dwa lata;\nobniżonej o 11,5% - w przypadku zaliczek dotyczących drugiego roku podatkowego, w którym stosujesz stawkę podatku w wysokości 23%, przy czym zaliczkę tę obniż o 23,3%, jeżeli ustalasz zaliczki miesięczne za ten rok podatkowy zgodnie z zasadami określonymi w art. 25 ust. 6 albo 6a, uwzględniając podatek należny wynikający z zeznania złożonego za rok podatkowy, w którym stosowałeś stawkę podatku w wysokości 30%;\nobniżonej o 11,5% - w przypadku zaliczek dotyczących trzeciego roku podatkowego, w którym stosujesz stawkę podatku w wysokości 23%, pod warunkiem że podstawą do ustalenia wysokości tych zaliczek jest podatek należny wynikający z zeznania złożonego za rok podatkowy, w którym stosowałeś stawkę podatku w wysokości 26%.\n\n\n\n\n\n\n\n\nBank spółdzielczy, SKOK\n\n\n\tJeśli jesteś bankiem spółdzielczym w rozumieniu ustawy Prawo bankowe lub spółdzielczą kasą oszczędnościowo-kredytową\npodatek wynosi 21% podstawy opodatkowania.\nPrzepisy przejściowe:\nZapłacisz podatek w wysokości:\n\n27% w roku podatkowym rozpoczynającym się w:\n\n2026 r.,\n2027 r. - w przypadku gdy utworzyłeś się przed 1 stycznia 2026 r. i rok podatkowy nie rozpoczął się w 2026 r. albo rozpoczął się rok podatkowy w 2026 r. i łączny dotychczasowy okres opodatkowania stawką 27% trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych,\n2028 r. - w przypadku gdy utworzyłeś się przed 1 stycznia 2026 r. i rok podatkowy nie rozpoczął się w 2026 r. lecz rozpoczął się w 2027 i łączny dotychczasowy okres opodatkowania stawką 27% trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych;\n\n\n23% w roku podatkowym:\n\nrozpoczynającym się w 2027 r. - w przypadku utworzenia po dniu 31 grudnia 2026 r.,\nnastępującym bezpośrednio po roku, w którym zastosowano stawkę podatku w wysokości 27% - w przypadku utworzenia przed 1 stycznia 2026 r.,\nkolejno następującym po roku określonym powyżej - w przypadku gdy łączny dotychczasowy okres opodatkowania stawką 23% trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych.\n\n\n\nPrzepisów przejściowych nie stosujesz, jeśli w danym roku podatkowym wdrażasz plan naprawy albo realizujesz program postępowania naprawczego – szczegóły określa ustawa.\n\n\n\nZaliczki w formie uproszczonej\n\n\n\tJeśli wpłacasz zaliczki w formie uproszczonej pamiętaj o wpłacie zaliczki:\n\npodwyższonej o 42,1% - w przypadku zaliczek dotyczących roku podatkowego, w którym stosujesz stawkę podatku w wysokości 27%;\npodwyższonej o 21,1% - w przypadku zaliczek dotyczących roku podatkowego, w którym stosujesz stawkę podatku w wysokości 23%;\nobniżonej o 22,2% - w przypadku zaliczek dotyczących pierwszego roku podatkowego, w którym stosujesz stawkę podatku w wysokości 21%, przy czym zaliczkę tę podwyższa się o 10,5%, jeżeli ustalasz kwotę zaliczek miesięcznych za ten rok podatkowy zgodnie z zasadami określonymi w art. 25 ust. 6 albo 6a, uwzględniając podatek należny wynikający z zeznania złożonego w roku poprzedzającym ten rok podatkowy o dwa lata;\nobniżonej o 8,7% - w przypadku zaliczek dotyczących drugiego roku podatkowego, w którym stosujesz stawkę podatku w wysokości 21%, przy czym zaliczkę tę obniż o 22,2%, jeżeli ustalasz kwotę zaliczek miesięcznych za ten rok podatkowy zgodnie z zasadami określonymi w art. 25 ust. 6 albo 6a uwzględniając podatek należny wynikający z zeznania złożonego za rok podatkowy, w którym stosowałeś stawkę podatku w wysokości 27%;\nobniżonej o 8,7% - w przypadku zaliczek dotyczących trzeciego roku podatkowego, w którym stosujesz stawkę podatku w wysokości 21%, pod warunkiem że podstawą do ustalenia wysokości tych zaliczek jest podatek należny wynikający z zeznania złożonego za rok podatkowy, w którym stosowałeś stawkę podatku w wysokości 23%.\n\n\n\n\n\n\n\n\nSpełniasz warunki do stawki 9% ale jesteś bankiem lub SKOK\n\n\n\tJeśli spełniasz warunki do stawki 9% i jesteś bankiem krajowym, bankiem zagranicznym, bankiem spółdzielczym czy instytucją kredytową w rozumieniu ustawy Prawo bankowe lub spółdzielczą kasą oszczędnościowo-kredytową\npodatek wynosi 11% podstawy opodatkowania.\nPrzepisy przejściowe:\nZapłacisz podatek w wysokości:\n\n17% w roku podatkowym rozpoczynającym się w:\n\n2026 r.,\n2027 r. - w przypadku gdy utworzyłeś się przed 1 stycznia 2026 r. i rok podatkowy nie rozpoczął się w 2026 r. albo rozpoczął się rok podatkowy w 2026 r. i łączny dotychczasowy okres opodatkowania stawką 17% trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych,\n2028 r. - w przypadku gdy utworzyłeś się przed 1 stycznia 2026 r. i rok podatkowy nie rozpoczął się w 2026 r. lecz rozpoczął się w 2027 i łączny dotychczasowy okres opodatkowania stawką 17% trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych;\n\n\n13% w roku podatkowym:\n\nrozpoczynającym się w 2027 r. - w przypadku utworzenia po dniu 31 grudnia 2026 r.,\nnastępującym bezpośrednio po roku, w którym zastosowano stawkę podatku w wysokości 17 % - w przypadku utworzenia przed 1 stycznia 2026 r.,\nkolejno następującym po roku określonym w lit. b - w przypadku gdy łączny dotychczasowy okres opodatkowania stawką 13 % trwał krócej niż dwanaście kolejnych miesięcy kalendarzowych.\n\n\n\nPrzepisów przejściowych nie stosujesz, jeśli w danym roku podatkowym wdrażasz plan naprawy albo realizujesz program postępowania naprawczego – szczegóły określa ustawa.\n\n\n\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 4a pkt 10, art. 19, art. 24b, art. 24ca, art. 24d, art. 25, 38aa-38ad ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "Składasz zeznanie roczne na formularzu CIT-8 lub CIT-8AB (jeśli jesteś PGK) w terminie do końca 3-go miesiąca roku następnego. W tym terminie wpłacasz również podatek wykazany w zeznaniu.\nJednostki zwolnione podmiotowo z opodatkowania, co do zasady, nie składają zeznań podatkowych. Wyjątki reguluje ustawa.\n\n\n\nCIT-CFC\n\n\n\tJeśli osiągasz dochody z działalności prowadzonej przez zagraniczne jednostki kontrolowane składasz zeznanie na formularzu CIT-CFC odrębne dla każdej z jednostek - do końca 9. miesiąca roku następnego tej jednostki. W tym terminie wpłacasz również podatek wykazany w zeznaniu.\n\n\n\n\nPodstawa prawna\n\n\n\t\nart. 27 ustawy z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        },
+        {
+          "text": "ustawa z dnia 15 lutego 1992 r. o podatku dochodowym od osób prawnych"
+        }
+      ],
+      "sourceLinks": [
+        {
+          "text": "CIT",
+          "url": "https://www.podatki.gov.pl/podatki-firmowe/cit/informacje-podstawowe"
+        },
+        {
+          "text": "CIT",
+          "url": "https://www.podatki.gov.pl/podatki-firmowe/cit/informacje-podstawowe"
+        },
+        {
+          "text": "CIT klasyczny",
+          "url": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny"
+        },
+        {
+          "text": "Więcej informacji znajdziesz w Zwolnieniach przedmiotowych dla wybranych podatników CIT",
+          "url": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny#Zwolnienia%20CIT"
+        },
+        {
+          "text": "Stowarzyszenie",
+          "url": "https://www.podatki.gov.pl/poradniki-i-informatory/stowarzyszenie"
+        },
+        {
+          "text": "Fundacja",
+          "url": "https://www.podatki.gov.pl/poradniki-i-informatory/fundacja"
+        },
+        {
+          "text": "Wspólnota mieszkaniowa",
+          "url": "https://www.podatki.gov.pl/poradniki-i-informatory/wspolnota-mieszkaniowa"
+        },
+        {
+          "text": "Koło gospodyń wiejskich (KGW)",
+          "url": "https://www.podatki.gov.pl/poradniki-i-informatory/kolo-gospodyn-wiejskich-kgw"
+        }
+      ],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Datowany artykuł o CIT klasycznym z zachowaniem układu wszystkich sekcji i podsekcji, wyjątków, warunków stawek oraz podanych podstaw prawnych. Nie zastępować go streszczeniem menu portalu ani bezwarunkowym „CIT 9%”.",
+      "blockerOrLimit": "Brak blokady odczytu; zgodności ze stanem prawa na dzień pobrania nie badano. Część podsekcji odczytana z tekstu publicznego DOM, nie z osobno odwiedzanych źródeł prawnych.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "0bdb5e10",
+      "id": "draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus",
+      "namespace": "TaxbellPayrollHRReference",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.",
+      "finalUrl": "https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:33:33.812Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2026-06-03",
+        "update": null,
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Cały journal-content-article: data, okno serwisowe, trzy rodzaje ograniczeń i dostępne aplikacje mobilne.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.196Z",
+          "requestedUrl": "https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.",
+          "title": "Ograniczenia w dostępie do usług elektronicznych ZUS 5 czerwca 2026 r. - ZUS",
+          "finishedAt": "2026-10-13T09:33:33.812Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.md",
+      "savedJsonBody": "Query: ZUS nowości czerwiec 2026\nSource: https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.\nTier: official\nDiscovery confidence: 0.95\nOgraniczenia w dostępie do usług elektronicznych ZUS 5 czerwca 2026 r. - ZUS\nPrzejdź do treści\n- Przejdź do mapy strony\n- Świadczenia label.expand.menu\n- Katalog usług - emerytury i renty label.expand.menu\n- Ustalanie uprawnień do świadczeń\n- Obsługa świadczeń\n- Sporządzane dokumenty\n- Emerytury label.expand.menu\n- Emerytura dla osób urodzonych przed 1 stycznia 1949 label.expand.menu\n- Emerytura w wieku powszechnym\n- Emerytura górnicza\n- Sposób wyliczenia emerytury\n- Podstawa wymiaru emerytur i rent label.expand.menu\n- Przychody uwzględniane przy ustalaniu podstawy wymiaru emerytur i rent\n- Wynagrodzenie minimalne\n- Podstawa wymiaru świadczeń po emeryturze, rencie i świadczeniu przedemerytalnym\n- Ustalanie podstawy wymiaru renty dla osoby przed 30 rokiem życia\n- Szczególne zasady ustalania podstawy wymiaru renty dla osoby, która ukończyła 30 lat\n- Emerytura dla osób urodzonych po 31 grudnia 1948 label.expand.menu\n- Emerytura w wieku powszechnym label.expand.menu\n- Emerytura przyznawana z urzędu\n- Emerytura przyznawana po innym świadczeniu\n- Okresowa emerytura kapitałowa\n- Emerytury wcześniejsze label.expand.menu\n- Emerytura z tytułu zatrudnienia w szczególnych warunkach lub w szczególnym charakterze\n- Emerytura z tytułu wykonywania działalności twórczej lub artystycznej\n- Emerytura górnicza\n- Emerytura w obniżonym wieku z tytułu pracy górniczej\n- Emerytura nauczycielska bez względu na wiek\n- Nowa emerytura nauczycielska\n- Emerytura dla pracowników opiekujących się dziećmi",
+      "savedMarkdownBody": "Automated source-discovery draft.\n\nQuery: ZUS nowości czerwiec 2026\nSource: https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.\nTier: official\nDiscovery confidence: 0.95\n\nOgraniczenia w dostępie do usług elektronicznych ZUS 5 czerwca 2026 r. - ZUS\n\nPrzejdź do treści\n\n- Przejdź do mapy strony\n\n- Świadczenia label.expand.menu\n- Katalog usług - emerytury i renty label.expand.menu\n- Ustalanie uprawnień do świadczeń\n- Obsługa świadczeń\n- Sporządzane dokumenty\n- Emerytury label.expand.menu\n- Emerytura dla osób urodzonych przed 1 stycznia 1949 label.expand.menu\n- Emerytura w wieku powszechnym\n- Emerytura górnicza\n- Sposób wyliczenia emerytury\n- Podstawa wymiaru emerytur i rent label.expand.menu\n- Przychody uwzględniane przy ustalaniu podstawy wymiaru emerytur i rent\n- Wynagrodzenie minimalne\n- Podstawa wymiaru świadczeń po emeryturze, rencie i świadczeniu przedemerytalnym\n- Ustalanie podstawy wymiaru renty dla osoby przed 30 rokiem życia\n- Szczególne zasady ustalania podstawy wymiaru renty dla osoby, która ukończyła 30 lat\n- Emerytura dla osób urodzonych po 31 grudnia 1948 label.expand.menu\n- Emerytura w wieku powszechnym label.expand.menu\n- Emerytura przyznawana z urzędu\n- Emerytura przyznawana po innym świadczeniu\n- Okresowa emerytura kapitałowa\n- Emerytury wcześniejsze label.expand.menu\n- Emerytura z tytułu zatrudnienia w szczególnych warunkach lub w szczególnym charakterze\n- Emerytura z tytułu wykonywania działalności twórczej lub artystycznej\n- Emerytura górnicza\n- Emerytura w obniżonym wieku z tytułu pracy górniczej\n- Emerytura nauczycielska bez względu na wiek\n- Nowa emerytura nauczycielska\n- Emerytura dla pracowników opiekujących się dziećmi \n\nReview this draft before promotion.",
+      "savedMarkdownSha256": "01d9f52a30645ffea4e971643d6ded6a1f72a8e7deda64926b4b3eca8c777cba",
+      "savedJsonBodySha256": "cab43bc9e99024f3d9eaf3cb292a15d2c9b56f0dffe37b24d284496df23a9e58",
+      "comparison": "Markdown zawiera tytuł i menu emerytalno-rentowe; JSON jest krótszym wariantem tego materiału nawigacyjnego. W obu brak merytorycznej informacji o pracach serwisowych.",
+      "recoveredFacts": [
+        "Zapowiedziane ograniczenia 5.06.2026 od 23:00 do 6.06.2026 do 03:00; źródło nie określa strefy czasowej.",
+        "Płatnik: pobieranie danych; ePłatnik na eZUS: weryfikacja podczas tworzenia dokumentów; eZUS i aplikacje e-ZLA: anulowanie.",
+        "Wystawianie e-ZLA przez mZUS dla Lekarza po zainstalowaniu i połączeniu z kontem; dostępne mZUS i mZUS dla Płatnika."
+      ],
+      "sourceText": "3 \nczerwca\n2026\n\nW związku z koniecznością przeprowadzenia prac serwisowych 5 czerwca od godziny 23:00 do 6 czerwca do godziny 3:00 mogą występować ograniczenia w komunikacji elektronicznej z ZUS:\n\nw programie Płatnik w zakresie pobierania danych,\nw ePłatniku na eZUS w zakresie usług weryfikacji podczas tworzenia dokumentów,\nw eZUS oraz w aplikacjach dedykowanych do wystawienia e-ZLA w zakresie ich anulowania.\n\nW czasie występowania ograniczeń możliwe będzie wystawianie e-ZLA za pośrednictwem  aplikacji mobilnej  mZUS dla Lekarza - jeśli lekarz/asystent medyczny ma tę aplikację zainstalowaną na urządzeniu mobilnym i jest ona połączona z jego  kontem w portalu eZUS.\n\nW tym czasie dostępne będą również aplikacje mobilne: mZUS oraz mZUS dla Płatnika.\n\nPrzepraszamy za utrudnienia.",
+      "sourceTextSha256": "b687c2d85f7ac569ca261c35117576ce7ca453826b197fbad2b30617a62359a0",
+      "publicAccordionText": [],
+      "sourceLinks": [],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Krótki historyczny komunikat operacyjny z datą publikacji, oknem serwisowym, zakresem trzech ograniczeń i dostępnymi alternatywami. Zastąpić menu emerytalne; nie prezentować jako trwającej awarii.",
+      "blockerOrLimit": "Brak blokady odczytu. Komunikat jest zapowiedzią z 3.06.2026; nie ustalano faktycznego przebiegu prac.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "fb53cb2b",
+      "id": "draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef",
+      "namespace": "ComarchCommunityNews",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+      "finalUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:44:34.255Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2026-03-21 13:12",
+        "update": "2026-03-23 10:02",
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Publiczne pytanie biuro, odpowiedź Tomasza Bryknera z 22.03.2026 i jedna rozwinięta odpowiedź biuro z 23.03.2026. Daty strony bez jawnej strefy.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.225Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "title": "błąd przy konfiguracji Comarch Betterfly z Ksef - Comarch Społeczność ERP",
+          "finishedAt": "2026-10-13T09:33:35.162Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:35:11.196Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "actions": [
+            "Opened cookie Ustawienia"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "finishedAt": "2026-10-13T09:35:15.863Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:35:48.267Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "actions": [
+            "Opened cookie Ustawienia",
+            "Clicked cookie preference control"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "finishedAt": "2026-10-13T09:36:22.918Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:37:34.752Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "actions": [
+            "Opened cookie Ustawienia",
+            "Clicked cookie preference control"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "finishedAt": "2026-10-13T09:38:09.714Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:39:02.535Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "actions": [
+            "Opened cookie Ustawienia",
+            "Clicked cookie preference control",
+            "Expand 0  Odpowiedzi: 1",
+            "Expand 0  Odpowiedzi: 1",
+            "Expand 0  Odpowiedzi: 1"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "finishedAt": "2026-10-13T09:39:38.798Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:43:58.602Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "actions": [
+            "Opened cookie Ustawienia",
+            "Clicked cookie preference control",
+            "Expand 0  Odpowiedzi: 1",
+            "Expand 0  Odpowiedzi: 1",
+            "Expand 0  Odpowiedzi: 1",
+            "Expand 0  Odpowiedzi: 1"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+          "finishedAt": "2026-10-13T09:44:34.255Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.md",
+      "savedJsonBody": "Query: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292\nTier: community\nDiscovery confidence: 0.95\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\n![logotype](assets/img/logo.svg)\nloader",
+      "savedMarkdownBody": "Automated source-discovery draft.\n\nQuery: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292\nTier: community\nDiscovery confidence: 0.95\n\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\n\nbłąd przy konfiguracji Comarch Betterfly z Ksef - Społeczność ERP\n![logotype](assets/img/logo.svg)\nloader\n\nReview this draft before promotion.",
+      "savedMarkdownSha256": "19429046a45a1c990b2de941ceaaad31335a499805a4527bc248d21e9b014a54",
+      "savedJsonBodySha256": "d456339ec55eaec9a600f224c6fe06206f987d5af54bde9967447a45e8802bea",
+      "comparison": "Markdown ma tylko dwa tytuły, logo i loader; JSON usuwa fragmenty opakowania, ale nie zawiera pytania ani odpowiedzi. Żywa strona po JS pokazuje konkretny błąd i diagnostyczną sugestię.",
+      "recoveredFacts": [
+        "Pytający zgłasza błąd autoryzacji KSeF po skopiowaniu tokena; komunikat każe sprawdzić ważność certyfikatu/tokenu i uprawnienia.",
+        "Tomasz Brykner sugeruje sprawdzić zgodność środowiska produkcyjnego/demo i wcześniejsze uprawnienia osoby generującej token.",
+        "Pytający odpowiada „Dziękuję za informację.”; nie potwierdza jednoznacznie przyczyny ani usunięcia błędu."
+      ],
+      "sourceText": "Pytania\nZaloguj się\nZarejestruj się\nCentrum Wiedzy i Rozwoju\nPytania\nPomysły\nAktualności\nLiderzy społeczności\nMarketplace\nStrona główna\nPytania\nbłąd przy konfiguracji Comarch Betterfly z Ksef\nComarch Betterfly\nbłąd przy konfiguracji Comarch Betterfly z Ksef\n\nPrzy próbie połączenia z Krajowym Systemem e-Faktur i po skopiowaniu tokena pojawia się komunikat:\n\nBłąd\nBłąd autoryzacji KSeF. Sprawdź ważność certyfikatu/tokenu oraz uprawnienia nadane w systemie KSeF.\n\nToken jest prawidłowy! W czym jest problem.\n\nbiuro\nDebiutant\ndodano 2026-03-21 13:12\nzaktualizowano 2026-03-23 10:02\n2\nUdostępnij\n0 pkt\nTomasz Brykner\ndodano 2026-03-22 19:26\nzaktualizowano 2026-03-23 10:02\n\nProszę sprawdzić czy ustawione jest prawidłowe środowisko: produkcyjne czy demo.\n\nToken wystawiony w środowisku produkcyjnym KSeF nie zadziała przy ustawionym środowisku demo i odwrotnie.\n\nDrugi punkt do sprawdzenia - czy osoba generująca token miała wcześniej odpowiednie przydzielone uprawnienia w KSeF.\n\n0 pkt\n Zwiń\nbiuro\ndodano 2026-03-23 10:02\nzaktualizowano 2026-03-23 10:02\n@Tomasz Brykner\n\nDziękuję za informację.\n\n0 pkt\nPopularne tematy\nComarch ERP Optima\nPłace i Kadry\nTechniczne\nKsięgowość\nComarch Data Editor\nChatERP\nComarch APS\nKSeF\nComarch sPrint\nComarch POS Backoffice\nComarch Shipping\nComarch Moje BR\nComarch ERP Enterprise\nComarch PPK\nComarch BPM\nPokaż wszystkie\nZastanawiasz się, czy nie zostać członkiem Społeczności ERP?\nSprawdź możliwości, jakie czekają na Ciebie po założeniu konta!\nDyskusja z innymi użytkownikami systemów ERP.\nMożliwość rozmowy z twórcami systemów Comarch ERP.\nZadawanie pytań – nasi specjaliści ERP oraz inni użytkownicy Społeczności chętnie Ci pomogą.\nKomentowanie postów – jeśli znasz odpowiedź na zadane pytanie dołącz do dyskusji!\nRozwój systemów ERP – możesz podzielić się pomysłami na usprawnienie systemu w specjalnej sekcji “Pomysły”.\nRanking globalny\n1\nŁukasz Walter\nLider\n2\nMarcin Liszewski\nLider\n3\nAgnieszka Świst\nLider\nPrzejdź do rankingu\nO społeczności\nO Marketplace\nO Comarch\nComarch ERP\nO Partnerach\nProdukty\nRozwiązania\nZasady grywalizacji\nPolityka prywatności\nPolityka bezpieczeństwa\nUstawienia plików cookies\nCentrum Wiedzy i Rozwoju\nPytania\nPomysły\nAktualności\nLiderzy społeczności\nMarketplace\nRegulamin\nKontakt\nDołącz do nas\n\nComarch SA 2026 - Wszelkie prawa zastrzeżone.",
+      "sourceTextSha256": "81cf3f7b07d1c32da045e16cb36a8023892a9191585d41a85b9fb21989a1b54b",
+      "publicAccordionText": [],
+      "sourceLinks": [],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Datowany wątek question/answer/reply z autorami, cytatem błędu, sugestią diagnostyczną i podziękowaniem. Zachować status sugestii społeczności; nie dopisywać potwierdzonej naprawy ani ogólnej reguły dla wszystkich aktualnych instalacji.",
+      "blockerOrLimit": "Brak blokady publicznego tekstu. Nie ma potwierdzenia skuteczności wskazanej sugestii.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "f0ede681",
+      "id": "draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna",
+      "namespace": "ComarchCommunityNews",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+      "finalUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:45:15.330Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2026-01-29 13:51",
+        "update": "2026-02-10 13:38",
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Cały publiczny tekst ogłoszenia Katarzyny Bibrzyckiej; pięć komentarzy głównych i rozwinięte gałęzie odpowiedzi/Pokaż więcej. Bez odczytu obrazów załączników i bez wizyt na stronach Klientów/Partnerów.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.236Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "title": "Nowa wersja Comarch ERP Optima 2026.2.1 jest już dostępna! - Comarch Społeczność ERP",
+          "finishedAt": "2026-10-13T09:33:35.034Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:35:16.176Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "actions": [
+            "Opened cookie Ustawienia"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "finishedAt": "2026-10-13T09:35:20.465Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:36:23.215Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "actions": [
+            "Opened cookie Ustawienia",
+            "Clicked cookie preference control"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "finishedAt": "2026-10-13T09:36:57.881Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:38:10.020Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "actions": [
+            "Opened cookie Ustawienia",
+            "Clicked cookie preference control"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "finishedAt": "2026-10-13T09:38:44.504Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:39:39.101Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "actions": [
+            "Opened cookie Ustawienia",
+            "Clicked cookie preference control",
+            "Expand 0  Odpowiedzi: 6",
+            "Expand 0  Odpowiedzi: 6",
+            "Expand 1  Odpowiedzi: 1",
+            "Expand 1  Odpowiedzi: 1",
+            "Expand 1  Odpowiedzi: 1",
+            "Expand 1  Odpowiedzi: 1",
+            "Expand 2  Odpowiedzi: 2",
+            "Expand 2  Odpowiedzi: 2",
+            "Expand 3  Odpowiedzi: 1",
+            "Expand 3  Odpowiedzi: 1",
+            "Expand 4  Odpowiedzi: 1",
+            "Expand 4  Odpowiedzi: 1",
+            "Expand 4  Odpowiedzi: 1"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "finishedAt": "2026-10-13T09:40:16.879Z"
+        },
+        {
+          "method": "clean ephemeral Chromium; inspect then expand public reading controls",
+          "startedAt": "2026-10-13T09:44:34.509Z",
+          "requestedUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "actions": [
+            "Opened cookie Ustawienia",
+            "Clicked cookie preference control",
+            "Expand 0 Pokaż więcej",
+            "Expand 0  Odpowiedzi: 6",
+            "Expand 0  Odpowiedzi: 6",
+            "Expand 0  Odpowiedzi: 6",
+            "Expand 1  Odpowiedzi: 1",
+            "Expand 1  Odpowiedzi: 1",
+            "Expand 1  Odpowiedzi: 1",
+            "Expand 2  Odpowiedzi: 2",
+            "Expand 3 Pokaż więcej",
+            "Expand 3  Odpowiedzi: 1",
+            "Expand 4  Odpowiedzi: 1"
+          ],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+          "finishedAt": "2026-10-13T09:45:15.330Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.md",
+      "savedJsonBody": "Automated source-discovery draft.\n\nQuery: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465\nTier: community\nDiscovery confidence: 0.9\n\nNowa wersja Comarch ERP Optima 2026.2.1 jest już dostępna!\n\nReview this draft before promotion.",
+      "savedMarkdownBody": "Automated source-discovery draft.\n\nQuery: site:spolecznosc.comarch.pl Comarch Optima Betterfly KSeF 2026\nSource: https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465\nTier: community\nDiscovery confidence: 0.9\n\nNowa wersja Comarch ERP Optima 2026.2.1 jest już dostępna!\n\nReview this draft before promotion.",
+      "savedMarkdownSha256": "5d6e0668764cb744397d4227ea190041abb1321b7a9347c24e68094dc431c2cb",
+      "savedJsonBodySha256": "22b63545a1a074060ca75934f2ec9984aa38c7a5a3356fd4c187de7d7d986e66",
+      "comparison": "Zapis jest wyłącznie tytułem ogłoszenia z metadanymi odkrycia. Pomija wszystkie funkcje wydania i datę. Data draftu 2.08.2026 nie jest datą wydania.",
+      "recoveredFacts": [
+        "Ogłoszenie udostępnienia wersji 2026.2.1, opublikowane 29.01.2026.",
+        "PIT-28, IFT-2/IFT-2R i CIT-8 za 2025; nowe kody JPK dla trybów awaryjnych; offline, offline24, awaria KSeF i awaria całkowita.",
+        "Rozszerzone dane warunków transakcji, nowe środki transportu i DodatkowyOpis w KSeF; nowy wzór Z-3b.",
+        "Linki do nowości i Indywidualnych Stron Klientów/Partnerów.",
+        "Komentarze opisują historyczne problemy i sugestie, m.in. przyszłą poprawkę oraz uwierzytelnianie od 1.02.2026; nie są dowodem wdrożenia poprawek obecnie."
+      ],
+      "sourceText": "Aktualności\nZaloguj się\nZarejestruj się\nCentrum Wiedzy i Rozwoju\nPytania\nPomysły\nAktualności\nLiderzy społeczności\nMarketplace\nStrona główna\nAktualności\nNowa wersja Comarch ERP Optima 2026.2.1 jest już dostępna!\nComarch ERP Optima\nOgólne\nNowa wersja\nNowa wersja Comarch ERP Optima 2026.2.1 jest już dostępna!\n\n \n\nSzanowni  Państwo!\n\nZ przyjemnością informujemy, że jest już dostępna nowa wersja Comarch ERP Optima 2026.2.1.\n\nNowa odsłona systemu Comarch ERP Optima to przede wszystkim kolejne funkcje związane z obsługą KSeF - m.in. obsługa szczególnych trybów wystawiania faktur wysyłanych do KSeF oraz rozszerzenie zakresu wysyłanych danych. W nowej wersji dostosowaliśmy wzory deklaracji rocznych PIT-28, IFT-2/IFT-2R oraz CIT-8 za rok 2025 oraz udostępniliśmy nowy wzór Zaświadczenia płatnika składek Z-3b. \n\n \n\nZmiany w nowej wersji Comarch ERP Optima związane z przepisami:\n\nDostosowaliśmy deklaracje roczne PIT-28, IFT-2/IFT-2R oraz CIT-8 do wzorów obowiązujących za rok 2025.\nDodaliśmy nowe kody JPK, potrzebne do opisania dokumentów wystawionych w trybach awaryjnych.\nObsłużyliśmy tryby szczególne wystawiania faktur przesyłanych do KSeF: offline, offline24, awaria KSeF oraz awaria całkowita.\nRozszerzyliśmy zakres danych wysyłanych do KSeF o dodatkowe informacje dotyczące warunków transakcji.\nDodaliśmy możliwość przekazywania do KSeF danych dotyczących nowych środków transportu.\nUmożliwiliśmy przekazywanie dodatkowych informacji do KSeF w sekcji DodatkowyOpis.\nDostosowaliśmy Zaświadczenie płatnika składek Z-3b do nowego wzoru.\n\n \n\nW związku ze zbliżającym się terminem wdrożenia Krajowego Systemu e-Faktur dla dużych przedsiębiorców i odbierających faktury udostępniliśmy Centrum wiedzy o KSeF w Comarch ERP Optima oraz Comarch Betterfly, w którym zgromadziliśmy najważniejsze zagadnienia dotyczące obsługi Krajowego Systemu e-Faktur w tych systemach. Serdecznie zapraszamy do zapoznania się:\n\n \n\n \n\nZachęcamy do zapoznania się z nowościami oraz do zaktualizowania programu do najnowszej wersji:\n\nComarch ERP Optima 2026.2.1\n\n \n\n \n\nNajnowszą wersję Comarch ERP Optima znajdziecie Państwo:\n\nNa Indywidualnych Stronach Klientów\n\nNa Indywidualnych Stronach Partnerów\n\n \n\n \n\nZ pozdrowieniami\n\n \n\n \n\n \n\n \n\n \n\nKatarzyna Bibrzycka\nEkspert Comarch\ndodano 2026-01-29 13:51\nzaktualizowano 2026-02-10 13:38\n16\nUdostępnij\n2 pkt\nSortuj od:\nNajstarsze\nMateusz Jodłowski\ndodano 2026-01-29 15:33\nzaktualizowano 2026-01-30 20:38\n\nPo najnowszej aktualizacji OPTIMY nie mogę wejść w operacje wielofirmowe.\nCo jest nie tak? W załączniku większa wersja. SQL 2022, Optima najnowsza itd. itp. Optima nie jest licencjonowana w ramach subskrypcji.\n\nZwiń\nZałączniki\nBez tytułu.png\n0 pkt\n Zwiń\nMateusz Jodłowski\ndodano 2026-01-29 17:08\nzaktualizowano 2026-01-29 17:09\n@Mateusz Jodłowski\n\nSprawa zgłoszona. Comarch już szykuje aktualizację :)\n\nProblem dotyczy, że tak to ujmę wielokluczowości jak kolwiek to brzmi :D\n\n3 pkt\nRafał Cebulski\ndodano 2026-01-29 17:11\n@Mateusz Jodłowski\n\nRozwiń szczegóły i sprawdź czy widzi poprawny klucz w operacjach wielofirmowych.\n\n0 pkt\nMateusz Jodłowski\ndodano 2026-01-29 17:28\n@Mateusz Jodłowski\n\nRafale to nic nie da. Problem dotyczy tego, że nowa Optima domyślnie szuka klucza w modelu subskrypcyjnym. Jeśli go nie znajdzie to kaput. Natomiast w moim przypadku mam podłączone trzy klucze - wirtualne i hasp i one są a przynajmniej były przypisane do 3 różnych użytkowników.\n\nNa chwilę obecną jedynym rozwiązaniem jest na etapie logownia wpisanie ścieżki klucza, ze wskazaniem konkretnego klucza. Wtedy działa ok. Wiadomo, że przy wielokluczowości może to być uciążliwe, nie mnie jednak Comarch już oprazowuje łatke :) grunt, że udało się to szybko wykryć.\n\n2 pkt\nRafał Cebulski\ndodano 2026-01-29 17:54\nzaktualizowano 2026-01-29 17:56\n@Mateusz Jodłowski\n\nTak się składa, że ja mam 2 klucze wirtualne i działa poprawnie (oba nie subskrypcyjne). Główny klucz przypisany do stanowiska.\n\n0 pkt\nMateusz Jodłowski\ndodano 2026-01-29 18:04\n@Mateusz Jodłowski\n\nJa miałem do operatorów na ich kartach z przypisanie do każdej bazy. No nic, grunt że problem zidendyfikowany, poprawka w toku a Optima działa :) \n\n1 pkt\nMarcin Tabin\ndodano 2026-01-30 20:38\nzaktualizowano 2026-01-30 20:39\n@Mateusz Jodłowski\n\nMożliwe że to jest związane z problemem na który natrafiliśmy u nas na firmie. Podczas uruchamiania Optimy jeszcze przed logowaniem dostawaliśmy błąd \"Nie można odnaleźć procedury składowanej master..xp_HASPGetKeyInfo2. \". Po tym komunikacie widać tylko okno wyboru moduów subskrypcyjnych. Po kilku mailach i połączeniu zdalnym od Comarchu do nas udało się ustalić że problem występuje jeśli na serwerze SQL gdzie jest baza konfiguracyjna i jednocześnie nie ma zainstalowanego managera kluczy (bo jest gdzieś indziej - tak się często zdarza np. w środowiskach gdzie jest HASP sprzętowy i silnik SQL pracuje w maszynie wirtualnej)\n\nObejście jest proste - wystarczy do silnika SQL gdzie jest baza konfiguracyjna podłączyć managera kluczy. Nie musi być na nim żadnych licencji - wystarczy go zainstalować i podłączyć aby Manager założył swoje procedury w bazie master.\n\n1 pkt\nSławomir Wiśniewski\ndodano 2026-01-29 18:13\nzaktualizowano 2026-01-30 09:19\n\nW KP, KH chyba jeszcze nie ma obsługi Certyfikatów ? będzie jeszcze nowsza wersja?\nSławek\n\n0 pkt\n Zwiń\nKatarzyna Bibrzycka\ndodano 2026-01-30 09:19\n@Sławomir Wiśniewski\n\nZachęcamy do zapoznania się z treścią ulotki - w obszarze Ogólne opisane są zmiany dot. wyboru sposobu uwierzytelniania, poniżej fragment:\n\nZmiana wersji środowiska KSeF. W związku ze zmianą wersji środowiska produkcyjnego KSeF z 1.0 na 2.0, od 01.02.2026 lista Faktury z KSeF wyświetlać będzie listę dokumentów pobranych ze środowiska KSeF 2.0. Podobnie wysyłka faktur do KSeF od 1 lutego będzie odbywała się na środowisko 2.0.Jeżeli wybrano środowisko produkcyjne w Konfiguracji Firmy/ Dane firmy/ KSeF, nie jest widoczne pole z tokenem. Jeżeli we wcześniejszych wersjach programu skonfigurowano wymianę ze środowiskiem produkcyjnym KSeF, wprowadzony token jest zapisany i będzie działał do 31 stycznia 2026.\n\nOd 1 lutego 2026 dla środowiska produkcyjnego KSeF wybór sposobu uwierzytelniania w Krajowym Systemie e-Faktur będzie się odbywał za pomocą dostępnej w menu KSeF opcji Zmień sposób uwierzytelniania. W związku z tym firmy chcące skonfigurować wymianę ze środowiskiem produkcyjnym KSeF 2.0 od 1 lutego 2026 będą musiały dla poszczególnych operatorów wskazać odpowiedni certyfikat KSeF, podpis kwalifikowany (pieczęć elektroniczną) bądź token korzystając z kreatora Wybór sposobu uwierzytelniania.\n\n0 pkt\nMarzena Kóska\ndodano 2026-01-30 08:35\nzaktualizowano 2026-01-30 09:37\n\nKiedy w najnowszej wersji po zmienieniu na środowisko produkcyjne pojawi się opcja wgrania certyfikatów? \n\n0 pkt\n Zwiń\nKatarzyna Bibrzycka\ndodano 2026-01-30 09:20\nzaktualizowano 2026-01-30 09:20\n@Marzena Kóska\n\nZachęcamy do zapoznania się z treścią ulotki - w obszarze Ogólne opisane są zmiany dot. wyboru sposobu uwierzytelniania, poniżej fragment:\n\nZmiana wersji środowiska KSeF. W związku ze zmianą wersji środowiska produkcyjnego KSeF z 1.0 na 2.0, od 01.02.2026 lista Faktury z KSeF wyświetlać będzie listę dokumentów pobranych ze środowiska KSeF 2.0. Podobnie wysyłka faktur do KSeF od 1 lutego będzie odbywała się na środowisko 2.0.Jeżeli wybrano środowisko produkcyjne w Konfiguracji Firmy/ Dane firmy/ KSeF, nie jest widoczne pole z tokenem. Jeżeli we wcześniejszych wersjach programu skonfigurowano wymianę ze środowiskiem produkcyjnym KSeF, wprowadzony token jest zapisany i będzie działał do 31 stycznia 2026.\n\nOd 1 lutego 2026 dla środowiska produkcyjnego KSeF wybór sposobu uwierzytelniania w Krajowym Systemie e-Faktur będzie się odbywał za pomocą dostępnej w menu KSeF opcji Zmień sposób uwierzytelniania. W związku z tym firmy chcące skonfigurować wymianę ze środowiskiem produkcyjnym KSeF 2.0 od 1 lutego 2026 będą musiały dla poszczególnych operatorów wskazać odpowiedni certyfikat KSeF, podpis kwalifikowany (pieczęć elektroniczną) bądź token korzystając z kreatora Wybór sposobu uwierzytelniania.\n\nZwiń\n-2 pkt\nRafał Cebulski\ndodano 2026-01-30 09:37\nzaktualizowano 2026-01-30 09:40\n@Marzena Kóska\n\nDlaczego pole wyboru uwierzytelnienia jest ukryte jeśli data systemowa jest wcześniejsza niż 01.02 ? Co autor miał na myśli tworząc takie rozwiązanie? \n\n1 pkt\nGrzegorz\ndodano 2026-01-30 09:36\nzaktualizowano 2026-01-30 14:26\n\nHm.\n\nA wizualizacja faktur z KSEF?\n\nU mnie tak samo jak do tej pory , krzaczki lub komunikat \"Wizualizacja jest w przygotowaniu\". \n\n29 stycznia. Naprawdę COMARCH?\n\nCo będzie mała aktualizacja po niedzieli? Naprawdę się nie dało?\n\n1 pkt\n Zwiń\nWioletta Golda\ndodano 2026-01-30 14:26\n@Grzegorz\n\nWizualizajc została poprawiona dla nowo importowanych dokumentów. \n\n1 pkt\narkadiusz.blach\ndodano 2026-02-10 12:05\nzaktualizowano 2026-02-10 13:38\n\nWitam, przy próbie aktualizacji wyskakuje błąd, baza bardzo mała, tylko FA\n\n \n\nZałączniki\nOPTIMA.jpg\n0 pkt\n Zwiń\nSławomir Wiśniewski\ndodano 2026-02-10 13:38\n@arkadiusz.blach\n\nNo niestety stara wersja  SQL trzeba zaktualizować SQL, najlepiej Migratorem do SQL 2022\n\n0 pkt\nPodobne wpisy\nComarch Betterfly\nNowa wersja\nNowa wersja Comarch ERP XT na system Android\ndodano 2020-05-13 15:59\n0\nKsięgowość\nComarch ERP Optima\nHandel\nPłace i Kadry\nPakiety e-szkoleń Comarch ERP Optima\ndodano 2020-05-18 15:01\n0\nComarch Betterfly\nNowa wersja\nNowa wersja Comarch ERP XT na system iOS\ndodano 2020-05-26 12:55\n0\nPobierz więcej (747)\nO społeczności\nO Marketplace\nO Comarch\nComarch ERP\nO Partnerach\nProdukty\nRozwiązania\nZasady grywalizacji\nPolityka prywatności\nPolityka bezpieczeństwa\nUstawienia plików cookies\nCentrum Wiedzy i Rozwoju\nPytania\nPomysły\nAktualności\nLiderzy społeczności\nMarketplace\nRegulamin\nKontakt\nDołącz do nas\n\nComarch SA 2026 - Wszelkie prawa zastrzeżone.",
+      "sourceTextSha256": "afd76ba860a5a79544ea7f1c64168e496a1f3cb1b1a7531dddd86465cc87577f",
+      "publicAccordionText": [],
+      "sourceLinks": [
+        {
+          "text": "Centrum Wiedzy i Rozwoju",
+          "url": "https://spolecznosc.comarch.pl/education-platform"
+        },
+        {
+          "text": "Centrum Wiedzy i Rozwoju",
+          "url": "https://spolecznosc.comarch.pl/education-platform"
+        }
+      ],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Versioned release announcement: autor, opublikowano/zaktualizowano, wersja 2026.2.1, siedem punktów zmian i linki. Komentarze przechowywać jako osobny datowany dialog z atrybucją; planowane poprawki oznaczyć jako zapowiedzi. „Najnowsza wersja” pozostaje cytatem historycznym.",
+      "blockerOrLimit": "Brak blokady ogłoszenia i komentarzy. Obrazy/treść pobrań programu nie sprawdzone; nie ustalono aktualnej wersji produktu ani wdrożenia zapowiedzianych poprawek.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "7c66353e",
+      "id": "draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus",
+      "namespace": "TaxbellPayrollHRReference",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
+      "finalUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:33:34.473Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2025-10-21",
+        "update": null,
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Cały datowany journal-content-article, cztery akapity o stażu i zaświadczeniach.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.227Z",
+          "requestedUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
+          "title": "Zmiany w stażu pracy – wnioski o zaświadczenia z ZUS od stycznia 2026 r. - ZUS",
+          "finishedAt": "2026-10-13T09:33:34.473Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.md",
+      "savedJsonBody": "Automated source-discovery draft.\n\nQuery: kadry płace ZUS prawo pracy zmiany 2026\nSource: https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.\nTier: official\nDiscovery confidence: 0.9\n\nZmiany w stażu pracy – wnioski o zaświadczenia z ZUS od stycznia 2026 r. - ZUS\n\nReview this draft before promotion.",
+      "savedMarkdownBody": "Automated source-discovery draft.\n\nQuery: kadry płace ZUS prawo pracy zmiany 2026\nSource: https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.\nTier: official\nDiscovery confidence: 0.9\n\nZmiany w stażu pracy – wnioski o zaświadczenia z ZUS od stycznia 2026 r. - ZUS\n\nReview this draft before promotion.",
+      "savedMarkdownSha256": "c6dd3d37bf85dd4e56cc1916aa7a86344a8ee2b92456c28e460a048a31d1faad",
+      "savedJsonBodySha256": "d81e4d5e8c48a425e7bb0ef3c21fbeea31aeeea63d2fc7606eb94d73b280d2e3",
+      "comparison": "Zapis zawiera wyłącznie tytuł, bez daty, zakresu nowych okresów, formularzy i rozróżnienia świadectwa pracy od zaświadczeń ZUS.",
+      "recoveredFacts": [
+        "ZUS w komunikacie z 21.10.2025 zapowiada zmiany od 1.01.2026 i wnioski PUE/eZUS udostępnione po wejściu ustawy.",
+        "Wymienia działalność, współpracę, zawieszenie działalności na opiekę, zlecenia/usługi/agencyjne i członkostwo w spółdzielniach.",
+        "Dotychczasowe zatrudnienie na umowie o pracę nadal potwierdza świadectwo pracy; komunikat odradza niepotrzebne wnioski obejmujące cały przebieg ubezpieczenia."
+      ],
+      "sourceText": "21 \npaździernika\n2025\n\nOd 1 stycznia 2026 roku wchodzą w życie zmiany w Kodeksie pracy. Nowe przepisy rozszerzą katalog okresów wliczanych do stażu pracy dla celów nabywania prawa do świadczeń i uprawnień pracowniczych. Obejmą one m.in. umowy zlecenia, prowadzenie działalności gospodarczej czy pracę zarobkową za granicą. Potwierdzeniem tych okresów będą zaświadczenia z ZUS, wydawane od nowego roku na podstawie wniosku składanego w PUE/eZUS.\n\nZgodnie z nowymi zasadami staż pracy będzie obejmował nie tylko umowy o pracę, ale także inne formy aktywności zawodowej. Do stażu wliczone zostaną m.in. okresy prowadzenia pozarolniczej działalności gospodarczej, współpracy z osobą prowadzącą tę działalność oraz czas jej zawieszenia  w celu sprawowania osobistej opieki nad dzieckiem. Ujęte zostaną również okresy wykonywania umów zlecenia lub innych umów o świadczenie usług czy też umów agencyjnych, pracy jako osoby współpracującej z osobami wykonującymi te umowy, członkostwa w rolniczej spółdzielni produkcyjnej i spółdzielni kółek rolniczych.\n\nPotwierdzanie nowych okresów będzie możliwe tylko na podstawie zaświadczeń wydawanych przez ZUS. Wnioski o ich wydanie zostaną udostępnione dopiero po wejściu w życie ustawy – na nowych formularzach dostępnych w systemie PUE/eZUS.\n\nObecnie wiele osób składa wnioski o wydanie zaświadczeń obejmujących cały przebieg ubezpieczenia, w tym również okresy zatrudnienia na podstawie umowy o pracę. Nie jest to jednak konieczne – w tym zakresie przepisy się nie zmieniają, a potwierdzeniem zatrudnienia nadal pozostaje świadectwo pracy.",
+      "sourceTextSha256": "6f70c03127c33cabdccdc9bf91a2935e07e6b3e49da59e1602d3a4385bff55ac",
+      "publicAccordionText": [],
+      "sourceLinks": [],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Historyczny komunikat przygotowawczy: data 21.10.2025, planowana data zmian, zakres okresów i sposób dokumentowania według tego tekstu. Nie przekształcać zapowiedzi w opis wszystkich obecnych procedur ani dopisywać dzisiejszych formularzy.",
+      "blockerOrLimit": "Brak blokady odczytu. Nie sprawdzano późniejszych komunikatów, szczegółowych harmonogramów ani faktycznej dostępności formularzy.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "a939510d",
+      "id": "draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz",
+      "namespace": "TaxbellPayrollHRReference",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+      "finalUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:43:11.625Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2025-11-25 16:49",
+        "update": null,
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Pełny tekst karty UC127: cele, istota planowanych rozwiązań, właściwe organy i historia publikacji. Networkidle nie osiągnięto w limicie, ale karta i metryka są czytelne.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.230Z",
+          "requestedUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "timeout",
+          "finalUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+          "title": "Projekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości - Kancelaria Prezesa Rady Ministrów - Portal Gov.pl",
+          "finishedAt": "2026-10-13T09:33:57.390Z"
+        },
+        {
+          "method": "clean Chromium; expand official page reading sections",
+          "startedAt": "2026-10-13T09:41:54.227Z",
+          "requestedUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+          "actions": [
+            "Odrzuć optional cookies",
+            "Read/expand Pokaż historię zmian"
+          ],
+          "httpStatus": 200,
+          "networkidle": "timeout",
+          "finalUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+          "finishedAt": "2026-10-13T09:42:11.744Z"
+        },
+        {
+          "method": "clean Chromium; expand official page reading sections",
+          "startedAt": "2026-10-13T09:42:53.658Z",
+          "requestedUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+          "actions": [
+            "Odrzuć optional cookies",
+            "Read/expand Pokaż historię zmian"
+          ],
+          "httpStatus": 200,
+          "networkidle": "timeout",
+          "finalUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+          "finishedAt": "2026-10-13T09:43:11.625Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.md",
+      "savedJsonBody": "Automated source-discovery draft.\n\nQuery: dyrektywa o przejrzystości wynagrodzeń 2026 Polska\nSource: https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2\nTier: official\nDiscovery confidence: 0.9\n\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości\n\nReview this draft before promotion.",
+      "savedMarkdownBody": "Automated source-discovery draft.\n\nQuery: dyrektywa o przejrzystości wynagrodzeń 2026 Polska\nSource: https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2\nTier: official\nDiscovery confidence: 0.9\n\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości\n\nReview this draft before promotion.",
+      "savedMarkdownSha256": "af1f5e343fa6305d49912170f49852160dc4329b6eb1a6e9910c43af80f270ad",
+      "savedJsonBodySha256": "36294089b18c8863c526b85c3ed6c9bff6e28bcc7a35b129b8d5a8c48f0b481e",
+      "comparison": "Zapis zawiera wyłącznie tytuł. Nie ma UC127, charakteru projektu UE, celów, propozycji obowiązków ani metryki publikacji.",
+      "recoveredFacts": [
+        "UC127, projekt ustawy implementujący UE, organ MRPiPS, osoba odpowiedzialna Agnieszka Dziemianowicz-Bąk.",
+        "Cel: implementacja dyrektywy (UE) 2023/970; przywołany termin implementacji 7.06.2026 nie dowodzi uchwalenia polskiej ustawy.",
+        "Planowane wartościowanie stanowisk i neutralne kryteria płacowe, prawo do informacji, sprawozdania luki płacowej dla co najmniej 100 pracowników i wspólna ocena wynagrodzeń.",
+        "Karta opisuje projektowane sankcje 2000–60000 zł i zadania organów; pole Status realizacji w odczycie nie ma wartości."
+      ],
+      "sourceText": "Przejdź do zawartości\nPrzejdź do sekcji Kontakt\nPrzejdź do sekcji Stopka gov.pl\nStrona główna\ngov.pl\nRada Ministrów\nKancelaria Premiera\nMinisterstwa\nUrzędy, instytucje\ni placówki RP\n Usługi dla obywatela\n Usługi dla przedsiębiorcy\n Usługi dla urzędnika\n Usługi dla rolnika\nProfil zaufany\nBaza wiedzy\nSerwis Służby Cywilnej\n Сайт для громадян України –Serwis dla obywateli Ukrainy\nZamknij menu GOV.pl\ngov.pl\ngov.pl\nSerwis Rzeczypospolitej Polskiej\nSZUKAJ\n \nLogowanie do panelu\nmObywatel\nOtwórz okno z tłumaczem języka migowego\nPremier\nO Kancelarii\nO Radzie Ministrów\nCo robimy\nExposé\nAktualności\nKontakt\nZmień język\nPL\n Kancelaria Prezesa Rady Ministrów\n O Radzie Ministrów\n Wykaz prac legislacyjnych i programowych Rady Ministrów\n UC\n Projekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości\n Powrót\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości\nNumer projektu:\nUC127\nRodzaj dokumentu:\nProjekty ustaw\nTyp dokumentu:\nC – projekty implementujące UE\nCele projektu oraz informacja o przyczynach i potrzebie rozwiązań planowanych w projekcie:\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości ma na celu wdrożenie do polskiego porządku prawnego dyrektywy Parlamentu Europejskiego i Rady (UE) 2023/970 w sprawie wzmocnienia stosowania zasady równości wynagrodzeń dla mężczyzn i kobiet za taką samą pracę lub pracę o takiej samej wartości za pośrednictwem mechanizmów przejrzystości wynagrodzeń oraz mechanizmów egzekwowania, zwanej dalej „Dyrektywą”.\nDyrektywa weszła w życie w dniu 6 czerwca 2023 r., a termin na jej implementację do porządku krajowego to 7 czerwca 2026 r.\nDyrektywa ma na celu wzmocnienie stosowania w praktyce i egzekwowania obowiązującej już zasady równego wynagrodzenia mężczyzn i kobiet za równą pracę. Dyrektywa ma na celu wyeliminowanie dyskryminacji płacowej ze względu na płeć. W Unii Europejskiej luka płacowa wciąż się utrzymuje – w 2020 r. wynosiła 13% – przy znaczących różnicach występujących w państwach członkowskich – a w ostatniej dekadzie zmniejszyła się tylko nieznacznie. W 2023 r. zróżnicowanie wynagrodzenia ze względu na płeć, tzw. luka płacowa ze względu na płeć (ang. gender pay gap), w Polsce wynosiło 7,8% i było mniejsze od średniej UE, która wynosiła 12,0%.\nW ocenie stosowania przepisów dyrektywy 2006/54/WE z 2020 r. stwierdzono, że stosowanie zasady równości wynagrodzeń jest utrudnione ze względu na brak przejrzystości systemów wynagrodzeń, brak pewności prawa w odniesieniu do pojęcia pracy o takiej samej wartości oraz przeszkody proceduralne napotykane przez ofiary dyskryminacji. Pracownicy nie posiadają informacji niezbędnych do skutecznego dochodzenia roszczeń dotyczących równego wynagrodzenia, w szczególności informacji na temat poziomów wynagrodzenia poszczególnych kategorii pracowników, którzy wykonują taką samą pracę lub pracę o takiej samej wartości.\nStwierdzono, że większa przejrzystość pozwoliłaby na ujawnianie uprzedzeń oraz dyskryminacji ze względu na płeć w strukturach płac przedsiębiorstwa lub organizacji. Pozwoliłaby ona ponadto pracownikom, pracodawcom i partnerom społecznym na podejmowanie odpowiednich działań w celu zapewnienia stosowania prawa do równego wynagrodzenia za taką samą pracę lub pracę o takiej samej wartości.\nKonieczne jest zatem wprowadzenie wiążących środków prowadzących do zwiększenia przejrzystości wynagrodzeń, zachęcających pracodawców do przeglądu ich struktur płacowych w celu zapewnienia równości wynagrodzeń dla mężczyzn i kobiet wykonujących jednakową pracę lub pracę o jednakowej wartości, a także wprowadzenie środków prawnych umożliwiających pracownikom dyskryminowanym pod względem wynagrodzenia ze względu na płeć wykonywanie przysługującego im prawa do równego wynagrodzenia.\nDyrektywa wprowadza m.in. środki w zakresie przejrzystości wynagrodzeń oraz dochodzenia roszczeń.\nW zakresie przejrzystości wynagrodzeń Dyrektywa przewiduje m.in. następujące środki:\n- zapewnienie pracownikom łatwego dostępu do kryteriów określania wynagrodzenia pracowników, poziomów wynagrodzenia i progresji wynagrodzenia. Kryteria te muszą być obiektywne i neutralne pod względem płci (zgodnie z art. 6 ust. 1 Dyrektywy);\n- prawo pracowników do żądania od pracodawcy informacji na temat swojego własnego poziomu wynagrodzenia, a ponadto średnich poziomów wynagrodzenia, w podziale na płeć, w odniesieniu do kategorii pracowników wykonujących taką samą pracę jak oni lub pracę o takiej samej wartości jak ich praca (zgodnie z art. 7 ust. 1 Dyrektywy);\n- obowiązek pracodawców zatrudniających co najmniej 100 pracowników dostarczania następujących informacji dotyczących ich organizacji: luki płacowej ze względu na płeć, luki płacowej ze względu na płeć w formie składników uzupełniających lub zmiennych, mediany luki płacowej ze względu na płeć, mediany luki płacowej ze względu na płeć w formie składników uzupełniających lub zmiennych, odsetka pracowników płci żeńskiej i męskiej otrzymujących składniki uzupełniające lub zmienne, odsetka pracowników płci żeńskiej i męskiej w każdym kwartylu wynagrodzenia, luki płacowej ze względu na płeć wśród pracowników w podziale na kategorie pracowników, według zwykłej podstawowej płacy godzinowej lub miesięcznej oraz składników uzupełniających lub zmiennych. Częstotliwość składania sprawozdań zależy od wielkości pracodawcy (co roku lub co trzy lata). Zawsze są to jednak informacje dotyczące tylko poprzedniego roku kalendarzowego. Wszystkie informacje przekazuje się organowi monitorującemu. Wszystkie one, z wyjątkiem luki płacowej ze względu na płeć wśród pracowników w podziale na kategorie pracowników, są publikowane przez organ monitorujący i mogą być publikowane przez pracodawcę np. na stronie internetowej. Z kolei luka płacowa ze względu na płeć wśród pracowników w podziale na kategorie pracowników nie jest podawana do wiadomości publicznej.\nInformacje te pracodawcy przekazują wszystkim swoim pracownikom i przedstawicielom pracowników (proaktywnie, bez czekania na wniosek), a na wniosek także inspektorowi pracy oraz organowi ds. równości (art. 9 ust. 9 Dyrektywy). Pracownicy, przedstawiciele pracowników, inspektorat pracy oraz organ ds. równości mają prawo zwrócić się do pracodawcy o dodatkowe wyjaśnienia i szczegóły dotyczące wszelkich przekazywanych danych, w tym o wyjaśnienia dotyczące wszelkich różnic w wynagrodzeniach ze względu na płeć. Pracodawca musi udzielić uzasadnionej odpowiedzi na takie zapytania w rozsądnym terminie. W przypadku gdy różnice w wynagrodzeniach ze względu na płeć nie są uzasadnione obiektywnymi, neutralnymi pod względem płci kryteriami, pracodawca jest obowiązany do zaradzenia im w ścisłej współpracy z przedstawicielami pracowników, inspektoratem pracy lub organem ds. równości (zgodnie z art. 9 ust. 10 Dyrektywy);\n- obowiązek przeprowadzenia wspólnej oceny wynagrodzeń, jeśli spełnione są kumulatywne przesłanki z art. 10 ust. 1 Dyrektywy. Ocena ta jest przeprowadzana przez pracodawcę wspólnie z przedstawicielami pracowników i polega na przeglądzie i weryfikacji struktur wynagrodzeń. Analizowane są wszystkie kategorie pracowników. Jej elementem jest także określenie środków mających na celu odniesienie się do różnic w wynagrodzeniu, jeżeli nie są one uzasadnione obiektywnymi, neutralnymi pod względem płci kryteriami. Wspólne oceny wynagrodzeń powinny prowadzić, w rozsądnym terminie, do wyeliminowania dyskryminacji płacowej ze względu na płeć poprzez przyjęcie środków zaradczych;\n- zapewnienie, aby struktury wynagrodzeń umożliwiały dokonanie oceny, czy pracownicy są w porównywalnej sytuacji w odniesieniu do wartości pracy na podstawie obiektywnych, neutralnych pod względem płci kryteriów uzgodnionych z przedstawicielami pracowników, o ile tacy przedstawiciele istnieją. Kryteria te nie mogą opierać się bezpośrednio lub pośrednio na płci pracowników. Kryteria te obejmują umiejętności, wysiłek, zakres odpowiedzialności i warunki pracy, oraz – w stosownych przypadkach – wszelkie inne czynniki, które mają znaczenie w danym miejscu pracy lub na danym stanowisku. Muszą być one stosowane w obiektywny, neutralny pod względem płci sposób, wykluczający wszelką bezpośrednią lub pośrednią dyskryminację ze względu na płeć. W szczególności odpowiednie umiejętności miękkie nie mogą być niedoceniane.\nW zakresie dochodzenia roszczeń i egzekwowania obowiązków Dyrektywa przewiduje m.in. następujące środki:\n- prawo sądów krajowych lub właściwych organów do wydawania na wniosek powoda i na koszt pozwanego nakazu zaprzestania naruszenia oraz nakazu podjęcia środków służących zapewnieniu, aby stosowany były prawa lub obowiązki związane z zasadą równości wynagrodzeń (zgodnie z art. 17 ust. 1 Dyrektywy);\n- kary w przypadku naruszeń praw i obowiązków związanych z zasadą równości wynagrodzeń (zgodnie z art. 23 Dyrektywy).\nW art. 33 Konstytucji Rzeczypospolitej Polskiej przyznano prawo kobietom i mężczyznom do jednakowego wynagradzania za pracę o jednakowej wartości.\nUstawa z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2025 r. poz. 277, z późn. zm.), zwana dalej „Kodeks pracy”, w art. 183c ustanawia prawo pracowników do jednakowego wynagrodzenia za jednakową pracę lub za pracę o jednakowej wartości. Powyższa zasada ma zastosowanie do wszystkich pracowników bez względu na płeć. Wynagrodzenie w rozumieniu tego przepisu obejmuje wszystkie składniki wynagrodzenia, bez względu na ich nazwę i charakter, a także inne świadczenia związane z pracą, przyznawane pracownikom w formie pieniężnej lub innej formie niż pieniężna. Natomiast pracami o jednakowej wartości są prace, których wykonywanie wymaga od pracowników porównywalnych kwalifikacji zawodowych, potwierdzonych dokumentami przewidzianymi w odrębnych przepisach lub praktyką i doświadczeniem zawodowym, a także porównywalnej odpowiedzialności i wysiłku.\nW zakresie przejrzystości wynagrodzenia pracodawca ma obowiązek, na podstawie art. 29 § 3 pkt 1 lit. h Kodeksu pracy, poinformowania pracownika m.in. o innych niż uzgodnione w umowie o pracę przysługujących pracownikowi składnikach wynagrodzenia oraz świadczeniach pieniężnych lub rzeczowych.\nW zakresie ustalenia wynagrodzenia za pracę stosuje się art. 78 Kodeksu pracy. Wynagrodzenie ustalane na jego podstawie powinno odpowiadać rodzajowi wykonywanej pracy i kwalifikacjom wymaganym przy jej wykonywaniu, a także uwzględniać ilość i jakość świadczonej pracy.\nAktualnie w polskim systemie prawnym brak jest jednak przewidzianych w Dyrektywie szczegółowych regulacji dotyczących prawa do równego wynagrodzenia i przejrzystości wynagrodzeń.\nProjekt ustawy wdraża zatem nieuregulowane dotychczas zagadnienia wynikające z Dyrektywy, nie przewidując jednak wykroczenia poza jej zakres. Wdrożenie Dyrektywy nie może być w żadnym przypadku powodem obniżenia poziomu ochrony w obszarach objętych Dyrektywą. Oznacza to, że jeżeli w państwie członkowskim obowiązują już korzystniejsze rozwiązania w zakresie ochrony praw pracowniczych, to nie mogą one ulec pogorszeniu z tytułu wdrożenia Dyrektywy.\nProjekt ustawy przewiduje nałożenie na wszystkich pracodawców, w tym jednostki sektora publicznego, szeregu obowiązków, w tym m.in. wartościowania stanowisk, a na pracodawców zatrudniających co najmniej 100 pracowników także obowiązku sprawozdawczości z zakresu luki płacowej.\nNależy zauważyć, że w przypadku służby cywilnej już obecnie wykonywane jest wartościowanie stanowisk.\nZgodnie z § 1 i 2 zarządzenia Nr 1 Prezesa Rady Ministrów z dnia 7 Stycznia 2011 r. w sprawie zasad dokonywania opisów i wartościowania stanowisk pracy w służbie cywilnej (M.P. Nr 5 poz. 61) opis stanowiska pracy sporządza się dla każdego stanowiska pracy w służbie cywilnej. Natomiast w opisie stanowiska pracy wskazuje się realizowane zadania, wymagane kompetencje, kwalifikacje i zakres odpowiedzialności ze względu na umiejscowienie i funkcję stanowiska pracy w strukturze urzędu. W tym celu powołany w urzędzie zostaje zespół wartościujący, który zajmuje się wartościowaniem stanowiska pracy, z wyłączeniem stanowiska dyrektora generalnego urzędu. Członków tego zespołu powołuje i odwołuje osoba wykonująca w urzędzie\nczynności z zakresu prawa pracy. W przypadku służby cywilnej konieczne będzie dostosowanie funkcjonującej praktyki do rozwiązań wynikających z Dyrektywy.\nIstota rozwiązań planowanych w projekcie, w tym proponowane środki realizacji:\nNie jest możliwe rozwiązanie problemu przez działania pozalegislacyjne, dlatego niezbędne jest przygotowanie projektu ustawy mającej na celu wdrożenie dyrektywy Parlamentu Europejskiego i Rady (UE) 2023/970 w sprawie wzmocnienia stosowania zasady równości wynagrodzeń dla mężczyzn i kobiet za taką samą pracę lub pracę o takiej samej wartości za pośrednictwem mechanizmów przejrzystości wynagrodzeń oraz mechanizmów egzekwowania.\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości wprowadzi:\n- zobowiązanie pracodawców, bez względu na ich wielkość, do posiadania struktur wynagrodzeń umożliwiających analizę, czy pracownicy znajdują się w porównywalnej sytuacji. W celu wdrożenia Dyrektywy w projekcie określono jako wymóg minimalny stosowanie czterech obligatoryjnych kryteriów oceny wartości pracy (umiejętności, wysiłek, odpowiedzialność i warunki pracy). Pracodawcy będą mogli, w stosownych przypadkach, uwzględniać dodatkowe kryteria lub podkryteria. Wszystkie te kryteria i podkryteria muszą być stosowane w sposób obiektywny oraz neutralny pod względem płci oraz wykluczający wszelką bezpośrednią lub pośrednią dyskryminację ze względu na płeć (art. 3–5 projektu ustawy);\n- zobowiązanie pracodawców do określenia kryteriów służących ustaleniu wynagrodzeń pracowników, poziomów wynagrodzeń i wzrostu wynagrodzeń w sposób obiektywny oraz neutralny pod względem płci, a także wykluczający wszelką bezpośrednią lub pośrednią dyskryminację ze względu na płeć. (art. 7 ust. 1 projektu ustawy);\n- zobowiązanie pracodawców do zapewnienia pracownikom łatwego dostępu do kryteriów służących ustaleniu wynagrodzeń pracowników, poziomów wynagrodzeń i wzrostu wynagrodzeń (art. 7 ust. 2 projektu ustawy), z zastrzeżeniem że w przypadku pracodawców zatrudniających mniej niż 50 pracowników informacje dotyczące kryteriów służących określeniu wzrostu wynagrodzeń udostępnia się na wniosek pracownika (art. 7 ust. 3 projektu ustawy);\n- uprawnienie pracownika do żądania od pracodawcy informacji na temat swojego poziomu wynagrodzenia, a ponadto średnich poziomów wynagrodzenia, w podziale na płeć, w odniesieniu do\nkategorii pracowników wykonujących jednakową pracę jak on lub pracę o jednakowej wartości jak jego praca (art. 8 projektu ustawy);\n zobowiązanie pracodawców do przekazywania pracownikom, a w pewnym zakresie również osobom ubiegającym się o zatrudnienie, określonych informacji (m.in. o początkowej wysokości wynagrodzeniu lub jego przedziale, o kryteriach służących ustalaniu wynagrodzeń pracowników, poziomów wynagrodzeń i wzrostu wynagrodzeń, o indywidualnym poziomie wynagrodzenia pracownika oraz średnich poziomów wynagrodzenia w podziale na płeć w odniesieniu do kategorii pracowników wykonujących jednakową pracę jak on lub pracę o jednakowej wartości jak jego praca) w sposób, który jest przystępny dla osób z niepełnosprawnościami i który uwzględnia ich szczególne potrzeby, umożliwiający im swobodne i świadome zapoznanie się z tymi informacjami, w szczególności w formie dostępnej cyfrowo, co najmniej na poziomie określonym w załączniku do ustawy z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych (Dz. U. z 2023 r. poz. 1440) (art. 10 projektu ustawy);\n- zobowiązanie pracodawców zatrudniających co najmniej 100 pracowników do sporządzania sprawozdania z luki płacowej zawierającego informacje dotyczące ich organizacji o:\n1) luce płacowej ze względu na płeć,\n2) luce płacowej ze względu na płeć w formie składników uzupełniających lub zmiennych,\n3) medianie luki płacowej ze względu na płeć,\n4) medianie luki płacowej ze względu na płeć w formie składników uzupełniających lub zmiennych,\n5) odsetku pracowników płci żeńskiej i męskiej otrzymujących składniki uzupełniające lub zmienne,\n6) odsetku pracowników płci żeńskiej i męskiej w każdym przedziale wynagrodzenia,\n7) luce płacowej ze względu na płeć wśród pracowników w podziale na kategorie pracowników, według wynagrodzenia wynikającego z osobistego zaszeregowania pracownika określonego stawką godzinową lub miesięczną oraz składników uzupełniających lub zmiennych.\nCzęstotliwość składania sprawozdań będzie uzależniona od wielkości pracodawcy. Pracodawca obowiązany będzie przekazać do organu monitorującego ww. informacje:\n1) co trzy lata w przypadku pracodawców zatrudniających co najmniej 100 pracowników,\n2) corocznie w przypadku pracodawców zatrudniających co najmniej 250 pracowników.\nW przypadku gdy pracodawca nie przekaże w terminie tych informacji organ monitorujący wezwie pracodawcę do ich niezwłocznego przekazania. Będą to informacje dotyczące poprzedniego roku kalendarzowego.\nPrzekazywanie sprawozdania będzie się odbywało za pomocą narzędzia informatycznego dostarczonego przez Prezesa Głównego Urzędu Statystycznego i udostępnionego przez organ monitorujący w porozumieniu z Prezesem GUS.\nWszystkie informacje, z wyjątkiem luki płacowej ze względu na płeć wśród pracowników w podziale na kategorie pracowników, będą publikowane przez organ monitorujący i mogą być publikowane przez pracodawcę na jego stronie internetowej lub udostępniane przez pracodawcę publicznie w inny sposób.\nLuka płacowa ze względu na płeć w podziale na kategorie pracowników nie będzie podawana do wiadomości publicznej. Informacje te pracodawcy będą przekazywali wszystkim swoim pracownikom i przedstawicielom pracowników (proaktywnie, bez czekania na wniosek), a w przypadku inspektora pracy czy organu ds. równości informacje te zostaną przekazane na ich wniosek w terminie 14 dni od jego otrzymania przez pracodawcę (art. 13–23 projektu ustawy);\n uprawnienie pracowników, przedstawicieli pracowników, Państwowej Inspekcji Pracy oraz organu ds. równości do wnioskowania do pracodawcy o dodatkowe wyjaśnienia i szczegóły dotyczące wszelkich przekazywanych w sprawozdaniu z luki płacowej danych, w tym o wyjaśnienia dotyczące wszelkich różnic w wynagrodzeniach ze względu na płeć. Pracodawca będzie musiał udzielić uzasadnionej odpowiedzi na takie zapytania w terminie 14 dni od dnia otrzymania wniosku. Jeśli wyjaśnienia pracodawcy nie uzasadniają różnic w wynagrodzeniach mężczyzn i kobiet zidentyfikowanych w sprawozdaniu z luki płacowej, pracodawca jest obowiązany zaradzić tym różnicom w ścisłej współpracy z przedstawicielami pracowników, inspektoratem pracy lub organem ds. równości (art. 23 i art. 24 projektu ustawy);\n- zobowiązanie pracodawców zatrudniających co najmniej 100 pracowników do przeprowadzenia wspólnej oceny wynagrodzeń w przypadku gdy zostaną spełnione wszystkie następujące przesłanki:\n1) sprawozdanie z luki płacowej wykazuje lukę płacową ze względu na płeć w którejkolwiek kategorii pracowników wynoszącą co najmniej 5%,\n2) pracodawca nie uzasadnił luki płacowej ze względu na płeć na podstawie obiektywnych, neutralnych pod względem płci kryteriów,\n3) pracodawca nie zaradził takiej nieuzasadnionej luce płacowej ze względu na płeć w terminie 6 miesięcy od dnia przekazania sprawozdania z luki płacowej.\nPracodawca obowiązany będzie do przeprowadzenia wspólnej oceny wynagrodzeń w konsultacji z zakładową organizacją związkową, a w przypadku gdy u pracodawcy działa więcej niż jedna zakładowa organizacja związkowa w konsultacji z tymi organizacjami. Jeżeli u pracodawcy nie działa zakładowa organizacja związkowa, wspólną ocenę wynagrodzeń będzie on przeprowadzał w konsultacji z przedstawicielami pracowników wyłonionymi w trybie przyjętym u danego pracodawcy.\nCelem przeprowadzenia wspólnej oceny wynagrodzeń będzie zidentyfikowanie różnic w wynagrodzeniach pracowników płci żeńskiej i męskiej, które nie są uzasadnione obiektywnymi,\nneutralnymi pod względem płci kryteriami, a także zaradzenie tym różnicom i zapobieganie im.\nWspólna ocena wynagrodzeń będzie obejmowała w szczególności:\n1) analizę odsetka pracowników płci żeńskiej i męskiej w każdej kategorii pracowników,\n2) informacje na temat średnich poziomów wynagrodzenia pracowników płci żeńskiej i męskiej oraz składników uzupełniających lub zmiennych dla każdej kategorii pracowników,\n3) wszelkie różnice w średnich poziomach wynagrodzenia pracowników płci żeńskiej i męskiej w każdej kategorii pracowników,\n4) przyczyny różnic w średnich poziomach wynagrodzenia, o ile takie różnice istnieją, na podstawie obiektywnych, neutralnych pod względem płci kryteriów ustalonych przez pracodawców i stronę pracowniczą,\n5) odsetek pracowników płci żeńskiej i męskiej, którzy skorzystali z jakiejkolwiek poprawy wynagrodzenia po powrocie z urlopów, o których mowa w art. 1864 Kodeksu pracy, o ile taka\npoprawa nastąpiła w danej kategorii pracowników w okresie przebywania na urlopie,\n6) środki mające na celu zaradzenie różnicom w wynagrodzeniu, jeżeli nie są one uzasadnione obiektywnymi, neutralnymi pod względem płci kryteriami,\n7) ocenę skuteczności środków uwzględnionych we wcześniejszych wspólnych ocenach wynagrodzeń.\nPracodawca zostanie obowiązany do wdrożenia środków wynikających ze wspólnej oceny wynagrodzeń w konsultacji z zakładową organizacją związkową, a jeżeli u pracodawcy nie będzie działa zakładowa organizacja związkowa, z przedstawicielami pracowników wyłonionymi w trybie przyjętym u danego pracodawcy (art. 25–31 projektu ustawy);\n- regulacje dotyczące ochrony prawnej w przypadku naruszenia prawa lub obowiązków związanych z zasadą równego traktowania w zatrudnieniu w zakresie prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub pracę o jednakowej wartości (art. 38–44 projektu ustawy);\n- sankcje w postaci kary grzywny od 2000 zł do 60 000 zł w przypadku, gdy pracodawca lub osoba działająca w jego imieniu:\n1) nie oceni wartości poszczególnych stanowisk pracy lub rodzaju pracy,\n2) nie zapewni pracownikowi dostępu do informacji o kryteriach,\n3) nie udostępni pracownikowi na wniosek informacji,\n4) nie udzieli pracownikowi na wniosek informacji,\n5) nie sporządzi sprawozdania z luki płacowej,\n6) nie przekaże wymienionych w projekcie ustawy informacji,\n7) nie dokona wspólnej oceny wynagrodzeń,\n8) nie zastosuje środków zaradczych,\n9) zamieści w umowie o pracę postanowienia zakazujące ujawnienia przez pracowników wysokości\notrzymywanego przez nich wynagrodzenia\nWysokość tych kar będzie korespondować z karami mającymi zastosowanie w przepisach prawa pracy, przewidzianymi w projekcie ustawy o zmianie ustawy o Państwowej Inspekcji Pracy oraz niektórych innych ustaw (UD283). Kary będą miały charakter proporcjonalny, ale również odstraszający (art. 45 projektu ustawy).\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości przyznaje kompetencje następującym organom:\n- Organowi do spraw równości zgodnie z Dyrektywą, wyznaczonemu na mocy art. 20 dyrektywy 2006/54/WE – realizację zadań związanych z egzekwowaniem prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości, we współpracy z Państwową Inspekcją Pracy, organem monitorującym oraz partnerami społecznymi.\nDo zadań organu do spraw równości będzie należało:\n1) występowanie w imieniu pracownika na jego wniosek do pracodawcy o informacje dotyczące jego indywidualnego poziomu wynagrodzenia oraz średnich poziomów wynagrodzenia w podziale na płeć w odniesieniu do kategorii pracowników wykonujących jednakową pracę jak on lub pracę o jednakowej wartości jak jego praca,\n2) możliwość wystąpienia z wnioskiem do pracodawców o stanowiące element sprawozdania z luki płacowej informacje dotyczące luki płacowej ze względu na płeć wśród pracowników w podziale na kategorie pracowników, według wynagrodzenia wynikającego z osobistego zaszeregowania pracownika określonego stawką godzinową lub miesięczną oraz składników uzupełniających lub zmiennych również za okres poprzednich 4 lat,\n3) możliwość wystąpienia z wnioskiem do pracodawcy o udzielenie dodatkowych szczegółowych wyjaśnień w zakresie przekazanych informacji objętych sprawozdaniem z luki płacowej,\n4) współpraca z pracodawcą w przypadku konieczności zaradzenia różnicom w wynagrodzeniach, gdy wcześniej organ ds. równości wystąpił o przekazanie dodatkowych szczegółowych wyjaśnień w zakresie przekazanych informacji objętych sprawozdaniem z luki płacowej,\n5) możliwość wystąpienia do pracodawcy z wnioskiem o przekazanie informacji ze wspólnej oceny wynagrodzeń,\n6) udział we wdrażaniu środków wynikających ze wspólnej oceny wynagrodzeń w przypadku gdy pracodawca lub strona pracownicza zwróci się do tego organu z wnioskiem o udział we wdrażaniu tych środków,\n7) przekazywanie organowi monitorującemu danych dotyczących liczby i rodzajów otrzymywanych skarg związanych z zasadą równego traktowania w zatrudnieniu w zakresie prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub pracę o jednakowej wartości;\n- Organowi monitorującemu\nDo zadań organu monitorującego będzie należało:\n1) analizowanie przyczyn luki płacowej ze względu na płeć i projektowanie narzędzi pomagających w ocenie nierówności w wynagradzaniu, w szczególności z wykorzystaniem analitycznych prac i narzędzi Europejskiego Instytutu ds. Równości Kobiet i Mężczyzn,\n2) udostępnianie pracodawcom narzędzia informatycznego służącego realizacji obowiązku sporządzenia sprawozdania z luki płacowej,\n3) gromadzenie informacji ze wspólnej oceny wynagrodzeń,\n4) zbieranie i agregowanie danych dotyczących liczby i rodzajów skarg związanych z zasadą równego traktowania w zatrudnieniu w zakresie prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub pracę o jednakowej wartości, wniesionych do Państwowej Inspekcji Pracy, organu ds. równości oraz roszczeń dochodzonych przed sądami,\n5) podnoszenie świadomości wśród podmiotów prywatnych i publicznych, partnerów społecznych i społeczeństwa w celu promowania zasady równego traktowania w zatrudnieniu w zakresie prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub pracę o jednakowej wartości\noraz prawa do przejrzystości wynagrodzeń, w tym poprzez odniesienie się do dyskryminacji krzyżowej,\n6) przekazywanie do Komisji Europejskiej co dwa lata określonych w projekcie ustawy danych,\n7) podejmowanie działań w celu zapewnienia informacji zainteresowanym osobom o przepisach w zakresie prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub pracę o jednakowej wartości oraz prawa do przejrzystości wynagrodzeń,\n8) gromadzenie informacji określonych w projekcie ustawy i ich publikowanie;\n- Państwowej Inspekcji Pracy jako inspektoratowi pracy\nDo zadań Państwowej Inspekcji Pracy będzie należało:\n1) zapewnianie szkolenia pracodawcom zatrudniającym mniej niż 250 pracowników oraz zakładowym organizacjom związkowym, w celu ułatwienia im realizacji zadań wynikających z projektowanej ustawy,\n2) wytaczanie powództw, za zgodą pracownika lub osoby ubiegającej się o zatrudnienie, w sprawach o roszczenia wynikające z naruszenia praw lub obowiązków związanych z zasadą równego\ntraktowania w zatrudnieniu w zakresie prawa do jednakowego wynagrodzenia za jednakową pracę lub pracę o jednakowej wartości mężczyzn i kobiet. Możliwe będzie także przystępowanie do takich postępowań,\n3) możliwość występowania z wnioskiem do pracodawców o stanowiące element sprawozdania z luki płacowej informacje dotyczące luki płacowej ze względu na płeć wśród pracowników w podziale na kategorie pracowników, według wynagrodzenia wynikającego z osobistego zaszeregowania pracownika określonego stawką godzinową lub miesięczną oraz składników uzupełniających lub zmiennych,\n4) współpraca z pracodawcą w przypadku konieczności zaradzenia różnicom w wynagrodzeniach, gdy wcześniej Państwowa Inspekcja Pracy wystąpiła o przekazanie dodatkowych, szczegółowych wyjaśnień w zakresie przekazanych informacji objętych sprawozdaniem z luki płacowej,\n5) możliwość występowania do pracodawcy z wnioskiem o przekazanie informacji ze wspólnej oceny wynagrodzeń,\n6) udział we wdrażaniu środków wynikających ze wspólnej oceny wynagrodzeń w przypadku gdy pracodawca lub strona pracownicza zwróci się do Państwowej Inspekcji Pracy z wnioskiem o udział we wdrażaniu tych środków,\n7) przekazywanie organowi monitorującemu danych dotyczących liczby i rodzajów otrzymywanych skarg związanych z zasadą równego traktowania w zatrudnieniu w zakresie prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub pracę o jednakowej wartości;\n- Organowi ds. równości, Państwowej Inspekcji Pracy oraz sądom: obowiązek przekazywania organowi monitorującemu wszystkich danych dotyczących liczby i rodzajów skarg związanych z zasadą równego traktowania w zatrudnieniu w zakresie prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub pracę o jednakowej wartości w terminie do 1 kwietnia za poprzedni rok kalendarzowy.\nW ramach projektu ustawy zmienione zostaną również przepisy następujących ustaw:\n1) ustawa z dnia 17 listopada 1964 r. – Kodeks postępowania cywilnego (Dz. U. z 2024 r. poz. 1568, z późn. zm.);\n2) ustawa z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. z 2025 r. poz. 277, z późn. zm.);\n3) ustawa z dnia 13 kwietnia 2007 r. o Państwowej Inspekcji Pracy (Dz. U. z 2024 r. poz. 1712, z późn. zm.).\nWszystkie działania przewidziane w projekcie ustawy mają na celu wyeliminowanie dyskryminacji płacowej w wynagrodzeniu mężczyzn i kobiet za jednakową pracę oraz pracę o jednakowej wartości poprzez środki prowadzące do zwiększenia przejrzystości wynagrodzeń, a także umożliwiające ofiarom takiej dyskryminacji wykonywanie przysługującego im prawa do równego wynagrodzenia.\nZdecydowano, że zmiany prawne wynikające z konieczności wdrożenia dyrektywy do polskiego porządku prawnego nie będą wprowadzone wyłącznie do Kodeksu pracy, ponieważ zgodnie z art. 1 Kodeksu pracy – Kodeks pracy określa prawa i obowiązki pracowników i pracodawców. W związku z tym, że dyrektywa nie tylko nakłada obowiązki i uprawnienia na pracodawców oraz pracowników, ale nakłada je również na organy ds. równości, Państwową Inspekcję Pracy oraz organ monitorujący zdecydowano, by wdrożenie Dyrektywy zostało uregulowane w odrębnej ustawie. Przyjęte rozwiązanie pozwoli na uregulowanie, zasadniczo w jednym akcie prawnym, wynikających z Dyrektywy praw pracowników, obowiązków pracodawców, zadań organów czy\nobowiązków w zakresie sprawozdawczości, co bezpośrednio przełoży się na przejrzystość i czytelność regulacji.\nBiorąc pod uwagę powyższe zdecydowano się na uregulowanie przedmiotowej materii w odrębnej ustawie.\nJednocześnie należy zauważyć, że przyjęte rozwiązanie występuje już na gruncie prawa pracy – istnieje szereg odrębnych ustaw, oddziałujących na pracodawców i pracowników są to m.in.:\n1) ustawa z dnia 9 lipca 2003 r. o zatrudnianiu pracowników tymczasowych (Dz. U. 2025 r. poz. 236);\n2) ustawa z dnia 10 października 2002 r. o minimalnym wynagrodzeniu za pracę (Dz. U. 2024 r. poz. 1773);\n3) ustawa z dnia 4 marca 1991 r. o zakładowym funduszu świadczeń socjalnych (Dz. U. 2024 r. poz. 288);\n4) ustawa z dnia 10 czerwca 2016 r. o delegowaniu pracowników w ramach świadczenia usług (Dz. U. z 2024 r. poz. 73);\n5) ustawa z dnia 13 marca 2003 r. o szczególnych zasadach rozwiązywania z pracownikami stosunków pracy z przyczyn niedotyczących pracowników (Dz. U. z 2025 r. poz. 570).\nOrgan odpowiedzialny za opracowanie projektu:\nMRPiPS\nOsoba odpowiedzialna za opracowanie projektu:\nAgnieszka Dziemianowicz-Bąk Ministra Rodziny, Pracy i Polityki Społecznej\nOrgan odpowiedzialny za przedłożenie projektu RM:\nMRPiPS\nStatus realizacji:\nInformacje o publikacji dokumentu\nPierwsza publikacja: 25.11.2025 16:49 Edyta Kurkiewicz\nWytwarzający/ Odpowiadający: Minister Rodziny, Pracy i Polityki Społecznej\nPokaż historię zmian\nTytuł\tWersja\tDane zmiany / publikacji\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości\t2.0\t25.05.2026 09:49 Edyta Kurkiewicz\nProjekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości\t1.0\t25.11.2025 16:49 Edyta Kurkiewicz\n\nAby uzyskać archiwalną wersję należy skontaktować się z Redakcją BIP\n\nstopka\nKancelaria Prezesa Rady Ministrów\nADRES\n\nAl. Ujazdowskie 1/3\n\n00-583 Warszawa\n\nNIP 5261645000\n\nRegon 012261725\n\nKONTAKT\n\nInfolinia dla Obywatela\n222 500 151\n\nW dni robocze\nw godzinach: 8:15-16:15\n\nMEDIA SPOŁECZNOŚCIOWE:\n \n \n \n \n \nMinisterstwa\nRządowe Centrum Legislacji\nDeklaracja dostępności\nKlauzula RODO\nPressroom\nstopka gov.pl\n \nStrona główna\ngov.pl\ngov.pl\nPolityka cookies Służba cywilna Profil zaufany BIP Prawa autorskieWarunki korzystaniaGeoportal Deklaracja dostępności serwisu Gov.pl Ustawienia prywatności\nStrony dostępne w domenie www.gov.pl mogą zawierać adresy skrzynek mailowych. Użytkownik korzystający z odnośnika będącego adresem e-mail zgadza się na przetwarzanie jego danych (adres e-mail oraz dobrowolnie podanych danych w wiadomości) w celu przesłania odpowiedzi na przesłane pytania. Szczegóły przetwarzania danych przez każdą z jednostek znajdują się w ich politykach przetwarzania danych osobowych.\n \nTreści tekstowe publikowane w serwisie (z wyłączeniem treści audiowizualnych), są udostępniane na licencji typu Creative Commons: uznanie autorstwa - na tych samych warunkach 4.0 (CC BY-SA 4.0). Materiały audiowizualne, w tym zdjęcia, materiały audio i wideo, są udostępniane na licencji typu Creative Commons: uznanie autorstwa użycie niekomercyjne - bez utworów zależnych 4.0 (CC BY-NC-ND 4.0), o ile nie jest to stwierdzone inaczej.",
+      "sourceTextSha256": "6060f2a7f2fd78c4fb020011a8be68ec4f8d2211c4472f9449dfa2821aad81b4",
+      "publicAccordionText": [],
+      "sourceLinks": [],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Karta projektu legislacyjnego UC127: numer, typ, pierwsza publikacja, odpowiedzialni, cele i planowane rozwiązania. Zachować osobno opis dyrektywy, istniejącego prawa i propozycji projektu. Nie oznaczać jako uchwalone/obowiązujące; nie dopisywać statusu, którego pole jest puste.",
+      "blockerOrLimit": "Oczekiwanie networkidle wygasło, bez przeszkody dla tekstu. Data ostatniej zmiany karty i status realizacji pozostają NIEUSTALONE; nie badano legislacyjnych źródeł dalszego przebiegu.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "9c43b46e",
+      "id": "draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus",
+      "namespace": "TaxbellPayrollHRReference",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
+      "finalUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:33:33.634Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2023-06-07",
+        "update": null,
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Cały journal-content-article o rocznej waloryzacji, z datą i wskaźnikami.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.232Z",
+          "requestedUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
+          "title": "Roczna waloryzacja na kontach osób ubezpieczonych w ZUS - ZUS",
+          "finishedAt": "2026-10-13T09:33:33.634Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.md",
+      "savedJsonBody": "Automated source-discovery draft.\n\nQuery: ZUS nowości czerwiec 2026\nSource: https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus\nTier: official\nDiscovery confidence: 0.7\n\nRoczna waloryzacja na kontach osób ubezpieczonych w ZUS\n\nReview this draft before promotion.",
+      "savedMarkdownBody": "Automated source-discovery draft.\n\nQuery: ZUS nowości czerwiec 2026\nSource: https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus\nTier: official\nDiscovery confidence: 0.7\n\nRoczna waloryzacja na kontach osób ubezpieczonych w ZUS\n\nReview this draft before promotion.",
+      "savedMarkdownSha256": "b61031fad88054c63bdcf5486f8e2c7ba44ece8e5d29eb42993efa42ee84a1c2",
+      "savedJsonBodySha256": "6dedfa3c0daa400bddb4a9027d6d91f5f077efece5065ab1542330e641205029",
+      "comparison": "Zapis zawiera tylko tytuł; Query: ZUS nowości czerwiec 2026 i data draftu 2.07.2026 mogą błędnie nadawać współczesny kontekst tekstowi z 2023 r.",
+      "recoveredFacts": [
+        "Artykuł 7.06.2023 informuje o zwiększeniu kapitału o ponad 450 mld zł, wobec około 281 mld zł rok wcześniej.",
+        "Podaje wskaźniki 114,40% dla konta i 109,20% dla subkonta, odnosząc je do składek zapisanych 31.01.2022.",
+        "Informacja o stanie konta według 31.12.2022, dostępność PUE ZUS i papierowe informacje na życzenie od 2020 r."
+      ],
+      "sourceText": "7 \nczerwca\n2023\n\nO 450 mld zł zwiększył się stan kont i subkont osób ubezpieczonych w wyniku rocznej waloryzacji składek, którą przeprowadziliśmy w czerwcu - poinformowała prof. Gertruda Uścińska, prezes ZUS. W zeszłym roku było to niespełna 281 mld zł.\n\nJak co roku ZUS w czerwcu waloryzuje kapitał emerytalny 24 milionów Polaków, aby skompensować inflację i inne procesy gospodarcze za ubiegły rok. Środki wzrosły o określony procent.\n\n– Zakończyliśmy proces waloryzacji rocznych: składek emerytalnych, kapitału początkowego oraz środków na subkoncie. Te wskaźniki przekładają się na wysokość przyszłej emerytury. Do waloryzacji składek zapisanych na koncie i subkoncie osób ubezpieczonych w ZUS na 31 stycznia 2022 r. przyjęliśmy dwa wskaźniki: 114,40 proc. dla składek emerytalnych na koncie oraz 109,20 proc. dla środków na subkoncie - mówi profesor.\n\nKapitał na kontach osób ubezpieczonych w ZUS zwiększył się tym samym o ponad 450 mld zł. Dla porównania – w ubiegłym roku było to niemal 281 mld zł.\n\nDane z waloryzacji rocznych będą w najbliższych dniach dostępne na Platformie Usług Elektronicznych (PUE) ZUS. Zostaną one również uwzględnione w informacji o stanie konta ubezpieczonego według stanu na 31 grudnia 2022 r., którą ZUS przygotowuje co roku.\n\nInformację o stanie konta ubezpieczonego w ZUS otrzyma każda osoba urodzona po 1948 r., która choć przez krótki okres była objęta powszechnym systemem zabezpieczenia społecznego, a na jej koncie w ZUS została zapisana choćby jedna składka.\n\nTaka osoba dowie się, ile na swoim koncie emerytalnym zgromadziła składek w wysokości nominalnej oraz po przeprowadzanej przez ZUS co roku waloryzacji. Informacja będzie dostępna na na PUE ZUS. Od 2020 roku – zgodnie z przepisami – ZUS wysyła papierowe informacje tylko na życzenie klientów.",
+      "sourceTextSha256": "23c6d904be85329fd66ee5ac124c4748abee48cb8fc820c11a72d9e27de1e430",
+      "publicAccordionText": [],
+      "sourceLinks": [],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Archiwalna wiadomość o waloryzacji 2023 z datą, okresem odniesienia i wskaźnikami zgodnymi z tekstem. Usunąć opakowanie zapytania sugerujące nowości 2026. Nie używać tych wskaźników jako wartości 2026.",
+      "blockerOrLimit": "Brak blokady odczytu. Nie ustalano wskaźników ani zasad obecnego roku.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    },
+    {
+      "key": "4ce9f131",
+      "id": "draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki",
+      "namespace": "TaxbellPayrollHRReference",
+      "status": "promoted",
+      "evidenceLabel": "POTWIERDZONE",
+      "sourceUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
+      "finalUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
+      "httpStatus": 200,
+      "recoveredAtUtc": "2026-10-13T09:33:34.648Z",
+      "recovery": "original_recovered",
+      "redirectClassification": "none",
+      "sourceDates": {
+        "publication": "2026-07-01",
+        "update": null,
+        "timeZone": "Dates/times as displayed; UTC is only fetch time"
+      },
+      "coverage": "Cały journal-content-article: płatnik zasiłku, formy wniosków, przekazanie do ZUS, załączniki, termin i wskazana podstawa prawna.",
+      "attempts": [
+        {
+          "method": "clean ephemeral Chromium; no authentication",
+          "startedAt": "2026-10-13T09:33:27.255Z",
+          "requestedUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
+          "actions": [],
+          "httpStatus": 200,
+          "networkidle": "reached",
+          "finalUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
+          "title": "Od lipca prostsze zasady składania wniosków o zasiłki - ZUS",
+          "finishedAt": "2026-10-13T09:33:34.648Z"
+        }
+      ],
+      "promotedJsonPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.json",
+      "promotedMarkdownPath": "/docker/openspg/docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.md",
+      "savedJsonBody": "Automated source-discovery draft.\n\nQuery: ZUS składki 2026 zmiany od lipca nowe świadczenia\nSource: https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki\nTier: official\nDiscovery confidence: 0.9\n\nOd lipca prostsze zasady składania wniosków o zasiłki - ZUS\n\nReview this draft before promotion.",
+      "savedMarkdownBody": "Automated source-discovery draft.\n\nQuery: ZUS składki 2026 zmiany od lipca nowe świadczenia\nSource: https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki\nTier: official\nDiscovery confidence: 0.9\n\nOd lipca prostsze zasady składania wniosków o zasiłki - ZUS\n\nReview this draft before promotion.",
+      "savedMarkdownSha256": "c5eb2cf1b646b6d9501ba972025ec7edf469958a36c24455f3525e72ae4904ad",
+      "savedJsonBodySha256": "3387bf7c7791db1886453316629030ad4d84f6bbb2604bbfb62c9e0313197e1d",
+      "comparison": "Zapis ma wyłącznie tytuł, pomijając zasadnicze rozróżnienie wniosków do pracodawcy i do ZUS oraz warunki podpisu i terminy.",
+      "recoveredFacts": [
+        "Według artykułu od 1.07.2026 formy dokumentów zależą od płatnika: powyżej 20 ubezpieczonych – płatnik składek, do 20 – ZUS, z opisanym wyjątkiem okresu po ustaniu ubezpieczenia.",
+        "Do płatnika wniosek papierowy lub elektroniczny, np. email/system/skan; do ZUS papier albo dokument elektroniczny PUE/eZUS/e-doręczenia z wymienionym podpisem.",
+        "Płatnik niepłacący zasiłku opiekuńczego przekazuje wniosek do ZUS papierowo lub elektronicznie, bez duplikowania papieru.",
+        "Załączniki: oryginały, potwierdzone kopie lub kopie elektroniczne; przekazanie potrzebnych dokumentów przez płatnika do ZUS w ciągu 7 dni od otrzymania.",
+        "Wskazane ustawy: 25.06.1999 (Dz.U. 2025 poz. 501 z późn. zm.) i nowelizacja 13.02.2026 (Dz.U. 2026 poz. 441)."
+      ],
+      "sourceText": "1 \nlipca\n2026\n\nOd 1 lipca 2026 r. wchodzą w życie zmiany, które upraszczają sposób przekazywania dokumentów niezbędnych do ustalenia prawa do zasiłków z ubezpieczeń społecznych. Sposób składania tych dokumentów zależy od tego, kto jest płatnikiem zasiłku – ZUS czy pracodawca – płatnik składek.\n\nPrzypominamy, że zasiłek z ubezpieczenia chorobowego opłacają ci płatnicy składek, którzy zgłaszają do tego ubezpieczenia powyżej 20 osób (z wyjątkiem osób uprawnionych do zasiłku za okres po ustaniu ubezpieczenia). Oni również ustalają prawo do zasiłku i jego wysokość.\n\nJeżeli płatnicy składek zgłaszają do ubezpieczenia chorobowego do 20 osób, prawo do zasiłku ustala ZUS, który również wypłaca to świadczenie.\n\nSposób składania wniosków o zasiłek\n\nJeżeli zasiłek wypłaca płatnik składek, to wniosek składa do niego osoba ubezpieczona. Płatnik na tej podstawie ustala prawo do zasiłku i jego wysokość.\n\nWniosek można złożyć w postaci:\n\npapierowej – tak jak dotychczas, w zwykłej formie pisemnej z własnoręcznym podpisem,\nelektronicznej, np. za pośrednictwem wewnętrznych systemów funkcjonujących u płatnika składek, jak poczta elektroniczna czy system kadrowo-płacowy, albo jako skan dokumentu.\n\nJeżeli zasiłek wypłaca ZUS, to wniosek składa do ZUS osoba ubezpieczona w:\n\npostaci papierowej (jak dotychczas w zwykłej formie pisemnej z własnoręcznym podpisem),\nformie dokumentu elektronicznego na PUE/ eZUS albo na adres do doręczeń elektronicznych (wniosek powinien być podpisany kwalifikowanym podpisem elektronicznym albo podpisem zaufanym albo podpisem osobistym albo  podpisem udostępnionym przez ZUS).\n\nCo w sytuacji, gdy osoba ubezpieczona złoży wniosek o zasiłek opiekuńczy do swojego płatnika składek, który nie wypłaca zasiłku? Wtedy płatnik składek ma obowiązek przekazać wniosek do ZUS albo w postaci papierowej, albo jako załącznik (np. skan) do dokumentu elektronicznego wysłanego np. przez portal eZUS. Nie trzeba wysyłać do ZUS wersji papierowej, jeśli wysłaliśmy wersje elektroniczną wniosku.\n\nWażne!\nWnioski oraz dokumenty niezbędne do przyznania i wypłaty zasiłku, które płatnik składek przekaże do ZUS  w formie dokumentu elektronicznego (czyli np. przez portal eZUS), będą uznawane za tak samo ważne i skutecznie prawnie, jakby były złożone papierowo i podpisane własnoręcznie przez osobę ubezpieczoną.\n\nZałączniki do wniosku o zasiłek\n\nJeśli oprócz wniosku wymagane są inne dokumenty, to można je złożyć jako:\n\ndokumenty oryginalne lub\nkopie tych dokumentów potwierdzone za zgodność z oryginałem, lub\nelektroniczne kopie tych dokumentów (np. skany).\n\nTermin na przekazanie dokumentów do ZUS\n\nJeżeli zasiłki wypłaca ZUS, to płatnik składek powinien przekazać niezbędne dokumenty do przyznania i wypłaty zasiłku najpóźniej w terminie 7 dni od ich otrzymania.\n\nPodstawa prawna\n\nUstawa z dnia 25 czerwca 1999 r. o świadczeniach pieniężnych z ubezpieczenia społecznego w razie choroby i macierzyństwa (Dz.U. z 2025 r. poz. 501, z późn. zm.).\nUstawa z dnia 13 lutego 2026 r. o zmianie ustawy o świadczeniach pieniężnych z ubezpieczenia społecznego w razie choroby i macierzyństwa (Dz.U. z 2026 r. poz. 441).",
+      "sourceTextSha256": "4a0efad48aef6c00f2e23dee7e8b573e56457cc37a0ddce29bd21a4215a4db76",
+      "publicAccordionText": [],
+      "sourceLinks": [],
+      "proposalLabel": "WNIOSEK",
+      "proposedCorrectiveShape": "Datowany artykuł proceduralny z odrębnymi sekcjami: kto wypłaca, wniosek do płatnika, wniosek do ZUS i podpisy, przekazanie przez płatnika, załączniki, 7-dniowy termin, przytoczone podstawy prawne. Nie uogólniać, że zwykły email/skan wystarcza we wszystkich kanałach do ZUS.",
+      "blockerOrLimit": "Brak blokady odczytu. Przytoczone podstawy prawne nie były osobno weryfikowane; porównanie dotyczy zgodności treści z artykułem.",
+      "correctiveMutationExecuted": false,
+      "temporaryEvidence": "/tmp/opencode/remaining-source-evidence.json"
+    }
+  ],
+  "handoff": {
+    "task_id": "promoted-source-comparison-remaining-2026-10-13",
+    "agent": "OpenCode",
+    "host": "docker-ai",
+    "repository": "/docker/openspg",
+    "base_branch": "main",
+    "base_commit": "79e376d241322b2debbffb900a68bcf67ae78004",
+    "result_commit": "uncommitted",
+    "changed_files": [
+      "/docker/openspg/docs/reference/Promoted_Source_Comparison_Remaining_2026-10-13.md",
+      "/docker/openspg/docs/reference/Promoted_Source_Comparison_Remaining_2026-10-13.json"
+    ],
+    "skills_used": [
+      "codex-delegation",
+      "webapp-testing",
+      "verification-before-completion"
+    ],
+    "commands_run": [
+      "git status --short && git branch --show-current && git rev-parse HEAD",
+      "npm run check",
+      "node /tmp/opencode/remaining-source-fetch.mjs",
+      "node /tmp/opencode/remaining-expand.mjs (five runs)",
+      "node /tmp/opencode/remaining-official-expand.mjs (two runs)",
+      "node /tmp/opencode/remaining-inspect.mjs",
+      "node /tmp/opencode/remaining-summary.mjs",
+      "node /tmp/opencode/remaining-report.mjs",
+      "node /tmp/opencode/remaining-verify.mjs",
+      "python3 scripts/validate-module-map.py"
+    ],
+    "validation": {
+      "passed": [
+        "npm run check",
+        "Report verifier: 10/10 exact keys, IDs/status, body/hash, source markers, dates, coverage, attempts and exclusions",
+        "Module map: OK, 4 modules"
+      ],
+      "failed": [],
+      "not_run": [
+        "Builds/runtime integration/legal certification excluded by scope"
+      ]
+    },
+    "confirmed_findings": [
+      "10 original source bodies recovered",
+      "All 10 promoted bodies lack substantive source fidelity",
+      "9c43b46e is dated 2023, not 2026"
+    ],
+    "inferences": [
+      "Proposed shapes are source-based editorial repairs only"
+    ],
+    "hypotheses": [],
+    "risks": [
+      "Dates of discovery/promotion differ from publication; historical announcements must retain dates"
+    ],
+    "approval_required": [],
+    "recommended_next_action": "Use the ten proposed shapes for separately authorized source corrections; preserve source dates and uncertainty."
+  }
+}

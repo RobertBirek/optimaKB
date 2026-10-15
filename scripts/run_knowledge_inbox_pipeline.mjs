@@ -332,7 +332,7 @@ try {
           nsResult.status = 'skip';
           nsResult.error = `KB ${namespace} does not have an OpenSPG projectId configured yet; create the project first or run export-only`;
         } else {
-          const forceFilesForBuild = promotedNamespaces.has(namespace)
+          const forceFilesForBuild = (promotedNamespaces.has(namespace) || explicitNamespaces.includes(namespace))
             ? target.promotedForceFiles || []
             : [];
           actions.push({

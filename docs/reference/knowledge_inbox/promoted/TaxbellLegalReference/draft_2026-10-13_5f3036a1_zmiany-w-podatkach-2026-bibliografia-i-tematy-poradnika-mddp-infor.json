@@ -1,0 +1,57 @@
+{
+  "id": "draft_2026-10-13_5f3036a1_zmiany-w-podatkach-2026-bibliografia-i-tematy-poradnika-mddp-infor",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Zmiany w podatkach 2026: bibliografia i tematy poradnika MDDP/INFOR",
+  "content": "## Bibliografia\nZmiany w podatkach 2026. Praca zbiorowa ekspertów MDDP, redakcja merytoryczna Artur Borkowski, INFOR PL SA, wydanie I/2025, grudzień 2025 r., ISBN 978-83-8268-877-1. Dane wydawnicze znajdują się na stronie 2. PDF ma 130 stron; numery poniżej odnoszą się do stron PDF. Data modyfikacji pliku w lutym 2026 r. nie ustala nowej daty wydania ani zakresu zmian.\n\n## Perspektywa publikacji: strony 5–6\nMonika Dziedzic przedstawia skutki zmian podatkowych z końca 2025 r. i planów na 2026 r., w tym cyfryzacji rozliczeń przez KSeF i JPK CIT. Zastrzega, że część rozwiązań czeka na uchwalenie. W przypisach do projektów autorzy podają m.in. stan prac na 3 grudnia 2025 r.\n\n## Mapa tematów z odniesieniami\n- CIT, s. 7–56: autorzy analizują konstrukcję podatku minimalnego, amortyzację, dochody przerzucane, estoński CIT, IP Box, restrukturyzacje, WHT i finansowanie. Na s. 7–9 porównują podatek minimalny z projektowanym zróżnicowaniem uproszczonej podstawy. Na s. 48–49 wyjaśniają role JPK_KR_PD i JPK_ST_KR: oznaczanie kont, raportowanie zapisów oraz danych środków trwałych i różnic podatkowo-bilansowych. Dalsze tematy obejmują strategię podatkową i samochody.\n- PIT, s. 57–85: autorzy omawiają planowane uprawnienia PIP do ustalania stosunku pracy i ich skutki podatkowo-składkowe. Na s. 57–59 zaznaczają etap projektu. Pozostałe podrozdziały dotyczą m.in. ryczałtu, programów motywacyjnych, ulgi mieszkaniowej, darowizn po leasingu, daniny solidarnościowej, kasowego PIT i orzecznictwa.\n- VAT i akcyza, s. 86–104: Janina Fornalik omawia na s. 86–88 fazowanie KSeF, rozdzielając wystawianie od odbioru faktur. Opisuje też przygotowanie obiegu dokumentów, uprawnień i danych do FA(3). Rozdział zawiera rozliczenia systemu kaucyjnego, kasy fiskalne, orzecznictwo VAT oraz zmiany akcyzowe dotyczące tytoniu.\n- Procedura, s. 105–117: autorzy omawiają informacje przy wszczęciu kontroli, kategorie ryzyka, korekty po kontroli celno-skarbowej, dostosowania do KSeF i inne zmiany proceduralne. Na s. 105–106 opisują znaczenie częściowej korekty dla dalszego sporu.\n- Ceny transferowe, s. 118–125: autorzy rozdzielają projekt doprecyzowania safe harbour dla pożyczek od opisanej nowelizacji dotyczącej statusu PGK. Omawiają TPR, restrukturyzacje i rekomendacje dla transakcji finansowych.\n- Nieruchomości, s. 126–128: Rafał Kran analizuje nowe definicje budynku i budowli oraz spory o zbiorniki, urządzenia techniczne i transformatory. Podkreśla rozbieżności między gminami. Wykaz autorów zajmuje s. 129–130.\n\n## Granice opisu\nTo tematyczne streszczenie historycznego poradnika, obejmujące wszystkie rozdziały, a nie reprodukcja książki. Numery stron pozwalają wrócić do analiz i przypisów. Odczyt warstwy tekstowej nie certyfikuje układu każdego znaku; nie sprawdzono dalszych losów projektów ani aktualnej mocy prawnej opisanych zasad.",
+  "sourceUrl": "https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf",
+  "tags": [
+    "source-correction",
+    "verified-summary",
+    "bibliography",
+    "INFOR",
+    "MDDP",
+    "historical"
+  ],
+  "metadata": {
+    "supersedesDraftId": "draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf",
+    "sourceRetrievedAt": "2026-10-13T09:39:48.424236Z",
+    "sourcePublicationDate": "2025-12",
+    "sourcePublicationDatePrecision": "month; imprint, not an inferred day",
+    "sourceUpdatedAt": "2026-02-27T17:15:52Z",
+    "sourceUpdatedAtBasis": "HTTP Last-Modified; PDF ModDate separately 2026-02-27T18:03:45+01:00; changes unknown",
+    "verificationScope": "source_fidelity_only",
+    "representation": "verified_summary",
+    "historical": true,
+    "originalSourceEvidence": {
+      "path": "/tmp/opencode/priority-bf920a10-original.pdf",
+      "sha256": "bc2099fca62c2d813ec79eb6b1df3f4c653e9d4acc604c35b3dcb9885ac58d30"
+    },
+    "reviewedEvidence": {
+      "path": "/tmp/opencode/priority-bf920a10-full-extraction.txt",
+      "sha256": "d575a935ce8b9c85fa04156e65fdffd343d225a3de87b1e694e5d93e9cd93b92",
+      "locator": "s. 2–9, 48–49, 57–59, 86–88, 105–106, 118–119, 126–130; spis i zakres wszystkich rozdziałów s. 3–4"
+    },
+    "bibliography": {
+      "authors": "Praca zbiorowa ekspertów MDDP",
+      "editor": "Artur Borkowski",
+      "publisher": "INFOR PL SA",
+      "edition": "I/2025",
+      "isbn": "978-83-8268-877-1",
+      "pdfPages": 130
+    },
+    "unverifiedSections": [
+      "Wizualna kontrola wszystkich stron i glifów",
+      "Pełny audyt szczegółowych tez każdego podrozdziału",
+      "Historia rewizji PDF",
+      "Późniejsze losy projektów i aktualna moc prawna"
+    ],
+    "correctionOrigin": "source_correction_review"
+  },
+  "createdAt": "2026-10-13T11:51:06.136Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-13T11:51:46.666Z",
+  "promotedBy": "authorized14-source-correction-controller",
+  "reviewNote": "Verified source correction; supersedes draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf; controller-authorized local phase only.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_5f3036a1_zmiany-w-podatkach-2026-bibliografia-i-tematy-poradnika-mddp-infor.json"
+}

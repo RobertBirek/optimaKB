@@ -1,0 +1,30 @@
+{
+  "id": "draft_2026-09-11_eea4330e_serwis-o-podatkach-podstawa-prawna",
+  "kbName": "Taxbell Legal Reference",
+  "kbNamespace": "TaxbellLegalReference",
+  "title": "Serwis o podatkach - Podstawa prawna",
+  "content": "Source list scan draft.\n\nSource: MF podatki.gov.pl - PIT CIT i rozliczenia\nURL: https://www.podatki.gov.pl/podatki-firmowe/pit/podstawa-prawna\n\nKrótkie podsumowanie: Strona Serwis o podatkach – Podstawa prawna (podatki.gov.pl) gromadzi najważniejsze informacje o PIT dla przedsiębiorców, w tym kluczowe akty prawne i aktualizacje na 2026 rok. Główne punkty:\n- Podstawowy akt PIT: Ustawa z 26 lipca 1991 r. o podatku dochodowym od osób fizycznych (ustawa o PIT), wraz z najnowszymi zmianami publikowanymi w Dz. U. (m.in. Dz. U. z 2026 r. poz. 779).\n- Uzgodnienie z PIT: obowiązują także powiązane akty prawne, w tym ustawa z 15 maja 2026 r. o zmianie PIT, CIT oraz o zryczałtowanym podatku od niektórych przychodów (ryczałt) – wszystkie związane z modyfikacjami zasad opodatkowania firm i przedsiębiorców.\n- Ryczłt PIT: druga ustawa reguluje specyficzne formy opodatkowania (ryczałt od niektórych przychodów).\n- Źródła interpretacyjne i aktualności: BIP MF (wiadomości, wyjaśnienia, ostrzeżenia), System Informacji Celno-Skarbowej EUREKA (int...",
+  "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/pit/podstawa-prawna",
+  "tags": [
+    "pit",
+    "cit",
+    "podatki",
+    "mf"
+  ],
+  "metadata": {
+    "discoveredVia": "source_list",
+    "sourceListId": "source_5603dd29",
+    "sourceType": "exa_query",
+    "sourceTier": "operator_draft",
+    "scanRunId": "source_scan_2026-09-11T02-25-51-966Z_986ffc09",
+    "retrievedAt": "2026-09-11T02:25:58.329Z",
+    "contentHash": "cb5d8939733900a61f3dffe69fa7cb1a2508f8afce054da28607200916e4379f",
+    "contentProvider": "api"
+  },
+  "createdAt": "2026-09-11T02:25:58.913Z",
+  "status": "promoted",
+  "promotedAt": "2026-09-11T07:53:06.788Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved and exported from dashboard",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-09-11/draft_2026-09-11_eea4330e_serwis-o-podatkach-podstawa-prawna.json"
+}

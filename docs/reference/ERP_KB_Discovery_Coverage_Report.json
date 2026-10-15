@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T10:04:31.851Z",
+  "generatedAt": "2026-10-15T10:01:11.906Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
   "dryRun": false,
@@ -8,18 +8,18 @@
     "coveredKbs": 10
   },
   "totals": {
-    "queries": 10,
-    "activeQueries": 10,
-    "candidates": 309,
-    "drafted": 130,
-    "pending": 141,
+    "queries": 16,
+    "activeQueries": 15,
+    "candidates": 469,
+    "drafted": 138,
+    "pending": 293,
     "routed": 7,
     "rejected": 30,
     "duplicates": 1
   },
   "feedback": {
     "overall": {
-      "candidates": 309,
+      "candidates": 469,
       "reviewed": 146,
       "duplicates": 1,
       "accepted": 115,
@@ -72,7 +72,7 @@
     },
     "byKb": {
       "ComarchBetterflyReference": {
-        "candidates": 20,
+        "candidates": 28,
         "reviewed": 7,
         "duplicates": 0,
         "accepted": 7,
@@ -85,7 +85,7 @@
         "falseNegatives": 0
       },
       "ComarchCommunityNews": {
-        "candidates": 28,
+        "candidates": 36,
         "reviewed": 18,
         "duplicates": 0,
         "accepted": 12,
@@ -98,7 +98,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaAdditionalFunctions": {
-        "candidates": 24,
+        "candidates": 40,
         "reviewed": 12,
         "duplicates": 0,
         "accepted": 10,
@@ -111,7 +111,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaPartnerTechnical": {
-        "candidates": 22,
+        "candidates": 24,
         "reviewed": 15,
         "duplicates": 0,
         "accepted": 7,
@@ -124,7 +124,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaReference": {
-        "candidates": 18,
+        "candidates": 38,
         "reviewed": 11,
         "duplicates": 0,
         "accepted": 10,
@@ -137,7 +137,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaSchema": {
-        "candidates": 19,
+        "candidates": 22,
         "reviewed": 5,
         "duplicates": 0,
         "accepted": 0,
@@ -150,7 +150,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaSprint": {
-        "candidates": 23,
+        "candidates": 35,
         "reviewed": 7,
         "duplicates": 0,
         "accepted": 7,
@@ -163,7 +163,7 @@
         "falseNegatives": 0
       },
       "TaxbellAccountingVATReference": {
-        "candidates": 32,
+        "candidates": 48,
         "reviewed": 21,
         "duplicates": 1,
         "accepted": 19,
@@ -176,7 +176,7 @@
         "falseNegatives": 0
       },
       "TaxbellLegalReference": {
-        "candidates": 74,
+        "candidates": 139,
         "reviewed": 22,
         "duplicates": 0,
         "accepted": 18,
@@ -189,7 +189,7 @@
         "falseNegatives": 0
       },
       "TaxbellPayrollHRReference": {
-        "candidates": 49,
+        "candidates": 59,
         "reviewed": 28,
         "duplicates": 0,
         "accepted": 25,
@@ -204,7 +204,7 @@
     },
     "byTier": {
       "community": {
-        "candidates": 20,
+        "candidates": 26,
         "reviewed": 13,
         "duplicates": 0,
         "accepted": 7,
@@ -217,7 +217,7 @@
         "falseNegatives": 0
       },
       "official": {
-        "candidates": 197,
+        "candidates": 300,
         "reviewed": 98,
         "duplicates": 1,
         "accepted": 86,
@@ -230,7 +230,7 @@
         "falseNegatives": 0
       },
       "professional": {
-        "candidates": 90,
+        "candidates": 138,
         "reviewed": 33,
         "duplicates": 0,
         "accepted": 22,
@@ -243,7 +243,7 @@
         "falseNegatives": 0
       },
       "unknown": {
-        "candidates": 2,
+        "candidates": 5,
         "reviewed": 2,
         "duplicates": 0,
         "accepted": 0,
@@ -258,7 +258,7 @@
     },
     "byAction": {
       "CANDIDATE_ONLY": {
-        "candidates": 145,
+        "candidates": 234,
         "reviewed": 55,
         "duplicates": 0,
         "accepted": 42,
@@ -271,7 +271,7 @@
         "falseNegatives": 0
       },
       "CREATE_DRAFT": {
-        "candidates": 115,
+        "candidates": 151,
         "reviewed": 67,
         "duplicates": 1,
         "accepted": 66,
@@ -284,7 +284,7 @@
         "falseNegatives": 0
       },
       "REJECT": {
-        "candidates": 39,
+        "candidates": 73,
         "reviewed": 17,
         "duplicates": 0,
         "accepted": 0,
@@ -297,7 +297,7 @@
         "falseNegatives": 0
       },
       "ROUTE_TO_PIPELINE": {
-        "candidates": 10,
+        "candidates": 11,
         "reviewed": 7,
         "duplicates": 0,
         "accepted": 7,
@@ -311,6 +311,19 @@
       }
     },
     "byQuery": {
+      "generated_ComarchBetterflyReference_160926adef": {
+        "candidates": 3,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchBetterflyReference_440d47e1f5": {
         "candidates": 1,
         "reviewed": 1,
@@ -325,6 +338,19 @@
         "falseNegatives": 0
       },
       "generated_ComarchBetterflyReference_4ea43701d8": {
+        "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchBetterflyReference_51791f2346": {
         "candidates": 2,
         "reviewed": 0,
         "duplicates": 0,
@@ -389,6 +415,19 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_ComarchBetterflyReference_9a81664267": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchBetterflyReference_b74e39bc7b": {
         "candidates": 1,
         "reviewed": 1,
@@ -428,6 +467,32 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_ComarchBetterflyReference_d61a8b71b8": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchBetterflyReference_fbe0021532": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchCommunityNews_14f8ca41c5": {
         "candidates": 1,
         "reviewed": 1,
@@ -435,6 +500,45 @@
         "accepted": 1,
         "rejected": 0,
         "holdsResolved": 1,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchCommunityNews_2bd2711211": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchCommunityNews_44e649c20d": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchCommunityNews_511171c7b4": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
         "evaluable": 0,
         "agreed": 0,
         "agreement": null,
@@ -451,6 +555,19 @@
         "evaluable": 2,
         "agreed": 2,
         "agreement": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchCommunityNews_57cc2ce60c": {
+        "candidates": 8,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
         "falsePositives": 0,
         "falseNegatives": 0
       },
@@ -545,6 +662,19 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_ComarchCommunityNews_f784483e69": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchOptimaAdditionalFunctions_0e472d79ca": {
         "candidates": 2,
         "reviewed": 0,
@@ -565,6 +695,19 @@
         "accepted": 2,
         "rejected": 1,
         "holdsResolved": 3,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaAdditionalFunctions_2a78fe5117": {
+        "candidates": 5,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
         "evaluable": 0,
         "agreed": 0,
         "agreement": null,
@@ -604,6 +747,19 @@
         "accepted": 1,
         "rejected": 1,
         "holdsResolved": 2,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaAdditionalFunctions_52bb5efa6d": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
         "evaluable": 0,
         "agreed": 0,
         "agreement": null,
@@ -662,6 +818,45 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_ComarchOptimaAdditionalFunctions_8c98e67ed2": {
+        "candidates": 4,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaAdditionalFunctions_8cace4ff2c": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaAdditionalFunctions_8fbf5fc3ce": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchOptimaAdditionalFunctions_9b410b8ecf": {
         "candidates": 1,
         "reviewed": 1,
@@ -669,6 +864,32 @@
         "accepted": 1,
         "rejected": 0,
         "holdsResolved": 1,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaAdditionalFunctions_c952889ce4": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaAdditionalFunctions_dea76e6d51": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
         "evaluable": 0,
         "agreed": 0,
         "agreement": null,
@@ -685,6 +906,19 @@
         "evaluable": 4,
         "agreed": 4,
         "agreement": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaPartnerTechnical_1fb996de02": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
         "falsePositives": 0,
         "falseNegatives": 0
       },
@@ -729,6 +963,32 @@
       },
       "generated_ComarchOptimaPartnerTechnical_d456435770": {
         "candidates": 3,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaReference_0229d2c636": {
+        "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaReference_2277ff6f76": {
+        "candidates": 1,
         "reviewed": 0,
         "duplicates": 0,
         "accepted": 0,
@@ -805,6 +1065,32 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_ComarchOptimaReference_6f98b5c5a5": {
+        "candidates": 4,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaReference_747ea415cb": {
+        "candidates": 3,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchOptimaReference_81b04327b7": {
         "candidates": 2,
         "reviewed": 2,
@@ -818,6 +1104,19 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_ComarchOptimaReference_8310b47681": {
+        "candidates": 3,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchOptimaReference_9ba24bbeae": {
         "candidates": 1,
         "reviewed": 1,
@@ -828,6 +1127,32 @@
         "evaluable": 1,
         "agreed": 1,
         "agreement": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaReference_c8dad6e313": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaReference_eed934b5bf": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
         "falsePositives": 0,
         "falseNegatives": 0
       },
@@ -846,6 +1171,19 @@
       },
       "generated_ComarchOptimaSchema_272e33a94e": {
         "candidates": 4,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaSchema_2be610645b": {
+        "candidates": 1,
         "reviewed": 0,
         "duplicates": 0,
         "accepted": 0,
@@ -884,6 +1222,19 @@
         "falseNegatives": 0
       },
       "generated_ComarchOptimaSchema_60d1db4c74": {
+        "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaSchema_cd8c28ef13": {
         "candidates": 2,
         "reviewed": 0,
         "duplicates": 0,
@@ -961,6 +1312,19 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_ComarchOptimaSprint_78299320cb": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchOptimaSprint_9c49fe290c": {
         "candidates": 1,
         "reviewed": 1,
@@ -976,6 +1340,45 @@
       },
       "generated_ComarchOptimaSprint_9cba0adec0": {
         "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaSprint_aa9a8a7f33": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaSprint_b22133ae46": {
+        "candidates": 3,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaSprint_d1ded7e8c0": {
+        "candidates": 3,
         "reviewed": 0,
         "duplicates": 0,
         "accepted": 0,
@@ -1065,6 +1468,32 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_TaxbellAccountingVATReference_6279e7b084": {
+        "candidates": 6,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellAccountingVATReference_759b19f90d": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_TaxbellAccountingVATReference_7b1de7a193": {
         "candidates": 2,
         "reviewed": 0,
@@ -1127,6 +1556,19 @@
         "evaluable": 4,
         "agreed": 4,
         "agreement": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellAccountingVATReference_e7d5f76f64": {
+        "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
         "falsePositives": 0,
         "falseNegatives": 0
       },
@@ -1221,6 +1663,71 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_TaxbellLegalReference_5eadc28a9d": {
+        "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellLegalReference_601f0ba68e": {
+        "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellLegalReference_60dcbb36a8": {
+        "candidates": 6,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellLegalReference_75449767c7": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellLegalReference_85043fe3bc": {
+        "candidates": 5,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_TaxbellLegalReference_9d5bcec7b1": {
         "candidates": 4,
         "reviewed": 3,
@@ -1260,7 +1767,33 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_TaxbellLegalReference_c0a609594d": {
+        "candidates": 5,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_TaxbellLegalReference_caa2c7b988": {
+        "candidates": 5,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellLegalReference_d2579f9935": {
         "candidates": 5,
         "reviewed": 0,
         "duplicates": 0,
@@ -1275,6 +1808,32 @@
       },
       "generated_TaxbellLegalReference_d519847f02": {
         "candidates": 4,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellLegalReference_e7ab90284a": {
+        "candidates": 6,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellLegalReference_ecec31884f": {
+        "candidates": 3,
         "reviewed": 0,
         "duplicates": 0,
         "accepted": 0,
@@ -1312,6 +1871,19 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_TaxbellPayrollHRReference_3a4c3b8395": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_TaxbellPayrollHRReference_3e1de0b6fe": {
         "candidates": 4,
         "reviewed": 4,
@@ -1322,6 +1894,19 @@
         "evaluable": 1,
         "agreed": 1,
         "agreement": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellPayrollHRReference_41d00afd91": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
         "falsePositives": 0,
         "falseNegatives": 0
       },
@@ -1338,6 +1923,19 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_TaxbellPayrollHRReference_5be7887a5d": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_TaxbellPayrollHRReference_605f22e669": {
         "candidates": 3,
         "reviewed": 3,
@@ -1348,6 +1946,19 @@
         "evaluable": 2,
         "agreed": 2,
         "agreement": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellPayrollHRReference_6e160bb407": {
+        "candidates": 3,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
         "falsePositives": 0,
         "falseNegatives": 0
       },
@@ -1416,6 +2027,32 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_TaxbellPayrollHRReference_ccde24dbc4": {
+        "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_TaxbellPayrollHRReference_dfd89d18af": {
+        "candidates": 1,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_TaxbellPayrollHRReference_e635769796": {
         "candidates": 2,
         "reviewed": 0,
@@ -1469,7 +2106,7 @@
         "falseNegatives": 0
       },
       "seed_ComarchOptimaAdditionalFunctions": {
-        "candidates": 6,
+        "candidates": 8,
         "reviewed": 2,
         "duplicates": 0,
         "accepted": 2,
@@ -1482,7 +2119,7 @@
         "falseNegatives": 0
       },
       "seed_ComarchOptimaPartnerTechnical": {
-        "candidates": 9,
+        "candidates": 10,
         "reviewed": 6,
         "duplicates": 0,
         "accepted": 5,
@@ -1495,7 +2132,7 @@
         "falseNegatives": 0
       },
       "seed_ComarchOptimaReference": {
-        "candidates": 3,
+        "candidates": 4,
         "reviewed": 1,
         "duplicates": 0,
         "accepted": 1,
@@ -1521,7 +2158,7 @@
         "falseNegatives": 0
       },
       "seed_ComarchOptimaSprint": {
-        "candidates": 11,
+        "candidates": 15,
         "reviewed": 0,
         "duplicates": 0,
         "accepted": 0,
@@ -1534,7 +2171,7 @@
         "falseNegatives": 0
       },
       "seed_TaxbellAccountingVATReference": {
-        "candidates": 6,
+        "candidates": 11,
         "reviewed": 1,
         "duplicates": 0,
         "accepted": 1,
@@ -1547,7 +2184,7 @@
         "falseNegatives": 0
       },
       "seed_TaxbellLegalReference": {
-        "candidates": 40,
+        "candidates": 67,
         "reviewed": 10,
         "duplicates": 0,
         "accepted": 9,
@@ -1560,7 +2197,7 @@
         "falseNegatives": 0
       },
       "seed_TaxbellPayrollHRReference": {
-        "candidates": 15,
+        "candidates": 21,
         "reviewed": 7,
         "duplicates": 0,
         "accepted": 6,
@@ -1721,85 +2358,85 @@
       "kbNamespace": "ComarchOptimaSchema",
       "kbName": "Comarch Optima ERP MSSQL Schema",
       "mode": "CANDIDATE_ONLY",
-      "activeQueries": 1,
-      "totalQueries": 1,
-      "candidates": 19,
+      "activeQueries": 2,
+      "totalQueries": 2,
+      "candidates": 22,
       "drafted": 0,
-      "pending": 14,
+      "pending": 17,
       "routed": 0,
       "rejected": 5,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-23T02:52:20.514Z"
+      "lastCandidateAt": "2026-09-07T02:49:44.928Z"
     },
     {
       "kbNamespace": "ComarchOptimaAdditionalFunctions",
       "kbName": "Comarch Optima Additional Functions",
       "mode": "CANDIDATE_ONLY",
-      "activeQueries": 1,
-      "totalQueries": 1,
-      "candidates": 24,
+      "activeQueries": 2,
+      "totalQueries": 2,
+      "candidates": 40,
       "drafted": 10,
-      "pending": 12,
+      "pending": 28,
       "routed": 0,
       "rejected": 2,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-23T02:50:44.779Z"
+      "lastCandidateAt": "2026-10-11T02:47:03.066Z"
     },
     {
       "kbNamespace": "ComarchOptimaSprint",
       "kbName": "Comarch Optima Sprint and Prints",
       "mode": "CANDIDATE_ONLY",
-      "activeQueries": 1,
-      "totalQueries": 1,
-      "candidates": 23,
+      "activeQueries": 2,
+      "totalQueries": 2,
+      "candidates": 35,
       "drafted": 7,
-      "pending": 16,
+      "pending": 28,
       "routed": 0,
       "rejected": 0,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-31T14:37:55.827Z"
+      "lastCandidateAt": "2026-10-15T02:47:41.955Z"
     },
     {
       "kbNamespace": "ComarchOptimaReference",
       "kbName": "Comarch Optima Reference",
       "mode": "DIRECT_DRAFT",
-      "activeQueries": 1,
-      "totalQueries": 1,
-      "candidates": 18,
+      "activeQueries": 2,
+      "totalQueries": 2,
+      "candidates": 38,
       "drafted": 11,
-      "pending": 6,
+      "pending": 26,
       "routed": 0,
       "rejected": 1,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-28T02:47:18.831Z"
+      "lastCandidateAt": "2026-10-09T02:47:18.031Z"
     },
     {
       "kbNamespace": "ComarchOptimaPartnerTechnical",
       "kbName": "Comarch Optima Partner Technical",
       "mode": "PARTNER_ROUTE",
       "activeQueries": 1,
-      "totalQueries": 1,
-      "candidates": 22,
+      "totalQueries": 2,
+      "candidates": 24,
       "drafted": 0,
-      "pending": 7,
+      "pending": 9,
       "routed": 7,
       "rejected": 8,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-28T02:47:29.713Z"
+      "lastCandidateAt": "2026-09-23T02:49:41.665Z"
     },
     {
       "kbNamespace": "ComarchBetterflyReference",
       "kbName": "Comarch Betterfly Reference",
       "mode": "DIRECT_DRAFT",
-      "activeQueries": 1,
-      "totalQueries": 1,
-      "candidates": 20,
-      "drafted": 7,
-      "pending": 13,
+      "activeQueries": 2,
+      "totalQueries": 2,
+      "candidates": 28,
+      "drafted": 11,
+      "pending": 17,
       "routed": 0,
       "rejected": 0,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-21T02:50:14.375Z"
+      "lastCandidateAt": "2026-10-10T02:50:11.647Z"
     },
     {
       "kbNamespace": "ComarchCommunityNews",
@@ -1807,13 +2444,13 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 28,
+      "candidates": 36,
       "drafted": 12,
-      "pending": 10,
+      "pending": 18,
       "routed": 0,
       "rejected": 6,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-26T02:48:19.403Z"
+      "lastCandidateAt": "2026-10-11T02:47:32.898Z"
     },
     {
       "kbNamespace": "TaxbellLegalReference",
@@ -1821,13 +2458,13 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 74,
-      "drafted": 33,
-      "pending": 37,
+      "candidates": 139,
+      "drafted": 35,
+      "pending": 100,
       "routed": 0,
       "rejected": 4,
       "duplicates": 0,
-      "lastCandidateAt": "2026-09-01T03:53:30.752Z"
+      "lastCandidateAt": "2026-10-15T02:47:56.807Z"
     },
     {
       "kbNamespace": "TaxbellPayrollHRReference",
@@ -1835,13 +2472,13 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 49,
-      "drafted": 28,
-      "pending": 18,
+      "candidates": 59,
+      "drafted": 30,
+      "pending": 26,
       "routed": 0,
       "rejected": 3,
       "duplicates": 0,
-      "lastCandidateAt": "2026-08-29T02:49:53.628Z"
+      "lastCandidateAt": "2026-10-07T02:48:05.527Z"
     },
     {
       "kbNamespace": "TaxbellAccountingVATReference",
@@ -1849,133 +2486,121 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 32,
+      "candidates": 48,
       "drafted": 22,
-      "pending": 8,
+      "pending": 24,
       "routed": 0,
       "rejected": 1,
       "duplicates": 1,
-      "lastCandidateAt": "2026-08-21T02:51:33.400Z"
+      "lastCandidateAt": "2026-10-15T02:48:14.955Z"
     }
   ],
   "recentRuns": [
     {
-      "id": "discovery_autodraft_2026-09-01T10-04-31-724Z_96c00db1",
+      "id": "discovery_autodraft_2026-10-15T10-01-11-706Z_4ccae2bc",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-09-01T10:04:31.724Z",
-      "finishedAt": "2026-09-01T10:04:31.737Z",
+      "startedAt": "2026-10-15T10:01:11.706Z",
+      "finishedAt": "2026-10-15T10:01:11.727Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-09-01T04-04-45-490Z_4225267f",
+      "id": "discovery_autodraft_2026-10-15T04-01-19-801Z_3f0ceea9",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-09-01T04:04:45.490Z",
-      "finishedAt": "2026-09-01T04:04:45.502Z",
+      "startedAt": "2026-10-15T04:01:19.801Z",
+      "finishedAt": "2026-10-15T04:01:20.716Z",
       "resultCount": 0,
-      "draftedCount": 0,
+      "draftedCount": 1,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_daily_2026-09-01T03-53-14-140Z_4b45944f",
+      "id": "discovery_daily_2026-10-15T02-47-13-559Z_5490c87f",
       "type": "daily",
       "ok": true,
-      "startedAt": "2026-09-01T03:53:14.140Z",
-      "finishedAt": "2026-09-01T03:53:30.757Z",
-      "resultCount": 30,
+      "startedAt": "2026-10-15T02:47:13.559Z",
+      "finishedAt": "2026-10-15T02:48:21.941Z",
+      "resultCount": 45,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_daily_2026-09-01T03-48-24-050Z_f56db3b8",
-      "type": "daily",
-      "ok": false,
-      "startedAt": "2026-09-01T03:48:24.050Z",
-      "finishedAt": "2026-09-01T03:51:47.857Z",
-      "resultCount": 30,
-      "draftedCount": 0,
-      "error": "",
-      "errors": [
-        {
-          "queryId": "seed_TaxbellLegalReference",
-          "stage": "llm",
-          "message": "This operation was aborted"
-        }
-      ]
-    },
-    {
-      "id": "discovery_autodraft_2026-09-01T03-46-01-065Z_0fce8749",
+      "id": "discovery_autodraft_2026-10-14T22-04-24-970Z_6207ba48",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-09-01T03:46:01.065Z",
-      "finishedAt": "2026-09-01T03:46:01.172Z",
+      "startedAt": "2026-10-14T22:04:24.970Z",
+      "finishedAt": "2026-10-14T22:04:24.988Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-08-31T22-05-13-910Z_88dd4dd8",
+      "id": "discovery_autodraft_2026-10-14T16-04-25-187Z_6531b56d",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-08-31T22:05:13.910Z",
-      "finishedAt": "2026-08-31T22:05:13.919Z",
+      "startedAt": "2026-10-14T16:04:25.187Z",
+      "finishedAt": "2026-10-14T16:04:25.247Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-08-31T16-05-07-155Z_44994f4c",
+      "id": "discovery_autodraft_2026-10-14T10-01-25-094Z_19f1a4d0",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-08-31T16:05:07.155Z",
-      "finishedAt": "2026-08-31T16:05:07.163Z",
+      "startedAt": "2026-10-14T10:01:25.094Z",
+      "finishedAt": "2026-10-14T10:01:25.115Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_daily_2026-08-31T14-41-59-569Z_79d4f180",
-      "type": "daily",
+      "id": "discovery_autodraft_2026-10-14T04-00-57-700Z_951b0d6a",
+      "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-08-31T14:41:59.569Z",
-      "finishedAt": "2026-08-31T14:42:01.999Z",
-      "resultCount": 30,
+      "startedAt": "2026-10-14T04:00:57.700Z",
+      "finishedAt": "2026-10-14T04:00:57.729Z",
+      "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_daily_2026-08-31T14-37-18-134Z_c8671f2a",
+      "id": "discovery_daily_2026-10-14T02-46-32-301Z_3888e08a",
       "type": "daily",
-      "ok": false,
-      "startedAt": "2026-08-31T14:37:18.134Z",
-      "finishedAt": "2026-08-31T14:38:20.598Z",
-      "resultCount": 27,
+      "ok": true,
+      "startedAt": "2026-10-14T02:46:32.301Z",
+      "finishedAt": "2026-10-14T02:47:30.890Z",
+      "resultCount": 45,
       "draftedCount": 0,
       "error": "",
-      "errors": [
-        {
-          "queryId": "seed_ComarchOptimaAdditionalFunctions",
-          "stage": "search",
-          "message": "This operation was aborted"
-        }
-      ]
+      "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-08-31T10-02-13-831Z_36fb6907",
+      "id": "discovery_autodraft_2026-10-13T22-02-19-597Z_bf0abcbf",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-08-31T10:02:13.831Z",
-      "finishedAt": "2026-08-31T10:02:13.840Z",
+      "startedAt": "2026-10-13T22:02:19.597Z",
+      "finishedAt": "2026-10-13T22:02:19.652Z",
+      "resultCount": 0,
+      "draftedCount": 0,
+      "error": "",
+      "errors": []
+    },
+    {
+      "id": "discovery_autodraft_2026-10-13T16-14-37-505Z_22277ec6",
+      "type": "autodraft",
+      "ok": true,
+      "startedAt": "2026-10-13T16:14:37.505Z",
+      "finishedAt": "2026-10-13T16:14:37.540Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",

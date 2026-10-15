@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T10:23:14.467Z",
+  "generatedAt": "2026-10-12T12:36:07.033Z",
   "staleDays": 14,
   "overall": "WARN",
   "results": [
@@ -9,19 +9,21 @@
       "refreshPolicy": "weekly or after a new Optima version",
       "sourceRoot": "downloads/official/optima_reference",
       "sourceFileCount": 31,
-      "newestSource": "2026-08-24T03:35:16.991Z",
+      "newestSource": "2026-09-14T03:35:08.144Z",
       "oldestSource": "2026-05-24T07:05:55.661Z",
-      "sourceAgeDays": 8,
+      "sourceAgeDays": 28,
       "exportManifest": "exports/optima_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-08-24T03:35:16.994Z",
-      "exportAgeDays": 8,
+      "exportGeneratedAt": "2026-09-14T03:35:08.148Z",
+      "exportAgeDays": 28,
       "exportBehindSource": false,
-      "stale": false,
-      "warnings": [],
+      "stale": true,
+      "warnings": [
+        "Newest source is older than 14 days."
+      ],
       "sampleHashes": [
         {
           "path": "downloads/official/optima_reference/meta/source_registry.json",
-          "sha256": "b6457092e120732b1d93f38380a236df4659cbcf9ffd3ebc17d64c010a679521"
+          "sha256": "c79a8c9a36cdfda197f64a933a7d477758e85a6ccbc9f676871a6dc5812a8583"
         },
         {
           "path": "downloads/official/optima_reference/pages/aktualizacje_po_wydaniu_wersji_36_print.html",
@@ -101,7 +103,7 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-08-24T03:35:16.454Z",
+      "registryGeneratedAt": "2026-09-14T03:35:07.802Z",
       "registrySourceCount": 3398,
       "registryUpdatedCount": 30,
       "registryHashCount": 3398,
@@ -112,7 +114,7 @@
         "official_help_print_snapshot": 27,
         "promoted_knowledge_draft": 5
       },
-      "registryAgeDays": 8
+      "registryAgeDays": 28
     },
     {
       "namespace": "ComarchBetterflyReference",
@@ -120,19 +122,19 @@
       "refreshPolicy": "daily or weekly delta, depending on API doc activity",
       "sourceRoot": "downloads/official/betterfly_reference",
       "sourceFileCount": 32,
-      "newestSource": "2026-08-24T03:35:44.419Z",
+      "newestSource": "2026-10-12T03:35:27.802Z",
       "oldestSource": "2026-05-25T19:16:33.988Z",
-      "sourceAgeDays": 8,
+      "sourceAgeDays": 0,
       "exportManifest": "exports/betterfly_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-08-24T03:35:44.453Z",
-      "exportAgeDays": 8,
+      "exportGeneratedAt": "2026-10-12T03:35:27.850Z",
+      "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
       "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/official/betterfly_reference/meta/source_registry.json",
-          "sha256": "35cffd58591af5da6a3f33ebb8b393ab751005a8aff5b9b50558817205993fff"
+          "sha256": "ab65a942136640c36d38fbeaff130754e348cc8162fdbc8f40c86e7d06298204"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/.html",
@@ -140,110 +142,110 @@
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-proforma.html",
-          "sha256": "0c6b03747c099ccb8fa68e24735fb6fdcca2667c830efaaf6ec7936768c09878"
+          "sha256": "ae795a9300be89e508f1fb2a1ce20a7d0f1a4365a17f72b77645f61bac4b750b"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-sprzedazy-wersja-archiwalna-1-4.html",
-          "sha256": "eac741785ce8be734ccbbaffb0b165be0695206e7ce3ba17739b1f998863cb97"
+          "sha256": "9dca4c4705eb57afa60c4db9cfd6deb1fbb69489c84c36cc609ca30f15acd840"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-sprzedazy.html",
-          "sha256": "32385094bb60b4b5507a9c499de022a610f560ed1906602ce4f03e902eab0bf4"
+          "sha256": "4e905c93b71e67e2f5d98376e3349b3f43e45a55e2927d8b258274c7ff598141"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-vat-marza-wersja-archiwalna-1-4.html",
-          "sha256": "fc5d5f9ffbca517e2ed2e3520eb5735f515f3626ebadd1f247965b2d555513e7"
+          "sha256": "baef55915e3e51a505e9ca12d2d7401b78190f8b61cf883919c0c70fed36d2f3"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-vat-marza.html",
-          "sha256": "95cc81c2800f2e7e739c7dbb9920740f3125716af92186d5a922bf47bba851f4"
+          "sha256": "724dfce053ddb5e50bbe06435e02ca30a17d76fae7bde559e8721860820b071b"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-zakupu.html",
-          "sha256": "e334b307d34201f0b3bb4bfef416adbc4aa516086e80089db4424a685ea830f6"
+          "sha256": "2d216d6356553e4d98dff9d8b213e2164482700ee8a8a3efd2780aadd64db759"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-zaliczkowa-wersja-archiwalna-1-4.html",
-          "sha256": "826bfebe212a2e6b0caedee8705ab365399cd39074359942d77e96e21512c1e1"
+          "sha256": "cf09729ddbe1f201d8fb07bbd61850cb10b5c191bbf807a8c6dd5ce4e18c5f5c"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-faktura-zaliczkowa.html",
-          "sha256": "e87b4d6df12b948fce795c74b2a5ecf19173d7d470a55c989b0e157882d56fe6"
+          "sha256": "4e0b0cbef6cc7ca9ca936ce6968e8a3eb2144068ebb0c8f02a4a693b0e0b785e"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-filtrowanie-zasobow.html",
-          "sha256": "9a8fdc7a41189a648a5237d143fc4692670891cab7ee0f568f5e0e1955607618"
+          "sha256": "acc8acd9f2ed47d136f4a998cec97e12b850f5187d5ecc2621f7c6d9f79b9195"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-formy-platnosci.html",
-          "sha256": "e21b6f25660a812d2657c664eaedfd95d3cf6f11422b1c4b984af7bafbf80745"
+          "sha256": "e4bb8bd35abc37da33938258de1ac90b89fbb425c8682e6c9d79d2d99678f157"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-historia-zmian.html",
-          "sha256": "589dd378482ea8b7c0410e1bd3ada1a102a94231854451955bea6b9d46b2ed14"
+          "sha256": "f03615558324bbfe00de158172965977a8cc759c427b7666b35f6140efffbf13"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-informacje-ogolne.html",
-          "sha256": "a84cadffa3cf99cca8eb9e686e6440457886b71c25d7ec6614063f4ce5e6771b"
+          "sha256": "7464dd9bdd966510de92746b294f97aeb9d51f2d31ea03c5a78497b4736913ef"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-instrukcja-uzytkownika.html",
-          "sha256": "9c952d1f677cf527d92147793ae5bdada2b3e04da8273ab229e3894980692726"
+          "sha256": "4af085d81869cc3595795885653e96cd0ec575c74488e0ef2cae1411209f52ec"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-kontrahenci.html",
-          "sha256": "50da53d2d17751d1cf4c803af118c8c54dd8c0affe95aec1a9dcadbba9e26fb3"
+          "sha256": "2d47be49544895dee796be95e1b1c00be9ce755a84eabdefcd7d8351c1eb7d43"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-korekty.html",
-          "sha256": "fb59f5c05e6912cddb82fd072ff296fda066864a630876f0025480c276bc4d9d"
+          "sha256": "20f0e9f1c0f7192ab6ca3fcfad223ec8d561e0d1e616b1e118139402f541ecca"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-obsluga-procedury-oss.html",
-          "sha256": "0408bd00af6fa1afb23c885a659a301649de47e9f47c058329d5285cabfb9834"
+          "sha256": "1c6f6a550f2fdb7296bd52b079b365d2e25cf6da8b4c181fcb81274bd8e6e702"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-platnosci-wersja-archiwalna-1-4.html",
-          "sha256": "a1afcedf6ba3c0b0498dbc7a66393a79abb27426294717a4cb8ddce3c75b0762"
+          "sha256": "6a9805263c56543d8eea992e953ec78ee32564c6690e827a33c2185b0c7ae544"
         },
         {
           "path": "downloads/official/betterfly_reference/pages/https_pomoc.comarchbetterfly.pl_dokumentacja_api-platnosci.html",
-          "sha256": "eabd9fb965ef88b6712c798ab682fd83fbdbba80bd2d7f36a21356321d0b8132"
+          "sha256": "004c04483b705548fb0bfdb0d7a496044a89afc592a87be740b1c1d06198d7ce"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-08-24T03:35:44.381Z",
+      "registryGeneratedAt": "2026-10-12T03:35:27.645Z",
       "registrySourceCount": 31,
       "registryUpdatedCount": 5,
       "registryHashCount": 31,
       "registryStatusCounts": {
         "unknown": 31
       },
-      "registryAgeDays": 8
+      "registryAgeDays": 0
     },
     {
       "namespace": "ComarchCommunityNews",
       "kbName": "Comarch Community News",
       "refreshPolicy": "daily cron",
       "sourceRoot": "downloads/community_news",
-      "sourceFileCount": 225,
-      "newestSource": "2026-08-29T03:15:25.868Z",
+      "sourceFileCount": 229,
+      "newestSource": "2026-10-12T03:15:12.154Z",
       "oldestSource": "2026-06-09T03:15:29.758Z",
-      "sourceAgeDays": 3,
+      "sourceAgeDays": 0,
       "exportManifest": "exports/community_news/v1/_manifest.json",
-      "exportGeneratedAt": "2026-08-29T03:15:27.213Z",
-      "exportAgeDays": 3,
+      "exportGeneratedAt": "2026-10-12T03:15:12.945Z",
+      "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
       "warnings": [],
       "sampleHashes": [
         {
           "path": "downloads/community_news/api/categories.json",
-          "sha256": "a2c7821d218aec1916ca249017510148378f43ca6d3d2e6001800d05c1be8da2"
+          "sha256": "4a2efc778482e39c856ba2e31ec26b8b355e646d8971375044e20f6a5b9f3c4b"
         },
         {
           "path": "downloads/community_news/api/posts_index.json",
-          "sha256": "2de211b099abf734a6992789f272f81879a87d96d910fb3e933b41f2fb1429c8"
+          "sha256": "2124984888c510a45e44dba6b54fc725dbf7e047a83df29ca3fabd6900a79b0b"
         },
         {
           "path": "downloads/community_news/api/posts/73367.json",
@@ -319,14 +321,14 @@
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-08-29T03:15:25.825Z",
-      "registrySourceCount": 222,
-      "registryUpdatedCount": 222,
-      "registryHashCount": 222,
+      "registryGeneratedAt": "2026-10-12T03:15:12.130Z",
+      "registrySourceCount": 226,
+      "registryUpdatedCount": 226,
+      "registryHashCount": 226,
       "registryStatusCounts": {
-        "DETAIL_OK": 222
+        "DETAIL_OK": 226
       },
-      "registryAgeDays": 3
+      "registryAgeDays": 0
     },
     {
       "namespace": "ComarchOptimaPartnerTechnical",
@@ -336,10 +338,10 @@
       "sourceFileCount": 322,
       "newestSource": "2026-07-30T13:09:01.570Z",
       "oldestSource": "2026-05-24T13:48:17.817Z",
-      "sourceAgeDays": 33,
+      "sourceAgeDays": 74,
       "exportManifest": "exports/optima_partner_technical/v1/_manifest.json",
       "exportGeneratedAt": "2026-07-30T13:09:02.307Z",
-      "exportAgeDays": 33,
+      "exportAgeDays": 74,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -440,7 +442,7 @@
         "promoted_knowledge_draft": 4,
         "unknown": 548
       },
-      "registryAgeDays": 33
+      "registryAgeDays": 74
     },
     {
       "namespace": "ComarchOptimaAdditionalFunctions",
@@ -450,10 +452,10 @@
       "sourceFileCount": 58,
       "newestSource": "2026-08-04T09:29:10.108Z",
       "oldestSource": "2026-05-23T18:27:51.000Z",
-      "sourceAgeDays": 28,
+      "sourceAgeDays": 69,
       "exportManifest": "exports/optima_additional_functions/v1/_manifest.json",
       "exportGeneratedAt": "2026-08-04T09:29:10.108Z",
-      "exportAgeDays": 28,
+      "exportAgeDays": 69,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -555,7 +557,7 @@
         "local_drive_pdf": 3,
         "promoted_knowledge_draft": 11
       },
-      "registryAgeDays": 28
+      "registryAgeDays": 69
     },
     {
       "namespace": "ComarchOptimaSprint",
@@ -563,12 +565,12 @@
       "refreshPolicy": "manual file-driven refresh",
       "sourceRoot": "downloads/google_drive/sprint",
       "sourceFileCount": 11,
-      "newestSource": "2026-07-30T13:08:44.174Z",
+      "newestSource": "2026-09-07T12:06:03.310Z",
       "oldestSource": "2026-05-23T18:22:57.000Z",
-      "sourceAgeDays": 33,
+      "sourceAgeDays": 35,
       "exportManifest": "exports/optima_sprint/v1/_manifest.json",
-      "exportGeneratedAt": "2026-07-30T13:08:44.176Z",
-      "exportAgeDays": 33,
+      "exportGeneratedAt": "2026-09-07T12:06:03.311Z",
+      "exportAgeDays": 35,
       "exportBehindSource": false,
       "stale": true,
       "warnings": [
@@ -617,34 +619,34 @@
         },
         {
           "path": "downloads/google_drive/sprint/meta/source_registry.json",
-          "sha256": "5fa65bd1794d7059d98f50299756ff6cdaefdb9eb847da93e86dba8264343cec"
+          "sha256": "b30218d97a22d1045737f08a45e50f8be24de1ae8052a8606674eda80aa280b0"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-07-30T13:08:41.339Z",
-      "registrySourceCount": 186,
+      "registryGeneratedAt": "2026-09-07T12:06:00.583Z",
+      "registrySourceCount": 185,
       "registryUpdatedCount": 14,
-      "registryHashCount": 186,
+      "registryHashCount": 185,
       "registryStatusCounts": {
         "google_drive_corpus": 10,
         "manual_optima_export": 146,
         "local_drive_markdown": 10,
         "official_web": 12,
-        "promoted_knowledge_draft": 8
+        "promoted_knowledge_draft": 7
       },
-      "registryAgeDays": 33
+      "registryAgeDays": 35
     },
     {
       "namespace": "TaxbellLegalReference",
       "kbName": "Taxbell Legal Reference",
       "refreshPolicy": "wide Exa refresh, then manual review",
       "sourceRoot": "downloads/taxbell/legal_reference",
-      "sourceFileCount": 82,
-      "newestSource": "2026-08-24T03:50:46.754Z",
+      "sourceFileCount": 145,
+      "newestSource": "2026-10-12T03:50:40.052Z",
       "oldestSource": "2026-06-05T14:40:36.163Z",
-      "sourceAgeDays": 8,
+      "sourceAgeDays": 0,
       "exportManifest": "exports/taxbell_legal_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-09-01T09:32:29.529Z",
+      "exportGeneratedAt": "2026-10-12T12:20:41.255Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
@@ -652,15 +654,19 @@
       "sampleHashes": [
         {
           "path": "downloads/taxbell/legal_reference/meta/discovery_report.json",
-          "sha256": "cf54cd9e6f5952141fc1134c3b54cb07d27883484fbb0415b7210acab45f08cd"
+          "sha256": "742376a951968f43c9a0d0af3167663a4d83d11f8016dea426a32f6aee6268b0"
         },
         {
           "path": "downloads/taxbell/legal_reference/meta/source_registry.json",
-          "sha256": "78613217d82661b620b139e8e9174d28d6bd2521a0cf55e652799f120dddffad"
+          "sha256": "a6e54378b66a8ac4038bbca240f47652578911824a90d7b8f44c5a32827e7109"
+        },
+        {
+          "path": "downloads/taxbell/legal_reference/snapshots/00468381ec5312bd.json",
+          "sha256": "fa1a6634aba4aea93cf71024d79bd1bb21f0e2d2042ad85e29684001ded9df30"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/00d166ac4567f6fb.json",
-          "sha256": "c92d7bd710b4805e1fe000a625d8b5dae39dc1a7c9e1016b07e624c3919b6c93"
+          "sha256": "007658248664ce44a672d770898de36694e9e81c3062c715649b357c7b31feca"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/0530784bd3086b81.json",
@@ -671,87 +677,83 @@
           "sha256": "4424374e6db6c2e13d566857da03852fd4cb026c4fad3858039e03c967be94b2"
         },
         {
+          "path": "downloads/taxbell/legal_reference/snapshots/0836f2bb2f5b585c.json",
+          "sha256": "253f97e2294469bd42688fef52ff6320157087732744e7d8c6992b3b9e70446f"
+        },
+        {
           "path": "downloads/taxbell/legal_reference/snapshots/0da52b368f98b81a.json",
-          "sha256": "70849928da30e804decf92590c0e57b2902c8c813f92c0aa03e686766ce3b408"
+          "sha256": "6459383d913b73fcf6efa2090a6a183eda1d618983d2cf36ac898975574f9d92"
+        },
+        {
+          "path": "downloads/taxbell/legal_reference/snapshots/0db9543ff6093653.json",
+          "sha256": "45202300e861a05be256ed016d292a4c978a62dacf0df47eaec88b41f5666cdd"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/0dd681a95a4ef333.json",
-          "sha256": "c6c019c13a9f456a8c13d3becdbcb07ab46d3ee8fe31a8fb5143e2b8aa88253f"
+          "sha256": "62f1dcb1e99193c850a61b4672d3787a7161e512c0d6c2070813d26b45657ae2"
+        },
+        {
+          "path": "downloads/taxbell/legal_reference/snapshots/1003bd390f9c81c5.json",
+          "sha256": "32c565ab22c268b9b8c8ba77b2d6713edb1442d4cb1508c7a2d745eb00ff4117"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/1511a0890b2db7ea.json",
-          "sha256": "5dee029d176f5fa9b22132bf9445b0c180a1b86d37c339a29e56a6c5dac56582"
+          "sha256": "d75bad267971e41f5a6364aaa094aa28101af45193e2fb00366d209217f12faa"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/164f112bc75c58ab.json",
-          "sha256": "9c3794331e4ad780868b54a751f7eafbee5e25c5028996631d410f6a5e53a95d"
+          "sha256": "3382d7504f9e0a68078512c3c1fa70e0fab0cbe1f0b42a84faaa6cbccab66ebe"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/16f7d125efc63ee9.json",
           "sha256": "1b7cba2df56b914be9fb7c268a554ab687b60f2f0e69e740c98ffde38c51d148"
         },
         {
+          "path": "downloads/taxbell/legal_reference/snapshots/1732f4d2e71bf120.json",
+          "sha256": "d02686e3d1769a177d8a12d9b7b02b98d9ff2c870a9f5f46ba1e7ee499585782"
+        },
+        {
           "path": "downloads/taxbell/legal_reference/snapshots/1763c51b248fbaa8.json",
-          "sha256": "f05a5bdfa7ab04ac81e7caa7d94728a62961a4666f8a4d9abae41148e1b42817"
+          "sha256": "7c8d04063fa7e26ace5971b76c6619de0e242a8a8b6d777f83d6bdb50a846843"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/1813abfd8824fe9d.json",
-          "sha256": "82db20d1efdb3cc3096fe4e0429461ce6d514342905723ddbfbeeef1cf0a92dd"
+          "sha256": "a751a786f7bf97225a1f806d5e5101dca835843acaac77a35676f7f81cfe5dd0"
+        },
+        {
+          "path": "downloads/taxbell/legal_reference/snapshots/1b84dfe810b8d815.json",
+          "sha256": "2bf6ef3144e176c04680694afbabfe28898970f0e4db633faf2d137586de4623"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/1bfea378ac0dc6fb.json",
-          "sha256": "7ef80f0d085e09a0196eeaa4b23caf1fe21c82aaee0345592cb150f7523e0a60"
+          "sha256": "b71c57ceee08eab26432eed95cac83f991bbb3b4c61976248a19977215fe25f1"
         },
         {
           "path": "downloads/taxbell/legal_reference/snapshots/1c0185655b3f6ed9.json",
-          "sha256": "95f3203d0299aa776e6e2131a29ac8bcafd891ad919fd5727287f3cea59f002e"
-        },
-        {
-          "path": "downloads/taxbell/legal_reference/snapshots/1eb669320a4dcd3f.json",
-          "sha256": "c6ec9897446ce84a55c2fc49ada8aa6edcea2ded59613cf4ea5db31556e33cba"
-        },
-        {
-          "path": "downloads/taxbell/legal_reference/snapshots/1f8db6dc043ca410.json",
-          "sha256": "82f1c245405b99c1c1a012480e16e95e956d4cec5cc8e1d8fee3fa9f49409124"
-        },
-        {
-          "path": "downloads/taxbell/legal_reference/snapshots/28b289e1a8fce324.json",
-          "sha256": "0d9f4eec8a52388ae0128cd84ff47b06129b3384bc78c62accd4f013ab925b73"
-        },
-        {
-          "path": "downloads/taxbell/legal_reference/snapshots/2a32caaeca8ec0ac.json",
-          "sha256": "5236a122b4b5dd1140c6757066205135774cecb6ad437a0fe6dcad4103b116ba"
-        },
-        {
-          "path": "downloads/taxbell/legal_reference/snapshots/3e218936e8e512b9.json",
-          "sha256": "b9d56806f0e82b13f2e67052563c9832accea0b19bd93d55580415466f91198c"
-        },
-        {
-          "path": "downloads/taxbell/legal_reference/snapshots/40fd08f039292d6a.json",
-          "sha256": "b6e05339b3c7e8f5b3987ae277215d3f6659218ba444cdeaa3b4810b7a93a95e"
+          "sha256": "9ee16fa1b66c1dfb31773b89ec779d0a004df65508e8d181b9088ccd07377bcf"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-08-24T03:50:46.751Z",
-      "registrySourceCount": 42,
-      "registryUpdatedCount": 5,
-      "registryHashCount": 42,
+      "registryGeneratedAt": "2026-10-12T03:50:40.048Z",
+      "registrySourceCount": 44,
+      "registryUpdatedCount": 2,
+      "registryHashCount": 44,
       "registryStatusCounts": {
-        "unknown": 42
+        "unknown": 44
       },
-      "registryAgeDays": 8
+      "registryAgeDays": 0
     },
     {
       "namespace": "TaxbellPayrollHRReference",
       "kbName": "Taxbell Payroll HR Reference",
       "refreshPolicy": "wide Exa refresh, then manual review",
       "sourceRoot": "downloads/taxbell/payroll_hr_reference",
-      "sourceFileCount": 106,
-      "newestSource": "2026-08-24T03:51:39.043Z",
+      "sourceFileCount": 159,
+      "newestSource": "2026-10-12T03:51:21.339Z",
       "oldestSource": "2026-06-05T14:40:42.588Z",
-      "sourceAgeDays": 8,
+      "sourceAgeDays": 0,
       "exportManifest": "exports/taxbell_payroll_hr_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-09-01T09:11:05.067Z",
+      "exportGeneratedAt": "2026-10-12T12:20:41.489Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
@@ -759,31 +761,35 @@
       "sampleHashes": [
         {
           "path": "downloads/taxbell/payroll_hr_reference/meta/discovery_report.json",
-          "sha256": "47fe5d50b62ce336b18c1d49d465938f2c0802b0afce9206911e380b64320cd2"
+          "sha256": "ebe79c87af2ab21185783ff25e49705da11fa8e4169fe3ba5f2b369099d696ad"
         },
         {
           "path": "downloads/taxbell/payroll_hr_reference/meta/source_registry.json",
-          "sha256": "1ed268625fb1dd836aced45d17e2debaa574b312be200e7f490cfa667cdffc79"
+          "sha256": "2b9dbe2c84592ef6a27b37fe77b98bac459fc05dffdb2d7d4afd527f40f85fbc"
         },
         {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/01f9544b0961a8a8.json",
-          "sha256": "3378dc7d5dac2afd37b9e7246e736e825ec383a6aae6a973216a9e9da9a9596e"
+          "sha256": "98203a613a6e17bba03c856496c8c75cb23d57b59095ae52e3c2fb95d3ac59c2"
         },
         {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/04b63e7592f8eb21.json",
-          "sha256": "8a3d170d7cabff4b2d7776570a8b8e049773d4d22abbefd1c4d7661be8e0d8b6"
+          "sha256": "a6638055dcb225c34af879577dbe811f4e0ee1bc18ff98d0f7cbed707812bfd4"
         },
         {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/059dcb9aca46b74d.json",
-          "sha256": "445229404fbf35197ffcd95cba394acecda4a932e4c6117524e20c908c029ded"
+          "sha256": "3e38ebc251f0d2fa6b2778518e8db1520243deca7616d8d6efe253c22ec86012"
         },
         {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/064838c387fe1165.json",
           "sha256": "2a95965a9c04b2709af2d39605c5e27466b1fc334d01554dfd644bf026c9efd2"
         },
         {
+          "path": "downloads/taxbell/payroll_hr_reference/snapshots/07c03c7e4176ad06.json",
+          "sha256": "c0498338816b0da151e19d349dbd15dff2d7f5fecc55532f21c18ca12a6a36f6"
+        },
+        {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/0932776236638257.json",
-          "sha256": "7770d3dcae0c878403da7a6458c94bcc9ba137b71fa8960b39dc4ae03780c2f7"
+          "sha256": "ebb5ec55a9a774ea730fa7fe4f712791727bcab7ca8b55841e865758b9e30955"
         },
         {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/0dd7886cd157a0e2.json",
@@ -791,7 +797,7 @@
         },
         {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/0e6cef1e69f802e6.json",
-          "sha256": "79af03c28154614caa8bd1ddbf41eb5a77dbee310dbaf69db62a034b95cb81bf"
+          "sha256": "54dd898a73f248c92d77ab7e979532f7e89f89b73cd4660e1654bd29245d9765"
         },
         {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/0f3a4e7d8a60949f.json",
@@ -810,55 +816,51 @@
           "sha256": "a57078e10df9bc4b52607f398d058247a8f40aa2e0aa041983476f6924c0b4bf"
         },
         {
+          "path": "downloads/taxbell/payroll_hr_reference/snapshots/13365317706289d0.json",
+          "sha256": "1e66444fd9ea1f39076ab864c8abcf1949af72cec62b8144c84a3c13d4ec807d"
+        },
+        {
           "path": "downloads/taxbell/payroll_hr_reference/snapshots/13b7ecfaa69f1070.json",
-          "sha256": "ee0305e96de8ae0fb91f945c293a20d3856fceb08f82f5bc6c47c679e0b89264"
+          "sha256": "fd7e483a95bcc95e25f3201eacb9c7a28263de5e9d87068e951a679fbb3cb867"
         },
         {
-          "path": "downloads/taxbell/payroll_hr_reference/snapshots/1b37bd34c7b44363.json",
-          "sha256": "d1a7631ec550beb597b31bde944018d9bbafa951ea83ec1395a78e00b8a3ff6e"
+          "path": "downloads/taxbell/payroll_hr_reference/snapshots/14665b33ca14cd60.json",
+          "sha256": "6672ed7cfa7c7897e40bbba82b5f11ad0cb371e0d9b05b46029f2ea548572516"
         },
         {
-          "path": "downloads/taxbell/payroll_hr_reference/snapshots/1b8d4b18b5689047.json",
-          "sha256": "fb13c14c99700804344cd13edba3814bb23f28339b073a969d5aaeccdcea07b7"
+          "path": "downloads/taxbell/payroll_hr_reference/snapshots/151d3bf04a37fe67.json",
+          "sha256": "cea037c47a65661106ab39a0856446f064394b0ca8991505a0c7b9b9f76177ff"
         },
         {
-          "path": "downloads/taxbell/payroll_hr_reference/snapshots/1e3074d74a631f3b.json",
-          "sha256": "0a1aea1f6325031fa87b8f68c51511cddd1a7d5acd3fe061c6b645d42ebb4f57"
+          "path": "downloads/taxbell/payroll_hr_reference/snapshots/171a4ae1d0d825b4.json",
+          "sha256": "06c50d0a48d38ac4a1860c1b6a4f9d4ae6a552d89c1a5a80ad24ec1bf6c13526"
         },
         {
-          "path": "downloads/taxbell/payroll_hr_reference/snapshots/1f85ec279b955548.json",
-          "sha256": "95a5cf052857db2556129880229b0df67a077761ada672342e5fd8f4697abd47"
-        },
-        {
-          "path": "downloads/taxbell/payroll_hr_reference/snapshots/21bede3f3f2efd47.json",
-          "sha256": "eede7065e2b372b3a51f5895ae5219a628be025a2a37bc09281b5c86e0b56c7a"
-        },
-        {
-          "path": "downloads/taxbell/payroll_hr_reference/snapshots/244f16895f704d94.json",
-          "sha256": "cd1b8bbb245a43972a00d4dff9ed357bf10a15e1c35f7136d95b620aa6baba53"
+          "path": "downloads/taxbell/payroll_hr_reference/snapshots/17bd35826afeca5e.json",
+          "sha256": "ad940999f1dc5d15e38b48f038089711e2237dda64d7fc4ba30d2211ee472b53"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-08-24T03:51:39.032Z",
-      "registrySourceCount": 48,
-      "registryUpdatedCount": 4,
-      "registryHashCount": 48,
+      "registryGeneratedAt": "2026-10-12T03:51:21.337Z",
+      "registrySourceCount": 45,
+      "registryUpdatedCount": 2,
+      "registryHashCount": 45,
       "registryStatusCounts": {
-        "unknown": 48
+        "unknown": 45
       },
-      "registryAgeDays": 8
+      "registryAgeDays": 0
     },
     {
       "namespace": "TaxbellAccountingVATReference",
       "kbName": "Taxbell Accounting VAT Reference",
       "refreshPolicy": "wide Exa refresh, then manual review",
       "sourceRoot": "downloads/taxbell/accounting_vat_reference",
-      "sourceFileCount": 89,
-      "newestSource": "2026-08-24T03:52:14.707Z",
-      "oldestSource": "2026-06-05T14:40:53.662Z",
-      "sourceAgeDays": 8,
+      "sourceFileCount": 149,
+      "newestSource": "2026-10-12T03:51:56.615Z",
+      "oldestSource": "2026-06-05T14:40:53.664Z",
+      "sourceAgeDays": 0,
       "exportManifest": "exports/taxbell_accounting_vat_reference/v1/_manifest.json",
-      "exportGeneratedAt": "2026-09-01T09:11:05.221Z",
+      "exportGeneratedAt": "2026-10-12T12:20:41.626Z",
       "exportAgeDays": 0,
       "exportBehindSource": false,
       "stale": false,
@@ -866,15 +868,15 @@
       "sampleHashes": [
         {
           "path": "downloads/taxbell/accounting_vat_reference/meta/discovery_report.json",
-          "sha256": "28f7e2b51bdfa37f18abaa99ecb972cf71e798154fe011fb0b5a128227209f37"
+          "sha256": "c5e161d9ddf3723f84d94337ca7f6c9c2be51a479b5d5e49196025c6acdd347f"
         },
         {
           "path": "downloads/taxbell/accounting_vat_reference/meta/source_registry.json",
-          "sha256": "10b9214641580935de4e23a107f39fa31b6079129f11954770c3f82574f1b1aa"
+          "sha256": "96c22261bc3ef42844dce505e3054ee325e56ef70745dd17f8eec71abd6b2ff2"
         },
         {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/0379497d67374659.json",
-          "sha256": "1485c90d8d151798263cf4b49f37c0c2f8c84e382b303fb9f0bbb228919ab7fd"
+          "sha256": "6deaa0b572e779927e6f0f117a629b28b2462c145323e5efdd44c7c2b8fa3a52"
         },
         {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/04257d71d28da2ef.json",
@@ -885,24 +887,48 @@
           "sha256": "5fd139c33aaf3ddddfe093928cb03a5785bcf5442547afdd2c3f363d95bbf4da"
         },
         {
+          "path": "downloads/taxbell/accounting_vat_reference/snapshots/0c3c263030dfa22f.json",
+          "sha256": "dd5d492a2676dcaf66658ed5754c20bc9201500d176a5fedf64f0aa58c6d8ebe"
+        },
+        {
+          "path": "downloads/taxbell/accounting_vat_reference/snapshots/0db9543ff6093653.json",
+          "sha256": "524ae78c81417741af4a2819c5a2645f5b8cac54aa24827bbdfa9df503cef3c6"
+        },
+        {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/0e5af2db138ff3c0.json",
-          "sha256": "f4fb64c7e31b888a7a4ce3d5b0f637ed714473b222ab55762fd4339d4b42e591"
+          "sha256": "992ab678a0e705e9e4083ba9b27c9ba9afee81cca1bf070954bcd01f6766c971"
+        },
+        {
+          "path": "downloads/taxbell/accounting_vat_reference/snapshots/12affdb85990b386.json",
+          "sha256": "a578fabb5b754c615b37d4ada53933a5b3e317555c4f84cd2de1cb414f6e806f"
+        },
+        {
+          "path": "downloads/taxbell/accounting_vat_reference/snapshots/138a8f65a28c2aff.json",
+          "sha256": "8d2f16ed3e5c6c9dc9afd42bb404c42428df918baf83b1dd80b632e347af6d62"
         },
         {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/152340ceaeea7ae3.json",
           "sha256": "2f132875aa64c3f4c6ffe0cb1395fde53a7a1cac66ec9430596c9ca041520907"
         },
         {
+          "path": "downloads/taxbell/accounting_vat_reference/snapshots/165305b3983ddfb5.json",
+          "sha256": "7e846b10d06187b2f5f22aa85ef43f8dd8020f4c04c78a20aa94c77bd7b19e9b"
+        },
+        {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/1bd93d73d6f78575.json",
-          "sha256": "b8a360d4b6e18885b6e84f11c64afa23fbea2a8fe3fcc1972594d9e7cd749926"
+          "sha256": "aae0f6011270f21b07ab47c6bd14e724fb9aad91a7dff1e9a8c2acfb67ae2a29"
         },
         {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/1c422b4ee41c373a.json",
-          "sha256": "c4825dba45c3487037e70f2b287cf8825b5821e95f92853ebc07de161268ae0b"
+          "sha256": "b3603e9f562a2b95cab72e7ae5e5a4c6bb3bab21921ef183d6036ebf735075a0"
+        },
+        {
+          "path": "downloads/taxbell/accounting_vat_reference/snapshots/1f491c3be1c05018.json",
+          "sha256": "6a5eb4cf9b85aa19f1cd825eb61221031cbae1c15cad791dc1cad9bb118d6def"
         },
         {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/2032cc1dfe6934b7.json",
-          "sha256": "977925595dc595449ac236b78abeb015e5be29d70e901bed24bc13b7743cc210"
+          "sha256": "91188e73ddd9042f072246fa2448df55b5d1ff52d2ae59b590b1b93e34c88fe2"
         },
         {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/21c3c230092d0e73.json",
@@ -918,42 +944,18 @@
         },
         {
           "path": "downloads/taxbell/accounting_vat_reference/snapshots/234deb91026b358b.json",
-          "sha256": "dce16ae6c0fd5f0cab8fad440e8ab56944779484126c0cfaf564d243681665dc"
-        },
-        {
-          "path": "downloads/taxbell/accounting_vat_reference/snapshots/23edef8af33836c3.json",
-          "sha256": "9923ed4dfd9a3050eaf09a61ab0d7b96c09524bde1df48c388b11f0b2910cc6a"
-        },
-        {
-          "path": "downloads/taxbell/accounting_vat_reference/snapshots/268f93c969b5a134.json",
-          "sha256": "7e623bb1439997d3412ff72da16d0da2a22bb742ea65df3314b1126a9d295de2"
-        },
-        {
-          "path": "downloads/taxbell/accounting_vat_reference/snapshots/26a08c863add04c3.json",
-          "sha256": "f658d8a76b92e9bb1439da6442951eea60dd34c0d252bf53ced0dea4f145658e"
-        },
-        {
-          "path": "downloads/taxbell/accounting_vat_reference/snapshots/28b289e1a8fce324.json",
-          "sha256": "7108f26be9e3e28ef233dbe3f1e659fec3f28d2c3e0bbb5b1217b6f0d058744e"
-        },
-        {
-          "path": "downloads/taxbell/accounting_vat_reference/snapshots/33288d13302454d8.json",
-          "sha256": "3b327281710e59f31b104a22161b301db0656da6651ed7c51cde0afa398612ad"
-        },
-        {
-          "path": "downloads/taxbell/accounting_vat_reference/snapshots/35220ce55380799d.json",
-          "sha256": "4c999080a708c01b002cbb73b2343e806826fc2db1f18a87ad3c570c00a0d2a9"
+          "sha256": "bb18b57c8c5f5e2d6968d2619102308e249a2f65af6da62d93c69203b9df1860"
         }
       ],
       "registryPresent": true,
-      "registryGeneratedAt": "2026-08-24T03:52:14.703Z",
-      "registrySourceCount": 47,
-      "registryUpdatedCount": 13,
-      "registryHashCount": 47,
+      "registryGeneratedAt": "2026-10-12T03:51:56.611Z",
+      "registrySourceCount": 43,
+      "registryUpdatedCount": 3,
+      "registryHashCount": 43,
       "registryStatusCounts": {
-        "unknown": 47
+        "unknown": 43
       },
-      "registryAgeDays": 8
+      "registryAgeDays": 0
     }
   ]
 }

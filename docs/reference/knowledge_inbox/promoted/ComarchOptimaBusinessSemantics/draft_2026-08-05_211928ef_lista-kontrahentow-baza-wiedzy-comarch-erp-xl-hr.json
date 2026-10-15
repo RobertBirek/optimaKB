@@ -1,0 +1,25 @@
+{
+  "id": "draft_2026-08-05_211928ef_lista-kontrahentow-baza-wiedzy-comarch-erp-xl-hr",
+  "kbName": "ComarchOptimaBusinessSemantics",
+  "kbNamespace": "ComarchOptimaBusinessSemantics",
+  "title": "Lista kontrahentów – Baza wiedzy Comarch ERP XL HR",
+  "content": "External source discovered via Exa query: pokaż kontrahentów\nTitle: Lista kontrahentów – Baza wiedzy Comarch ERP XL HR\nURL: https://pomoc.comarch.pl/xl/hr/pl/2026/dokumentacja/lista-kontrahentow/\nTier: official\nPublished: 2017-07-04T00:00:00.000Z\nSummary:\nPokaż kontrahentów w ewidencji:\n- Ewidencja kontrahentów gromadzi dane Dostawców i Odbiorców, umożliwiając szybkie wprowadzanie danych (np. na faktury, zapisy kasowe) i funkcjonowanie jako słownik kontrahentów.\n- Dostęp: Ogólne > Kontrahenci w programie (lub z pasku skrótów Comarch ERP XL HR/ Ogólne).\n- Wyświetlane kolumny: Należności PLN i Zobowiązania PLN — sumy nierozliczonych należności/zobowiązań w PLN; wartości z walut obcych przeliczane na PLN. Kolumny domyślnie widoczne; kolory:\n- czarne: brak przekroczonych terminów dla danej pozycji,\n- czerwone: przeterminowane należności/zobowiązania,\n- puste, jeśli brak nierozliczeń.\n- Filtry: Sekcja „Kontrahenci z nierozliczonymi płatnościami” umożliwia filtrowanie dłużników/wierzycieli według minimalnej kwoty, przeterminowania i waluty.\n- Usuwanie: kartę kontrahenta można usunąć tylko jeśli nie ma zapisów w bazie. Zaznaczeni kontrahenci ...\n\nOperator notes:\nAutomatyczny draft utworzony z odpowiedzi fallback KB-first. Sprawdź przed promocją.\nThis draft came from external search and requires review before promotion into a KB.",
+  "sourceUrl": "https://pomoc.comarch.pl/xl/hr/pl/2026/dokumentacja/lista-kontrahentow/",
+  "tags": [
+    "exa",
+    "auto-draft",
+    "weak_local_evidence"
+  ],
+  "metadata": {
+    "discoveredVia": "exa",
+    "exaQuery": "pokaż kontrahentów",
+    "sourceTier": "official",
+    "retrievedAt": "2026-08-05T11:54:48.326Z"
+  },
+  "createdAt": "2026-08-05T11:54:48.714Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-08T12:03:13.668Z",
+  "promotedBy": "mcpbot",
+  "reviewNote": "Approved from inbox row",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-08-05/draft_2026-08-05_211928ef_lista-kontrahentow-baza-wiedzy-comarch-erp-xl-hr.json"
+}

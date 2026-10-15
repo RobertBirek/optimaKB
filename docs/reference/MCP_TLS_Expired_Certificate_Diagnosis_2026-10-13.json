@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "scope": "Read-only TLS diagnosis; no certificate, proxy, client config or runtime changes",
+  "observation_window_utc": {
+    "initial_clock": "2026-10-13T19:45:45Z",
+    "structured_tls_probe_start": "2026-10-13T20:14:37.500949Z",
+    "structured_tls_probe_end": "2026-10-13T20:14:39.400277Z",
+    "last_profile_health": "2026-10-13T20:15:15.583807Z"
+  },
+  "root_cause": {
+    "status": "confirmed_expired_served_leaf",
+    "description": "The current server leaf for optima.kag.taxbell.pl expired at 2026-10-13T10:28:21Z and is still served on both the public DNS target and documented LAN NPMplus host. Fresh validated connections fail at certificate depth 0 before HTTP/MCP.",
+    "renewal_failure_reason": "unresolved: remote certificate manager state and renewal/deployment logs unavailable",
+    "managed_certificate_id": null,
+    "public_to_lan_nat_mapping": "not inspected; identical leaf and complete supplied chain observed on both targets"
+  },
+  "configuration_evidence": {
+    "source": "/root/.config/opencode/opencode.jsonc",
+    "method": "Bounded metadata-only extractor /tmp/opencode/mcp_endpoint_metadata.py; only servernames, hostname, scheme, port, path emitted; query/userinfo/auth omitted",
+    "config_modified": false,
+    "raw_config_displayed": false,
+    "endpoints": [
+      {"servername": "AccountingTaxKB", "hostname": "optima.kag.taxbell.pl", "scheme": "https", "port": 443, "path": "/mcp/accounting-tax-mcp"},
+      {"servername": "PayrollHrKB", "hostname": "optima.kag.taxbell.pl", "scheme": "https", "port": 443, "path": "/mcp/payroll-hr-mcp"},
+      {"servername": "OptimaProductKB", "hostname": "optima.kag.taxbell.pl", "scheme": "https", "port": 443, "path": "/mcp/optima-product-mcp"},
+      {"servername": "LegalComplianceKB", "hostname": "optima.kag.taxbell.pl", "scheme": "https", "port": 443, "path": "/mcp/legal-compliance-mcp"}
+    ]
+  },
+  "connected_read_tool_reproduction": [
+    {"tool": "AccountingTaxKB.list_knowledge_bases", "result": "certificate has expired"},
+    {"tool": "PayrollHrKB.list_knowledge_bases", "result": "certificate has expired"},
+    {"tool": "OptimaProductKB.list_knowledge_bases", "result": "certificate has expired"},
+    {"tool": "LegalComplianceKB.list_knowledge_bases", "result": "certificate has expired"}
+  ],
+  "dns": {
+    "system_resolver_ipv4": ["46.174.24.27"],
+    "ahostsv6_result": "IPv4-mapped ::ffff:46.174.24.27 only; no native IPv6 target observed",
+    "curl_actual_public_remote_ip": "46.174.24.27"
+  },
+  "served_chain": [
+    {
+      "depth": 0,
+      "subject": "CN = optima.kag.taxbell.pl",
+      "issuer": "C = US, O = Let's Encrypt, CN = YE1",
+      "not_before_utc": "2026-07-15T10:28:22Z",
+      "not_after_utc": "2026-10-13T10:28:21Z",
+      "serial_hex": "05A386025097CE1FD5F74B9C2536E160AB75",
+      "sha256_fingerprint": "78:89:E5:C2:87:6D:F2:A4:C7:A0:D6:DE:7B:12:AB:EC:14:3A:9E:42:8C:B3:D9:78:B2:22:4D:AE:B2:C0:E1:32",
+      "san_dns": ["optima.kag.taxbell.pl"],
+      "openssl_x509_checkhost_match": true,
+      "expired_at_observation": true
+    },
+    {
+      "depth": 1,
+      "subject": "C = US, O = Let's Encrypt, CN = YE1",
+      "issuer": "C = US, O = ISRG, CN = Root YE",
+      "not_before_utc": "2025-09-03T00:00:00Z",
+      "not_after_utc": "2028-09-02T23:59:59Z",
+      "serial_hex": "5DDD70DD31F801C85C186A7A04B80AFE",
+      "sha256_fingerprint": "A2:37:2D:06:43:1E:97:16:36:5E:EE:D4:7E:C0:20:35:14:97:D1:82:FC:C0:38:E4:57:E5:81:68:A0:3C:AC:07",
+      "san_dns": [],
+      "expired_at_observation": false
+    },
+    {
+      "depth": 2,
+      "subject": "C = US, O = ISRG, CN = Root YE",
+      "issuer": "C = US, O = Internet Security Research Group, CN = ISRG Root X2",
+      "not_before_utc": "2026-05-13T00:00:00Z",
+      "not_after_utc": "2032-09-02T23:59:59Z",
+      "serial_hex": "872165FC34B6E5FBA8ADD5B3705FB53A",
+      "sha256_fingerprint": "0F:C0:90:1C:CA:2B:AE:9E:9F:DB:B0:2D:50:D0:2F:10:94:F7:B3:66:72:08:69:91:B9:E8:97:62:6D:C4:85:F0",
+      "san_dns": [],
+      "expired_at_observation": false
+    },
+    {
+      "depth": 3,
+      "subject": "C = US, O = Internet Security Research Group, CN = ISRG Root X2",
+      "issuer": "C = US, O = Internet Security Research Group, CN = ISRG Root X1",
+      "not_before_utc": "2026-05-13T00:00:00Z",
+      "not_after_utc": "2032-09-02T23:59:59Z",
+      "serial_hex": "6C8F1DC727C7117F7BAF853AC980F9CD",
+      "sha256_fingerprint": "EE:5F:7A:BD:69:81:BB:02:55:63:2C:D8:F4:92:83:45:1B:4B:18:84:4D:12:04:0B:44:EE:00:F0:7B:8F:E2:C6",
+      "san_dns": [],
+      "expired_at_observation": false
+    }
+  ],
+  "validated_tls_probes": [
+    {"target": "optima.kag.taxbell.pl:443", "observed_utc": "2026-10-13T20:14:37.579881Z", "sni": "optima.kag.taxbell.pl", "openssl_exit": 1, "verify_code": 10, "failure_depth": 0, "chain_matches_saved_chain": true},
+    {"target": "46.174.24.27:443", "observed_utc": "2026-10-13T20:14:38.009009Z", "sni": "optima.kag.taxbell.pl", "openssl_exit": 1, "verify_code": 10, "failure_depth": 0, "chain_matches_saved_chain": true},
+    {"target": "10.10.254.46:443", "observed_utc": "2026-10-13T20:14:38.388858Z", "sni": "optima.kag.taxbell.pl", "openssl_exit": 1, "verify_code": 10, "failure_depth": 0, "chain_matches_saved_chain": true}
+  ],
+  "validated_curl_probes": {
+    "window_utc": ["2026-10-13T20:14:38.804815Z", "2026-10-13T20:14:39.287477Z"],
+    "public_paths": ["/health", "/mcp/accounting-tax-mcp", "/mcp/payroll-hr-mcp", "/mcp/optima-product-mcp", "/mcp/legal-compliance-mcp"],
+    "all_public_results": {"exit_code": 60, "http_code": "000", "ssl_verify_result": 10, "remote_ip": "46.174.24.27", "error": "SSL certificate problem: certificate has expired"},
+    "lan_proxy_health_with_resolve": {"exit_code": 60, "http_code": "000", "ssl_verify_result": 10, "remote_ip": "10.10.254.46"},
+    "lan_proxy_plain_http_health_host_header": {"http_code": 301, "followed": false, "health_proven": false},
+    "proxy_environment_bypassed_for_direct_probes": true,
+    "tls_validation_disabled": false
+  },
+  "service_health": [
+    {"target": "http://10.10.254.42:3400/health", "observed_utc": "2026-10-13T20:14:39.331956Z", "http_code": 200, "ok": true, "service": "erp-knowledge-assistant", "profile": "legacy"},
+    {"target": "http://10.10.254.42:3422/health", "observed_utc": "2026-10-13T20:15:11.092164Z", "http_code": 200, "ok": true, "service": "optima-product-mcp"},
+    {"target": "http://10.10.254.42:3423/health", "observed_utc": "2026-10-13T20:15:12.546344Z", "http_code": 200, "ok": true, "service": "legal-compliance-mcp"},
+    {"target": "http://10.10.254.42:3424/health", "observed_utc": "2026-10-13T20:15:14.085052Z", "http_code": 200, "ok": true, "service": "accounting-tax-mcp"},
+    {"target": "http://10.10.254.42:3425/health", "observed_utc": "2026-10-13T20:15:15.583807Z", "http_code": 200, "ok": true, "service": "payroll-hr-mcp"}
+  ],
+  "local_service_metadata": {
+    "systemd_units": ["erp-kb-mcp.service", "optima-product-mcp.service", "legal-compliance-mcp.service", "accounting-tax-mcp.service", "payroll-hr-mcp.service"],
+    "all_states": "active/running",
+    "ss_listener_addresses": ["10.10.254.42:3400", "10.10.254.42:3422", "10.10.254.42:3423", "10.10.254.42:3424", "10.10.254.42:3425"],
+    "initial_loopback_profile_probe_results": "curl exit 7 on 127.0.0.1:3422-3425; explained by LAN-only bind and followed by successful LAN health checks",
+    "local_docker_npmplus_container": "not present in docker ps name/image listing",
+    "openspg_containers": "server, mysql, neo4j, minio running and healthy in Docker metadata"
+  },
+  "clock": {"ntp_synchronized": true, "timezone": "Europe/Warsaw", "system_time_observed": "2026-10-13 22:13:35 CEST", "equivalent_utc": "2026-10-13T20:13:35Z"},
+  "excluded_as_primary_cause": {
+    "expired_intermediate": "All supplied non-leaf certificates are within validity; OpenSSL verifies depths 3/2/1 then fails expiry at depth 0",
+    "cached_client_certificate": "Fresh OpenSSL and curl connections reproduce the live served expired leaf independently of MCP client state",
+    "wrong_sni": "Explicit matching SNI used for DNS/public-IP/LAN-IP probes; SAN and openssl x509 checkhost match",
+    "wrong_local_time": "UTC observation is after notAfter and timedatectl reports NTP synchronization; no clock change made"
+  },
+  "remote_renewal_boundary": {
+    "documented_host": "10.10.254.46",
+    "documented_service": "NPMplus reverse proxy",
+    "current_matching_tls_listener": "10.10.254.46:443 with SNI optima.kag.taxbell.pl",
+    "exact_container_unit_name": null,
+    "managed_certificate_id": null,
+    "access_blocker": "This session has local host tools on /docker/openspg and unauthenticated remote HTTP/TLS access only. No authorized remote NPMplus administrative session or operator metadata was supplied; checked docs do not identify this public hostname's managed certificate ID. No proxy database, credential/login files or remote authenticated admin API were accessed.",
+    "required_operator_evidence": ["NPMplus proxy-host entry for optima.kag.taxbell.pl and assigned certificate ID", "Managed certificate public serial/fingerprint/notAfter", "Renewal/deployment outcome with secrets redacted", "Current loaded certificate versus stored replacement, if any"]
+  },
+  "proposed_minimal_remediation_not_executed": [
+    "On documented NPMplus host 10.10.254.46 identify the proxy-host/certificate assignment by hostname and saved public serial/fingerprint; record actual managed certificate ID.",
+    "If a valid renewed certificate already exists, deploy/attach that certificate using the existing manager and its normal reload mechanism; otherwise renew the existing assigned certificate through that manager after checking its actual failed renewal/challenge evidence.",
+    "Confirm a valid hostname-matching leaf and trusted chain with normal validated OpenSSL/curl on both the public DNS target and LAN proxy, then retry all four connected read tools."
+  ],
+  "evidence_paths": [
+    "docs/module-map.json (mcp-transport)",
+    "docs/reference/OpenSPG_KB_Operational_Memory.md:1998-2032",
+    "docs/reference/ERP_Knowledge_Assistant_MCP_Taxbell_Rollout.md:5-14,128-174",
+    "docs/reference/Post_Correction_Live_Transport_Check_2026-10-13.md",
+    "scripts/lib/erp_knowledge_mcp_profiles.mjs:29-47",
+    "scripts/erp_knowledge_mcp_http_bridge.mjs:366-386",
+    "/tmp/opencode/mcp_endpoint_metadata.py",
+    "/tmp/opencode/mcp_tls_probe.py",
+    "/tmp/opencode/mcp_lan_health.py"
+  ]
+}

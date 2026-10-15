@@ -1,0 +1,40 @@
+{
+  "id": "draft_2026-10-13_2bd27eef_zus-zapowiedz-dokumentowania-nowych-okresow-stazu-z-21-pazdziernika-2025",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "ZUS: zapowiedź dokumentowania nowych okresów stażu z 21 października 2025",
+  "content": "## Data i charakter informacji\nZUS opublikował 21 października 2025 r. komunikat przygotowawczy dotyczący zmian w stażu pracy. Zapowiedział zmiany Kodeksu pracy od 1 stycznia 2026 r. i zaświadczenia wydawane od nowego roku na podstawie wniosków w PUE/eZUS. Streszczenie opisuje tę zapowiedź; nie ustala późniejszego harmonogramu dla poszczególnych pracodawców.\n\n## Okresy wymienione w komunikacie\nZUS opisuje rozszerzenie stażu o inne formy aktywności zawodowej poza etatem. Wymienia prowadzenie działalności pozarolniczej, współpracę przy niej oraz zawieszenie w celu osobistej opieki nad dzieckiem. Dalej wskazuje zlecenia, inne umowy usługowe, umowy agencyjne, współpracę przy wykonywaniu takich umów oraz członkostwo w rolniczej spółdzielni produkcyjnej i spółdzielni kółek rolniczych. W otwarciu komunikatu wspomina także pracę zarobkową za granicą.\n\n## Dokumentowanie i granice\nWedług ZUS nowe formularze wniosków o zaświadczenia miały pojawić się w PUE/eZUS po wejściu ustawy w życie. Komunikat nie podaje ich późniejszych oznaczeń. ZUS odradza składanie niepotrzebnych wniosków obejmujących cały przebieg ubezpieczenia razem z etatem: zatrudnienie na umowie o pracę nadal miało potwierdzać świadectwo pracy. Odczyt obejmuje cztery akapity źródła; nie obejmuje ustaw, późniejszych instrukcji ani sprawdzenia dostępności formularzy. Nie potwierdza aktualnej mocy prawnej i szczegółów dzisiejszej procedury.",
+  "sourceUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
+  "tags": [
+    "source-correction",
+    "verified-summary",
+    "ZUS",
+    "staż-pracy",
+    "historical"
+  ],
+  "metadata": {
+    "supersedesDraftId": "draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus",
+    "sourceRetrievedAt": "2026-10-13T09:33:34.473Z",
+    "sourcePublicationDate": "2025-10-21",
+    "verificationScope": "source_fidelity_only",
+    "representation": "verified_summary",
+    "historical": true,
+    "originalSourceEvidence": {
+      "path": "/tmp/opencode/remaining-7c66353e.json",
+      "sha256": "f83b0fc5cb0a97f0f628f566f64105f66f7df72a74fef9e85c58d5187239f771",
+      "locator": "domSections: journal-content-article"
+    },
+    "unverifiedSections": [
+      "Późniejszy harmonogram i formularze",
+      "Data aktualizacji",
+      "Aktualna moc prawna"
+    ],
+    "correctionOrigin": "source_correction_review"
+  },
+  "createdAt": "2026-10-13T11:51:31.028Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-13T11:52:14.424Z",
+  "promotedBy": "authorized14-source-correction-controller",
+  "reviewNote": "Verified source correction; supersedes draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus; controller-authorized local phase only.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_2bd27eef_zus-zapowiedz-dokumentowania-nowych-okresow-stazu-z-21-pazdziernika-2025.json"
+}

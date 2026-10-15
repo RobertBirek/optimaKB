@@ -1,1423 +1,7 @@
 {
-  "generatedAt": "2026-09-01T10:21:53.696Z",
-  "overall": "FAIL",
+  "generatedAt": "2026-10-13T16:15:53.013Z",
+  "overall": "WARN",
   "results": [
-    {
-      "namespace": "ComarchOptimaAdditionalFunctions",
-      "kbName": "Comarch Optima Additional Functions",
-      "verdict": "PASS",
-      "exportDir": "exports/optima_additional_functions/v1",
-      "generatedAt": "2026-08-04T09:29:10.108Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 154,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceType",
-            "documentCategory",
-            "versionHint",
-            "articleUpdatedAt",
-            "relatedKnowledgeBase",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 234,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "sourceObjectRefId",
-            "sourceDocument",
-            "sourceSection",
-            "semanticType",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "fileName": "additional_function_capability.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaAdditionalFunctions FunctionCapability CSV Import"
-        },
-        {
-          "fileName": "additional_function_entry_point.csv",
-          "status": "FINISH",
-          "jobName": "ComarchOptimaAdditionalFunctions FunctionEntryPoint CSV Import"
-        },
-        {
-          "fileName": "additional_function_execution_mode.csv",
-          "status": "FINISH",
-          "jobName": "COAF FunctionExecutionMode CSV Import"
-        },
-        {
-          "fileName": "additional_function_configuration_option.csv",
-          "status": "FINISH",
-          "jobName": "COAF FunctionConfigOption CSV Import"
-        },
-        {
-          "fileName": "additional_function_rule.csv",
-          "status": "FINISH",
-          "jobName": "COAF FunctionRule CSV Import"
-        },
-        {
-          "fileName": "additional_function_pattern.csv",
-          "status": "FINISH",
-          "jobName": "COAF FunctionPattern CSV Import"
-        },
-        {
-          "fileName": "related_feature.csv",
-          "status": "FINISH",
-          "jobName": "COAF RelatedFeature CSV Import"
-        },
-        {
-          "fileName": "com_interface.csv",
-          "status": "FINISH",
-          "jobName": "COAF ComInterface CSV Import"
-        },
-        {
-          "fileName": "configuration_catalog_entry.csv",
-          "status": "FINISH",
-          "jobName": "COAF ConfigurationCatalogEntry CSV Import"
-        },
-        {
-          "fileName": "procedure_dictionary_entry.csv",
-          "status": "FINISH",
-          "jobName": "COAF ProcedureDictionaryEntry CSV Import"
-        },
-        {
-          "fileName": "message_catalog_entry.csv",
-          "status": "FINISH",
-          "jobName": "COAF MessageCatalogEntry CSV Import"
-        },
-        {
-          "fileName": "implementation_guide.csv",
-          "status": "FINISH",
-          "jobName": "COAF ImplementationGuide CSV Import"
-        },
-        {
-          "fileName": "module_recipe.csv",
-          "status": "FINISH",
-          "jobName": "COAF ModuleRecipe CSV Import"
-        },
-        {
-          "fileName": "schema_touchpoint.csv",
-          "status": "FINISH",
-          "jobName": "COAF SchemaTouchpoint CSV Import"
-        },
-        {
-          "fileName": "file_artifact.csv",
-          "status": "FINISH",
-          "jobName": "COAF FileArtifact CSV Import"
-        },
-        {
-          "fileName": "implementation_example.csv",
-          "status": "FINISH",
-          "jobName": "COAF ImplementationExample CSV Import"
-        },
-        {
-          "id": 600,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "COAF ReferenceDocument CSV Import",
-          "gmtModified": "2026-08-04 11:29:53"
-        },
-        {
-          "id": 601,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "COAF Chunk CSV Import",
-          "gmtModified": "2026-08-04 11:30:25"
-        }
-      ]
-    },
-    {
-      "namespace": "ComarchOptimaSprint",
-      "kbName": "Comarch Optima Sprint and Prints",
-      "verdict": "WARN",
-      "exportDir": "exports/optima_sprint/v1",
-      "generatedAt": "2026-07-30T13:08:44.176Z",
-      "errors": [],
-      "warnings": [
-        "Duplicate sourceUrl values in reference_document.csv: 1"
-      ],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 172,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceType",
-            "documentCategory",
-            "versionHint",
-            "sourceOrigin",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 312,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "sourceObjectRefId",
-            "sourceDocument",
-            "sourceSection",
-            "semanticType",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 88,
-          "fileName": "print_technology.csv",
-          "status": "FINISH",
-          "jobName": "COSP PrintTechnology CSV Import"
-        },
-        {
-          "id": 89,
-          "fileName": "print_workflow.csv",
-          "status": "FINISH",
-          "jobName": "COSP PrintWorkflow CSV Import"
-        },
-        {
-          "id": 90,
-          "fileName": "print_option.csv",
-          "status": "FINISH",
-          "jobName": "COSP PrintOption CSV Import"
-        },
-        {
-          "id": 91,
-          "fileName": "template_feature.csv",
-          "status": "FINISH",
-          "jobName": "COSP TemplateFeature CSV Import"
-        },
-        {
-          "id": 93,
-          "fileName": "diagnostic_case.csv",
-          "status": "FINISH",
-          "jobName": "COSP DiagnosticCase CSV Import"
-        },
-        {
-          "id": 94,
-          "fileName": "version_change.csv",
-          "status": "FINISH",
-          "jobName": "COSP VersionChange CSV Import"
-        },
-        {
-          "id": 95,
-          "fileName": "print_catalog.csv",
-          "status": "FINISH",
-          "jobName": "COSP PrintCatalog CSV Import"
-        },
-        {
-          "id": 96,
-          "fileName": "learning_resource.csv",
-          "status": "FINISH",
-          "jobName": "COSP LearningResource CSV Import"
-        },
-        {
-          "id": 97,
-          "fileName": "glossary_term.csv",
-          "status": "FINISH",
-          "jobName": "COSP GlossaryTerm CSV Import"
-        },
-        {
-          "id": 98,
-          "fileName": "schema_touchpoint.csv",
-          "status": "FINISH",
-          "jobName": "COSP SchemaTouchpoint CSV Import"
-        },
-        {
-          "id": 99,
-          "fileName": "module_recipe.csv",
-          "status": "FINISH",
-          "jobName": "COSP ModuleRecipe CSV Import"
-        },
-        {
-          "id": 87,
-          "fileName": "file_artifact.csv",
-          "status": "FINISH",
-          "jobName": "COSP FileArtifact CSV Import"
-        },
-        {
-          "id": 92,
-          "fileName": "sql_pattern.csv",
-          "status": "FINISH",
-          "jobName": "COSP SqlPattern CSV Import"
-        },
-        {
-          "id": 201,
-          "fileName": "file_artifact.csv",
-          "status": "FINISH",
-          "jobName": "COSP MANUAL REFRESH FileArtifact 1780297719"
-        },
-        {
-          "id": 202,
-          "fileName": "sql_pattern.csv",
-          "status": "FINISH",
-          "jobName": "COSP MANUAL REFRESH SqlPattern 1780297720"
-        },
-        {
-          "id": 387,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "COSP ReferenceDocument CSV Import",
-          "gmtModified": "2026-06-30 10:49:48"
-        },
-        {
-          "id": 390,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "COSP Chunk CSV Import",
-          "gmtModified": "2026-06-30 10:50:44"
-        }
-      ]
-    },
-    {
-      "namespace": "ComarchOptimaReference",
-      "kbName": "Comarch Optima Reference",
-      "verdict": "PASS",
-      "exportDir": "exports/optima_reference/v1",
-      "generatedAt": "2026-08-24T03:35:16.994Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 3368,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceType",
-            "documentCategory",
-            "moduleScope",
-            "categoryHint",
-            "versionHint",
-            "lastModified",
-            "localSnapshotPath",
-            "sourceOrigin",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 456,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 102,
-          "fileName": "help_category.csv",
-          "status": "FINISH",
-          "jobName": "CORF HelpCategory CSV Import"
-        },
-        {
-          "id": 103,
-          "fileName": "module_area.csv",
-          "status": "FINISH",
-          "jobName": "CORF ModuleArea CSV Import"
-        },
-        {
-          "id": 109,
-          "fileName": "learning_guide.csv",
-          "status": "FINISH",
-          "jobName": "CORF LearningGuide CSV Import"
-        },
-        {
-          "id": 110,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "CORF KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 112,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "CORF EntryGuide CSV Import"
-        },
-        {
-          "id": 227,
-          "fileName": "version_topic.csv",
-          "status": "FINISH",
-          "jobName": "CORF VersionTopic CSV Import"
-        },
-        {
-          "id": 363,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "CORF Chunk CSV Import",
-          "gmtModified": "2026-06-12 15:34:04"
-        },
-        {
-          "id": 574,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "CORF ReferenceDocument CSV Import",
-          "gmtModified": "2026-07-31 07:41:13"
-        }
-      ]
-    },
-    {
-      "namespace": "ComarchOptimaPartnerTechnical",
-      "kbName": "Comarch Optima Partner Technical",
-      "verdict": "PASS",
-      "exportDir": "exports/optima_partner_technical/v1",
-      "generatedAt": "2026-07-30T13:09:02.307Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 126,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceType",
-            "documentCategory",
-            "versionHint",
-            "articleUpdatedAt",
-            "relatedKnowledgeBase",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "partner_asset.csv",
-          "exists": true,
-          "rowCount": 548,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "directDownloadUrl",
-            "assetTypeRefId",
-            "categoryRefId",
-            "versionBandRefId",
-            "productAreaRefId",
-            "overlapPolicy",
-            "primaryRouteKbName",
-            "primaryRouteNamespace",
-            "mimeType",
-            "fileExtension",
-            "publishedAt",
-            "currentState",
-            "localSnapshotPath",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 339,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 122,
-          "fileName": "partner_category.csv",
-          "status": "FINISH",
-          "jobName": "COPT PartnerCategory CSV Import"
-        },
-        {
-          "id": 147,
-          "fileName": "partner_asset.csv",
-          "status": "FINISH",
-          "jobName": "COPT PartnerAsset CSV Import"
-        },
-        {
-          "id": 124,
-          "fileName": "asset_type.csv",
-          "status": "FINISH",
-          "jobName": "COPT AssetType CSV Import"
-        },
-        {
-          "id": 125,
-          "fileName": "version_band.csv",
-          "status": "FINISH",
-          "jobName": "COPT VersionBand CSV Import"
-        },
-        {
-          "id": 126,
-          "fileName": "product_area.csv",
-          "status": "FINISH",
-          "jobName": "COPT ProductArea CSV Import"
-        },
-        {
-          "id": 165,
-          "fileName": "msg_entry.csv",
-          "status": "FINISH",
-          "jobName": "COPT MsgEntry CSV Import"
-        },
-        {
-          "id": 138,
-          "fileName": "com_example.csv",
-          "status": "FINISH",
-          "jobName": "COPT ComExample CSV Import"
-        },
-        {
-          "id": 139,
-          "fileName": "com_interface_use.csv",
-          "status": "FINISH",
-          "jobName": "COPT ComInterfaceUse CSV Import"
-        },
-        {
-          "id": 140,
-          "fileName": "com_schema_touchpoint.csv",
-          "status": "FINISH",
-          "jobName": "COPT ComSchemaTouchpoint CSV Import"
-        },
-        {
-          "id": 127,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "COPT KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 150,
-          "fileName": "com_module_recipe.csv",
-          "status": "FINISH",
-          "jobName": "COPT ComModuleRecipe CSV Import"
-        },
-        {
-          "id": 160,
-          "fileName": "cfg_entry.csv",
-          "status": "FINISH",
-          "jobName": "COPT CfgEntry CSV Import"
-        },
-        {
-          "id": 162,
-          "fileName": "proc_entry.csv",
-          "status": "FINISH",
-          "jobName": "COPT ProcEntry CSV Import"
-        },
-        {
-          "id": 385,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "COPT ReferenceDocument CSV Import",
-          "gmtModified": "2026-06-30 10:49:45"
-        },
-        {
-          "id": 389,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "COPT Chunk CSV Import",
-          "gmtModified": "2026-06-30 10:50:37"
-        }
-      ]
-    },
-    {
-      "namespace": "ComarchBetterflyReference",
-      "kbName": "Comarch Betterfly Reference",
-      "verdict": "PASS",
-      "exportDir": "exports/betterfly_reference/v1",
-      "generatedAt": "2026-08-24T03:35:44.453Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 40,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceType",
-            "documentCategory",
-            "moduleScope",
-            "categoryHint",
-            "versionHint",
-            "lastModified",
-            "localSnapshotPath",
-            "sourceOrigin",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "api_resource.csv",
-          "exists": true,
-          "rowCount": 25,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "resourceCode",
-            "resourceGroup",
-            "endpointBase",
-            "versionHint",
-            "supportedMethods",
-            "authModel",
-            "sourceDocumentRefIds",
-            "exampleEndpoints",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "api_pattern.csv",
-          "exists": true,
-          "rowCount": 80,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "patternType",
-            "httpMethod",
-            "endpointPath",
-            "versionHint",
-            "useCase",
-            "sourceDocumentRefId",
-            "exampleSnippet",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 267,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 167,
-          "fileName": "help_category.csv",
-          "status": "FINISH",
-          "jobName": "CBRF HelpCategory CSV Import",
-          "gmtModified": "2026-05-25 21:32:21"
-        },
-        {
-          "id": 168,
-          "fileName": "module_area.csv",
-          "status": "FINISH",
-          "jobName": "CBRF ModuleArea CSV Import",
-          "gmtModified": "2026-05-25 21:32:55"
-        },
-        {
-          "id": 193,
-          "fileName": "learning_guide.csv",
-          "status": "FINISH",
-          "jobName": "CBRF LearningGuide CSV Import",
-          "gmtModified": "2026-05-26 09:25:56"
-        },
-        {
-          "id": 194,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "CBRF EntryGuide CSV Import",
-          "gmtModified": "2026-05-26 09:26:25"
-        },
-        {
-          "id": 322,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "CBRF KnowledgeRoute CSV Import",
-          "gmtModified": "2026-06-10 11:00:51"
-        },
-        {
-          "id": 590,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "CBRF ReferenceDocument CSV Import",
-          "gmtModified": "2026-08-04 07:09:59"
-        },
-        {
-          "id": 591,
-          "fileName": "api_resource.csv",
-          "status": "FINISH",
-          "jobName": "CBRF ApiResource CSV Import",
-          "gmtModified": "2026-08-04 07:10:29"
-        },
-        {
-          "id": 592,
-          "fileName": "api_pattern.csv",
-          "status": "FINISH",
-          "jobName": "CBRF ApiPattern CSV Import",
-          "gmtModified": "2026-08-04 07:11:07"
-        },
-        {
-          "id": 663,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "CBRF Chunk CSV Import",
-          "gmtModified": "2026-08-24 05:36:52"
-        }
-      ]
-    },
-    {
-      "namespace": "ComarchCommunityNews",
-      "kbName": "Comarch Community News",
-      "verdict": "PASS",
-      "exportDir": "exports/community_news/v1",
-      "generatedAt": "2026-08-29T03:15:27.213Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 167,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceType",
-            "documentCategory",
-            "moduleScope",
-            "categoryHint",
-            "publishedAt",
-            "lastModified",
-            "localSnapshotPath",
-            "sourceOrigin",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "news_topic.csv",
-          "exists": true,
-          "rowCount": 37,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "topicSlug",
-            "topicType",
-            "usageCount",
-            "moduleScope",
-            "sourceUrl",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 590,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 209,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "CCN KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 210,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "CCN EntryGuide CSV Import"
-        },
-        {
-          "id": 676,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "CCN ReferenceDocument CSV Import",
-          "gmtModified": "2026-08-28 05:25:42"
-        },
-        {
-          "id": 677,
-          "fileName": "news_topic.csv",
-          "status": "FINISH",
-          "jobName": "CCN NewsTopic CSV Import",
-          "gmtModified": "2026-08-28 05:27:37"
-        },
-        {
-          "id": 678,
-          "fileName": "community_attachment.csv",
-          "status": "FINISH",
-          "jobName": "CCN CommunityAttachment CSV Import",
-          "gmtModified": "2026-08-28 05:28:43"
-        },
-        {
-          "id": 679,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "CCN Chunk CSV Import",
-          "gmtModified": "2026-08-28 05:30:08"
-        }
-      ]
-    },
-    {
-      "namespace": "ComarchUniversalKnowledge",
-      "kbName": "Comarch Universal Knowledge",
-      "verdict": "WARN",
-      "exportDir": "exports/universal_knowledge/v1",
-      "generatedAt": "2026-06-24T07:39:30.734Z",
-      "errors": [],
-      "warnings": [
-        "Required CSV has zero rows: reference_document.csv (catch-all KB starts empty)",
-        "Required CSV has zero rows: chunk.csv (catch-all KB starts empty)"
-      ],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 0,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceType",
-            "documentCategory",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 0,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": []
-    },
-    {
-      "namespace": "OWAOntology",
-      "kbName": "OWA Platform Optima Ontology",
-      "verdict": "PASS",
-      "exportDir": "exports/owa_ontology/v1",
-      "generatedAt": "2026-08-31T17:18:32.273Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "ontology_entity.csv",
-          "exists": true,
-          "rowCount": 67,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "canonicalName",
-            "ontologyId",
-            "verificationStatus",
-            "confidenceLevel",
-            "businessDomain",
-            "mainTable",
-            "mcpReadTools",
-            "mcpWriteTools",
-            "aliases",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "ontology_field.csv",
-          "exists": true,
-          "rowCount": 109,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "entityRefId",
-            "fieldName",
-            "mssqlColumn",
-            "mcpField",
-            "sqlType",
-            "nullable",
-            "keyRole",
-            "mappingStatus",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "ontology_relation.csv",
-          "exists": true,
-          "rowCount": 147,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceEntityRefId",
-            "targetEntityRefId",
-            "predicate",
-            "cardinality",
-            "relationType",
-            "joinCondition",
-            "status",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "workflow_pattern.csv",
-          "exists": true,
-          "rowCount": 132,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "workflowName",
-            "sourceEntityRefId",
-            "targetEntityRefId",
-            "mcpTool",
-            "mode",
-            "status",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 190,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 462,
-          "fileName": "ontology_entity.csv",
-          "status": "FINISH",
-          "jobName": "OWAO OntologyEntity CSV Import",
-          "gmtModified": "2026-07-22 16:41:49"
-        },
-        {
-          "id": 463,
-          "fileName": "ontology_field.csv",
-          "status": "FINISH",
-          "jobName": "OWAO OntologyField CSV Import",
-          "gmtModified": "2026-07-22 16:42:29"
-        },
-        {
-          "id": 464,
-          "fileName": "ontology_relation.csv",
-          "status": "FINISH",
-          "jobName": "OWAO OntologyRelation CSV Import",
-          "gmtModified": "2026-07-22 16:43:10"
-        },
-        {
-          "id": 465,
-          "fileName": "workflow_pattern.csv",
-          "status": "FINISH",
-          "jobName": "OWAO WorkflowPattern CSV Import",
-          "gmtModified": "2026-07-22 16:43:45"
-        },
-        {
-          "id": 466,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "OWAO Chunk CSV Import",
-          "gmtModified": "2026-07-22 16:44:27"
-        }
-      ]
-    },
-    {
-      "namespace": "TaxbellPayrollHRReference",
-      "kbName": "Taxbell Payroll HR Reference",
-      "verdict": "PASS",
-      "exportDir": "exports/taxbell_payroll_hr_reference/v1",
-      "generatedAt": "2026-09-01T06:48:59.216Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 74,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceDomain",
-            "sourceTier",
-            "documentCategory",
-            "topicArea",
-            "audienceMode",
-            "riskLevel",
-            "publishedAt",
-            "lastModified",
-            "retrievedAt",
-            "localSnapshotPath",
-            "contentHash",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "source_topic.csv",
-          "exists": true,
-          "rowCount": 10,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "topicSlug",
-            "topicGroup",
-            "sourceTier",
-            "usageCount",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 577,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 253,
-          "fileName": "source_topic.csv",
-          "status": "FINISH",
-          "jobName": "TBHR SourceTopic CSV Import"
-        },
-        {
-          "id": 254,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "TBHR KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 255,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "TBHR EntryGuide CSV Import"
-        },
-        {
-          "id": 683,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "TBHR ReferenceDocument CSV Import",
-          "gmtModified": "2026-09-01 08:49:39"
-        },
-        {
-          "id": 684,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "TBHR Chunk CSV Import",
-          "gmtModified": "2026-09-01 08:50:34"
-        }
-      ]
-    },
-    {
-      "namespace": "ComarchOptimaBusinessSemantics",
-      "kbName": "Comarch Optima Business Semantics",
-      "verdict": "FAIL",
-      "exportDir": "exports/optima_business_semantics/v1",
-      "generatedAt": "2026-08-31T17:40:31.938Z",
-      "errors": [
-        "Promoted drafts without visible business descriptions: 1"
-      ],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "business_domain.csv",
-          "exists": true,
-          "rowCount": 8,
-          "columns": [
-            "name",
-            "description"
-          ]
-        },
-        {
-          "fileName": "business_description.csv",
-          "exists": true,
-          "rowCount": 639,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "descriptionPreview",
-            "descriptionHash",
-            "descriptionLength",
-            "tableRefId",
-            "columnRefId",
-            "source",
-            "language",
-            "domainName"
-          ]
-        },
-        {
-          "fileName": "code_meaning.csv",
-          "exists": true,
-          "rowCount": 12,
-          "columns": [
-            "id",
-            "name",
-            "columnRefId",
-            "codeValue",
-            "label",
-            "source",
-            "domainName"
-          ]
-        },
-        {
-          "fileName": "business_rule.csv",
-          "exists": true,
-          "rowCount": 21,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "descriptionPreview",
-            "descriptionHash",
-            "descriptionLength",
-            "tableRefId",
-            "ruleType",
-            "expression",
-            "isHardConstraint",
-            "domainName"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 336,
-          "fileName": "business_domain.csv",
-          "status": "FINISH",
-          "jobName": "COBS BusinessDomain CSV Import",
-          "gmtModified": "2026-06-11 14:49:31"
-        },
-        {
-          "id": 338,
-          "fileName": "code_meaning.csv",
-          "status": "FINISH",
-          "jobName": "COBS CodeMeaning CSV Import",
-          "gmtModified": "2026-06-11 14:51:27"
-        },
-        {
-          "id": 339,
-          "fileName": "business_rule.csv",
-          "status": "FINISH",
-          "jobName": "COBS BusinessRule CSV Import",
-          "gmtModified": "2026-06-11 14:53:43"
-        },
-        {
-          "id": 681,
-          "fileName": "business_description.csv",
-          "status": "FINISH",
-          "jobName": "COBS BusinessDescription CSV Import",
-          "gmtModified": "2026-08-31 19:44:21"
-        }
-      ]
-    },
-    {
-      "namespace": "TaxbellAccountingVATReference",
-      "kbName": "Taxbell Accounting VAT Reference",
-      "verdict": "PASS",
-      "exportDir": "exports/taxbell_accounting_vat_reference/v1",
-      "generatedAt": "2026-09-01T08:13:54.684Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 82,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceDomain",
-            "sourceTier",
-            "documentCategory",
-            "topicArea",
-            "audienceMode",
-            "riskLevel",
-            "publishedAt",
-            "lastModified",
-            "retrievedAt",
-            "localSnapshotPath",
-            "contentHash",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "source_topic.csv",
-          "exists": true,
-          "rowCount": 7,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "topicSlug",
-            "topicGroup",
-            "sourceTier",
-            "usageCount",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 401,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 258,
-          "fileName": "source_topic.csv",
-          "status": "FINISH",
-          "jobName": "TBAC SourceTopic CSV Import"
-        },
-        {
-          "id": 259,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "TBAC KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 260,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "TBAC EntryGuide CSV Import"
-        },
-        {
-          "id": 690,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "TBAC ReferenceDocument CSV Import",
-          "gmtModified": "2026-09-01 10:14:32"
-        },
-        {
-          "id": 691,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "TBAC Chunk CSV Import",
-          "gmtModified": "2026-09-01 10:15:05"
-        }
-      ]
-    },
-    {
-      "namespace": "TaxbellLegalReference",
-      "kbName": "Taxbell Legal Reference",
-      "verdict": "PASS",
-      "exportDir": "exports/taxbell_legal_reference/v1",
-      "generatedAt": "2026-09-01T09:32:29.529Z",
-      "errors": [],
-      "warnings": [],
-      "files": [
-        {
-          "fileName": "reference_document.csv",
-          "exists": true,
-          "rowCount": 75,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceUrl",
-            "sourceDomain",
-            "sourceTier",
-            "documentCategory",
-            "topicArea",
-            "audienceMode",
-            "riskLevel",
-            "publishedAt",
-            "lastModified",
-            "retrievedAt",
-            "localSnapshotPath",
-            "contentHash",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "source_topic.csv",
-          "exists": true,
-          "rowCount": 5,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "topicSlug",
-            "topicGroup",
-            "sourceTier",
-            "usageCount",
-            "summary"
-          ]
-        },
-        {
-          "fileName": "chunk.csv",
-          "exists": true,
-          "rowCount": 386,
-          "columns": [
-            "id",
-            "name",
-            "description",
-            "semanticType",
-            "sourceDocumentRefId",
-            "sourceUrl",
-            "sourcePath",
-            "sectionHeading",
-            "sectionOrder",
-            "content"
-          ]
-        }
-      ],
-      "jobs": [
-        {
-          "id": 248,
-          "fileName": "source_topic.csv",
-          "status": "FINISH",
-          "jobName": "TBLG SourceTopic CSV Import"
-        },
-        {
-          "id": 249,
-          "fileName": "knowledge_route.csv",
-          "status": "FINISH",
-          "jobName": "TBLG KnowledgeRoute CSV Import"
-        },
-        {
-          "id": 250,
-          "fileName": "entry_guide.csv",
-          "status": "FINISH",
-          "jobName": "TBLG EntryGuide CSV Import"
-        },
-        {
-          "id": 696,
-          "fileName": "reference_document.csv",
-          "status": "FINISH",
-          "jobName": "TBLG ReferenceDocument CSV Import",
-          "gmtModified": "2026-09-01 11:34:46"
-        },
-        {
-          "id": 697,
-          "fileName": "chunk.csv",
-          "status": "FINISH",
-          "jobName": "TBLG Chunk CSV Import",
-          "gmtModified": "2026-09-01 11:35:21"
-        }
-      ]
-    },
     {
       "namespace": "ComarchOptimaSchema",
       "kbName": "Comarch Optima ERP MSSQL Schema",
@@ -1611,6 +195,1422 @@
           "status": "FINISH",
           "jobName": "ComarchOptimaSchema Chunk CSV Import",
           "gmtModified": "2026-09-01 12:21:17"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchOptimaAdditionalFunctions",
+      "kbName": "Comarch Optima Additional Functions",
+      "verdict": "PASS",
+      "exportDir": "exports/optima_additional_functions/v1",
+      "generatedAt": "2026-08-04T09:29:10.108Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 154,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceType",
+            "documentCategory",
+            "versionHint",
+            "articleUpdatedAt",
+            "relatedKnowledgeBase",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 234,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "sourceObjectRefId",
+            "sourceDocument",
+            "sourceSection",
+            "semanticType",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "fileName": "additional_function_capability.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaAdditionalFunctions FunctionCapability CSV Import"
+        },
+        {
+          "fileName": "additional_function_entry_point.csv",
+          "status": "FINISH",
+          "jobName": "ComarchOptimaAdditionalFunctions FunctionEntryPoint CSV Import"
+        },
+        {
+          "fileName": "additional_function_execution_mode.csv",
+          "status": "FINISH",
+          "jobName": "COAF FunctionExecutionMode CSV Import"
+        },
+        {
+          "fileName": "additional_function_configuration_option.csv",
+          "status": "FINISH",
+          "jobName": "COAF FunctionConfigOption CSV Import"
+        },
+        {
+          "fileName": "additional_function_rule.csv",
+          "status": "FINISH",
+          "jobName": "COAF FunctionRule CSV Import"
+        },
+        {
+          "fileName": "additional_function_pattern.csv",
+          "status": "FINISH",
+          "jobName": "COAF FunctionPattern CSV Import"
+        },
+        {
+          "fileName": "related_feature.csv",
+          "status": "FINISH",
+          "jobName": "COAF RelatedFeature CSV Import"
+        },
+        {
+          "fileName": "com_interface.csv",
+          "status": "FINISH",
+          "jobName": "COAF ComInterface CSV Import"
+        },
+        {
+          "fileName": "configuration_catalog_entry.csv",
+          "status": "FINISH",
+          "jobName": "COAF ConfigurationCatalogEntry CSV Import"
+        },
+        {
+          "fileName": "procedure_dictionary_entry.csv",
+          "status": "FINISH",
+          "jobName": "COAF ProcedureDictionaryEntry CSV Import"
+        },
+        {
+          "fileName": "message_catalog_entry.csv",
+          "status": "FINISH",
+          "jobName": "COAF MessageCatalogEntry CSV Import"
+        },
+        {
+          "fileName": "implementation_guide.csv",
+          "status": "FINISH",
+          "jobName": "COAF ImplementationGuide CSV Import"
+        },
+        {
+          "fileName": "module_recipe.csv",
+          "status": "FINISH",
+          "jobName": "COAF ModuleRecipe CSV Import"
+        },
+        {
+          "fileName": "schema_touchpoint.csv",
+          "status": "FINISH",
+          "jobName": "COAF SchemaTouchpoint CSV Import"
+        },
+        {
+          "fileName": "file_artifact.csv",
+          "status": "FINISH",
+          "jobName": "COAF FileArtifact CSV Import"
+        },
+        {
+          "fileName": "implementation_example.csv",
+          "status": "FINISH",
+          "jobName": "COAF ImplementationExample CSV Import"
+        },
+        {
+          "id": 600,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "COAF ReferenceDocument CSV Import",
+          "gmtModified": "2026-08-04 11:29:53"
+        },
+        {
+          "id": 601,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "COAF Chunk CSV Import",
+          "gmtModified": "2026-08-04 11:30:25"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchOptimaSprint",
+      "kbName": "Comarch Optima Sprint and Prints",
+      "verdict": "PASS",
+      "exportDir": "exports/optima_sprint/v1",
+      "generatedAt": "2026-09-07T12:06:03.311Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 171,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceType",
+            "documentCategory",
+            "versionHint",
+            "sourceOrigin",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 312,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "sourceObjectRefId",
+            "sourceDocument",
+            "sourceSection",
+            "semanticType",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 88,
+          "fileName": "print_technology.csv",
+          "status": "FINISH",
+          "jobName": "COSP PrintTechnology CSV Import"
+        },
+        {
+          "id": 89,
+          "fileName": "print_workflow.csv",
+          "status": "FINISH",
+          "jobName": "COSP PrintWorkflow CSV Import"
+        },
+        {
+          "id": 90,
+          "fileName": "print_option.csv",
+          "status": "FINISH",
+          "jobName": "COSP PrintOption CSV Import"
+        },
+        {
+          "id": 91,
+          "fileName": "template_feature.csv",
+          "status": "FINISH",
+          "jobName": "COSP TemplateFeature CSV Import"
+        },
+        {
+          "id": 93,
+          "fileName": "diagnostic_case.csv",
+          "status": "FINISH",
+          "jobName": "COSP DiagnosticCase CSV Import"
+        },
+        {
+          "id": 94,
+          "fileName": "version_change.csv",
+          "status": "FINISH",
+          "jobName": "COSP VersionChange CSV Import"
+        },
+        {
+          "id": 95,
+          "fileName": "print_catalog.csv",
+          "status": "FINISH",
+          "jobName": "COSP PrintCatalog CSV Import"
+        },
+        {
+          "id": 96,
+          "fileName": "learning_resource.csv",
+          "status": "FINISH",
+          "jobName": "COSP LearningResource CSV Import"
+        },
+        {
+          "id": 97,
+          "fileName": "glossary_term.csv",
+          "status": "FINISH",
+          "jobName": "COSP GlossaryTerm CSV Import"
+        },
+        {
+          "id": 98,
+          "fileName": "schema_touchpoint.csv",
+          "status": "FINISH",
+          "jobName": "COSP SchemaTouchpoint CSV Import"
+        },
+        {
+          "id": 99,
+          "fileName": "module_recipe.csv",
+          "status": "FINISH",
+          "jobName": "COSP ModuleRecipe CSV Import"
+        },
+        {
+          "id": 87,
+          "fileName": "file_artifact.csv",
+          "status": "FINISH",
+          "jobName": "COSP FileArtifact CSV Import"
+        },
+        {
+          "id": 92,
+          "fileName": "sql_pattern.csv",
+          "status": "FINISH",
+          "jobName": "COSP SqlPattern CSV Import"
+        },
+        {
+          "id": 201,
+          "fileName": "file_artifact.csv",
+          "status": "FINISH",
+          "jobName": "COSP MANUAL REFRESH FileArtifact 1780297719"
+        },
+        {
+          "id": 202,
+          "fileName": "sql_pattern.csv",
+          "status": "FINISH",
+          "jobName": "COSP MANUAL REFRESH SqlPattern 1780297720"
+        },
+        {
+          "id": 712,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "COSP ReferenceDocument CSV Import",
+          "gmtModified": "2026-09-07 14:06:48"
+        },
+        {
+          "id": 713,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "COSP Chunk CSV Import",
+          "gmtModified": "2026-09-07 14:07:42"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchOptimaPartnerTechnical",
+      "kbName": "Comarch Optima Partner Technical",
+      "verdict": "PASS",
+      "exportDir": "exports/optima_partner_technical/v1",
+      "generatedAt": "2026-07-30T13:09:02.307Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 126,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceType",
+            "documentCategory",
+            "versionHint",
+            "articleUpdatedAt",
+            "relatedKnowledgeBase",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "partner_asset.csv",
+          "exists": true,
+          "rowCount": 548,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "directDownloadUrl",
+            "assetTypeRefId",
+            "categoryRefId",
+            "versionBandRefId",
+            "productAreaRefId",
+            "overlapPolicy",
+            "primaryRouteKbName",
+            "primaryRouteNamespace",
+            "mimeType",
+            "fileExtension",
+            "publishedAt",
+            "currentState",
+            "localSnapshotPath",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 339,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 122,
+          "fileName": "partner_category.csv",
+          "status": "FINISH",
+          "jobName": "COPT PartnerCategory CSV Import"
+        },
+        {
+          "id": 147,
+          "fileName": "partner_asset.csv",
+          "status": "FINISH",
+          "jobName": "COPT PartnerAsset CSV Import"
+        },
+        {
+          "id": 124,
+          "fileName": "asset_type.csv",
+          "status": "FINISH",
+          "jobName": "COPT AssetType CSV Import"
+        },
+        {
+          "id": 125,
+          "fileName": "version_band.csv",
+          "status": "FINISH",
+          "jobName": "COPT VersionBand CSV Import"
+        },
+        {
+          "id": 126,
+          "fileName": "product_area.csv",
+          "status": "FINISH",
+          "jobName": "COPT ProductArea CSV Import"
+        },
+        {
+          "id": 165,
+          "fileName": "msg_entry.csv",
+          "status": "FINISH",
+          "jobName": "COPT MsgEntry CSV Import"
+        },
+        {
+          "id": 138,
+          "fileName": "com_example.csv",
+          "status": "FINISH",
+          "jobName": "COPT ComExample CSV Import"
+        },
+        {
+          "id": 139,
+          "fileName": "com_interface_use.csv",
+          "status": "FINISH",
+          "jobName": "COPT ComInterfaceUse CSV Import"
+        },
+        {
+          "id": 140,
+          "fileName": "com_schema_touchpoint.csv",
+          "status": "FINISH",
+          "jobName": "COPT ComSchemaTouchpoint CSV Import"
+        },
+        {
+          "id": 127,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "COPT KnowledgeRoute CSV Import"
+        },
+        {
+          "id": 150,
+          "fileName": "com_module_recipe.csv",
+          "status": "FINISH",
+          "jobName": "COPT ComModuleRecipe CSV Import"
+        },
+        {
+          "id": 160,
+          "fileName": "cfg_entry.csv",
+          "status": "FINISH",
+          "jobName": "COPT CfgEntry CSV Import"
+        },
+        {
+          "id": 162,
+          "fileName": "proc_entry.csv",
+          "status": "FINISH",
+          "jobName": "COPT ProcEntry CSV Import"
+        },
+        {
+          "id": 385,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "COPT ReferenceDocument CSV Import",
+          "gmtModified": "2026-06-30 10:49:45"
+        },
+        {
+          "id": 389,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "COPT Chunk CSV Import",
+          "gmtModified": "2026-06-30 10:50:37"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchUniversalKnowledge",
+      "kbName": "Comarch Universal Knowledge",
+      "verdict": "WARN",
+      "exportDir": "exports/universal_knowledge/v1",
+      "generatedAt": "2026-06-24T07:39:30.734Z",
+      "errors": [],
+      "warnings": [
+        "Required CSV has zero rows: reference_document.csv (catch-all KB starts empty)",
+        "Required CSV has zero rows: chunk.csv (catch-all KB starts empty)"
+      ],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 0,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceType",
+            "documentCategory",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 0,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": []
+    },
+    {
+      "namespace": "OWAOntology",
+      "kbName": "OWA Platform Optima Ontology",
+      "verdict": "PASS",
+      "exportDir": "exports/owa_ontology/v1",
+      "generatedAt": "2026-08-31T18:45:59.936Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "ontology_entity.csv",
+          "exists": true,
+          "rowCount": 67,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "canonicalName",
+            "ontologyId",
+            "verificationStatus",
+            "confidenceLevel",
+            "businessDomain",
+            "mainTable",
+            "mcpReadTools",
+            "mcpWriteTools",
+            "aliases",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "ontology_field.csv",
+          "exists": true,
+          "rowCount": 109,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "entityRefId",
+            "fieldName",
+            "mssqlColumn",
+            "mcpField",
+            "sqlType",
+            "nullable",
+            "keyRole",
+            "mappingStatus",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "ontology_relation.csv",
+          "exists": true,
+          "rowCount": 147,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceEntityRefId",
+            "targetEntityRefId",
+            "predicate",
+            "cardinality",
+            "relationType",
+            "joinCondition",
+            "status",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "workflow_pattern.csv",
+          "exists": true,
+          "rowCount": 132,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "workflowName",
+            "sourceEntityRefId",
+            "targetEntityRefId",
+            "mcpTool",
+            "mode",
+            "status",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 190,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 462,
+          "fileName": "ontology_entity.csv",
+          "status": "FINISH",
+          "jobName": "OWAO OntologyEntity CSV Import",
+          "gmtModified": "2026-07-22 16:41:49"
+        },
+        {
+          "id": 463,
+          "fileName": "ontology_field.csv",
+          "status": "FINISH",
+          "jobName": "OWAO OntologyField CSV Import",
+          "gmtModified": "2026-07-22 16:42:29"
+        },
+        {
+          "id": 464,
+          "fileName": "ontology_relation.csv",
+          "status": "FINISH",
+          "jobName": "OWAO OntologyRelation CSV Import",
+          "gmtModified": "2026-07-22 16:43:10"
+        },
+        {
+          "id": 465,
+          "fileName": "workflow_pattern.csv",
+          "status": "FINISH",
+          "jobName": "OWAO WorkflowPattern CSV Import",
+          "gmtModified": "2026-07-22 16:43:45"
+        },
+        {
+          "id": 466,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "OWAO Chunk CSV Import",
+          "gmtModified": "2026-07-22 16:44:27"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchBetterflyReference",
+      "kbName": "Comarch Betterfly Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/betterfly_reference/v1",
+      "generatedAt": "2026-10-12T03:35:27.850Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 40,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceType",
+            "documentCategory",
+            "moduleScope",
+            "categoryHint",
+            "versionHint",
+            "lastModified",
+            "localSnapshotPath",
+            "sourceOrigin",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "api_resource.csv",
+          "exists": true,
+          "rowCount": 35,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "resourceCode",
+            "resourceGroup",
+            "endpointBase",
+            "versionHint",
+            "supportedMethods",
+            "authModel",
+            "sourceDocumentRefIds",
+            "exampleEndpoints",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "api_pattern.csv",
+          "exists": true,
+          "rowCount": 163,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "patternType",
+            "httpMethod",
+            "endpointPath",
+            "versionHint",
+            "useCase",
+            "sourceDocumentRefId",
+            "exampleSnippet",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 268,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 167,
+          "fileName": "help_category.csv",
+          "status": "FINISH",
+          "jobName": "CBRF HelpCategory CSV Import",
+          "gmtModified": "2026-05-25 21:32:21"
+        },
+        {
+          "id": 168,
+          "fileName": "module_area.csv",
+          "status": "FINISH",
+          "jobName": "CBRF ModuleArea CSV Import",
+          "gmtModified": "2026-05-25 21:32:55"
+        },
+        {
+          "id": 193,
+          "fileName": "learning_guide.csv",
+          "status": "FINISH",
+          "jobName": "CBRF LearningGuide CSV Import",
+          "gmtModified": "2026-05-26 09:25:56"
+        },
+        {
+          "id": 194,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "CBRF EntryGuide CSV Import",
+          "gmtModified": "2026-05-26 09:26:25"
+        },
+        {
+          "id": 322,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "CBRF KnowledgeRoute CSV Import",
+          "gmtModified": "2026-06-10 11:00:51"
+        },
+        {
+          "id": 837,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "CBRF Chunk CSV Import",
+          "gmtModified": "2026-10-05 05:38:08"
+        },
+        {
+          "id": 866,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "CBRF ReferenceDocument CSV Import",
+          "gmtModified": "2026-10-12 05:35:56"
+        },
+        {
+          "id": 867,
+          "fileName": "api_resource.csv",
+          "status": "FINISH",
+          "jobName": "CBRF ApiResource CSV Import",
+          "gmtModified": "2026-10-12 05:36:32"
+        },
+        {
+          "id": 868,
+          "fileName": "api_pattern.csv",
+          "status": "FINISH",
+          "jobName": "CBRF ApiPattern CSV Import",
+          "gmtModified": "2026-10-12 05:37:13"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchOptimaBusinessSemantics",
+      "kbName": "Comarch Optima Business Semantics",
+      "verdict": "PASS",
+      "exportDir": "exports/optima_business_semantics/v1",
+      "generatedAt": "2026-10-12T12:03:08.215Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "business_domain.csv",
+          "exists": true,
+          "rowCount": 8,
+          "columns": [
+            "name",
+            "description"
+          ]
+        },
+        {
+          "fileName": "business_description.csv",
+          "exists": true,
+          "rowCount": 643,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "descriptionPreview",
+            "descriptionHash",
+            "descriptionLength",
+            "tableRefId",
+            "columnRefId",
+            "source",
+            "language",
+            "domainName"
+          ]
+        },
+        {
+          "fileName": "code_meaning.csv",
+          "exists": true,
+          "rowCount": 12,
+          "columns": [
+            "id",
+            "name",
+            "columnRefId",
+            "codeValue",
+            "label",
+            "source",
+            "domainName"
+          ]
+        },
+        {
+          "fileName": "business_rule.csv",
+          "exists": true,
+          "rowCount": 21,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "descriptionPreview",
+            "descriptionHash",
+            "descriptionLength",
+            "tableRefId",
+            "ruleType",
+            "expression",
+            "isHardConstraint",
+            "domainName"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 336,
+          "fileName": "business_domain.csv",
+          "status": "FINISH",
+          "jobName": "COBS BusinessDomain CSV Import",
+          "gmtModified": "2026-06-11 14:49:31"
+        },
+        {
+          "id": 338,
+          "fileName": "code_meaning.csv",
+          "status": "FINISH",
+          "jobName": "COBS CodeMeaning CSV Import",
+          "gmtModified": "2026-06-11 14:51:27"
+        },
+        {
+          "id": 339,
+          "fileName": "business_rule.csv",
+          "status": "FINISH",
+          "jobName": "COBS BusinessRule CSV Import",
+          "gmtModified": "2026-06-11 14:53:43"
+        },
+        {
+          "id": 870,
+          "fileName": "business_description.csv",
+          "status": "FINISH",
+          "jobName": "COBS BusinessDescription CSV Import",
+          "gmtModified": "2026-10-12 14:04:02"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchOptimaReference",
+      "kbName": "Comarch Optima Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/optima_reference/v1",
+      "generatedAt": "2026-09-14T03:35:08.148Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 3368,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceType",
+            "documentCategory",
+            "moduleScope",
+            "categoryHint",
+            "versionHint",
+            "lastModified",
+            "localSnapshotPath",
+            "sourceOrigin",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 456,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 102,
+          "fileName": "help_category.csv",
+          "status": "FINISH",
+          "jobName": "CORF HelpCategory CSV Import"
+        },
+        {
+          "id": 103,
+          "fileName": "module_area.csv",
+          "status": "FINISH",
+          "jobName": "CORF ModuleArea CSV Import"
+        },
+        {
+          "id": 109,
+          "fileName": "learning_guide.csv",
+          "status": "FINISH",
+          "jobName": "CORF LearningGuide CSV Import"
+        },
+        {
+          "id": 110,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "CORF KnowledgeRoute CSV Import"
+        },
+        {
+          "id": 112,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "CORF EntryGuide CSV Import"
+        },
+        {
+          "id": 227,
+          "fileName": "version_topic.csv",
+          "status": "FINISH",
+          "jobName": "CORF VersionTopic CSV Import"
+        },
+        {
+          "id": 363,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "CORF Chunk CSV Import",
+          "gmtModified": "2026-06-12 15:34:04"
+        },
+        {
+          "id": 574,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "CORF ReferenceDocument CSV Import",
+          "gmtModified": "2026-07-31 07:41:13"
+        }
+      ]
+    },
+    {
+      "namespace": "ComarchCommunityNews",
+      "kbName": "Comarch Community News",
+      "verdict": "PASS",
+      "exportDir": "exports/community_news/v1",
+      "generatedAt": "2026-10-13T12:07:53.886Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 167,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceType",
+            "documentCategory",
+            "moduleScope",
+            "categoryHint",
+            "publishedAt",
+            "lastModified",
+            "localSnapshotPath",
+            "sourceOrigin",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "news_topic.csv",
+          "exists": true,
+          "rowCount": 37,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "topicSlug",
+            "topicType",
+            "usageCount",
+            "moduleScope",
+            "sourceUrl",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 593,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 209,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "CCN KnowledgeRoute CSV Import"
+        },
+        {
+          "id": 210,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "CCN EntryGuide CSV Import"
+        },
+        {
+          "id": 878,
+          "fileName": "news_topic.csv",
+          "status": "FINISH",
+          "jobName": "CCN NewsTopic CSV Import",
+          "gmtModified": "2026-10-13 05:16:40"
+        },
+        {
+          "id": 879,
+          "fileName": "community_attachment.csv",
+          "status": "FINISH",
+          "jobName": "CCN CommunityAttachment CSV Import",
+          "gmtModified": "2026-10-13 05:17:19"
+        },
+        {
+          "id": 881,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "CCN ReferenceDocument CSV Import",
+          "gmtModified": "2026-10-13 15:00:19"
+        },
+        {
+          "id": 882,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "CCN Chunk CSV Import",
+          "gmtModified": "2026-10-13 15:01:13"
+        }
+      ]
+    },
+    {
+      "namespace": "TaxbellLegalReference",
+      "kbName": "Taxbell Legal Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/taxbell_legal_reference/v1",
+      "generatedAt": "2026-10-13T12:08:04.613Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 78,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceDomain",
+            "sourceTier",
+            "documentCategory",
+            "topicArea",
+            "audienceMode",
+            "riskLevel",
+            "publishedAt",
+            "lastModified",
+            "retrievedAt",
+            "localSnapshotPath",
+            "contentHash",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "source_topic.csv",
+          "exists": true,
+          "rowCount": 4,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "topicSlug",
+            "topicGroup",
+            "sourceTier",
+            "usageCount",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 597,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 249,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "TBLG KnowledgeRoute CSV Import"
+        },
+        {
+          "id": 250,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "TBLG EntryGuide CSV Import"
+        },
+        {
+          "id": 883,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "TBLG ReferenceDocument CSV Import",
+          "gmtModified": "2026-10-13 15:02:16"
+        },
+        {
+          "id": 884,
+          "fileName": "source_topic.csv",
+          "status": "FINISH",
+          "jobName": "TBLG SourceTopic CSV Import",
+          "gmtModified": "2026-10-13 15:02:49"
+        },
+        {
+          "id": 885,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "TBLG Chunk CSV Import",
+          "gmtModified": "2026-10-13 15:03:44"
+        }
+      ]
+    },
+    {
+      "namespace": "TaxbellPayrollHRReference",
+      "kbName": "Taxbell Payroll HR Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/taxbell_payroll_hr_reference/v1",
+      "generatedAt": "2026-10-13T12:08:04.848Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 71,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceDomain",
+            "sourceTier",
+            "documentCategory",
+            "topicArea",
+            "audienceMode",
+            "riskLevel",
+            "publishedAt",
+            "lastModified",
+            "retrievedAt",
+            "localSnapshotPath",
+            "contentHash",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "source_topic.csv",
+          "exists": true,
+          "rowCount": 9,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "topicSlug",
+            "topicGroup",
+            "sourceTier",
+            "usageCount",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 617,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 255,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "TBHR EntryGuide CSV Import"
+        },
+        {
+          "id": 886,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "TBHR ReferenceDocument CSV Import",
+          "gmtModified": "2026-10-13 16:08:38"
+        },
+        {
+          "id": 888,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "TBHR KnowledgeRoute CSV Import",
+          "gmtModified": "2026-10-13 16:53:52"
+        },
+        {
+          "id": 889,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "TBHR Chunk CSV Import",
+          "gmtModified": "2026-10-13 16:55:33"
+        },
+        {
+          "id": 887,
+          "fileName": "source_topic.csv",
+          "status": "FINISH",
+          "jobName": "TBHR SourceTopic CSV Import",
+          "gmtModified": "2026-10-13 16:10:11"
+        }
+      ]
+    },
+    {
+      "namespace": "TaxbellAccountingVATReference",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "verdict": "PASS",
+      "exportDir": "exports/taxbell_accounting_vat_reference/v1",
+      "generatedAt": "2026-10-13T12:08:05.020Z",
+      "errors": [],
+      "warnings": [],
+      "files": [
+        {
+          "fileName": "reference_document.csv",
+          "exists": true,
+          "rowCount": 75,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceUrl",
+            "sourceDomain",
+            "sourceTier",
+            "documentCategory",
+            "topicArea",
+            "audienceMode",
+            "riskLevel",
+            "publishedAt",
+            "lastModified",
+            "retrievedAt",
+            "localSnapshotPath",
+            "contentHash",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "source_topic.csv",
+          "exists": true,
+          "rowCount": 8,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "topicSlug",
+            "topicGroup",
+            "sourceTier",
+            "usageCount",
+            "summary"
+          ]
+        },
+        {
+          "fileName": "chunk.csv",
+          "exists": true,
+          "rowCount": 378,
+          "columns": [
+            "id",
+            "name",
+            "description",
+            "semanticType",
+            "sourceDocumentRefId",
+            "sourceUrl",
+            "sourcePath",
+            "sectionHeading",
+            "sectionOrder",
+            "content"
+          ]
+        }
+      ],
+      "jobs": [
+        {
+          "id": 259,
+          "fileName": "knowledge_route.csv",
+          "status": "FINISH",
+          "jobName": "TBAC KnowledgeRoute CSV Import"
+        },
+        {
+          "id": 260,
+          "fileName": "entry_guide.csv",
+          "status": "FINISH",
+          "jobName": "TBAC EntryGuide CSV Import"
+        },
+        {
+          "id": 890,
+          "fileName": "reference_document.csv",
+          "status": "FINISH",
+          "jobName": "TBAC ReferenceDocument CSV Import",
+          "gmtModified": "2026-10-13 16:57:04"
+        },
+        {
+          "id": 891,
+          "fileName": "source_topic.csv",
+          "status": "FINISH",
+          "jobName": "TBAC SourceTopic CSV Import",
+          "gmtModified": "2026-10-13 16:58:49"
+        },
+        {
+          "id": 892,
+          "fileName": "chunk.csv",
+          "status": "FINISH",
+          "jobName": "TBAC Chunk CSV Import",
+          "gmtModified": "2026-10-13 17:00:46"
         }
       ]
     }

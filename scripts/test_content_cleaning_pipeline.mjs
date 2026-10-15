@@ -2,6 +2,51 @@
 
 import assert from 'assert';
 import http from 'http';
+import dns from 'dns/promises';
+import fs from 'fs';
+import { execFileSync } from 'child_process';
+
+// Fresh module evaluation with legacy AI configuration and dummy auth only.
+// Intercept fetch entirely: even a regression cannot reach a real endpoint.
+const noHttpResult = execFileSync(process.execPath, ['--input-type=module', '-e', `
+  import assert from 'node:assert/strict';
+  let httpCalls = 0;
+  globalThis.fetch = async () => {
+    httpCalls += 1;
+    return new Response(JSON.stringify({
+      choices: [{ message: { content: 'Nieźródłowa odpowiedź modelu.' } }],
+    }), { status: 200 });
+  };
+  const { cleanContent } = await import(${JSON.stringify(new URL('./lib/content_cleaner.mjs', import.meta.url).href)});
+  const result = cleanContent('REKLAMA\\nTreść źródłowa.');
+  assert.ok(result instanceof Promise);
+  assert.strictEqual(await result, 'Treść źródłowa.');
+  assert.strictEqual(httpCalls, 0);
+  process.stdout.write('PASS: legacy AI configuration performs zero HTTP requests\\n');
+`], {
+  encoding: 'utf8',
+  timeout: 10000,
+  env: {
+    CONTENT_AI_CLEAN: '1',
+    CONTENT_AI_CLEAN_MAX_CHARS: '12000',
+    OPENSPG_API_BASE: 'http://127.0.0.1:1',
+    OPENSPG_LLM_ENDPOINT: '/v1/chat/completions',
+    OPENSPG_LLM_APP_ID: '123',
+    OPENSPG_LLM_SESSION_ID: '456',
+    OPENSPG_LLM_MODEL: 'dummy-model',
+    OPENSPG_COOKIE: 'test-cookie=dummy',
+    OPENSPG_COOKIE_FILE: '',
+  },
+});
+process.stdout.write(noHttpResult);
+
+const temporaryRoot = fs.mkdtempSync('/tmp/opencode/content-cleaning-test-');
+process.env.ROOT = temporaryRoot;
+process.env.OPENSPG_COOKIE = 'test-cookie=dummy';
+process.env.OPENSPG_COOKIE_FILE = '';
+process.env.OPENSPG_LLM_APP_ID = '';
+process.env.OPENSPG_LLM_SESSION_ID = '';
+process.env.ERP_KB_ALLOW_PRIVATE_SOURCE_URLS = '0';
 
 process.env.CONTENT_PROVIDER = 'auto';
 process.env.TAVILY_API_KEY = 'tavily-test';
@@ -77,8 +122,19 @@ const server = http.createServer(async (req, res) => {
   res.end();
 });
 
+const originalLookup = dns.lookup;
+const originalFetch = globalThis.fetch;
+try {
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
 const { port } = server.address();
+dns.lookup = async (hostname) => {
+  assert.strictEqual(hostname, 'example.com');
+  return [{ address: '93.184.216.34', family: 4 }];
+};
+globalThis.fetch = (url, options) => {
+  assert.strictEqual(new URL(url).origin, `http://127.0.0.1:${port}`);
+  return originalFetch(url, options);
+};
 process.env.TAVILY_EXTRACT_API_URL = `http://127.0.0.1:${port}/tavily/extract`;
 process.env.FIRECRAWL_API_URL = `http://127.0.0.1:${port}/firecrawl/v1`;
 process.env.EXA_CONTENTS_API_URL = `http://127.0.0.1:${port}/exa/contents`;
@@ -89,7 +145,7 @@ const {
   cleanContentWithProfile,
 } = await import('./lib/content_cleaner.mjs');
 
-  const { fetchContent, detectCleanerProfile } = await import('./lib/content_provider.mjs');
+const { fetchContent, detectCleanerProfile } = await import('./lib/content_provider.mjs');
 assert.strictEqual(
   cleanBoilerplate('REKLAMA\nZapisz się na newsletter\nSubskrybuj nas na Youtube\nDołącz do ekspertów\nShutterstock\nrozwiń >\nWłaściwa treść.'),
   'Właściwa treść.',
@@ -110,12 +166,25 @@ assert.strictEqual(
   'Treść rozdziału podatkowego.',
 );
 
-const aiCleaned = await cleanContent('REKLAMA\nTreść bazowa.', {
-  aiCleaner: async (text) => `${text}\nSekcja merytoryczna.`,
+let aiCalls = 0;
+const contaminatedAnswer = 'Relacje między tabelami: DokumentyKSeF → DokAtrybuty\n<reference id="chunk:0_0"></reference>';
+const cleaned = await cleanContent('REKLAMA\nTreść bazowa.', {
+  aiCleaner: async () => {
+    aiCalls += 1;
+    return contaminatedAnswer;
+  },
 });
-assert(!aiCleaned.includes('REKLAMA'));
-assert(aiCleaned.includes('Treść bazowa.'));
-assert(aiCleaned.includes('Sekcja merytoryczna.'));
+assert.strictEqual(cleaned, 'Treść bazowa.');
+assert.strictEqual(aiCalls, 0);
+const refusal = 'W dostarczonych materiałach nie ma surowej treści strony WWW ani artykułu do oczyszczenia.';
+assert.strictEqual(await cleanContent('Treść źródłowa.', {
+  aiCleaner: async () => { aiCalls += 1; return refusal; },
+}), 'Treść źródłowa.');
+assert.strictEqual(aiCalls, 0);
+assert.strictEqual(cleanContentWithProfile('REKLAMA\nTreść źródłowa.', 'news', {
+  aiCleaner: () => { aiCalls += 1; return contaminatedAnswer; },
+}), 'Treść źródłowa.');
+assert.strictEqual(aiCalls, 0);
 
 const fetched = await fetchContent('https://example.com/article', {
   aiCleaner: async (text) => text,
@@ -143,6 +212,10 @@ assert.ok(pdfResult.includes('REKLAMA'), 'pdf should keep REKLAMA');
 assert.ok(pdfResult.includes('Treść główna'), 'pdf should keep main content');
 process.stdout.write('PASS: profile cleaning behavior\n');
 
-await new Promise((resolve) => server.close(resolve));
-
 process.stdout.write(`${JSON.stringify({ ok: true, provider: fetched.provider }, null, 2)}\n`);
+} finally {
+  dns.lookup = originalLookup;
+  globalThis.fetch = originalFetch;
+  await new Promise((resolve) => server.close(resolve));
+  fs.rmSync(temporaryRoot, { recursive: true, force: true });
+}

@@ -1,8 +1,37 @@
 # KB Quality Gate Report
 
-Generated at: 2026-09-01T10:21:53.696Z
+Generated at: 2026-10-13T16:15:53.013Z
 
-Overall: `FAIL`
+Overall: `WARN`
+
+## ComarchOptimaSchema
+
+- Verdict: `PASS`
+- Export dir: `exports/optima_schema/v1`
+- Staging generatedAt: `2026-09-01T10:15:44.623Z`
+- Required files:
+  - `table.csv`: exists `true`, rows `630`
+  - `column.csv`: exists `true`, rows `12441`
+  - `chunk.csv`: exists `true`, rows `13138`
+- Jobs:
+  - `419` `FINISH` `database_instance.csv`
+  - `420` `FINISH` `table.csv`
+  - `421` `FINISH` `column.csv`
+  - `422` `FINISH` `primary_key.csv`
+  - `423` `FINISH` `foreign_key.csv`
+  - `424` `FINISH` `index.csv`
+  - `425` `FINISH` `constraint.csv`
+  - `426` `FINISH` `view.csv`
+  - `427` `FINISH` `stored_procedure.csv`
+  - `428` `FINISH` `function.csv`
+  - `429` `FINISH` `trigger.csv`
+  - `430` `FINISH` `parameter.csv`
+  - `432` `FINISH` `schema_change.csv`
+  - `434` `FINISH` `table_query_guide.csv`
+  - `435` `FINISH` `join_path_guide.csv`
+  - `436` `FINISH` `object_dependency.csv`
+  - `437` `FINISH` `sql_object_guide.csv`
+  - `698` `FINISH` `chunk.csv`
 
 ## ComarchOptimaAdditionalFunctions
 
@@ -34,13 +63,11 @@ Overall: `FAIL`
 
 ## ComarchOptimaSprint
 
-- Verdict: `WARN`
+- Verdict: `PASS`
 - Export dir: `exports/optima_sprint/v1`
-- Staging generatedAt: `2026-07-30T13:08:44.176Z`
-- Warnings:
-  - Duplicate sourceUrl values in reference_document.csv: 1
+- Staging generatedAt: `2026-09-07T12:06:03.311Z`
 - Required files:
-  - `reference_document.csv`: exists `true`, rows `172`
+  - `reference_document.csv`: exists `true`, rows `171`
   - `chunk.csv`: exists `true`, rows `312`
 - Jobs:
   - `88` `FINISH` `print_technology.csv`
@@ -58,26 +85,8 @@ Overall: `FAIL`
   - `92` `FINISH` `sql_pattern.csv`
   - `201` `FINISH` `file_artifact.csv`
   - `202` `FINISH` `sql_pattern.csv`
-  - `387` `FINISH` `reference_document.csv`
-  - `390` `FINISH` `chunk.csv`
-
-## ComarchOptimaReference
-
-- Verdict: `PASS`
-- Export dir: `exports/optima_reference/v1`
-- Staging generatedAt: `2026-08-24T03:35:16.994Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `3368`
-  - `chunk.csv`: exists `true`, rows `456`
-- Jobs:
-  - `102` `FINISH` `help_category.csv`
-  - `103` `FINISH` `module_area.csv`
-  - `109` `FINISH` `learning_guide.csv`
-  - `110` `FINISH` `knowledge_route.csv`
-  - `112` `FINISH` `entry_guide.csv`
-  - `227` `FINISH` `version_topic.csv`
-  - `363` `FINISH` `chunk.csv`
-  - `574` `FINISH` `reference_document.csv`
+  - `712` `FINISH` `reference_document.csv`
+  - `713` `FINISH` `chunk.csv`
 
 ## ComarchOptimaPartnerTechnical
 
@@ -105,44 +114,6 @@ Overall: `FAIL`
   - `385` `FINISH` `reference_document.csv`
   - `389` `FINISH` `chunk.csv`
 
-## ComarchBetterflyReference
-
-- Verdict: `PASS`
-- Export dir: `exports/betterfly_reference/v1`
-- Staging generatedAt: `2026-08-24T03:35:44.453Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `40`
-  - `api_resource.csv`: exists `true`, rows `25`
-  - `api_pattern.csv`: exists `true`, rows `80`
-  - `chunk.csv`: exists `true`, rows `267`
-- Jobs:
-  - `167` `FINISH` `help_category.csv`
-  - `168` `FINISH` `module_area.csv`
-  - `193` `FINISH` `learning_guide.csv`
-  - `194` `FINISH` `entry_guide.csv`
-  - `322` `FINISH` `knowledge_route.csv`
-  - `590` `FINISH` `reference_document.csv`
-  - `591` `FINISH` `api_resource.csv`
-  - `592` `FINISH` `api_pattern.csv`
-  - `663` `FINISH` `chunk.csv`
-
-## ComarchCommunityNews
-
-- Verdict: `PASS`
-- Export dir: `exports/community_news/v1`
-- Staging generatedAt: `2026-08-29T03:15:27.213Z`
-- Required files:
-  - `reference_document.csv`: exists `true`, rows `167`
-  - `news_topic.csv`: exists `true`, rows `37`
-  - `chunk.csv`: exists `true`, rows `590`
-- Jobs:
-  - `209` `FINISH` `knowledge_route.csv`
-  - `210` `FINISH` `entry_guide.csv`
-  - `676` `FINISH` `reference_document.csv`
-  - `677` `FINISH` `news_topic.csv`
-  - `678` `FINISH` `community_attachment.csv`
-  - `679` `FINISH` `chunk.csv`
-
 ## ComarchUniversalKnowledge
 
 - Verdict: `WARN`
@@ -159,7 +130,7 @@ Overall: `FAIL`
 
 - Verdict: `PASS`
 - Export dir: `exports/owa_ontology/v1`
-- Staging generatedAt: `2026-08-31T17:18:32.273Z`
+- Staging generatedAt: `2026-08-31T18:45:59.936Z`
 - Required files:
   - `ontology_entity.csv`: exists `true`, rows `67`
   - `ontology_field.csv`: exists `true`, rows `109`
@@ -173,98 +144,123 @@ Overall: `FAIL`
   - `465` `FINISH` `workflow_pattern.csv`
   - `466` `FINISH` `chunk.csv`
 
-## TaxbellPayrollHRReference
+## ComarchBetterflyReference
 
 - Verdict: `PASS`
-- Export dir: `exports/taxbell_payroll_hr_reference/v1`
-- Staging generatedAt: `2026-09-01T06:48:59.216Z`
+- Export dir: `exports/betterfly_reference/v1`
+- Staging generatedAt: `2026-10-12T03:35:27.850Z`
 - Required files:
-  - `reference_document.csv`: exists `true`, rows `74`
-  - `source_topic.csv`: exists `true`, rows `10`
-  - `chunk.csv`: exists `true`, rows `577`
+  - `reference_document.csv`: exists `true`, rows `40`
+  - `api_resource.csv`: exists `true`, rows `35`
+  - `api_pattern.csv`: exists `true`, rows `163`
+  - `chunk.csv`: exists `true`, rows `268`
 - Jobs:
-  - `253` `FINISH` `source_topic.csv`
-  - `254` `FINISH` `knowledge_route.csv`
-  - `255` `FINISH` `entry_guide.csv`
-  - `683` `FINISH` `reference_document.csv`
-  - `684` `FINISH` `chunk.csv`
+  - `167` `FINISH` `help_category.csv`
+  - `168` `FINISH` `module_area.csv`
+  - `193` `FINISH` `learning_guide.csv`
+  - `194` `FINISH` `entry_guide.csv`
+  - `322` `FINISH` `knowledge_route.csv`
+  - `837` `FINISH` `chunk.csv`
+  - `866` `FINISH` `reference_document.csv`
+  - `867` `FINISH` `api_resource.csv`
+  - `868` `FINISH` `api_pattern.csv`
 
 ## ComarchOptimaBusinessSemantics
 
-- Verdict: `FAIL`
+- Verdict: `PASS`
 - Export dir: `exports/optima_business_semantics/v1`
-- Staging generatedAt: `2026-08-31T17:40:31.938Z`
-- Errors:
-  - Promoted drafts without visible business descriptions: 1
+- Staging generatedAt: `2026-10-12T12:03:08.215Z`
 - Required files:
   - `business_domain.csv`: exists `true`, rows `8`
-  - `business_description.csv`: exists `true`, rows `639`
+  - `business_description.csv`: exists `true`, rows `643`
   - `code_meaning.csv`: exists `true`, rows `12`
   - `business_rule.csv`: exists `true`, rows `21`
 - Jobs:
   - `336` `FINISH` `business_domain.csv`
   - `338` `FINISH` `code_meaning.csv`
   - `339` `FINISH` `business_rule.csv`
-  - `681` `FINISH` `business_description.csv`
+  - `870` `FINISH` `business_description.csv`
 
-## TaxbellAccountingVATReference
+## ComarchOptimaReference
 
 - Verdict: `PASS`
-- Export dir: `exports/taxbell_accounting_vat_reference/v1`
-- Staging generatedAt: `2026-09-01T08:13:54.684Z`
+- Export dir: `exports/optima_reference/v1`
+- Staging generatedAt: `2026-09-14T03:35:08.148Z`
 - Required files:
-  - `reference_document.csv`: exists `true`, rows `82`
-  - `source_topic.csv`: exists `true`, rows `7`
-  - `chunk.csv`: exists `true`, rows `401`
+  - `reference_document.csv`: exists `true`, rows `3368`
+  - `chunk.csv`: exists `true`, rows `456`
 - Jobs:
-  - `258` `FINISH` `source_topic.csv`
-  - `259` `FINISH` `knowledge_route.csv`
-  - `260` `FINISH` `entry_guide.csv`
-  - `690` `FINISH` `reference_document.csv`
-  - `691` `FINISH` `chunk.csv`
+  - `102` `FINISH` `help_category.csv`
+  - `103` `FINISH` `module_area.csv`
+  - `109` `FINISH` `learning_guide.csv`
+  - `110` `FINISH` `knowledge_route.csv`
+  - `112` `FINISH` `entry_guide.csv`
+  - `227` `FINISH` `version_topic.csv`
+  - `363` `FINISH` `chunk.csv`
+  - `574` `FINISH` `reference_document.csv`
+
+## ComarchCommunityNews
+
+- Verdict: `PASS`
+- Export dir: `exports/community_news/v1`
+- Staging generatedAt: `2026-10-13T12:07:53.886Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `167`
+  - `news_topic.csv`: exists `true`, rows `37`
+  - `chunk.csv`: exists `true`, rows `593`
+- Jobs:
+  - `209` `FINISH` `knowledge_route.csv`
+  - `210` `FINISH` `entry_guide.csv`
+  - `878` `FINISH` `news_topic.csv`
+  - `879` `FINISH` `community_attachment.csv`
+  - `881` `FINISH` `reference_document.csv`
+  - `882` `FINISH` `chunk.csv`
 
 ## TaxbellLegalReference
 
 - Verdict: `PASS`
 - Export dir: `exports/taxbell_legal_reference/v1`
-- Staging generatedAt: `2026-09-01T09:32:29.529Z`
+- Staging generatedAt: `2026-10-13T12:08:04.613Z`
 - Required files:
-  - `reference_document.csv`: exists `true`, rows `75`
-  - `source_topic.csv`: exists `true`, rows `5`
-  - `chunk.csv`: exists `true`, rows `386`
+  - `reference_document.csv`: exists `true`, rows `78`
+  - `source_topic.csv`: exists `true`, rows `4`
+  - `chunk.csv`: exists `true`, rows `597`
 - Jobs:
-  - `248` `FINISH` `source_topic.csv`
   - `249` `FINISH` `knowledge_route.csv`
   - `250` `FINISH` `entry_guide.csv`
-  - `696` `FINISH` `reference_document.csv`
-  - `697` `FINISH` `chunk.csv`
+  - `883` `FINISH` `reference_document.csv`
+  - `884` `FINISH` `source_topic.csv`
+  - `885` `FINISH` `chunk.csv`
 
-## ComarchOptimaSchema
+## TaxbellPayrollHRReference
 
 - Verdict: `PASS`
-- Export dir: `exports/optima_schema/v1`
-- Staging generatedAt: `2026-09-01T10:15:44.623Z`
+- Export dir: `exports/taxbell_payroll_hr_reference/v1`
+- Staging generatedAt: `2026-10-13T12:08:04.848Z`
 - Required files:
-  - `table.csv`: exists `true`, rows `630`
-  - `column.csv`: exists `true`, rows `12441`
-  - `chunk.csv`: exists `true`, rows `13138`
+  - `reference_document.csv`: exists `true`, rows `71`
+  - `source_topic.csv`: exists `true`, rows `9`
+  - `chunk.csv`: exists `true`, rows `617`
 - Jobs:
-  - `419` `FINISH` `database_instance.csv`
-  - `420` `FINISH` `table.csv`
-  - `421` `FINISH` `column.csv`
-  - `422` `FINISH` `primary_key.csv`
-  - `423` `FINISH` `foreign_key.csv`
-  - `424` `FINISH` `index.csv`
-  - `425` `FINISH` `constraint.csv`
-  - `426` `FINISH` `view.csv`
-  - `427` `FINISH` `stored_procedure.csv`
-  - `428` `FINISH` `function.csv`
-  - `429` `FINISH` `trigger.csv`
-  - `430` `FINISH` `parameter.csv`
-  - `432` `FINISH` `schema_change.csv`
-  - `434` `FINISH` `table_query_guide.csv`
-  - `435` `FINISH` `join_path_guide.csv`
-  - `436` `FINISH` `object_dependency.csv`
-  - `437` `FINISH` `sql_object_guide.csv`
-  - `698` `FINISH` `chunk.csv`
+  - `255` `FINISH` `entry_guide.csv`
+  - `886` `FINISH` `reference_document.csv`
+  - `888` `FINISH` `knowledge_route.csv`
+  - `889` `FINISH` `chunk.csv`
+  - `887` `FINISH` `source_topic.csv`
+
+## TaxbellAccountingVATReference
+
+- Verdict: `PASS`
+- Export dir: `exports/taxbell_accounting_vat_reference/v1`
+- Staging generatedAt: `2026-10-13T12:08:05.020Z`
+- Required files:
+  - `reference_document.csv`: exists `true`, rows `75`
+  - `source_topic.csv`: exists `true`, rows `8`
+  - `chunk.csv`: exists `true`, rows `378`
+- Jobs:
+  - `259` `FINISH` `knowledge_route.csv`
+  - `260` `FINISH` `entry_guide.csv`
+  - `890` `FINISH` `reference_document.csv`
+  - `891` `FINISH` `source_topic.csv`
+  - `892` `FINISH` `chunk.csv`
 

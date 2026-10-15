@@ -15,6 +15,25 @@ assert.match(
   'Business Semantics promotion must force only business_description.csv.',
 );
 
+const scopedBuildResult = spawnSync(process.execPath, [
+  runner,
+  '--kb',
+  'ComarchOptimaBusinessSemantics',
+  '--build',
+  '--dry-run',
+], {
+  env: { ...process.env },
+  encoding: 'utf8',
+});
+assert.equal(scopedBuildResult.status, 0, scopedBuildResult.stderr || scopedBuildResult.stdout);
+const scopedBuild = JSON.parse(scopedBuildResult.stdout);
+const scopedBuildAction = scopedBuild.actions.find((action) => action.action === 'build');
+assert.deepEqual(
+  scopedBuildAction.forceFiles,
+  ['business_description.csv'],
+  'An explicit Business Semantics scoped build must force promoted descriptions.',
+);
+
 function makeRoot(exportSource) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'knowledge-inbox-pipeline-'));
   fs.mkdirSync(path.join(root, 'scripts'), { recursive: true });

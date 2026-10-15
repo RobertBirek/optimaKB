@@ -1,16 +1,5 @@
 #!/usr/bin/env node
 
-import process from 'process';
-import { OPENSPG_API_BASE } from './config.mjs';
-import { readOpenSpgCookie } from './openspg_auth.mjs';
-
-const CONTENT_AI_CLEAN = !['0', 'false', 'off'].includes(String(process.env.CONTENT_AI_CLEAN || '1').toLowerCase());
-const CONTENT_AI_CLEAN_MAX_CHARS = Number(process.env.CONTENT_AI_CLEAN_MAX_CHARS || 12000);
-const OPENSPG_LLM_ENDPOINT = process.env.OPENSPG_LLM_ENDPOINT || '/v1/chat/completions';
-const OPENSPG_LLM_APP_ID = process.env.OPENSPG_LLM_APP_ID || '';
-const OPENSPG_LLM_SESSION_ID = process.env.OPENSPG_LLM_SESSION_ID || '';
-const OPENSPG_LLM_MODEL = process.env.OPENSPG_LLM_MODEL || '';
-
 const INLINE_PATTERNS = [
   /\bREKLAMA\b/gi,
   /zapisz się na newsletter/gi,
@@ -242,108 +231,9 @@ export function cleanContentWithProfile(value, profile = 'blog', options = {}) {
   const heuristicResult = normalizeWhitespace(lines.join('\n'));
   if (!heuristicResult) return '';
 
-  if (profileDef.useAi && options.aiCleaner) {
-    try {
-      const aiResult = normalizeWhitespace(options.aiCleaner(heuristicResult));
-      return cleanBoilerplate(aiResult || heuristicResult) || heuristicResult;
-    } catch {
-      return heuristicResult;
-    }
-  }
   return heuristicResult;
 }
 
-function trimForAi(value, maxChars = CONTENT_AI_CLEAN_MAX_CHARS) {
-  const text = normalizeWhitespace(value);
-  if (text.length <= maxChars) return text;
-  return text.slice(0, maxChars).trim();
-}
-
-function llmResponseText(json) {
-  return String(
-    json?.choices?.[0]?.message?.content
-    || json?.choices?.[0]?.text
-    || json?.result?.choices?.[0]?.message?.content
-    || json?.result?.output
-    || json?.result?.content
-    || json?.data?.choices?.[0]?.message?.content
-    || '',
-  );
-}
-
-function llmResponseTextFromBody(body) {
-  const text = String(body || '').trim();
-  if (!text.includes('\ndata:') && !text.startsWith('data:')) {
-    return llmResponseText(JSON.parse(text));
-  }
-  let lastAnswer = '';
-  for (const line of text.split(/\r?\n/)) {
-    if (!line.startsWith('data:')) continue;
-    const payload = line.slice(5).trim();
-    if (!payload || payload === '[DONE]') continue;
-    if (['[ERROR]', '[TIMEOUT]'].includes(payload)) {
-      throw new Error(`OpenSPG LLM stream ended with ${payload}`);
-    }
-    try {
-      const event = JSON.parse(payload);
-      if (event.success === false) {
-        throw new Error(event.errorMsg || event.message || 'OpenSPG LLM stream failed');
-      }
-      if (typeof event.answer === 'string') lastAnswer = event.answer;
-    } catch (error) {
-      if (error instanceof SyntaxError) continue;
-      throw error;
-    }
-  }
-  if (!lastAnswer) throw new Error('OpenSPG LLM stream did not contain an answer');
-  return lastAnswer;
-}
-
-async function defaultAiCleaner(text) {
-  const cookie = readOpenSpgCookie();
-  if (!cookie || !OPENSPG_LLM_APP_ID || !OPENSPG_LLM_SESSION_ID) {
-    return text;
-  }
-  const prompt = [
-    'Oczyść surową treść pobraną ze strony WWW.',
-    'Usuń reklamy, newslettery, cookie bannery, nawigację, stopki, linki społecznościowe, tagi, sekcje "czytaj także" i inny boilerplate.',
-    'Zachowaj wyłącznie merytoryczną treść dokumentu lub artykułu.',
-    'Zwróć tylko oczyszczoną treść bez komentarza i bez markdownowych bloków kodu.',
-    '',
-    trimForAi(text),
-  ].join('\n');
-  const payload = {
-    ...(OPENSPG_LLM_MODEL ? { model: OPENSPG_LLM_MODEL } : {}),
-    app_id: /^\d+$/.test(OPENSPG_LLM_APP_ID) ? Number(OPENSPG_LLM_APP_ID) : OPENSPG_LLM_APP_ID,
-    session_id: /^\d+$/.test(OPENSPG_LLM_SESSION_ID) ? Number(OPENSPG_LLM_SESSION_ID) : OPENSPG_LLM_SESSION_ID,
-    prompt: [{ type: 'text', content: prompt }],
-    thinking_enabled: false,
-    search_enabled: false,
-  };
-  const response = await fetch(`${OPENSPG_API_BASE}${OPENSPG_LLM_ENDPOINT}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Cookie: cookie,
-    },
-    body: JSON.stringify(payload),
-  });
-  const body = await response.text();
-  if (!response.ok) {
-    throw new Error(`OpenSPG LLM failed with HTTP ${response.status}: ${body.slice(0, 240)}`);
-  }
-  return llmResponseTextFromBody(body);
-}
-
 export async function cleanContent(value, options = {}) {
-  const heuristicallyCleaned = cleanBoilerplate(value);
-  if (!heuristicallyCleaned) return '';
-  const aiCleaner = options.aiCleaner || (CONTENT_AI_CLEAN ? defaultAiCleaner : null);
-  if (!aiCleaner) return heuristicallyCleaned;
-  try {
-    const aiResult = normalizeWhitespace(await aiCleaner(heuristicallyCleaned));
-    return cleanBoilerplate(aiResult || heuristicallyCleaned) || heuristicallyCleaned;
-  } catch {
-    return heuristicallyCleaned;
-  }
+  return cleanBoilerplate(value);
 }

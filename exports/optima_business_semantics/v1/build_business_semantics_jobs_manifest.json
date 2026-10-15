@@ -44,16 +44,16 @@
     },
     {
       "fileName": "business_description.csv",
-      "id": 714,
+      "id": 870,
       "status": "FINISH",
       "jobName": "COBS BusinessDescription CSV Import",
       "entityType": "ComarchOptimaBusinessSemantics.BusinessDescription",
       "entityTypeId": 2026061160688342,
-      "rowCount": 640,
-      "uploadedUrl": "http://release-openspg-minio:9000/builder/upload/18873664390006316aa13985da9afe85/business_description.csv",
-      "gmtCreate": "2026-09-07 14:12:57",
-      "gmtModified": "2026-09-07 14:13:50",
-      "fileUrl": "http://release-openspg-minio:9000/builder/upload/18873664390006316aa13985da9afe85/business_description.csv"
+      "rowCount": 643,
+      "uploadedUrl": "http://release-openspg-minio:9000/builder/upload/c8b06177881d2fe8f14791522c5538fb/business_description.csv",
+      "gmtCreate": "2026-10-12 14:03:10",
+      "gmtModified": "2026-10-12 14:04:02",
+      "fileUrl": "http://release-openspg-minio:9000/builder/upload/c8b06177881d2fe8f14791522c5538fb/business_description.csv"
     }
   ]
 }

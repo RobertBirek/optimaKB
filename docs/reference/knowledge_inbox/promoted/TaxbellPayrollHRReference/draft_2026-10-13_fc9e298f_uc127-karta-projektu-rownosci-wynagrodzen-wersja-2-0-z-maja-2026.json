@@ -1,0 +1,50 @@
+{
+  "id": "draft_2026-10-13_fc9e298f_uc127-karta-projektu-rownosci-wynagrodzen-wersja-2-0-z-maja-2026",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "UC127: karta projektu równości wynagrodzeń, wersja 2.0 z maja 2026",
+  "content": "## Karta i daty\nKPRM publikuje pod numerem UC127 projekt ustawy wdrażający dyrektywę (UE) 2023/970 o przejrzystości i równości wynagrodzeń. Za opracowanie oraz przedłożenie odpowiada MRPiPS; karta wskazuje Agnieszkę Dziemianowicz-Bąk. Historia podaje pierwszą publikację 25 listopada 2025 r. o 16:49 oraz wersję 2.0 z 25 maja 2026 r. o 09:49. Nie podaje strefy czasowej. Pole statusu realizacji pozostaje bez wartości.\n\n## Cel i odrębna ustawa\nAutorzy karty rozdzielają istniejącą zasadę równego wynagrodzenia, przywołując Konstytucję i Kodeks pracy, od nowych mechanizmów przejrzystości. Termin implementacji dyrektywy 7 czerwca 2026 r. nie stanowi dowodu uchwalenia ustawy. Projekt ma regulować także zadania organów, dlatego autorzy proponują odrębny akt obok zmian Kodeksu pracy, KPC i ustawy o PIP.\n\n## Projektowane obowiązki\nW karcie opisano ocenę wartości pracy według umiejętności, wysiłku, odpowiedzialności i warunków pracy oraz obiektywne, neutralne płciowo kryteria płac. Pracownicy mieliby otrzymywać dostęp do kryteriów i na wniosek informacje o własnym wynagrodzeniu oraz średnich w porównywalnej kategorii, z podziałem na płeć. Dla pracodawców poniżej 50 osób karta przewiduje wyjątek dotyczący udostępnienia kryteriów wzrostu płac na wniosek.\n\nProjekt przewiduje raporty luki płacowej dla zatrudniających co najmniej 100 osób, co trzy lata, a od 250 osób co roku. Raporty dotyczyłyby poprzedniego roku i trafiały przez narzędzie GUS do organu monitorującego. Część danych miałaby być publiczna, lecz luka w kategoriach pracowników nie. Wspólną ocenę płac projekt wiąże łącznie z luką co najmniej 5%, brakiem neutralnego uzasadnienia i brakiem usunięcia różnicy przez sześć miesięcy.\n\n## Egzekwowanie i granice\nAutorzy opisują środki ochrony prawnej, zadania organu równości, organu monitorującego, PIP i sądów oraz projektowane grzywny 2000–60000 zł za wskazane naruszenia. Są to propozycje w karcie, nie potwierdzone obecne sankcje. Odczyt obejmuje cele, planowane rozwiązania, odpowiedzialnych i historię wersji. Nie obejmuje dalszego przebiegu legislacyjnego, porównania treści wersji 1.0 z 2.0 ani uchwalenia. Streszczenie nie ustala aktualnej mocy prawnej.",
+  "sourceUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+  "tags": [
+    "source-correction",
+    "verified-summary",
+    "UC127",
+    "wynagrodzenia",
+    "legislative-proposal",
+    "historical"
+  ],
+  "metadata": {
+    "supersedesDraftId": "draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz",
+    "sourceRetrievedAt": "2026-10-13T09:43:11.625Z",
+    "sourcePublicationDate": "2025-11-25T16:49",
+    "sourceUpdatedAt": "2026-05-25T09:49",
+    "sourceUpdatedAtBasis": "Visible publication history, version 2.0; not inferred from the empty realization-status field",
+    "sourceDateTimeZone": "not specified by page; no UTC conversion asserted",
+    "verificationScope": "source_fidelity_only",
+    "representation": "verified_summary",
+    "historical": true,
+    "originalSourceEvidence": {
+      "path": "/tmp/opencode/remaining-source-evidence.json",
+      "sha256": "e69d6d12964bbf89ca2df6d6e84444fe3800d68e737f4bca5aa0b06d37ab3d5e",
+      "locator": "key=a939510d; public card and publication history"
+    },
+    "reviewedEvidence": {
+      "path": "/tmp/opencode/remaining-a939510d-official.txt",
+      "sha256": "6060f2a7f2fd78c4fb020011a8be68ec4f8d2211c4472f9449dfa2821aad81b4",
+      "locator": "linie 43–192; daty wersji linie 187–192"
+    },
+    "unverifiedSections": [
+      "Status realizacji",
+      "Losy legislacyjne i uchwalenie",
+      "Różnice treści wersji 1.0/2.0",
+      "Aktualna moc prawna"
+    ],
+    "correctionOrigin": "source_correction_review"
+  },
+  "createdAt": "2026-10-13T11:51:34.303Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-13T11:52:17.417Z",
+  "promotedBy": "authorized14-source-correction-controller",
+  "reviewNote": "Verified source correction; supersedes draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz; controller-authorized local phase only.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_fc9e298f_uc127-karta-projektu-rownosci-wynagrodzen-wersja-2-0-z-maja-2026.json"
+}

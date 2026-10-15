@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T10:15:44.279Z",
+  "generatedAt": "2026-10-13T11:56:53.097Z",
   "entries": [
     {
       "draftId": "draft_2026-06-02_680c2b16_mcp-workflow-test-betterfly-ksef-auth-note",
@@ -219,17 +219,26 @@
     },
     {
       "draftId": "draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Accounting VAT Reference",
       "kbNamespace": "TaxbellAccountingVATReference",
       "title": "Serwis o podatkach - Pliki do pobrania JPK VAT - Podatki.gov.pl",
       "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/",
       "rawJsonPath": "downloads/knowledge_inbox/2026-06-05/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.md",
-      "promotedAt": "2026-06-06T06:08:21.893Z",
-      "promotedBy": "mcpadmin",
-      "reviewNote": "Bulk approved 17 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:39.731Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_ef1a7107_mf-katalog-pobran-jpk-vat-odczyt-wersji-z-16-wrzesnia-2026; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-06-06T06:08:21.893Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellAccountingVATReference/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellAccountingVATReference/draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-06-05_75ef2b71_serwis-o-podatkach-interpretacje-ogolne",
@@ -648,17 +657,26 @@
     },
     {
       "draftId": "draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Payroll HR Reference",
       "kbNamespace": "TaxbellPayrollHRReference",
       "title": "Ograniczenia w dostępie do usług elektronicznych ZUS  5 czerwca 2026 r. - ZUS",
       "sourceUrl": "https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.",
       "rawJsonPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.md",
-      "promotedAt": "2026-06-09T06:55:47.374Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 13 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:48.776Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_b34e9c55_zus-historyczna-zapowiedz-ograniczen-us-ug-w-nocy-5-6-czerwca-2026; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-06-09T06:55:47.374Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-06-09_151ae85b_konfiguracja-ksef-w-programie",
@@ -876,17 +894,26 @@
     },
     {
       "draftId": "draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Comarch Community News",
       "kbNamespace": "ComarchCommunityNews",
       "title": "błąd przy konfiguracji Comarch Betterfly z Ksef",
       "sourceUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
       "rawJsonPath": "downloads/knowledge_inbox/2026-06-09/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.md",
-      "promotedAt": "2026-06-09T06:55:47.273Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 13 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:52.125Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_c5ccc404_betterfly-i-ksef-zg-oszenie-autoryzacji-oraz-sugestia-z-marca-2026; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-06-09T06:55:47.273Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchCommunityNews/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchCommunityNews/draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-06-09_fc1fd95d_jakie-zmiany-wprowadzono-w-ewidencji-rycza-towej-od-1-stycznia-2026-roku-baza-wi",
@@ -1780,17 +1807,26 @@
     },
     {
       "draftId": "draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Payroll HR Reference",
       "kbNamespace": "TaxbellPayrollHRReference",
       "title": "Zmiany w stażu pracy – wnioski o zaświadczenia z ZUS od stycznia 2026 r. - ZUS",
       "sourceUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
       "rawJsonPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.md",
-      "promotedAt": "2026-06-30T09:55:18.080Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 10 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:56:42.641Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_2bd27eef_zus-zapowiedz-dokumentowania-nowych-okresow-stazu-z-21-pazdziernika-2025; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-06-30T09:55:18.080Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-06-30_8b13b718_galeria-wzorow-baza-wiedzy-programu-comarch-sprint",
@@ -1808,17 +1844,26 @@
     },
     {
       "draftId": "draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Payroll HR Reference",
       "kbNamespace": "TaxbellPayrollHRReference",
       "title": "Projekt ustawy o wzmocnieniu stosowania prawa do jednakowego wynagrodzenia mężczyzn i kobiet za jednakową pracę lub za pracę o jednakowej wartości - Kancelaria Prezesa Rady Ministrów - Portal Gov.pl",
       "sourceUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
       "rawJsonPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.md",
-      "promotedAt": "2026-06-30T09:55:17.795Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 10 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:56:46.314Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_fc9e298f_uc127-karta-projektu-rownosci-wynagrodzen-wersja-2-0-z-maja-2026; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-06-30T09:55:17.795Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-06-30_ac76817a_instalacja-i-aktualizacje",
@@ -1859,17 +1904,26 @@
     },
     {
       "draftId": "draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Payroll HR Reference",
       "kbNamespace": "TaxbellPayrollHRReference",
       "title": "Informacja dotycząca prac nad wdrożeniem dyrektywy dotyczącej równości wynagrodzeń - Ministerstwo Rodziny, Pracy i Polityki Społecznej - Portal Gov.pl",
       "sourceUrl": "https://www.gov.pl/web/rodzina/informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodzen",
       "rawJsonPath": "downloads/knowledge_inbox/2026-06-30/draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz.md",
-      "promotedAt": "2026-06-30T09:55:17.838Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 10 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:32.816Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_cc557dad_przejrzystosc-wynagrodzen-komunikat-mrpips-z-24-czerwca-2025; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-06-30T09:55:17.838Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-06-30_e112d8e6_jak-przes-ac-do-ksef-dodatkowe-informacje-baza-wiedzy-programu-comarch-erp-optim",
@@ -2013,17 +2067,26 @@
     },
     {
       "draftId": "draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Legal Reference",
       "kbNamespace": "TaxbellLegalReference",
       "title": "https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf",
       "sourceUrl": "https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf.md",
-      "promotedAt": "2026-07-01T11:03:28.381Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 7 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:29.760Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_5f3036a1_zmiany-w-podatkach-2026-bibliografia-i-tematy-poradnika-mddp-infor; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-07-01T11:03:28.381Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellLegalReference/draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellLegalReference/draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-01_d3a4d743_zus-w-czerwcu-2026-r-o-blisko-10-zwiekszy-stan-wszystkich-kont-emerytalnych-i-ka",
@@ -2041,31 +2104,49 @@
     },
     {
       "draftId": "draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Accounting VAT Reference",
       "kbNamespace": "TaxbellAccountingVATReference",
       "title": "Zmiany w JPK VAT. Dopasowanie do KSeF, nowe wzory JPK V7M(3), JPK V7K(3). Nowe oznaczenia: NrKSeF, OFF, BFK, DI - Infor.pl",
       "sourceUrl": "https://ksiegowosc.infor.pl/podatki/vat/jpk-vat/7482682,zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m3-jpk-v7k3-nowe-oznaczenia-nrksef-off-bfk-di.html",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-01/draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze.md",
-      "promotedAt": "2026-07-02T06:26:32.940Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 7 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:26.515Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_08fb53ae_jpk-z-deklaracja-i-ksef-omowienie-infor-z-9-kwietnia-2026; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-07-02T06:26:32.940Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellAccountingVATReference/draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellAccountingVATReference/draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Payroll HR Reference",
       "kbNamespace": "TaxbellPayrollHRReference",
       "title": "Przegląd zmian w prawie pracy w 2025 i 2026 r. - Infor.pl",
       "sourceUrl": "https://kadry.infor.pl/wiadomosci/6841531,przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r.html",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-02/draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl.md",
-      "promotedAt": "2026-07-02T06:26:32.533Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 7 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:36.167Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_b5a45b4e_prawo-pracy-2025-2026-przeglad-tomasza-kowalskiego-z-lutego-2025; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-07-02T06:26:32.533Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-02_95a6a92b_xl008-dokumentacja-znacznikow-xml-pliku-synchronizacyjnego-erp-xl-erp-optima-baz",
@@ -2092,17 +2173,26 @@
     },
     {
       "draftId": "draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Payroll HR Reference",
       "kbNamespace": "TaxbellPayrollHRReference",
       "title": "Roczna waloryzacja na kontach osób ubezpieczonych w ZUS - ZUS",
       "sourceUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-02/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.md",
-      "promotedAt": "2026-07-02T06:26:32.795Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Bulk approved 7 drafts from dashboard"
+      "withdrawnAt": "2026-10-13T11:56:49.575Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_2e834ec5_zus-roczna-waloryzacja-kont-opisana-7-czerwca-2023-wiadomosc-archiwalna; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-07-02T06:26:32.795Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-02_b4fa030f_sejm-przyja-pakiet-ustaw-deregulacyjnych-ministerstwo-finansow-portal-gov-pl",
@@ -4150,17 +4240,26 @@
     },
     {
       "draftId": "draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Accounting VAT Reference",
       "kbNamespace": "TaxbellAccountingVATReference",
       "title": "Nowe wzory struktur JPK_VAT dostępne na ePUAP",
       "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-24/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.md",
-      "promotedAt": "2026-07-29T07:54:48.298Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Approved and exported from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:42.845Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_4073314c_mf-og-oszenie-struktur-jpk-v7m-3-i-jpk-v7k-3-z-grudnia-2025; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-07-29T07:54:48.298Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellAccountingVATReference/draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-24_eed0f4c5_informacja-dotyczaca-rozliczenia-podatku",
@@ -4204,17 +4303,26 @@
     },
     {
       "draftId": "draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Legal Reference",
       "kbNamespace": "TaxbellLegalReference",
       "title": "Serwis o podatkach - Informacje podstawowe CIT klasyczny",
       "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-27/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.md",
-      "promotedAt": "2026-07-27T07:42:20.953Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Approved and exported from dashboard"
+      "withdrawnAt": "2026-10-13T11:52:45.902Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_bb00ce3f_cit-klasyczny-streszczenie-informacji-mf-aktualizacja-24-czerwca-2026; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-07-27T07:42:20.953Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellLegalReference/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellLegalReference/draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-27_baff7b77_krajowy-system-e-faktur-ksef-baza-wiedzy-programu-comarch-erp-optima",
@@ -4388,17 +4496,26 @@
     },
     {
       "draftId": "draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Taxbell Payroll HR Reference",
       "kbNamespace": "TaxbellPayrollHRReference",
       "title": "Od lipca prostsze zasady składania wniosków o zasiłki",
       "sourceUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
       "rawJsonPath": "downloads/knowledge_inbox/2026-07-30/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.md",
-      "promotedAt": "2026-07-31T05:34:46.564Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Approved and exported from dashboard"
+      "withdrawnAt": "2026-10-13T11:56:53.096Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_24c70de1_zus-wnioski-o-zasi-ki-w-komunikacie-z-1-lipca-2026; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-07-31T05:34:46.564Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/TaxbellPayrollHRReference/draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-07-30_8bdfc9ca_ocena-ryzyka-zawodowego-panstwowa-inspekcja-pracy",
@@ -4455,6 +4572,18 @@
       "reviewNote": "Approved and exported from dashboard"
     },
     {
+      "draftId": "draft_2026-08-02_7b5dd1ca_problemy-z-odbiorem-faktur-z-ksef-spo-ecznosc-erp",
+      "status": "rejected",
+      "kbName": "Comarch Community News",
+      "kbNamespace": "ComarchCommunityNews",
+      "title": "Problemy z odbiorem faktur z KSEF - Społeczność ERP",
+      "sourceUrl": "https://spolecznosc.comarch.pl/question/problemy-z-odbiorem-faktur-z-ksef-77145",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-02/draft_2026-08-02_7b5dd1ca_problemy-z-odbiorem-faktur-z-ksef-spo-ecznosc-erp.json",
+      "rejectedAt": "2026-10-13T09:14:01.197Z",
+      "rejectedBy": "opencode",
+      "reviewNote": "Operator zatwierdzil odrzucenie: potwierdzone zanieczyszczenie cleanera, relacje FK i referencje chunk zamiast tresci watku Community 77145. Diagnoza: Community_77145_Root_Cause_2026-10-13.md."
+    },
+    {
       "draftId": "draft_2026-08-02_8296e79d_eksport-i-import-dokumentow-przez-pliki-xml-baza-wiedzy-programu-comarch-erp-opt",
       "status": "rejected",
       "kbName": "Comarch Optima Additional Functions",
@@ -4465,6 +4594,18 @@
       "rejectedAt": "2026-08-04T09:28:35.384Z",
       "rejectedBy": "mcpbot",
       "reviewNote": "Rejected from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-02_a3442aa7_problemy-z-odbiorem-faktur-z-ksef-spo-ecznosc-erp",
+      "status": "rejected",
+      "kbName": "Comarch Community News",
+      "kbNamespace": "ComarchCommunityNews",
+      "title": "Problemy z odbiorem faktur z KSEF - Społeczność ERP",
+      "sourceUrl": "https://spolecznosc.comarch.pl/question/problemy-z-odbiorem-faktur-z-ksef-77145",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-02/draft_2026-08-02_a3442aa7_problemy-z-odbiorem-faktur-z-ksef-spo-ecznosc-erp.json",
+      "rejectedAt": "2026-10-13T09:14:01.830Z",
+      "rejectedBy": "opencode",
+      "reviewNote": "Operator zatwierdzil odrzucenie: odmowa modelu dotyczaca braku surowej tresci strony zamiast dyskusji Community 77145. Diagnoza: Community_77145_Root_Cause_2026-10-13.md."
     },
     {
       "draftId": "draft_2026-08-02_d2b5292f_article-category-nowosci-i-zmiany-w-wersji-2026-3-1-baza-wiedzy-programu-comarch",
@@ -4482,17 +4623,26 @@
     },
     {
       "draftId": "draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna",
-      "status": "promoted",
+      "status": "withdrawn",
       "kbName": "Comarch Community News",
       "kbNamespace": "ComarchCommunityNews",
       "title": "Nowa wersja Comarch ERP Optima 2026.2.1 jest już dostępna!",
       "sourceUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
       "rawJsonPath": "downloads/knowledge_inbox/2026-08-02/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.json",
-      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.json",
-      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.md",
-      "promotedAt": "2026-08-04T09:31:01.167Z",
-      "promotedBy": "mcpbot",
-      "reviewNote": "Approved from inbox row"
+      "withdrawnAt": "2026-10-13T11:56:39.056Z",
+      "withdrawnBy": "authorized14-source-correction-controller",
+      "reviewNote": "Superseded by draft_2026-10-13_b5501577_optima-2026-2-1-og-oszenie-wydania-ze-stycznia-2026-i-datowane-komentarze; source-correction archive; local-only controller authorization.",
+      "previousPromotedAt": "2026-08-04T09:31:01.167Z",
+      "movedPaths": [
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.json",
+          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchCommunityNews/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.json"
+        },
+        {
+          "from": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.md",
+          "to": "docs/reference/knowledge_inbox/withdrawn/ComarchCommunityNews/draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna.md"
+        }
+      ]
     },
     {
       "draftId": "draft_2026-08-03_08f2c0fd_publiczny-portal-informacji-o-prawie-aktprawnydetail-skorowidz",
@@ -4559,6 +4709,20 @@
       "promotedAt": "2026-08-04T09:03:53.476Z",
       "promotedBy": "mcpbot",
       "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-08-05_211928ef_lista-kontrahentow-baza-wiedzy-comarch-erp-xl-hr",
+      "status": "promoted",
+      "kbName": "Comarch Optima Business Semantics",
+      "kbNamespace": "ComarchOptimaBusinessSemantics",
+      "title": "Lista kontrahentów – Baza wiedzy Comarch ERP XL HR",
+      "sourceUrl": "https://pomoc.comarch.pl/xl/hr/pl/2026/dokumentacja/lista-kontrahentow/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-08-05/draft_2026-08-05_211928ef_lista-kontrahentow-baza-wiedzy-comarch-erp-xl-hr.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaBusinessSemantics/draft_2026-08-05_211928ef_lista-kontrahentow-baza-wiedzy-comarch-erp-xl-hr.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaBusinessSemantics/draft_2026-08-05_211928ef_lista-kontrahentow-baza-wiedzy-comarch-erp-xl-hr.md",
+      "promotedAt": "2026-10-08T12:03:13.668Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved from inbox row"
     },
     {
       "draftId": "draft_2026-08-08_9b53ea7c_broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3",
@@ -4713,6 +4877,244 @@
       "promotedAt": "2026-09-01T06:48:57.969Z",
       "promotedBy": "mcpbot",
       "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-09-11_eea4330e_serwis-o-podatkach-podstawa-prawna",
+      "status": "promoted",
+      "kbName": "Taxbell Legal Reference",
+      "kbNamespace": "TaxbellLegalReference",
+      "title": "Serwis o podatkach - Podstawa prawna",
+      "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/pit/podstawa-prawna",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-09-11/draft_2026-09-11_eea4330e_serwis-o-podatkach-podstawa-prawna.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-09-11_eea4330e_serwis-o-podatkach-podstawa-prawna.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-09-11_eea4330e_serwis-o-podatkach-podstawa-prawna.md",
+      "promotedAt": "2026-09-11T07:53:06.788Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved and exported from dashboard"
+    },
+    {
+      "draftId": "draft_2026-09-29_7e238bd0_co-oznaczaja-statusy-i-stany-dokumentow-na-listach-baza-wiedzy-aplikacji-comarch",
+      "status": "promoted",
+      "kbName": "Comarch Optima Business Semantics",
+      "kbNamespace": "ComarchOptimaBusinessSemantics",
+      "title": "Co oznaczają statusy i stany dokumentów na listach? – Baza Wiedzy aplikacji Comarch ERP Optima w przeglądarce",
+      "sourceUrl": "https://pomoc.comarch.pl/optima-online/pl/index.php/dokumentacja/co-oznaczaja-statusy-i-stany-dokumentow-na-listach/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-09-29/draft_2026-09-29_7e238bd0_co-oznaczaja-statusy-i-stany-dokumentow-na-listach-baza-wiedzy-aplikacji-comarch.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaBusinessSemantics/draft_2026-09-29_7e238bd0_co-oznaczaja-statusy-i-stany-dokumentow-na-listach-baza-wiedzy-aplikacji-comarch.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaBusinessSemantics/draft_2026-09-29_7e238bd0_co-oznaczaja-statusy-i-stany-dokumentow-na-listach-baza-wiedzy-aplikacji-comarch.md",
+      "promotedAt": "2026-10-08T12:03:20.146Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved from inbox row"
+    },
+    {
+      "draftId": "draft_2026-10-06_4439c646_wiazanie-dokumentow-fz-w-buforze-z-zatwierdzonymi-dokumentami-zd-baza-wiedzy-pro",
+      "status": "promoted",
+      "kbName": "Comarch Optima Business Semantics",
+      "kbNamespace": "ComarchOptimaBusinessSemantics",
+      "title": "Wiązanie dokumentów FZ w buforze z zatwierdzonymi dokumentami ZD – Baza Wiedzy programu Comarch ERP Optima",
+      "sourceUrl": "https://pomoc.comarch.pl/optima/pl/2025_5/dokumentacja/wiazanie-dokumentow-fz-w-buforze-z-zatwierdzonymi-dokumentami-zd/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-06/draft_2026-10-06_4439c646_wiazanie-dokumentow-fz-w-buforze-z-zatwierdzonymi-dokumentami-zd-baza-wiedzy-pro.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaBusinessSemantics/draft_2026-10-06_4439c646_wiazanie-dokumentow-fz-w-buforze-z-zatwierdzonymi-dokumentami-zd-baza-wiedzy-pro.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchOptimaBusinessSemantics/draft_2026-10-06_4439c646_wiazanie-dokumentow-fz-w-buforze-z-zatwierdzonymi-dokumentami-zd-baza-wiedzy-pro.md",
+      "promotedAt": "2026-10-08T12:03:27.836Z",
+      "promotedBy": "mcpbot",
+      "reviewNote": "Approved from inbox row"
+    },
+    {
+      "draftId": "draft_2026-10-13_08fb53ae_jpk-z-deklaracja-i-ksef-omowienie-infor-z-9-kwietnia-2026",
+      "status": "promoted",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "title": "JPK z deklaracją i KSeF: omówienie INFOR z 9 kwietnia 2026",
+      "sourceUrl": "https://ksiegowosc.infor.pl/podatki/vat/jpk-vat/7482682,zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m3-jpk-v7k3-nowe-oznaczenia-nrksef-off-bfk-di.html",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_08fb53ae_jpk-z-deklaracja-i-ksef-omowienie-infor-z-9-kwietnia-2026.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-10-13_08fb53ae_jpk-z-deklaracja-i-ksef-omowienie-infor-z-9-kwietnia-2026.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-10-13_08fb53ae_jpk-z-deklaracja-i-ksef-omowienie-infor-z-9-kwietnia-2026.md",
+      "promotedAt": "2026-10-13T11:51:43.628Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_24c70de1_zus-wnioski-o-zasi-ki-w-komunikacie-z-1-lipca-2026",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "ZUS: wnioski o zasiłki w komunikacie z 1 lipca 2026",
+      "sourceUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_24c70de1_zus-wnioski-o-zasi-ki-w-komunikacie-z-1-lipca-2026.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_24c70de1_zus-wnioski-o-zasi-ki-w-komunikacie-z-1-lipca-2026.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_24c70de1_zus-wnioski-o-zasi-ki-w-komunikacie-z-1-lipca-2026.md",
+      "promotedAt": "2026-10-13T11:52:23.144Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_2bd27eef_zus-zapowiedz-dokumentowania-nowych-okresow-stazu-z-21-pazdziernika-2025",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "ZUS: zapowiedź dokumentowania nowych okresów stażu z 21 października 2025",
+      "sourceUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_2bd27eef_zus-zapowiedz-dokumentowania-nowych-okresow-stazu-z-21-pazdziernika-2025.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_2bd27eef_zus-zapowiedz-dokumentowania-nowych-okresow-stazu-z-21-pazdziernika-2025.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_2bd27eef_zus-zapowiedz-dokumentowania-nowych-okresow-stazu-z-21-pazdziernika-2025.md",
+      "promotedAt": "2026-10-13T11:52:14.424Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_2e834ec5_zus-roczna-waloryzacja-kont-opisana-7-czerwca-2023-wiadomosc-archiwalna",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "ZUS: roczna waloryzacja kont opisana 7 czerwca 2023, wiadomość archiwalna",
+      "sourceUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_2e834ec5_zus-roczna-waloryzacja-kont-opisana-7-czerwca-2023-wiadomosc-archiwalna.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_2e834ec5_zus-roczna-waloryzacja-kont-opisana-7-czerwca-2023-wiadomosc-archiwalna.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_2e834ec5_zus-roczna-waloryzacja-kont-opisana-7-czerwca-2023-wiadomosc-archiwalna.md",
+      "promotedAt": "2026-10-13T11:52:20.229Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_4073314c_mf-og-oszenie-struktur-jpk-v7m-3-i-jpk-v7k-3-z-grudnia-2025",
+      "status": "promoted",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "title": "MF: ogłoszenie struktur JPK_V7M(3) i JPK_V7K(3) z grudnia 2025",
+      "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_4073314c_mf-og-oszenie-struktur-jpk-v7m-3-i-jpk-v7k-3-z-grudnia-2025.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-10-13_4073314c_mf-og-oszenie-struktur-jpk-v7m-3-i-jpk-v7k-3-z-grudnia-2025.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-10-13_4073314c_mf-og-oszenie-struktur-jpk-v7m-3-i-jpk-v7k-3-z-grudnia-2025.md",
+      "promotedAt": "2026-10-13T11:51:58.662Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_5f3036a1_zmiany-w-podatkach-2026-bibliografia-i-tematy-poradnika-mddp-infor",
+      "status": "promoted",
+      "kbName": "Taxbell Legal Reference",
+      "kbNamespace": "TaxbellLegalReference",
+      "title": "Zmiany w podatkach 2026: bibliografia i tematy poradnika MDDP/INFOR",
+      "sourceUrl": "https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_5f3036a1_zmiany-w-podatkach-2026-bibliografia-i-tematy-poradnika-mddp-infor.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-10-13_5f3036a1_zmiany-w-podatkach-2026-bibliografia-i-tematy-poradnika-mddp-infor.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-10-13_5f3036a1_zmiany-w-podatkach-2026-bibliografia-i-tematy-poradnika-mddp-infor.md",
+      "promotedAt": "2026-10-13T11:51:46.666Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_b34e9c55_zus-historyczna-zapowiedz-ograniczen-us-ug-w-nocy-5-6-czerwca-2026",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "ZUS: historyczna zapowiedź ograniczeń usług w nocy 5–6 czerwca 2026",
+      "sourceUrl": "https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_b34e9c55_zus-historyczna-zapowiedz-ograniczen-us-ug-w-nocy-5-6-czerwca-2026.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_b34e9c55_zus-historyczna-zapowiedz-ograniczen-us-ug-w-nocy-5-6-czerwca-2026.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_b34e9c55_zus-historyczna-zapowiedz-ograniczen-us-ug-w-nocy-5-6-czerwca-2026.md",
+      "promotedAt": "2026-10-13T11:52:04.718Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_b5501577_optima-2026-2-1-og-oszenie-wydania-ze-stycznia-2026-i-datowane-komentarze",
+      "status": "promoted",
+      "kbName": "Comarch Community News",
+      "kbNamespace": "ComarchCommunityNews",
+      "title": "Optima 2026.2.1: ogłoszenie wydania ze stycznia 2026 i datowane komentarze",
+      "sourceUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_b5501577_optima-2026-2-1-og-oszenie-wydania-ze-stycznia-2026-i-datowane-komentarze.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-10-13_b5501577_optima-2026-2-1-og-oszenie-wydania-ze-stycznia-2026-i-datowane-komentarze.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-10-13_b5501577_optima-2026-2-1-og-oszenie-wydania-ze-stycznia-2026-i-datowane-komentarze.md",
+      "promotedAt": "2026-10-13T11:52:11.414Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_b5a45b4e_prawo-pracy-2025-2026-przeglad-tomasza-kowalskiego-z-lutego-2025",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "Prawo pracy 2025–2026: przegląd Tomasza Kowalskiego z lutego 2025",
+      "sourceUrl": "https://kadry.infor.pl/wiadomosci/6841531,przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r.html",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_b5a45b4e_prawo-pracy-2025-2026-przeglad-tomasza-kowalskiego-z-lutego-2025.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_b5a45b4e_prawo-pracy-2025-2026-przeglad-tomasza-kowalskiego-z-lutego-2025.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_b5a45b4e_prawo-pracy-2025-2026-przeglad-tomasza-kowalskiego-z-lutego-2025.md",
+      "promotedAt": "2026-10-13T11:51:52.286Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_bb00ce3f_cit-klasyczny-streszczenie-informacji-mf-aktualizacja-24-czerwca-2026",
+      "status": "promoted",
+      "kbName": "Taxbell Legal Reference",
+      "kbNamespace": "TaxbellLegalReference",
+      "title": "CIT klasyczny: streszczenie informacji MF, aktualizacja 24 czerwca 2026",
+      "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_bb00ce3f_cit-klasyczny-streszczenie-informacji-mf-aktualizacja-24-czerwca-2026.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-10-13_bb00ce3f_cit-klasyczny-streszczenie-informacji-mf-aktualizacja-24-czerwca-2026.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference/draft_2026-10-13_bb00ce3f_cit-klasyczny-streszczenie-informacji-mf-aktualizacja-24-czerwca-2026.md",
+      "promotedAt": "2026-10-13T11:52:01.713Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_c5ccc404_betterfly-i-ksef-zg-oszenie-autoryzacji-oraz-sugestia-z-marca-2026",
+      "status": "promoted",
+      "kbName": "Comarch Community News",
+      "kbNamespace": "ComarchCommunityNews",
+      "title": "Betterfly i KSeF: zgłoszenie autoryzacji oraz sugestia z marca 2026",
+      "sourceUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_c5ccc404_betterfly-i-ksef-zg-oszenie-autoryzacji-oraz-sugestia-z-marca-2026.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-10-13_c5ccc404_betterfly-i-ksef-zg-oszenie-autoryzacji-oraz-sugestia-z-marca-2026.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/ComarchCommunityNews/draft_2026-10-13_c5ccc404_betterfly-i-ksef-zg-oszenie-autoryzacji-oraz-sugestia-z-marca-2026.md",
+      "promotedAt": "2026-10-13T11:52:07.950Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_cc557dad_przejrzystosc-wynagrodzen-komunikat-mrpips-z-24-czerwca-2025",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "Przejrzystość wynagrodzeń: komunikat MRPiPS z 24 czerwca 2025",
+      "sourceUrl": "https://www.gov.pl/web/rodzina/informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodzen",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_cc557dad_przejrzystosc-wynagrodzen-komunikat-mrpips-z-24-czerwca-2025.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_cc557dad_przejrzystosc-wynagrodzen-komunikat-mrpips-z-24-czerwca-2025.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_cc557dad_przejrzystosc-wynagrodzen-komunikat-mrpips-z-24-czerwca-2025.md",
+      "promotedAt": "2026-10-13T11:51:49.427Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_ef1a7107_mf-katalog-pobran-jpk-vat-odczyt-wersji-z-16-wrzesnia-2026",
+      "status": "promoted",
+      "kbName": "Taxbell Accounting VAT Reference",
+      "kbNamespace": "TaxbellAccountingVATReference",
+      "title": "MF: katalog pobrań JPK VAT, odczyt wersji z 16 września 2026",
+      "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_ef1a7107_mf-katalog-pobran-jpk-vat-odczyt-wersji-z-16-wrzesnia-2026.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-10-13_ef1a7107_mf-katalog-pobran-jpk-vat-odczyt-wersji-z-16-wrzesnia-2026.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference/draft_2026-10-13_ef1a7107_mf-katalog-pobran-jpk-vat-odczyt-wersji-z-16-wrzesnia-2026.md",
+      "promotedAt": "2026-10-13T11:51:55.155Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl; controller-authorized local phase only."
+    },
+    {
+      "draftId": "draft_2026-10-13_fc9e298f_uc127-karta-projektu-rownosci-wynagrodzen-wersja-2-0-z-maja-2026",
+      "status": "promoted",
+      "kbName": "Taxbell Payroll HR Reference",
+      "kbNamespace": "TaxbellPayrollHRReference",
+      "title": "UC127: karta projektu równości wynagrodzeń, wersja 2.0 z maja 2026",
+      "sourceUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+      "rawJsonPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_fc9e298f_uc127-karta-projektu-rownosci-wynagrodzen-wersja-2-0-z-maja-2026.json",
+      "promotedJsonPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_fc9e298f_uc127-karta-projektu-rownosci-wynagrodzen-wersja-2-0-z-maja-2026.json",
+      "promotedMarkdownPath": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference/draft_2026-10-13_fc9e298f_uc127-karta-projektu-rownosci-wynagrodzen-wersja-2-0-z-maja-2026.md",
+      "promotedAt": "2026-10-13T11:52:17.417Z",
+      "promotedBy": "authorized14-source-correction-controller",
+      "reviewNote": "Verified source correction; supersedes draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz; controller-authorized local phase only."
     }
   ]
 }

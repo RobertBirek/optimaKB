@@ -1,0 +1,47 @@
+{
+  "status": "DONE",
+  "date": "2026-10-14",
+  "type": "LIVE_QA_RETENTION_SUPPLEMENT",
+  "durableRoot": "/docker/openspg/backups/manual-repairs/answer-presentation-20261014/qa-live16/",
+  "copyUTC": "2026-10-14T14:00:15.969576+00:00",
+  "inventory": {
+    "fullResponses": 16,
+    "fullResponseBytes": 138601,
+    "byteExactPayloadFiles": 22,
+    "payloadBytes": 390510,
+    "filesIncludingManifest": 23
+  },
+  "manifest": {
+    "path": "/docker/openspg/backups/manual-repairs/answer-presentation-20261014/qa-live16/qa-live-evidence-manifest.json",
+    "sha256": "561969c5a5eb9fc7422aaa58b8b108fd82ba466648d9cbc257f235e423b015e2",
+    "scope": "22 payload files; independent of original deployment backup"
+  },
+  "indexHashes": {
+    "evidence": "c2b006cb330c879ffa4a935308cf8664bcfc6f9495f1e3901cc70c84e7dbc2e5",
+    "provenance": "33d4166ac8c4665b99b4c978079acce754231635c2a3f000cb0001acb1fb4213"
+  },
+  "verification": {
+    "sourceDurableByteEquality": "PASS22",
+    "responseHashesBytesAgainstIndexAndPublicReport": "PASS16",
+    "credentialScreenBeforeAfter": "PASS",
+    "effectiveMcpbotFullRead": "PASS23",
+    "ownership": "root:mcpbot",
+    "directoryMode": "0750",
+    "fileMode": "0640",
+    "gitIgnored": true,
+    "gitTrackedSupplementFiles": 0
+  },
+  "retention": {
+    "policy": "manual; retain until explicit operator disposition",
+    "outsideAutomatedRetention": true,
+    "basis": "backups/automated root and immediate-child pruning documented in Promoted_Correction_Backup_Retention_2026-10-13.md; no retention configuration changed",
+    "localDiskOnly": true,
+    "offsite": false
+  },
+  "preservation": "Exclusive new child/files only. Original deployment code backup and all existing reports never opened for writing. No runtime/corpus/service changes, answer regeneration, deletions or commits.",
+  "evidenceBoundary": "Full harness-visible Markdown responses, not inaccessible HTTP/JSON-RPC envelopes. QA scores retained, not regraded; no graph/vector execution claimed.",
+  "utility": {
+    "path": "/tmp/opencode/persist-answer-live-qa-20261014.py",
+    "sha256": "138a8abb9b6f2456521f69daf32b6a2aa8a3496e4df8eed97df8572551ff1407"
+  }
+}

@@ -650,7 +650,7 @@ export function listKnowledgeBases(allowedNamespaces) {
   );
 }
 
-export function classifyQuestion(question, routing, allowedNamespaces) {
+export function classifyQuestion(question, routing, allowedNamespaces, options = {}) {
   if (allowedNamespaces) routing = filterRouting(routing, allowedNamespaces);
   const q = normalizeText(question);
   const hasNewsContext = hasAny(q, [
@@ -782,6 +782,20 @@ export function classifyQuestion(question, routing, allowedNamespaces) {
   }
   if (!primary) {
     throw new Error('No knowledge route is available for the allowed namespaces.');
+  }
+
+  if (options.intent === 'release') {
+    const community = routeScores.find((route) => route.primaryKb === 'ComarchCommunityNews');
+    if (community) {
+      const official = routeScores.find((route) => route.primaryKb === 'ComarchOptimaReference');
+      primary = {
+        ...community,
+        score: Math.max(community.score, 1),
+        matched: [...new Set([...(community.matched || []), 'server-selected release intent'])],
+        supportKbs: [...new Set([...(community.supportKbs || []),
+          ...(official ? ['ComarchOptimaReference'] : [])])],
+      };
+    }
   }
 
   const supportSet = new Set(primary.supportKbs || []);

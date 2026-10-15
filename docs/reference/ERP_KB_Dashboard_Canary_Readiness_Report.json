@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-01T03:52:34.848Z",
-  "overall": "READY",
+  "generatedAt": "2026-10-14T23:21:17.343Z",
+  "overall": "APPROVED",
   "gate": {
     "eligible": true,
-    "approved": false,
+    "approved": true,
     "checks": {
       "automationReady": true,
       "samples": true,
@@ -13,9 +13,7 @@
       "noActiveJobs": true,
       "noRollbackFailures": true
     },
-    "blockers": [
-      "Admin publication approval is still required."
-    ],
+    "blockers": [],
     "metrics": {
       "samples": 8,
       "decisions": 8,
@@ -28,11 +26,11 @@
       "minimumAccuracy": 0.95,
       "maximumFalsePositives": 0
     },
-    "approvedAt": "",
-    "approvedBy": ""
+    "approvedAt": "2026-10-12T12:57:05.544Z",
+    "approvedBy": "anonymous"
   },
   "learning": {
-    "generatedAt": "2026-09-01T03:52:34.844Z",
+    "generatedAt": "2026-10-14T23:21:17.337Z",
     "overall": {
       "reviewed": 8,
       "kbNamespaces": 1

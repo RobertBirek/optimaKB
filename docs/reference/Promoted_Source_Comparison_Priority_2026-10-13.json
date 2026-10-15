@@ -1,0 +1,310 @@
+{
+  "taskId": "promoted-source-comparison-priority-2026-10-13",
+  "reportDate": "2026-10-13",
+  "scope": "Read-only comparison of four exact promoted/raw bodies with their original public URLs; correction proposals only",
+  "inputAudit": "docs/reference/Source_Contamination_Audit_2026-10-13.json",
+  "report": "docs/reference/Promoted_Source_Comparison_Priority_2026-10-13.md",
+  "repository": "/docker/openspg",
+  "baseBranch": "main",
+  "baseCommit": "79e376d241322b2debbffb900a68bcf67ae78004",
+  "resultCommit": "uncommitted",
+  "currentLegalValidityCertified": false,
+  "correctionsApplied": false,
+  "originalAttributionPreserved": true,
+  "methods": [
+    "Targeted EXA fetch of each exact original URL",
+    "Independent anonymous HTTP GET of each exact URL; no authentication, cookie jar, browser, CAPTCHA or paywall bypass",
+    "Full raw/promoted Markdown inspection and full JSON content equality/hash checks",
+    "Original HTML article/container inspection, whitespace-normalized retained-line comparison",
+    "Full original PDF download and pypdf 6.20.1 extraction of all 130 pages; fonttools 4.66.1 installed only under /tmp/opencode"
+  ],
+  "temporaryEvidence": {
+    "fetchScript": "/tmp/opencode/priority-source-comparison.py",
+    "extractionScript": "/tmp/opencode/priority-extract-evidence.py",
+    "verificationScript": "/tmp/opencode/verify-priority-source-report.py",
+    "httpEvidence": "/tmp/opencode/priority-source-fetch-evidence.json",
+    "lineComparison": "/tmp/opencode/priority-line-comparison.json",
+    "pdfExtraction": "/tmp/opencode/priority-bf920a10-full-extraction.txt",
+    "pdfSummary": "/tmp/opencode/priority-bf920a10-pdf-summary.json"
+  },
+  "records": [
+    {
+      "key": "de720ffd",
+      "id": "draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze",
+      "candidateId": "candidate_43cb74be-964",
+      "namespace": "TaxbellAccountingVATReference",
+      "observedStatus": "promoted",
+      "sourceUrl": "https://ksiegowosc.infor.pl/podatki/vat/jpk-vat/7482682,zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m3-jpk-v7k3-nowe-oznaczenia-nrksef-off-bfk-di.html",
+      "localBody": {
+        "rawDirectory": "downloads/knowledge_inbox/2026-07-01",
+        "promotedDirectory": "docs/reference/knowledge_inbox/promoted/TaxbellAccountingVATReference",
+        "fileStem": "draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze",
+        "extensionsRead": ["json", "md"],
+        "contentCharactersIncludingDiscoveryEnvelope": 7043,
+        "contentSha256": "7116dbabdd2c4055ec1ac57d375befcbfa43ff440d88ac7c81a5615f3b146a01",
+        "rawEqualsPromoted": true,
+        "originalRetrievedAtMetadata": "2026-06-06T20:05:34.637Z",
+        "promotedAt": "2026-07-02T06:26:32.940Z",
+        "bodySpanPromotedMarkdown": "17-177",
+        "bodySpanRawMarkdown": "19-179",
+        "excerpt": "F_KatStawkiVAT; KaV_KaVID; F_VatTab7; FK_KaVKategoria; F_VatNag"
+      },
+      "fetch": {
+        "method": "anonymous HTTP GET, corroborated by targeted EXA",
+        "startedAtUtc": "2026-10-13T09:39:47.451515Z",
+        "completedAtUtc": "2026-10-13T09:39:48.359583Z",
+        "httpStatus": 200,
+        "finalUrlEqualsOriginal": true,
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 291581,
+        "sha256": "a390dce7af23552e1c532afbd43bc193759277f65cbbbe07868c5ed530653acd",
+        "evidence": "/tmp/opencode/priority-de720ffd-original.html",
+        "sourceContainerText": "/tmp/opencode/priority-de720ffd-article-container.txt",
+        "accessibleCoverage": "Public lead and complete article through the legal-basis paragraph; seven substantive section headings present, including FP. Linked MF brochures/XSDs were not fetched."
+      },
+      "publication": {
+        "title": "Zmiany w JPK VAT. Dopasowanie do KSeF, nowe wzory JPK V7M(3), JPK V7K(3) i broszura MF. Nowe oznaczenia: OFF, BFK, DI",
+        "author": "oprac. Paweł Huczko",
+        "displayedDate": "09 kwietnia 2026, 11:44",
+        "datePublishedJsonLd": "2026-04-09T11:44:16+02:00",
+        "dateModifiedJsonLd": "2026-04-09T11:44:16+02:00",
+        "history": "No prior revision content recovered; matching published/modified metadata does not establish absence of edits. Current headline differs from stored discovery title."
+      },
+      "sourceExcerpts": [
+        {"text": "Nowe wzory JPK_V7M(3) i JPK_V7K(3) - wersje 3 JPK z deklaracją - należy stosować za okresy rozliczeniowe od lutego 2026 roku.", "provenance": "Original HTML #detailContentWrapper, brochure section; article-container.txt lines 83-96"},
+        {"text": "OFF - oznaczenie to dotyczy faktury, o której mowa w art. 106nf ust. 1 ustawy o VAT, tj. faktury wystawionej w trybie awarii KSeF.", "provenance": "Original HTML #detailContentWrapper; article-container.txt lines 90-91, inline whitespace normalized"}
+      ],
+      "comparison": {
+        "evidenceLabel": "POTWIERDZONE",
+        "classification": "completely_foreign_schema_text",
+        "prefaceOnlyFixSufficient": false,
+        "retainedBodyFidelity": "None: the source article concerns JPK/KSeF/deposit-system reporting, not CDN schema catalog documentation. No substantive article passage survives in the promoted content span.",
+        "completeness": "Actual source article absent, not merely shortened.",
+        "unknown": "Historical mechanism and exact originating foreign document were not established."
+      },
+      "proposedCorrection": {
+        "shape": "full_replacement",
+        "proposalOnly": true,
+        "historicAsOf": "2026-04-09",
+        "contentPlan": "Replace the entire schema span with an original-URL article extraction, preserving title, author, date, seven sections, legal-basis paragraph and original links; remove navigation/advertising and discovery instructions from source body. Verify OFF versus DI, correction context and FP paragraphs against this snapshot without resolving legal validity.",
+        "proposedHistoricSummary": "Publikacja Pawła Huczki z 9 kwietnia 2026 r. opisuje dostosowanie JPK_VAT do KSeF i systemu kaucyjnego, wzory JPK_V7M(3)/JPK_V7K(3), oznaczenia NrKSeF, OFF, BFK i DI oraz zasady FP opisane w artykule. Jest to opis historycznej publikacji, nie potwierdzenie aktualnego prawa.",
+        "blocked": false
+      }
+    },
+    {
+      "key": "bf920a10",
+      "id": "draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf",
+      "candidateId": "candidate_f1406c51-038",
+      "namespace": "TaxbellLegalReference",
+      "observedStatus": "promoted",
+      "sourceUrl": "https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf",
+      "localBody": {
+        "rawDirectory": "downloads/knowledge_inbox/2026-07-01",
+        "promotedDirectory": "docs/reference/knowledge_inbox/promoted/TaxbellLegalReference",
+        "fileStem": "draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf",
+        "extensionsRead": ["json", "md"],
+        "contentCharactersIncludingDiscoveryEnvelope": 1341,
+        "contentSha256": "d7a31a175579b23c828c827d74664d074c95a43e1f40e3e776fb495a061904e7",
+        "rawEqualsPromoted": true,
+        "originalRetrievedAtMetadata": "2026-06-07T02:47:32.642Z",
+        "promotedAt": "2026-07-01T11:03:28.381Z",
+        "bodySpanPromotedMarkdown": "17-32",
+        "bodySpanRawMarkdown": "19-34",
+        "preface": "Poniższa oczyszczona treść została przygotowana na podstawie wewnętrznej wiedzy modelu, ponieważ podane referencje nie zawierają odpowiednich informacji."
+      },
+      "fetch": {
+        "method": "anonymous HTTP GET, targeted EXA, full local PDF text extraction",
+        "startedAtUtc": "2026-10-13T09:39:47.447563Z",
+        "completedAtUtc": "2026-10-13T09:39:48.424236Z",
+        "httpStatus": 200,
+        "finalUrlEqualsOriginal": true,
+        "contentType": "application/pdf",
+        "bytes": 1680120,
+        "sha256": "bc2099fca62c2d813ec79eb6b1df3f4c653e9d4acc604c35b3dcb9885ac58d30",
+        "lastModifiedHttp": "Fri, 27 Feb 2026 17:15:52 GMT",
+        "evidence": "/tmp/opencode/priority-bf920a10-original.pdf",
+        "fullExtraction": "/tmp/opencode/priority-bf920a10-full-extraction.txt",
+        "pageCount": 130,
+        "nonemptyExtractedTextPages": 130,
+        "accessibleCoverage": "Entire 130-page public PDF downloaded and all pages text-extracted. Pages 1-2 cover/imprint, 3-4 TOC, 5-6 introduction, 7-128 substantive chapters, 129-130 author lists. Not a TOC-only public preview.",
+        "extractionLimit": "Text layer extraction, not a visual/OCR certification of every glyph or reading order. Sampled imprint, TOC, introduction, CIT, JPK CIT, KSeF and final substantive chapter."
+      },
+      "publication": {
+        "title": "Zmiany w podatkach 2026",
+        "authors": "Praca zbiorowa – eksperci z MDDP",
+        "editor": "Artur Borkowski",
+        "edition": "Wydanie I/2025, grudzień 2025 r.",
+        "isbn": "978-83-8268-877-1",
+        "pdfCreationDate": "D:20251230091930+01'00'",
+        "pdfModificationDate": "D:20260227180345+01'00'",
+        "history": "December 2025 imprint and February 2026 PDF/HTTP modification dates recorded separately; no version-by-version change log recovered. Several project footnotes explicitly use stan na 3.12.2025 r."
+      },
+      "sourceExcerpts": [
+        {"text": "Wydanie I/2025, grudzień 2025 r.", "provenance": "Original PDF page 2, full-extraction.txt lines 16-30"},
+        {"text": "Ponieważ część zmian nie została jeszcze uchwalona, ich ostateczny kształt i moment ewentualnego wejścia w życie wymaga wciąż starannego monitorowania.", "provenance": "Original PDF page 6, full-extraction.txt lines 153-155; line-break hyphenation joined"},
+        {"text": "Projekt zmian na etapie prac rządowych (https://legislacja.gov.pl/projekt/12402157, stan na 3.12.2025 r.).", "provenance": "Original PDF page 7 footnote 1; full-extraction.txt line 185"}
+      ],
+      "comparison": {
+        "evidenceLabel": "POTWIERDZONE",
+        "classification": "model_preface_plus_faithful_cover_and_incomplete_toc",
+        "prefaceOnlyFixSufficient": false,
+        "retainedBodyFidelity": "All 11 promoted topic bullets match the cover after whitespace normalization. The first two TOC entries match page 3; the final Podatek minimalny leader is cut before its page number. Title drops 2026 and omits imprint/authors. No substantive chapter explanation is present.",
+        "completeness": "Cover plus beginning of TOC only, despite accessible substantive PDF pages 5-128.",
+        "auditRefinement": "The model-internal-knowledge statement is contamination, but does not prove the remaining text was invented: the actual PDF independently corroborates it."
+      },
+      "proposedCorrection": {
+        "shape": "full_replacement",
+        "proposalOnly": true,
+        "historicAsOf": "December 2025 edition; topic-specific footnotes may be dated 2025-12-03",
+        "contentPlan": "Replace the stub with a provenance-preserving, page-addressable historical extraction of the substantive PDF (introduction pages 5-6; chapters pages 7-128), retaining original footnotes, contributor names and distinctions between enacted provisions and proposals. Cover/imprint/TOC remain document metadata. Remove the model preface. Mere preface deletion leaves an unusable TOC fragment.",
+        "proposedHistoricSummary": "Zmiany w podatkach 2026: praca zbiorowa ekspertów MDDP, red. Artur Borkowski, INFOR PL SA, wydanie I/2025 (grudzień 2025), ISBN 978-83-8268-877-1. Publikacja zawiera rozdziały o CIT, PIT, VAT i akcyzie, procedurze podatkowej, cenach transferowych i podatku od nieruchomości. Wstęp zaznacza, że część omawianych zmian nie była jeszcze uchwalona. Opis dotyczy wydania historycznego, nie stanu prawa w październiku 2026 r.",
+        "blocked": false
+      }
+    },
+    {
+      "key": "d1c8371c",
+      "id": "draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz",
+      "candidateId": "candidate_08b02a71-942",
+      "namespace": "TaxbellPayrollHRReference",
+      "observedStatus": "promoted",
+      "sourceUrl": "https://www.gov.pl/web/rodzina/informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodzen",
+      "localBody": {
+        "rawDirectory": "downloads/knowledge_inbox/2026-06-30",
+        "promotedDirectory": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference",
+        "fileStem": "draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz",
+        "extensionsRead": ["json", "md"],
+        "contentCharactersIncludingDiscoveryEnvelope": 1737,
+        "contentSha256": "6cc4d04fe33e8802d8af022174e2ad1b88ae2eb07334607f11a9f29b30818b42",
+        "rawEqualsPromoted": true,
+        "originalRetrievedAtMetadata": "2026-06-11T02:50:48.283Z",
+        "promotedAt": "2026-06-30T09:55:17.838Z",
+        "bodySpanPromotedMarkdown": "17-23",
+        "bodySpanRawMarkdown": "19-25",
+        "preface": "Oczyszczona treść (na podstawie własnej analizy, ponieważ podane referencje nie zawierają tej treści):",
+        "cutAt": "narzędzia służącego pracoda"
+      },
+      "fetch": {
+        "method": "anonymous HTTP GET, corroborated by targeted EXA",
+        "startedAtUtc": "2026-10-13T09:39:47.450435Z",
+        "completedAtUtc": "2026-10-13T09:39:48.227933Z",
+        "httpStatus": 200,
+        "finalUrlEqualsOriginal": true,
+        "contentType": "text/html;charset=UTF-8",
+        "bytes": 32245,
+        "sha256": "c538789157d2a0eb5cfddc7a4b8c23d5563dfce34ef7fb077a5d112aeedc03b6",
+        "evidence": "/tmp/opencode/priority-d1c8371c-original.html",
+        "visibleText": "/tmp/opencode/priority-d1c8371c-visible.txt",
+        "accessibleCoverage": "Full public article: title/date/intro plus .editor-content and its two external resource links. Linked ILO guide and EU annex themselves not fetched."
+      },
+      "publication": {
+        "title": "Informacja dotycząca prac nad wdrożeniem dyrektywy dotyczącej równości wynagrodzeń",
+        "institution": "Ministerstwo Rodziny, Pracy i Polityki Społecznej",
+        "displayedDate": "24.06.2025",
+        "history": "No dateModified or version history visible in the inspected article; pageMetadata register.columns is empty. No historic June 2026 snapshot recovered."
+      },
+      "sourceExcerpts": [
+        {"text": "W ramach prowadzonych prac odbyły się także rozmowy pomiędzy Ministerstwem Pracy a Głównym Urzędem Statystycznym dotyczące stworzenia narzędzia służącego pracodawcom do przekazywania organowi monitorującemu informacji, o których mowa w art. 9 ust. 1 Dyrektywy, za pośrednictwem systemu GUS.", "provenance": "Original HTML line 628; visible.txt line 115"},
+        {"text": "Narzędzie zostanie udostępnione bezpłatnie i będą mogli korzystać z niego wszyscy pracodawcy.", "provenance": "Original HTML line 629; visible.txt line 116; whitespace normalized"}
+      ],
+      "comparison": {
+        "evidenceLabel": "POTWIERDZONE",
+        "classification": "removable_model_preface_with_faithful_but_truncated_article_prefix",
+        "prefaceOnlyFixSufficient": false,
+        "retainedBodyFidelity": "All six nonempty retained lines after the preface match the original HTML after whitespace normalization: title, date, three complete paragraphs and prefix of the GUS paragraph. No factual insertion detected in this retained span.",
+        "completeness": "Cuts in the word pracodawcom; omits the rest of the GUS paragraph, CIOP-PIB/job-valuation tool paragraph and recommended-resource links.",
+        "auditRefinement": "Own-analysis preface is not source text. Remaining text is now independently corroborated, rather than unverified or demonstrably invented."
+      },
+      "proposedCorrection": {
+        "shape": "preface_removal_plus_verification",
+        "proposalOnly": true,
+        "historicAsOf": "2025-06-24",
+        "retainedSpanVerification": "passed for the available prefix, not for completeness",
+        "contentPlan": "Remove exact model preface; preserve verified title/date/three opening paragraphs. Restore the fourth paragraph from its beginning to avoid a mid-word splice, then add the job-valuation paragraph and recommended-resource links from the original URL. Keep the communication dated 24 June 2025; future-tense statements remain historical quotations.",
+        "fullHistoricalProposalLocation": "Markdown report section 3",
+        "blocked": false
+      }
+    },
+    {
+      "key": "08cfe029",
+      "id": "draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl",
+      "candidateId": "candidate_b8f1479c-d3c",
+      "namespace": "TaxbellPayrollHRReference",
+      "observedStatus": "promoted",
+      "sourceUrl": "https://kadry.infor.pl/wiadomosci/6841531,przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r.html",
+      "localBody": {
+        "rawDirectory": "downloads/knowledge_inbox/2026-07-02",
+        "promotedDirectory": "docs/reference/knowledge_inbox/promoted/TaxbellPayrollHRReference",
+        "fileStem": "draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl",
+        "extensionsRead": ["json", "md"],
+        "contentCharactersIncludingDiscoveryEnvelope": 1637,
+        "contentSha256": "4790221f06eacfc59607d31438510e97ccb1b9983984d915395dcc086aa5df93",
+        "rawEqualsPromoted": true,
+        "originalRetrievedAtMetadata": "2026-06-14T02:49:38.013Z",
+        "promotedAt": "2026-07-02T06:26:32.533Z",
+        "bodySpanPromotedMarkdown": "17-49",
+        "bodySpanRawMarkdown": "19-51",
+        "preface": "Oczyszczona treść nie pochodzi z podanych odniesień – wykorzystano wyłącznie surową treść podaną w pytaniu.",
+        "cutAt": "Holiday table, sixth row: 6. / 3 maja, without holiday name"
+      },
+      "fetch": {
+        "method": "anonymous HTTP GET, corroborated by targeted EXA",
+        "startedAtUtc": "2026-10-13T09:39:47.449103Z",
+        "completedAtUtc": "2026-10-13T09:39:49.044104Z",
+        "httpStatus": 200,
+        "finalUrlEqualsOriginal": true,
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 292646,
+        "sha256": "e339d3b1805c07f7cbb1aecc09c34972433103d34433511bbd90e93f445cf311",
+        "evidence": "/tmp/opencode/priority-08cfe029-original.html",
+        "sourceContainerText": "/tmp/opencode/priority-08cfe029-article-container.txt",
+        "accessibleCoverage": "Public lead, four sections, all 14 holiday rows, full monthly working-time table and final four proposal bullets. EXA omitted the monthly working-time table and the source typo sentence; direct HTML recovered both."
+      },
+      "publication": {
+        "title": "Przegląd zmian w prawie pracy w 2025 i 2026 r.",
+        "author": "Tomasz Kowalski",
+        "displayedDate": "09 lutego 2025, 13:12",
+        "datePublishedJsonLd": "2025-02-09T13:12:16+01:00",
+        "dateModifiedJsonLd": "2025-02-09T13:12:16+01:00",
+        "history": "No prior revision content recovered; matching dates do not prove no edits. Live recommendation/sidebar dates are not article publication dates."
+      },
+      "sourceExcerpts": [
+        {"text": "Tak więc, od 2025 r. oprócz niedziel będziemy mamy 14 świąt państwowych i kościelnych. Ich wykaz przedstawiamy w tabeli.", "provenance": "Original HTML line 3183; article-container.txt lines 23-25; typo będziemy mamy is present in the source, not evidence of model fabrication"},
+        {"text": "6. | 3 maja | Święto Narodowe Trzeciego Maja", "provenance": "Original HTML first table sixth row; article-container.txt lines 45-47; cells reformatted"},
+        {"text": "Od 19 marca 2025 r. zmienią się przepisy Kodeksu pracy.", "provenance": "Original article, Nowelizacja Kodeksu pracy; article-container.txt line 135"}
+      ],
+      "comparison": {
+        "evidenceLabel": "POTWIERDZONE",
+        "classification": "removable_model_preface_with_faithful_but_truncated_article_prefix",
+        "prefaceOnlyFixSufficient": false,
+        "retainedBodyFidelity": "All 32 nonempty retained lines after the preface match original HTML after stripping Markdown heading/list markers and normalizing whitespace. Includes image caption, lead, contents headings, opening section and flattened partial holiday table. No added factual claims detected in the available span; original typo preserved.",
+        "completeness": "Only five complete holiday rows plus sixth-row number/date survive. Remaining holiday table, monthly working-time table, Sunday trading, supplemental maternity leave and planned-law sections are missing.",
+        "auditRefinement": "Preface contamination confirmed; rest is corroborated historical source text, not a foreign article. Completeness defect must be repaired separately."
+      },
+      "proposedCorrection": {
+        "shape": "preface_removal_plus_verification",
+        "proposalOnly": true,
+        "historicAsOf": "2025-02-09",
+        "retainedSpanVerification": "passed for the available prefix, not for completeness",
+        "contentPlan": "Remove exact preface, restore Tomasz Kowalski attribution, retain verified opening. Re-extract the entire holiday table with all 14 rows and the separate working-time table, then append the remaining three sections from original HTML. Preserve the article's historical future-tense proposals and distinguish them from enacted changes. Do not silently correct source typos or numerical statements as law.",
+        "blocked": false
+      }
+    }
+  ],
+  "limitations": [
+    "Original URLs fetched on 13 October 2026, not archived bytes from promotion time; equality with historical served versions is not certified.",
+    "No certification of current legal validity, comprehensive legal analysis or linked-document verification.",
+    "Normalized substring checks corroborate retained content; structural/source inspection separately establishes truncation. These are not proof that the historical cleaner used the original source.",
+    "PDF full text extraction is complete in page coverage but not a manual visual audit of every page.",
+    "Temporary evidence under /tmp/opencode is ephemeral; the report embeds stable hashes and decisive excerpts.",
+    "Existing unrelated repository changes were preserved; no corpus/status/policy/runtime/service modifications or commits."
+  ],
+  "validation": {
+    "npmRunCheck": "passed before report writing; syntax-only, no runtime invoked",
+    "moduleMap": "passed: 4 modules",
+    "rawPromotedFullContentEquality": "passed: all 4 exact records",
+    "originalHttpFetch": "passed: 4 exact original URLs, HTTP 200, no redirects",
+    "pdfFullExtraction": "passed: 130/130 nonempty text pages",
+    "reportIntegrity": "passed: exact audit IDs/URLs/namespaces, fetch times/status/bytes/hashes, original provenance, unchanged raw/promoted JSON file hashes and historical GOV proposal paragraphs",
+    "retainedLineComparison": {"d1c8371c": "6/6 matched", "08cfe029": "32/32 matched", "bf920a10": "11/11 cover topic bullets matched"}
+  }
+}

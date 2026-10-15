@@ -1,0 +1,44 @@
+{
+  "id": "draft_2026-10-13_cc557dad_przejrzystosc-wynagrodzen-komunikat-mrpips-z-24-czerwca-2025",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "Przejrzystość wynagrodzeń: komunikat MRPiPS z 24 czerwca 2025",
+  "content": "## Kontekst komunikatu\nMRPiPS opublikowało 24 czerwca 2025 r. informację o przygotowaniach do wdrożenia dyrektywy (UE) 2023/970. Ministerstwo podaje przyjęcie dyrektywy 10 maja 2023 r., wejście w życie 6 czerwca 2023 r. i termin implementacji 7 czerwca 2026 r. Są to daty przytoczone w komunikacie; tekst opisuje prace z perspektywy czerwca 2025 r.\n\n## Zespół i współpraca\nMinisterstwo informuje o powołaniu zespołu 5 grudnia 2024 r. i kilku odbytych posiedzeniach. W pracach uczestniczyli przedstawiciele resortu sprawiedliwości, departamentu równego traktowania KPRM, GUS i PIP. Na wybrane spotkania zapraszano naukowców, ekspertów i partnerów społecznych.\n\n## Dwa przygotowywane narzędzia\nMRPiPS relacjonuje rozmowy z GUS o przekazywaniu przez pracodawców wskaźników z art. 9 ust. 1 dyrektywy za pośrednictwem systemu GUS. Dane miały trafiać do organu monitorującego, odpowiedzialnego za ich zebranie i publikowanie. Jest to opis projektowanej organizacji raportowania.\n\nMinisterstwo i CIOP-PIB pracowały również nad narzędziem do wartościowania stanowisk oraz podręcznikiem wyjaśniającym proces oceny pracy. W komunikacie zapowiadają bezpłatny dostęp dla wszystkich pracodawców. Odczyt strony nie potwierdza późniejszego udostępnienia tych rozwiązań.\n\n## Materiały i granice\nMinisterstwo poleca wcześniejszy przewodnik ILO o neutralnym płciowo wartościowaniu pracy: https://www.ilo.org/publications/promoting-equity-gender-neutral-job-evaluation-equal-pay-step-step-guide oraz aneks 1 do raportu Komisji o dyrektywie 2006/54/WE: https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=SWD:2013:0512:FIN:EN:PDF. Ich zawartości nie odczytano. Streszczenie obejmuje pełny komunikat, w tym plany dotyczące GUS i CIOP-PIB. Nie ustala stanu wdrożenia ani aktualnych obowiązków pracodawców.",
+  "sourceUrl": "https://www.gov.pl/web/rodzina/informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodzen",
+  "tags": [
+    "source-correction",
+    "verified-summary",
+    "MRPiPS",
+    "wynagrodzenia",
+    "historical"
+  ],
+  "metadata": {
+    "supersedesDraftId": "draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz",
+    "sourceRetrievedAt": "2026-10-13T09:39:48.227933Z",
+    "sourcePublicationDate": "2025-06-24",
+    "verificationScope": "source_fidelity_only",
+    "representation": "verified_summary",
+    "historical": true,
+    "originalSourceEvidence": {
+      "path": "/tmp/opencode/priority-d1c8371c-original.html",
+      "sha256": "c538789157d2a0eb5cfddc7a4b8c23d5563dfce34ef7fb077a5d112aeedc03b6"
+    },
+    "reviewedEvidence": {
+      "path": "/tmp/opencode/priority-d1c8371c-visible.txt",
+      "sha256": "d44e9773d1ef0458743d57cc9a7e5a4c26d244773a8a78d1fc97ea1e771a7a34",
+      "locator": "linie 110–121"
+    },
+    "unverifiedSections": [
+      "Przewodnik ILO i aneks Komisji",
+      "Data modyfikacji komunikatu",
+      "Późniejsza dostępność narzędzi i stan wdrożenia"
+    ],
+    "correctionOrigin": "source_correction_review"
+  },
+  "createdAt": "2026-10-13T11:51:08.777Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-13T11:51:49.427Z",
+  "promotedBy": "authorized14-source-correction-controller",
+  "reviewNote": "Verified source correction; supersedes draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz; controller-authorized local phase only.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_cc557dad_przejrzystosc-wynagrodzen-komunikat-mrpips-z-24-czerwca-2025.json"
+}

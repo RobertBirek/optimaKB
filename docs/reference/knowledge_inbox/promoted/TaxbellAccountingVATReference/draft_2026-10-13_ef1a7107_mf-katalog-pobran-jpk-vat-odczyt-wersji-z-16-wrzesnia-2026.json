@@ -1,0 +1,48 @@
+{
+  "id": "draft_2026-10-13_ef1a7107_mf-katalog-pobran-jpk-vat-odczyt-wersji-z-16-wrzesnia-2026",
+  "kbName": "Taxbell Accounting VAT Reference",
+  "kbNamespace": "TaxbellAccountingVATReference",
+  "title": "MF: katalog pobrań JPK VAT, odczyt wersji z 16 września 2026",
+  "content": "## Katalog i daty\nMF udostępnia na tej stronie dokumentację usług JPK, certyfikaty, broszury i przykłady. Strona podaje publikację 15 grudnia 2025 r. oraz aktualizację 16 września 2026 r. Poniższy opis odpowiada rozwiniętym sekcjom odczytanym 13 października 2026 r., a nie migawce z dnia promocji draftu.\n\n## Dokumentacja i środowiska\nKatalog wymienia specyfikację interfejsów w wersji 5.6.0, schemat initupload dla metadanych żądania inicjującego i certyfikaty klucza publicznego w wariantach binarnym oraz Base64. MF rozdziela certyfikaty produkcyjne i testowe, podając daty ich wersji. Link do specyfikacji: https://www.podatki.gov.pl/media/bngboylg/specyfikacja-interfejs%C3%B3w-us%C5%82ug-jpk-wersja-560.pdf; schemat: https://www.podatki.gov.pl/media/fmdjp0ri/initupload.xsd.\n\nWedług opisu strona e-dokumenty.mf.gov.pl służy produkcyjnym wysyłkom z podpisem kwalifikowanym, zaufanym lub danymi autoryzującymi; esb2.mf.gov.pl:5064 obsługuje samą metodę status. MF wskazuje test-e-dokumenty.mf.gov.pl dla prób. W testach stosuje uproszczone mocki: wynik pełnomocnictwa zależy od końcowej cyfry NIP, autoryzacji od parzystości identyfikatora, a CRL zwraca wynik dodatni. Parametr enableValidateQualifiedSignature=true pozwala wymusić sprawdzanie certyfikatu podpisu. MF zaleca fikcyjne dane i ograniczenie liczby przesyłek. Reguły mocków nie opisują weryfikacji produkcyjnej.\n\n## Broszury, przykłady i granice\nDwie pozostałe sekcje wymieniają broszury JPK_VAT(3) po polsku i angielsku oraz przykładowe materiały JPK_VAT(3), w tym paczkę JPK-VAT-TEST-0001. Polski poradnik wskazuje plik https://www.podatki.gov.pl/media/aosft1rf/broszura-jpk_vat-3-wersja-20180214.pdf. Nazwy JPK_VAT(3) nie należy utożsamiać z JPK_V7M(3)/JPK_V7K(3). Katalog odsyła także do struktur JPK w serwisie KAS. Odczyt obejmuje etykiety i opisy pięciu sekcji; nie obejmuje zawartości PDF, XSD, ZIP ani testu usług. Nie potwierdza aktualnych obowiązków podatkowych.",
+  "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/",
+  "tags": [
+    "source-correction",
+    "verified-summary",
+    "MF",
+    "JPK",
+    "technical-catalog",
+    "dated-snapshot"
+  ],
+  "metadata": {
+    "supersedesDraftId": "draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl",
+    "sourceRetrievedAt": "2026-10-13T09:42:45.481Z",
+    "sourcePublicationDate": "2025-12-15",
+    "sourceUpdatedAt": "2026-09-16",
+    "verificationScope": "source_fidelity_only",
+    "representation": "verified_summary",
+    "historical": true,
+    "historicalContext": "Datowana migawka katalogu; aktualizacja późniejsza niż promocja; brak historycznych bajtów z czerwca",
+    "originalSourceEvidence": {
+      "path": "/tmp/opencode/remaining-source-evidence.json",
+      "sha256": "e69d6d12964bbf89ca2df6d6e84444fe3800d68e737f4bca5aa0b06d37ab3d5e",
+      "locator": "rekord key=6b5ac5ed, expanded public page/DOM"
+    },
+    "reviewedEvidence": {
+      "path": "/tmp/opencode/remaining-6b5ac5ed-official.txt",
+      "sha256": "93a5d0c4155e4b7345eb24e2c16cd67388c4cda66834f6ab52af397c0c9dfd3c",
+      "locator": "linie 20–104"
+    },
+    "unverifiedSections": [
+      "Zawartość załączników",
+      "Działanie usług i certyfikatów",
+      "Stan z dnia promocji"
+    ],
+    "correctionOrigin": "source_correction_review"
+  },
+  "createdAt": "2026-10-13T11:51:14.091Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-13T11:51:55.155Z",
+  "promotedBy": "authorized14-source-correction-controller",
+  "reviewNote": "Verified source correction; supersedes draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl; controller-authorized local phase only.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_ef1a7107_mf-katalog-pobran-jpk-vat-odczyt-wersji-z-16-wrzesnia-2026.json"
+}

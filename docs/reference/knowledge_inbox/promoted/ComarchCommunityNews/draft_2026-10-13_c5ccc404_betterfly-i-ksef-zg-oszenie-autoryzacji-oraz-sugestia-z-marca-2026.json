@@ -1,0 +1,47 @@
+{
+  "id": "draft_2026-10-13_c5ccc404_betterfly-i-ksef-zg-oszenie-autoryzacji-oraz-sugestia-z-marca-2026",
+  "kbName": "Comarch Community News",
+  "kbNamespace": "ComarchCommunityNews",
+  "title": "Betterfly i KSeF: zgłoszenie autoryzacji oraz sugestia z marca 2026",
+  "content": "## Wątek i zgłoszenie\nUżytkownik biuro zamieścił pytanie w Społeczności Comarch 21 marca 2026 r. o 13:12. Strona podaje aktualizację 23 marca o 10:02, bez strefy czasowej. Przy próbie połączenia Comarch Betterfly z KSeF po skopiowaniu tokena otrzymał błąd autoryzacji. Komunikat wskazywał sprawdzenie ważności tokena lub certyfikatu i uprawnień KSeF. Pytający uważał token za prawidłowy; odczyt wątku nie stanowi jego niezależnej weryfikacji.\n\n## Odpowiedź społeczności\nTomasz Brykner odpowiedział 22 marca o 19:26, a strona pokazuje aktualizację odpowiedzi 23 marca o 10:02. Zasugerował kontrolę zgodności środowisk: produkcyjnego i demonstracyjnego. Wyjaśnił, że token utworzony dla jednego środowiska nie zadziała w drugim. Jako drugi kierunek diagnostyki wskazał wcześniejsze nadanie odpowiednich uprawnień osobie generującej token. Są to wskazówki uczestnika tego datowanego wątku.\n\n## Reakcja i granice\n23 marca o 10:02 biuro podziękowało za informację. Nie podało znalezionej przyczyny ani wyniku ponownego połączenia. Nie można więc oznaczyć sugestii jako potwierdzonej naprawy tego przypadku. Streszczenie obejmuje pytanie, odpowiedź i rozwiniętą reakcję; nie obejmuje testu aplikacji, uprawnień ani tokena. Wątek nie ustala zachowania obecnych wersji Betterfly i KSeF ani jednej przyczyny każdego błędu autoryzacji.",
+  "sourceUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+  "tags": [
+    "source-correction",
+    "verified-summary",
+    "Betterfly",
+    "KSeF",
+    "community-suggestion",
+    "historical"
+  ],
+  "metadata": {
+    "supersedesDraftId": "draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef",
+    "sourceRetrievedAt": "2026-10-13T09:44:34.255Z",
+    "sourcePublicationDate": "2026-03-21T13:12",
+    "sourceUpdatedAt": "2026-03-23T10:02",
+    "sourceDateTimeZone": "not specified by page; no UTC conversion asserted",
+    "verificationScope": "source_fidelity_only",
+    "representation": "verified_summary",
+    "historical": true,
+    "originalSourceEvidence": {
+      "path": "/tmp/opencode/remaining-source-evidence.json",
+      "sha256": "e69d6d12964bbf89ca2df6d6e84444fe3800d68e737f4bca5aa0b06d37ab3d5e",
+      "locator": "key=fb53cb2b; expanded public thread"
+    },
+    "reviewedEvidence": {
+      "path": "/tmp/opencode/remaining-fb53cb2b-expanded.txt",
+      "sha256": "81cf3f7b07d1c32da045e16cb36a8023892a9191585d41a85b9fb21989a1b54b",
+      "locator": "linie 12–47"
+    },
+    "unverifiedSections": [
+      "Przyczyna i skuteczność naprawy",
+      "Zachowanie obecnych wersji produktu"
+    ],
+    "correctionOrigin": "source_correction_review"
+  },
+  "createdAt": "2026-10-13T11:51:25.596Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-13T11:52:07.950Z",
+  "promotedBy": "authorized14-source-correction-controller",
+  "reviewNote": "Verified source correction; supersedes draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef; controller-authorized local phase only.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_c5ccc404_betterfly-i-ksef-zg-oszenie-autoryzacji-oraz-sugestia-z-marca-2026.json"
+}

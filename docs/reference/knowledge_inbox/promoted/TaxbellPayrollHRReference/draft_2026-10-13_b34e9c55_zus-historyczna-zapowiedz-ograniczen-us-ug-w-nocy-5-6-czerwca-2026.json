@@ -1,0 +1,40 @@
+{
+  "id": "draft_2026-10-13_b34e9c55_zus-historyczna-zapowiedz-ograniczen-us-ug-w-nocy-5-6-czerwca-2026",
+  "kbName": "Taxbell Payroll HR Reference",
+  "kbNamespace": "TaxbellPayrollHRReference",
+  "title": "ZUS: historyczna zapowiedź ograniczeń usług w nocy 5–6 czerwca 2026",
+  "content": "## Data i okno prac\nZUS opublikował 3 czerwca 2026 r. zapowiedź prac serwisowych na noc z 5 na 6 czerwca. Wskazał możliwość ograniczeń od godziny 23:00 w piątek 5 czerwca do godziny 03:00 następnego dnia. Źródło nie podaje strefy czasowej. Są to zapowiedziane godziny historycznego okna, nie informacja o trwającej awarii.\n\n## Zakres ograniczeń\nZUS wymienił trzy obszary komunikacji elektronicznej: pobieranie danych w programie Płatnik, weryfikację podczas tworzenia dokumentów w ePłatniku na eZUS oraz anulowanie e-ZLA w eZUS i aplikacjach służących do ich wystawiania. Nie opisał całkowitego wyłączenia wszystkich usług ZUS ani każdego działania w wymienionych programach.\n\n## Dostępne aplikacje i granice\nWedług komunikatu lekarz lub asystent medyczny mógł w tym czasie wystawić e-ZLA przez mZUS dla Lekarza, jeżeli wcześniej zainstalował aplikację na urządzeniu mobilnym i powiązał ją z kontem eZUS. ZUS zapowiedział także dostępność mZUS oraz mZUS dla Płatnika. Streszczenie zachowuje warunki tej alternatywy, zamiast sugerować jej gotowość na dowolnym urządzeniu. Odczyt dotyczy pełnego komunikatu; nie obejmuje przebiegu prac, pomiaru dostępności ani potwierdzenia zakończenia serwisu. Nie ustalono osobnej daty aktualizacji strony.",
+  "sourceUrl": "https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.",
+  "tags": [
+    "source-correction",
+    "verified-summary",
+    "ZUS",
+    "maintenance",
+    "historical"
+  ],
+  "metadata": {
+    "supersedesDraftId": "draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus",
+    "sourceRetrievedAt": "2026-10-13T09:33:33.812Z",
+    "sourcePublicationDate": "2026-06-03",
+    "verificationScope": "source_fidelity_only",
+    "representation": "verified_summary",
+    "historical": true,
+    "originalSourceEvidence": {
+      "path": "/tmp/opencode/remaining-0bdb5e10.json",
+      "sha256": "26c5cf4bac250a4fd451fb43f2907d15a6e226c7c13a66d385d8f8fadbf0e120",
+      "locator": "domSections: journal-content-article"
+    },
+    "unverifiedSections": [
+      "Faktyczny przebieg i zakończenie prac",
+      "Strefa czasowa okna",
+      "Data aktualizacji"
+    ],
+    "correctionOrigin": "source_correction_review"
+  },
+  "createdAt": "2026-10-13T11:51:22.782Z",
+  "status": "promoted",
+  "promotedAt": "2026-10-13T11:52:04.718Z",
+  "promotedBy": "authorized14-source-correction-controller",
+  "reviewNote": "Verified source correction; supersedes draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus; controller-authorized local phase only.",
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-10-13/draft_2026-10-13_b34e9c55_zus-historyczna-zapowiedz-ograniczen-us-ug-w-nocy-5-6-czerwca-2026.json"
+}

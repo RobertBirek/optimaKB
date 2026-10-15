@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-07T12:12:55.616Z",
+  "generatedAt": "2026-10-12T12:03:08.215Z",
   "namespace": "ComarchOptimaBusinessSemantics",
   "mode": "helper_only",
-  "promotedDraftCount": 5,
-  "promotedDescriptionCount": 10,
+  "promotedDraftCount": 8,
+  "promotedDescriptionCount": 13,
   "files": [
     {
       "fileName": "business_domain.csv",
@@ -15,7 +15,7 @@
     },
     {
       "fileName": "business_description.csv",
-      "rowCount": 640,
+      "rowCount": 643,
       "columns": [
         "id",
         "name",

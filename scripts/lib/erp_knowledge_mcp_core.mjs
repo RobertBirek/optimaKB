@@ -306,8 +306,8 @@ function routeQuestionTool(question, allowedNamespaces) {
   };
 }
 
-async function answerQuestionTool(question, allowedNamespaces) {
-  const { answer } = await answerQuestion(question, allowedNamespaces);
+async function answerQuestionTool(question, allowedNamespaces, options = {}) {
+  const { answer } = await answerQuestion(question, allowedNamespaces, options);
   return {
     text: renderAnswerMarkdown(answer),
     structured: answer,
@@ -580,7 +580,8 @@ export async function handleJsonRpcRequest(request, context = {}) {
           },
         }) };
       }
-      const result = await answerQuestionTool(query, allowedNss);
+      const result = await answerQuestionTool(query, allowedNss,
+        name === 'optima_release.search' ? { intent: 'release' } : {});
       const temporalWarning = TEMPORAL_DOMAINS.has(domain);
       const evidence = result.structured?.evidence || result.structured?.kbsUsed || [];
       return { jsonrpc: '2.0', id, result: toolResultPayload({
@@ -589,6 +590,7 @@ export async function handleJsonRpcRequest(request, context = {}) {
           domain,
           answer: result.text,
           evidence,
+          sources: result.structured?.sources || [],
           retrieval: result.structured?.retrieval,
           evidenceAssessment: result.structured?.evidenceAssessment,
           knowledge_status: result.structured?.evidenceAssessment?.status === 'insufficient_evidence'

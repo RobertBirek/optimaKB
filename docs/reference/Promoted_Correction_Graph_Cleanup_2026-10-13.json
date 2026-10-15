@@ -1,0 +1,889 @@
+{
+  "taskId": "Promoted_Correction_Graph_Cleanup_2026-10-13",
+  "status": "DONE",
+  "startedAt": "2026-10-13T16:04:08.162Z",
+  "finishedAt": "2026-10-13T16:11:05.576Z",
+  "deadline": "2026-10-13T16:24:08.162Z",
+  "authority": "Current explicit operator approval; historical scope approval flags retained.",
+  "receipts": [
+    {
+      "at": "2026-10-13T16:07:01.303794+00:00",
+      "database": "comarchcommunitynews",
+      "deleted": 7,
+      "documents": 2,
+      "chunks": 5,
+      "beforeExactOldCount": 7,
+      "afterExactOldCount": 0,
+      "beforeTotal": 1773,
+      "afterTotal": 1766,
+      "statementSha256": "1c9030eb2d92d07d2900b4fdb7f8ecf2db3866dbd7f1cf31d200e10df58643c0"
+    },
+    {
+      "at": "2026-10-13T16:07:44.951064+00:00",
+      "database": "taxbelllegalreference",
+      "deleted": 4,
+      "documents": 2,
+      "chunks": 2,
+      "beforeExactOldCount": 4,
+      "afterExactOldCount": 0,
+      "beforeTotal": 1338,
+      "afterTotal": 1334,
+      "statementSha256": "fb8b5d336fb76062d500f15ef71bfd3d1908e77f266c166a7e89138a4b76b7ce"
+    },
+    {
+      "at": "2026-10-13T16:08:30.800942+00:00",
+      "database": "taxbellpayrollhrreference",
+      "deleted": 14,
+      "documents": 7,
+      "chunks": 7,
+      "beforeExactOldCount": 14,
+      "afterExactOldCount": 0,
+      "beforeTotal": 1515,
+      "afterTotal": 1501,
+      "statementSha256": "804bc97f5f793e040b2200a1b019e147bcd472391daa023e0c4751f2b95c9d1f"
+    },
+    {
+      "at": "2026-10-13T16:09:16.879323+00:00",
+      "database": "taxbellaccountingvatreference",
+      "deleted": 15,
+      "documents": 3,
+      "chunks": 12,
+      "beforeExactOldCount": 15,
+      "afterExactOldCount": 0,
+      "beforeTotal": 1159,
+      "afterTotal": 1144,
+      "statementSha256": "92712bd254b6dfdd33a28ddb9e12fc01990e3c751776e3f5239bec845274414c"
+    }
+  ],
+  "finalReadback": {
+    "counts": {
+      "old40Present": 0,
+      "new36Exact": 36,
+      "canonical3Exact": 3,
+      "preserve33FullExact": 33,
+      "historical11FullExact": 11,
+      "metadata23FullExact": 23
+    },
+    "totalDeltas": {
+      "comarchcommunitynews": 7,
+      "taxbelllegalreference": 4,
+      "taxbellpayrollhrreference": 14,
+      "taxbellaccountingvatreference": 15
+    },
+    "indexesOnlineUnchanged": true
+  },
+  "hold": {
+    "at": "2026-10-13T16:11:03.517Z",
+    "paused": true,
+    "activeAutomation": 0,
+    "activeActions": 0,
+    "activeRunners": 0,
+    "activeTargetJobs": 0,
+    "all12JobsFinish": true,
+    "configHash": "253b6745f94b5ea65fe41088ae1a4270bd0da9a60e310767e46aa5b62c296d8e",
+    "jobsHash": "06954784b1db73b6ec54c9dd4439cf6a3d2f6067d5f291de7f07a4e24b49e139",
+    "schedules": [
+      {
+        "unit": "erp-kb-discovery-autodraft",
+        "timerState": "inactive",
+        "enabled": "enabled",
+        "service": "inactive",
+        "mainPid": 0,
+        "controllerHeld": true,
+        "previousScheduledUtcNotApplicable": "2026-10-13T16:02:38Z"
+      },
+      {
+        "unit": "erp-kb-dashboard-discovery-daily",
+        "timerState": "active",
+        "enabled": "enabled",
+        "service": "inactive",
+        "mainPid": 0,
+        "nextUtc": "2026-10-14T02:45:30.000Z"
+      },
+      {
+        "unit": "erp-kb-dashboard-discovery-weekly",
+        "timerState": "active",
+        "enabled": "enabled",
+        "service": "inactive",
+        "mainPid": 0,
+        "nextUtc": "2026-10-18T03:30:32.000Z"
+      }
+    ]
+  },
+  "checksums": [
+    {
+      "path": "/docker/openspg/docs/reference/Promoted_Correction_Execution_Scope_2026-10-13.json",
+      "sha256": "84814cd82c67a76f3b0192b2f402c701ed2b8531f65947915b3ce4b697d89d7f"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/graph-full-snapshot.json",
+      "sha256": "15e7663b6f1048b3778250d54aa62dede2c76aa694ccb0d360a6cffd14d8bf93"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/rollback.tar.gz",
+      "sha256": "ac3add0f87d36f7b684bcd5d3441f446bbe07b40a7407d249913af910f09cbc0"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/local-completed-ledger.json",
+      "sha256": "7b8d0861d5b3293c678edc646f52cece6088f081177910a4cf2d366ae1c1853d"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/build-readback/successor-descendant-manifest.json",
+      "sha256": "12e506fcb2966698b1d086a1bcc539c542e4a4cd61b27517891fe36c24624a51"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/corrective-v2/completion-seal.json",
+      "sha256": "f5ca35545e21eeb2a7fecdfd0be5b3484f0ce0ccfe130d8e704b3a79385f825b"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/corrective-v2/completion-check-before-full.json",
+      "sha256": "35d9ea4e320b928057d4e03bba19718191113ec1df319fab3bc6fe0cdee18682"
+    }
+  ],
+  "old40BackupSha256": "a6de810c624c089e7d42ae241ae4b4f31f8dbce594ce249047f0c7ecc18df366",
+  "rehearsalSha256": "10559933548c59a602bb05eee00c9d40f3916b871128f09679867969dd0f309c",
+  "protectedDirectory": "/tmp/opencode/protected-source-correction-20261013/graph-cleanup",
+  "localStatuses": {
+    "newPromoted": 14,
+    "oldWithdrawn": 14,
+    "registryUnchanged": true
+  },
+  "queriesAndConditions": {
+    "identity": "database-qualified exact semantic IDs only",
+    "matchCount": 1,
+    "internalIds": "exact original",
+    "labels": "exact original",
+    "properties": "complete expected-current map including vectors",
+    "propertyTypes": "exact original",
+    "physicalDegree": 0,
+    "propertyReferrers": "exact captured set, all within deletion allowlist",
+    "lock": "apoc.lock.nodes + supported registry/four KB locks",
+    "delete": "FOREACH chunks DELETE n; FOREACH documents DELETE n; plain DELETE, no DETACH",
+    "expectedPerDatabase": {
+      "comarchcommunitynews": 7,
+      "taxbelllegalreference": 4,
+      "taxbellpayrollhrreference": 14,
+      "taxbellaccountingvatreference": 15
+    }
+  },
+  "paused": true,
+  "locksReleased": true,
+  "reportGeneratedAt": "2026-10-13T16:13:01.221Z",
+  "totalDeleted": 40,
+  "partitions": [
+    {
+      "at": "2026-10-13T16:07:01.303794+00:00",
+      "database": "comarchcommunitynews",
+      "deleted": 7,
+      "documents": 2,
+      "chunks": 5,
+      "beforeExactOldCount": 7,
+      "afterExactOldCount": 0,
+      "beforeTotal": 1773,
+      "afterTotal": 1766,
+      "statementSha256": "1c9030eb2d92d07d2900b4fdb7f8ecf2db3866dbd7f1cf31d200e10df58643c0",
+      "namespace": "ComarchCommunityNews",
+      "indexesOnlineUnchanged": true,
+      "externalPropertyReferrersAfter": 0,
+      "exactDeleted": [
+        {
+          "semanticId": "COMMUNITY_DOC_PROMOTED_DRAFT_2026_06_09_FB53CB2B_B_AD_PRZY_KONFIGURACJI_COMARCH_BETTERFLY_Z_KSEF",
+          "expectedInternalId": 931,
+          "labels": [
+            "Entity",
+            "ComarchCommunityNews.ReferenceDocument"
+          ],
+          "baselineFullSha256": "00ad32c5876351c03c3fb4de551377f78a07a069be36cf0dcbbec352706aed19"
+        },
+        {
+          "semanticId": "COMMUNITY_DOC_PROMOTED_DRAFT_2026_08_02_F0EDE681_NOWA_WERSJA_COMARCH_ERP_OPTIMA_2026_2_1_JEST_JUZ_DOSTEPNA",
+          "expectedInternalId": 1729,
+          "labels": [
+            "Entity",
+            "ComarchCommunityNews.ReferenceDocument"
+          ],
+          "baselineFullSha256": "828c72a6955ef3f6d0fe931fb122676f35851e69452a30a2e1b4b8bdab7f6af1"
+        },
+        {
+          "semanticId": "COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_06_09_FB53CB2B_B_AD_PRZY_KONFIGURACJI_COMARCH_BETTERFLY_Z_KSEF_1",
+          "expectedInternalId": 937,
+          "labels": [
+            "ComarchCommunityNews.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "e3e94f4e03bf83f60295fe5aab8c4f33170bdca9601a242dab62fb7540813051"
+        },
+        {
+          "semanticId": "COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_08_02_F0EDE681_NOWA_WERSJA_COMARCH_ERP_OPTIMA_2026_2_1_JEST_JUZ_DOSTEPNA_1",
+          "expectedInternalId": 1731,
+          "labels": [
+            "ComarchCommunityNews.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "79f005fea481094280d9dc9668fdb9b035b21ebecbb74abc107df741b551d8ea"
+        },
+        {
+          "semanticId": "COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_08_02_F0EDE681_NOWA_WERSJA_COMARCH_ERP_OPTIMA_2026_2_1_JEST_JUZ_DOSTEPNA_2",
+          "expectedInternalId": 1730,
+          "labels": [
+            "ComarchCommunityNews.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "e0bf0a7c6600fc2aa39ebadb61d117e36363326048e5aaf26dffa46290424ed8"
+        },
+        {
+          "semanticId": "COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_06_09_FB53CB2B_B_AD_PRZY_KONFIGURACJI_COMARCH_BETTERFLY_Z_KSEF_2",
+          "expectedInternalId": 934,
+          "labels": [
+            "ComarchCommunityNews.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "2d3eb26863295ab108799b054f4f3980fd770715d39b8283b370f0ef19c74940"
+        },
+        {
+          "semanticId": "COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_06_09_FB53CB2B_B_AD_PRZY_KONFIGURACJI_COMARCH_BETTERFLY_Z_KSEF_3",
+          "expectedInternalId": 940,
+          "labels": [
+            "ComarchCommunityNews.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "785c7db98d462a9855da3728f6a38d9e56ae1fc52d173db12a255c003c56ecbd"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-13T16:07:44.951064+00:00",
+      "database": "taxbelllegalreference",
+      "deleted": 4,
+      "documents": 2,
+      "chunks": 2,
+      "beforeExactOldCount": 4,
+      "afterExactOldCount": 0,
+      "beforeTotal": 1338,
+      "afterTotal": 1334,
+      "statementSha256": "fb8b5d336fb76062d500f15ef71bfd3d1908e77f266c166a7e89138a4b76b7ce",
+      "namespace": "TaxbellLegalReference",
+      "indexesOnlineUnchanged": true,
+      "externalPropertyReferrersAfter": 0,
+      "exactDeleted": [
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_07_01_BF920A10_HTTPS_G_INFOR_PL_P_FILES_39075000_ZMIANY_W_PODATKACH_2026_39075452_PDF",
+          "expectedInternalId": 445,
+          "labels": [
+            "Entity",
+            "TaxbellLegalReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "4d8f51b243891932f43771bcfe853ddd27be0aaad135d7fe53e6c4600e1ec5ee"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_BF920A10_HTTPS_G_INFOR_PL_P_FILES_39075000_ZMIANY_W_PODATKACH_2026_39075452_PDF_1",
+          "expectedInternalId": 454,
+          "labels": [
+            "TaxbellLegalReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "ceb14179a49ccaca76043c024a785fee35ad66197677a659d9e165879f380cf1"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_27_93F75109_SERWIS_O_PODATKACH_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_1",
+          "expectedInternalId": 450,
+          "labels": [
+            "TaxbellLegalReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "c3f8f9ab8e134c37c5103905d7144d62ec154772793693a60f67fa17b29fe90d"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_07_27_93F75109_SERWIS_O_PODATKACH_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY",
+          "expectedInternalId": 448,
+          "labels": [
+            "Entity",
+            "TaxbellLegalReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "29b637dfc9667e3070922e711de6c77a3c10eb6d0567eb549013797dca3b5ffa"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-13T16:08:30.800942+00:00",
+      "database": "taxbellpayrollhrreference",
+      "deleted": 14,
+      "documents": 7,
+      "chunks": 7,
+      "beforeExactOldCount": 14,
+      "afterExactOldCount": 0,
+      "beforeTotal": 1515,
+      "afterTotal": 1501,
+      "statementSha256": "804bc97f5f793e040b2200a1b019e147bcd472391daa023e0c4751f2b95c9d1f",
+      "namespace": "TaxbellPayrollHRReference",
+      "indexesOnlineUnchanged": true,
+      "externalPropertyReferrersAfter": 0,
+      "exactDeleted": [
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_06_09_0BDB5E10_OGRANICZENIA_W_DOSTEPIE_DO_US_UG_ELEKTRONICZNYCH_ZUS_5_CZERWCA_2026_R_ZUS",
+          "expectedInternalId": 414,
+          "labels": [
+            "Entity",
+            "TaxbellPayrollHRReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "5db97797406969ab7164099c6b405111458204ffb261f0c8f69da10cdd5b3de5"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_06_30_7C66353E_ZMIANY_W_STAZU_PRACY_WNIOSKI_O_ZASWIADCZENIA_Z_ZUS_OD_STYCZNIA_2026_R_ZUS",
+          "expectedInternalId": 441,
+          "labels": [
+            "Entity",
+            "TaxbellPayrollHRReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "b843ff406478f50d5410295bf9193560a24d19ebc8fbc4f33d9b9e38bfc4dab5"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_06_30_A939510D_PROJEKT_USTAWY_O_WZMOCNIENIU_STOSOWANIA_PRAWA_DO_JEDNAKOWEGO_WYNAGRODZENIA_MEZCZ",
+          "expectedInternalId": 432,
+          "labels": [
+            "Entity",
+            "TaxbellPayrollHRReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "4a2a0bbb0a90b7970cd752257c1233d8336d6e8eb6d053c21a4e12f54b065f5a"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_06_30_D1C8371C_INFORMACJA_DOTYCZACA_PRAC_NAD_WDROZENIEM_DYREKTYWY_DOTYCZACEJ_ROWNOSCI_WYNAGRODZ",
+          "expectedInternalId": 436,
+          "labels": [
+            "Entity",
+            "TaxbellPayrollHRReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "ec7891a5b9f3f1d374269cb5d2cb559b7c8d744e3ca4d70de5a7e0a5e9860e25"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_07_02_08CFE029_PRZEGLAD_ZMIAN_W_PRAWIE_PRACY_W_2025_I_2026_R_INFOR_PL",
+          "expectedInternalId": 447,
+          "labels": [
+            "Entity",
+            "TaxbellPayrollHRReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "8c90147f0bf6d228340928a9824598c15aae05ed8d112cdb0bd58130d9579b48"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_07_02_9C43B46E_ROCZNA_WALORYZACJA_NA_KONTACH_OSOB_UBEZPIECZONYCH_W_ZUS_ZUS",
+          "expectedInternalId": 444,
+          "labels": [
+            "Entity",
+            "TaxbellPayrollHRReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "e9823c2e8a2c52d84b8c9b3cba6e05a4fe06b6266f423126c981be5572a50fc8"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_07_30_4CE9F131_OD_LIPCA_PROSTSZE_ZASADY_SK_ADANIA_WNIOSKOW_O_ZASI_KI",
+          "expectedInternalId": 941,
+          "labels": [
+            "Entity",
+            "TaxbellPayrollHRReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "9ccfe88bedfbb7abc3958d71f5d2c10a09d18036347f330c266e2e916df6445a"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_06_09_0BDB5E10_OGRANICZENIA_W_DOSTEPIE_DO_US_UG_ELEKTRONICZNYCH_ZUS_5_CZERWCA_2026_R_ZUS_1",
+          "expectedInternalId": 418,
+          "labels": [
+            "TaxbellPayrollHRReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "5c46103b984840773f60452c9d0877807722978269258af7b37e197958bc387a"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_06_30_7C66353E_ZMIANY_W_STAZU_PRACY_WNIOSKI_O_ZASWIADCZENIA_Z_ZUS_OD_STYCZNIA_2026_R_ZUS_1",
+          "expectedInternalId": 609,
+          "labels": [
+            "TaxbellPayrollHRReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "42b1d464288b90c6ed5e514a261c93717512adc18ff633ce4e138eb26c25878b"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_06_30_A939510D_PROJEKT_USTAWY_O_WZMOCNIENIU_STOSOWANIA_PRAWA_DO_JEDNAKOWEGO_WYNAGRODZE_6608A5FD",
+          "expectedInternalId": 910,
+          "labels": [
+            "TaxbellPayrollHRReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "3e4900745963e72ca2b870524078476aaf0d4a20241a9127fe942b8c3eab16e4"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_06_30_D1C8371C_INFORMACJA_DOTYCZACA_PRAC_NAD_WDROZENIEM_DYREKTYWY_DOTYCZACEJ_ROWNOSCI__E0D9BEEA",
+          "expectedInternalId": 919,
+          "labels": [
+            "TaxbellPayrollHRReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "c79016cc204b95a5910a788b07c81d7565e7eace11597993ce23c05835d43017"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_02_08CFE029_PRZEGLAD_ZMIAN_W_PRAWIE_PRACY_W_2025_I_2026_R_INFOR_PL_1",
+          "expectedInternalId": 622,
+          "labels": [
+            "TaxbellPayrollHRReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "589a52a30909f1f63aab200119d666c4575687761d20e72e14649efa0336c401"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_02_9C43B46E_ROCZNA_WALORYZACJA_NA_KONTACH_OSOB_UBEZPIECZONYCH_W_ZUS_ZUS_1",
+          "expectedInternalId": 617,
+          "labels": [
+            "TaxbellPayrollHRReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "2f9e550c45640988abf03a83670c0fa7dc65582ede28499786de48286e00068a"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_30_4CE9F131_OD_LIPCA_PROSTSZE_ZASADY_SK_ADANIA_WNIOSKOW_O_ZASI_KI_1",
+          "expectedInternalId": 942,
+          "labels": [
+            "TaxbellPayrollHRReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "26251b4c74581eff6877c42eca7ea20c60177dbad5e42cc95255854aa7928b0b"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-13T16:09:16.879323+00:00",
+      "database": "taxbellaccountingvatreference",
+      "deleted": 15,
+      "documents": 3,
+      "chunks": 12,
+      "beforeExactOldCount": 15,
+      "afterExactOldCount": 0,
+      "beforeTotal": 1159,
+      "afterTotal": 1144,
+      "statementSha256": "92712bd254b6dfdd33a28ddb9e12fc01990e3c751776e3f5239bec845274414c",
+      "namespace": "TaxbellAccountingVATReference",
+      "indexesOnlineUnchanged": true,
+      "externalPropertyReferrersAfter": 0,
+      "exactDeleted": [
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNACZE",
+          "expectedInternalId": 439,
+          "labels": [
+            "Entity",
+            "TaxbellAccountingVATReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "47acd7bd955d44d4303687b6d22b697697e72c1e92212d584e559b3d90fe15a2"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_06_05_6B5AC5ED_SERWIS_O_PODATKACH_PLIKI_DO_POBRANIA_JPK_VAT_PODATKI_GOV_PL_1",
+          "expectedInternalId": 393,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "7eaa7e6f107facd8419ca7f1e8d0e165f81c8dbaf354857b09694b8a2688ec8d"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_1BD99236",
+          "expectedInternalId": 558,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "5920c6b8f836048713e0bc1b1f8a8e486381dba644864662db5ef8b878997655"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_8B268DB3",
+          "expectedInternalId": 564,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "06a58d38e3751515ffaaca615f46984f314a07929c0e17ef5d16c54779c2f3b0"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_8D01C578",
+          "expectedInternalId": 562,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "0fb681a7c489f8fd711948eb119a5ba3ec83509752f6a82154b51a7eaca4e076"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_91B9791A",
+          "expectedInternalId": 561,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "1e55597d208c97ee91b864998ed9cf555f44ce6b82f4a6924d4f0c3b7e2137d7"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_B25DD8D0",
+          "expectedInternalId": 560,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "87821960a4f3771c6f40279529373784c24ed1e19e78cdfa85e04f063c856c7d"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_24_DCFC95C2_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_1",
+          "expectedInternalId": 449,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "d1f4235a1284d788813df9cea9af4f5e9e1424c631888b1d9bc70f0f61ec305b"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_1",
+          "expectedInternalId": 450,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "34027500eddffae89cac4d07e15f4ab0c0b3ad6313f5f8d1ff92d68fc5cb8ccb"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_2",
+          "expectedInternalId": 440,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "a94c1bc4dba390fcc09a15e78060566ccf79c2d06a9cb14964dc576f1512474d"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_3",
+          "expectedInternalId": 448,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "ef2542375ef115ccc0853110e140f9c6ca945e5d0b5e3d356d05731cea6f9e22"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_4",
+          "expectedInternalId": 444,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "f18ad3b21ebdfbb4c9af3da658761e23d42ccefde042d16613d9cb8ab6509ffb"
+        },
+        {
+          "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_5",
+          "expectedInternalId": 442,
+          "labels": [
+            "TaxbellAccountingVATReference.Chunk",
+            "Entity"
+          ],
+          "baselineFullSha256": "43f9bb7b7f4ffe8dbbb6c9ff44b6c77ac8417cb8d3aaaa222c3170f56ac6cac9"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_06_05_6B5AC5ED_SERWIS_O_PODATKACH_PLIKI_DO_POBRANIA_JPK_VAT_PODATKI_GOV_PL",
+          "expectedInternalId": 384,
+          "labels": [
+            "Entity",
+            "TaxbellAccountingVATReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "8edf5baff6ed18cb7ac53b7620f39d2d507c3b797e5d3caa163857a42b83a62f"
+        },
+        {
+          "semanticId": "TBDOC_PROMOTED_DRAFT_2026_07_24_DCFC95C2_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP",
+          "expectedInternalId": 438,
+          "labels": [
+            "Entity",
+            "TaxbellAccountingVATReference.ReferenceDocument"
+          ],
+          "baselineFullSha256": "ff1ade5841e4cdd84cf197a18dc00c94a3935f001bae43f76698f549ee945f9c"
+        }
+      ]
+    }
+  ],
+  "preserveFingerprints": [
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_1",
+      "fullSha256": "1dd1d463ae5d8fc0286689373a350387984dc3c0f32af933fa7a0730bd6fd2b5",
+      "internalId": 1324,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_10",
+      "fullSha256": "a23f763ca22189484ea846359423d7d2c33cf617284e157539b0b15f0e3be3a6",
+      "internalId": 1331,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_11",
+      "fullSha256": "40e2030df834c5aa5f449ea3199d37e7d3d373d03cba7e56ee20feff6c0ca327",
+      "internalId": 1321,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_12",
+      "fullSha256": "594b8389315ddaed706f6ac49e8923181c2d58fd4c6abd560361cdff24864ea7",
+      "internalId": 1329,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_13",
+      "fullSha256": "ca4bf47a24fb01ee0f478c2f1c3268fbb0d97ffb78c15e327ec0c83a85f5eb76",
+      "internalId": 1325,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_2",
+      "fullSha256": "54b9e0d0ff1838ed3eac5769d483b109109ff3ea8ef766087a2108a97650dc85",
+      "internalId": 1319,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_3",
+      "fullSha256": "1ab8d1e132f5194fe772807506e37256efd4b3e9d942e95d1444cab718de9a90",
+      "internalId": 1326,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_4",
+      "fullSha256": "14907dc384989a99314f1c32c75032163e9e20aa2443e71d391172bafc710e9a",
+      "internalId": 1316,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_5",
+      "fullSha256": "5fb1b29acedec35ff2605f7c5d2b86605a1aea2d29219760e20d83be9b646e6b",
+      "internalId": 1328,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_6",
+      "fullSha256": "266710b44ad5dbc76cc56265c7b3dfc4e8d88fe6c9b9dfb5a5df6b5c59703d08",
+      "internalId": 1330,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_7",
+      "fullSha256": "4e5da80380514195819d90573278c18f9d073d98d34e902ceff82632d9a27503",
+      "internalId": 1320,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_8",
+      "fullSha256": "5400344df9e42da6cf404617bd18eb28286f1a5eb38b1a3b0312a5bdafee7eff",
+      "internalId": 1322,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_9",
+      "fullSha256": "77042df45aee343bf0fb8256b2be53f4316275250de0e5f4a090fc08c8a92bbf",
+      "internalId": 1323,
+      "unchanged": true
+    },
+    {
+      "database": "taxbelllegalreference",
+      "semanticId": "TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY",
+      "fullSha256": "5f773e91d6d98b5d410f3ee5f72daa534b6de03aa9ab1d173770144836902951",
+      "internalId": 979,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_PROMOTED_DRAFT_2026_06_05_E14D7C0A_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_PODATKI_GOV_PL_1",
+      "fullSha256": "6fe29622005d857026d3dae9360b2fd22bd8700c90852ead4a73fe0e0364f46a",
+      "internalId": 391,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_1",
+      "fullSha256": "e22a8abe5dceefa13f09c17514f65fd27c97be6a178f5a36a3f66fe6b53d0829",
+      "internalId": 884,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_2",
+      "fullSha256": "d9fe5992d32081eeaa37bdcf33ff14ec1dce3d57b4e3101b093dce8c8b9d06a3",
+      "internalId": 883,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_3",
+      "fullSha256": "557cc633adc6879f44ae21683b3962ee5b7717e0762514386fa56133a6762848",
+      "internalId": 891,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_4",
+      "fullSha256": "bdadabb5d7efffb13e1f664ad44a44a40c458fc3eceeb848ec2bb885ab5db95f",
+      "internalId": 892,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_1FAFAD9C",
+      "fullSha256": "3897d0c337fda48ab922cc8ffc559a06c7e956882da50ac05b13238a379a6ab7",
+      "internalId": 575,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_A37647F6",
+      "fullSha256": "6d72cf550549f69b3efcd196b31d9f78b7afffcde192f1660ece8fae7dc548b1",
+      "internalId": 578,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_F4EC7A25",
+      "fullSha256": "7dd0a3a6e23797056684ca36d5691fe6b1d7dab670f494a1f58d0e2eebb8de66",
+      "internalId": 582,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_FDB6F338",
+      "fullSha256": "747206dd29f1d456cbf2b3f925072208d1f77e1aacc872dbc8e0c54afac49ced",
+      "internalId": 580,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT_1",
+      "fullSha256": "64fe0c37d2859aa7b7d6fb893ffaa83f5a21796c0f9cd7d1f2c679419cb781a5",
+      "internalId": 96,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT_2",
+      "fullSha256": "c32eeae26871b87caa44cbb4059920e091ee282a9b6f47af1df096788b58f840",
+      "internalId": 85,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT_3",
+      "fullSha256": "c3417fb0247bf97c045295f0e3e587377857ff7c4c37ebf5b6a3f33b785d5ddc",
+      "internalId": 111,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT_4",
+      "fullSha256": "dd24c49e7c5edef0f4f47a806e78c38fa8578c706dee8babe4c45367db7822ff",
+      "internalId": 71,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VA_1",
+      "fullSha256": "a754bb0cfefe8633707f0767ec49ebe054994dbf2a212e06d4dd140ba2023b21",
+      "internalId": 491,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VA_2",
+      "fullSha256": "a0a5c5f4e7340b3a08746d62a50e9c77305644b4a77ffd2cf405a3848e2657d1",
+      "internalId": 492,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VA_3",
+      "fullSha256": "2d196310515fbc7be35b4e2d5630a6e512388a48427f5cd7aa109668f9aa9d64",
+      "internalId": 497,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VA_4",
+      "fullSha256": "70d1db9cbff21292d27ec6b99693a69cecb11ee080e44cfb0cf5ec8ac9129ecb",
+      "internalId": 493,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP",
+      "fullSha256": "6b8b5a54c5825770871dc02d0ebe46525761407f26eb1bc959acb3bb199e2548",
+      "internalId": 664,
+      "unchanged": true
+    },
+    {
+      "database": "taxbellaccountingvatreference",
+      "semanticId": "TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT",
+      "fullSha256": "3c86ffeb3fabe47e6ac7bafca8b1a09b86b89364d4ffb03a3f420bd55a48eada",
+      "internalId": 24,
+      "unchanged": true
+    }
+  ],
+  "protectedEvidenceHashes": [
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/graph-cleanup/before-full.protected.json",
+      "sha256": "42996f55c7738c83c2a5e137c99f8bb3f27991a08afa8a320a523e6a66551a63"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/graph-cleanup/after-full.protected.json",
+      "sha256": "e85c05f353ee47492a70adee5252cfe579a3303fa4d44eea017b49853a58e31c"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/graph-cleanup/old40-backup.protected.json",
+      "sha256": "a6de810c624c089e7d42ae241ae4b4f31f8dbce594ce249047f0c7ecc18df366"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/graph-cleanup/rehearsal.json",
+      "sha256": "10559933548c59a602bb05eee00c9d40f3916b871128f09679867969dd0f309c"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/graph-cleanup/bound-inputs.json",
+      "sha256": "3272dc9af82787d27720bf1e5197333e165590783644adbece845db54076d15d"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/graph-cleanup/checkpoints.json",
+      "sha256": "bb51e5920f5a14014c4bcdb5b812d445befec7a63f02e4330d9dff5a3fbcb441"
+    },
+    {
+      "path": "/tmp/opencode/protected-source-correction-20261013/graph-cleanup/journal.jsonl",
+      "sha256": "965741ef5bd61e348d3bd10bb9f9d493a34fa76b9cf9689357e2498d0997d419"
+    }
+  ],
+  "controllerTimerHold": {
+    "active": "inactive",
+    "enabled": "enabled",
+    "service": "inactive",
+    "mainPid": "0",
+    "stoppedByController": true,
+    "restorationPerformed": false
+  },
+  "finalVerification": {
+    "allOutsideAllowlistSnapshotNodesUnchanged": true,
+    "new36FullExact": true,
+    "canonical3FullExact": true,
+    "preserve33OriginalFullHashIncludingVectors": true,
+    "historicalExternal11FullExact": true,
+    "metadata23SharedTopicsLeftLive": true,
+    "old40Absent": true,
+    "totalDatabaseDeltasExactlyApproved": true,
+    "indexesOnlineMetadataUnchanged": true,
+    "localStatusesUnchanged": true,
+    "paused": true
+  },
+  "queryTemplateWithoutPayload": "UNWIND plan.rows AS p OPTIONAL MATCH (n) WHERE n.id=p.semanticId; validate exact count1; apoc.lock.nodes(allowlisted nodes); validate internalID, exact labels, full properties including vectors, property types and degree0; validate exact property-referrer set with no external identities; FOREACH (n IN chunks | DELETE n); FOREACH (n IN documents | DELETE n); return exact deleted count. One atomic transaction per explicitly qualified database.",
+  "priorBlockedAttemptsPreserved": true
+}

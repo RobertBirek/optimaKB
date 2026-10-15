@@ -6,6 +6,7 @@ import path from 'path';
 import process from 'process';
 import { appendDashboardAudit } from './dashboard_audit.mjs';
 import { cleanBoilerplate, cleanContent } from './content_cleaner.mjs';
+import { assertSourceBodyAvailable } from './source_body_validation.mjs';
 import { deriveDiscoveryAutoDraftState, deriveDiscoveryLearningState, discoveryLearningAdjustment } from './feedback_learning.mjs';
 import { submitKnowledgeDraft } from './knowledge_inbox.mjs';
 import { findExistingDraftBySourceUrl, normalizeUrl } from './dashboard_source_list.mjs';
@@ -1077,6 +1078,7 @@ export async function createDraftFromDiscoveryCandidate(
   const target = TARGET_KBS[candidate.kbNamespace];
   if (!target) throw new Error(`Unsupported discovery target: ${candidate.kbNamespace}`);
   const cleanedContent = await cleanContent(candidate.content || candidate.snippet || '');
+  assertSourceBodyAvailable(cleanedContent, candidate.title);
   const draft = await submitKnowledgeDraft({
     kbName: target.kbName,
     kbNamespace: candidate.kbNamespace,

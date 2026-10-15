@@ -1,0 +1,80 @@
+{
+  "reportDate": "2026-10-13",
+  "status": "DONE",
+  "type": "QA_EVIDENCE_SUPPLEMENT",
+  "durableRoot": "/docker/openspg/backups/manual-repairs/source-correction-20261013/qa-16q",
+  "sourceRoot": "/tmp/opencode/post-correction-16q-20261013",
+  "copiedAt": "2026-10-13T17:54:04.652949+00:00",
+  "inventory": {
+    "exactPrimaryRawResponses": 16,
+    "primaryResponseNames": "Q01-response.json through Q16-response.json",
+    "byteExactSourceFiles": 20,
+    "derivedCriteriaFiles": 1,
+    "payloadFiles": 21,
+    "payloadBytes": 713579,
+    "filesIncludingSupplementManifest": 22,
+    "bytesIncludingSupplementManifest": 727169
+  },
+  "additionalEvidence": [
+    "results.json",
+    "review-index.json",
+    "Post_Correction_16Q_2026-10-13.md",
+    "Post_Correction_16Q_2026-10-13.json",
+    "criteria.json"
+  ],
+  "supplementalSeal": {
+    "path": "qa-evidence-manifest.json",
+    "sha256": "d83bd0e1b94db5b11f1ae3ca99953603da0e7338b4f57caf91b7d7b1f8719f0b",
+    "scope": "Only the 21 qa-16q payload files. This public report binds the manifest's own checksum; the historical manifest does not cover this supplement."
+  },
+  "historicalCore": {
+    "payloadFiles": 444,
+    "filesIncludingSeals": 447,
+    "allPayloadsAndSealsByteExactUnchanged": true,
+    "durableManifestSha256": "f5abcdcd9af2df521f45af7aadd250a0ce0d7b3b38711c1faaeced8fa46ec753",
+    "rollbackSha256": "9ba5adfbb4552e809f57575e97a82eac8741f2d42960dea9292b125e39a11421",
+    "orderedFileInventorySha256": "790ebf6acbaba99b8e6c7dfb098e0a5888226fe9dcc107cdfb1591aefa07ac29",
+    "originalManifestModified": false
+  },
+  "statusCounts": {"PASS": 0, "PARTIAL": 13, "MISS": 3},
+  "namespaceStatusCounts": {
+    "ComarchCommunityNews": {"questions": 3, "PASS": 0, "PARTIAL": 1, "MISS": 2},
+    "TaxbellAccountingVATReference": {"questions": 3, "PASS": 0, "PARTIAL": 3, "MISS": 0},
+    "TaxbellLegalReference": {"questions": 2, "PASS": 0, "PARTIAL": 1, "MISS": 1},
+    "TaxbellPayrollHRReference": {"questions": 8, "PASS": 0, "PARTIAL": 8, "MISS": 0}
+  },
+  "namespaceCountBasis": "Question corrected-source keys mapped through already sealed PUBLIC approved correction pack; not every returned hit's namespace.",
+  "retrievalChannelLimitation": {
+    "actualChannel": "local_actual_MCP_handler_isolated_ROOT_production_exports",
+    "backend": "local_artifacts",
+    "graphUsed": false,
+    "liveQACertified": false,
+    "runningServiceCorpusConfigParityCertified": false,
+    "omittedInputs": "Production downloads/source-registry inputs omitted from isolated ROOT. Existing live transport failures are not scored primary responses."
+  },
+  "criteriaProvenance": {
+    "source": "Exact completed PUBLIC Post_Correction_16Q_2026-10-13.json, also copied byte-exact",
+    "extractedFields": ["criteria", "questions"],
+    "exactFieldValuesPreserved": true,
+    "originalPreExecutionFrozenFileBytesClaimed": false,
+    "historicalFrozenFileSha256": "7def8d4ce9fd6ac4eb35112c1a6c40afaa0719fbc8c23ef37ef713c422666b44"
+  },
+  "permissions": {"ownership": "root:mcpbot", "directoryMode": "0750", "fileMode": "0640", "allEntriesRegular": true, "mcpbotReadableFiles": 22, "directoryTraversable": true},
+  "verification": {
+    "all16PrimaryResponseHashesAndBytesMatchPublicQa": "PASS",
+    "all16PrimaryResponseHashesAndBytesMatchOriginalResultsIndex": "PASS",
+    "questionStringsAndRequestedToolsMatchPublicDefinitions": "PASS",
+    "sourceToDurableByteEquality": "PASS",
+    "credentialScreeningBeforeAndAfterCopy": "PASS",
+    "effectiveMcpbotReadability": "PASS",
+    "historicalCoreIntegrityBeforeAndAfter": "PASS",
+    "separateVerificationRun": "PASS",
+    "gitIgnored": true,
+    "gitTrackedBackupFiles": 0
+  },
+  "storagePolicy": {"outsideConfiguredAutomatedRetention": true, "localDiskOnly": true, "offsite": false, "encrypted": false, "retention": "manual; retain until explicit operator disposition"},
+  "boundedCopy": {"explicitWhitelistedFilesOnly": true, "isolatedRootInputSymlinksFollowed": false, "envRuntimeOrUnrelatedBackupFoldersCopied": false},
+  "mutations": {"historicalPayloadsChanged": false, "historicalSealsChanged": false, "qaScoresChanged": false, "answersRegenerated": false, "runtimeCalls": false, "corpusConfigChanges": false, "sourceDeletion": false, "serviceChanges": false, "commits": false},
+  "utilityPath": "/tmp/opencode/persist-qa-16q-supplement.py",
+  "utilityHashReference": "qa-evidence-manifest.json:utilitySha256"
+}

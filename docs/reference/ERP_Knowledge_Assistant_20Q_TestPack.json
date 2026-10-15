@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T10:23:13.037Z",
+  "generatedAt": "2026-09-11T07:55:47.324Z",
   "requestedSize": 20,
   "size": 20,
   "questionCount": 250,
@@ -50,7 +50,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_dokumentydostawynag,CDN.DokumentyDostawyNag Query Guide,Query design helper for table CDN.DokumentyDostawyNag.,table_query_guide,CDN_TEST:TABLE:CDN.DokumentyDostawyNag,CDN.DokumentyDostawyNag,HANDEL,HEADER,TRADE_DOCUMENTS,HIGH,QUERY_DESIGN,2,2,DD..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L201,L6,L89",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:54:38.815Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -72,7 +78,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_ex_hamag,CDN.OFF_Ex_HaMag Guide,Query-design helper for stored_procedure CDN.OFF_Ex_HaMag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_Ex_HaMag,STORED_PROCEDURE,WORKFLOW_INTEGRATION,HANDEL_MAGAZYN,MEDIUM,\"WORKFLOW_INTEGRATION | HANDEL_MAGAZ..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L35,L43,L44",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:54:38.908Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_dodajbnkzdarzenie,CDN.DodajBnkZdarzenie Guide,Query-design helper for stored_procedure CDN.DodajBnkZdarzenie.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajBnkZdarzenie,STORED_PROCEDURE,WORKFLOW_INTEGRATION,OGOLNE,MEDIUM,\"WORKFLOW_INTEGRATION | ..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -94,7 +106,13 @@
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.TraNag_DeleteHandler=>U :CDN.CRMDokumenty,TraNag_DeleteHandler => CRMDokumenty,Heuristic SQL-text dependency from CDN.TraNag_DeleteHandler to CDN.CRMDokumenty.,object_dependency,CDN_TEST:TRIGGER:CDN.TraNag_DeleteHandler,CDN_TEST:TABLE:CDN.C..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L676,L677,L1264",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:54:39.151Z",
+          "excerpt": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.CRMDokumenty_InsertUpdateHandler=>U :CDN.CRMDokumenty,CRMDokumenty_InsertUpdateHandler => CRMDokumenty,Heuristic SQL-text dependency from CDN.CRMDokumenty_InsertUpdateHandler to CDN.CRMDokumenty.,object_dependency,CDN_TEST:TRIGGER:CDN.CRMDo..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -116,7 +134,13 @@
               "score": 3,
               "snippet": "RAISERROR('##OPT32351##', 16, 1) -- RAISERROR('Nie można usunąć pieczątki firmy powiązanej z dokumentem handlowo-magazynowym.', 16, 1)"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L4030,L4049,L21179",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:54:39.340Z",
+          "excerpt": "CDN_TEST:TRIGGER:CDN.CRMDokumenty_InsertUpdateHandler,CRMDokumenty_InsertUpdateHandler,Trigger CDN.CRMDokumenty_InsertUpdateHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.CRMDokumenty_InsertUpdateHandler,CDN_TEST:TABLE:CDN.CRMDokumenty,OBJECT_OR_COLUMN,\"CR..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -138,7 +162,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dpldtranagds,CDN.DetalPlatnosciDokumentu -> CDN.DetalTraNag,Direct join path from CDN.DetalPlatnosciDokumentu to CDN.DetalTraNag based on FK_DPlDTraNagDS.,join_path_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN_TEST:TABLE:CDN.Detal..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L47,L323,L431",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:54:38.846Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dlgdokumentydlgelem,CDN.DlgDokumenty -> CDN.DlgElem,Direct join path from CDN.DlgDokumenty to CDN.DlgElem based on FK_DlgDokumentyDlgElem.,join_path_guide,CDN_TEST:TABLE:CDN.DlgDokumenty,CDN_TEST:TABLE:CDN.DlgElem,CDN_TEST:FOREIGN_KEY:CDN..."
         }
       ],
       "notes": []
@@ -174,7 +204,13 @@
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_magazyny,CDN.Magazyny Query Guide,Query design helper for table CDN.Magazyny.,table_query_guide,CDN_TEST:TABLE:CDN.Magazyny,CDN.Magazyny,HANDEL_MAGAZYN,MASTER,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,9,0,Mag_MagId,ProdElem; ProdSkladniki; SrsZlecenia..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L232,L6,L14",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:54:39.638Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_usunieteobiekty,CDN.UsunieteObiekty Query Guide,Query design helper for table CDN.UsunieteObiekty.,table_query_guide,CDN_TEST:TABLE:CDN.UsunieteObiekty,CDN.UsunieteObiekty,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,0,,,Role OTHER in GENERAL_E..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -196,7 +232,13 @@
               "score": 1,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_trnpodmiot,CDN.TraNag -> CDN.PodmiotyView,Direct join path from CDN.TraNag to CDN.PodmiotyView based on FK_TrNPodmiot.,join_path_guide,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:TABLE:CDN.PodmiotyView,CDN_TEST:FOREIGN_KEY:CDN.FK_TrNPodmiot,1,DIRE..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L199,L215,L219",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:54:39.696Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_tretranag,CDN.TraElem -> CDN.TraNag,Direct join path from CDN.TraElem to CDN.TraNag based on FK_TrETraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_TrETraNag,1,DIRECT_FOREIGN_KEY,FRO..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -218,7 +260,13 @@
               "score": 1,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_pobierzzamknieteparagonybezfaktury,CDN.DetalStan_PobierzZamknieteParagonyBezFaktury Guide,Query-design helper for stored_procedure CDN.DetalStan_PobierzZamknieteParagonyBezFaktury.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_Pob..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L4,L11,L14",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:54:39.760Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_dodajparagon,CDN.DetalStan_DodajParagon Guide,Query-design helper for stored_procedure CDN.DetalStan_DodajParagon.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_DodajParagon,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENER..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -240,7 +288,13 @@
               "score": 1,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.FormyPlatnosci_InsertUpdateDelete_Trigger=>U :CDN.TraNag,FormyPlatnosci_InsertUpdateDelete_Trigger => TraNag,Heuristic SQL-text dependency from CDN.FormyPlatnosci_InsertUpdateDelete_Trigger to CDN.TraNag.,object_dependency,CDN_TEST:TRIGGER:..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L213,L214,L221",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:54:39.968Z",
+          "excerpt": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.FzPz=>U :CDN.TraNagRelacje,FzPz => TraNagRelacje,Heuristic SQL-text dependency from CDN.FzPz to CDN.TraNagRelacje.,object_dependency,CDN_TEST:FUNCTION:CDN.FzPz,CDN_TEST:TABLE:CDN.TraNagRelacje,FUNCTION,TABLE,HEURISTIC_SQL_TEXT_MATCH,CDN.Tra..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -262,7 +316,13 @@
               "score": 1,
               "snippet": "RAISERROR('##OPT32325##', 16, 1) -- RAISERROR('Forma płatności jest używana w nagłówkach transakcji (TraNag). Nie można zmieniać jej typu ani nazwy.',16,1)"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L274,L277,L280",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:54:40.141Z",
+          "excerpt": "-- Sprawdzenie, czy zmieniono nazwę lub typ w formie wykorzystanej w TraNag"
         }
       ],
       "notes": []
@@ -298,7 +358,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_pobierzstatystykizmianydlaoperatora,CDN.DetalStan_PobierzStatystykiZmianyDlaOperatora Guide,Query-design helper for stored_procedure CDN.DetalStan_PobierzStatystykiZmianyDlaOperatora.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L461,L604,L615",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:54:48.656Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_mobile_eksportptw,CDN.Mobile_EksportPtw Guide,Query-design helper for stored_procedure CDN.Mobile_EksportPtw.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Mobile_EksportPtw,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,MEDIUM,\"IMPORT_EXPORT | OGOLNE | previ..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -320,7 +386,13 @@
               "score": 3,
               "snippet": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L1662,L8083,L8206",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:54:48.988Z",
+          "excerpt": "RAISERROR('##OPT32226##%%tabela%%=TraElem##', 16, 1) -- RAISERROR('Istnieją zapisy powiązane z modyfikowanym rekordem (powiązanie z tabelą TraElem). ', 16, 1)"
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -342,7 +414,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L153,L183,L201",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:54:48.586Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_detalstantowary,CDN.DetalStanTowary Query Guide,Query design helper for table CDN.DetalStanTowary.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTowary,CDN.DetalStanTowary,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,MEDIUM,QUERY_DESIGN,3,0,DSTwr_DSTw..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -364,7 +442,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_tretranag,CDN.TraElem -> CDN.TraNag,Direct join path from CDN.TraElem to CDN.TraNag based on FK_TrETraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_TrETraNag,1,DIRECT_FOREIGN_KEY,FRO..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L25,L195,L199",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:54:48.598Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdetraelem,CDN.ProdElem -> CDN.TraElem,Direct join path from CDN.ProdElem to CDN.TraElem based on FK_PdETraElem.,join_path_guide,CDN_TEST:TABLE:CDN.ProdElem,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:FOREIGN_KEY:CDN.FK_PdETraElem,1,DIRECT_FOREIG..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -386,7 +470,13 @@
               "score": 2,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.TraCykliczne_InsertUpdate_Trigger=>U :CDN.TraElem,TraCykliczne_InsertUpdate_Trigger => TraElem,Heuristic SQL-text dependency from CDN.TraCykliczne_InsertUpdate_Trigger to CDN.TraElem.,object_dependency,CDN_TEST:TRIGGER:CDN.TraCykliczne_Inse..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L246,L254,L325",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:54:48.830Z",
+          "excerpt": "CDN_TEST:DEPENDENCY:HEURISTIC:FN:CDN.DokZawieraTylkoUslugi=>U :CDN.TraElem,DokZawieraTylkoUslugi => TraElem,Heuristic SQL-text dependency from CDN.DokZawieraTylkoUslugi to CDN.TraElem.,object_dependency,CDN_TEST:FUNCTION:CDN.DokZawieraTylkoUslugi,CDN_TEST:TABLE:CDN.TraElem,FUN..."
         }
       ],
       "notes": []
@@ -422,7 +512,13 @@
               "score": 4,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_ddndokdef,CDN.DokumentyDostawyNag -> CDN.DokDefinicje,Direct join path from CDN.DokumentyDostawyNag to CDN.DokDefinicje based on FK_DDNDokDef.,join_path_guide,CDN_TEST:TABLE:CDN.DokumentyDostawyNag,CDN_TEST:TABLE:CDN.DokDefinicje,CDN_TEST..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L431,L439,L488",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:54:49.173Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dpldtranagds,CDN.DetalPlatnosciDokumentu -> CDN.DetalTraNag,Direct join path from CDN.DetalPlatnosciDokumentu to CDN.DetalTraNag based on FK_DPlDTraNagDS.,join_path_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN_TEST:TABLE:CDN.Detal..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -444,7 +540,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_crmdanedokskojarzonych,CDN.CrmDaneDokSkojarzonych Guide,Query-design helper for stored_procedure CDN.CrmDaneDokSkojarzonych.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.CrmDaneDokSkojarzonych,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENER..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L2572,L11,L385",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:54:49.222Z",
+          "excerpt": "SQL_GUIDE:cdn_konfiguracja_trigger_cdn_dokdefinicje_delete_trigger,CDN.DokDefinicje_Delete_Trigger Guide,Query-design helper for trigger CDN.DokDefinicje_Delete_Trigger.,sql_object_guide,CDN_Konfiguracja:TRIGGER:CDN.DokDefinicje_Delete_Trigger,TRIGGER,WORKFLOW_INTEGRATION,HAND..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -466,7 +568,13 @@
               "score": 3,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstanplatnoscidokumentu,CDN.DetalStanPlatnosciDokumentu Query Guide,Query design helper for table CDN.DetalStanPlatnosciDokumentu.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanPlatnosciDokumentu,CDN.DetalStanPlatnosciDokumentu,OGOLNE,OTHER,G..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L6,L89,L139",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:54:49.161Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_detalplatnoscidokumentu,CDN.DetalPlatnosciDokumentu Query Guide,Query design helper for table CDN.DetalPlatnosciDokumentu.,table_query_guide,CDN_TEST:TABLE:CDN.DetalPlatnosciDokumentu,CDN.DetalPlatnosciDokumentu,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QU..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -488,7 +596,13 @@
               "score": 3,
               "snippet": "DEP:cdn_test_procedure_cdn_dodajbnkzdarzenie:EXEC:cdn_test_procedure_cdn_modyfikujzdarzeniakbdokumentu,CDN.DodajBnkZdarzenie execs CDN.ModyfikujZdarzeniaKBDokumentu,Definition-derived procedure call from CDN.DodajBnkZdarzenie to CDN.ModyfikujZdarzeniaKBDokumentu.,object_depend..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L3926,L4083,L4112",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:54:49.393Z",
+          "excerpt": "DEP:cdn_test_procedure_cdn_modyfikujzdarzeniakbdokumentu:EXEC:cdn_test_procedure_cdn_rejestroperacjidodajex,CDN.ModyfikujZdarzeniaKBDokumentu execs CDN.RejestrOperacjiDodajEx,Definition-derived procedure call from CDN.ModyfikujZdarzeniaKBDokumentu to CDN.RejestrOperacjiDodajEx..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -510,7 +624,13 @@
               "score": 3,
               "snippet": "RAISERROR('##OPT32319##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana na stanowiskach Detalu lub sprzedaży mobilnej.',16,1)"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L12,L21,L30",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:54:49.554Z",
+          "excerpt": "RAISERROR('##OPT32319##', 16, 1) -- RAISERROR('Definicja dokumentu jest używana na stanowiskach Detalu lub sprzedaży mobilnej. ',16,1)"
         }
       ],
       "notes": []
@@ -546,7 +666,13 @@
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.BnkZapisy_InsertUpdateDelete_Trigger=>U :CDN.Kontrahenci,BnkZapisy_InsertUpdateDelete_Trigger => Kontrahenci,Heuristic SQL-text dependency from CDN.BnkZapisy_InsertUpdateDelete_Trigger to CDN.Kontrahenci.,object_dependency,CDN_TEST:TRIGGER:..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L4533,L4569,L3192",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:54:49.979Z",
+          "excerpt": "DEP:cdn_test_procedure_cdn_anonimizujkontrahenta:READ:cdn_test_table_cdn_bnkzapisy,CDN.AnonimizujKontrahenta reads CDN.BnkZapisy,Definition-derived read dependency from CDN.AnonimizujKontrahenta to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.AnonimizujKontrahenta,C..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -568,7 +694,13 @@
               "score": 2,
               "snippet": "RAISERROR('##OPT32328##', 16, 1) -- RAISERROR('Forma płatności jest używana w kontrahentach (Kontrahenci). Nie można zmieniać jej typu ani nazwy.',16,1)"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L2622,L2647,L313",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:54:50.124Z",
+          "excerpt": "-- Kiedy już wykorzystaliśmy zmienione kwoty limitów ustawiane z zewnątrz (w triggerze BnkZdarzenia lub BnkZapisy) na kontrahentach podrzędnych do ustawienia limitów na kontrahentach nadrzędnych"
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -590,7 +722,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_urzrachunki,CDN.UrzRachunki Query Guide,Query design helper for table CDN.UrzRachunki.,table_query_guide,CDN_TEST:TABLE:CDN.UrzRachunki,CDN.UrzRachunki,OGOLNE,OTHER,GENERAL_ERP,MEDIUM,QUERY_DESIGN,2,3,URa_PraId; URa_UrzId; URa_BNaId; URa_URaId,Pr..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L174,L277,L132",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:54:49.738Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_podmiotyview,CDN.PodmiotyView Query Guide,Query design helper for table CDN.PodmiotyView.,table_query_guide,CDN_TEST:TABLE:CDN.PodmiotyView,CDN.PodmiotyView,CRM_KONTRAHENCI,MASTER,CONTRACTORS_CRM,HIGH,QUERY_DESIGN,27,0,Pod_PodId; Pod_PodmiotTyp,V..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -612,7 +750,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_fz_getreportheader,CDN.FZ_GetReportHeader Guide,Query-design helper for stored_procedure CDN.FZ_GetReportHeader.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.FZ_GetReportHeader,STORED_PROCEDURE,SPRINT_PRINT,HANDEL,HIGH,\"SPRINT_PRINT | HANDEL | previ..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L128,L136,L444",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:54:49.799Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_off_ex_raporty,CDN.OFF_Ex_Raporty Guide,Query-design helper for stored_procedure CDN.OFF_Ex_Raporty.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_Ex_Raporty,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUNCTION | OGOLNE | preview:CRE..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -634,7 +778,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzpkartatyp,CDN.BnkZapisy -> CDN.KartyKredytowe,Direct join path from CDN.BnkZapisy to CDN.KartyKredytowe based on FK_BZpKartaTyp.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L158,L177,L181",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:54:49.749Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dorbnkzapis,CDN.Zaliczki -> CDN.BnkZapisy,Direct join path from CDN.Zaliczki to CDN.BnkZapisy based on FK_DoRBnkZapis.,join_path_guide,CDN_TEST:TABLE:CDN.Zaliczki,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:FOREIGN_KEY:CDN.FK_DoRBnkZapis,1,DIRE..."
         }
       ],
       "notes": []
@@ -670,7 +820,13 @@
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_trigger_cdn_traelemrelacje_delete_trigger,CDN.TraElemRelacje_Delete_Trigger Guide,Query-design helper for trigger CDN.TraElemRelacje_Delete_Trigger.,sql_object_guide,CDN_TEST:TRIGGER:CDN.TraElemRelacje_Delete_Trigger,TRIGGER,GENERAL_SQL_OBJECT,HANDEL,NORMAL,..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L733,L2271,L2274",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:54:50.364Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_macierzrabatowa,CDN.MacierzRabatowa Guide,Query-design helper for stored_procedure CDN.MacierzRabatowa.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.MacierzRabatowa,STORED_PROCEDURE,SPECIAL_FUNCTION,HANDEL_MAGAZYN,MEDIUM,\"SPECIAL_FUNCTION | HANDEL_M..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -692,7 +848,13 @@
               "score": 2,
               "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L9347,L9368,L9572",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:54:50.726Z",
+          "excerpt": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -704,7 +866,13 @@
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_ksefodbiorkolejnoscwyszukiwaniapozycji,CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji Query Guide,Query design helper for table CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji.,table_query_guide,CDN_TEST:TABLE:CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji,CD..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L356",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:54:50.297Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_ksefodbiorkolejnoscwyszukiwaniapozycji,CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji Query Guide,Query design helper for table CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji.,table_query_guide,CDN_TEST:TABLE:CDN.KSeFOdbiorKolejnoscWyszukiwaniaPozycji,CD..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -726,7 +894,13 @@
               "score": 1,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_fcenaglowek,CDN.FaCyklElem -> CDN.FaCyklNag,Direct join path from CDN.FaCyklElem to CDN.FaCyklNag based on FK_FcENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.FaCyklElem,CDN_TEST:TABLE:CDN.FaCyklNag,CDN_TEST:FOREIGN_KEY:CDN.FK_FcENaglowek,..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L20,L33,L50",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:54:50.310Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_edenaglowek,CDN.EwidDodElem -> CDN.EwidDodNag,Direct join path from CDN.EwidDodElem to CDN.EwidDodNag based on FK_EDENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.EwidDodElem,CDN_TEST:TABLE:CDN.EwidDodNag,CDN_TEST:FOREIGN_KEY:CDN.FK_EDENag..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -748,7 +922,13 @@
               "score": 1,
               "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Bazy_DeleteHandler=>U :CDN.Bazy,Bazy_DeleteHandler => Bazy,Heuristic SQL-text dependency from CDN.Bazy_DeleteHandler to CDN.Bazy.,object_dependency,CDN_Konfiguracja:TRIGGER:CDN.Bazy_DeleteHandler,CDN_Konfiguracja:TABLE:CDN.Bazy,TRIG..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L21,L22,L25",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:54:50.560Z",
+          "excerpt": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.BazZakazy_InsertUpdateHandler=>U :CDN.Bazy,BazZakazy_InsertUpdateHandler => Bazy,Heuristic SQL-text dependency from CDN.BazZakazy_InsertUpdateHandler to CDN.Bazy.,object_dependency,CDN_Konfiguracja:TRIGGER:CDN.BazZakazy_InsertUpdate..."
         }
       ],
       "notes": []
@@ -784,7 +964,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_dodajgidy,CDN.OFF_DodajGidy Guide,Query-design helper for stored_procedure CDN.OFF_DodajGidy.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_DodajGidy,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CRE..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L19,L26,L28",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:54:58.204Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_off_aktualizujplatnosci,CDN.OFF_AktualizujPlatnosci Guide,Query-design helper for stored_procedure CDN.OFF_AktualizujPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_AktualizujPlatnosci,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPE..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -806,7 +992,13 @@
               "score": 3,
               "snippet": "DEP:cdn_test_procedure_cdn_off_dodajgidy:READ:cdn_test_table_cdn_kontrahenci,CDN.OFF_DodajGidy reads CDN.Kontrahenci,Definition-derived read dependency from CDN.OFF_DodajGidy to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_DodajGidy,CDN_TEST:TABLE:CDN.Kontrahe..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L3990,L4028,L4060",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:54:58.373Z",
+          "excerpt": "DEP:cdn_test_procedure_cdn_off_aktualizujplatnosci:READ:cdn_test_table_cdn_kontrahenci,CDN.OFF_AktualizujPlatnosci reads CDN.Kontrahenci,Definition-derived read dependency from CDN.OFF_AktualizujPlatnosci to CDN.Kontrahenci.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_Aktuali..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -828,7 +1020,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_konfigtext,CDN.KonfigText Query Guide,Query design helper for table CDN.KonfigText.,table_query_guide,CDN_TEST:TABLE:CDN.KonfigText,CDN.KonfigText,CRM_KONTRAHENCI,CONFIG,CONTRACTORS_CRM,MEDIUM,QUERY_DESIGN,0,0,,,Role CONFIG in CONTRACTORS_CRM. Ou..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L22,L60,L62",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:54:58.129Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_umowyb2b,CDN.UmowyB2B Query Guide,Query design helper for table CDN.UmowyB2B.,table_query_guide,CDN_TEST:TABLE:CDN.UmowyB2B,CDN.UmowyB2B,KADRY_PLACE,OTHER,HR_PAYROLL,MEDIUM,QUERY_DESIGN,0,4,UMB_DdfId; UMB_PraId; UMB_DkmIdStanowisko; UMB_KntId,Dok..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -850,7 +1048,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kntformaplatnosci,CDN.Kontrahenci -> CDN.FormyPlatnosci,Direct join path from CDN.Kontrahenci to CDN.FormyPlatnosci based on FK_KntFormaPlatnosci.,join_path_guide,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:TABLE:CDN.FormyPlatnosci,CDN_TEST:F..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L78,L148,L160",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:54:58.142Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kwrhknt,CDN.KntWeryfRachHist -> CDN.Kontrahenci,Direct join path from CDN.KntWeryfRachHist to CDN.Kontrahenci based on FK_KWRHKNT.,join_path_guide,CDN_TEST:TABLE:CDN.KntWeryfRachHist,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -872,7 +1076,13 @@
               "score": 2,
               "snippet": "RAISERROR('##OPT32328##', 16, 1) -- RAISERROR('Forma płatności jest używana w kontrahentach (Kontrahenci). Nie można zmieniać jej typu ani nazwy.',16,1)"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L307,L310,L313",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:54:58.524Z",
+          "excerpt": "-- Sprawdzenie, czy zmieniono nazwę lub typ w formie wykorzystanej w Kontrahenci"
         }
       ],
       "notes": []
@@ -908,7 +1118,13 @@
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_kodycn,CDN.KodyCN Query Guide,Query design helper for table CDN.KodyCN.,table_query_guide,CDN_TEST:TABLE:CDN.KodyCN,CDN.KodyCN,HANDEL_MAGAZYN,DICTIONARY,PRODUCTS_WAREHOUSE,MEDIUM,QUERY_DESIGN,1,0,KCN_KCNId,Towary,Role DICTIONARY in PRODUCTS_WAREH..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L544,L19,L28",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:54:58.702Z",
+          "excerpt": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_detalfunkcjeprac,CDN.DetalFunkcjePrac Query Guide,Query design helper for table CDN.DetalFunkcjePrac.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.DetalFunkcjePrac,CDN.DetalFunkcjePrac,KADRY_PLACE,OTHER,HR_PAYROLL,NORMAL,QUERY_DESIGN,0,0,..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -930,7 +1146,13 @@
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_konfiguracja_trigger_cdn_detalfunkcjeprac_delete_trigger,CDN.DetalFunkcjePrac_Delete_Trigger Guide,Query-design helper for trigger CDN.DetalFunkcjePrac_Delete_Trigger.,sql_object_guide,CDN_Konfiguracja:TRIGGER:CDN.DetalFunkcjePrac_Delete_Trigger,TRIGGER,SPECIAL_F..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L1352,L2555,L2581",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:54:58.768Z",
+          "excerpt": "SQL_GUIDE:cdn_konfiguracja_procedure_cdn_detal_pobierzoperatorow,CDN.Detal_PobierzOperatorow Guide,Query-design helper for stored_procedure CDN.Detal_PobierzOperatorow.,sql_object_guide,CDN_Konfiguracja:PROCEDURE:CDN.Detal_PobierzOperatorow,STORED_PROCEDURE,SPECIAL_FUNCTION,OG..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -952,7 +1174,13 @@
               "score": 2,
               "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_Delete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_Delete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_Delete_Trigger to CDN.DetalFunkcjePrac.,object_dependency,CDN_Konfi..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L14,L15,L81",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:54:58.933Z",
+          "excerpt": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_InsertUpdateDelete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.DetalFunk..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -974,7 +1202,13 @@
               "score": 2,
               "snippet": "\",\"CREATE TRIGGER [CDN].[DetalFunkcjePrac_InsertUpdateDelete_Trigger]"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L33564,L33565,L33626",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:54:59.080Z",
+          "excerpt": "CDN_Konfiguracja:TRIGGER:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger,DetalFunkcjePrac_InsertUpdateDelete_Trigger,Trigger CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger in configuration database CDN_Konfiguracja.,trigger,CDN_Konfiguracja:DATABASE,CDN.DetalFunkcjePrac_Inser..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -996,7 +1230,13 @@
               "score": 1,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdstowar,CDN.ProdSkladniki -> CDN.Towary,Direct join path from CDN.ProdSkladniki to CDN.Towary based on FK_PdSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.ProdSkladniki,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdSTowar,1,DIRECT_..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L22,L31,L34",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:54:58.714Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdetowar,CDN.ProdElem -> CDN.Towary,Direct join path from CDN.ProdElem to CDN.Towary based on FK_PdETowar.,join_path_guide,CDN_TEST:TABLE:CDN.ProdElem,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdETowar,1,DIRECT_FOREIGN_KEY,FRO..."
         }
       ],
       "notes": []
@@ -1032,7 +1272,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L153,L183,L201",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:05.938Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_detalstantowary,CDN.DetalStanTowary Query Guide,Query design helper for table CDN.DetalStanTowary.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTowary,CDN.DetalStanTowary,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,MEDIUM,QUERY_DESIGN,3,0,DSTwr_DSTw..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1054,7 +1300,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_tretranag,CDN.TraElem -> CDN.TraNag,Direct join path from CDN.TraElem to CDN.TraNag based on FK_TrETraNag.,join_path_guide,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:TABLE:CDN.TraNag,CDN_TEST:FOREIGN_KEY:CDN.FK_TrETraNag,1,DIRECT_FOREIGN_KEY,FRO..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L25,L195,L199",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:05.948Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdetraelem,CDN.ProdElem -> CDN.TraElem,Direct join path from CDN.ProdElem to CDN.TraElem based on FK_PdETraElem.,join_path_guide,CDN_TEST:TABLE:CDN.ProdElem,CDN_TEST:TABLE:CDN.TraElem,CDN_TEST:FOREIGN_KEY:CDN.FK_PdETraElem,1,DIRECT_FOREIG..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1076,7 +1328,13 @@
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_ustawstatusrezerwacji,CDN.UstawStatusRezerwacji Guide,Query-design helper for stored_procedure CDN.UstawStatusRezerwacji.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.UstawStatusRezerwacji,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_S..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L11,L16,L25",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:05.996Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_off_dodajnaglowekmm,CDN.OFF_DodajNaglowekMM Guide,Query-design helper for stored_procedure CDN.OFF_DodajNaglowekMM.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJEC..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1098,7 +1356,13 @@
               "score": 2,
               "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_Delete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_Delete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_Delete_Trigger to CDN.DetalFunkcjePrac.,object_dependency,CDN_Konfi..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L14,L15,L81",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:06.153Z",
+          "excerpt": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger=>U :CDN.DetalFunkcjePrac,DetalFunkcjePrac_InsertUpdateDelete_Trigger => DetalFunkcjePrac,Heuristic SQL-text dependency from CDN.DetalFunkcjePrac_InsertUpdateDelete_Trigger to CDN.DetalFunk..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1120,7 +1384,13 @@
               "score": 2,
               "snippet": "-- obsługa sprawdzania relacji restrict do tabeli CDN.TraElem"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L1105,L1153,L1656",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:06.284Z",
+          "excerpt": "select @Towary = (SELECT TrE_TwrNazwa + ', ' from cdn.traelem where tre_trnID = @TrnId  For xml path (''))"
         }
       ],
       "notes": []
@@ -1156,7 +1426,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_fcenaglowek,CDN.FaCyklElem -> CDN.FaCyklNag,Direct join path from CDN.FaCyklElem to CDN.FaCyklNag based on FK_FcENaglowek.,join_path_guide,CDN_TEST:TABLE:CDN.FaCyklElem,CDN_TEST:TABLE:CDN.FaCyklNag,CDN_TEST:FOREIGN_KEY:CDN.FK_FcENaglowek,..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L33,L20,L50",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:15.520Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_va7naglowek,CDN.VatTab7 -> CDN.VatNag,Direct join path from CDN.VatTab7 to CDN.VatNag based on FK_Va7Naglowek.,join_path_guide,CDN_TEST:TABLE:CDN.VatTab7,CDN_TEST:TABLE:CDN.VatNag,CDN_TEST:FOREIGN_KEY:CDN.FK_Va7Naglowek,1,DIRECT_FOREIGN_K..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1178,7 +1454,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_generujrws,CDN.GenerujRWS Guide,Query-design helper for stored_procedure CDN.GenerujRWS.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.GenerujRWS,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L11,L733,L890",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:15.576Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_off_dodajnaglowekmm,CDN.OFF_DodajNaglowekMM Guide,Query-design helper for stored_procedure CDN.OFF_DodajNaglowekMM.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJEC..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1200,7 +1482,13 @@
               "score": 2,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TF:CDN.VIUDO_Pozycje_Korekta=>U :CDN.VatNag,VIUDO_Pozycje_Korekta => VatNag,Heuristic SQL-text dependency from CDN.VIUDO_Pozycje_Korekta to CDN.VatNag.,object_dependency,CDN_TEST:FUNCTION:CDN.VIUDO_Pozycje_Korekta,CDN_TEST:TABLE:CDN.VatNag,FUNCTIO..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L3944,L521,L819",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:15.775Z",
+          "excerpt": "DEP:cdn_test_procedure_cdn_off_dodajnaglowekmm:WRITE:cdn_test_table_cdn_travat,CDN.OFF_DodajNaglowekMM writes CDN.TraVat,Definition-derived write dependency from CDN.OFF_DodajNaglowekMM to CDN.TraVat.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_DodajNaglowekMM,CDN_TEST:TABLE:..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1222,7 +1510,13 @@
               "score": 3,
               "snippet": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L9347,L9368,L9572",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:15.977Z",
+          "excerpt": "-- Status zlecenia zależy od tego, czy poszczególne pozycje są powiązane z pozycjami dokumentów HaMag"
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1244,7 +1538,13 @@
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_twrstawkivat,CDN.TwrStawkiVAT Query Guide,Query design helper for table CDN.TwrStawkiVAT.,table_query_guide,CDN_TEST:TABLE:CDN.TwrStawkiVAT,CDN.TwrStawkiVAT,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,NORMAL,QUERY_DESIGN,0,1,TwV_TwrID,Towary,Role OTH..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L10,L32,L108",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:15.508Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_wyposazenie,CDN.Wyposazenie Query Guide,Query design helper for table CDN.Wyposazenie.,table_query_guide,CDN_TEST:TABLE:CDN.Wyposazenie,CDN.Wyposazenie,KADRY_PLACE,OTHER,HR_PAYROLL,MEDIUM,QUERY_DESIGN,3,2,Wyp_PrcID; Wyp_KatID; Wyp_WypID,PracKod; ..."
         }
       ],
       "notes": []
@@ -1280,7 +1580,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_detalstankontrahenci,CDN.DetalStanKontrahenci Query Guide,Query design helper for table CDN.DetalStanKontrahenci.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanKontrahenci,CDN.DetalStanKontrahenci,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,1,0,..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L201,L22,L60",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:16.188Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_detalstantranag,CDN.DetalStanTraNag Query Guide,Query design helper for table CDN.DetalStanTraNag.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanTraNag,CDN.DetalStanTraNag,OGOLNE,HEADER,GENERAL_ERP,HIGH,QUERY_DESIGN,2,2,DSTrN_OpeID; DSTrN_PodID; ..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1302,7 +1608,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_off_ex_hamag,CDN.OFF_Ex_HaMag Guide,Query-design helper for stored_procedure CDN.OFF_Ex_HaMag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OFF_Ex_HaMag,STORED_PROCEDURE,WORKFLOW_INTEGRATION,HANDEL_MAGAZYN,MEDIUM,\"WORKFLOW_INTEGRATION | HANDEL_MAGAZ..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L35,L43,L44",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:16.259Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_dodajbnkzdarzenie,CDN.DodajBnkZdarzenie Guide,Query-design helper for stored_procedure CDN.DodajBnkZdarzenie.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DodajBnkZdarzenie,STORED_PROCEDURE,WORKFLOW_INTEGRATION,OGOLNE,MEDIUM,\"WORKFLOW_INTEGRATION | ..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1324,7 +1636,13 @@
               "score": 3,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.Kontrahenci_DeleteHandler=>U :CDN.TwrDost,Kontrahenci_DeleteHandler => TwrDost,Heuristic SQL-text dependency from CDN.Kontrahenci_DeleteHandler to CDN.TwrDost.,object_dependency,CDN_TEST:TRIGGER:CDN.Kontrahenci_DeleteHandler,CDN_TEST:TABLE:..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L423,L913,L914",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:16.485Z",
+          "excerpt": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.Kontrahenci_Delete_Trigger=>U :CDN.CfgKlucze,Kontrahenci_Delete_Trigger => CfgKlucze,Heuristic SQL-text dependency from CDN.Kontrahenci_Delete_Trigger to CDN.CfgKlucze.,object_dependency,CDN_TEST:TRIGGER:CDN.Kontrahenci_Delete_Trigger,CDN_T..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1346,7 +1664,13 @@
               "score": 3,
               "snippet": "CDN_TEST:TRIGGER:CDN.Kontrahenci_InsertUpdateHandler,Kontrahenci_InsertUpdateHandler,Trigger CDN.Kontrahenci_InsertUpdateHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.Kontrahenci_InsertUpdateHandler,CDN_TEST:TABLE:CDN.Kontrahenci,OBJECT_OR_COLUMN,\"CREATE ..."
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L7541,L7561,L7704",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:16.650Z",
+          "excerpt": "CDN_TEST:TRIGGER:CDN.Kontrahenci_DeleteHandler,Kontrahenci_DeleteHandler,Trigger CDN.Kontrahenci_DeleteHandler in company database CDN_TEST.,trigger,CDN_TEST:DATABASE,CDN.Kontrahenci_DeleteHandler,CDN_TEST:TABLE:CDN.Kontrahenci,OBJECT_OR_COLUMN,\"CREATE TRIGGER CDN.Kontrahenci_..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1368,7 +1692,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kntformaplatnosci,CDN.Kontrahenci -> CDN.FormyPlatnosci,Direct join path from CDN.Kontrahenci to CDN.FormyPlatnosci based on FK_KntFormaPlatnosci.,join_path_guide,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:TABLE:CDN.FormyPlatnosci,CDN_TEST:F..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L78,L148,L160",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:16.202Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_kwrhknt,CDN.KntWeryfRachHist -> CDN.Kontrahenci,Direct join path from CDN.KntWeryfRachHist to CDN.Kontrahenci based on FK_KWRHKNT.,join_path_guide,CDN_TEST:TABLE:CDN.KntWeryfRachHist,CDN_TEST:TABLE:CDN.Kontrahenci,CDN_TEST:FOREIGN_KEY:CDN..."
         }
       ],
       "notes": []
@@ -1404,7 +1734,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_altum_dodajpracownika,CDN.Altum_DodajPracownika Guide,Query-design helper for stored_procedure CDN.Altum_DodajPracownika.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Altum_DodajPracownika,STORED_PROCEDURE,IMPORT_EXPORT,KADRY_PLACE,MEDIUM,\"IMPORT_EX..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L1451,L2117,L15",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:16.942Z",
+          "excerpt": "SQL_GUIDE:cdn_test_function_cdn_dekldradopoliczenia,CDN.DeklDRADoPoliczenia Guide,Query-design helper for function CDN.DeklDRADoPoliczenia.,sql_object_guide,CDN_TEST:FUNCTION:CDN.DeklDRADoPoliczenia,FUNCTION,COMPLIANCE_REPORTING,KSIEGOWOSC_COMPLIANCE,HIGH,\"COMPLIANCE_REPORTING..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1426,7 +1762,13 @@
               "score": 3,
               "snippet": "DEP:cdn_test_procedure_cdn_altum_dodajpracownika:READ:cdn_test_table_cdn_pracetaty,CDN.Altum_DodajPracownika reads CDN.PracEtaty,Definition-derived read dependency from CDN.Altum_DodajPracownika to CDN.PracEtaty.,object_dependency,CDN_TEST:PROCEDURE:CDN.Altum_DodajPracownika,C..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L440,L12391,L3963",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:17.103Z",
+          "excerpt": "CDN_TEST:DEPENDENCY:HEURISTIC:V :CDN.PracownicyView=>U :CDN.PracEtaty,PracownicyView => PracEtaty,Heuristic SQL-text dependency from CDN.PracownicyView to CDN.PracEtaty.,object_dependency,CDN_TEST:VIEW:CDN.PracownicyView,CDN_TEST:TABLE:CDN.PracEtaty,VIEW,TABLE,HEURISTIC_SQL_TE..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1448,7 +1790,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_prewlasciciellink,CDN.PracEtaty -> CDN.PracKod,Direct join path from CDN.PracEtaty to CDN.PracKod based on FK_PREWlascicielLink.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.PracKod,CDN_TEST:FOREIGN_KEY:CDN.FK_PREWlasci..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L469,L43,L379",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:16.890Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pre_dkmidpracodawca,CDN.PracEtaty -> CDN.DaneKadMod,Direct join path from CDN.PracEtaty to CDN.DaneKadMod based on FK_PRE_DkmIdPracodawca.,join_path_guide,CDN_TEST:TABLE:CDN.PracEtaty,CDN_TEST:TABLE:CDN.DaneKadMod,CDN_TEST:FOREIGN_KEY:CDN..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1470,7 +1818,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_usunieteobiekty,CDN.UsunieteObiekty Query Guide,Query design helper for table CDN.UsunieteObiekty.,table_query_guide,CDN_TEST:TABLE:CDN.UsunieteObiekty,CDN.UsunieteObiekty,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,0,,,Role OTHER in GENERAL_E..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L36,L58,L232",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:16.874Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_danekadmod,CDN.DaneKadMod Query Guide,Query design helper for table CDN.DaneKadMod.,table_query_guide,CDN_TEST:TABLE:CDN.DaneKadMod,CDN.DaneKadMod,KADRY_PLACE,MASTER,HR_PAYROLL,HIGH,QUERY_DESIGN,14,0,DKM_DkmId,PracSchorzenia; Harmonogram; HisZatr..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1492,7 +1846,13 @@
               "score": 2,
               "snippet": "--RAISERROR('Nie istnieje zapis w tabeli nadrzędnej (powiązanie z tabelą  PracEtaty). ', 16, 1)--ERR_SQL_Place_NieIstniejePowiazanieWPSPRE 32560"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L1164,L1165,L1169",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:17.245Z",
+          "excerpt": "-- Sprawdzenie obecności wierszy w tabeli nadrzędnej PracEtaty"
         }
       ],
       "notes": []
@@ -1528,7 +1888,13 @@
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_twresklep,CDN.TwrESklep Query Guide,Query design helper for table CDN.TwrESklep.,table_query_guide,CDN_TEST:TABLE:CDN.TwrESklep,CDN.TwrESklep,HANDEL_MAGAZYN,OTHER,PRODUCTS_WAREHOUSE,NORMAL,QUERY_DESIGN,0,2,Twes_TwrID; Twes_ESklepId,Towary; eSklep..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L19,L28,L31",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:17.417Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_twratrybuty,CDN.TwrAtrybuty Query Guide,Query design helper for table CDN.TwrAtrybuty.,table_query_guide,CDN_TEST:TABLE:CDN.TwrAtrybuty,CDN.TwrAtrybuty,HANDEL_MAGAZYN,RELATION,PRODUCTS_WAREHOUSE,HIGH,QUERY_DESIGN,1,5,TwA_SrZId; TwA_SrRId; TwA_SrU..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1550,7 +1916,13 @@
               "score": 1,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdstowar,CDN.ProdSkladniki -> CDN.Towary,Direct join path from CDN.ProdSkladniki to CDN.Towary based on FK_PdSTowar.,join_path_guide,CDN_TEST:TABLE:CDN.ProdSkladniki,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdSTowar,1,DIRECT_..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L22,L31,L34",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:17.428Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_pdetowar,CDN.ProdElem -> CDN.Towary,Direct join path from CDN.ProdElem to CDN.Towary based on FK_PdETowar.,join_path_guide,CDN_TEST:TABLE:CDN.ProdElem,CDN_TEST:TABLE:CDN.Towary,CDN_TEST:FOREIGN_KEY:CDN.FK_PdETowar,1,DIRECT_FOREIGN_KEY,FRO..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1572,7 +1944,13 @@
               "score": 1,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_fa_getreportcontenten,CDN.FA_GetReportContentEN Guide,Query-design helper for stored_procedure CDN.FA_GetReportContentEN.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.FA_GetReportContentEN,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIGH,\"SPRINT_PRINT | OG..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L49,L50,L91",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:17.474Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_ro_getreportcontent,CDN.RO_GetReportContent Guide,Query-design helper for stored_procedure CDN.RO_GetReportContent.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.RO_GetReportContent,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIGH,\"SPRINT_PRINT | OGOLNE | p..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1594,7 +1972,13 @@
               "score": 1,
               "snippet": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrElem_Update_Trigger=>U :CDN.Towary,DefAtrElem_Update_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrElem_Update_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrElem_Update_Trigger,CDN_TEST:TABLE:CDN..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L209,L247,L274",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:17.628Z",
+          "excerpt": "CDN_TEST:DEPENDENCY:HEURISTIC:TR:CDN.DefAtrybuty_Update_Trigger=>U :CDN.Towary,DefAtrybuty_Update_Trigger => Towary,Heuristic SQL-text dependency from CDN.DefAtrybuty_Update_Trigger to CDN.Towary.,object_dependency,CDN_TEST:TRIGGER:CDN.DefAtrybuty_Update_Trigger,CDN_TEST:TABLE..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1616,7 +2000,13 @@
               "score": 1,
               "snippet": "join cdn.Towary on TwTS_TwrId = Twr_TwrId"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L209,L214,L637",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:17.747Z",
+          "excerpt": "join cdn.Towary on TwTS_TwrId = Twr_TwrId"
         }
       ],
       "notes": []
@@ -1652,7 +2042,13 @@
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_obrotykbmw,CDN.ObrotyKBMW Guide,Query-design helper for stored_procedure CDN.ObrotyKBMW.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ObrotyKBMW,STORED_PROCEDURE,GENERAL_SQL_OBJECT,OGOLNE,NORMAL,\"GENERAL_SQL_OBJECT | OGOLNE | preview:CREATE PROCEDUR..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L203,L374,L406",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:25.371Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_uaktualnijczasykonfiguracji,CDN.DetalStan_UaktualnijCzasyKonfiguracji Guide,Query-design helper for stored_procedure CDN.DetalStan_UaktualnijCzasyKonfiguracji.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_UaktualnijCzasyKonfigura..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1674,7 +2070,13 @@
               "score": 2,
               "snippet": "DEP:cdn_test_procedure_cdn_kontoslownikowe:READ:cdn_test_table_cdn_podmiotyview,CDN.KontoSlownikowe reads CDN.PodmiotyView,Definition-derived read dependency from CDN.KontoSlownikowe to CDN.PodmiotyView.,object_dependency,CDN_TEST:PROCEDURE:CDN.KontoSlownikowe,CDN_TEST:TABLE:C..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L5125,L10515,L10516",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:25.540Z",
+          "excerpt": "DEP:cdn_test_procedure_cdn_detalstan_uaktualnijczasykonfiguracji:WRITE:cdn_test_table_cdn_detalstankonfiguracja,CDN.DetalStan_UaktualnijCzasyKonfiguracji writes CDN.DetalStanKonfiguracja,Definition-derived write dependency from CDN.DetalStan_UaktualnijCzasyKonfiguracji to CDN...."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1696,7 +2098,13 @@
               "score": 2,
               "snippet": "-- kontrola grup w konfiguracji"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L324,L15225,L27243",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:25.690Z",
+          "excerpt": "RAISERROR('##OPT32329##', 16, 1) -- RAISERROR('Forma płatności jest używana w konfiguracji Detalu. Nie można zmieniać jej typu ani nazwy.',16,1)"
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1718,7 +2126,13 @@
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_cfgkurierzydefpaczki,CDN.CfgKurierzyDefPaczki Query Guide,Query design helper for table CDN.CfgKurierzyDefPaczki.,table_query_guide,CDN_TEST:TABLE:CDN.CfgKurierzyDefPaczki,CDN.CfgKurierzyDefPaczki,KONFIGURACJA,CONFIG,CONFIGURATION_ADMIN,MEDIUM,QU..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L42,L62,L98",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:25.310Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_detalstankonfiguracja,CDN.DetalStanKonfiguracja Query Guide,Query design helper for table CDN.DetalStanKonfiguracja.,table_query_guide,CDN_TEST:TABLE:CDN.DetalStanKonfiguracja,CDN.DetalStanKonfiguracja,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1740,7 +2154,13 @@
               "score": 1,
               "snippet": "JOIN_GUIDE:cdn_konfiguracja_foreign_key_cdn_fk_mszpmsz,CDN.MailSzablonyPodlaczenia -> CDN.MailSzablony,Direct join path from CDN.MailSzablonyPodlaczenia to CDN.MailSzablony based on FK_MSzPMSz.,join_path_guide,CDN_Konfiguracja:TABLE:CDN.MailSzablonyPodlaczenia,CDN_Konfiguracja..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L324,L328,L549",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:25.322Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_anksp_ankgp,CDN.AnkSlownikPytan -> CDN.AnkGrupyPytan,Direct join path from CDN.AnkSlownikPytan to CDN.AnkGrupyPytan based on FK_AnkSp_AnkGp.,join_path_guide,CDN_TEST:TABLE:CDN.AnkSlownikPytan,CDN_TEST:TABLE:CDN.AnkGrupyPytan,CDN_TEST:FORE..."
         }
       ],
       "notes": []
@@ -1776,7 +2196,13 @@
               "score": 4,
               "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_cfgklucze,CDN.CfgKlucze Query Guide,Query design helper for table CDN.CfgKlucze.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.CfgKlucze,CDN.CfgKlucze,KONFIGURACJA,DICTIONARY,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,2,1,CFK_ParentId; CFK_Cf..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L298,L320,L523",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:30.451Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_cfgklucze,CDN.CfgKlucze Query Guide,Query design helper for table CDN.CfgKlucze.,table_query_guide,CDN_TEST:TABLE:CDN.CfgKlucze,CDN.CfgKlucze,KONFIGURACJA,DICTIONARY,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,2,1,CFK_ParentId; CFK_CfkId,CfgKlucze; C..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1798,7 +2224,13 @@
               "score": 4,
               "snippet": "JOIN_GUIDE:curated:company_config_key_value,CDN.CfgWartosci -> CDN.CfgKlucze,Curated business join path from CDN.CfgWartosci to CDN.CfgKlucze.,join_path_guide,CDN_TEST:TABLE:CDN.CfgWartosci,CDN_TEST:TABLE:CDN.CfgKlucze,CDN_TEST:FOREIGN_KEY:CDN.FK_CFWCfkLink,1,CURATED_BUSINESS_..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L314,L566,L623",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:30.462Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_cfwcfklink,CDN.CfgWartosci -> CDN.CfgKlucze,Direct join path from CDN.CfgWartosci to CDN.CfgKlucze based on FK_CFWCfkLink.,join_path_guide,CDN_TEST:TABLE:CDN.CfgWartosci,CDN_TEST:TABLE:CDN.CfgKlucze,CDN_TEST:FOREIGN_KEY:CDN.FK_CFWCfkLink,..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1820,7 +2252,13 @@
               "score": 4,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_z3_mies,CDN.Z3_Mies Guide,Query-design helper for stored_procedure CDN.Z3_Mies.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Z3_Mies,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL_FUNCTION | OGOLNE | preview:CREATE PROCEDURE CDN.Z3_Mies @D..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L70,L286,L330",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:30.512Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_oparametrywspolpracy,CDN.OParametryWspolpracy Guide,Query-design helper for stored_procedure CDN.OParametryWspolpracy.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.OParametryWspolpracy,STORED_PROCEDURE,SPECIAL_FUNCTION,KADRY_PLACE,MEDIUM,\"SPECIAL_FU..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1842,7 +2280,13 @@
               "score": 2,
               "snippet": "DELETE CDN.DokRelacje"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L1755,L1787,L1790",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:30.838Z",
+          "excerpt": "IF EXISTS (SELECT * FROM CDN.CfgKlucze JOIN CDN.CfgWartosci ON CFW_CfkId = CFK_CfkId WHERE CFK_Nazwa = 'PPKInstytucjaFinansowa' AND CFW_Wartosc IN (SELECT CONVERT(NVARCHAR(4000), deleted.Knt_KntID) FROM deleted))"
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1864,7 +2308,13 @@
               "score": 2,
               "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.DokRelacjeValidType=>U :CDN.DokRelacje,DokRelacjeValidType => DokRelacje,Heuristic SQL-text dependency from CDN.DokRelacjeValidType to CDN.DokRelacje.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.DokRelacjeValidType,CDN_Konfigura..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L11,L12,L19",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:30.682Z",
+          "excerpt": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TF:CDN.CfgDietyRyczalty=>U :CDN.CfgKlucze,CfgDietyRyczalty => CfgKlucze,Heuristic SQL-text dependency from CDN.CfgDietyRyczalty to CDN.CfgKlucze.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.CfgDietyRyczalty,CDN_Konfiguracja:TABLE:CDN.C..."
         }
       ],
       "notes": []
@@ -1900,7 +2350,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci,CDN.DetalStan_WydrukiPlatnosci Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPlatnosci,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIG..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L1300,L1301,L524",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:31.077Z",
+          "excerpt": "SQL_GUIDE:cdn_konfiguracja_procedure_cdn_wydruk_dodaj,CDN.Wydruk_Dodaj Guide,Query-design helper for stored_procedure CDN.Wydruk_Dodaj.,sql_object_guide,CDN_Konfiguracja:PROCEDURE:CDN.Wydruk_Dodaj,STORED_PROCEDURE,SPRINT_PRINT,KONFIGURACJA,HIGH,\"SPRINT_PRINT | KONFIGURACJA | p..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1922,7 +2378,13 @@
               "score": 3,
               "snippet": "DEP:cdn_test_procedure_cdn_detalstan_wydrukipozycjedokumentow:READ:cdn_test_table_cdn_detalstantraelem,CDN.DetalStan_WydrukiPozycjeDokumentow reads CDN.DetalStanTraElem,Definition-derived read dependency from CDN.DetalStan_WydrukiPozycjeDokumentow to CDN.DetalStanTraElem.,obje..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L6751,L6752,L6788",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:31.239Z",
+          "excerpt": "DEP:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci:READ:cdn_test_table_cdn_detalstanplatnoscidokumentu,CDN.DetalStan_WydrukiPlatnosci reads CDN.DetalStanPlatnosciDokumentu,Definition-derived read dependency from CDN.DetalStan_WydrukiPlatnosci to CDN.DetalStanPlatnosciDokume..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1944,7 +2406,13 @@
               "score": 1,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_eskleprocechy,CDN.eSklepROCechy Query Guide,Query design helper for table CDN.eSklepROCechy.,table_query_guide,CDN_TEST:TABLE:CDN.eSklepROCechy,CDN.eSklepROCechy,OGOLNE,DICTIONARY,GENERAL_ERP,MEDIUM,QUERY_DESIGN,0,0,,,Role DICTIONARY in GENERAL_E..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L630,L35,L118",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:31.016Z",
+          "excerpt": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_wydruki,CDN.Wydruki Query Guide,Query design helper for table CDN.Wydruki.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.Wydruki,CDN.Wydruki,KONFIGURACJA,TEMPLATE,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,0,,,Role TEMPLATE in CONFIGURATION..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1966,7 +2434,13 @@
               "score": 2,
               "snippet": "IF EXISTS (SELECT * FROM deleted WHERE deleted.Ktl_Symbol = 'WYDRUKI_DLA_KLIENTA')"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L22485,L27533,L27547",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:31.389Z",
+          "excerpt": "-- uruchamiamy procedurę obsługi zasobów, jesli są podmieniane jakiekolwiek pola za wyjatkiem TrE_LpPow"
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -1978,7 +2452,13 @@
               "score": 1,
               "snippet": "StoredProcedure(StoredProcedure): EntityType"
             }
-          ]
+          ],
+          "sourceId": "sha256:5a29f2becfa22a37ebd331bbaef0a3a8b8f6af12fb0a998abfe3fd405679b942",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/docs/reference/ComarchOptimaSchema.schema",
+          "locator": "L142",
+          "contentHash": "sha256:81e9a2e1f330c5f3176a7d5c7def8ee882c300e7ba392a112a58a1c0c354b374",
+          "observedAt": "2026-09-11T07:55:31.013Z",
+          "excerpt": "StoredProcedure(StoredProcedure): EntityType"
         }
       ],
       "notes": []
@@ -2014,7 +2494,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_prozakazy,CDN.ProZakazy Query Guide,Query design helper for table CDN.ProZakazy.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.ProZakazy,CDN.ProZakazy,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,1,PZa_OpeID,Operatorzy,Role OTHER in GENE..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L505,L511,L513",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:31.561Z",
+          "excerpt": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_opeustawienia,CDN.OpeUstawienia Query Guide,Query design helper for table CDN.OpeUstawienia.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.OpeUstawienia,CDN.OpeUstawienia,KONFIGURACJA,OTHER,CONFIGURATION_ADMIN,NORMAL,QUERY_DESIGN,0,1,OpU_O..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2036,7 +2522,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_konfiguracja_foreign_key_cdn_fk_ofdsd_ope,CDN.OfertySzablonyDomyslne -> CDN.Operatorzy,Direct join path from CDN.OfertySzablonyDomyslne to CDN.Operatorzy based on FK_OfdSD_Ope.,join_path_guide,CDN_Konfiguracja:TABLE:CDN.OfertySzablonyDomyslne,CDN_Konfiguracja:TA..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L557,L563,L571",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:31.572Z",
+          "excerpt": "JOIN_GUIDE:cdn_konfiguracja_foreign_key_cdn_fk_bmobaza,CDN.BazModulyOperatora -> CDN.Bazy,Direct join path from CDN.BazModulyOperatora to CDN.Bazy based on FK_BMOBaza.,join_path_guide,CDN_Konfiguracja:TABLE:CDN.BazModulyOperatora,CDN_Konfiguracja:TABLE:CDN.Bazy,CDN_Konfiguracj..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2058,7 +2550,13 @@
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_uaktualnijczasykonfiguracji,CDN.DetalStan_UaktualnijCzasyKonfiguracji Guide,Query-design helper for stored_procedure CDN.DetalStan_UaktualnijCzasyKonfiguracji.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_UaktualnijCzasyKonfigura..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L105,L114,L203",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:31.620Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_zwrockrajelistazwielomapodstawowymistawkamioss,CDN.ZwrocKrajeListaZWielomaPodstawowymiStawkamiOSS Guide,Query-design helper for stored_procedure CDN.ZwrocKrajeListaZWielomaPodstawowymiStawkamiOSS.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.ZwrocKr..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2080,7 +2578,13 @@
               "score": 2,
               "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.fn_Wdr_ZablokowaniOperatorzy=>U :CDN.WdrZakazyDoWydrukow,fn_Wdr_ZablokowaniOperatorzy => WdrZakazyDoWydrukow,Heuristic SQL-text dependency from CDN.fn_Wdr_ZablokowaniOperatorzy to CDN.WdrZakazyDoWydrukow.,object_dependency,CDN_Konfi..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L2,L3,L4",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:31.786Z",
+          "excerpt": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.fn_Anl_ZablokowaniOperatorzy=>U :CDN.AnlZakazy,fn_Anl_ZablokowaniOperatorzy => AnlZakazy,Heuristic SQL-text dependency from CDN.fn_Anl_ZablokowaniOperatorzy to CDN.AnlZakazy.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.fn_Anl_Za..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2102,7 +2606,13 @@
               "score": 2,
               "snippet": "-- kontrola grup w konfiguracji"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L324,L27243,L27317",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:31.927Z",
+          "excerpt": "RAISERROR('##OPT32329##', 16, 1) -- RAISERROR('Forma płatności jest używana w konfiguracji Detalu. Nie można zmieniać jej typu ani nazwy.',16,1)"
         }
       ],
       "notes": []
@@ -2133,7 +2643,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_konfiguracja_table_cdn_wydruki,CDN.Wydruki Query Guide,Query design helper for table CDN.Wydruki.,table_query_guide,CDN_Konfiguracja:TABLE:CDN.Wydruki,CDN.Wydruki,KONFIGURACJA,TEMPLATE,CONFIGURATION_ADMIN,MEDIUM,QUERY_DESIGN,0,0,,,Role TEMPLATE in CONFIGURATION..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L232,L630",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:38.195Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_usunieteobiekty,CDN.UsunieteObiekty Query Guide,Query design helper for table CDN.UsunieteObiekty.,table_query_guide,CDN_TEST:TABLE:CDN.UsunieteObiekty,CDN.UsunieteObiekty,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,0,,,Role OTHER in GENERAL_E..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2145,7 +2661,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_skrzwiazane,CDN.SchKsiRelac -> CDN.SchKsiNag,Direct join path from CDN.SchKsiRelac to CDN.SchKsiNag based on FK_SKRZwiazane.,join_path_guide,CDN_TEST:TABLE:CDN.SchKsiRelac,CDN_TEST:TABLE:CDN.SchKsiNag,CDN_TEST:FOREIGN_KEY:CDN.FK_SKRZwiaza..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L264",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:38.205Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_skrzwiazane,CDN.SchKsiRelac -> CDN.SchKsiNag,Direct join path from CDN.SchKsiRelac to CDN.SchKsiNag based on FK_SKRZwiazane.,join_path_guide,CDN_TEST:TABLE:CDN.SchKsiRelac,CDN_TEST:TABLE:CDN.SchKsiNag,CDN_TEST:FOREIGN_KEY:CDN.FK_SKRZwiaza..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2167,7 +2689,13 @@
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukinaglowekkb,CDN.DetalStan_WydrukiNaglowekKB Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiNaglowekKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiNaglowekKB,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L524,L534,L544",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:38.251Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_detalstan_wydrukiplatnosci,CDN.DetalStan_WydrukiPlatnosci Guide,Query-design helper for stored_procedure CDN.DetalStan_WydrukiPlatnosci.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.DetalStan_WydrukiPlatnosci,STORED_PROCEDURE,SPRINT_PRINT,OGOLNE,HIG..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2189,7 +2717,13 @@
               "score": 2,
               "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrZakazyDoWydrukow,Wydruki_Delete_Trigger => WdrZakazyDoWydrukow,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrZakazyDoWydrukow.,object_dependency,CDN_Konfiguracja:TRIGGER:CD..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L106,L107,L108",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:38.409Z",
+          "excerpt": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:TR:CDN.Wydruki_Delete_Trigger=>U :CDN.WdrDomyslne,Wydruki_Delete_Trigger => WdrDomyslne,Heuristic SQL-text dependency from CDN.Wydruki_Delete_Trigger to CDN.WdrDomyslne.,object_dependency,CDN_Konfiguracja:TRIGGER:CDN.Wydruki_Delete_Trigger..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2211,7 +2745,13 @@
               "score": 2,
               "snippet": "-- (sytuacja ma miejsce podczas dodawania, zmiany lub usuwania zdarzenia związanego z kontrahentem -"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L1952,L1967,L2611",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:38.534Z",
+          "excerpt": "RAISERROR('##OPT32341##', 16, 1) -- RAISERROR('Nie można kasować kontrahenta związanego z e-Sklep', 16, 1)"
         }
       ],
       "notes": []
@@ -2247,7 +2787,13 @@
               "score": 3,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_sprawdzrozliczeniazapisukb,CDN.SprawdzRozliczeniaZapisuKB Guide,Query-design helper for stored_procedure CDN.SprawdzRozliczeniaZapisuKB.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.SprawdzRozliczeniaZapisuKB,STORED_PROCEDURE,IMPORT_EXPORT,OGOLNE,ME..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L51,L60,L61",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:46.116Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_anonimizacja_bnkzapisy_blokujaceknt,CDN.Anonimizacja_BnkZapisy_BlokujaceKnt Guide,Query-design helper for stored_procedure CDN.Anonimizacja_BnkZapisy_BlokujaceKnt.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.Anonimizacja_BnkZapisy_BlokujaceKnt,STOR..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2269,7 +2815,13 @@
               "score": 3,
               "snippet": "DEP:cdn_test_procedure_cdn_anonimizacja_bnkzapisy_blokujaceknt:READ:cdn_test_table_cdn_bnkzapisy,CDN.Anonimizacja_BnkZapisy_BlokujaceKnt reads CDN.BnkZapisy,Definition-derived read dependency from CDN.Anonimizacja_BnkZapisy_BlokujaceKnt to CDN.BnkZapisy.,object_dependency,CDN_..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L3993,L4034,L4183",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:46.275Z",
+          "excerpt": "DEP:cdn_test_procedure_cdn_off_aktualizujplatnosci:READ:cdn_test_table_cdn_bnkzapisy,CDN.OFF_AktualizujPlatnosci reads CDN.BnkZapisy,Definition-derived read dependency from CDN.OFF_AktualizujPlatnosci to CDN.BnkZapisy.,object_dependency,CDN_TEST:PROCEDURE:CDN.OFF_AktualizujPla..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2291,7 +2843,13 @@
               "score": 2,
               "snippet": "TABLE_GUIDE:cdn_test_table_cdn_zaliczki,CDN.Zaliczki Query Guide,Query design helper for table CDN.Zaliczki.,table_query_guide,CDN_TEST:TABLE:CDN.Zaliczki,CDN.Zaliczki,OGOLNE,OTHER,GENERAL_ERP,NORMAL,QUERY_DESIGN,0,1,Zal_BZpId,BnkZapisy,Role OTHER in GENERAL_ERP. Outbound fore..."
             }
-          ]
+          ],
+          "sourceId": "sha256:e1cce1a677cb4cfc013563b427953fe7630aa9bbcffc35e46d3f3c61cf134164",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/table_query_guide.csv",
+          "locator": "L132,L174,L193",
+          "contentHash": "sha256:f7d1652d73ace538a3dccb5bfe7d6f55e83b27310dfda066fb4dc3b685f4ea38",
+          "observedAt": "2026-09-11T07:55:46.058Z",
+          "excerpt": "TABLE_GUIDE:cdn_test_table_cdn_urzrachunki,CDN.UrzRachunki Query Guide,Query design helper for table CDN.UrzRachunki.,table_query_guide,CDN_TEST:TABLE:CDN.UrzRachunki,CDN.UrzRachunki,OGOLNE,OTHER,GENERAL_ERP,MEDIUM,QUERY_DESIGN,2,3,URa_PraId; URa_UrzId; URa_BNaId; URa_URaId,Pr..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2313,7 +2871,13 @@
               "score": 2,
               "snippet": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_bzpkartatyp,CDN.BnkZapisy -> CDN.KartyKredytowe,Direct join path from CDN.BnkZapisy to CDN.KartyKredytowe based on FK_BZpKartaTyp.,join_path_guide,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:TABLE:CDN.KartyKredytowe,CDN_TEST:FOREIGN_KEY:CDN.FK_..."
             }
-          ]
+          ],
+          "sourceId": "sha256:36e7b9337842ae98be21d541f95b469e7a424a1019dff4d622c575f674e125d9",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/join_path_guide.csv",
+          "locator": "L158,L177,L181",
+          "contentHash": "sha256:a60c701a6b4ab4448c04a2360d91a5fdfb30b97688e159431016119d910577b9",
+          "observedAt": "2026-09-11T07:55:46.069Z",
+          "excerpt": "JOIN_GUIDE:cdn_test_foreign_key_cdn_fk_dorbnkzapis,CDN.Zaliczki -> CDN.BnkZapisy,Direct join path from CDN.Zaliczki to CDN.BnkZapisy based on FK_DoRBnkZapis.,join_path_guide,CDN_TEST:TABLE:CDN.Zaliczki,CDN_TEST:TABLE:CDN.BnkZapisy,CDN_TEST:FOREIGN_KEY:CDN.FK_DoRBnkZapis,1,DIRE..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2335,7 +2899,13 @@
               "score": 2,
               "snippet": "WHERE CDN.BnkZapisy.BZp_BZpId IS NULL AND (inserted.BOE_DokumentTyp=2)"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L859,L860,L861",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:46.410Z",
+          "excerpt": "( SELECT * FROM inserted LEFT OUTER JOIN CDN.BnkZapisy ON"
         }
       ],
       "notes": []
@@ -2371,7 +2941,13 @@
               "score": 2,
               "snippet": "SQL_GUIDE:cdn_test_procedure_cdn_anonimizacjadokblokujaceknt,CDN.AnonimizacjaDokBlokujaceKnt Guide,Query-design helper for stored_procedure CDN.AnonimizacjaDokBlokujaceKnt.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.AnonimizacjaDokBlokujaceKnt,STORED_PROCEDURE,GENERAL_SQL_OBJECT,..."
             }
-          ]
+          ],
+          "sourceId": "sha256:8e6276369b6a58410fcc761c67b17202289a26d9a3ea6e62d7c7390964a7d3b3",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/sql_object_guide.csv",
+          "locator": "L898,L1212,L26",
+          "contentHash": "sha256:a7c4a51b78d2435b5601e6e901ca5acaaab9bce59264e5910a79d10079985d67",
+          "observedAt": "2026-09-11T07:55:46.671Z",
+          "excerpt": "SQL_GUIDE:cdn_test_procedure_cdn_aktualizujtravattranag,CDN.AktualizujTraVATTraNag Guide,Query-design helper for stored_procedure CDN.AktualizujTraVATTraNag.,sql_object_guide,CDN_TEST:PROCEDURE:CDN.AktualizujTraVATTraNag,STORED_PROCEDURE,SPECIAL_FUNCTION,OGOLNE,MEDIUM,\"SPECIAL..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2393,7 +2969,13 @@
               "score": 2,
               "snippet": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>FN:CDN.OptimaNazwaObiektu,OptimaNazwaObiektuEx => OptimaNazwaObiektu,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.OptimaNazwaObiektu.,object_dependency,CDN_Konfiguracja:FUNCTION:CDN.Optima..."
             }
-          ]
+          ],
+          "sourceId": "sha256:c1119be39d45d24f8dbf6581411b3b4508ad43ebe21a886b3486eba50e6e2e3b",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/object_dependency.csv",
+          "locator": "L133,L134,L135",
+          "contentHash": "sha256:09ede35d6e6c2b3a7b4b0971a98c45ee02a1603043ed74a0a2feacfc5a0af515",
+          "observedAt": "2026-09-11T07:55:46.890Z",
+          "excerpt": "CDN_Konfiguracja:DEPENDENCY:HEURISTIC:FN:CDN.OptimaNazwaObiektuEx=>U :CDN.RejestrOperacjiTypyObiektow,OptimaNazwaObiektuEx => RejestrOperacjiTypyObiektow,Heuristic SQL-text dependency from CDN.OptimaNazwaObiektuEx to CDN.RejestrOperacjiTypyObiektow.,object_dependency,CDN_Konfi..."
         },
         {
           "kb": "ComarchOptimaSchema",
@@ -2415,7 +2997,13 @@
               "score": 2,
               "snippet": "-- Liczenie kosztu usługi dla RWS (na pozostałych wewnętrznych koszt usługi jest zapisywany z obiektu)"
             }
-          ]
+          ],
+          "sourceId": "sha256:fca0d09d0731fadd8a501f24d7cc793259d505d7dc6f4e0ef1da21040768d82f",
+          "uri": "knowledge://legacy/ComarchOptimaSchema/exports/optima_schema/v1/trigger.csv",
+          "locator": "L11055,L13501,L23476",
+          "contentHash": "sha256:fb36d85faaa210f2c3239da4819c54f68931543a9ee0aae44a1e0e3e1e508f4b",
+          "observedAt": "2026-09-11T07:55:47.144Z",
+          "excerpt": "-- obsługa kaskadowego uaktualniania zapisów źródłowych Handlowych"
         },
         {
           "kb": "ComarchOptimaSprint",
@@ -2432,7 +3020,13 @@
               "score": 1,
               "snippet": "SPR_SQL_TABELA_TYMCZASOWA_DO_ANALIZY,Tabela tymczasowa do analizy,Tabela tymczasowa do analizy Sprint SQL pattern.,sql_pattern,ANALYTIC_HELPER,@Identyfikator,SSMS analysis,SPR_DOC_KB_SPRINT_04_SQL_MSSQL_PATTERNS_MD,CDN_TEST:PROCEDURE:CDN.RO_GetReportContent,\"This is an SSMS-si..."
             }
-          ]
+          ],
+          "sourceId": "sha256:a8ce2cbd6038835581b21d25d720777bb431d32c3c90447a699c8ec5a6c82620",
+          "uri": "knowledge://legacy/ComarchOptimaSprint/exports/optima_sprint/v1/sql_pattern.csv",
+          "locator": "L9,L10",
+          "contentHash": "sha256:8cbd434f70b8c8505ebef5227975956f2cd518b8adc0d73372359b65275004f8",
+          "observedAt": "2026-09-11T07:55:47.319Z",
+          "excerpt": "SPR_SQL_PROCEDURA_NIE_JEST_TABELA,Procedura nie jest tabela,Procedura nie jest tabela Sprint SQL pattern.,sql_pattern,ANTI_PATTERN,@Identyfikator,SQL procedure,SPR_DOC_KB_SPRINT_04_SQL_MSSQL_PATTERNS_MD,CDN_TEST:PROCEDURE:CDN.RO_GetReportContent,FROM EXEC is not a valid normal..."
         }
       ],
       "notes": []

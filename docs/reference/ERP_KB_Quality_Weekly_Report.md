@@ -1,6 +1,6 @@
 # ERP KB Quality Weekly Report
-**Generated:** 2026-08-31T06:23:42.438Z
-**Period:** 2026-08-24 — 2026-08-31
+**Generated:** 2026-10-12T10:55:55.034Z
+**Period:** 2026-10-05 — 2026-10-12
 
 ---
 ## Per-KB Learning State

@@ -1,0 +1,119 @@
+{
+  "reportDate": "2026-10-13",
+  "status": "DONE",
+  "type": "SANITIZED_DERIVATIVE",
+  "authority": "Controller explicitly authorized bounded removal of confirmed signed Bearer JWT values from captured HTML and embedded archive copies, preserving restore-critical snapshot bytes.",
+  "sourceRoot": "/tmp/opencode/protected-source-correction-20261013",
+  "sanitizedStage": "/tmp/opencode/sanitized-source-correction-20261013",
+  "durableRoot": "/docker/openspg/backups/manual-repairs/source-correction-20261013",
+  "copiedAt": "2026-10-13T17:23:28.321107+00:00",
+  "sourceInventory": {"files": 400, "childDirectories": 54, "bytes": 418887774, "originalsByteExactUnchanged": true},
+  "durableInventory": {
+    "protectedFiles": 400,
+    "byteExactProtectedFiles": 397,
+    "changedProtectedFiles": 3,
+    "publicReportFiles": 25,
+    "packReferencedSourceEvidenceFiles": 19,
+    "missingSourceEvidenceReferences": 0,
+    "payloadFiles": 444,
+    "payloadBytes": 427139710,
+    "filesIncludingSeals": 447,
+    "bytesIncludingSeals": 427850134
+  },
+  "rollback": {
+    "originalBytes": 6911776,
+    "originalSha256": "ac3add0f87d36f7b684bcd5d3441f446bbe07b40a7407d249913af910f09cbc0",
+    "originalApprovedChecksumStillMatches": true,
+    "sanitizedBytes": 6911359,
+    "sanitizedSha256": "9ba5adfbb4552e809f57575e97a82eac8741f2d42960dea9292b125e39a11421",
+    "members": 153,
+    "byteExactMemberPayloads": 151,
+    "sanitizedHtmlMembers": 2,
+    "memberOrderAndTimestampRoleMetadataPreserved": true,
+    "memberSafetyChecksPassed": true,
+    "originalInventoryPreservedAsHistoricalEvidence": true,
+    "derivativeMemberHashesManifest": "derivative-provenance.json"
+  },
+  "sanitization": {
+    "confirmedContext": "Signed JWT value used in Bearer authorization; exact-value replacement only in HTML.",
+    "marker": "[REDACTED_AUTHORIZATION_TOKEN_SANITIZED_DERIVATIVE]",
+    "looseHtmlCopies": 4,
+    "looseHtmlTokenOccurrencesReplaced": 4,
+    "archiveHtmlMembers": 2,
+    "archiveHtmlTokenOccurrencesReplaced": 2,
+    "credentialValuesEverExposedInOutputOrPublicReportOrScript": false,
+    "fullCredentialScanBeforeDurableCopy": "PASS",
+    "fullCredentialScanAfterDurableCopy": "PASS",
+    "nonCredentialMetadataClassifications": [
+      "Known public remaining-source JSON captures contain navigation jsessionid parameters only in links[].url, with no captured Cookie/Set-Cookie/Authorization header; preserve byte-exact.",
+      "PUBLIC vectorRestoration.authorization is an operator-approval narrative, not an HTTP credential."
+    ],
+    "affectedOriginalHtml": [
+      {
+        "name": "priority-08cfe029-original.html",
+        "originalSha256": "e339d3b1805c07f7cbb1aecc09c34972433103d34433511bbd90e93f445cf311",
+        "sanitizedSha256": "2fd8035b750be7445203c6238d0176d425607b440cc1025580c29757487f5b47",
+        "originalBytes": 292646,
+        "sanitizedBytes": 292438,
+        "looseDurablePaths": ["evidence/priority-08cfe029-original.html", "source-evidence/tmp/opencode/priority-08cfe029-original.html"],
+        "archivePath": "evidence/priority-08cfe029-original.html"
+      },
+      {
+        "name": "priority-de720ffd-original.html",
+        "originalSha256": "a390dce7af23552e1c532afbd43bc193759277f65cbbbe07868c5ed530653acd",
+        "sanitizedSha256": "c3e11c5f5a5692c06f5cb94e21cd4d4e627cf95af6b7e19bb18ec7a53eee984a",
+        "originalBytes": 291581,
+        "sanitizedBytes": 291373,
+        "looseDurablePaths": ["evidence/priority-de720ffd-original.html", "source-evidence/tmp/opencode/priority-de720ffd-original.html"],
+        "archivePath": "evidence/priority-de720ffd-original.html"
+      }
+    ]
+  },
+  "seals": {
+    "durableManifest": {"path": "durable-manifest.json", "sha256": "f5abcdcd9af2df521f45af7aadd250a0ce0d7b3b38711c1faaeced8fa46ec753"},
+    "derivativeProvenance": {"path": "derivative-provenance.json", "sha256": "466ba8d80765c9a97c71927bafa8087cbff770361fab4730aa5266499edffc2e"},
+    "pathMapping": {"path": "path-mapping.json", "sha256": "ecbd2435a8ffd5127674fef70272240422f5bdf7d00700e731f184f95ce87052"}
+  },
+  "offlineRestoreProof": {
+    "performed": true,
+    "safeOfflineExtraction": true,
+    "archiveMembers": 153,
+    "fullGraphNodes": 73,
+    "vectorBearingNodes": 73,
+    "fullOriginalGraphPropertyEquality": true,
+    "allLabelsTypesVectorsAndFullStateHashesVerified": true,
+    "validatedRestoreManifest": "restore-plan-OFFLINE-ONLY.json",
+    "localInventoryFilesVerified": 112,
+    "byteExactLocalInventoryFiles": 110,
+    "sanitizedLocalInventoryHtmlEvidence": 2,
+    "registryVerified": true,
+    "draftPairs": 14,
+    "allRestoreCriticalSnapshotsByteExact": true,
+    "liveRestoreExecuted": false
+  },
+  "permissions": {
+    "ownership": "root:mcpbot",
+    "directories": "0750",
+    "files": "0640",
+    "effectiveMcpbotReadableFiles": 447,
+    "effectiveMcpbotTraversableDirectories": 59,
+    "verified": true,
+    "payloadModificationTimesPreserved": true,
+    "protectedDirectoryModificationTimesPreserved": true
+  },
+  "storagePolicy": {
+    "gitIgnored": true,
+    "trackedBackupFiles": 0,
+    "automatedRetentionRoot": "/docker/openspg/backups/automated",
+    "outsideConfiguredAutomatedPrune": true,
+    "retention": "manual; retain until explicit operator disposition",
+    "localDiskOnly": true,
+    "offsite": false,
+    "encrypted": false
+  },
+  "historicalSignatureLimitation": "Historical sealed reports, archive inventory and original signatures/file hashes are preserved byte-exact and refer to unsanitized origin. Derivative hashes are different and explicitly recorded; original signature/hash verification must not be falsely asserted for sanitized bytes.",
+  "utilityPath": "/tmp/opencode/sanitize-persist-correction-backup.py",
+  "utilityHashReference": "durable-manifest.json:utilitySha256",
+  "mutations": {"originChanged": false, "sourceEvidenceOriginalsChanged": false, "corpusChanged": false, "registryChanged": false, "graphChanged": false, "runtimeDataChanged": false, "exportsChanged": false, "runtimeCalls": false, "serviceRestarts": false, "stackBackupRerun": false, "sourceDeleted": false, "commitCreated": false},
+  "verification": {"credentialScan": "PASS", "copiedFileHashes": "PASS", "originalProvenanceHashes": "PASS", "offlineRestore": "PASS", "effectiveMcpbotReadability": "PASS", "gitIgnore": "PASS", "noGitTrackedBackup": "PASS"}
+}

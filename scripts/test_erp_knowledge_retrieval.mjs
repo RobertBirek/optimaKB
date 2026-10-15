@@ -91,6 +91,14 @@ function missingTerms(answer) {
 }
 
 try {
+  const { parseCsvRecords } = await import('./lib/knowledge_retrieval.mjs');
+  check('Parser adds literal columns without changing records or physical locators', () => {
+    assert.deepEqual(parseCsvRecords('\ufeffid," name ",content\r\nA,B,"PZ\r\nWZ"\r\n'), {
+      columns: ['id', ' name ', 'content'],
+      records: [{ cells: ['A', 'B', 'PZ\r\nWZ'], line: 2, endLine: 3 }], warnings: [],
+    });
+    assert.deepEqual(parseCsvRecords('id,content\nA,"broken'), { records: [], warnings: ['invalid_csv'] });
+  });
   check('Znane skróty dokumentów pozostają terminami wyszukiwania', () => {
     const aliases = ['PZ', 'WZ', 'FS', 'FZ', 'PW', 'RW', 'MM', 'RO', 'ZD', 'PA', 'PF'];
     const terms = extractTerms(`Jak PZ i PZ oraz ${aliases.join(', ')}?`);

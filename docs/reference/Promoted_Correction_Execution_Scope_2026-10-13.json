@@ -1,0 +1,235 @@
+{
+  "taskId": "Promoted_Correction_Execution_Scope_2026-10-13",
+  "date": "2026-10-13",
+  "status": "PROPOSAL_ONLY_AWAITING_SEPARATE_OPERATOR_SIGNOFF",
+  "proposalOnly": true,
+  "preparationAuthorized": true,
+  "executionAuthorized": false,
+  "deletionAuthorized": false,
+  "atomic": false,
+  "inputs": [
+    {"path":"docs/reference/Promoted_Live_Graph_Boundary_2026-10-13.json","sha256":"df2d92f9c4461240b3753c36983e656edb3fa18ef87ba81168ae35a8f730b33b"},
+    {"path":"docs/reference/Promoted_Correction_Pack_2026-10-13.json","sha256":"34091066998a7849249d15ade359656b83d0accbc46c315bed9a12d7f869c36a"}
+  ],
+  "evidenceBasis": {
+    "liveReadPerformedHere": false,
+    "inheritedReadWindow": {"start":"2026-10-13T10:05:39.884846+00:00","finish":"2026-10-13T10:15:01.926547+00:00","atomicSnapshot":false},
+    "sourceValidity": "Source fidelity only; no certification of current legal validity or historical source bytes.",
+    "scopeMeaning": "40 old-owned candidates for complete new-ID supersession, not already-obsolete or approved deletions. Preserve all 33 shared document/chunk objects. No global graph census claimed.",
+    "scopeOutsideInventory": "All other nodes, SourceTopic/aggregate objects, source registries and other drafts are outside deletion scope. No prefix, URL-wide, namespace-wide, content-duplicate or internal-ID-only deletion.",
+    "labels": "Expected Entity plus namespace-qualified type label, inherited from exact membership checks; full actual label sets and properties must be captured again before deletion.",
+    "internalIds": "Expected historical database-local IDs, not stable mutation identifiers; renewed identity/provenance verification required, abort on mismatch or reuse."
+  },
+  "rowContract": {
+    "columns": ["recordKey","ownership","type","exactSemanticId","expectedGraphInternalId","observedContentOrSummaryLength","decodedContentOrSummarySha256"],
+    "databaseQualification": "Every row is qualified by its enclosing partition.database; identity is the exact tuple (database, exactSemanticId), never the unqualified ID or short recordKey.",
+    "semanticIdProperty": "id",
+    "expectedMatchCount": 1,
+    "expectedLabels": "[Entity, partition.namespace + '.' + row.type]",
+    "expectedRelationshipCountFromBoundary": 0,
+    "lengthSemantics": "For nodes: decoded UTF-8 content/summary character length from boundary.nodes. For historical ownership or shared_external_historical_chunk: stored property length from boundary.additionalObjects, which may include JSON encoding; do not treat as decoded length.",
+    "hashSemantics": "SHA256 of staged UTF-8 content (Chunk) or summary (ReferenceDocument), attributable to decoded live value only through boundary exact equality. Not a graph-native bodyHash and not a full-node/vector hash.",
+    "nullHash": "Historical body unequal to staged body or not hashed. No fingerprint invented. Capture renewed raw/decoded hashes and full properties in protected rollback snapshot before deletion; capture full-properties baselines for ALL 33 preserve rows before import.",
+    "historicalOwnershipEvidence": "boundary.additionalEvidenceContract: exact promoted sourcePath/localSnapshotPath identifies ownership; sourceDocumentRefId identifies shared external dependency. Preserve original contract and additionalObjects row in protected execution evidence.",
+    "canonicalStoredContentHashes": "Additionally retain and read back all three boundary.storedCanonicalContentHashes; these differ from the decoded summary hashes in rows."
+  },
+  "counts": {
+    "oldDraftIds":14,"currentOwnedRemovalProposal":30,"historicalOwnedRemovalProposal":10,"removalProposal":40,
+    "currentSharedPreserve":22,"historicalSharedPreserve":11,"preserve":33,"exactInventory":73,
+    "removalDocuments":14,"removalChunks":26,"preserveDocuments":3,"preserveChunks":30
+  },
+  "oldDrafts": [
+    {"key":"de720ffd","namespace":"TaxbellAccountingVATReference","oldDraftId":"draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze","oldContentSha256":"7116dbabdd2c4055ec1ac57d375befcbfa43ff440d88ac7c81a5615f3b146a01","successorDraftId":null},
+    {"key":"bf920a10","namespace":"TaxbellLegalReference","oldDraftId":"draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf","oldContentSha256":"d7a31a175579b23c828c827d74664d074c95a43e1f40e3e776fb495a061904e7","successorDraftId":null},
+    {"key":"d1c8371c","namespace":"TaxbellPayrollHRReference","oldDraftId":"draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz","oldContentSha256":"6cc4d04fe33e8802d8af022174e2ad1b88ae2eb07334607f11a9f29b30818b42","successorDraftId":null},
+    {"key":"08cfe029","namespace":"TaxbellPayrollHRReference","oldDraftId":"draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl","oldContentSha256":"4790221f06eacfc59607d31438510e97ccb1b9983984d915395dcc086aa5df93","successorDraftId":null},
+    {"key":"6b5ac5ed","namespace":"TaxbellAccountingVATReference","oldDraftId":"draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl","oldContentSha256":"b4684d726ec0e8ec2487d0d17ee528a2491a715eb3f43c9d34c58aaee815636c","successorDraftId":null},
+    {"key":"dcfc95c2","namespace":"TaxbellAccountingVATReference","oldDraftId":"draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap","oldContentSha256":"ba164649ea116a9087b34445b4509af51fd86972ec1ed7dfdeae97ccdb93bf0e","successorDraftId":null},
+    {"key":"93f75109","namespace":"TaxbellLegalReference","oldDraftId":"draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny","oldContentSha256":"ca601798b059bf86a5241e825a9d52c59afbd373028a54e081177135325fb37a","successorDraftId":null},
+    {"key":"0bdb5e10","namespace":"TaxbellPayrollHRReference","oldDraftId":"draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus","oldContentSha256":"cab43bc9e99024f3d9eaf3cb292a15d2c9b56f0dffe37b24d284496df23a9e58","successorDraftId":null},
+    {"key":"fb53cb2b","namespace":"ComarchCommunityNews","oldDraftId":"draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef","oldContentSha256":"d456339ec55eaec9a600f224c6fe06206f987d5af54bde9967447a45e8802bea","successorDraftId":null},
+    {"key":"f0ede681","namespace":"ComarchCommunityNews","oldDraftId":"draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna","oldContentSha256":"22b63545a1a074060ca75934f2ec9984aa38c7a5a3356fd4c187de7d7d986e66","successorDraftId":null},
+    {"key":"7c66353e","namespace":"TaxbellPayrollHRReference","oldDraftId":"draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus","oldContentSha256":"d81e4d5e8c48a425e7bb0ef3c21fbeea31aeeea63d2fc7606eb94d73b280d2e3","successorDraftId":null},
+    {"key":"a939510d","namespace":"TaxbellPayrollHRReference","oldDraftId":"draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz","oldContentSha256":"36294089b18c8863c526b85c3ed6c9bff6e28bcc7a35b129b8d5a8c48f0b481e","successorDraftId":null},
+    {"key":"9c43b46e","namespace":"TaxbellPayrollHRReference","oldDraftId":"draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus","oldContentSha256":"6dedfa3c0daa400bddb4a9027d6d91f5f077efece5065ab1542330e641205029","successorDraftId":null},
+    {"key":"4ce9f131","namespace":"TaxbellPayrollHRReference","oldDraftId":"draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki","oldContentSha256":"3387bf7c7791db1886453316629030ad4d84f6bbb2604bbfb62c9e0313197e1d","successorDraftId":null}
+  ],
+  "partitions": [
+    {
+      "alias":"community","namespace":"ComarchCommunityNews","database":"comarchcommunitynews","projectIdFromBoundary":11,
+      "counts":{"oldDraftIds":2,"remove":7,"preserve":0},
+      "removalProposal": [
+        ["fb53cb2b","direct_document","ReferenceDocument","COMMUNITY_DOC_PROMOTED_DRAFT_2026_06_09_FB53CB2B_B_AD_PRZY_KONFIGURACJI_COMARCH_BETTERFLY_Z_KSEF",931,386,"d456339ec55eaec9a600f224c6fe06206f987d5af54bde9967447a45e8802bea"],
+        ["f0ede681","direct_document","ReferenceDocument","COMMUNITY_DOC_PROMOTED_DRAFT_2026_08_02_F0EDE681_NOWA_WERSJA_COMARCH_ERP_OPTIMA_2026_2_1_JEST_JUZ_DOSTEPNA",1729,351,"22b63545a1a074060ca75934f2ec9984aa38c7a5a3356fd4c187de7d7d986e66"],
+        ["fb53cb2b","owned_chunk","Chunk","COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_06_09_FB53CB2B_B_AD_PRZY_KONFIGURACJI_COMARCH_BETTERFLY_Z_KSEF_1",937,386,"d456339ec55eaec9a600f224c6fe06206f987d5af54bde9967447a45e8802bea"],
+        ["f0ede681","owned_chunk","Chunk","COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_08_02_F0EDE681_NOWA_WERSJA_COMARCH_ERP_OPTIMA_2026_2_1_JEST_JUZ_DOSTEPNA_1",1731,254,"7758426a441df146d676f2d3357e3796f78c17210ae0fb92b438811af9800a65"],
+        ["f0ede681","owned_chunk","Chunk","COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_08_02_F0EDE681_NOWA_WERSJA_COMARCH_ERP_OPTIMA_2026_2_1_JEST_JUZ_DOSTEPNA_2",1730,95,"a557413b2dd4a3417be690155ef9c4fbac652662863f240ef98eae9ff682f680"],
+        ["fb53cb2b","historical_owned_chunk","Chunk","COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_06_09_FB53CB2B_B_AD_PRZY_KONFIGURACJI_COMARCH_BETTERFLY_Z_KSEF_2",934,175,null],
+        ["fb53cb2b","historical_owned_chunk","Chunk","COMMUNITY_CHUNK_PROMOTED_DRAFT_2026_06_09_FB53CB2B_B_AD_PRZY_KONFIGURACJI_COMARCH_BETTERFLY_Z_KSEF_3",940,37,null]
+      ],
+      "preserve": []
+    },
+    {
+      "alias":"legal","namespace":"TaxbellLegalReference","database":"taxbelllegalreference","projectIdFromBoundary":12,
+      "counts":{"oldDraftIds":2,"remove":4,"preserve":14},
+      "removalProposal": [
+        ["bf920a10","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_07_01_BF920A10_HTTPS_G_INFOR_PL_P_FILES_39075000_ZMIANY_W_PODATKACH_2026_39075452_PDF",445,1341,"d7a31a175579b23c828c827d74664d074c95a43e1f40e3e776fb495a061904e7"],
+        ["bf920a10","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_BF920A10_HTTPS_G_INFOR_PL_P_FILES_39075000_ZMIANY_W_PODATKACH_2026_39075452_PDF_1",454,1341,"d7a31a175579b23c828c827d74664d074c95a43e1f40e3e776fb495a061904e7"],
+        ["93f75109","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_27_93F75109_SERWIS_O_PODATKACH_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_1",450,983,"ca601798b059bf86a5241e825a9d52c59afbd373028a54e081177135325fb37a"],
+        ["93f75109","historical_owned_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_07_27_93F75109_SERWIS_O_PODATKACH_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY",448,995,null]
+      ],
+      "preserve": [
+        ["93f75109","shared_canonical_document","ReferenceDocument","TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY",979,1400,"ae9ee4dc0ec828e75848969800b63ebd0e6aa709972f419e4f13d5474ffcd20e"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_1",1324,1144,"a4966e490049e6a54425bec04c8ade8b2fe93b48f6ef9f87a9fa80d3e618c62f"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_10",1331,1246,"e997dc06b5773f06c04aee02afbd69785a249d342f1369f07949e020c4b3e836"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_11",1321,1790,"0883a84794646e387d012e246284ffb650aa3e1b0ffb60ecdd5adfada0eac719"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_12",1329,1700,"253f6d7c1c105c3c066e79c24275b655a838e07d63a54ad9e14c2c6764631460"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_13",1325,374,"06fc401eb9ff73bdee653ec319ad824e87d4af5fd176ab9d0eda70521ddf0fea"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_2",1319,1485,"61667a9767d0341e3a871aeeb380bd3e52cdae3e979948c28103885c46fde526"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_3",1326,1736,"e313c26f4ec403047c3f11def982e8655405c5845e5734305a18c7e8c5095815"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_4",1316,1792,"dd310cf317f7ddd2f1b4085ec4bde85eac067e842a26eaf4ca989a957dd3eb58"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_5",1328,1732,"4c43a633ff4522110b7ba2f0cf44e78d9ce9e6cc57c61c23da67bd395fbb8e52"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_6",1330,1647,"c02486a1df50f1eefd2b40df044127c2d2216c2336898b1dc086a9fb4c2608ff"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_7",1320,1661,"6aae2ea62fdce0a59ea3c16f0f83bd3d114765d554d54a7bd690f61fbeec741c"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_8",1322,1584,"4fc20517674249f686e2450720233f8e2be37375e735d51a96672aafeb587685"],
+        ["93f75109","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY_9",1323,1640,"b1992a32f2ce387e5d840d78c254a6cec58cf93b78b04c2a39c64d9776571377"]
+      ]
+    },
+    {
+      "alias":"payroll","namespace":"TaxbellPayrollHRReference","database":"taxbellpayrollhrreference","projectIdFromBoundary":13,
+      "counts":{"oldDraftIds":7,"remove":14,"preserve":0},
+      "removalProposal": [
+        ["0bdb5e10","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_06_09_0BDB5E10_OGRANICZENIA_W_DOSTEPIE_DO_US_UG_ELEKTRONICZNYCH_ZUS_5_CZERWCA_2026_R_ZUS",414,1400,"93310f9e210bbdbdf8e3d558a0c93564113f9b9b1923b54d68f89e4c4f28c287"],
+        ["7c66353e","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_06_30_7C66353E_ZMIANY_W_STAZU_PRACY_WNIOSKI_O_ZASWIADCZENIA_Z_ZUS_OD_STYCZNIA_2026_R_ZUS",441,349,"d81e4d5e8c48a425e7bb0ef3c21fbeea31aeeea63d2fc7606eb94d73b280d2e3"],
+        ["a939510d","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_06_30_A939510D_PROJEKT_USTAWY_O_WZMOCNIENIU_STOSOWANIA_PRAWA_DO_JEDNAKOWEGO_WYNAGRODZENIA_MEZCZ",432,505,"36294089b18c8863c526b85c3ed6c9bff6e28bcc7a35b129b8d5a8c48f0b481e"],
+        ["d1c8371c","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_06_30_D1C8371C_INFORMACJA_DOTYCZACA_PRAC_NAD_WDROZENIEM_DYREKTYWY_DOTYCZACEJ_ROWNOSCI_WYNAGRODZ",436,1400,"2db67023efa6b40c1aa77fe946169988d6067c07811664e496d04dd1df136239"],
+        ["08cfe029","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_07_02_08CFE029_PRZEGLAD_ZMIAN_W_PRAWIE_PRACY_W_2025_I_2026_R_INFOR_PL",447,1400,"56943259274ba3f5476a751129aa47f4197d23bfe2da92a45853bde03606a2b3"],
+        ["9c43b46e","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_07_02_9C43B46E_ROCZNA_WALORYZACJA_NA_KONTACH_OSOB_UBEZPIECZONYCH_W_ZUS_ZUS",444,292,"6dedfa3c0daa400bddb4a9027d6d91f5f077efece5065ab1542330e641205029"],
+        ["4ce9f131","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_07_30_4CE9F131_OD_LIPCA_PROSTSZE_ZASADY_SK_ADANIA_WNIOSKOW_O_ZASI_KI",941,328,"3387bf7c7791db1886453316629030ad4d84f6bbb2604bbfb62c9e0313197e1d"],
+        ["0bdb5e10","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_06_09_0BDB5E10_OGRANICZENIA_W_DOSTEPIE_DO_US_UG_ELEKTRONICZNYCH_ZUS_5_CZERWCA_2026_R_ZUS_1",418,1681,"cab43bc9e99024f3d9eaf3cb292a15d2c9b56f0dffe37b24d284496df23a9e58"],
+        ["7c66353e","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_06_30_7C66353E_ZMIANY_W_STAZU_PRACY_WNIOSKI_O_ZASWIADCZENIA_Z_ZUS_OD_STYCZNIA_2026_R_ZUS_1",609,349,"d81e4d5e8c48a425e7bb0ef3c21fbeea31aeeea63d2fc7606eb94d73b280d2e3"],
+        ["a939510d","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_06_30_A939510D_PROJEKT_USTAWY_O_WZMOCNIENIU_STOSOWANIA_PRAWA_DO_JEDNAKOWEGO_WYNAGRODZE_6608A5FD",910,505,"36294089b18c8863c526b85c3ed6c9bff6e28bcc7a35b129b8d5a8c48f0b481e"],
+        ["d1c8371c","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_06_30_D1C8371C_INFORMACJA_DOTYCZACA_PRAC_NAD_WDROZENIEM_DYREKTYWY_DOTYCZACEJ_ROWNOSCI__E0D9BEEA",919,1737,"6cc4d04fe33e8802d8af022174e2ad1b88ae2eb07334607f11a9f29b30818b42"],
+        ["08cfe029","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_02_08CFE029_PRZEGLAD_ZMIAN_W_PRAWIE_PRACY_W_2025_I_2026_R_INFOR_PL_1",622,1637,"4790221f06eacfc59607d31438510e97ccb1b9983984d915395dcc086aa5df93"],
+        ["9c43b46e","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_02_9C43B46E_ROCZNA_WALORYZACJA_NA_KONTACH_OSOB_UBEZPIECZONYCH_W_ZUS_ZUS_1",617,292,"6dedfa3c0daa400bddb4a9027d6d91f5f077efece5065ab1542330e641205029"],
+        ["4ce9f131","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_30_4CE9F131_OD_LIPCA_PROSTSZE_ZASADY_SK_ADANIA_WNIOSKOW_O_ZASI_KI_1",942,328,"3387bf7c7791db1886453316629030ad4d84f6bbb2604bbfb62c9e0313197e1d"]
+      ],
+      "preserve": []
+    },
+    {
+      "alias":"accounting","namespace":"TaxbellAccountingVATReference","database":"taxbellaccountingvatreference","projectIdFromBoundary":14,
+      "counts":{"oldDraftIds":3,"remove":15,"preserve":19},
+      "removalProposal": [
+        ["de720ffd","direct_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNACZE",439,1400,"d225fc6e44f071ed510d288f48dfcde44723e386770b74cfc78d819b23886368"],
+        ["6b5ac5ed","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_06_05_6B5AC5ED_SERWIS_O_PODATKACH_PLIKI_DO_POBRANIA_JPK_VAT_PODATKI_GOV_PL_1",393,934,"b4684d726ec0e8ec2487d0d17ee528a2491a715eb3f43c9d34c58aaee815636c"],
+        ["de720ffd","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_1BD99236",558,1800,"5d9233c32d2c307ee8f6a3855ac12b11d1a5ddca537b7cda37a81a4d770a14de"],
+        ["de720ffd","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_8B268DB3",564,1311,"13adb941438c239612e82c43ba453c2d70e5244f6e6320838949b1eb043a0c56"],
+        ["de720ffd","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_8D01C578",562,1800,"aa718073b52dc1a14437844a07b175818bc21155abf719ae9693968cd2f59adb"],
+        ["de720ffd","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_91B9791A",561,1800,"aab2faad7d68d4f1f73595fa07acf20c316a43858382ac8aaf8cfc578825a61d"],
+        ["de720ffd","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOW_B25DD8D0",560,293,"7c2350abb0471c174562c52bb7675dff320cf4f3dd22b2c37fdaa7216ac1bb39"],
+        ["dcfc95c2","owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_24_DCFC95C2_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_1",449,1069,"ba164649ea116a9087b34445b4509af51fd86972ec1ed7dfdeae97ccdb93bf0e"],
+        ["de720ffd","historical_owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_1",450,300,"7c2350abb0471c174562c52bb7675dff320cf4f3dd22b2c37fdaa7216ac1bb39"],
+        ["de720ffd","historical_owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_2",440,2055,"5d9233c32d2c307ee8f6a3855ac12b11d1a5ddca537b7cda37a81a4d770a14de"],
+        ["de720ffd","historical_owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_3",448,1848,"aab2faad7d68d4f1f73595fa07acf20c316a43858382ac8aaf8cfc578825a61d"],
+        ["de720ffd","historical_owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_4",444,1921,"aa718073b52dc1a14437844a07b175818bc21155abf719ae9693968cd2f59adb"],
+        ["de720ffd","historical_owned_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_07_01_DE720FFD_ZMIANY_W_JPK_VAT_DOPASOWANIE_DO_KSEF_NOWE_WZORY_JPK_V7M_3_JPK_V7K_3_NOWE_OZNAC_5",442,1354,"13adb941438c239612e82c43ba453c2d70e5244f6e6320838949b1eb043a0c56"],
+        ["6b5ac5ed","historical_owned_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_06_05_6B5AC5ED_SERWIS_O_PODATKACH_PLIKI_DO_POBRANIA_JPK_VAT_PODATKI_GOV_PL",384,941,null],
+        ["dcfc95c2","historical_owned_document","ReferenceDocument","TBDOC_PROMOTED_DRAFT_2026_07_24_DCFC95C2_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP",438,1080,null]
+      ],
+      "preserve": [
+        ["dcfc95c2","shared_canonical_document","ReferenceDocument","TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP",664,1400,"1d4cff58bbdaaa76bb1580048ace2152585a241ad94ae44c6198139888fdbae5"],
+        ["6b5ac5ed","shared_canonical_document","ReferenceDocument","TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT",24,728,"ad2e13caa41f18391531f88c9d7f9cb1480b044adef940ab1a08e89e97b3ac63"],
+        ["dcfc95c2","retained_chunk","Chunk","TBCHUNK_PROMOTED_DRAFT_2026_06_05_E14D7C0A_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_PODATKI_GOV_PL_1",391,643,"d36e002cf98d5b25721eca9d12424b1c01c243841e2f6c704c306c7f7dc83f2a"],
+        ["dcfc95c2","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_1",884,1401,"d779aadf2a023c0d7036fe4507cd9480461cd609587eca3775ddd55df3989006"],
+        ["6b5ac5ed","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_1FAFAD9C",575,1745,"ca3556a49e51136b580455c8dff7c9ac059dc574b26afc4be8056b8a6586da9c"],
+        ["6b5ac5ed","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_A37647F6",578,1784,"a94b841f9dfb24ae54db709b0f0c3ab4ccce31becdc2500ada2abbe3f86494ca"],
+        ["6b5ac5ed","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_F4EC7A25",582,1514,"d2da0e011d7155b7ac2d1f3967918bb3ba08f4100382c3683261c9fe6477e76b"],
+        ["6b5ac5ed","retained_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_FDB6F338",580,522,"476699244daace8406e3846893cb78070d0a0976aad3495e3df6d17885b38f4c"],
+        ["dcfc95c2","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_2",883,1903,null],
+        ["dcfc95c2","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_3",891,1598,null],
+        ["dcfc95c2","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP_4",892,849,null],
+        ["6b5ac5ed","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT_1",96,1882,null],
+        ["6b5ac5ed","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT_2",85,1276,null],
+        ["6b5ac5ed","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT_3",111,1684,null],
+        ["6b5ac5ed","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT_4",71,1737,null],
+        ["6b5ac5ed","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VA_1",491,1882,null],
+        ["6b5ac5ed","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VA_2",492,1276,null],
+        ["6b5ac5ed","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VA_3",497,1684,null],
+        ["6b5ac5ed","shared_external_historical_chunk","Chunk","TBCHUNK_TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VA_4",493,1737,null]
+      ]
+    }
+  ],
+  "preservedCanonicalStoredContentHashes": [
+    {"database":"taxbelllegalreference","exactSemanticId":"TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_CIT_CIT_KLASYCZNY_INFORMACJE_PODSTAWOWE_CIT_KLASYCZNY","contentHash":"ebd093661c0be2f0364dd6b841954bc1f467bc6f2603b470877e03783a7b0536"},
+    {"database":"taxbellaccountingvatreference","exactSemanticId":"TBDOC_HTTPS_WWW_PODATKI_GOV_PL_AKTUALNOSCI_NOWE_WZORY_STRUKTUR_JPK_VAT_DOSTEPNE_NA_EPUAP","contentHash":"85183a3f54ce09e53493e5e43ece30871e0ef12e7b0d5160b2e2ba76d34d2d4f"},
+    {"database":"taxbellaccountingvatreference","exactSemanticId":"TBDOC_HTTPS_WWW_PODATKI_GOV_PL_PODATKI_FIRMOWE_JEDNOLITY_PLIK_KONTROLNY_JPK_VAT_PLIKI_DO_POBRANIA_JPK_VAT","contentHash":"4d561753a91ea1a99b7014173365880eae9f9b36ca1f4bc2e457bfe394580173"}
+  ],
+  "automationOverrideAssessment": {
+    "requestedPerProcessEnvironment":{"ERP_KB_AUTOMATION_ENABLED":"0"},
+    "worksAsDisableWithoutServiceConfigChange":false,
+    "evidence":"scripts/lib/dashboard_automation.mjs:125-142,980-1011; scripts/lib/knowledge_inbox.mjs:226-228",
+    "actualEnabledExpression":"process.env.ERP_KB_AUTOMATION_ENABLED === '1' ? true : Boolean(stored.enabled)",
+    "truthTable":[{"env":"0","storedEnabled":true,"effectiveEnabled":true},{"env":"0","storedEnabled":false,"effectiveEnabled":false},{"env":"1","storedEnabled":false,"effectiveEnabled":true}],
+    "silentSuppressesAutomation":false,
+    "discoveredViaIsHold":false,
+    "runtimeConfigRead":false,
+    "holdEstablished":false,
+    "requiredResolution":"Before any submit, separately approve and verify an effective process-local no-spawn hold, or a supported operational pause with proof that existing jobs/schedulers cannot race. Setting ENABLED=0 alone is not sufficient; no service config changes are proposed or performed by this manifest.",
+    "existingProcessLocalNamespaceGuard":"ERP_KB_AUTOMATION_ALLOWED_NAMESPACES overrides stored namespaces. A nonempty list excluding all four target namespaces makes trigger return namespace_not_allowed without options.force. Empty list allows all, not none. This is static code evidence, not an established hold: separately approve/verify exclusion, child/process inheritance and protection against independent schedulers before use."
+  },
+  "supportedSupersession": {
+    "sameIdEditUtilityRequired":false,
+    "condition":"Supported composable new-ID supersession is sufficient only after effective hold, version ledger, backup, compensation and separate execution signoff are established.",
+    "submit":"scripts/lib/knowledge_inbox.mjs:200-247 submitKnowledgeDraft(input, {silent:true}); translate pack payload.namespace to kbNamespace and supply kbName from TARGET_KBS; retain title/content/sourceUrl/tags/metadata, including supersedesDraftId. Never pass payload.namespace alone.",
+    "promote":"scripts/lib/promoted_knowledge.mjs:296-375 promoteDraft(newFullId, {promotedBy,reviewNote}); local only; no force needed for new IDs.",
+    "withdraw":"scripts/lib/promoted_knowledge.mjs:412-473 withdrawPromotedDraft(oldFullId, {withdrawnBy,reviewNote}); archive by supported move, after independent immutable backup of both raw/promoted JSON/MD and prior registry entry.",
+    "withdrawArchiveCaveat":"Flat withdrawn destination can overwrite an earlier same-basename archive; snapshot destination and original versions before withdrawal. No batch transaction or enforced supersedes relation.",
+    "ledger":"Durable full old-to-new draft-ID ledger with namespace, payload/content hashes, source evidence fingerprints from correction pack, operator, timestamps, stage status, archive paths and compensation progress. Metadata/review notes alone do not enforce supersession.",
+    "avoid":"No direct raw/promoted edits, reopen-and-force republish, dashboard promote-export or withdraw-build shortcuts during separated local preparation."
+  },
+  "executionOrderingProposal": [
+    {"order":1,"phase":"authorization_and_control","required":"Obtain separate execution signoff for local supersession/publication; bind both input hashes and this manifest hash. Resolve automation hold despite ENABLED=0 semantics. Check effective code, quotas, permissions, no in-flight jobs/independent schedulers and exclusive correction window. Do not submit if hold is unproved."},
+    {"order":2,"phase":"protected_rollback_snapshot","required":"Before any lifecycle/import change, capture full rollback snapshot of old raw/promoted JSON/MD, original registry entries and version/archive destinations, audit/automation provenance, staged files/manifests and all relevant graph/index state. Internally protected full-properties backup for all 40 old nodes INCLUDING vectors, every actual label, database/semantic identity and relationship/referrer inventory; no projection-only backup. Record checksums, access restrictions, restore procedure and independently verify restore completeness. Capture all 33 preserve objects, body/full-properties/vector hashes and canonical contentHash baselines. Renew before deletion if anything changed."},
+    {"order":3,"phase":"supported_successor_submit","required":"With requested per-process ERP_KB_AUTOMATION_ENABLED=0 PLUS separately verified effective hold, submit exactly 14 corrected payloads through submitKnowledgeDraft with correct kbName/kbNamespace. Record returned full IDs and paths, verify automation.started=false. Stop and compensate partial JSON/MD writes or any unexpected automation activity; no blind retry producing extra successors."},
+    {"order":4,"phase":"verify_14_new_local_drafts","required":"Verify 14 distinct new IDs unequal to old IDs; exact namespace/source URL, complete trimmed UTF-8 content hash, raw JSON/MD body equality and no truncation, correction metadata/evidence and full predecessor ledger. Pack is reviewed summaries, not preservation of the entire PDF. Verify old originals remain untouched and active until this gate passes."},
+    {"order":5,"phase":"local_supersession","required":"Promote verified successors through promoteDraft; verify 14 promoted contents via supported loader. Only then withdraw all 14 exact originals through withdrawPromotedDraft, recording both full IDs in notes/ledger. Verify archives and withdrawn registry states, old snapshots absent from promoted loader, exactly 14 successors present. Checkpoint each operation; partial success requires compensation. Not atomic across files/registry/drafts."},
+    {"order":6,"phase":"export_and_successor_inventory","required":"After publication signoff, export only four affected namespaces via their supported exporters. Namespace export rewrites whole configured staged files, not a 14-row-only exporter. Derive successor document/chunk IDs from actual CSV rows/provenance, record complete new inventory and fingerprints, assert all 40 old-owned IDs absent and all 33 preserve projections unchanged. Validate duplicate IDs, token/content limits and full staged diff; stop on unrelated drift. Do not infer new IDs from titles or assume one chunk per draft."},
+    {"order":7,"phase":"forced_scoped_import_and_readback","required":"Force reference_document.csv,chunk.csv only for these four KBs with OPENSPG_FORCE_FILES=reference_document.csv,chunk.csv using supported build runners. Inspect refreshed upload/build manifests, successful completion and exact live successor label/ID/content/provenance readback for all 14 drafts and every new descendant. Force is UPSERT, not pruning. Verify all 33 preserve hashes including full protected baselines, and any aggregate/reference impact before cleanup."},
+    {"order":8,"phase":"renew_live_gate_and_exact_delete_signoff","required":"Renew database-qualified counts=1, expected internal IDs/labels, full old properties/content/evidence fingerprints, sourcePath/localSnapshotPath/sourceDocumentRefId ownership, incoming/outgoing relationships and property-based referrers for all 40 candidates. Reconcile against current new/preserve inventories: removal intersection with either must be empty. Confirm preserved33 membership/hash baselines. Abort on unexpected relationship, count, provenance, ID collision/reuse, shared dependency or drift; do not detach or broaden. Refresh protected complete vectors-inclusive rollback backup and verify restore readiness. Obtain separate explicit operator signoff naming exact (database,id) 40-object allowlist, refreshed fingerprints, successor build/readback evidence, rollback snapshot checksum and manifest hash."},
+    {"order":9,"phase":"conditional_exact_old_only_cleanup","required":"Only after order8 separate signoff and successful successor builds/readback, apply exact old-only cleanup with semantic ID equality and checked identity/provenance in each database; no prefix/URL/content duplicate sweep and no deletion of shared33 or new descendants. Recheck preconditions in the write transaction. No cross-database atomicity claimed; journal exact committed objects and halt on partial failure for separately approved compensation."},
+    {"order":10,"phase":"post_cleanup_readback_and_close","required":"Prove all 40 old IDs absent, all successor descendants present with expected hashes/provenance, all 33 preserve IDs/hashes unchanged, and unrelated/shared metadata not removed. Reconcile topic/aggregate effects separately without widening deletion scope. Retain protected backups and evidence ledger; release hold only under operator control after verification."}
+  ],
+  "successorInventory": {"draftIds":null,"derivedSemanticIds":null,"knownAfter":"submission then actual export; exact full graph membership established only after build/readback","deletionBlockedUntilBuiltAndReadBack":true},
+  "compensationRollback": {
+    "required":true,"atomicityGuaranteed":false,"validatedHere":false,
+    "beforeCleanup":"On partial submit/promote/withdraw/import, stop further changes, keep hold, checkpoint effects. Restore original promoted visibility through supported lifecycle operations where applicable, preserving new versions and archives; restoring exact registry metadata/files/index state requires the separately approved protected snapshot restore procedure. Re-promoting raw alone is not exact version restoration. Do not blindly overwrite a concurrently changed registry or force-repromote without backup.",
+    "afterCleanup":"Restore committed old-object subset from protected full-properties/vector snapshot with exact semantic IDs, labels, property types and relationships/referrers; restore affected graph/index and local/staged state as approved. Internal IDs may change on restore: regenerate mapping and verify semantic/provenance equality. Remove/withdraw successor exposure only with separate rollback signoff and exact verified successor inventory, never guessed IDs.",
+    "signoffRequired":"Execution and deletion signoffs must separately accept non-atomic operation and tested compensation; this manifest grants neither."
+  },
+  "operatorSignoff": {
+    "localSupersessionAndPublication":{"authorized":false,"operator":null,"signedAt":null,"manifestSha256":null},
+    "exactOldGraphDeletion":{"authorized":false,"operator":null,"signedAt":null,"manifestSha256":null,"refreshedEvidenceSha256":null,"successorInventorySha256":null,"rollbackSnapshotSha256":null},
+    "instruction":"Preparation approval is not execution/delete consent. Supply a separate signed approval record binding the explicit database-qualified allowlist and refreshed evidence; do not interpret this unsigned manifest or previous broad replacement approval as authorization."
+  },
+  "remainingBlockers": [
+    {"code":"effective_automation_hold_missing","detail":"ENABLED=0 does not override stored enabled=true; effective no-spawn hold and exclusion of independent/in-flight jobs remain unverified."},
+    {"code":"separate_execution_and_exact_delete_signoff_missing","detail":"User approved preparation only. Neither local/publication execution nor exact graph deletes authorized."},
+    {"code":"successors_not_submitted_exported_built_or_read_back","detail":"14 new draft IDs and all new descendant IDs unknown. No deletion before successful full successor build/readback and disjointness check."},
+    {"code":"renewed_live_identity_counts_provenance_and_referrers_missing","detail":"Inherited boundary is a non-atomic earlier read; all40 old and all33 preserved need fresh pre-import/pre-delete evidence and transaction guards."},
+    {"code":"protected_full_rollback_and_preserve_hash_baselines_missing","detail":"Vectors never retrieved in boundary. Five removal hashes and eleven preserve hashes unavailable. Need full old properties/vectors snapshot, hashes for all33 preserved and tested compensation restore before any deletion."},
+    {"code":"non_atomic_compensation_ledger_and_operational_preconditions_unverified","detail":"Supported primitives lack batch transaction/CAS/enforced supersession; flat archives may overwrite. Quotas, permissions, exclusive window, job state, full staged diff, aggregate effects and restore readiness not checked at runtime."}
+  ],
+  "validation": {
+    "method":"Offline exact parity against both input JSONs; no loader/runtime imports or live calls.",
+    "databaseQualifiedRemovalUnique":40,"databaseQualifiedPreserveUnique":33,"intersectionCount":0,"unionCount":73,
+    "completeExactInputSets":true,"oldDraftIdsUnique":14,"oldDraftNamespacePartitionsExact":true,
+    "expectedInternalIdsLengthsHashesAndTypesMatchInputs":true,
+    "historicalMissingBodyHashes":{"removal":5,"preserve":11},
+    "scopeStatus":"Static scope validation only; execution gates unsatisfied.",
+    "npmRunCheck":"passed (syntax only)",
+    "moduleMap":"passed, 4 modules",
+    "exactRowParity":"passed, 73/73 rows including database-qualified identity, ownership, type, expected internal ID, length and available hash",
+    "inputFingerprintParity":"passed, both source SHA256 fingerprints"
+  },
+  "changesExecuted": {"reportFilesOnly":true,"submit":false,"promote":false,"withdraw":false,"export":false,"build":false,"graphRead":false,"graphDelete":false,"configuration":false,"services":false,"secretsRead":false,"rawRuntimeDataRead":false}
+}

@@ -1,0 +1,404 @@
+{
+  "taskId": "Promoted_Correction_Pack_2026-10-13",
+  "reportDate": "2026-10-13",
+  "proposalOnly": true,
+  "submissionExecuted": false,
+  "currentLegalValidityCertified": false,
+  "repository": "/docker/openspg",
+  "baseBranch": "main",
+  "baseCommit": "79e376d241322b2debbffb900a68bcf67ae78004",
+  "inputs": [
+    "docs/reference/Promoted_Source_Comparison_Priority_2026-10-13.md",
+    "docs/reference/Promoted_Source_Comparison_Priority_2026-10-13.json",
+    "docs/reference/Promoted_Source_Comparison_Remaining_2026-10-13.md",
+    "docs/reference/Promoted_Source_Comparison_Remaining_2026-10-13.json"
+  ],
+  "correctionBoundaryLinks": {
+    "derivedMap": "docs/reference/Promoted_Derived_Record_Map_2026-10-13.json",
+    "derivedReport": "docs/reference/Promoted_Derived_Record_Map_2026-10-13.md",
+    "liveBoundary": "docs/reference/Promoted_Live_Graph_Boundary_2026-10-13.json",
+    "liveReport": "docs/reference/Promoted_Live_Graph_Boundary_2026-10-13.md",
+    "writePath": "docs/reference/Promoted_Correction_Write_Path_2026-10-13.md"
+  },
+  "boundary": {
+    "evidenceStatus": "POTWIERDZONE w raportach wejściowych; bez ponownego odczytu grafu w tym zadaniu",
+    "currentDirectDocuments": 11,
+    "currentOwnedChunks": 19,
+    "historicalOwnedDocuments": 3,
+    "historicalOwnedChunks": 7,
+    "ownedInventoryUpperBoundNodes": 40,
+    "sharedCanonicalDocumentsToRetain": 3,
+    "mappedOtherChunksToRetain": 19,
+    "historicalExternalChunksToRetain": 11,
+    "sharedDocumentChunkBoundaryNodes": 33,
+    "deletionAuthorized": false,
+    "newDerivedIds": "NIEUSTALONE: successor draft IDs do not exist; no export was executed"
+  },
+  "blockers": [
+    {"code": "no_same_id_archival_update_endpoint", "status": "POTWIERDZONE", "detail": "Brak obsługi rewizji treści z archiwizacją pod tym samym ID w CLI/HTTP/MCP. Reopen archiwizuje promoted, lecz pozostawia raw; force-promote publikuje niezmieniony raw i nie przyjmuje nowej treści."},
+    {"code": "explicit_signoff_required_before_deletion", "status": "required", "detail": "Przed usunięciem jakiegokolwiek starego obiektu potrzebna jest jawna zgoda operatora na dokładne pełne ID i zakres. Inwentarz 40 własnych obiektów nie jest listą zatwierdzoną do usunięcia; 33 współdzielone obiekty i agregaty wymagają ochrony."},
+    {"code": "no_per_submit_automation_hold", "status": "POTWIERDZONE", "detail": "submitKnowledgeDraft uruchamia automation także przy silent:true. discoveredVia=source_correction_review jest proweniencją propozycji, nie mechanizmem zatrzymania publikacji."},
+    {"code": "supersession_and_graph_reconciliation_not_atomic", "status": "POTWIERDZONE", "detail": "Brak wymuszanej relacji poprzednik-następca i atomowego zastąpienia. UPSERT/force nie usuwa starych lub końcowych chunków; potrzebne są osobno zatwierdzony plan dokładnych ID i readback."}
+  ],
+  "validation": {
+    "expectedCount": 14,
+    "loader": "scripts/lib/promoted_knowledge.mjs: loadPromotedKnowledge(namespace), findRawDraftById(fullId)",
+    "baselineRegistrySha256": "c59950a0a52a8c5f6ccfc04c041b4e40ac50f3b30e2f8e631680974cf5059e67",
+    "draftHashDefinition": "SHA-256 pełnego content UTF-8; raw i promoted sprawdzone przez wspierane loadery przed i po zapisaniu raportów",
+    "contentPolicy": "800–3500 znaków UTF-16 na streszczenie; niepuste i poniżej 50000; bez obcięcia końcówki",
+    "directQuotationPolicy": "Oryginalne streszczenia; brak cytowanych zdań INFOR lub książki. Tytuły, nazwiska, identyfikatory i bibliografia służą atrybucji, nie reprodukcji tekstu.",
+    "sourceVerification": "Ręczny odczyt istniejących dowodów źródłowych i rozdziałów/sekcji; bez nowych pobrań, ekstrakcji i wywołań zewnętrznego LLM",
+    "unknowns": ["Historyczne bajty źródeł z dnia promocji", "Aktualna moc prawna i późniejsze losy projektów", "Zawartość nieodczytanych załączników i stron docelowych", "Nowe ID następników i projekcje grafowe"],
+    "checks": "Wyniki końcowego walidatora opisuje raport Markdown"
+  },
+  "records": [
+    {
+      "key": "de720ffd",
+      "oldDraftId": "draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze",
+      "oldContentSha256": "7116dbabdd2c4055ec1ac57d375befcbfa43ff440d88ac7c81a5615f3b146a01",
+      "payload": {
+        "namespace": "TaxbellAccountingVATReference",
+        "title": "JPK z deklaracją i KSeF: omówienie INFOR z 9 kwietnia 2026",
+        "sourceUrl": "https://ksiegowosc.infor.pl/podatki/vat/jpk-vat/7482682,zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m3-jpk-v7k3-nowe-oznaczenia-nrksef-off-bfk-di.html",
+        "content": "## Publikacja i zakres\nPaweł Huczko, INFOR, 9 kwietnia 2026 r. Autor omawia powiązanie JPK z deklaracją z KSeF i rozliczeniami kaucji. Jako podstawę wskazuje rozporządzenie MFiG z 12 grudnia 2025 r., Dz.U. poz. 1800, zmieniające wcześniejszą nowelizację regulacji ewidencyjnych. Poniżej streszczenie artykułu według odczytu z 13 października 2026 r.\n\n## Struktury i oznaczenia\nAutor podaje publikację JPK_V7M(3) i JPK_V7K(3) w CRWDE 19 grudnia 2025 r., odpowiednio pod numerami 2025/12/19/14090 i 2025/12/19/14089. Według publikacji służą one rozliczeniom od lutego 2026 r. Węzeł KSeF pozwala podać numer faktury według stanu przy składaniu ewidencji, także dla dokumentów wystawianych w trybach szczególnych.\n\nW części omawiającej broszurę MF autor przypisuje OFF fakturom z awarii KSeF, bez numeru przy składaniu ewidencji; po nadaniu numeru nie opisuje obowiązku ich korekty. BFK odnosi do faktur papierowych lub elektronicznych poza KSeF, również z awarii całkowitej. Przy DI wymienia pozostałe dowody oraz faktury offline24 i z niedostępności systemu bez numeru KSeF. Dla tych faktur opisuje późniejszą zmianę DI na nadany numer.\n\n## Wyjaśnienia MF i kaucje\nW relacji z konsultacji autor opisuje zasadę braku uzupełniającej korekty numeru i wyjątek dla sprzedaży offline24. Dalszy opis broszury obejmuje także niedostępność systemu. Streszczenie zachowuje te konteksty zamiast tworzyć jedną bezwarunkową regułę. Autor przedstawia zapowiedź automatycznego zasilania e-mikrofirmy fakturami z KSeF oraz zależność rozwiązań komercyjnych od wdrożenia. Omawia terminy konsultacji struktur i możliwość poprawiania błędów; według przytoczonych wyjaśnień kary wymagają wcześniejszego wezwania do korekty. Zmiany kaucyjne wiąże z VAT od pobranych, niezwróconych kaucji za opakowania napojów.\n\n## FP i granice\nW opisie okresu 1 lutego–31 grudnia 2026 r. FP obejmuje faktury do paragonów oraz wskazane faktury wystawiane kasą. Autor opisuje ujęcie w miesiącu wystawienia, bez ponownego zwiększania sprzedaży i VAT ani uwzględniania tych wartości w sumach kontrolnych. Artykuł zawiera odsyłacze do zestawień zmian i broszury MF; ich treści nie sprawdzono. Jest to opis datowanej publikacji, bez potwierdzenia aktualnej mocy prawnej jej twierdzeń.",
+        "tags": ["source-correction", "verified-summary", "JPK", "KSeF", "INFOR", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-07-01_de720ffd_zmiany-w-jpk-vat-dopasowanie-do-ksef-nowe-wzory-jpk-v7m-3-jpk-v7k-3-nowe-oznacze",
+          "sourceRetrievedAt": "2026-10-13T09:39:48.359583Z",
+          "sourcePublicationDate": "2026-04-09T11:44:16+02:00",
+          "sourceUpdatedAt": "2026-04-09T11:44:16+02:00",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/priority-de720ffd-original.html", "sha256": "a390dce7af23552e1c532afbd43bc193759277f65cbbbe07868c5ed530653acd"},
+          "reviewedEvidence": {"path": "/tmp/opencode/priority-de720ffd-article-container.txt", "sha256": "bbc702759515b04e972f1c5958df8bd9d8d39f687f2b47cbf1288de4601b511c", "locator": "sekcje merytoryczne, linie 10–110"},
+          "unverifiedSections": ["Załączone broszury i struktury", "Historia zmian strony i aktualna moc prawna"]
+        }
+      }
+    },
+    {
+      "key": "bf920a10",
+      "oldDraftId": "draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf",
+      "oldContentSha256": "d7a31a175579b23c828c827d74664d074c95a43e1f40e3e776fb495a061904e7",
+      "payload": {
+        "namespace": "TaxbellLegalReference",
+        "title": "Zmiany w podatkach 2026: bibliografia i tematy poradnika MDDP/INFOR",
+        "sourceUrl": "https://g.infor.pl/p/_files/39075000/zmiany-w-podatkach-2026-39075452.pdf",
+        "content": "## Bibliografia\nZmiany w podatkach 2026. Praca zbiorowa ekspertów MDDP, redakcja merytoryczna Artur Borkowski, INFOR PL SA, wydanie I/2025, grudzień 2025 r., ISBN 978-83-8268-877-1. Dane wydawnicze znajdują się na stronie 2. PDF ma 130 stron; numery poniżej odnoszą się do stron PDF. Data modyfikacji pliku w lutym 2026 r. nie ustala nowej daty wydania ani zakresu zmian.\n\n## Perspektywa publikacji: strony 5–6\nMonika Dziedzic przedstawia skutki zmian podatkowych z końca 2025 r. i planów na 2026 r., w tym cyfryzacji rozliczeń przez KSeF i JPK CIT. Zastrzega, że część rozwiązań czeka na uchwalenie. W przypisach do projektów autorzy podają m.in. stan prac na 3 grudnia 2025 r.\n\n## Mapa tematów z odniesieniami\n- CIT, s. 7–56: autorzy analizują konstrukcję podatku minimalnego, amortyzację, dochody przerzucane, estoński CIT, IP Box, restrukturyzacje, WHT i finansowanie. Na s. 7–9 porównują podatek minimalny z projektowanym zróżnicowaniem uproszczonej podstawy. Na s. 48–49 wyjaśniają role JPK_KR_PD i JPK_ST_KR: oznaczanie kont, raportowanie zapisów oraz danych środków trwałych i różnic podatkowo-bilansowych. Dalsze tematy obejmują strategię podatkową i samochody.\n- PIT, s. 57–85: autorzy omawiają planowane uprawnienia PIP do ustalania stosunku pracy i ich skutki podatkowo-składkowe. Na s. 57–59 zaznaczają etap projektu. Pozostałe podrozdziały dotyczą m.in. ryczałtu, programów motywacyjnych, ulgi mieszkaniowej, darowizn po leasingu, daniny solidarnościowej, kasowego PIT i orzecznictwa.\n- VAT i akcyza, s. 86–104: Janina Fornalik omawia na s. 86–88 fazowanie KSeF, rozdzielając wystawianie od odbioru faktur. Opisuje też przygotowanie obiegu dokumentów, uprawnień i danych do FA(3). Rozdział zawiera rozliczenia systemu kaucyjnego, kasy fiskalne, orzecznictwo VAT oraz zmiany akcyzowe dotyczące tytoniu.\n- Procedura, s. 105–117: autorzy omawiają informacje przy wszczęciu kontroli, kategorie ryzyka, korekty po kontroli celno-skarbowej, dostosowania do KSeF i inne zmiany proceduralne. Na s. 105–106 opisują znaczenie częściowej korekty dla dalszego sporu.\n- Ceny transferowe, s. 118–125: autorzy rozdzielają projekt doprecyzowania safe harbour dla pożyczek od opisanej nowelizacji dotyczącej statusu PGK. Omawiają TPR, restrukturyzacje i rekomendacje dla transakcji finansowych.\n- Nieruchomości, s. 126–128: Rafał Kran analizuje nowe definicje budynku i budowli oraz spory o zbiorniki, urządzenia techniczne i transformatory. Podkreśla rozbieżności między gminami. Wykaz autorów zajmuje s. 129–130.\n\n## Granice opisu\nTo tematyczne streszczenie historycznego poradnika, obejmujące wszystkie rozdziały, a nie reprodukcja książki. Numery stron pozwalają wrócić do analiz i przypisów. Odczyt warstwy tekstowej nie certyfikuje układu każdego znaku; nie sprawdzono dalszych losów projektów ani aktualnej mocy prawnej opisanych zasad.",
+        "tags": ["source-correction", "verified-summary", "bibliography", "INFOR", "MDDP", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-07-01_bf920a10_https-g-infor-pl-p-files-39075000-zmiany-w-podatkach-2026-39075452-pdf",
+          "sourceRetrievedAt": "2026-10-13T09:39:48.424236Z",
+          "sourcePublicationDate": "2025-12",
+          "sourcePublicationDatePrecision": "month; imprint, not an inferred day",
+          "sourceUpdatedAt": "2026-02-27T17:15:52Z",
+          "sourceUpdatedAtBasis": "HTTP Last-Modified; PDF ModDate separately 2026-02-27T18:03:45+01:00; changes unknown",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/priority-bf920a10-original.pdf", "sha256": "bc2099fca62c2d813ec79eb6b1df3f4c653e9d4acc604c35b3dcb9885ac58d30"},
+          "reviewedEvidence": {"path": "/tmp/opencode/priority-bf920a10-full-extraction.txt", "sha256": "d575a935ce8b9c85fa04156e65fdffd343d225a3de87b1e694e5d93e9cd93b92", "locator": "s. 2–9, 48–49, 57–59, 86–88, 105–106, 118–119, 126–130; spis i zakres wszystkich rozdziałów s. 3–4"},
+          "bibliography": {"authors": "Praca zbiorowa ekspertów MDDP", "editor": "Artur Borkowski", "publisher": "INFOR PL SA", "edition": "I/2025", "isbn": "978-83-8268-877-1", "pdfPages": 130},
+          "unverifiedSections": ["Wizualna kontrola wszystkich stron i glifów", "Pełny audyt szczegółowych tez każdego podrozdziału", "Historia rewizji PDF", "Późniejsze losy projektów i aktualna moc prawna"]
+        }
+      }
+    },
+    {
+      "key": "d1c8371c",
+      "oldDraftId": "draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz",
+      "oldContentSha256": "6cc4d04fe33e8802d8af022174e2ad1b88ae2eb07334607f11a9f29b30818b42",
+      "payload": {
+        "namespace": "TaxbellPayrollHRReference",
+        "title": "Przejrzystość wynagrodzeń: komunikat MRPiPS z 24 czerwca 2025",
+        "sourceUrl": "https://www.gov.pl/web/rodzina/informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodzen",
+        "content": "## Kontekst komunikatu\nMRPiPS opublikowało 24 czerwca 2025 r. informację o przygotowaniach do wdrożenia dyrektywy (UE) 2023/970. Ministerstwo podaje przyjęcie dyrektywy 10 maja 2023 r., wejście w życie 6 czerwca 2023 r. i termin implementacji 7 czerwca 2026 r. Są to daty przytoczone w komunikacie; tekst opisuje prace z perspektywy czerwca 2025 r.\n\n## Zespół i współpraca\nMinisterstwo informuje o powołaniu zespołu 5 grudnia 2024 r. i kilku odbytych posiedzeniach. W pracach uczestniczyli przedstawiciele resortu sprawiedliwości, departamentu równego traktowania KPRM, GUS i PIP. Na wybrane spotkania zapraszano naukowców, ekspertów i partnerów społecznych.\n\n## Dwa przygotowywane narzędzia\nMRPiPS relacjonuje rozmowy z GUS o przekazywaniu przez pracodawców wskaźników z art. 9 ust. 1 dyrektywy za pośrednictwem systemu GUS. Dane miały trafiać do organu monitorującego, odpowiedzialnego za ich zebranie i publikowanie. Jest to opis projektowanej organizacji raportowania.\n\nMinisterstwo i CIOP-PIB pracowały również nad narzędziem do wartościowania stanowisk oraz podręcznikiem wyjaśniającym proces oceny pracy. W komunikacie zapowiadają bezpłatny dostęp dla wszystkich pracodawców. Odczyt strony nie potwierdza późniejszego udostępnienia tych rozwiązań.\n\n## Materiały i granice\nMinisterstwo poleca wcześniejszy przewodnik ILO o neutralnym płciowo wartościowaniu pracy: https://www.ilo.org/publications/promoting-equity-gender-neutral-job-evaluation-equal-pay-step-step-guide oraz aneks 1 do raportu Komisji o dyrektywie 2006/54/WE: https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=SWD:2013:0512:FIN:EN:PDF. Ich zawartości nie odczytano. Streszczenie obejmuje pełny komunikat, w tym plany dotyczące GUS i CIOP-PIB. Nie ustala stanu wdrożenia ani aktualnych obowiązków pracodawców.",
+        "tags": ["source-correction", "verified-summary", "MRPiPS", "wynagrodzenia", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-06-30_d1c8371c_informacja-dotyczaca-prac-nad-wdrozeniem-dyrektywy-dotyczacej-rownosci-wynagrodz",
+          "sourceRetrievedAt": "2026-10-13T09:39:48.227933Z",
+          "sourcePublicationDate": "2025-06-24",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/priority-d1c8371c-original.html", "sha256": "c538789157d2a0eb5cfddc7a4b8c23d5563dfce34ef7fb077a5d112aeedc03b6"},
+          "reviewedEvidence": {"path": "/tmp/opencode/priority-d1c8371c-visible.txt", "sha256": "d44e9773d1ef0458743d57cc9a7e5a4c26d244773a8a78d1fc97ea1e771a7a34", "locator": "linie 110–121"},
+          "unverifiedSections": ["Przewodnik ILO i aneks Komisji", "Data modyfikacji komunikatu", "Późniejsza dostępność narzędzi i stan wdrożenia"]
+        }
+      }
+    },
+    {
+      "key": "08cfe029",
+      "oldDraftId": "draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl",
+      "oldContentSha256": "4790221f06eacfc59607d31438510e97ccb1b9983984d915395dcc086aa5df93",
+      "payload": {
+        "namespace": "TaxbellPayrollHRReference",
+        "title": "Prawo pracy 2025–2026: przegląd Tomasza Kowalskiego z lutego 2025",
+        "sourceUrl": "https://kadry.infor.pl/wiadomosci/6841531,przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r.html",
+        "content": "## Autor i perspektywa\nTomasz Kowalski opublikował w INFOR 9 lutego 2025 r. przegląd zmian prawa pracy i ówczesnych projektów na 2026 r. Streszczenie obejmuje cztery sekcje artykułu oraz informacje z obu tabel; zachowuje perspektywę publikacji.\n\n## Dni wolne i czas pracy w 2025 r.\nAutor wiąże zmianę ustawy od 1 lutego 2025 r. z dodaniem wolnego 24 grudnia. W tabeli wymienia 14 świąt: 1 i 6 stycznia; Wielkanoc 20–21 kwietnia; 1 i 3 maja; Zielone Świątki 8 czerwca; Boże Ciało 19 czerwca; 15 sierpnia; 1 i 11 listopada; Wigilię i dwa dni Bożego Narodzenia 24–26 grudnia. To zestawienie dotyczy 2025 r.\n\nW osobnej tabeli autor podaje liczbę dni i godzin pracy kolejno od stycznia do grudnia: 21/168, 20/160, 21/168, 21/168, 20/160, 20/160, 23/184, 20/160, 22/176, 23/184, 18/144, 20/160. Suma w artykule wynosi 249 dni i 1992 godziny. Są to wartości źródłowe, bez niezależnego wyliczenia wymiaru dla konkretnego pracownika.\n\n## Handel i urlop macierzyński\nAutor opisuje trzy handlowe niedziele przed Wigilią, niedzielę przed Wielkanocą i ostatnie niedziele stycznia, kwietnia, czerwca oraz sierpnia. W części o Kodeksie pracy zapowiada od 19 marca 2025 r. uzupełniający urlop macierzyński dla pracujących rodziców wcześniaków i dzieci urodzonych w terminie wymagających hospitalizacji.\n\nWedług przedstawionego podziału graniczny wymiar wynosi do 15 albo do 8 tygodni, zależnie od tygodnia ciąży, masy urodzeniowej i pobytu w szpitalu. Dla dzieci urodzonych po 37. tygodniu autor wskazuje co najmniej dwa kolejne dni hospitalizacji, z pierwszym dniem między 5. a 28. dniem po porodzie; naliczanie wiąże z pobytem od 5. dnia do końca 8. tygodnia. Przy porodzie mnogim opisuje znaczenie najniższej masy i najdłuższej hospitalizacji.\n\n## Projekty opisane w lutym 2025 r.\nAutor wymienia wliczanie działalności i umów cywilnoprawnych do stażu, warianty krótszego tygodnia pracy, informowanie o proponowanej płacy i poziomach wynagrodzeń oraz nową konstrukcję płacy minimalnej opartą na wynagrodzeniu zasadniczym. Dla części planów podaje rok 2026. Nie dowodzi to uchwalenia ani późniejszego wdrożenia. Streszczenie nie potwierdza aktualnej mocy prawnej twierdzeń artykułu.",
+        "tags": ["source-correction", "verified-summary", "INFOR", "prawo-pracy", "2025", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-07-02_08cfe029_przeglad-zmian-w-prawie-pracy-w-2025-i-2026-r-infor-pl",
+          "sourceRetrievedAt": "2026-10-13T09:39:49.044104Z",
+          "sourcePublicationDate": "2025-02-09T13:12:16+01:00",
+          "sourceUpdatedAt": "2025-02-09T13:12:16+01:00",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/priority-08cfe029-original.html", "sha256": "e339d3b1805c07f7cbb1aecc09c34972433103d34433511bbd90e93f445cf311"},
+          "reviewedEvidence": {"path": "/tmp/opencode/priority-08cfe029-article-container.txt", "sha256": "a6d1767a5e94c60c3bad058b7a42c289a5a04c4917bd5347b16560ddea6b831f", "locator": "linie 5–171, obie tabele i cztery sekcje"},
+          "unverifiedSections": ["Niezależne wyliczenia czasu pracy", "Pełna kwalifikacja urlopu w indywidualnym przypadku", "Losy projektów i aktualna moc prawna"]
+        }
+      }
+    },
+    {
+      "key": "6b5ac5ed",
+      "oldDraftId": "draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl",
+      "oldContentSha256": "b4684d726ec0e8ec2487d0d17ee528a2491a715eb3f43c9d34c58aaee815636c",
+      "payload": {
+        "namespace": "TaxbellAccountingVATReference",
+        "title": "MF: katalog pobrań JPK VAT, odczyt wersji z 16 września 2026",
+        "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/jednolity-plik-kontrolny/jpk_vat/pliki-do-pobrania-jpk-vat/",
+        "content": "## Katalog i daty\nMF udostępnia na tej stronie dokumentację usług JPK, certyfikaty, broszury i przykłady. Strona podaje publikację 15 grudnia 2025 r. oraz aktualizację 16 września 2026 r. Poniższy opis odpowiada rozwiniętym sekcjom odczytanym 13 października 2026 r., a nie migawce z dnia promocji draftu.\n\n## Dokumentacja i środowiska\nKatalog wymienia specyfikację interfejsów w wersji 5.6.0, schemat initupload dla metadanych żądania inicjującego i certyfikaty klucza publicznego w wariantach binarnym oraz Base64. MF rozdziela certyfikaty produkcyjne i testowe, podając daty ich wersji. Link do specyfikacji: https://www.podatki.gov.pl/media/bngboylg/specyfikacja-interfejs%C3%B3w-us%C5%82ug-jpk-wersja-560.pdf; schemat: https://www.podatki.gov.pl/media/fmdjp0ri/initupload.xsd.\n\nWedług opisu strona e-dokumenty.mf.gov.pl służy produkcyjnym wysyłkom z podpisem kwalifikowanym, zaufanym lub danymi autoryzującymi; esb2.mf.gov.pl:5064 obsługuje samą metodę status. MF wskazuje test-e-dokumenty.mf.gov.pl dla prób. W testach stosuje uproszczone mocki: wynik pełnomocnictwa zależy od końcowej cyfry NIP, autoryzacji od parzystości identyfikatora, a CRL zwraca wynik dodatni. Parametr enableValidateQualifiedSignature=true pozwala wymusić sprawdzanie certyfikatu podpisu. MF zaleca fikcyjne dane i ograniczenie liczby przesyłek. Reguły mocków nie opisują weryfikacji produkcyjnej.\n\n## Broszury, przykłady i granice\nDwie pozostałe sekcje wymieniają broszury JPK_VAT(3) po polsku i angielsku oraz przykładowe materiały JPK_VAT(3), w tym paczkę JPK-VAT-TEST-0001. Polski poradnik wskazuje plik https://www.podatki.gov.pl/media/aosft1rf/broszura-jpk_vat-3-wersja-20180214.pdf. Nazwy JPK_VAT(3) nie należy utożsamiać z JPK_V7M(3)/JPK_V7K(3). Katalog odsyła także do struktur JPK w serwisie KAS. Odczyt obejmuje etykiety i opisy pięciu sekcji; nie obejmuje zawartości PDF, XSD, ZIP ani testu usług. Nie potwierdza aktualnych obowiązków podatkowych.",
+        "tags": ["source-correction", "verified-summary", "MF", "JPK", "technical-catalog", "dated-snapshot"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-06-05_6b5ac5ed_serwis-o-podatkach-pliki-do-pobrania-jpk-vat-podatki-gov-pl",
+          "sourceRetrievedAt": "2026-10-13T09:42:45.481Z",
+          "sourcePublicationDate": "2025-12-15",
+          "sourceUpdatedAt": "2026-09-16",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "historicalContext": "Datowana migawka katalogu; aktualizacja późniejsza niż promocja; brak historycznych bajtów z czerwca",
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-source-evidence.json", "sha256": "e69d6d12964bbf89ca2df6d6e84444fe3800d68e737f4bca5aa0b06d37ab3d5e", "locator": "rekord key=6b5ac5ed, expanded public page/DOM"},
+          "reviewedEvidence": {"path": "/tmp/opencode/remaining-6b5ac5ed-official.txt", "sha256": "93a5d0c4155e4b7345eb24e2c16cd67388c4cda66834f6ab52af397c0c9dfd3c", "locator": "linie 20–104"},
+          "unverifiedSections": ["Zawartość załączników", "Działanie usług i certyfikatów", "Stan z dnia promocji"]
+        }
+      }
+    },
+    {
+      "key": "dcfc95c2",
+      "oldDraftId": "draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap",
+      "oldContentSha256": "ba164649ea116a9087b34445b4509af51fd86972ec1ed7dfdeae97ccdb93bf0e",
+      "payload": {
+        "namespace": "TaxbellAccountingVATReference",
+        "title": "MF: ogłoszenie struktur JPK_V7M(3) i JPK_V7K(3) z grudnia 2025",
+        "sourceUrl": "https://www.podatki.gov.pl/aktualnosci/nowe-wzory-struktur-jpk_vat-dostepne-na-epuap",
+        "content": "## Komunikat MF\nRedakcja podatki.gov.pl opublikowała wiadomość 19 grudnia 2025 r. i podała aktualizację 29 grudnia 2025 r. Informuje o udostępnieniu w CRWDE na ePUAP struktur JPK z deklaracją: miesięcznej JPK_V7M(3) i kwartalnej JPK_V7K(3). Podaje numery wzorów, odpowiednio 2025/12/19/14090 oraz 2025/12/19/14089, i datę stosowania do rozliczeń od 1 lutego 2026 r.\n\n## Zakres zmian\nMF wiąże aktualizację z rozporządzeniem MFiG z 12 grudnia 2025 r. i integracją z KSeF. We wzorach przewidziano numer NrKSeF oraz oznaczenia OFF, BFK i DI. W opisie komunikatu OFF odnosi się do faktury z art. 106nf, która przy składaniu ewidencji nie ma numeru KSeF; BFK do faktury papierowej lub elektronicznej; DI do dowodu innego niż faktura wystawiona przez KSeF. Komunikat wskazuje też zmianę pozwalającą rozliczać system kaucyjny w JPK z deklaracją. Nie przedstawia tu pełnej instrukcji postępowania we wszystkich trybach wystawiania faktur.\n\n## Materiały i granice\nMF zamieszcza dwa zestawienia zmian, po jednym dla każdej struktury, jako PDF o etykiecie 0,23 MB: https://www.podatki.gov.pl/media/3kcls0wv/zestawienie-zmian-jpk-_v7m-3.pdf oraz https://www.podatki.gov.pl/media/qogd4k3h/zestawienie-zmian-jpk-_v7k-3.pdf. Odczyt obejmuje komunikat i linki, nie treść załączników ani wzorów w repozytorium. Daty stosowania i znaczenie oznaczeń opisano według tej publikacji; streszczenie nie certyfikuje aktualnego zakresu obowiązków.",
+        "tags": ["source-correction", "verified-summary", "MF", "JPK", "KSeF", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-07-24_dcfc95c2_nowe-wzory-struktur-jpk-vat-dostepne-na-epuap",
+          "sourceRetrievedAt": "2026-10-13T09:33:31.612Z",
+          "sourcePublicationDate": "2025-12-19",
+          "sourceUpdatedAt": "2025-12-29",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-dcfc95c2.json", "sha256": "5b5822d3e499944f8180c6b62f44edd296486a58eb18984834b420ff47ce1e5a", "locator": "pageText, links, attempts"},
+          "unverifiedSections": ["Zestawienia PDF i wzory CRWDE", "Aktualna moc prawna"]
+        }
+      }
+    },
+    {
+      "key": "93f75109",
+      "oldDraftId": "draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny",
+      "oldContentSha256": "ca601798b059bf86a5241e825a9d52c59afbd373028a54e081177135325fb37a",
+      "payload": {
+        "namespace": "TaxbellLegalReference",
+        "title": "CIT klasyczny: streszczenie informacji MF, aktualizacja 24 czerwca 2026",
+        "sourceUrl": "https://www.podatki.gov.pl/podatki-firmowe/cit/cit-klasyczny/informacje-podstawowe-cit-klasyczny",
+        "content": "## Źródło i podatnicy\nMF podaje dla strony o CIT klasycznym publikację 15 grudnia 2025 r. i aktualizację 24 czerwca 2026 r. Wymienia osoby prawne, wskazane jednostki i spółki, PGK, fundacje rodzinne w organizacji oraz warunkowo spółki jawne związane z informacją CIT-15J. Podaje też wyjątki. Samo prowadzenie działalności nie wystarcza do ustalenia podlegania CIT.\n\n## Dochód, przychód i koszty\nMF rozróżnia nieograniczony obowiązek dla podmiotu z siedzibą lub zarządem w Polsce od ograniczonego obowiązku dotyczącego dochodów osiąganych w Polsce. Oddziela zyski kapitałowe od innych źródeł. Dochód określa przez nadwyżkę przychodów nad kosztami, a stratę przez przeciwną różnicę. Przychód gospodarczy opisuje jako należny: wiąże jego moment z wydaniem rzeczy, zbyciem prawa lub wykonaniem usługi, nie później niż wystawienie faktury lub zapłata; osobno omawia okresy rozliczeniowe i wyjątki.\n\nW kosztach MF wymaga m.in. poniesienia wydatku przez podatnika, związku z uzyskaniem lub zabezpieczeniem przychodu, definitywności, dokumentacji i braku ustawowego wyłączenia. Dalej opisuje moment rozpoznania kosztu, wyjątki i zwolnienia dochodów przeznaczonych na określone cele, m.in. dla stowarzyszeń, fundacji, wspólnot mieszkaniowych i KGW. Nie wynika z tego ogólne zwolnienie każdej takiej organizacji.\n\n## Podstawa, stawki i rozliczenie\nMF wskazuje dochód po odliczeniach jako zasadniczą podstawę; przy części opodatkowania ryczałtowego podstawą jest przychód. Wylicza odrębne reżimy, m.in. CFC, IP Box, fundacje rodzinne i podatek minimalny. Podaje stawkę 19% oraz warunkową 9% dla dochodów innych niż kapitałowe. Przy 9% rozdziela limit przychodów bieżącego roku od statusu małego podatnika opartego na sprzedaży z VAT za rok poprzedni; omawia rozpoczęcie działalności, wyłączenia i proporcję limitu przy roku innym niż 12 miesięcy. Bankom i SKOK poświęca osobne zasady od 2026 r., więc nie należy przypisywać im bezwarunkowo stawek ogólnych.\n\nMF omawia zaliczki miesięczne, możliwość kwartalnych i uproszczonych oraz zeznanie CIT-8 albo CIT-8AB dla PGK do końca trzeciego miesiąca następnego roku, z zapłatą podatku. CIT-CFC przedstawia odrębnie. Odsyła do ustawy o CIT z 15 lutego 1992 r. i przepisów szczególnych. Streszczenie obejmuje główne sekcje i warunki; nie reprodukuje pełnych katalogów wyjątków, szczegółów bankowych ani odliczeń. Nie sprawdzono odsyłanych ustaw ani aktualnej mocy prawnej.",
+        "tags": ["source-correction", "verified-summary", "MF", "CIT", "dated-snapshot"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-07-27_93f75109_serwis-o-podatkach-informacje-podstawowe-cit-klasyczny",
+          "sourceRetrievedAt": "2026-10-13T09:42:53.430Z",
+          "sourcePublicationDate": "2025-12-15",
+          "sourceUpdatedAt": "2026-06-24",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-source-evidence.json", "sha256": "e69d6d12964bbf89ca2df6d6e84444fe3800d68e737f4bca5aa0b06d37ab3d5e", "locator": "key=93f75109; pageText, public accordion DOM"},
+          "reviewedEvidence": {"path": "/tmp/opencode/remaining-93f75109-official.txt", "sha256": "606ca04eea9c25446705b581790de8a2d71ca6fc3e89c4e710aaa97202745e4c", "locator": "linie 20–151"},
+          "unverifiedSections": ["Odsyłane akty prawne", "Pełny audyt wszystkich wyjątków i szczegółowych zasad bankowych", "Aktualna moc prawna"]
+        }
+      }
+    },
+    {
+      "key": "0bdb5e10",
+      "oldDraftId": "draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus",
+      "oldContentSha256": "cab43bc9e99024f3d9eaf3cb292a15d2c9b56f0dffe37b24d284496df23a9e58",
+      "payload": {
+        "namespace": "TaxbellPayrollHRReference",
+        "title": "ZUS: historyczna zapowiedź ograniczeń usług w nocy 5–6 czerwca 2026",
+        "sourceUrl": "https://www.zus.pl/-/ograniczenia-w-dost%C4%99pie-do-us%C5%82ug-elektronicznych-zus-5-czerwca-2026-r.",
+        "content": "## Data i okno prac\nZUS opublikował 3 czerwca 2026 r. zapowiedź prac serwisowych na noc z 5 na 6 czerwca. Wskazał możliwość ograniczeń od godziny 23:00 w piątek 5 czerwca do godziny 03:00 następnego dnia. Źródło nie podaje strefy czasowej. Są to zapowiedziane godziny historycznego okna, nie informacja o trwającej awarii.\n\n## Zakres ograniczeń\nZUS wymienił trzy obszary komunikacji elektronicznej: pobieranie danych w programie Płatnik, weryfikację podczas tworzenia dokumentów w ePłatniku na eZUS oraz anulowanie e-ZLA w eZUS i aplikacjach służących do ich wystawiania. Nie opisał całkowitego wyłączenia wszystkich usług ZUS ani każdego działania w wymienionych programach.\n\n## Dostępne aplikacje i granice\nWedług komunikatu lekarz lub asystent medyczny mógł w tym czasie wystawić e-ZLA przez mZUS dla Lekarza, jeżeli wcześniej zainstalował aplikację na urządzeniu mobilnym i powiązał ją z kontem eZUS. ZUS zapowiedział także dostępność mZUS oraz mZUS dla Płatnika. Streszczenie zachowuje warunki tej alternatywy, zamiast sugerować jej gotowość na dowolnym urządzeniu. Odczyt dotyczy pełnego komunikatu; nie obejmuje przebiegu prac, pomiaru dostępności ani potwierdzenia zakończenia serwisu. Nie ustalono osobnej daty aktualizacji strony.",
+        "tags": ["source-correction", "verified-summary", "ZUS", "maintenance", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-06-09_0bdb5e10_ograniczenia-w-dostepie-do-us-ug-elektronicznych-zus-5-czerwca-2026-r-zus",
+          "sourceRetrievedAt": "2026-10-13T09:33:33.812Z",
+          "sourcePublicationDate": "2026-06-03",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-0bdb5e10.json", "sha256": "26c5cf4bac250a4fd451fb43f2907d15a6e226c7c13a66d385d8f8fadbf0e120", "locator": "domSections: journal-content-article"},
+          "unverifiedSections": ["Faktyczny przebieg i zakończenie prac", "Strefa czasowa okna", "Data aktualizacji"]
+        }
+      }
+    },
+    {
+      "key": "fb53cb2b",
+      "oldDraftId": "draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef",
+      "oldContentSha256": "d456339ec55eaec9a600f224c6fe06206f987d5af54bde9967447a45e8802bea",
+      "payload": {
+        "namespace": "ComarchCommunityNews",
+        "title": "Betterfly i KSeF: zgłoszenie autoryzacji oraz sugestia z marca 2026",
+        "sourceUrl": "https://spolecznosc.comarch.pl/question/blad-przy-konfiguracji-comarch-betterfly-z-ksef-78292",
+        "content": "## Wątek i zgłoszenie\nUżytkownik biuro zamieścił pytanie w Społeczności Comarch 21 marca 2026 r. o 13:12. Strona podaje aktualizację 23 marca o 10:02, bez strefy czasowej. Przy próbie połączenia Comarch Betterfly z KSeF po skopiowaniu tokena otrzymał błąd autoryzacji. Komunikat wskazywał sprawdzenie ważności tokena lub certyfikatu i uprawnień KSeF. Pytający uważał token za prawidłowy; odczyt wątku nie stanowi jego niezależnej weryfikacji.\n\n## Odpowiedź społeczności\nTomasz Brykner odpowiedział 22 marca o 19:26, a strona pokazuje aktualizację odpowiedzi 23 marca o 10:02. Zasugerował kontrolę zgodności środowisk: produkcyjnego i demonstracyjnego. Wyjaśnił, że token utworzony dla jednego środowiska nie zadziała w drugim. Jako drugi kierunek diagnostyki wskazał wcześniejsze nadanie odpowiednich uprawnień osobie generującej token. Są to wskazówki uczestnika tego datowanego wątku.\n\n## Reakcja i granice\n23 marca o 10:02 biuro podziękowało za informację. Nie podało znalezionej przyczyny ani wyniku ponownego połączenia. Nie można więc oznaczyć sugestii jako potwierdzonej naprawy tego przypadku. Streszczenie obejmuje pytanie, odpowiedź i rozwiniętą reakcję; nie obejmuje testu aplikacji, uprawnień ani tokena. Wątek nie ustala zachowania obecnych wersji Betterfly i KSeF ani jednej przyczyny każdego błędu autoryzacji.",
+        "tags": ["source-correction", "verified-summary", "Betterfly", "KSeF", "community-suggestion", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-06-09_fb53cb2b_b-ad-przy-konfiguracji-comarch-betterfly-z-ksef",
+          "sourceRetrievedAt": "2026-10-13T09:44:34.255Z",
+          "sourcePublicationDate": "2026-03-21T13:12",
+          "sourceUpdatedAt": "2026-03-23T10:02",
+          "sourceDateTimeZone": "not specified by page; no UTC conversion asserted",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-source-evidence.json", "sha256": "e69d6d12964bbf89ca2df6d6e84444fe3800d68e737f4bca5aa0b06d37ab3d5e", "locator": "key=fb53cb2b; expanded public thread"},
+          "reviewedEvidence": {"path": "/tmp/opencode/remaining-fb53cb2b-expanded.txt", "sha256": "81cf3f7b07d1c32da045e16cb36a8023892a9191585d41a85b9fb21989a1b54b", "locator": "linie 12–47"},
+          "unverifiedSections": ["Przyczyna i skuteczność naprawy", "Zachowanie obecnych wersji produktu"]
+        }
+      }
+    },
+    {
+      "key": "f0ede681",
+      "oldDraftId": "draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna",
+      "oldContentSha256": "22b63545a1a074060ca75934f2ec9984aa38c7a5a3356fd4c187de7d7d986e66",
+      "payload": {
+        "namespace": "ComarchCommunityNews",
+        "title": "Optima 2026.2.1: ogłoszenie wydania ze stycznia 2026 i datowane komentarze",
+        "sourceUrl": "https://spolecznosc.comarch.pl/news/nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna-77465",
+        "content": "## Ogłoszenie wydania\nKatarzyna Bibrzycka, ekspert Comarch, opublikowała 29 stycznia 2026 r. o 13:51 informację o dostępności Optimy 2026.2.1. Strona podaje aktualizację 10 lutego o 13:38, bez strefy czasowej. Data utworzenia dawnego draftu w sierpniu nie jest datą wydania.\n\n## Zmiany opisane przez Comarch\nAutorka wymienia siedem obszarów: wzory PIT-28, IFT-2/IFT-2R i CIT-8 za 2025 r.; nowe oznaczenia JPK dla dokumentów z trybów awaryjnych; obsługę offline, offline24, awarii KSeF i awarii całkowitej; dodatkowe dane warunków transakcji wysyłane do KSeF; dane nowych środków transportu; informacje w DodatkowyOpis; nowy wzór Z-3b. Zaprasza do centrum wiedzy KSeF dla Optimy i Betterfly oraz wskazuje nowości i Indywidualne Strony Klientów/Partnerów jako miejsca informacji i pobrania wersji. Jest to deklaracja zakresu tego wydania, bez testu funkcji w instalacji.\n\n## Komentarze z 29–30 stycznia\nMateusz Jodłowski zgłosił problem operacji wielofirmowych w konfiguracji z kilkoma kluczami. Opisał obejście przez wskazanie konkretnej ścieżki klucza przy logowaniu i zapowiedź poprawki. Rafał Cebulski relacjonował poprawne działanie swojej konfiguracji z dwoma kluczami. Marcin Tabin opisał przypadek brakującej procedury xp_HASPGetKeyInfo2 i obejście przez podłączenie menedżera kluczy do serwera SQL z bazą konfiguracyjną. To relacje odrębnych konfiguracji, nie jedna potwierdzona diagnoza.\n\nW odpowiedziach z 30 stycznia Bibrzycka wyjaśniała zmianę środowiska KSeF na 2.0 od 1 lutego i wybór sposobu uwierzytelnienia dla operatora: certyfikat, podpis lub token przez kreator w menu KSeF. Grzegorz zgłosił problem wizualizacji; Wioletta Golda napisała o poprawie dla nowo importowanych dokumentów. Te odpowiedzi zachowują daty i atrybucję uczestników.\n\n## Komentarz lutowy i granice\n10 lutego arkadiusz.blach zgłosił błąd aktualizacji, a Sławomir Wiśniewski zasugerował aktualizację SQL. Nie odczytano obrazów załączników ani instalatorów i ulotki poza tekstem przytoczonym w dyskusji. Odczyt nie potwierdza wdrożenia zapowiedzianej łatki, przyczyny błędu z obrazu ani aktualnej wersji produktu. Określenie wydania jako nowego dotyczy ogłoszenia ze stycznia 2026 r.",
+        "tags": ["source-correction", "verified-summary", "Optima", "2026.2.1", "KSeF", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-08-02_f0ede681_nowa-wersja-comarch-erp-optima-2026-2-1-jest-juz-dostepna",
+          "sourceRetrievedAt": "2026-10-13T09:45:15.330Z",
+          "sourcePublicationDate": "2026-01-29T13:51",
+          "sourceUpdatedAt": "2026-02-10T13:38",
+          "sourceDateTimeZone": "not specified by page; no UTC conversion asserted",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-source-evidence.json", "sha256": "e69d6d12964bbf89ca2df6d6e84444fe3800d68e737f4bca5aa0b06d37ab3d5e", "locator": "key=f0ede681; announcement and expanded comments"},
+          "reviewedEvidence": {"path": "/tmp/opencode/remaining-f0ede681-expanded.txt", "sha256": "afd76ba860a5a79544ea7f1c64168e496a1f3cb1b1a7531dddd86465cc87577f", "locator": "linie 16–236"},
+          "unverifiedSections": ["Obrazy załączników", "Instalator i funkcje wydania", "Wdrożenie zapowiedzianej poprawki", "Aktualna wersja produktu"]
+        }
+      }
+    },
+    {
+      "key": "7c66353e",
+      "oldDraftId": "draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus",
+      "oldContentSha256": "d81e4d5e8c48a425e7bb0ef3c21fbeea31aeeea63d2fc7606eb94d73b280d2e3",
+      "payload": {
+        "namespace": "TaxbellPayrollHRReference",
+        "title": "ZUS: zapowiedź dokumentowania nowych okresów stażu z 21 października 2025",
+        "sourceUrl": "https://www.zus.pl/-/zmiany-w-sta%C5%BCu-pracy-wnioski-o-za%C5%9Bwiadczenia-z-zus-od-stycznia-2026-r.",
+        "content": "## Data i charakter informacji\nZUS opublikował 21 października 2025 r. komunikat przygotowawczy dotyczący zmian w stażu pracy. Zapowiedział zmiany Kodeksu pracy od 1 stycznia 2026 r. i zaświadczenia wydawane od nowego roku na podstawie wniosków w PUE/eZUS. Streszczenie opisuje tę zapowiedź; nie ustala późniejszego harmonogramu dla poszczególnych pracodawców.\n\n## Okresy wymienione w komunikacie\nZUS opisuje rozszerzenie stażu o inne formy aktywności zawodowej poza etatem. Wymienia prowadzenie działalności pozarolniczej, współpracę przy niej oraz zawieszenie w celu osobistej opieki nad dzieckiem. Dalej wskazuje zlecenia, inne umowy usługowe, umowy agencyjne, współpracę przy wykonywaniu takich umów oraz członkostwo w rolniczej spółdzielni produkcyjnej i spółdzielni kółek rolniczych. W otwarciu komunikatu wspomina także pracę zarobkową za granicą.\n\n## Dokumentowanie i granice\nWedług ZUS nowe formularze wniosków o zaświadczenia miały pojawić się w PUE/eZUS po wejściu ustawy w życie. Komunikat nie podaje ich późniejszych oznaczeń. ZUS odradza składanie niepotrzebnych wniosków obejmujących cały przebieg ubezpieczenia razem z etatem: zatrudnienie na umowie o pracę nadal miało potwierdzać świadectwo pracy. Odczyt obejmuje cztery akapity źródła; nie obejmuje ustaw, późniejszych instrukcji ani sprawdzenia dostępności formularzy. Nie potwierdza aktualnej mocy prawnej i szczegółów dzisiejszej procedury.",
+        "tags": ["source-correction", "verified-summary", "ZUS", "staż-pracy", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-06-30_7c66353e_zmiany-w-stazu-pracy-wnioski-o-zaswiadczenia-z-zus-od-stycznia-2026-r-zus",
+          "sourceRetrievedAt": "2026-10-13T09:33:34.473Z",
+          "sourcePublicationDate": "2025-10-21",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-7c66353e.json", "sha256": "f83b0fc5cb0a97f0f628f566f64105f66f7df72a74fef9e85c58d5187239f771", "locator": "domSections: journal-content-article"},
+          "unverifiedSections": ["Późniejszy harmonogram i formularze", "Data aktualizacji", "Aktualna moc prawna"]
+        }
+      }
+    },
+    {
+      "key": "a939510d",
+      "oldDraftId": "draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz",
+      "oldContentSha256": "36294089b18c8863c526b85c3ed6c9bff6e28bcc7a35b129b8d5a8c48f0b481e",
+      "payload": {
+        "namespace": "TaxbellPayrollHRReference",
+        "title": "UC127: karta projektu równości wynagrodzeń, wersja 2.0 z maja 2026",
+        "sourceUrl": "https://www.gov.pl/web/premier/projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezczyzn-i-kobiet-za-jednakowa-prace-lub-za-prace-o-jednakowej-wartosci2",
+        "content": "## Karta i daty\nKPRM publikuje pod numerem UC127 projekt ustawy wdrażający dyrektywę (UE) 2023/970 o przejrzystości i równości wynagrodzeń. Za opracowanie oraz przedłożenie odpowiada MRPiPS; karta wskazuje Agnieszkę Dziemianowicz-Bąk. Historia podaje pierwszą publikację 25 listopada 2025 r. o 16:49 oraz wersję 2.0 z 25 maja 2026 r. o 09:49. Nie podaje strefy czasowej. Pole statusu realizacji pozostaje bez wartości.\n\n## Cel i odrębna ustawa\nAutorzy karty rozdzielają istniejącą zasadę równego wynagrodzenia, przywołując Konstytucję i Kodeks pracy, od nowych mechanizmów przejrzystości. Termin implementacji dyrektywy 7 czerwca 2026 r. nie stanowi dowodu uchwalenia ustawy. Projekt ma regulować także zadania organów, dlatego autorzy proponują odrębny akt obok zmian Kodeksu pracy, KPC i ustawy o PIP.\n\n## Projektowane obowiązki\nW karcie opisano ocenę wartości pracy według umiejętności, wysiłku, odpowiedzialności i warunków pracy oraz obiektywne, neutralne płciowo kryteria płac. Pracownicy mieliby otrzymywać dostęp do kryteriów i na wniosek informacje o własnym wynagrodzeniu oraz średnich w porównywalnej kategorii, z podziałem na płeć. Dla pracodawców poniżej 50 osób karta przewiduje wyjątek dotyczący udostępnienia kryteriów wzrostu płac na wniosek.\n\nProjekt przewiduje raporty luki płacowej dla zatrudniających co najmniej 100 osób, co trzy lata, a od 250 osób co roku. Raporty dotyczyłyby poprzedniego roku i trafiały przez narzędzie GUS do organu monitorującego. Część danych miałaby być publiczna, lecz luka w kategoriach pracowników nie. Wspólną ocenę płac projekt wiąże łącznie z luką co najmniej 5%, brakiem neutralnego uzasadnienia i brakiem usunięcia różnicy przez sześć miesięcy.\n\n## Egzekwowanie i granice\nAutorzy opisują środki ochrony prawnej, zadania organu równości, organu monitorującego, PIP i sądów oraz projektowane grzywny 2000–60000 zł za wskazane naruszenia. Są to propozycje w karcie, nie potwierdzone obecne sankcje. Odczyt obejmuje cele, planowane rozwiązania, odpowiedzialnych i historię wersji. Nie obejmuje dalszego przebiegu legislacyjnego, porównania treści wersji 1.0 z 2.0 ani uchwalenia. Streszczenie nie ustala aktualnej mocy prawnej.",
+        "tags": ["source-correction", "verified-summary", "UC127", "wynagrodzenia", "legislative-proposal", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-06-30_a939510d_projekt-ustawy-o-wzmocnieniu-stosowania-prawa-do-jednakowego-wynagrodzenia-mezcz",
+          "sourceRetrievedAt": "2026-10-13T09:43:11.625Z",
+          "sourcePublicationDate": "2025-11-25T16:49",
+          "sourceUpdatedAt": "2026-05-25T09:49",
+          "sourceUpdatedAtBasis": "Visible publication history, version 2.0; not inferred from the empty realization-status field",
+          "sourceDateTimeZone": "not specified by page; no UTC conversion asserted",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-source-evidence.json", "sha256": "e69d6d12964bbf89ca2df6d6e84444fe3800d68e737f4bca5aa0b06d37ab3d5e", "locator": "key=a939510d; public card and publication history"},
+          "reviewedEvidence": {"path": "/tmp/opencode/remaining-a939510d-official.txt", "sha256": "6060f2a7f2fd78c4fb020011a8be68ec4f8d2211c4472f9449dfa2821aad81b4", "locator": "linie 43–192; daty wersji linie 187–192"},
+          "unverifiedSections": ["Status realizacji", "Losy legislacyjne i uchwalenie", "Różnice treści wersji 1.0/2.0", "Aktualna moc prawna"]
+        }
+      }
+    },
+    {
+      "key": "9c43b46e",
+      "oldDraftId": "draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus",
+      "oldContentSha256": "6dedfa3c0daa400bddb4a9027d6d91f5f077efece5065ab1542330e641205029",
+      "payload": {
+        "namespace": "TaxbellPayrollHRReference",
+        "title": "ZUS: roczna waloryzacja kont opisana 7 czerwca 2023, wiadomość archiwalna",
+        "sourceUrl": "https://www.zus.pl/-/roczna-waloryzacja-na-kontach-os%C3%B3b-ubezpieczonych-w-zus",
+        "content": "## Wiadomość z 2023 r.\nZUS opublikował informację o rocznej waloryzacji 7 czerwca 2023 r. Cytuje ówczesną prezes Gertrudę Uścińską, która relacjonuje zakończenie waloryzacji składek emerytalnych, kapitału początkowego i środków na subkontach. Data draftu z lipca 2026 r. nie zmienia roku tej wiadomości.\n\n## Kwoty i okres odniesienia\nZUS podaje wzrost kapitału o ponad 450 mld zł, wobec około 281 mld zł w poprzednim roku. Opisuje czerwcową waloryzację kapitału około 24 mln osób jako mechanizm kompensowania inflacji i procesów gospodarczych za ubiegły rok. Dla składek zapisanych na koncie i subkoncie na 31 stycznia 2022 r. przytacza wskaźniki 114,40% i 109,20%. Pierwszy dotyczy konta emerytalnego, drugi subkonta; nie są to wskaźniki ustalone w tym zadaniu dla roku 2026.\n\n## Informacja dla ubezpieczonych\nW komunikacie ZUS zapowiada udostępnienie wyników w PUE w najbliższych dniach oraz uwzględnienie ich w informacji o stanie konta według 31 grudnia 2022 r. Opisuje adresatów: osoby urodzone po 1948 r., objęte choć przez krótki czas systemem i mające zapisaną co najmniej jedną składkę. Informacja ma pokazywać wartości nominalne i po waloryzacji. ZUS przypomina, że od 2020 r. wysyła papierową informację na życzenie klienta.\n\n## Granice\nStreszczenie dotyczy archiwalnej publikacji i podanych w niej dat. Odczyt nie obejmuje aktualnych wskaźników, indywidualnych kont ani sprawdzenia późniejszego udostępnienia informacji. Nie ustalono oddzielnej daty aktualizacji strony ani aktualnej mocy prawnej opisanej procedury.",
+        "tags": ["source-correction", "verified-summary", "ZUS", "waloryzacja", "2023", "historical"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-07-02_9c43b46e_roczna-waloryzacja-na-kontach-osob-ubezpieczonych-w-zus-zus",
+          "sourceRetrievedAt": "2026-10-13T09:33:33.634Z",
+          "sourcePublicationDate": "2023-06-07",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-9c43b46e.json", "sha256": "2f76f2d9d2894ddaede30811bdc81f83ff6a8000add609f40e9c1cc97b5086ab", "locator": "domSections: journal-content-article"},
+          "unverifiedSections": ["Wskaźniki 2026 i indywidualne konta", "Data aktualizacji", "Aktualna moc prawna"]
+        }
+      }
+    },
+    {
+      "key": "4ce9f131",
+      "oldDraftId": "draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki",
+      "oldContentSha256": "3387bf7c7791db1886453316629030ad4d84f6bbb2604bbfb62c9e0313197e1d",
+      "payload": {
+        "namespace": "TaxbellPayrollHRReference",
+        "title": "ZUS: wnioski o zasiłki w komunikacie z 1 lipca 2026",
+        "sourceUrl": "https://www.zus.pl/-/od-lipca-prostsze-zasady-sk%C5%82adania-wniosk%C3%B3w-o-zasi%C5%82ki",
+        "content": "## Komunikat i płatnik świadczenia\nZUS opublikował 1 lipca 2026 r. informację o uproszczeniu przekazywania dokumentów zasiłkowych od tego dnia. Rozdziela zasady według tego, kto ustala i wypłaca zasiłek. W komunikacie przypomina, że przy zgłoszeniu do ubezpieczenia chorobowego powyżej 20 osób robi to płatnik składek, z wyjątkiem uprawnienia za okres po ustaniu ubezpieczenia. Przy liczbie do 20 osób zadanie przypisuje ZUS.\n\n## Wniosek do płatnika a wniosek do ZUS\nJeżeli świadczenie wypłaca płatnik składek, ubezpieczony składa wniosek do niego: papierowo z własnoręcznym podpisem albo elektronicznie, np. przez pocztę, system kadrowo-płacowy czy skan. Dla wniosku ubezpieczonego do ZUS komunikat wskazuje papier z podpisem lub dokument elektroniczny przez PUE/eZUS albo e-doręczenia. W elektronicznym kanale do ZUS wymienia podpis kwalifikowany, zaufany, osobisty lub udostępniony przez ZUS. Z tego opisu nie wynika, że zwykły e-mail wystarcza w każdym kanale.\n\n## Przekazanie i załączniki\nZUS wyjaśnia przypadek wniosku opiekuńczego złożonego do płatnika, który nie wypłaca świadczenia: płatnik ma przekazać go do ZUS papierowo albo jako załącznik, np. skan, do dokumentu elektronicznego. Po przesłaniu elektronicznym nie trzeba dublować papieru. Według komunikatu dokumenty przesłane przez płatnika jako dokument elektroniczny zachowują skuteczność opisaną dla wersji papierowej podpisanej przez ubezpieczonego.\n\nPozostałe załączniki mogą mieć postać oryginałów, kopii potwierdzonych za zgodność albo kopii elektronicznych. Gdy ZUS wypłaca zasiłek, komunikat wskazuje płatnikowi siedem dni od otrzymania na przekazanie dokumentów potrzebnych do przyznania i wypłaty.\n\n## Podstawy przytoczone przez ZUS i granice\nZUS wskazuje ustawę z 25 czerwca 1999 r., Dz.U. 2025 poz. 501 z późniejszymi zmianami, i nowelizację z 13 lutego 2026 r., Dz.U. 2026 poz. 441. Odczyt obejmuje wszystkie sekcje komunikatu, lecz nie odrębne akty prawne ani obsługę formularzy. Streszczenie opisuje procedurę według datowanej publikacji, bez potwierdzenia jej aktualnej mocy prawnej. Nie ustalono oddzielnej daty aktualizacji.",
+        "tags": ["source-correction", "verified-summary", "ZUS", "zasiłki", "dated-snapshot"],
+        "metadata": {
+          "supersedesDraftId": "draft_2026-07-30_4ce9f131_od-lipca-prostsze-zasady-sk-adania-wnioskow-o-zasi-ki",
+          "sourceRetrievedAt": "2026-10-13T09:33:34.648Z",
+          "sourcePublicationDate": "2026-07-01",
+          "verificationScope": "source_fidelity_only",
+          "representation": "verified_summary",
+          "discoveredVia": "source_correction_review",
+          "historical": true,
+          "originalSourceEvidence": {"path": "/tmp/opencode/remaining-4ce9f131.json", "sha256": "c8948d5f48f0d97709c992d7f8569759b8a3728efc1d04e0e232c7be7db42969", "locator": "domSections: journal-content-article"},
+          "unverifiedSections": ["Przytoczone ustawy", "Obsługa kanałów i formularzy", "Data aktualizacji", "Aktualna moc prawna"]
+        }
+      }
+    }
+  ]
+}
