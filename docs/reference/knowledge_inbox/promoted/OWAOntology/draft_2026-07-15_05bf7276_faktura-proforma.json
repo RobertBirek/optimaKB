@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-22T14:41:10.816Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 33 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_05bf7276_faktura-proforma.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_05bf7276_faktura-proforma.json",
+  "content": "# Encja: Faktura Proforma (FPF)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: FPF\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek\n- `CDN.TraElem` — pozycje proformy\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_proforma` `POST /api/v1/sales/proforma` — tworzy FPF\n- `advance_invoice_from_proforma` `POST /api/v1/workflow/proforma/advance` — generuje FA (Faktura Zaliczkowa) z FPF\n\n## Relacje\n- FPF → FA (Faktura Zaliczkowa) przez `advance_invoice_from_proforma`\n- FPF nie jest dokumentem księgowym — to dokument ofertowy/przedpłatowy\n- Po opłaceniu zaliczki, z FPF generowana jest FA\n\n## Uwagi\n- Proforma służy do potwierdzenia warunków przedpłaty\n- Nie podlega księgowaniu — księguje się dopiero FA\n- Typowy workflow: FPF → wpłata zaliczki → FA → FS\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_05bf7276_faktura-proforma.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_05bf7276_faktura-proforma.md",
+    "rawMarkdownSha256": "a641e5a3edda0a1dade3a7f95e8b7cbf3c2dede94bc8b0a5fc814846896a09ed",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:57:56.770Z"
+  }
 }

@@ -218,6 +218,122 @@ export function verifyDashboardAudit(limit = 1000) {
   };
 }
 
+// Explicit operator-trusted local observation, never proof of genesis or
+// authentication. Keep this separate from the existing strict verifier.
+const CHECKPOINT_SCOPE = 'checkpointed_retained_suffix';
+const CHECKPOINT_MAX_BYTES = 8 * 1024 * 1024;
+const SHA256 = /^[a-f0-9]{64}$/;
+function checkpointAssert(condition, message) {
+  if (!condition) throw new Error(`Audit checkpoint: ${message}`);
+}
+
+function retainedAuditIdentities() {
+  // No writes/locks/pruning here. Refuse unsafe files and incomplete appends.
+  let component = path.parse(DASHBOARD_AUDIT_ROOT).root;
+  for (const part of DASHBOARD_AUDIT_ROOT.slice(component.length).split(path.sep)) {
+    component = path.join(component, part);
+    if (fs.existsSync(component)) checkpointAssert(!fs.lstatSync(component).isSymbolicLink(), 'Symlink audit path');
+  }
+  const files = auditFiles();
+  const observed = [];
+  const events = [];
+  const ids = new Set();
+  let totalBytes = 0;
+  for (const file of files) {
+    const stat = fs.lstatSync(file);
+    checkpointAssert(stat.isFile() && !stat.isSymbolicLink(), 'Symlink/nonregular audit file');
+    totalBytes += stat.size;
+    checkpointAssert(totalBytes <= 64 * 1024 * 1024, 'Audit byte window exceeded');
+    const bytes = fs.readFileSync(file);
+    observed.push([file, bytes]);
+    const text = bytes.toString('utf8');
+    checkpointAssert(Buffer.from(text).equals(bytes) && text.endsWith('\n'), 'Incomplete/nontext audit file');
+    const lines = text.slice(0, -1).split('\n');
+    checkpointAssert(lines.every((line) => line.trim()), 'Empty audit line');
+    checkpointAssert(events.length + lines.length <= 10000, 'Supported event window exceeded');
+    for (const line of lines) {
+      const event = JSON.parse(line);
+      checkpointAssert(event && typeof event === 'object' && !Array.isArray(event), 'Malformed event');
+      const { hash, ...unsigned } = event;
+      const day = path.basename(file, '.jsonl');
+      checkpointAssert(typeof event.id === 'string' && event.id.length > 0 && event.id.length <= 500
+        && !ids.has(event.id), 'Invalid/duplicate event ID');
+      ids.add(event.id);
+      checkpointAssert(typeof event.at === 'string' && /^\d{4}-\d\d-\d\dT.*Z$/.test(event.at)
+        && Number.isFinite(Date.parse(event.at)) && event.at.slice(0, 10) === day, 'Invalid event day/time');
+      checkpointAssert(SHA256.test(hash) && hashValue(unsigned) === hash, 'Event hash mismatch');
+      checkpointAssert(event.previousHash === '' || SHA256.test(event.previousHash), 'Invalid previous hash');
+      checkpointAssert(!events.length || event.previousHash === events.at(-1).hash, 'Internal chain gap');
+      events.push({ id: event.id, hash, previousHash: event.previousHash, day });
+    }
+  }
+  checkpointAssert(events.length > 0, 'Empty audit');
+  checkpointAssert(JSON.stringify(files) === JSON.stringify(auditFiles())
+    && observed.every(([file, bytes]) => fs.readFileSync(file).equals(bytes)), 'Concurrent audit change');
+  return events;
+}
+
+function checkpointBody(events) {
+  const days = [];
+  for (let index = 0; index < events.length;) {
+    const firstIndex = index;
+    const day = events[index].day;
+    while (events[index]?.day === day) index++;
+    days.push({ day, firstIndex, count: index - firstIndex, digest: hashValue(events.slice(firstIndex, index)) });
+  }
+  const terminal = events.at(-1);
+  return { schemaVersion: 1, scope: CHECKPOINT_SCOPE, ancestryVerified: false, events, days,
+    terminalAnchor: { id: terminal.id, hash: terminal.hash } };
+}
+
+export function captureDashboardAuditCheckpoint() {
+  const body = checkpointBody(retainedAuditIdentities());
+  return { ...body, digest: hashValue(body) };
+}
+
+export function verifyDashboardAuditCheckpoint(checkpointBytes, trustedSha256) {
+  try {
+    checkpointAssert(Buffer.isBuffer(checkpointBytes) || typeof checkpointBytes === 'string', 'Expected checkpoint bytes');
+    const bytes = Buffer.from(checkpointBytes);
+    checkpointAssert(bytes.length > 0 && bytes.length <= CHECKPOINT_MAX_BYTES, 'Checkpoint size exceeded');
+    checkpointAssert(typeof trustedSha256 === 'string' && SHA256.test(trustedSha256)
+      && crypto.createHash('sha256').update(bytes).digest('hex') === trustedSha256, 'Trusted checkpoint SHA mismatch');
+    const text = bytes.toString('utf8');
+    checkpointAssert(Buffer.from(text).equals(bytes), 'Nontext checkpoint');
+    const checkpoint = JSON.parse(text);
+    checkpointAssert(Array.isArray(checkpoint?.events) && checkpoint.events.length > 0
+      && checkpoint.events.length <= 10000, 'Invalid checkpoint window');
+    const ids = new Set();
+    for (let index = 0; index < checkpoint.events.length; index++) {
+      const event = checkpoint.events[index];
+      checkpointAssert(event && typeof event.id === 'string' && event.id.length > 0 && event.id.length <= 500
+        && !ids.has(event.id) && SHA256.test(event.hash)
+        && (event.previousHash === '' || SHA256.test(event.previousHash))
+        && typeof event.day === 'string' && /^\d{4}-\d\d-\d\d$/.test(event.day)
+        && Number.isFinite(Date.parse(`${event.day}T00:00:00Z`)), 'Invalid checkpoint identity');
+      ids.add(event.id);
+      if (index) checkpointAssert(event.previousHash === checkpoint.events[index - 1].hash
+        && event.day >= checkpoint.events[index - 1].day, 'Checkpoint internal gap/order');
+    }
+    const expected = checkpointBody(checkpoint.events);
+    checkpointAssert(hashValue({ ...expected, digest: hashValue(expected) }) === hashValue(checkpoint), 'Checkpoint content/digest mismatch');
+    const events = retainedAuditIdentities();
+    // Conservative boundary policy: any prefix removal, eligible or otherwise,
+    // requires a new explicit operator checkpoint. Never infer legitimate pruning.
+    checkpointAssert(events.length >= checkpoint.events.length, 'Removed checkpoint tail');
+    for (let index = 0; index < checkpoint.events.length; index++) {
+      checkpointAssert(hashValue(events[index]) === hashValue(checkpoint.events[index]), 'Checkpoint baseline changed');
+    }
+    const anchors = events.filter((event) => event.id === checkpoint.terminalAnchor.id);
+    checkpointAssert(anchors.length === 1 && anchors[0].hash === checkpoint.terminalAnchor.hash, 'Missing/changed terminal anchor');
+    return { ok: true, checked: events.length, truncated: false, problems: [],
+      scope: CHECKPOINT_SCOPE, ancestryVerified: false, checkpointSha256: trustedSha256 };
+  } catch (error) {
+    return { ok: false, checked: 0, truncated: false, problems: [{ problem: 'checkpoint_verification_failed', message: error.message }],
+      scope: CHECKPOINT_SCOPE, ancestryVerified: false };
+  }
+}
+
 export function dashboardAuditSummary() {
   const recent = listDashboardAudit({ limit: 100 });
   return {

@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-20T11:42:26.899Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 50 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_cf92b7fb_rozchod-wewnetrzny.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_cf92b7fb_rozchod-wewnetrzny.json",
+  "content": "# Encja: Rozchód Wewnętrzny (RW)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: RW\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek\n- `CDN.TraElem` — pozycje rozchodu\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_internal_issue` `POST /api/v1/warehouse/internal-issue` — tworzy RW\n\n## Relacje\n- RW zmniejsza stan magazynowy (rozchód)\n- Do celów wewnętrznych: zużycie własne, braki, uszkodzenia\n- Nie jest powiązany z kontrahentem zewnętrznym ani FS\n\n## Uwagi\n- Dokument wydania towaru na cele wewnętrzne firmy\n- Typowe zastosowania: zużycie materiałów, likwidacja, wydanie do produkcji\n- Przeciwieństwo PW (Przyjęcie Wewnętrzne)\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_cf92b7fb_rozchod-wewnetrzny.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_cf92b7fb_rozchod-wewnetrzny.md",
+    "rawMarkdownSha256": "24a9764746d8323f0e4d24fe1e366d05b96c21f8becac8a4a97c05491638e892",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:42:30.129Z"
+  }
 }

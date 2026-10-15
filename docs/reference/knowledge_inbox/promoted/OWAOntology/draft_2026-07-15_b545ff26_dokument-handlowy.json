@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-20T11:42:27.240Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 50 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_b545ff26_dokument-handlowy.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_b545ff26_dokument-handlowy.json",
+  "content": "# Encja: Dokument handlowy (abstrakcyjna baza)\n\n## Klasyfikacja\n- **Warstwa**: ontologia domeny\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\nWszystkie podtypy dokumentów współdzielą dwie tabele:\n- `CDN.TraNag` (nagłówek, PK=`TrN_TrNID`, 120+ kolumn) — kluczowe: `TrN_TypDokumentu` (int), `TrN_PelnyNumer`, `TrN_DataWystawienia`, `TrN_DataOperacji`, `TrN_KntId`, `TrN_SumaNetto`, `TrN_SumaVAT`, `TrN_SumaBrutto`, `TrN_FormaPlatnosci`, `TrN_Termin`, `TrN_Bufor`, `TrN_Anulowany`, `TrN_Waluta`, `TrN_KursWaluty`, `TrN_NumerObcy`, `TrN_MagZrodlo`, `TrN_MagDocelowy`, `TrN_PodzialPlatnosci`, `TrN_StatusStr`\n- `CDN.TraElem` (pozycje, PK=`TrE_TrEId`, FK=`TrE_TrNId` → `TraNag.TrN_TrNID`)\n\n## Definicje dokumentów\nTypy dokumentów zdefiniowane w `CDN.DokDefinicje` (PK=`DDf_DDfID`):\n- `DDf_Symbol` — skrót (np. FS, FZ, RO, WZ, PZ)\n- `DDf_Nazwa` — pełna nazwa\n- `DDf_Typ` — kategoria\n- `isActive` — czy aktywny\n\n## Potwierdzone typy\n- **FS (302)** — Faktura Sprzedaży, potwierdzone MCP\n\n## Pola MCP (wspólne dla TraNag)\n`id`, `type`, `fullNumber`, `issueDate`, `operationDate`, `contractorId`, `contractorName`, `contractorCode`, `sourceWarehouseId`, `destinationWarehouseId`, `totalNet`, `totalVat` (tylko faktury), `totalGross`, `paymentFormId`, `dueDate`, `isBuffer`, `isCancelled`, `statusString`, `updatedAt`, `lines[]`, `splitPayment`, `currencyCode`, `exchangeRate`, `externalNumber`\n\n## MCP API\n- **READ**: `list_documents(type?, date_from?, date_to?, updated_from?)` — lista dokumentów\n- **READ**: `get_document(id)` — szczegóły dokumentu (SEK)\n- **READ**: `list_document_definitions` — definicje typów (DokDefinicje)\n- **READ**: `list_document_relations` — relacje między dokumentami (DokRelacje)\n- **READ**: `get_document_timeline(id)` — historia dokumentu\n- **READ**: `get_document_balance(id)` — saldo dokumentu\n\n## Relacje\n- `DokRelacje` — powiązania między dokumentami (np. Korekta→oryginał)\n- `TrN_RelTrNId` — ID dokumentu powiązanego (np. FSKOR→FS)\n- Każdy dokument może mieć wiele pozycji (`TraElem`, 1:N)\n\n## Uwagi\n- Typ dokumentu (`TrN_TypDokumentu`) jednoznacznie określa podtyp\n- `TrN_Bufor=1` oznacza dokument w buforze (niezatwierdzony)\n- `TrN_Anulowany=1` oznacza dokument anulowany\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_b545ff26_dokument-handlowy.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_b545ff26_dokument-handlowy.md",
+    "rawMarkdownSha256": "85501e7e8d0138337258d746c95a60ff68544126098cb249504f5edd67c91a13",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:44:00.266Z"
+  }
 }

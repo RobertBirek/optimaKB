@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-20T11:42:28.157Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 50 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_82eb3d47_przesuniecie-mm.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_82eb3d47_przesuniecie-mm.json",
+  "content": "# Encja: Przesunięcie Międzymagazynowe (MM)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: MM\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek, wymagane: `TrN_MagZrodlo` (magazyn źródłowy) i `TrN_MagDocelowy` (magazyn docelowy)\n- `CDN.TraElem` — pozycje przesunięcia\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_warehouse_transfer` `POST /api/v1/warehouse/transfer` — tworzy MM\n\n## Relacje\n- MM przenosi towary między dwoma magazynami\n- Magazyn źródłowy → zmniejszenie stanu\n- Magazyn docelowy → zwiększenie stanu\n- Nie zmienia sumarycznego stanu firmy, tylko rozmieszczenie\n\n## Uwagi\n- Ruch wewnętrzny — nie ma kontrahenta zewnętrznego\n- Wymagane są oba magazyny: źródłowy i docelowy\n- MM może być użyty do przesunięcia między magazynem głównym a produkcyjnym\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_82eb3d47_przesuniecie-mm.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_82eb3d47_przesuniecie-mm.md",
+    "rawMarkdownSha256": "ae3653067cb947af6e0dc7720ff2b921a71221325773f352864f86d10c9ec851",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:47:52.195Z"
+  }
 }

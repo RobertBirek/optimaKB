@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-22T14:41:10.753Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 33 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_06e9257b_potwierdzenie-salda.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_06e9257b_potwierdzenie-salda.json",
+  "content": "# Encja: Potwierdzenie Salda PS\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `średni`\n- Identyfikator ontologiczny: `OWAOntology.PotwierdzenieSalda`\n- Aliasy: `BalanceConfirmation`, `PS`\n\n## Opis biznesowy\nPotwierdzenie salda (PS) w Comarch Optima to dokument księgowy służący do potwierdzenia stanu rozrachunków z kontrahentem na dany dzień. Dokument jest wysyłany do kontrahenta w celu uzgodnienia wzajemnych należności i zobowiązań. Potwierdzenie salda jest generowane na podstawie otwartych rozrachunków (`CDN.KsiRozrachunki`) i może być elementem procesu inwentaryzacji należności.\n\n## Reguły biznesowe\n- PS generowane jest dla konkretnego kontrahenta na określony dzień bilansowy\n- Zawiera zestawienie wszystkich otwartych rozrachunków\n- Służy do uzgadniania sald z kontrahentami (inwentaryzacja należności)\n- Może być wysłane w formie wydruku lub elektronicznie\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | Status | Dowód |\n|---|---|---|---|---|\n| Rozrachunki źródłowe | CDN | KsiRozrachunki | Potwierdzona | MSSQL |\n| Dane kontrahenta | CDN | Kontrahenci | Potwierdzona | MSSQL |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | create_balance_confirmation | POST /api/v1/tax/balance-confirmation | Potwierdzone |\n\n## Identyfikatory\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| Naturalny | Numer dokumentu PS | Numer potwierdzenia salda | Potwierdzony |\n| FK | — | FK do kontrahenta | Oczekuje potwierdzenia |\n| FK | — | FK do rozrachunków | Oczekuje potwierdzenia |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| dotyczy_kontrahenta | PotwierdzenieSalda | Kontrahent | N:1 | Przez FK |\n| zestawia | PotwierdzenieSalda | Rozrachunek | 1:N | Przez listę rozrachunków |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| OptimaMCP | create_balance_confirmation | API WRITE potwierdzone |\n| MSSQL (CDN_TEST) | mssql_list_tables | Potwierdzenie istnienia powiązanych tabel |\n\n## Otwarte problemy\n- [UNKNOWN: dedykowana tabela PS — PotwierdzeniaSalda? Inwentaryzacja?]\n- [UNKNOWN: pełny schemat tabeli — wymaga mssql_describe_table po identyfikacji nazwy]\n- [UNKNOWN: czy PS generuje dekret księgowy?]\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_06e9257b_potwierdzenie-salda.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_06e9257b_potwierdzenie-salda.md",
+    "rawMarkdownSha256": "f24ea47cafbc3d3323310816487b2582c67a6dbab1c395acd3b4a7799b8c09ab",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:57:38.444Z"
+  }
 }

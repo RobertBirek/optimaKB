@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-22T14:41:10.881Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 33 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_05af9e1c_wydanie-zewnetrzne.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_05af9e1c_wydanie-zewnetrzne.json",
+  "content": "# Encja: Wydanie Zewnętrzne (WZ)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: WZ\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek, kolumny magazynowe: `TrN_MagZrodlo`, `TrN_MagDocelowy`\n- `CDN.TraElem` — pozycje wydania\n\n## MCP API\n### READ (NIE WYWOŁANO)\n- `list_warehouse_docs(type=?)` — lista dokumentów magazynowych\n- `get_warehouse_doc(id)` — szczegóły WZ\n\n### WRITE (NIE WYWOŁANO)\n- `create_goods_issue` `POST /api/v1/warehouse/issue` — tworzy WZ\n- `create_warehouse_release` `POST /api/v1/warehouse-releases` — tworzy wydanie magazynowe\n\n## Relacje\n- WZ może powstać z RO przez `fulfill_order`\n- WZ może być samodzielnym dokumentem (niepowiązanym z RO)\n- WZ generuje ruch magazynowy — zmniejsza stan w magazynie źródłowym\n\n## Uwagi\n- Dokument wydania towaru z magazynu na zewnątrz\n- Może być powiązany z FS (faktura do WZ) lub wystawiony osobno\n- W ramach `complete_order`: RO → WZ + FS\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_05af9e1c_wydanie-zewnetrzne.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_05af9e1c_wydanie-zewnetrzne.md",
+    "rawMarkdownSha256": "542b84430126a58f54384c78ecdd9dedadfe790afb3ec2cb307023350edc4ae5",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:58:14.352Z"
+  }
 }

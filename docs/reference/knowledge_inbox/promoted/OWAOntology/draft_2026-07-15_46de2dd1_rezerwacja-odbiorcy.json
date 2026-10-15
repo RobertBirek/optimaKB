@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-22T14:41:09.884Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 33 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_46de2dd1_rezerwacja-odbiorcy.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_46de2dd1_rezerwacja-odbiorcy.json",
+  "content": "# Encja: Rezerwacja Odbiorcy (RO)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: RO\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek zamówienia\n- `CDN.TraElem` — pozycje zamówienia\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_sales_order` `POST /api/v1/sales/order` — tworzy RO\n\n### Workflow (NIE WYWOŁANO)\n- `fulfill_order` `POST /api/v1/workflow/order/fulfill` — realizuje RO → WZ (Wydanie Zewnętrzne)\n- `invoice_order` `POST /api/v1/workflow/order/invoice` — fakturuje RO → FS (Faktura Sprzedaży)\n- `complete_order` `POST /api/v1/workflow/order/complete` — pełna realizacja RO → WZ + FS\n\n## Relacje\n- RO → WZ przez `fulfill_order`\n- RO → FS przez `invoice_order`\n- RO → WZ + FS przez `complete_order` (oba kroki)\n- RO rezerwuje stany magazynowe\n\n## Uwagi\n- Dokument zamówienia od klienta\n- Rezerwuje towary w magazynie (zmniejsza dostępne stany)\n- Może być realizowany etapami (częściowe WZ, częściowe FS)\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_46de2dd1_rezerwacja-odbiorcy.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_46de2dd1_rezerwacja-odbiorcy.md",
+    "rawMarkdownSha256": "255205a2ad63d49b5674b6aa16f243d0cf90e0aeac9a0f7aa589676817e7363a",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:53:46.294Z"
+  }
 }

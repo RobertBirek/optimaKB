@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-20T11:42:26.627Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 50 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_dd30b870_ponaglenie-zaplaty.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_dd30b870_ponaglenie-zaplaty.json",
+  "content": "# Encja: Ponaglenie Zapłaty PON\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `średni`\n- Identyfikator ontologiczny: `OWAOntology.PonaglenieZaplaty`\n- Aliasy: `PaymentReminder`, `PON`\n\n## Opis biznesowy\nPonaglenie zapłaty (PON) w Comarch Optima to dokument windykacyjny wysyłany do kontrahenta w przypadku przeterminowania płatności. System może automatycznie generować ponaglenia zgodnie ze schematami windykacji (`CDN.SchematyWindykacji`, `CDN.SchematWindykacjiEtapy`). Ponaglenie może zawierać zestawienie przeterminowanych dokumentów, naliczone odsetki oraz wezwanie do zapłaty.\n\n## Reguły biznesowe\n- Ponaglenie generowane na podstawie przeterminowanych rozrachunków\n- Schemat windykacji określa kolejność i częstotliwość ponagleń\n- Może być powiązane ze zdarzeniem bankowym (`CDN.BnkZdarzenia`) — `Bzd_WindykacjaSchematId`\n- Każdy etap schematu windykacji ma przypisany szablon dokumentu\n- Ponaglenie może zawierać naliczone odsetki karne\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | Status | Dowód |\n|---|---|---|---|---|\n| Schematy windykacji | CDN | SchematyWindykacji | Potwierdzona | MSSQL (1 wiersz) |\n| Etapy windykacji | CDN | SchematWindykacjiEtapy | Potwierdzona | MSSQL (3 wiersze) |\n| Zdarzenia bankowe | CDN | BnkZdarzenia | Potwierdzona | Kolumna Bzd_WindykacjaSchematId |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Endpoint API | Status |\n|---|---|---|---|\n| WRITE | create_payment_reminder | POST /api/v1/tax/payment-reminder | Potwierdzone |\n\n## Identyfikatory\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| Naturalny | Numer PON | Numer ponaglenia | Potwierdzony |\n| FK | — | FK do kontrahenta | Oczekuje potwierdzenia |\n| FK | — | FK do schematu windykacji | Oczekuje potwierdzenia |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| dotyczy_kontrahenta | PonaglenieZaplaty | Kontrahent | N:1 | Przez FK |\n| według_schematu | PonaglenieZaplaty | SchematWindykacji | N:1 | Przez FK |\n| dotyczy_rozrachunkow | PonaglenieZaplaty | Rozrachunek | N:M | Przez listę |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| OptimaMCP | create_payment_reminder | API WRITE potwierdzone |\n| MSSQL (CDN_TEST) | mssql_list_tables | SchematyWindykacji, SchematWindykacjiEtapy |\n\n## Otwarte problemy\n- [UNKNOWN: dedykowana tabela PON — Ponaglenia? Windykacje?]\n- [UNKNOWN: pełny schemat tabeli — wymaga mssql_describe_table po identyfikacji]\n- [UNKNOWN: czy PON ma powiązanie z BnkZdarzenia przez Bzd_WindykacjaSchematId?]\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_dd30b870_ponaglenie-zaplaty.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_dd30b870_ponaglenie-zaplaty.md",
+    "rawMarkdownSha256": "2e949ebff21a3bddffa173f64d90bc9e79dc28794fdf0cc52924cc5110e5394d",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:41:18.572Z"
+  }
 }

@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-22T14:41:10.021Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 33 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_3ecb677d_dziennik.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_3ecb677d_dziennik.json",
+  "content": "# Encja: Dziennik\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `wysoki`\n- Identyfikator ontologiczny: `OWAOntology.Dziennik`\n- Aliasy: `Dzienniki`, `Journal`, `Book`\n\n## Opis biznesowy\nDziennik w Comarch Optima to rejestr księgowy zawierający chronologicznie uporządkowane zapisy księgowe (dekrety). Każdy dziennik jest przypisany do okresu obrachunkowego (`CDN.OkresyObrach`) przez klucz obcy `Dzi_OObId`. Dziennik identyfikowany jest przez symbol (`Dzi_Symbol`) i nazwę (`Dzi_Nazwa`). Usunięcie okresu obrachunkowego powoduje kaskadowe usunięcie wszystkich jego dzienników (CASCADE DELETE).\n\n## Reguły biznesowe\n- Każdy dziennik należy do dokładnie jednego okresu obrachunkowego\n- Dziennik ma unikalny symbol w ramach okresu (indeks `Dzi_OObId + Dzi_Symbol`)\n- Dziennik zawiera chronologicznie uporządkowane dekrety\n- Symbol dziennika — maks. 20 znaków\n- Nazwa dziennika — maks. 50 znaków\n- Usunięcie okresu → CASCADE DELETE wszystkich dzienników\n\n## Źródła danych\n| Rola źródła | Schemat | Tabela | PK | Stan | Dowód |\n|---|---|---|---|---|---|\n| Dzienniki | CDN | Dzienniki | Dzi_DziId (int, IDENTITY) | Potwierdzona | MSSQL |\n| Okresy obrachunkowe | CDN | OkresyObrach | OOb_OObID | Potwierdzona | FK CASCADE |\n\n## Endpointy OptimaMCP\n| Kierunek | Narzędzie MCP | Status |\n|---|---|---|\n| READ | list_journal_entries (pośrednio) | Powiązanie przez Dzienniki → DekretyNag |\n\n## Identyfikatory — Dzienniki\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | Dzi_DziId | Unikalny identyfikator dziennika (int, IDENTITY) | Potwierdzony |\n| Naturalny | Dzi_Symbol | Symbol dziennika (varchar 20) | Potwierdzony |\n| FK | Dzi_OObId | FK do OkresyObrach.OOb_OObID (CASCADE) | Potwierdzony |\n\n## Kluczowe pola MSSQL — Dzienniki\n| Kolumna | Typ | Opis |\n|---|---|---|\n| Dzi_DziId | int (PK, IDENTITY) | ID dziennika |\n| Dzi_Symbol | varchar(20) | Symbol dziennika |\n| Dzi_Nazwa | varchar(50) | Nazwa dziennika |\n| Dzi_OObId | int | FK do OkresyObrach (CASCADE DELETE) |\n\n## Relacje ontologiczne\n| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n| należy_do_okresu | Dziennik | OkresObrachunkowy | N:1 | Dzienniki.Dzi_OObId = OkresyObrach.OOb_OObID |\n| zawiera_dekrety | Dziennik | DekretKsiegowy | 1:N | DekretyNag → Dzienniki |\n| uzywany_przez_RK | Dziennik | OkresObrachunkowy | 1:1 | OkresyObrach.OOb_DziIdRK = Dzienniki.Dzi_DziId |\n| uzywany_przez_kompensaty | Dziennik | OkresObrachunkowy | 1:1 | OkresyObrach.OOb_DziIdKomp = Dzienniki.Dzi_DziId |\n\n## Pochodzenie wiedzy\n| Typ źródła | Narzędzie | Zakres |\n|---|---|---|\n| MSSQL (CDN_TEST) | mssql_describe_table | Pełny schemat (14 kolumn, 1 FK CASCADE, 2 indeksy) |\n| OptimaKB | OpenSPG | ComarchOptimaSchema (relacje) |\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Data ostatniej aktualizacji: 2026-07-15\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_3ecb677d_dziennik.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_3ecb677d_dziennik.md",
+    "rawMarkdownSha256": "3839f6e79fa91010c91f0a0a969753cb593ddcc262eac11d25c4b154cd011505",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:54:21.518Z"
+  }
 }

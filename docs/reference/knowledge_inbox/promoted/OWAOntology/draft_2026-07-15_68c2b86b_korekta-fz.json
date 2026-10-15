@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-22T14:41:08.934Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 33 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_68c2b86b_korekta-fz.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_68c2b86b_korekta-fz.json",
+  "content": "# Encja: Korekta FZ (FZKOR)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: FZKOR\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek, osobny typ dokumentu\n- `CDN.TraElem` — pozycje korekty zakupu\n- `DokRelacje` — relacja FZKOR → FZ (oryginał)\n\n## MCP API\n### READ (NIE WYWOŁANO)\n- `list_invoices(type=?)` — lista faktur zakupu korygujących\n- `get_invoice(id)` — szczegóły FZKOR\n- `get_document(id)` — ogólny endpoint\n\n### WRITE (NIE WYWOŁANO)\n- `create_purchase_correction` `POST /api/v1/purchase/correction` — tworzy FZKOR\n\n## Relacje\n- FZKOR KORYGUJE FZ — powiązanie przez `DokRelacje` lub `TrN_RelTrNId`\n- Analogicznie do FSKOR, może być in plus lub in minus\n\n## Uwagi\n- Osobny typ dokumentu od FZ\n- Brak dedykowanego workflow \"correct\" dla zakupu (w przeciwieństwie do `correct_invoice` dla sprzedaży)\n- Tworzenie przez `create_purchase_correction`\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_68c2b86b_korekta-fz.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_68c2b86b_korekta-fz.md",
+    "rawMarkdownSha256": "6f19522bc796f9360468760b1ec6e1a65c72f6db4c391685904abfb4dbd1ed43",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:49:55.596Z"
+  }
 }

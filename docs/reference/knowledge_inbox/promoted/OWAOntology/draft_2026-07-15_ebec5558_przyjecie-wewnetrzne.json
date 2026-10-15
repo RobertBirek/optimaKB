@@ -20,5 +20,23 @@
   "promotedAt": "2026-07-20T11:42:26.283Z",
   "promotedBy": "mcpbot",
   "reviewNote": "Bulk approved 50 drafts from dashboard",
-  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_ebec5558_przyjecie-wewnetrzne.json"
+  "sourceDraftPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_ebec5558_przyjecie-wewnetrzne.json",
+  "content": "# Encja: Przyjęcie Wewnętrzne (PW)\n\n## Klasyfikacja\n- **Typ nadrzędny**: Dokument handlowy (dokument-handlowy)\n- **Typ dokumentu**: `TrN_TypDokumentu = ?` (do weryfikacji MCP)\n- **Symbol**: PW\n- **Status**: częściowo-zweryfikowane\n\n## Tabele MSSQL\n- `CDN.TraNag` — nagłówek\n- `CDN.TraElem` — pozycje przyjęcia\n\n## MCP API\n### WRITE (NIE WYWOŁANO)\n- `create_internal_receipt` `POST /api/v1/warehouse/internal-receipt` — tworzy PW\n\n## Relacje\n- PW zwiększa stan magazynowy (przychód)\n- Do celów wewnętrznych: nadwyżki inwentaryzacyjne, przyjęcie z produkcji\n- Nie jest powiązany z kontrahentem zewnętrznym ani FZ\n\n## Uwagi\n- Dokument przyjęcia towaru na cele wewnętrzne\n- Typowe zastosowania: przyjęcie nadwyżek, przyjęcie wyrobów gotowych z produkcji\n- Przeciwieństwo RW (Rozchód Wewnętrzny)\n",
+  "contentRecovery": {
+    "method": "legacy_owa_adjacent_markdown",
+    "schemaVersion": 1,
+    "rawJsonPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_ebec5558_przyjecie-wewnetrzne.json",
+    "rawMarkdownPath": "downloads/knowledge_inbox/2026-07-15/draft_2026-07-15_ebec5558_przyjecie-wewnetrzne.md",
+    "rawMarkdownSha256": "50479fbe7ca4197b212e2e8f9a76a741d7c6a624dbf2d85bf154be41c41c5ed1",
+    "operationId": "owa-content-recovery-checkpoint-20261015-v1",
+    "actor": "opencode",
+    "note": "Approved exact67 legacy OWA raw Markdown content recovery; preserve historical promotion dates, status and all metadata; operator-trusted retained audit checkpoint, ancestry unverified.",
+    "auditCheckpoint": {
+      "path": "backups/manual-repairs/owa-content-recovery-20261014/execution-journal/checkpoint-v1/audit-checkpoint.json",
+      "sha256": "d2c4c54b700d4aeeab638307f82cf6a939f03bd4fae323810db28fe31423b4a0",
+      "scope": "checkpointed_retained_suffix",
+      "ancestryVerified": false
+    },
+    "recoveredAt": "2026-10-15T09:39:48.377Z"
+  }
 }
