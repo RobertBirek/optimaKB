@@ -21,6 +21,9 @@ import {
   DOCUMENT_CODES, MAX_SNIPPET_LENGTH, containsTerm, findTermIndex, getSourceFields,
   makeBodyPreview, parseCsvRecords, selectEvidence,
 } from './lib/knowledge_retrieval.mjs';
+import { parseOwaQuestion } from './lib/owa_query_context.mjs';
+import { assessOwaCoverage, reconcileOwaOmissions, selectOwaEvidence } from './lib/owa_evidence.mjs';
+import { describeLocalSource } from './lib/local_source_provenance.mjs';
 import {
   computeConfidenceScore,
   CONFIDENCE_LOW_THRESHOLD,
@@ -104,7 +107,7 @@ function scoreLine(lineNormalized, terms, focusHints = []) {
   return score;
 }
 
-export function scanArtifact(relativePath, terms, focusHints = [], limit = 4, collectSiblings = false) {
+export function scanArtifact(relativePath, terms, focusHints = [], limit = 4, collectSiblings = false, requestContext = null) {
   const filePath = resolveArtifactPath(relativePath);
   if (!filePath || !fs.existsSync(filePath)) {
     return { artifact: relativePath, type: 'missing', hits: [] };
@@ -124,14 +127,19 @@ export function scanArtifact(relativePath, terms, focusHints = [], limit = 4, co
   const records = parsed ? parsed.records : raw.split('\n').map((text, index) => ({ text, line: index + 1, endLine: index + 1 }));
   const hits = [];
   const siblingHits = [];
+  const owaRows = requestContext?.namespace === 'OWAOntology' && requestContext.context && isCsv ? [] : null;
 
   for (const record of records) {
     const text = (record.cells ? record.cells.join(' | ') : record.text).replace(/\s+/g, ' ').trim();
     if (!text) continue;
     const normalized = normalizeText(text);
     const score = scoreLine(normalized, terms, focusHints);
-    const body = isCsv ? getSourceFields(parsed.columns, record, relativePath) : null;
-    if (collectSiblings && body?.source.sourceUrl && body.source.owningPath) {
+    const body = isCsv ? getSourceFields(parsed.columns, record, relativePath, requestContext) : null;
+    if (owaRows) owaRows.push({ namespace: 'OWAOntology', artifact: relativePath,
+      contentHash, observedAt, line: record.line, endLine: record.endLine,
+      fields: body.fields, bodyField: body.bodyField, bodyText: body.bodyText,
+      source: body.source, score, matchedTerms: terms.filter(term => containsTerm(normalized, term)) });
+    if (collectSiblings && !owaRows && body?.source.sourceUrl && body.source.owningPath) {
       siblingHits.push({ line: record.line, endLine: record.endLine, score,
         bodyField: body.bodyField, bodyText: body.bodyText, source: body.source });
     }
@@ -176,6 +184,7 @@ export function scanArtifact(relativePath, terms, focusHints = [], limit = 4, co
   };
   // Private request-local candidates from this exact permitted artifact only.
   Object.defineProperty(result, 'siblingHits', { value: siblingHits });
+  if (owaRows) Object.defineProperty(result, 'owaRows', { value: owaRows });
   return result;
 }
 
@@ -188,9 +197,10 @@ function encodeArtifactPath(relativePath) {
     .join('/');
 }
 
-export function gatherEvidence(response, terms, focusHints = [], allowedNamespaces = null, diagnostics = []) {
+export function gatherEvidence(response, terms, focusHints = [], allowedNamespaces = null, diagnostics = [], context = null) {
   const evidence = [];
   const scannedSiblings = [];
+  const scans = [];
   const groups = [
     { kb: response.primaryKb.name, artifacts: response.primaryKb.artifacts || [] },
     ...response.supportKbs.map((kb) => ({ kb: kb.name, artifacts: kb.artifacts || [] })),
@@ -199,34 +209,60 @@ export function gatherEvidence(response, terms, focusHints = [], allowedNamespac
   for (const group of groups) {
     if (allowedNamespaces && !allowedNamespaces.has(group.kb)) continue;
     for (const artifact of group.artifacts) {
-      const result = scanArtifact(artifact, terms, focusHints, Math.max(3, focusHints.length), true);
+      const requestContext = context && group.kb === 'OWAOntology' ? { namespace: group.kb, context } : null;
+      const result = scanArtifact(artifact, terms, focusHints, Math.max(3, focusHints.length), true, requestContext);
+      scans.push({ kb: group.kb, result });
       if (result.siblingHits?.length) scannedSiblings.push({ kb: group.kb,
         artifact: result.artifact, contentHash: result.contentHash, siblingHits: result.siblingHits });
       for (const code of result.warnings || []) diagnostics.push({ artifact, code });
-      if (result.hits.length) {
-        const locator = result.hits.map(hit => hit.endLine > hit.line ? `L${hit.line}-L${hit.endLine}` : `L${hit.line}`).join(',');
-        const sourceId = `sha256:${crypto.createHash('sha256')
-          .update(`${group.kb}\0${result.artifact}\0${result.contentHash}`)
-          .digest('hex')}`;
-        evidence.push({
-          kb: group.kb,
-          artifact: result.artifact,
-          type: result.type,
-          hits: result.hits,
-          sourceId,
-          uri: `knowledge://legacy/${encodeURIComponent(group.kb)}/${encodeArtifactPath(result.artifact)}`,
-          locator,
-          contentHash: result.contentHash,
-          observedAt: result.observedAt,
-          excerpt: result.hits[0].snippet,
-        });
-      }
+    }
+  }
+
+  // Index all permitted OWA metadata before selecting from any artifact. In
+  // particular, an owned zero-score chunk cannot be recovered from lexical top-k.
+  const owaEnabled = context && groups.some(group => group.kb === 'OWAOntology'
+    && (!allowedNamespaces || allowedNamespaces.has(group.kb)));
+  const owaSelection = owaEnabled ? selectOwaEvidence(context,
+    scans.flatMap(({ result }) => result.owaRows || [])) : null;
+  if (owaSelection) Object.defineProperty(evidence, 'owaSelection', { value: owaSelection });
+  const selectedRows = new Set(owaSelection?.candidates);
+  for (const { kb, result } of scans) {
+    if (owaSelection && kb === 'OWAOntology') {
+      result.hits = (result.owaRows || []).filter(row => selectedRows.has(row)).map(row => {
+        const hit = { line: row.line, endLine: row.endLine, score: row.score,
+          matchedTerms: row.matchedTerms, recordId: row.fields.id || null,
+          bodyField: row.bodyField, bodyText: row.bodyText, source: row.source,
+          ...makeBodyPreview(row.bodyText, terms, focusHints, normalizeText) };
+        Object.defineProperty(hit, 'owa', { value: { ...owaSelection.metadata.get(row), row } });
+        return hit;
+      });
+    }
+    if (result.hits.length) {
+      const locator = result.hits.map(hit => hit.endLine > hit.line ? `L${hit.line}-L${hit.endLine}` : `L${hit.line}`).join(',');
+      const sourceId = `sha256:${crypto.createHash('sha256')
+        .update(`${kb}\0${result.artifact}\0${result.contentHash}`)
+        .digest('hex')}`;
+      evidence.push({
+        kb,
+        artifact: result.artifact,
+        type: result.type,
+        hits: result.hits,
+        sourceId,
+        uri: `knowledge://legacy/${encodeURIComponent(kb)}/${encodeArtifactPath(result.artifact)}`,
+        locator,
+        contentHash: result.contentHash,
+        observedAt: result.observedAt,
+        excerpt: result.hits[0].snippet,
+      });
     }
   }
 
   // Keep even zero-score sibling rows from already scanned allowed artifacts.
   // Non-enumerable request-local candidates never enter the public response.
-  for (const item of evidence) Object.defineProperty(item, 'siblingArtifacts', { value: scannedSiblings });
+  for (const item of evidence) {
+    Object.defineProperty(item, 'siblingArtifacts', { value: scannedSiblings });
+    if (owaSelection && item.kb === 'OWAOntology') Object.defineProperty(item, 'owaSelection', { value: owaSelection });
+  }
   return evidence;
 }
 
@@ -319,22 +355,61 @@ function coherentUnits(body) {
       ? [section.trim()] : section.split(/\n\s*\n/).map(p => p.trim())).filter(Boolean);
 }
 
+function localSourceForHit(item, hit) {
+  const row = hit.owa?.row;
+  if (!row || item.kb !== row.namespace || item.artifact !== row.artifact
+      || item.contentHash !== row.contentHash || hit.line !== row.line || hit.endLine !== row.endLine) return null;
+  return describeLocalSource(row);
+}
+
+function localSourceDescription(item, hit) {
+  const source = localSourceForHit(item, hit);
+  if (!source) return null;
+  const fields = hit.owa.row.fields;
+  // Explicit source-specific fields have a meaning independent of promotion.
+  // Generic exported publishedAt can be a promotion date: never reinterpret it.
+  const publication = sourceDate(fields.sourcePublicationDate, 'declared_csv_source_date');
+  const metadata = { owningDraftId: null, publication,
+    update: sourceDate(fields.sourceUpdatedAt, 'declared_csv_source_date'),
+    retrieved: sourceDate(fields.sourceRetrievedAt, 'declared_csv_source_date'),
+    dateResolutionReason: publication.reason };
+  const owner = item.artifact === 'exports/owa_ontology/v1/chunk.csv'
+    && typeof fields.sourceDocumentRefId === 'string' && fields.sourceDocumentRefId.trim() && source.owningPath
+    ? ['explicit_chunk_owner', fields.sourceDocumentRefId, source.owningPath]
+    : ['record', source.artifact, source.recordId];
+  const version = [source.artifact, source.contentHash, fields.sourceOrigin || null,
+    fields.publishedAt || null, fields.lastModified || null, fields.retrievedAt || null,
+    fields.promotedAt || null, fields.sourcePublicationDate || null,
+    fields.sourceUpdatedAt || null, fields.sourceRetrievedAt || null];
+  return { source: { ...source, title: fields.name || fields.title || null }, metadata,
+    identity: JSON.stringify([item.kb, 'local_artifact', owner, version]) };
+}
+
+function hasExternalSourceBody(hit) {
+  // Structured OWA mappings have complete private table units even when the
+  // legacy body selector labels the CSV row technical_fields. An empty array
+  // is also authoritative: it must not fall back to a shorter body preview.
+  const owaUnits = hit.owa?.row?.namespace === 'OWAOntology' && Array.isArray(hit.owa.units);
+  return Boolean(hit.source?.sourceUrl && (owaUnits || hit.bodyField
+    && !['technical_fields', 'definitionPreview'].includes(hit.bodyField)));
+}
+
 export function assembleSourceExtracts(question, evidence, allowedNamespaces = null, root = ROOT) {
   const sources = [], extracts = [], omissions = [];
   const groups = new Map(), metadataCache = new Map(), selectedOwners = new Map();
   const permitted = allowedNamespaces || new Set(evidence.map(item => item.kb));
   const terms = extractTerms(question);
+  const requestedFacets = new Set(parseOwaQuestion(question).facets);
   function observedIdentity(item, hit) {
-    if (!permitted.has(item.kb) || !hit.source?.sourceUrl || !hit.bodyField
-        || ['technical_fields', 'definitionPreview'].includes(hit.bodyField)) return null;
+    if (!permitted.has(item.kb) || !hasExternalSourceBody(hit)) return null;
     const source = hit.source;
     return JSON.stringify([item.kb, source.sourceUrl, source.owningPath || null,
       source.sourceOrigin || null, source.csvDates?.publishedAt || null,
       source.csvDates?.lastModified || null, source.csvDates?.retrievedAt || null]);
   }
   function describe(item, hit) {
-    if (!permitted.has(item.kb) || !hit.source?.sourceUrl || !hit.bodyField
-        || ['technical_fields', 'definitionPreview'].includes(hit.bodyField)) return null;
+    if (permitted.has(item.kb) && !hit.source?.sourceUrl) return localSourceDescription(item, hit);
+    if (!permitted.has(item.kb) || !hasExternalSourceBody(hit)) return null;
     const source = hit.source;
     const promoted = String(source.owningPath || '').includes('knowledge_inbox/promoted')
       || /promoted/i.test(source.sourceOrigin || '');
@@ -344,7 +419,7 @@ export function assembleSourceExtracts(question, evidence, allowedNamespaces = n
     if (!metadataCache.has(cacheKey)) metadataCache.set(cacheKey, resolveSourceMetadata(source, item.kb, permitted, root));
     const metadata = metadataCache.get(cacheKey);
     const identity = sourceIdentity(item.kb, source, metadata);
-    return { source, metadata, identity };
+    return { source: { ...source, kind: 'external_url' }, metadata, identity };
   }
   function add(item, hit, description, selected) {
     const { source, metadata, identity } = description;
@@ -352,27 +427,48 @@ export function assembleSourceExtracts(question, evidence, allowedNamespaces = n
       if (!selected) return;
       const key = `sha256:${crypto.createHash('sha256').update(identity).digest('hex')}`;
       groups.set(identity, { source: { key, namespace: item.kb, recordIds: [], title: source.title,
+        kind: source.kind || 'external_url',
+        ...(source.kind === 'local_artifact' ? { ...source, records: [] } : {}),
         sourceUrl: source.sourceUrl, owningPath: source.owningPath || null, ...metadata },
-      units: [], seen: new Set(), relevance: 0, score: 0 });
+      units: [], seen: new Map(), relevance: 0, score: 0 });
     }
     const group = groups.get(identity);
     if (source.recordId && !group.source.recordIds.includes(source.recordId)) group.source.recordIds.push(source.recordId);
-    for (const text of coherentUnits(hit.bodyText)) {
+    if (source.kind === 'local_artifact' && !group.source.records.some(record => record.recordId === source.recordId
+        && record.locator === source.locator)) {
+      group.source.records.push({ recordId: source.recordId, artifact: source.artifact,
+        locator: source.locator, contentHash: source.contentHash });
+    }
+    const candidates = hit.owa?.units || coherentUnits(hit.bodyText).map(text => ({ text }));
+    for (const { text, facet } of candidates) {
       const normalized = text.replace(/\s+/g, ' ').trim();
-      if (group.seen.has(normalized)) continue;
-      group.seen.add(normalized);
+      if (!normalized) continue;
+      if (group.seen.has(normalized)) {
+        const existing = group.seen.get(normalized);
+        if (facet) {
+          existing.facets ||= [];
+          if (!existing.facets.includes(facet)) existing.facets.push(facet);
+        }
+        if (hit.owa && !existing.owa) Object.defineProperty(existing, 'owa', { value: hit.owa });
+        continue;
+      }
       const relevance = scoreLine(normalizeText(text), terms);
       group.score = Math.max(group.score, selected ? hit.score || 0 : 0);
-      group.units.push({ sourceKey: group.source.key, text, bodyField: hit.bodyField,
+      const unit = { sourceKey: group.source.key, text, bodyField: hit.bodyField,
+        ...(facet ? { facets: [facet] } : {}), kind: group.source.kind,
+        ...(source.kind === 'local_artifact' ? { recordId: source.recordId, locator: source.locator } : {}),
         artifact: item.artifact, line: hit.line, endLine: hit.endLine,
-        contentHash: item.contentHash, relevance });
+        contentHash: item.contentHash, relevance };
+      if (hit.owa) Object.defineProperty(unit, 'owa', { value: hit.owa });
+      group.units.push(unit);
+      group.seen.set(normalized, unit);
     }
   }
   for (const item of evidence) for (const hit of item.hits) {
     const description = describe(item, hit);
     if (description) {
       add(item, hit, description, true);
-      selectedOwners.set(observedIdentity(item, hit), description);
+      if (description.source.kind !== 'local_artifact') selectedOwners.set(observedIdentity(item, hit), description);
     }
   }
   if (!groups.size) return { sources, extracts, omissions };
@@ -408,18 +504,45 @@ export function assembleSourceExtracts(question, evidence, allowedNamespaces = n
     group.relevance = scoreLine(normalizeText(group.units.map(unit => unit.text).join('\n')), terms);
   }
   let remaining = 4000;
-  const ranked = [...groups.values()].sort((a, b) => b.relevance - a.relevance || b.score - a.score);
+  const priority = unit => {
+    if (!unit.facets) return 0;
+    let result = unit.facets.some(facet => requestedFacets.has(facet)) ? 2
+      : unit.facets.includes('unknownEnums') || /\b(?:unknown|conflict|konflikt|do potwierdzenia)\b/.test(normalizeText(unit.text)) ? 1 : 0;
+    if (!unit.owa) return result;
+    const heading = normalizeText([...unit.text.matchAll(/^#{2,6}\s+(.+)$/gm)].map(m => m[1]).join(' '));
+    const query = normalizeText(question);
+    if (/\breguly biznesowe\b/.test(heading) && requestedFacets.size) result++;
+    if (requestedFacets.has('workflow') && /\bstruktura procesu\b/.test(heading)) result++;
+    if (/\btabel\w*\b/.test(query) && /\b(?:zrodla danych|tabele mssql)\b/.test(heading)) result++;
+    if (!/\b(?:endpoint\w*|narzedz\w*|api|mcp)\b/.test(query) && /\b(?:endpoint\w*|mcp api)\b/.test(heading)) result--;
+    return result;
+  };
+  const groupPriority = group => Math.max(0, ...group.units.map(priority));
+  const ranked = [...groups.values()].sort((a, b) => groupPriority(b) - groupPriority(a)
+    || b.relevance - a.relevance || b.score - a.score);
+  function omit(group, units, reason) {
+    for (const unit of units) {
+      const omission = { sourceKey: group.source.key, reason,
+        ...(unit.facets ? { missingFacets: [...unit.facets], artifact: unit.artifact,
+          recordId: unit.recordId || null, locator: unit.locator || null } : {}) };
+      if (unit.owa) Object.defineProperty(omission, 'owa', { value: unit.owa });
+      if (unit.owa) Object.defineProperty(omission, 'owaUnit', { value: { text: unit.text,
+        facets: unit.facets, namespace: group.source.namespace, owa: unit.owa } });
+      omissions.push(omission);
+    }
+  }
   for (const [index, group] of ranked.entries()) {
-    if (index >= 2) { omissions.push({ sourceKey: group.source.key, reason: 'source_limit' }); continue; }
+    if (index >= 2) { omit(group, group.units, 'source_limit'); continue; }
     sources.push(group.source);
     let sections = 0;
     // Prioritize relevant whole sections, retaining stable source order on ties.
-    for (const unit of group.units.sort((a, b) => b.relevance - a.relevance)) {
+    for (const unit of group.units.sort((a, b) => priority(b) - priority(a) || b.relevance - a.relevance)) {
       if (sections >= 3 || unit.text.length > remaining) {
-        omissions.push({ sourceKey: group.source.key, reason: sections >= 3 ? 'section_limit' : 'answer_budget' });
+        omit(group, [unit], sections >= 3 ? 'section_limit' : 'answer_budget');
         continue;
       }
       const { relevance, ...extract } = unit;
+      if (unit.owa) Object.defineProperty(extract, 'owa', { value: unit.owa });
       extracts.push(extract);
       sections++;
       remaining -= unit.text.length;
@@ -428,20 +551,23 @@ export function assembleSourceExtracts(question, evidence, allowedNamespaces = n
   return { sources, extracts, omissions };
 }
 
-function hasSourceBody(hit) {
-  return Boolean(hit.source?.sourceUrl && hit.bodyField
-    && !['technical_fields', 'definitionPreview'].includes(hit.bodyField));
+function hasSourceBody(hit, item = null) {
+  return Boolean(hit.source?.kind === 'local_artifact' || item && localSourceForHit(item, hit)
+    || hit.source?.kind === 'external_url' && hit.source.sourceUrl || hasExternalSourceBody(hit));
 }
 
 function publicEvidence(evidence) {
   return evidence.map(item => ({ ...item,
-    excerpt: hasSourceBody(item.hits[0]) ? '' : item.excerpt,
+    excerpt: hasSourceBody(item.hits[0], item) ? '' : item.excerpt,
     hits: item.hits.map(hit => {
     const { bodyText, bodyDisplayText, ...bounded } = hit;
     // Source previews may cut a qualification even when they are short. Public
     // substantive text lives only in atomic budgeted extracts, not a second
     // unconditional preview in JSON. Technical/no-source hits stay compatible.
-    if (hasSourceBody(hit)) bounded.snippet = '';
+    if (hasSourceBody(hit, item)) bounded.snippet = '';
+    const local = !hit.source?.sourceUrl && localSourceForHit(item, hit);
+    if (local) bounded.source = local;
+    else if (hasExternalSourceBody(hit)) bounded.source = { ...hit.source, kind: 'external_url' };
     return bounded;
   }) }));
 }
@@ -449,15 +575,35 @@ function publicEvidence(evidence) {
 export function buildPragmaticAnswer(question, response, evidence, diagnostics = [], allowedNamespaces = null) {
   const routed = new Set([response.primaryKb.name, ...response.supportKbs.map(kb => kb.name)]);
   const permitted = new Set([...routed].filter(kb => !allowedNamespaces || allowedNamespaces.has(kb)));
-  const topEvidence = selectEvidence(evidence.filter(item => permitted.has(item.kb)));
-  const presentation = assembleSourceExtracts(question, topEvidence, permitted);
+  const parsedContext = parseOwaQuestion(question);
+  const owaEnabled = permitted.has('OWAOntology');
+  const selection = owaEnabled ? evidence.owaSelection : null;
+  const context = selection?.effectiveContext || parsedContext;
+  // A partially resolved exact request cannot be answered by a different owner
+  // or by generic support-KB evidence. Keep the original selection for coverage.
+  const usableEvidence = owaEnabled && context.qualifiedIds.length && selection?.missing ? [] : evidence;
+  const topEvidence = selectEvidence(usableEvidence.filter(item => permitted.has(item.kb)));
+  // Apply the actual source/unit budget to all Task 2 candidates, independently
+  // of the generic artifact preview cap. Legacy evidence retains that cap.
+  const presentationEvidence = [...topEvidence, ...usableEvidence.filter(item => item.kb === 'OWAOntology'
+    && permitted.has(item.kb) && item.hits.some(hit => hit.owa) && !topEvidence.includes(item))];
+  const presentation = assembleSourceExtracts(question, presentationEvidence, permitted);
   const requiredTerms = [...new Set([
     ...extractTerms(question).filter(term => DOCUMENT_CODES.has(term)),
     ...extractFocusHints(question),
   ])];
-  const visibleText = normalizeText(topEvidence.flatMap(item => item.hits.map(hit => hit.snippet)).join('\n'));
+  const publicItems = publicEvidence(topEvidence);
+  const visibleUnits = [...presentation.extracts.map(unit => ({ ...unit,
+    owa: unit.owa,
+    namespace: presentation.sources.find(source => source.key === unit.sourceKey)?.namespace })), ...publicItems.flatMap(item => item.hits
+    .filter(hit => !hasSourceBody(hit) && hit.snippet?.trim())
+    .map(hit => ({ text: hit.snippet, namespace: item.kb, artifact: item.artifact, recordId: hit.recordId })))];
+  const coverage = owaEnabled ? assessOwaCoverage(context, selection, visibleUnits) : null;
+  if (coverage) presentation.omissions = reconcileOwaOmissions(context, selection, coverage, presentation.omissions);
+  const visibleText = normalizeText(visibleUnits.map(unit => unit.text).join('\n'));
   const missingTerms = requiredTerms.filter(term => !containsTerm(visibleText, term));
-  const insufficient = !topEvidence.length || missingTerms.length > 0 || diagnostics.length > 0;
+  const insufficient = !topEvidence.length || missingTerms.length > 0 || diagnostics.length > 0
+    || Boolean(coverage && coverage.status !== 'covered');
   const answer = {
     question,
     primaryKb: response.primaryKb.name,
@@ -476,11 +622,13 @@ export function buildPragmaticAnswer(question, response, evidence, diagnostics =
         ...(!topEvidence.length ? ['no_local_evidence'] : []),
         ...(missingTerms.length ? ['missing_requested_terms'] : []),
         ...diagnostics.map(item => item.code),
+        ...(coverage?.reasons || []),
         'text_matches_do_not_verify_claims',
       ])],
     },
-    evidence: publicEvidence(topEvidence),
+    evidence: publicItems,
     ...presentation,
+    ...(coverage ? { owaCoverage: coverage, answerNotes: coverage.notices } : {}),
     externalEvidence: [],
     evidenceSource: topEvidence.length ? 'local' : 'none',
     freshnessNote: '',
@@ -530,6 +678,11 @@ export function renderAnswerMarkdown(answer) {
     lines.push(`Uwaga o świeżości: ${answer.freshnessNote}`);
     lines.push('');
   }
+  if (answer.answerNotes?.length) {
+    lines.push('Zakres odpowiedzi:');
+    for (const note of answer.answerNotes) lines.push(`- ${note}`);
+    lines.push('');
+  }
   if (answer.evidence.length) {
     lines.push('Dowody z lokalnej KB:');
     for (const item of answer.evidence) {
@@ -553,15 +706,29 @@ export function renderAnswerMarkdown(answer) {
     lines.push('');
   }
   if (answer.omissions?.length) {
-    lines.push('Ograniczenie pokrycia: pominięto całe fragmenty lub źródła; odpowiedź nie obejmuje wszystkich aspektów.');
-    for (const omission of answer.omissions) lines.push(`- ${omission.sourceKey}: ${omission.reason}`);
+    lines.push(answer.owaCoverage
+      ? 'Ograniczenie prezentacji: pominięto całe fragmenty lub źródła; brakujące aspekty oceniono względem pokazanych dowodów.'
+      : 'Ograniczenie pokrycia: pominięto całe fragmenty lub źródła; odpowiedź nie obejmuje wszystkich aspektów.');
+    for (const omission of answer.omissions) {
+      const missing = omission.uncoveredFacets ?? omission.missingFacets;
+      lines.push(`- ${omission.sourceKey}: ${omission.reason}`
+        + (missing?.length ? `; brak pokrycia: ${missing.join(', ')}` : ''));
+    }
     lines.push('');
   }
   if (answer.sources?.length) {
     lines.push('Cytowane źródła (daty źródłowe, nie daty wejścia w życie):');
     for (const [index, source] of answer.sources.entries()) {
       lines.push(`- [S${index + 1}] ${source.title || source.recordIds.join(', ')} — ${source.namespace}`);
-      lines.push(`  URL: ${source.sourceUrl}`);
+      if (source.kind === 'local_artifact') {
+        for (const record of source.records || [source]) {
+          lines.push(`  Źródło lokalne: ${record.artifact}, ${record.locator}`);
+          lines.push(`  Rekord: ${record.recordId}; hash: ${record.contentHash}`);
+        }
+        if (source.owningPath) lines.push(`  Dokument właścicielski: ${source.owningPath}`);
+      } else {
+        lines.push(`  URL: ${source.sourceUrl}`);
+      }
       for (const [field, label] of [['publication', 'Publikacja'], ['update', 'Aktualizacja'], ['retrieved', 'Pobranie']]) {
         const date = source[field];
         lines.push(`  ${label}: ${date.value || `nieznana (${date.reason})`}; podstawa: ${date.basis}`
@@ -605,14 +772,19 @@ export async function answerQuestion(question, allowedNamespaces = null, options
   const terms = extractTerms(question);
   const focusHints = extractFocusHints(question);
   const diagnostics = [];
-  const evidence = gatherEvidence(response, terms, focusHints, allowedNamespaces, diagnostics);
+  const evidence = gatherEvidence(response, terms, focusHints, allowedNamespaces, diagnostics, parseOwaQuestion(question));
   const answer = buildPragmaticAnswer(question, response, evidence, diagnostics, allowedNamespaces);
   const fallbackDecision = shouldUseExternalFallback({
     questionNormalized: classified.normalizedQuestion,
     evidence,
     primaryKb: response.primaryKb.name,
   });
-  if (fallbackDecision.shouldFallback) {
+  // Explicit, permitted OWA answers describe this local ontology, including its
+  // missing/ambiguous boundaries. A provider cannot supply substitute claims.
+  // Release and generic requests retain the existing fallback policy.
+  const localOwaAnswer = parseOwaQuestion(question).explicitOwa && Boolean(answer.owaCoverage)
+    && response.primaryKb.name === 'OWAOntology';
+  if (fallbackDecision.shouldFallback && !localOwaAnswer) {
     try {
       const external = await searchExternalSources({
         query: question,

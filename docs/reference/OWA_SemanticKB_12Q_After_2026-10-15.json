@@ -1,0 +1,815 @@
+{
+  "schemaVersion": 2,
+  "status": "COMPLETE_MANUAL_REVIEW",
+  "acceptance": "PASS",
+  "generatedAt": "2026-10-15T20:13:53.639Z",
+  "date": "2026-10-15",
+  "baselineCommit": "2a4ef8a13bfa50997a78c59b39632ef050496643",
+  "reviewedTree": "f2100a4d0c55e478aa9c62523a23511a899acc0a",
+  "baselineSha256": "4124f75b330142b6894637380e90589c78dec24362af721eedc45f57276221d2",
+  "criteria": {
+    "PASS": "Answers the requested facts or appropriately identifies missing/ambiguous evidence; provides attributable supporting evidence; does not turn historical source claims into fresh runtime verification.",
+    "PARTIAL": "Relevant evidence is returned, but requested facts, qualification, explanation or attribution are incomplete.",
+    "MISS": "No useful answer to the requested subject, unrelated evidence, invented unsupported certainty, or tool error.",
+    "scoring": "Manual review of visible tool output against pre-read OWA source documents; retrieval confidence and keyword matches are not correctness scores.",
+    "negativeControls": "Q10 may explain multiple interpretations instead of asking a question. Q11/Q12 must not invent missing enums or fictional processes."
+  },
+  "scope": "User-visible connected SemanticKB tools; source-fidelity QA, not verification of current MSSQL or ERP behavior",
+  "transport": "Actual connected SemanticKB tools; complete harness-visible Markdown capture",
+  "rawHttpEnvelopeCaptured": false,
+  "as_of": "2026-10-15",
+  "limit": 5,
+  "correlationPrefix": "owa-12q-central-20261015-",
+  "scoredCalls": 12,
+  "successfulResponses": 12,
+  "questionChanges": 0,
+  "summary": {
+    "PASS": 12,
+    "PARTIAL": 0,
+    "MISS": 0
+  },
+  "baselineSummary": {
+    "PASS": 0,
+    "PARTIAL": 4,
+    "MISS": 8,
+    "primaryOwa": 6,
+    "primaryBusinessSemanticsOnly": 6
+  },
+  "priorAttemptSummary": {
+    "PASS": 0,
+    "PARTIAL": 4,
+    "MISS": 8
+  },
+  "attemptTimeline": [
+    {
+      "attempt": "Dedicated Semantic reload; public still served old central imports",
+      "startedAt": "2026-10-15T19:49:28.954Z",
+      "completedAt": "2026-10-15T19:50:38.127Z",
+      "summary": {
+        "PASS": 0,
+        "PARTIAL": 4,
+        "MISS": 8
+      },
+      "status": "FAILED_PRESERVED",
+      "evidence": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12",
+      "publicReportsArchive": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12-central-reload/20261015T200922081Z/failed-public-reports"
+    },
+    {
+      "attempt": "Read-only public route diagnosis",
+      "completedAt": "2026-10-15T20:03:08.726Z",
+      "status": "CENTRAL_DISPATCHER_STALE_IMPORTS_CONFIRMED",
+      "evidence": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/topology-readonly"
+    },
+    {
+      "attempt": "Explicitly approved central-only reload and connected live12",
+      "startedAt": "2026-10-15T20:09:24.801Z",
+      "restartVerifiedAt": "2026-10-15T20:09:51.498Z",
+      "connectedStartedAt": "2026-10-15T20:10:06.911Z",
+      "connectedCompletedAt": "2026-10-15T20:10:51.225Z",
+      "postflightAt": "2026-10-15T20:11:00.518Z",
+      "summary": {
+        "PASS": 12,
+        "PARTIAL": 0,
+        "MISS": 0
+      },
+      "status": "PASS",
+      "evidence": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12-central-reload/20261015T200922081Z"
+    }
+  ],
+  "primaryOwa": 12,
+  "fullEvidenceRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12-central-reload/20261015T200922081Z",
+  "responsesManifestSha256": "42e80ac07ced062c4f29cfe425444084ed4469b654a46e850d594d1ed7a9d929",
+  "qaEvidenceManifestSha256": "207e87ac980e38389f0728d02fc128a3069252af111fe309b9bac725b7cad205",
+  "manualReviewSha256": "201d28a03a9cb698964ee41309f2ca4bf089757feb9ea92059f742307d91cdac",
+  "sourceHashManifestSha256": "2e9b563a28033dcd5e435bf17e67999195b3b11b81532fd519eca3f4696093d3",
+  "physicalLocatorsVerified": 41,
+  "maximumExtractCharacters": 3929,
+  "results": [
+    {
+      "id": "Q01",
+      "tool": "erp_entity.get",
+      "request": {
+        "query": "W ontologii OWA czym jest kontrahent, jaki ma identyfikator i czy może być jednocześnie dostawcą i odbiorcą? Podaj źródło i poziom weryfikacji.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q01",
+        "limit": 5
+      },
+      "requestSha256": "d88d813326f2fec8ed611f177d28491bd9718695fd23bc323f45655c650f36ab",
+      "partId": "prt_1412fb0ac001BlRyuLTyE8qtpv",
+      "time": {
+        "start": 1792095006911,
+        "end": 1792095010027
+      },
+      "markdownSha256": "1d34189ce23148bf247de8e45842b9101064e53eb2b6592243361eed9d033399",
+      "markdownBytes": 9521,
+      "safeJsonSha256": "58c7a4f3aacd5cb82c05da69ff2864d9631b3f1fb2dea2d177a14d0486315a48",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:06.911Z",
+      "completedAt": "2026-10-15T20:10:10.027Z",
+      "expected": "Kartoteka kontrahentów; Knt_KntId; niezależne role dostawcy i odbiorcy; źródło częściowo zweryfikowane.",
+      "score": "PASS",
+      "manualReason": "The complete Kontrahent extracts define the contractor card, Knt_KntId and independent Knt_Rodzaj_Dostawca / Knt_Rodzaj_Odbiorca flags. The historical status is explicitly częściowo-zweryfikowane and current verification is not claimed.",
+      "manualEvidence": "chunk.csv L2125-L2143; ontology_entity.csv L173",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2125,
+          "endLine": 2143,
+          "recordId": "OWA_CHUNK_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2144,
+          "endLine": 2163,
+          "recordId": "OWA_CHUNK_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_2",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2230,
+          "endLine": 2238,
+          "recordId": "OWA_CHUNK_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_6",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+          "line": 173,
+          "endLine": 173,
+          "recordId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+          "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16"
+        }
+      ],
+      "extractCharacters": 1833,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 1
+      }
+    },
+    {
+      "id": "Q02",
+      "tool": "erp_entity.get",
+      "request": {
+        "query": "Opisz encję Towar w OWA: identyfikator wewnętrzny, kod biznesowy oraz miejsce przechowywania wielu cen towaru. Podaj źródła.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q02",
+        "limit": 5
+      },
+      "requestSha256": "3073bfddfa579e76fd057acdfdfd7db517a80d19a12bf10b03c01c9098910a04",
+      "partId": "prt_1412fb0c7001OV1k8V4Fj3RSio",
+      "time": {
+        "start": 1792095006933,
+        "end": 1792095013136
+      },
+      "markdownSha256": "7f07412fa5e667379d3da07e7839dd27e8ac238af21f9dda87f8b1ae7135c0eb",
+      "markdownBytes": 11950,
+      "safeJsonSha256": "451f96e7cf66113a1ac33c4af2ddb923f6d137c2e2f1246f058db129332aaf77",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:06.933Z",
+      "completedAt": "2026-10-15T20:10:13.136Z",
+      "expected": "Twr_TwrId, Twr_Kod, osobna TwrCeny z wieloma cenami; dowód źródłowy.",
+      "score": "PASS",
+      "manualReason": "The shown identifier table contains Twr_TwrId as the internal identity and Twr_Kod as the business code. Business rules and the source table explicitly place variant prices in CDN.TwrCeny with TwC_TwCNumer. A broader UNKNOWN notice concerns detailed price-validation/discount/availability rules; it does not erase these visible requested facts.",
+      "manualEvidence": "chunk.csv L4064-L4106; ontology_entity.csv L503",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4064,
+          "endLine": 4086,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4087,
+          "endLine": 4106,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_2",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4152,
+          "endLine": 4167,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_6",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4168,
+          "endLine": 4199,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_7",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4200,
+          "endLine": 4233,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_8",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+          "line": 503,
+          "endLine": 503,
+          "recordId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+          "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16"
+        }
+      ],
+      "extractCharacters": 2418,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 1
+      }
+    },
+    {
+      "id": "Q03",
+      "tool": "erp_entity.get",
+      "request": {
+        "query": "Jak ontologia OWA opisuje magazyn: klucz główny, unikalny symbol i dezaktywację? Podaj mapowanie do MSSQL i źródło.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q03",
+        "limit": 5
+      },
+      "requestSha256": "bde577bf6a45d8209358b4c440aca10d56421a13f31387a9d8b7f92c4f25116b",
+      "partId": "prt_1412fb0dc001IDmFgAtJZjva4K",
+      "time": {
+        "start": 1792095006957,
+        "end": 1792095011124
+      },
+      "markdownSha256": "521bcd7a861677db14cd43020ed078d588d2738089a315f95af1a7e6cca012cc",
+      "markdownBytes": 6760,
+      "safeJsonSha256": "4a05eeb6189492f565b3f09250936c0b394a56edae8b0eac3e9a1d4ac9845702",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:06.957Z",
+      "completedAt": "2026-10-15T20:10:11.124Z",
+      "expected": "CDN.Magazyny, Mag_MagId, Mag_Symbol UNIQUE, Mag_NieAktywny; bez twierdzenia o świeżej kontroli MSSQL.",
+      "score": "PASS",
+      "manualReason": "The shown Magazyn text names CDN.Magazyny, Mag_MagId as PK, Mag_Symbol as UNIQUE and Mag_NieAktywny as the deactivation flag. The Mag_Typ enum remains explicitly UNKNOWN, and no fresh MSSQL check is claimed.",
+      "manualEvidence": "chunk.csv L2489-L2516; ontology_entity.csv L265",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2489,
+          "endLine": 2516,
+          "recordId": "OWA_CHUNK_MAGAZYN_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2517,
+          "endLine": 2550,
+          "recordId": "OWA_CHUNK_MAGAZYN_2",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2551,
+          "endLine": 2571,
+          "recordId": "OWA_CHUNK_MAGAZYN_3",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+          "line": 265,
+          "endLine": 265,
+          "recordId": "OWA_ENTITY_ENCJA_MAGAZYN",
+          "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16"
+        }
+      ],
+      "extractCharacters": 1381,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 1
+      }
+    },
+    {
+      "id": "Q04",
+      "tool": "erp_process.explain",
+      "request": {
+        "query": "Wyjaśnij w OWA proces zakupowy PZ → FZ: co oznaczają oba dokumenty i jaki skutek magazynowy ma PZ? Rozdziel opis procesu od potwierdzenia wykonania operacji.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q04",
+        "limit": 5
+      },
+      "requestSha256": "dc3b9c9ab787ca1609e303dee1825cf13c0aef17053ca657f4a294d114fc4bb1",
+      "partId": "prt_1412fede00016sljTCar4uyrSS",
+      "time": {
+        "start": 1792095022574,
+        "end": 1792095023194
+      },
+      "markdownSha256": "8a2678b17db931082dc4846b09d580d69559f6bdfe2f37f3b3af1324e53553f7",
+      "markdownBytes": 4808,
+      "safeJsonSha256": "72ea2edc76293ecb18fe15ae0b5b6fdbe782b7c19c77b0715a0b36baf137d687",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:22.574Z",
+      "completedAt": "2026-10-15T20:10:23.194Z",
+      "expected": "Przyjęcie zewnętrzne zwiększa stan, faktura zakupu dokumentuje zakup, możliwe powiązanie; bez twierdzenia o wykonaniu endpointów.",
+      "score": "PASS",
+      "manualReason": "The shown PZ source defines external receipt from a supplier, possible linkage to FZ (faktura zakupu), the directed ZO→PZ→FZ purchase workflow and the PZ stock increase in the destination warehouse. The answer explicitly separates workflow documentation from performed operations/endpoints/current ERP effects.",
+      "manualEvidence": "chunk.csv L3509-L3540",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 3509,
+          "endLine": 3540,
+          "recordId": "OWA_CHUNK_PRZYJECIE_ZEWNETRZNE_PZ_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+          "line": 383,
+          "endLine": 413,
+          "recordId": "OWA_ENTITY_ENCJA_PRZYJECIE_ZEWNETRZNE_PZ",
+          "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16"
+        }
+      ],
+      "extractCharacters": 434,
+      "perSourceUnitCounts": {
+        "S1": 2
+      }
+    },
+    {
+      "id": "Q05",
+      "tool": "erp_process.explain",
+      "request": {
+        "query": "Wyjaśnij w OWA relację WZ → FS w procesie sprzedaży. Który dokument zmienia stan magazynowy i czy opis workflow dowodzi wykonania operacji? Podaj źródła.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q05",
+        "limit": 5
+      },
+      "requestSha256": "bd00ee42bd7c4b470952c8a50587eb1f77fbf179dc6ca313cb1864a44e28a299",
+      "partId": "prt_1412fedf6001raLhGAu8lEBqKC",
+      "time": {
+        "start": 1792095022598,
+        "end": 1792095023736
+      },
+      "markdownSha256": "d09e9a751c0f463303044cfd43acf1437a9b4f7909fe1d1824bef533ffe5a7a0",
+      "markdownBytes": 7788,
+      "safeJsonSha256": "e4d7bbda144856973a1f2973b9eedf971b2dc3b332a69cdc7a108ca02d3569b6",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:22.598Z",
+      "completedAt": "2026-10-15T20:10:23.736Z",
+      "expected": "WZ wydaje towar i zmniejsza stan, FS to faktura sprzedaży, powiązanie procesu nie jest dowodem wykonania.",
+      "score": "PASS",
+      "manualReason": "Complete WZ business/rule/relation units explain physical issue and stock decrease, possible linkage to the sales invoice FS, and WZ→FS. The answer explicitly says documentation is not execution proof; remaining correction/return details are attributed UNKNOWN rather than fabricated.",
+      "manualEvidence": "chunk.csv L4525-L4580; ontology_entity.csv L507",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4525,
+          "endLine": 4549,
+          "recordId": "OWA_CHUNK_WYDANIE_ZEWNETRZNE_WZ_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4550,
+          "endLine": 4580,
+          "recordId": "OWA_CHUNK_WYDANIE_ZEWNETRZNE_WZ_2",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4581,
+          "endLine": 4590,
+          "recordId": "OWA_CHUNK_WYDANIE_ZEWNETRZNE_WZ_3",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+          "line": 507,
+          "endLine": 507,
+          "recordId": "OWA_ENTITY_ENCJA_WYDANIE_ZEWNETRZNE_WZ",
+          "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16"
+        }
+      ],
+      "extractCharacters": 2021,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 1
+      }
+    },
+    {
+      "id": "Q06",
+      "tool": "erp_relation.list",
+      "request": {
+        "query": "Jak w OWA kontrahent jest powiązany z dokumentem handlowym i osobami kontaktowymi? Podaj kierunek, kardynalność i dostępne warunki JOIN.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q06",
+        "limit": 5
+      },
+      "requestSha256": "8eca002ef6ad552e897b7f119f5581b9f9b01bf439181a71aa51cb249945b851",
+      "partId": "prt_1412fee0d001QS87JNZXzJQdvI",
+      "time": {
+        "start": 1792095022618,
+        "end": 1792095024159
+      },
+      "markdownSha256": "90e8282ff9a9b73a2012423d275c50c006013c4ca94487cd2488209899f3dc42",
+      "markdownBytes": 9162,
+      "safeJsonSha256": "c83653aee1ad4df5d1c87658c7f96f0d8f5775f4139c6f5e74cac379a0d5a982",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:22.618Z",
+      "completedAt": "2026-10-15T20:10:24.159Z",
+      "expected": "TraNag→Kontrahent N:1 przez TrN_PodID=Knt_KntId; Kontrahent→KntOsoba 1:N przez KntO_KntId=Knt_KntId.",
+      "score": "PASS",
+      "manualReason": "The complete contractor relation table shows TraNag→Kontrahent N:1 with TraNag.TrN_PodID=Kontrahenci.Knt_KntId and Kontrahent→KntOsoba 1:N with KntOsoby.KntO_KntId=Kontrahenci.Knt_KntId. The historical source provenance and unverified-source boundary remain visible.",
+      "manualEvidence": "chunk.csv L2200-L2229",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2200,
+          "endLine": 2229,
+          "recordId": "OWA_CHUNK_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_5",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2230,
+          "endLine": 2238,
+          "recordId": "OWA_CHUNK_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_6",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 568,
+          "endLine": 590,
+          "recordId": "OWA_CHUNK_DOKUMENT_HANDLOWY_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 591,
+          "endLine": 607,
+          "recordId": "OWA_CHUNK_DOKUMENT_HANDLOWY_2",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        }
+      ],
+      "extractCharacters": 2851,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 3
+      }
+    },
+    {
+      "id": "Q07",
+      "tool": "erp_process.explain",
+      "request": {
+        "query": "Jak OWA opisuje etapy workflow dokumentu, historię przejść i oznaczenie etapu obowiązkowego? Wskaż tabele i ograniczenia weryfikacji.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q07",
+        "limit": 5
+      },
+      "requestSha256": "8552dbcc4c87772746f58bee668379dbb52ef0b96abaf71014fdfe93f09ab7e5",
+      "partId": "prt_141301730001MMV3oYz0Jmgte1",
+      "time": {
+        "start": 1792095033165,
+        "end": 1792095033787
+      },
+      "markdownSha256": "b9b62e1418d2a9e759a67d7a4da9b9c17bd0a6b5eb7286588f630bfa1da1a54f",
+      "markdownBytes": 8360,
+      "safeJsonSha256": "9c348406d75cda294d0c90c199977c3f2e6a54f16c2bd4502b98b10d1c4371c0",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:33.165Z",
+      "completedAt": "2026-10-15T20:10:33.787Z",
+      "expected": "DokNagEtapy, DokNagEtapyHistoria, DokNagProcesEtapy, DnE_Obowiazkowy; nie zakładać jednego identycznego cyklu dla każdego typu.",
+      "score": "PASS",
+      "manualReason": "Complete workflow units show DokNagEtapy, DokNagEtapyHistoria and DokNagProcesEtapy, mandatory DnE_Obowiazkowy=1, history links and per-document-type DefEtapy/transitions. The generic lifecycle is qualified by each type having its own definition; DoR_Flaga values remain do potwierdzenia and no execution is claimed.",
+      "manualEvidence": "chunk.csv L4394-L4448; ontology_entity.csv L506",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4394,
+          "endLine": 4419,
+          "recordId": "OWA_CHUNK_WORKFLOW_DOKUMENTU_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4420,
+          "endLine": 4448,
+          "recordId": "OWA_CHUNK_WORKFLOW_DOKUMENTU_2",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4449,
+          "endLine": 4480,
+          "recordId": "OWA_CHUNK_WORKFLOW_DOKUMENTU_3",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4481,
+          "endLine": 4506,
+          "recordId": "OWA_CHUNK_WORKFLOW_DOKUMENTU_4",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+          "line": 506,
+          "endLine": 506,
+          "recordId": "OWA_ENTITY_ENCJA_WORKFLOW_DOKUMENTU",
+          "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16"
+        }
+      ],
+      "extractCharacters": 2328,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 1
+      }
+    },
+    {
+      "id": "Q08",
+      "tool": "erp_relation.list",
+      "request": {
+        "query": "Podaj w OWA relacje towaru z grupą towarową i cenami: kardynalność, warunek JOIN oraz rozróżnienie FK i relacji logicznej.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q08",
+        "limit": 5
+      },
+      "requestSha256": "70ac4cdc0060d4414615606ae9db7596becd5962340cdec5f32691a852150be3",
+      "partId": "prt_1413017570017N4i71u1AJ5uUr",
+      "time": {
+        "start": 1792095033198,
+        "end": 1792095036590
+      },
+      "markdownSha256": "10c70c8cb8838bbc363893406e2b33b0163392bcee24c7a098d663613a98f464",
+      "markdownBytes": 9859,
+      "safeJsonSha256": "e4e52e71be48443b2e129fde162d10c20386981ab7117068799c17e1217b3d03",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:33.198Z",
+      "completedAt": "2026-10-15T20:10:36.590Z",
+      "expected": "Towar→Grupa N:1 LOGICAL_JOIN; Towar→CenaTowaru 1:N FK; warunki z Towary/Grupy i TwrCeny.",
+      "score": "PASS",
+      "manualReason": "The full relation table distinguishes Towar→Grupa N:1 LOGICAL_JOIN via Towary.Twr_TwGGIDNumer=Grupy.Gru_GruID from Towar→CenaTowaru 1:N FK via TwrCeny.TwC_TwrID=Towary.Twr_TwrId (CASCADE). Differing historical group-source validation statements remain attributable, not silently repaired or promoted into current verification.",
+      "manualEvidence": "chunk.csv L4152-L4167 and L1339-L1406",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4145,
+          "endLine": 4151,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_5",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4152,
+          "endLine": 4167,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_6",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4168,
+          "endLine": 4199,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_7",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 4200,
+          "endLine": 4233,
+          "recordId": "OWA_CHUNK_TOWAR_KARTOTEKA_TOWAROW_I_USUG_8",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 1339,
+          "endLine": 1381,
+          "recordId": "OWA_CHUNK_GRUPA_TOWAROWA_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 1382,
+          "endLine": 1406,
+          "recordId": "OWA_CHUNK_GRUPA_TOWAROWA_2",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        }
+      ],
+      "extractCharacters": 3929,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 3
+      }
+    },
+    {
+      "id": "Q09",
+      "tool": "erp_entity.get",
+      "request": {
+        "query": "Co opisuje OWAOntology.Atrybutytestv2 (Atrybuty test v2), jaka tabela jest wskazana jako źródło i czy materiał zawiera pełne mapowanie pól? Nie dopowiadaj brakujących szczegółów.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q09",
+        "limit": 5
+      },
+      "requestSha256": "cb96fdfd0008ae566be12411ac4bd50f71a3bd9e7541c5e11e6c5e0ee2d09564",
+      "partId": "prt_1413017750013FdPlW2l60q5dr",
+      "time": {
+        "start": 1792095033225,
+        "end": 1792095038989
+      },
+      "markdownSha256": "f97bdd4c421a38efd8a965f1ab8c10a32adfd25b1ca2b38e07dfb90c13beb782",
+      "markdownBytes": 4561,
+      "safeJsonSha256": "265a7a7cba84168051c5e9a5fdc14956562f8fd0d5f807c919da5194945bd9dc",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:33.225Z",
+      "completedAt": "2026-10-15T20:10:38.989Z",
+      "expected": "Definicje atrybutów, CDN.DefAtrybuty, częściowo zweryfikowane; brak pełnego mapowania w krótkim materiale.",
+      "score": "PASS",
+      "manualReason": "The exact Atrybutytestv2 extracts describe attribute definitions, identify CDN.DefAtrybuty and historical częściowo-zweryfikowane status. The answer explicitly states that the displayed material does not provide a full field map and limits that conclusion to the shown content.",
+      "manualEvidence": "chunk.csv L85-L102; ontology_entity.csv L23",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 85,
+          "endLine": 102,
+          "recordId": "OWA_CHUNK_ATRYBUTY_TEST_V2_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+          "line": 23,
+          "endLine": 23,
+          "recordId": "OWA_ENTITY_ENCJA_ATRYBUTY_TEST_V2",
+          "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16"
+        }
+      ],
+      "extractCharacters": 530,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 1
+      }
+    },
+    {
+      "id": "Q10",
+      "tool": "erp_concept.search",
+      "request": {
+        "query": "Co oznacza stan dokumentu w OWA? Nie podałem typu dokumentu ani tego, czy chodzi o bufor, księgowanie, rozliczenie czy etap obiegu.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q10",
+        "limit": 5
+      },
+      "requestSha256": "19768d09a221e41b3ea3df64bbc0400e253b6b7a07d77cfb0915bb4c02ab904c",
+      "partId": "prt_141304f8c001c0gwz1c1jCwiRG",
+      "time": {
+        "start": 1792095047584,
+        "end": 1792095049911
+      },
+      "markdownSha256": "912adaf72389273f8cef4d949134b8a40ac330f454a7d4eb8fe003ff79bad194",
+      "markdownBytes": 3476,
+      "safeJsonSha256": "25ee4e5d2f19e0dba58f9cb0b49dc2a9567e8006b5498c05ce5146b5594f3b41",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:47.584Z",
+      "completedAt": "2026-10-15T20:10:49.911Z",
+      "expected": "Rozpoznanie niejednoznaczności i różnych osi stanu lub prośba o doprecyzowanie; nie jedna uniwersalna wartość.",
+      "score": "PASS",
+      "manualReason": "The answer itself asks to clarify document type and status axis and states that general stan dokumentu does not fix the scope. This is substantive clarification beyond the echoed question and does not invent one universal status value.",
+      "manualEvidence": "Zakres odpowiedzi: Doprecyzuj typ dokumentu i oś stanu",
+      "citations": [],
+      "extractCharacters": 0,
+      "perSourceUnitCounts": {}
+    },
+    {
+      "id": "Q11",
+      "tool": "erp_entity.get",
+      "request": {
+        "query": "Czy OWA podaje potwierdzony kompletny słownik wartości Knt_Rodzaj? Jeśli nie, wskaż dokładnie brak wiedzy zamiast zgadywać numery kodów.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q11",
+        "limit": 5
+      },
+      "requestSha256": "39ce558ac8a36820513ff6ffce3d682a7f0b0cfaae16926518537f8097fb9622",
+      "partId": "prt_141304fa6001ngLyG3y8F2wn7x",
+      "time": {
+        "start": 1792095047605,
+        "end": 1792095051225
+      },
+      "markdownSha256": "e269aa595c8a5c0588c2b44ea72c472692a73e28ca5345cf927681f6fac36f7f",
+      "markdownBytes": 6661,
+      "safeJsonSha256": "2806fc8faca4ee852f6ab5f585cec9ee82b380aa2d4a25ed326fbdf9790853c2",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:47.605Z",
+      "completedAt": "2026-10-15T20:10:51.225Z",
+      "expected": "Materiał Kontrahent jawnie oznacza precyzyjne wartości Knt_Rodzaj jako UNKNOWN; nie wymyślać enum.",
+      "score": "PASS",
+      "manualReason": "The answer explicitly attributes Knt_Rodzaj UNKNOWN/do potwierdzenia to a named source record and quotes the precise open issue about possible code values. No numeric enum is invented; an existing field mapping is not treated as a complete enum.",
+      "manualEvidence": "chunk.csv L2200-L2229; ontology_field.csv L42",
+      "citations": [
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2125,
+          "endLine": 2143,
+          "recordId": "OWA_CHUNK_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_1",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2200,
+          "endLine": 2229,
+          "recordId": "OWA_CHUNK_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_5",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/chunk.csv",
+          "line": 2230,
+          "endLine": 2238,
+          "recordId": "OWA_CHUNK_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_6",
+          "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8"
+        },
+        {
+          "artifact": "exports/owa_ontology/v1/ontology_field.csv",
+          "line": 42,
+          "endLine": 42,
+          "recordId": "OWA_FIELD_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_KNT_RODZAJ",
+          "artifactSha256": "c0c17e8f0115f86b140e40a9e2cc02b1601bcca93f2d932e21736031d8aa6e17"
+        }
+      ],
+      "extractCharacters": 1649,
+      "perSourceUnitCounts": {
+        "S1": 3,
+        "S2": 1
+      }
+    },
+    {
+      "id": "Q12",
+      "tool": "erp_process.explain",
+      "request": {
+        "query": "Czy ontologia OWA dokumentuje proces OWA_QA_TELEPORTACJA_FAKTURY_987654? Jeśli nie ma dowodów, powiedz to wprost i nie zastępuj odpowiedzi opisem innego procesu.",
+        "as_of": "2026-10-15",
+        "correlation_id": "owa-12q-central-20261015-Q12",
+        "limit": 5
+      },
+      "requestSha256": "d26e811f5875cf6d6a3d1230dd1b8d61053ca078a0481eea6c2e688d2c724e8a",
+      "partId": "prt_141304fbc001volxBWl1lNMm6Q",
+      "time": {
+        "start": 1792095047625,
+        "end": 1792095050626
+      },
+      "markdownSha256": "bad0ec0458fcc61be1c6a2e3c0260e28760844a2eca3c093e018c86eca0e6c4d",
+      "markdownBytes": 1224,
+      "safeJsonSha256": "df39318ebc1e81ce42242a36a46fb55d6273c48cd3bd9fabf621d6c20a73821c",
+      "primaryKb": "OWAOntology",
+      "equalsReviewedOffline": true,
+      "startedAt": "2026-10-15T20:10:47.625Z",
+      "completedAt": "2026-10-15T20:10:50.626Z",
+      "expected": "Jawny brak dowodu dla fikcyjnego procesu; bez potwierdzenia lub zamiany na inny workflow.",
+      "score": "PASS",
+      "manualReason": "The answer explicitly reports no evidence for the complete requested fictional process ID in searched local sources, refuses substitution with another entity/process, and distinguishes this from ERP-wide nonexistence. No unrelated source extracts are substituted.",
+      "manualEvidence": "Zakres odpowiedzi: exact ID and scoped lack-of-evidence notice",
+      "citations": [],
+      "extractCharacters": 0,
+      "perSourceUnitCounts": {}
+    }
+  ],
+  "smoke": {
+    "tlsVerificationResult": 0,
+    "readOnlyProfileCount": 7,
+    "diagnosticQ01": {
+      "scored": false,
+      "markdownSha256": "1d34189ce23148bf247de8e45842b9101064e53eb2b6592243361eed9d033399",
+      "expectedReviewedHash": "1d34189ce23148bf247de8e45842b9101064e53eb2b6592243361eed9d033399",
+      "wholeBodyEqual": true,
+      "primaryKb": "OWAOntology",
+      "owaCoverage": "covered"
+    }
+  },
+  "limits": [
+    "Historical source statuses and UNKNOWN declarations are not fresh MSSQL/ERP verification.",
+    "All answers declare local artifacts and no graph execution; as_of is not proof of historical filtering.",
+    "Some broader insufficiency/UNKNOWN notices coexist with requested facts that are fully shown; these are not automatically failing grades.",
+    "Complete body equality with reviewed offline responses is supporting binding, not a substitute for manual grading.",
+    "Ordinary request/audit/learning telemetry was allowed; no configuration was changed to suppress it."
+  ],
+  "documentationRevision": {
+    "id": "20261015T202836648Z-I1-M2",
+    "at": "2026-10-15T20:28:36.648Z",
+    "scope": "DOCUMENTATION ONLY: I1 recovery-runbook correction and M2 aggregate interval correction; no rollback/restart/runtime/config/source/index operation authorized or executed.",
+    "findingsAddressed": [
+      "I1",
+      "M2"
+    ],
+    "evidenceRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/report-revisions/20261015T202836648Z-I1-M2",
+    "priorAttemptEvidenceManifestSha256": "15b29253b0155e5a802d7055072e87bb30f25a901d048c8e4cf013697fc0c8a0",
+    "perCallEvidenceChanged": false,
+    "scoreChanged": false
+  },
+  "executionInterval": {
+    "startedAt": "2026-10-15T20:10:06.911Z",
+    "completedAt": "2026-10-15T20:10:51.225Z",
+    "startBasis": "minimum actual per-call start across all 12 calls",
+    "completionBasis": "maximum actual per-call completion across all 12 calls",
+    "lastCompletedQuestionId": "Q11",
+    "durationMs": 44314
+  }
+}

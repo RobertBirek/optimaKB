@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { isExplicitOwaQuestion } from './lib/owa_query_context.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const ROUTING_PATH = path.join(ROOT, 'docs/reference/ERP_Knowledge_Assistant_Routing.json');
@@ -163,6 +164,7 @@ export const KB_DETAILS = {
       'exports/owa_ontology/v1/ontology_entity.csv',
       'exports/owa_ontology/v1/ontology_field.csv',
       'exports/owa_ontology/v1/ontology_relation.csv',
+      'exports/owa_ontology/v1/workflow_pattern.csv',
       'exports/owa_ontology/v1/chunk.csv',
       'downloads/knowledge_inbox/2026-07-15/',
       'downloads/knowledge_inbox/2026-07-17/',
@@ -782,6 +784,11 @@ export function classifyQuestion(question, routing, allowedNamespaces, options =
   }
   if (!primary) {
     throw new Error('No knowledge route is available for the allowed namespaces.');
+  }
+
+  if (isExplicitOwaQuestion(question)) {
+    const ontology = routeScores.find((route) => route.primaryKb === 'OWAOntology');
+    if (ontology) primary = ontology;
   }
 
   if (options.intent === 'release') {

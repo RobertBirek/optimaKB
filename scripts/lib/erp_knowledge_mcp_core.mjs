@@ -593,6 +593,8 @@ export async function handleJsonRpcRequest(request, context = {}) {
           sources: result.structured?.sources || [],
           retrieval: result.structured?.retrieval,
           evidenceAssessment: result.structured?.evidenceAssessment,
+          ...(result.structured?.owaCoverage ? { owaCoverage: result.structured.owaCoverage,
+            answerNotes: result.structured.answerNotes || [] } : {}),
           knowledge_status: result.structured?.evidenceAssessment?.status === 'insufficient_evidence'
             ? 'unknown' : legacyKnowledgeStatus(evidence, temporalWarning),
           validity: { valid_from: null, valid_to: null, as_of: args.as_of || null },

@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "status": "CONFIRMED_CENTRAL_DISPATCHER_STALE_IMPORTS",
+  "generatedAt": "2026-10-15T20:03:08.726Z",
+  "authorization": "Controller-approved read-only extension of Task 6. No operational remediation authorized or performed.",
+  "confirmedCause": "The tested public /mcp/erp-semantic-mcp path is served by the dynamic semantic profile in the still-running central erp-kb-mcp.service listener on 3400, not by the dedicated Semantic listener on 3420. The central process predates the reviewed file transfer and still emits the old imported answer behavior; restarting only the dedicated service did not refresh it.",
+  "observedRoute": {
+    "publicUrl": "https://optima.kag.taxbell.pl/mcp/erp-semantic-mcp",
+    "publicDns": [
+      {
+        "address": "46.174.24.27",
+        "family": 4
+      }
+    ],
+    "observedUpstreamPeer": "10.10.254.46:59342",
+    "listener": "10.10.254.42:3400",
+    "pid": 2880869,
+    "unit": "erp-kb-mcp.service",
+    "unitStart": "2026-10-14T12:45:46Z",
+    "dynamicProfile": "erp-semantic-mcp",
+    "dedicatedListener": "10.10.254.42:3420",
+    "dedicatedPid": 3750833,
+    "dedicatedStart": "2026-10-15T19:49:09Z",
+    "evidence": "During the isolated public Q01 request, tcpdump captured only TCP header/length metadata for the proxy peer response on 3400; ss associated that exact upstream connection with PID 2880869. No packet payload or raw capture was retained. Public initialize identifies semantic; the same central process default initialize identifies legacy."
+  },
+  "comparison": [
+    {
+      "a": "public",
+      "b": "legacy3400-semantic-path",
+      "rawRpcIdentical": false,
+      "fullMarkdownIdentical": true,
+      "fullMarkdownSha256": "de6ccae75c788ab053d557baf28a0d4ef791e57c584e7cdce708827899521e37",
+      "differences": [
+        {
+          "path": "/result/structuredContent/evidence/0/observedAt",
+          "a": "2026-10-15T19:59:34.120Z",
+          "b": "2026-10-15T19:59:34.712Z"
+        },
+        {
+          "path": "/result/structuredContent/evidence/1/observedAt",
+          "a": "2026-10-15T19:59:34.243Z",
+          "b": "2026-10-15T19:59:34.793Z"
+        },
+        {
+          "path": "/result/structuredContent/evidence/2/observedAt",
+          "a": "2026-10-15T19:59:34.242Z",
+          "b": "2026-10-15T19:59:34.792Z"
+        }
+      ],
+      "normalization": "Only structuredContent.evidence[].observedAt removed, after validating every actual differing path and ISO timestamp. Original complete response files remain untouched.",
+      "normalizedResultSha256": "08fea619ab112765f7b702d15a94bae4e019a0e97cb9bf807617b9989e2a44b2",
+      "normalizedResultIdentical": true
+    },
+    {
+      "a": "public",
+      "b": "authproxy3401-semantic-path",
+      "rawRpcIdentical": false,
+      "fullMarkdownIdentical": true,
+      "fullMarkdownSha256": "de6ccae75c788ab053d557baf28a0d4ef791e57c584e7cdce708827899521e37",
+      "differences": [
+        {
+          "path": "/result/structuredContent/evidence/0/observedAt",
+          "a": "2026-10-15T19:59:34.120Z",
+          "b": "2026-10-15T19:59:44.011Z"
+        },
+        {
+          "path": "/result/structuredContent/evidence/1/observedAt",
+          "a": "2026-10-15T19:59:34.243Z",
+          "b": "2026-10-15T19:59:44.109Z"
+        },
+        {
+          "path": "/result/structuredContent/evidence/2/observedAt",
+          "a": "2026-10-15T19:59:34.242Z",
+          "b": "2026-10-15T19:59:44.108Z"
+        }
+      ],
+      "normalization": "Only structuredContent.evidence[].observedAt removed, after validating every actual differing path and ISO timestamp. Original complete response files remain untouched.",
+      "normalizedResultSha256": "08fea619ab112765f7b702d15a94bae4e019a0e97cb9bf807617b9989e2a44b2",
+      "normalizedResultIdentical": true
+    },
+    {
+      "a": "semantic3420-default-path",
+      "b": "semantic3420-semantic-path",
+      "rawRpcIdentical": false,
+      "fullMarkdownIdentical": true,
+      "fullMarkdownSha256": "1d34189ce23148bf247de8e45842b9101064e53eb2b6592243361eed9d033399",
+      "differences": [
+        {
+          "path": "/result/structuredContent/evidence/0/observedAt",
+          "a": "2026-10-15T19:59:35.022Z",
+          "b": "2026-10-15T19:59:38.107Z"
+        },
+        {
+          "path": "/result/structuredContent/evidence/1/observedAt",
+          "a": "2026-10-15T19:59:35.134Z",
+          "b": "2026-10-15T19:59:38.214Z"
+        },
+        {
+          "path": "/result/structuredContent/evidence/2/observedAt",
+          "a": "2026-10-15T19:59:34.894Z",
+          "b": "2026-10-15T19:59:37.997Z"
+        },
+        {
+          "path": "/result/structuredContent/evidence/3/observedAt",
+          "a": "2026-10-15T19:59:34.944Z",
+          "b": "2026-10-15T19:59:38.046Z"
+        },
+        {
+          "path": "/result/structuredContent/evidence/4/observedAt",
+          "a": "2026-10-15T19:59:35.247Z",
+          "b": "2026-10-15T19:59:38.301Z"
+        }
+      ],
+      "normalization": "Only structuredContent.evidence[].observedAt removed, after validating every actual differing path and ISO timestamp. Original complete response files remain untouched.",
+      "normalizedResultSha256": "000a879c85f9bd7c695acd915ed1fcc028ebd59fdc0d82f4c85c5b386d092ae0",
+      "normalizedResultIdentical": true
+    }
+  ],
+  "answerReadbacks": [
+    {
+      "target": "public",
+      "url": "https://optima.kag.taxbell.pl/mcp/erp-semantic-mcp",
+      "httpStatus": 200,
+      "rawRpcSha256": "463239bde919e9a6fd4555bcd25e2f3798ebf10b2c34a1b711b61c62446f3d7c",
+      "markdownSha256": "de6ccae75c788ab053d557baf28a0d4ef791e57c584e7cdce708827899521e37",
+      "primaryKb": "ComarchOptimaBusinessSemantics",
+      "owaCoverage": null,
+      "headers": {
+        "cache-control": "no-store",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 19:59:34 GMT",
+        "mcp-protocol-version": "2025-03-26"
+      }
+    },
+    {
+      "target": "legacy3400-semantic-path",
+      "url": "http://10.10.254.42:3400/mcp/erp-semantic-mcp",
+      "httpStatus": 200,
+      "rawRpcSha256": "802627026e6032bdcb8c874174aa01b65a429c35bf8ecadc636c236bf078b872",
+      "markdownSha256": "de6ccae75c788ab053d557baf28a0d4ef791e57c584e7cdce708827899521e37",
+      "primaryKb": "ComarchOptimaBusinessSemantics",
+      "owaCoverage": null,
+      "headers": {
+        "cache-control": "no-store",
+        "content-length": "12054",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 19:59:34 GMT",
+        "mcp-protocol-version": "2025-03-26"
+      }
+    },
+    {
+      "target": "semantic3420-default-path",
+      "url": "http://10.10.254.42:3420/mcp",
+      "httpStatus": 200,
+      "rawRpcSha256": "2995dc23a639ddb8f579bbc99dfdbcfcf736a48e84ef6b9a22fb6ae8ba1f32ff",
+      "markdownSha256": "1d34189ce23148bf247de8e45842b9101064e53eb2b6592243361eed9d033399",
+      "primaryKb": "OWAOntology",
+      "owaCoverage": {
+        "status": "covered",
+        "requestedFacets": [
+          "overview",
+          "identifiers",
+          "roles"
+        ],
+        "coveredFacets": [
+          "overview",
+          "identifiers",
+          "roles"
+        ],
+        "missingFacets": [],
+        "ownerCoverage": [
+          {
+            "ownerId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+            "label": "Kontrahent (kartoteka kontrahentów)",
+            "coveredFacets": [
+              "overview",
+              "identifiers",
+              "roles"
+            ],
+            "missingFacets": [],
+            "visible": true,
+            "fieldCoverage": []
+          }
+        ],
+        "limitations": [],
+        "requirements": [
+          {
+            "ownerId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+            "fieldName": null,
+            "facet": "overview",
+            "covered": true
+          },
+          {
+            "ownerId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+            "fieldName": null,
+            "facet": "identifiers",
+            "covered": true
+          },
+          {
+            "ownerId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+            "fieldName": null,
+            "facet": "roles",
+            "covered": true
+          }
+        ],
+        "reasons": [],
+        "notices": []
+      },
+      "headers": {
+        "cache-control": "no-store",
+        "content-length": "50133",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 19:59:37 GMT",
+        "mcp-protocol-version": "2025-03-26"
+      }
+    },
+    {
+      "target": "semantic3420-semantic-path",
+      "url": "http://10.10.254.42:3420/mcp/erp-semantic-mcp",
+      "httpStatus": 200,
+      "rawRpcSha256": "ca1c3625ac7a8f8780dd6772471d16d69a806f1e70232060cae26df0ed8f75d6",
+      "markdownSha256": "1d34189ce23148bf247de8e45842b9101064e53eb2b6592243361eed9d033399",
+      "primaryKb": "OWAOntology",
+      "owaCoverage": {
+        "status": "covered",
+        "requestedFacets": [
+          "overview",
+          "identifiers",
+          "roles"
+        ],
+        "coveredFacets": [
+          "overview",
+          "identifiers",
+          "roles"
+        ],
+        "missingFacets": [],
+        "ownerCoverage": [
+          {
+            "ownerId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+            "label": "Kontrahent (kartoteka kontrahentów)",
+            "coveredFacets": [
+              "overview",
+              "identifiers",
+              "roles"
+            ],
+            "missingFacets": [],
+            "visible": true,
+            "fieldCoverage": []
+          }
+        ],
+        "limitations": [],
+        "requirements": [
+          {
+            "ownerId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+            "fieldName": null,
+            "facet": "overview",
+            "covered": true
+          },
+          {
+            "ownerId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+            "fieldName": null,
+            "facet": "identifiers",
+            "covered": true
+          },
+          {
+            "ownerId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+            "fieldName": null,
+            "facet": "roles",
+            "covered": true
+          }
+        ],
+        "reasons": [],
+        "notices": []
+      },
+      "headers": {
+        "cache-control": "no-store",
+        "content-length": "50133",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 19:59:37 GMT",
+        "mcp-protocol-version": "2025-03-26"
+      }
+    },
+    {
+      "target": "authproxy3401-semantic-path",
+      "url": "http://127.0.0.1:3401/mcp/erp-semantic-mcp",
+      "httpStatus": 200,
+      "rawRpcSha256": "60ce2aacb3e5b9f4249489a88966d288666de79bc7b5b09b6ff06dd9eb419ef6",
+      "markdownSha256": "de6ccae75c788ab053d557baf28a0d4ef791e57c584e7cdce708827899521e37",
+      "primaryKb": "ComarchOptimaBusinessSemantics",
+      "owaCoverage": null,
+      "headers": {
+        "cache-control": "no-store",
+        "content-length": "12054",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 19:59:44 GMT",
+        "mcp-protocol-version": "2025-03-26"
+      }
+    }
+  ],
+  "routingCode": [
+    {
+      "path": "scripts/erp_knowledge_mcp_http_bridge.mjs",
+      "lines": "7-21",
+      "finding": "Static import of shared MCP core; read-only profiles mapped to /mcp/<id> independently of dedicated profile port metadata."
+    },
+    {
+      "path": "scripts/erp_knowledge_mcp_http_bridge.mjs",
+      "lines": "270-280,404-405",
+      "finding": "Request path selects requestProfile and its namespaces; current handler executes in this listening process. No proxy to the dedicated profile port."
+    },
+    {
+      "path": "scripts/lib/erp_knowledge_mcp_profiles.mjs",
+      "lines": "19-22",
+      "finding": "Semantic profile declares namespaces/tools and port 3420, but the bridge dynamic path map does not use that port to forward requests."
+    },
+    {
+      "path": "scripts/erp_kb_mcp_auth_proxy.mjs",
+      "lines": "67-90",
+      "finding": "Auth-injection proxy forwards the path to its effective target http://10.10.254.42:3400; 3401 gives the same old answer, but was not the observed public upstream socket."
+    }
+  ],
+  "contentRewriteFinding": "Public full Markdown is byte-identical to direct 3400 dynamic-profile output. Complete structured/RPC differences are exclusively per-evidence observedAt timestamps; normalized results are identical. There is no substantive answer rewrite in the tested response. Raw RPC hashes differ and are not represented as identical.",
+  "cacheEvidence": "Confirmed old central output and process predating source integration, static import chain, identical ROOT/entrypoint, and freshly restarted 3420 matching the reviewed answer. Stale imported-module state is the supported operational cause; no V8 process-memory dump/hash was taken.",
+  "minimumCorrection": {
+    "proposedOnly": true,
+    "requiresNewScope": true,
+    "unit": "erp-kb-mcp.service",
+    "command": "sudo -n systemctl restart erp-kb-mcp.service",
+    "configurationScopeChangeRequired": false,
+    "reverseProxyChangeRequired": false,
+    "otherUnitsRestartRequired": false,
+    "scopeNote": "This widens the earlier Semantic-only restart permission to the central legacy/dynamic-profile dispatcher. It can briefly affect all profiles served through the central public endpoint. No route migration to 3420 is needed to refresh the existing intended dynamic dispatch.",
+    "readback": "After separate approval, bind reviewed disk hashes and central pre/post PID/start/health, restart only erp-kb-mcp.service, confirm public Q01 returns the reviewed OWA extracts/coverage, then execute the unchanged connected live12 into a new snapshot. Preserve the existing FAILED report/captures."
+  },
+  "limits": [
+    "Observed topology applies to the tested public route/window. Remote effective NPM configuration and complete TLS-termination chain were not accessed; no claim about all routes or hypothetical load-balanced replicas.",
+    "The conclusion is supported by actual listener/PID traffic, initialize identities and content equality; it is not inferred only from matching answers or public root health.",
+    "New direct diagnostic calls are unscored; they do not replace connected live12. FAILED snapshot stays 0 PASS / 4 PARTIAL / 8 MISS."
+  ],
+  "preservation": {
+    "failedSnapshotPreserved": true,
+    "failedSnapshotHashes": {
+      "docs/reference/OWA_SemanticKB_12Q_After_2026-10-15.json": "39d41c5495cd09e259f7df6de315e14a72b7fe307fdbee528e224e46f1b12d63",
+      "docs/reference/OWA_SemanticKB_12Q_After_2026-10-15.md": "eb11045f00ba02afbaf326c506023864ec356e1c73ccc3f9c42401cbcc4b10cc",
+      "docs/reference/OWA_SemanticKB_12Q_2026-10-15.json": "4124f75b330142b6894637380e90589c78dec24362af721eedc45f57276221d2",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q01.md": "de6ccae75c788ab053d557baf28a0d4ef791e57c584e7cdce708827899521e37",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q01.json": "d8dfa2b24098db9fc592441a5ca5602afaa44fe153c0de0766bdf5030abf27c3",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q02.md": "170e70e6dca1187f557bee617df1f37b9a402fae4584fb245d632319c1c3f4a2",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q02.json": "a91bc88debf6494497afcdf2a90ba28d9a60ddc70632711f6268c38e4e3c019b",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q03.md": "3a0732ababe7bde16735147d0398e7cc1050bce27d99a11fad9b0b63e68fd16a",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q03.json": "7db9b640ccca0848b9cc997608cbdb8dad2dad51b5c5f9cdb8f120cb95e113a5",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q04.md": "b11f80b44d355420499203cac6043a3c673fa928cb382e834da477a6d144cddd",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q04.json": "4c7fbaac7b94d357fbfb42faf4bc0051b2836b236a97427951db92545507049a",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q05.md": "3bf908a04b9d905fdbd03d0f7b7977145a2a05b13f509ee82ce36e1fa11e09e9",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q05.json": "cdb5c89cf0760b5cce9eaa060ce93d93d2f23db3f69a81f4a9e9b3a73f945567",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q06.md": "b82fed76ca7cc7b3316a57309004bd55f8a02c2c7d7f94e7c2f945e80d6af968",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q06.json": "7736439f73c9b06b53f7a5710728e094c04ba707ffad331b95489cdf8b351e23",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q07.md": "669b43abee64fb600c6f30db25b96543bc502fdc1fdef78f3d8f09cb9d129e8f",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q07.json": "a2a4e6ce2e19b62c0cb45d1222ee1d65ec74842dde9470f397da060ce761279e",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q08.md": "ffae2de824c4e383dcf11f336fc34b66dc4d145eb5306b5e431385c133f28308",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q08.json": "e35a3e475ab0bfb8de2b303ff952be5dffddd259b59b68e5f4c467933152bf39",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q09.md": "2ccbdcc7bc5e26c6b96015e6234babf70ee57babc4d1af98bae6285ea8f01c12",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q09.json": "08f5879c8b4ba16c80d5424f8cc66ade408e10666c9ccad23850fcaef87de975",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q10.md": "6098ad1b62982c51140f3d037ef9685890add01e7d9d123fc191ca2e60bb23c6",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q10.json": "f9b675fd76735c415fb7765a06136324b9e42ce4c2add5e99a8bb70065b3d856",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q11.md": "d3bc3e9cba972790886ef7866e18db529540c3c5dd952e93dcd966402f6a1f96",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q11.json": "d1903999eb5bf478d49c81dddf5187591b21eb11fe6af2dfd4e8e1ba77cb068e",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q12.md": "281c65028031c7ff39dda5ff9d54e2bda0fba5075d368db5a6afa1220845b6f6",
+      "backups/manual-repairs/owa-answer-quality-20261015/qa-live12/Q12.json": "1c7cdaa5df11da4cbbd80a71e5b1f69415ea831d6598e9db66bd473b9b02463e"
+    },
+    "mainIndexUnchanged": true,
+    "unitsMetadataUnchanged": true,
+    "codeCorpusRegistryCsvPreservedVerification": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/after-readonly-topology-verification.json",
+    "ordinaryTelemetryAllowed": true
+  },
+  "evidenceRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/topology-readonly",
+  "oldTaskReportSha256": "a4584ea631bb8cb734c816d27e877a329d212af3f462b01f4de454f644ffc1d6"
+}

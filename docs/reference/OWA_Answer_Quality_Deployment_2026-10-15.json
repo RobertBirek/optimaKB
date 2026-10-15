@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "status": "DONE",
+  "generatedAt": "2026-10-15T20:13:53.639Z",
+  "startedAt": "2026-10-15T19:46:47.094Z",
+  "baseCommit": "2a4ef8a13bfa50997a78c59b39632ef050496643",
+  "reviewedTree": "f2100a4d0c55e478aa9c62523a23511a899acc0a",
+  "reviewApproval": "latest APPROVED section of durable review-evidence/final-review.md",
+  "backupRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015",
+  "transferMethod": "Native apply_patch Update File + Move to from preverified disposable transfer copies; preserved candidate/original snapshots untouched",
+  "files": [
+    {
+      "path": "scripts/erp_knowledge_answer.mjs",
+      "originalSha256": "d6e1131d5f216921c1b4eadcccdee20fc6d366f652285dce99c95327bfb78e07",
+      "sha256": "52fb1f0f49e4649b854afc2d0588d76b991eb4d8b67c853cde21fd936bd96217",
+      "bytes": 44201
+    },
+    {
+      "path": "scripts/erp_knowledge_assistant.mjs",
+      "originalSha256": "8e965eccf0cb459e4e0b2f7124000e3c9ec34ca3943748dac8acf181bec12c25",
+      "sha256": "a23ead4ad8eb26b2298d4c733aa57e335095c3d4bbf901b03831b5658505f47d",
+      "bytes": 36919
+    },
+    {
+      "path": "scripts/lib/erp_knowledge_mcp_core.mjs",
+      "originalSha256": "ce9af12098c3fed3eac57c2b1ff73f28209733f34067a29652b7c1693d137b54",
+      "sha256": "5c7bd954ab4bae05c5f36202d940d3a0b79ceddae1928fa8689d67a6ff7770ae",
+      "bytes": 26152
+    },
+    {
+      "path": "scripts/lib/knowledge_retrieval.mjs",
+      "originalSha256": "1c59842c9ebc29428f2c3c7ed3b851f37b3c1c296176a7c4c18d91b84b197a12",
+      "sha256": "e91572913db4ef7d61ec4c2b75083d4277ac3ed0a0ca437983d778d95b5decd8",
+      "bytes": 7831
+    },
+    {
+      "path": "scripts/lib/local_source_provenance.mjs",
+      "originalSha256": null,
+      "sha256": "6d0c3cdd15623eff383da450f8ccfbc2b011fd98268c0d008a7a35942fb06b4c",
+      "bytes": 1651
+    },
+    {
+      "path": "scripts/lib/owa_evidence.mjs",
+      "originalSha256": null,
+      "sha256": "f5bc506e1eeb8b166abf20bad6d4179d0ddec65ae641f501b2d3153b90d0e8ae",
+      "bytes": 41362
+    },
+    {
+      "path": "scripts/lib/owa_offline_harness.mjs",
+      "originalSha256": null,
+      "sha256": "14f6a79f5f3a0fcbec44ed2c01bef93fe93ca9a3c5087f41a9521a1f3e22c06a",
+      "bytes": 13759
+    },
+    {
+      "path": "scripts/lib/owa_query_context.mjs",
+      "originalSha256": null,
+      "sha256": "9a4d943b98b5109bbee5cee457a37c923cb3b0c9406148ea5f71085ef314de44",
+      "bytes": 14243
+    },
+    {
+      "path": "scripts/prepare_owa_answer_quality_fixtures.mjs",
+      "originalSha256": null,
+      "sha256": "7f9bf8d2b1c0de44090e3ab8012db7ef465093b440e3c889b6b3bc59491bcf93",
+      "bytes": 2506
+    },
+    {
+      "path": "scripts/test_owa_answer_coverage.mjs",
+      "originalSha256": null,
+      "sha256": "b254f1e3477b9499bf4af2fc78e3ae5456898180498f6181b976893f3fc6791d",
+      "bytes": 63885
+    },
+    {
+      "path": "scripts/test_owa_answer_quality_12q.mjs",
+      "originalSha256": null,
+      "sha256": "18d2ce4c0e9eeb92a2ce38140c39a96e71f5786416e85327e7f4d33dca97886e",
+      "bytes": 4661
+    },
+    {
+      "path": "scripts/test_owa_answer_routing.mjs",
+      "originalSha256": null,
+      "sha256": "678ff866b7d5163ef85b755dc3b09523d5b79375c81c9c91337df0a74bc0402f",
+      "bytes": 4152
+    },
+    {
+      "path": "scripts/test_owa_evidence_selection.mjs",
+      "originalSha256": null,
+      "sha256": "3a176840614ce7fd260e9e2736a4e656b03d1530b59616b51721b86cc43675d5",
+      "bytes": 43109
+    },
+    {
+      "path": "scripts/test_owa_final_fixes.mjs",
+      "originalSha256": null,
+      "sha256": "4166d212f2239f7a03ca0393967f805a665600fb993de01d052d9c904b2eb612",
+      "bytes": 27290
+    },
+    {
+      "path": "scripts/test_owa_local_sources.mjs",
+      "originalSha256": null,
+      "sha256": "df07406fe51faa5a500bf20d64226e372e75c666b5f483e5aa9910acab481c0b",
+      "bytes": 24230
+    },
+    {
+      "path": "scripts/test_owa_offline_guards.mjs",
+      "originalSha256": null,
+      "sha256": "96215944470ab367b941df07b77a1a99ccca70fdbc7cc690dbd3f766ed02096c",
+      "bytes": 8642
+    },
+    {
+      "path": "scripts/test_owa_query_context.mjs",
+      "originalSha256": null,
+      "sha256": "13561a80091d875c4833cd0ef9ef5c55eb849f027e3ceb5d0f0e38373ce28971",
+      "bytes": 16447
+    }
+  ],
+  "sourceClosure": {
+    "modules": 20,
+    "staticArtifacts": 16,
+    "all36MainHashesMatchFrozenManifest": true,
+    "manifestSha256": "75401c131e7631d277bbd3cad1581be6bf8ba254055468dde50877f98218ea2d"
+  },
+  "tests": {
+    "commands": 35,
+    "passed": 35,
+    "failed": 0,
+    "behavioralPasses": 388,
+    "behavioralFailures": 0,
+    "manifestPath": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/integrated-tests/commands.json",
+    "manifestSha256": "1ddf413fe1bb51a940aff2660cfaa711481b2691bca6ea2ad4bb33e579f80fc1",
+    "isolation": "Clean child environment, fixture-only ROOT and disposable synthetic roots, actual guarded fixture learning-writer stub; production learning implementation/config unchanged",
+    "retainedGateRevalidated": true,
+    "retainedGateNotBroadlyRerun": true,
+    "currentAttemptChecks": {
+      "npmSyntax": "PASS",
+      "moduleMap": "PASS",
+      "gitDiffWhitespace": "PASS",
+      "publicTlsVerify": 0,
+      "readOnlyProfileInitializeAndToolLists": 7,
+      "diagnosticQ01WholeBodyHash": "PASS",
+      "connectedLive12": {
+        "PASS": 12,
+        "PARTIAL": 0,
+        "MISS": 0
+      }
+    }
+  },
+  "reload": {
+    "command": "sudo -n systemctl restart erp-semantic-mcp.service",
+    "beforeMetadata": "MainPID=2880934\nExecMainStartTimestamp=Wed 2026-10-14 14:45:48 CEST\nExecMainStatus=0\nExecStart={ path=/usr/bin/node ; argv[]=/usr/bin/node /docker/openspg/scripts/erp_knowledge_mcp_http_bridge.mjs ; ignore_errors=no ; start_time=[Wed 2026-10-14 14:45:48 CEST] ; stop_time=[n/a] ; pid=2880934 ; code=(null) ; status=0/0 }\nWorkingDirectory=/docker/openspg\nUser=mcpbot\nGroup=mcpbot\nActiveState=active\nSubState=running\n",
+    "afterMetadata": "MainPID=3750833\nExecMainStartTimestamp=Thu 2026-10-15 21:49:09 CEST\nExecMainStatus=0\nExecStart={ path=/usr/bin/node ; argv[]=/usr/bin/node /docker/openspg/scripts/erp_knowledge_mcp_http_bridge.mjs ; ignore_errors=no ; start_time=[Thu 2026-10-15 21:49:09 CEST] ; stop_time=[n/a] ; pid=3750833 ; code=(null) ; status=0/0 }\nWorkingDirectory=/docker/openspg\nUser=mcpbot\nGroup=mcpbot\nActiveState=active\nSubState=running\n",
+    "verifiedAt": "2026-10-15T19:49:10.849Z",
+    "health": {
+      "ok": true,
+      "service": "erp-semantic-mcp",
+      "version": "1.0.0",
+      "profile": "erp-semantic-mcp",
+      "protocolVersion": "2025-03-26",
+      "transport": "http-bridge",
+      "mcpPath": "/mcp",
+      "legacySsePath": "/sse",
+      "sseDeprecated": true,
+      "sseDisabled": false,
+      "auth": "bearer",
+      "writeAuth": "same_bearer",
+      "maxBodyBytes": 1048576,
+      "rateWindowMs": 60000,
+      "rateRead": 300,
+      "rateWrite": 90,
+      "maxSseClients": 50,
+      "sseClients": 0
+    },
+    "listener": "10.10.254.42:3420",
+    "codeHashesBoundAtReload": true,
+    "startupPolling": "Two initial connection refusals during expected restart startup, then healthy within polling window; no retry restart"
+  },
+  "automation": {
+    "supportedGetBefore": "2026-10-15T20:09:24.754Z",
+    "supportedGetAfter": "2026-10-15T20:11:00.068Z",
+    "configHashBefore": "58497b350c06bedaefdc63764072b1a842f295c5a8bed0db7bfce684af721523",
+    "configHashAfter": "58497b350c06bedaefdc63764072b1a842f295c5a8bed0db7bfce684af721523",
+    "configUnchanged": true,
+    "activeBefore": 0,
+    "activeAfter": 0,
+    "jobCount": 56,
+    "jobStatesUnchanged": true,
+    "actionsCount": 92,
+    "actionsUnchanged": true
+  },
+  "preservation": {
+    "raw": {
+      "files": 964,
+      "beforeSha256": "630fc7bdef4f455605a8de9368710e10bb69f7601721288c805f533e6c705f7d",
+      "afterSha256": "630fc7bdef4f455605a8de9368710e10bb69f7601721288c805f533e6c705f7d",
+      "unchanged": true
+    },
+    "promoted": {
+      "files": 606,
+      "beforeSha256": "5e30614990bd4f08033d22835702259c1a2a8e36630e2242e0129e8694771bc7",
+      "afterSha256": "5e30614990bd4f08033d22835702259c1a2a8e36630e2242e0129e8694771bc7",
+      "unchanged": true
+    },
+    "registry": {
+      "files": 1,
+      "beforeSha256": "1591ffa4f2cc93b77e6c9cfd5f5a29e65a4f83cd055772f254f55d3e2027901e",
+      "afterSha256": "1591ffa4f2cc93b77e6c9cfd5f5a29e65a4f83cd055772f254f55d3e2027901e",
+      "unchanged": true
+    },
+    "csv": {
+      "files": 135,
+      "beforeSha256": "fb9c87300a5c67bbed3eb706515bcd8ec4e0abc139215f0792647515f69a013c",
+      "afterSha256": "fb9c87300a5c67bbed3eb706515bcd8ec4e0abc139215f0792647515f69a013c",
+      "unchanged": true
+    },
+    "policy": {
+      "files": 2,
+      "beforeSha256": "9cb6bf2eb023f187165aab94babf68a13d369df8b7648b430df0a744dd577b5c",
+      "afterSha256": "9cb6bf2eb023f187165aab94babf68a13d369df8b7648b430df0a744dd577b5c",
+      "unchanged": true
+    }
+  },
+  "unrelated": [
+    {
+      "path": "docs/reference/ERP_KB_Dashboard_Canary_Readiness_Report.json",
+      "status": " M",
+      "sha256": "3ec80154497c20a6a36ad3ffadf29275df92913b758949390d9840e96c7b007c",
+      "afterSha256": "3ec80154497c20a6a36ad3ffadf29275df92913b758949390d9840e96c7b007c"
+    },
+    {
+      "path": "docs/reference/ERP_KB_Dashboard_Canary_Readiness_Report.md",
+      "status": " M",
+      "sha256": "fb93f2d54554fa4888a6436b185d520d102296ba5f3749f2d6d2bb4a61741091",
+      "afterSha256": "fb93f2d54554fa4888a6436b185d520d102296ba5f3749f2d6d2bb4a61741091"
+    },
+    {
+      "path": "docs/reference/ERP_KB_Discovery_Coverage_Report.json",
+      "status": " M",
+      "sha256": "71905f32b1076d500b84dd2d6c2b0416e01b2da8c77d163e46c40b80b137e927",
+      "afterSha256": "71905f32b1076d500b84dd2d6c2b0416e01b2da8c77d163e46c40b80b137e927"
+    },
+    {
+      "path": "docs/reference/ERP_KB_Discovery_Coverage_Report.md",
+      "status": " M",
+      "sha256": "1b384d58250dfea052c8963be083cb3d4ff871a14e557f13e33accf3c6e6caa3",
+      "afterSha256": "1b384d58250dfea052c8963be083cb3d4ff871a14e557f13e33accf3c6e6caa3"
+    },
+    {
+      "path": "docs/reference/ERP_KB_Discovery_Daily_Briefing.json",
+      "status": " M",
+      "sha256": "7f0545e7fb485345942290292bdb0940b83fae213d15e4d2996da581122bd84d",
+      "afterSha256": "7f0545e7fb485345942290292bdb0940b83fae213d15e4d2996da581122bd84d"
+    },
+    {
+      "path": "docs/reference/ERP_KB_Discovery_Daily_Briefing.md",
+      "status": " M",
+      "sha256": "59e8d3987f1c33450181e2d25b768d7946ba7310ae41f111d11693902e0d3104",
+      "afterSha256": "59e8d3987f1c33450181e2d25b768d7946ba7310ae41f111d11693902e0d3104"
+    },
+    {
+      "path": "scripts/erp_knowledge_answer.mjs",
+      "status": " M",
+      "sha256": "52fb1f0f49e4649b854afc2d0588d76b991eb4d8b67c853cde21fd936bd96217",
+      "afterSha256": "52fb1f0f49e4649b854afc2d0588d76b991eb4d8b67c853cde21fd936bd96217"
+    },
+    {
+      "path": "scripts/erp_knowledge_assistant.mjs",
+      "status": " M",
+      "sha256": "a23ead4ad8eb26b2298d4c733aa57e335095c3d4bbf901b03831b5658505f47d",
+      "afterSha256": "a23ead4ad8eb26b2298d4c733aa57e335095c3d4bbf901b03831b5658505f47d"
+    },
+    {
+      "path": "scripts/lib/erp_knowledge_mcp_core.mjs",
+      "status": " M",
+      "sha256": "5c7bd954ab4bae05c5f36202d940d3a0b79ceddae1928fa8689d67a6ff7770ae",
+      "afterSha256": "5c7bd954ab4bae05c5f36202d940d3a0b79ceddae1928fa8689d67a6ff7770ae"
+    },
+    {
+      "path": "scripts/lib/knowledge_retrieval.mjs",
+      "status": " M",
+      "sha256": "e91572913db4ef7d61ec4c2b75083d4277ac3ed0a0ca437983d778d95b5decd8",
+      "afterSha256": "e91572913db4ef7d61ec4c2b75083d4277ac3ed0a0ca437983d778d95b5decd8"
+    },
+    {
+      "path": "docs/reference/OWA_Answer_Quality_Deployment_2026-10-15.json",
+      "status": "??",
+      "sha256": "5737c6124f9c8676e0ddfbec64ca8ef9dacc6a017d42b47f812270e0cce40d84",
+      "afterSha256": "5737c6124f9c8676e0ddfbec64ca8ef9dacc6a017d42b47f812270e0cce40d84"
+    },
+    {
+      "path": "docs/reference/OWA_Answer_Quality_Deployment_2026-10-15.md",
+      "status": "??",
+      "sha256": "4e8fc81b4e6c1f60dda8eb078637e3084c2f4137021cdd68db05fdcfcbcbcff3",
+      "afterSha256": "4e8fc81b4e6c1f60dda8eb078637e3084c2f4137021cdd68db05fdcfcbcbcff3"
+    },
+    {
+      "path": "docs/reference/OWA_SemanticKB_12Q_2026-10-15.json",
+      "status": "??",
+      "sha256": "4124f75b330142b6894637380e90589c78dec24362af721eedc45f57276221d2",
+      "afterSha256": "4124f75b330142b6894637380e90589c78dec24362af721eedc45f57276221d2"
+    },
+    {
+      "path": "docs/reference/OWA_SemanticKB_12Q_2026-10-15.md",
+      "status": "??",
+      "sha256": "66d0d49444e00a8457370d41beb443b9b3f88d1e4288158a8316d4294b13de83",
+      "afterSha256": "66d0d49444e00a8457370d41beb443b9b3f88d1e4288158a8316d4294b13de83"
+    },
+    {
+      "path": "docs/reference/OWA_SemanticKB_12Q_After_2026-10-15.json",
+      "status": "??",
+      "sha256": "39d41c5495cd09e259f7df6de315e14a72b7fe307fdbee528e224e46f1b12d63",
+      "afterSha256": "39d41c5495cd09e259f7df6de315e14a72b7fe307fdbee528e224e46f1b12d63"
+    },
+    {
+      "path": "docs/reference/OWA_SemanticKB_12Q_After_2026-10-15.md",
+      "status": "??",
+      "sha256": "eb11045f00ba02afbaf326c506023864ec356e1c73ccc3f9c42401cbcc4b10cc",
+      "afterSha256": "eb11045f00ba02afbaf326c506023864ec356e1c73ccc3f9c42401cbcc4b10cc"
+    },
+    {
+      "path": "docs/reference/OWA_SemanticKB_Public_Endpoint_Diagnosis_2026-10-15.json",
+      "status": "??",
+      "sha256": "e6f5228ee238bef47792e24d58398d0e1e35468ab598deb19f38decfa24003d1",
+      "afterSha256": "e6f5228ee238bef47792e24d58398d0e1e35468ab598deb19f38decfa24003d1"
+    },
+    {
+      "path": "docs/reference/OWA_SemanticKB_Public_Endpoint_Diagnosis_2026-10-15.md",
+      "status": "??",
+      "sha256": "c1fc63ded2d23185c09cd6faa9f85263ffd03062abf4f78c2e6cc99e2a9dd155",
+      "afterSha256": "c1fc63ded2d23185c09cd6faa9f85263ffd03062abf4f78c2e6cc99e2a9dd155"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-15-owa-answer-quality.md",
+      "status": "??",
+      "sha256": "6588059f36410523db6f67c6af6e495e77b5f3bf4d9ae7e793e8db30f552b04c",
+      "afterSha256": "6588059f36410523db6f67c6af6e495e77b5f3bf4d9ae7e793e8db30f552b04c"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-10-15-owa-answer-quality-design.md",
+      "status": "??",
+      "sha256": "af849a982176f044db8aa86a1589e5aa08bf637f8257e28a535818bb2b37b44d",
+      "afterSha256": "af849a982176f044db8aa86a1589e5aa08bf637f8257e28a535818bb2b37b44d"
+    },
+    {
+      "path": "scripts/lib/local_source_provenance.mjs",
+      "status": "??",
+      "sha256": "6d0c3cdd15623eff383da450f8ccfbc2b011fd98268c0d008a7a35942fb06b4c",
+      "afterSha256": "6d0c3cdd15623eff383da450f8ccfbc2b011fd98268c0d008a7a35942fb06b4c"
+    },
+    {
+      "path": "scripts/lib/owa_evidence.mjs",
+      "status": "??",
+      "sha256": "f5bc506e1eeb8b166abf20bad6d4179d0ddec65ae641f501b2d3153b90d0e8ae",
+      "afterSha256": "f5bc506e1eeb8b166abf20bad6d4179d0ddec65ae641f501b2d3153b90d0e8ae"
+    },
+    {
+      "path": "scripts/lib/owa_offline_harness.mjs",
+      "status": "??",
+      "sha256": "14f6a79f5f3a0fcbec44ed2c01bef93fe93ca9a3c5087f41a9521a1f3e22c06a",
+      "afterSha256": "14f6a79f5f3a0fcbec44ed2c01bef93fe93ca9a3c5087f41a9521a1f3e22c06a"
+    },
+    {
+      "path": "scripts/lib/owa_query_context.mjs",
+      "status": "??",
+      "sha256": "9a4d943b98b5109bbee5cee457a37c923cb3b0c9406148ea5f71085ef314de44",
+      "afterSha256": "9a4d943b98b5109bbee5cee457a37c923cb3b0c9406148ea5f71085ef314de44"
+    },
+    {
+      "path": "scripts/prepare_owa_answer_quality_fixtures.mjs",
+      "status": "??",
+      "sha256": "7f9bf8d2b1c0de44090e3ab8012db7ef465093b440e3c889b6b3bc59491bcf93",
+      "afterSha256": "7f9bf8d2b1c0de44090e3ab8012db7ef465093b440e3c889b6b3bc59491bcf93"
+    },
+    {
+      "path": "scripts/test_owa_answer_coverage.mjs",
+      "status": "??",
+      "sha256": "b254f1e3477b9499bf4af2fc78e3ae5456898180498f6181b976893f3fc6791d",
+      "afterSha256": "b254f1e3477b9499bf4af2fc78e3ae5456898180498f6181b976893f3fc6791d"
+    },
+    {
+      "path": "scripts/test_owa_answer_quality_12q.mjs",
+      "status": "??",
+      "sha256": "18d2ce4c0e9eeb92a2ce38140c39a96e71f5786416e85327e7f4d33dca97886e",
+      "afterSha256": "18d2ce4c0e9eeb92a2ce38140c39a96e71f5786416e85327e7f4d33dca97886e"
+    },
+    {
+      "path": "scripts/test_owa_answer_routing.mjs",
+      "status": "??",
+      "sha256": "678ff866b7d5163ef85b755dc3b09523d5b79375c81c9c91337df0a74bc0402f",
+      "afterSha256": "678ff866b7d5163ef85b755dc3b09523d5b79375c81c9c91337df0a74bc0402f"
+    },
+    {
+      "path": "scripts/test_owa_evidence_selection.mjs",
+      "status": "??",
+      "sha256": "3a176840614ce7fd260e9e2736a4e656b03d1530b59616b51721b86cc43675d5",
+      "afterSha256": "3a176840614ce7fd260e9e2736a4e656b03d1530b59616b51721b86cc43675d5"
+    },
+    {
+      "path": "scripts/test_owa_final_fixes.mjs",
+      "status": "??",
+      "sha256": "4166d212f2239f7a03ca0393967f805a665600fb993de01d052d9c904b2eb612",
+      "afterSha256": "4166d212f2239f7a03ca0393967f805a665600fb993de01d052d9c904b2eb612"
+    },
+    {
+      "path": "scripts/test_owa_local_sources.mjs",
+      "status": "??",
+      "sha256": "df07406fe51faa5a500bf20d64226e372e75c666b5f483e5aa9910acab481c0b",
+      "afterSha256": "df07406fe51faa5a500bf20d64226e372e75c666b5f483e5aa9910acab481c0b"
+    },
+    {
+      "path": "scripts/test_owa_offline_guards.mjs",
+      "status": "??",
+      "sha256": "96215944470ab367b941df07b77a1a99ccca70fdbc7cc690dbd3f766ed02096c",
+      "afterSha256": "96215944470ab367b941df07b77a1a99ccca70fdbc7cc690dbd3f766ed02096c"
+    },
+    {
+      "path": "scripts/test_owa_query_context.mjs",
+      "status": "??",
+      "sha256": "13561a80091d875c4833cd0ef9ef5c55eb849f027e3ceb5d0f0e38373ce28971",
+      "afterSha256": "13561a80091d875c4833cd0ef9ef5c55eb849f027e3ceb5d0f0e38373ce28971"
+    }
+  ],
+  "unrelatedDrift": [],
+  "otherServiceMetadataChanges": [],
+  "sharedCacheBoundary": "Dedicated Semantic and the central public dynamic-profile dispatcher now use reviewed modules. Other dedicated processes were not restarted; their own import caches remain at earlier starts. Seven central public read-only profiles passed initialize/tools-list checks.",
+  "connectedQa": {
+    "summary": {
+      "PASS": 12,
+      "PARTIAL": 0,
+      "MISS": 0
+    },
+    "acceptance": "PASS",
+    "completedQueries": 12,
+    "report": "docs/reference/OWA_SemanticKB_12Q_After_2026-10-15.json",
+    "fullEvidenceRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12-central-reload/20261015T200922081Z",
+    "qaEvidenceManifestSha256": "207e87ac980e38389f0728d02fc128a3069252af111fe309b9bac725b7cad205"
+  },
+  "rollback": {
+    "needed": false,
+    "reason": "Not needed: central and dedicated Semantic services healthy, exact reviewed code on disk, connected acceptance passed.",
+    "originalRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/original",
+    "candidateRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/candidate",
+    "method": "Under separately approved rollback only: restore the four allowlisted original backups and remove only the thirteen hash-verified reviewed additions through apply_patch; verify restored hashes, absence and mcpbot dependency readability BEFORE restarting. Then restart central erp-kb-mcp.service and pass its PID/start/health/public readback checks, followed sequentially by dedicated erp-semantic-mcp.service and its PID/start/health/readback checks. Restart no other process. Preserve unrelated files and bind all checks in a new rollback manifest.",
+    "executionAuthorizedByThisRevision": false,
+    "executed": false,
+    "allowlistManifest": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/preflight.json",
+    "originalFileCount": 4,
+    "reviewedAdditionCount": 13,
+    "requiredReloadUnits": [
+      "erp-kb-mcp.service",
+      "erp-semantic-mcp.service"
+    ],
+    "reloadSequence": [
+      {
+        "unit": "erp-kb-mcp.service",
+        "command": "sudo -n systemctl restart erp-kb-mcp.service",
+        "healthUrl": "http://10.10.254.42:3400/health",
+        "requiredChecks": [
+          "PID and start changed from pre-rollback values",
+          "active/running and ExecMainStatus=0",
+          "local health ok=true",
+          "public /mcp/erp-semantic-mcp readback corresponds to restored baseline rather than candidate imports"
+        ]
+      },
+      {
+        "unit": "erp-semantic-mcp.service",
+        "command": "sudo -n systemctl restart erp-semantic-mcp.service",
+        "healthUrl": "http://10.10.254.42:3420/health",
+        "requiredChecks": [
+          "run only after central checks passed",
+          "PID and start changed from pre-rollback values",
+          "active/running and ExecMainStatus=0",
+          "local health ok=true",
+          "final public and dedicated readbacks bound to the same restored disk-hash inventory"
+        ]
+      }
+    ],
+    "procedure": [
+      "Separate rollback authorization is required. This documentation revision authorizes and executes no rollback, file restoration or service restart. Record before-state metadata for only the two affected processes and stop on unexpected source drift.",
+      "Use preflight.json files as the exact rollback allowlist: verify all 17 current candidate hashes before changing any runtime file; verify the four original backup hashes against originalSha256. Preserve unrelated files, corpus, policies and all evidence; never restore the whole checkout.",
+      "Restore only the four backed-up originally-existing reviewed files from original/ through apply_patch. Remove only the thirteen reviewed additions whose originalSha256 is null, and only while their current bytes still equal the recorded candidate hashes. No other file restoration/removal is in scope.",
+      "Before either restart, verify restored original byte hashes against preflight.json, verify all thirteen additions are absent, and verify mcpbot traversal/readability of the restored entrypoint and its required dependency closure. Stop before restarting if any byte, absence or readability check fails.",
+      "Restart erp-kb-mcp.service first. Wait for active/running, ExecMainStatus=0, changed PID/start and http://10.10.254.42:3400/health ok=true; verify the public semantic route serves the restored baseline. If any central check fails, stop and retain evidence; do not proceed to the next restart.",
+      "Only after the central checks pass, restart erp-semantic-mcp.service. Wait for active/running, ExecMainStatus=0, changed PID/start and http://10.10.254.42:3420/health ok=true. Recheck public and dedicated answers against the restored baseline and record the actual result.",
+      "Bind the restored hash/absence/readability checks, both before/after PID/start/health records, and public readback in one new rollback evidence manifest. Use the archived baseline response bindings only if the relevant source inputs still match; otherwise stop and report the drift.",
+      "Restart no other unit and change no proxy, configuration, policy, timer, Docker, graph, export/build or ERP state. Do not reuse the candidate 12/0/0 result as proof of rollback readback."
+    ],
+    "stopOnFailedGate": true
+  },
+  "scope": {
+    "noIndexChanges": true,
+    "noCommitOrPush": true,
+    "corpusAndCsvChanges": false,
+    "exportBuildGraphErpWrites": false,
+    "policyTimerProxyDockerChanges": false,
+    "telemetry": "Ordinary telemetry permitted, production learning/policies unchanged. Supported automation GET may refresh derived reports.",
+    "servicesRestartedWithSeparateExplicitApprovals": [
+      "erp-semantic-mcp.service",
+      "erp-kb-mcp.service"
+    ],
+    "currentAttemptOnlyServiceRestarted": "erp-kb-mcp.service",
+    "additionalProductionCodeChanges": false
+  },
+  "remainingRisks": [
+    "Nonblocking reviewed M1: support-snippet noise and omission verbosity.",
+    "Some historical source UNKNOWN notices are conservative/broad; retained source qualifications must not be erased.",
+    "No fresh ERP/MSSQL or graph correctness verification is implied.",
+    "Other dedicated MCP services retain their prior imports until separately authorized future reloads."
+  ],
+  "attemptTimeline": [
+    {
+      "attempt": "Dedicated Semantic reload; public still served old central imports",
+      "startedAt": "2026-10-15T19:49:28.954Z",
+      "completedAt": "2026-10-15T19:50:38.127Z",
+      "summary": {
+        "PASS": 0,
+        "PARTIAL": 4,
+        "MISS": 8
+      },
+      "status": "FAILED_PRESERVED",
+      "evidence": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12",
+      "publicReportsArchive": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12-central-reload/20261015T200922081Z/failed-public-reports"
+    },
+    {
+      "attempt": "Read-only public route diagnosis",
+      "completedAt": "2026-10-15T20:03:08.726Z",
+      "status": "CENTRAL_DISPATCHER_STALE_IMPORTS_CONFIRMED",
+      "evidence": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/topology-readonly"
+    },
+    {
+      "attempt": "Explicitly approved central-only reload and connected live12",
+      "startedAt": "2026-10-15T20:09:24.801Z",
+      "restartVerifiedAt": "2026-10-15T20:09:51.498Z",
+      "connectedStartedAt": "2026-10-15T20:10:06.911Z",
+      "connectedCompletedAt": "2026-10-15T20:10:51.225Z",
+      "postflightAt": "2026-10-15T20:11:00.518Z",
+      "summary": {
+        "PASS": 12,
+        "PARTIAL": 0,
+        "MISS": 0
+      },
+      "status": "PASS",
+      "evidence": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12-central-reload/20261015T200922081Z"
+    }
+  ],
+  "finalAcceptance": {
+    "status": "PASS",
+    "summary": {
+      "PASS": 12,
+      "PARTIAL": 0,
+      "MISS": 0
+    },
+    "connectedCalls": 12,
+    "evidenceRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/qa-live12-central-reload/20261015T200922081Z",
+    "executionInterval": {
+      "startedAt": "2026-10-15T20:10:06.911Z",
+      "completedAt": "2026-10-15T20:10:51.225Z",
+      "startBasis": "minimum actual per-call start across all 12 calls",
+      "completionBasis": "maximum actual per-call completion across all 12 calls",
+      "lastCompletedQuestionId": "Q11",
+      "durationMs": 44314
+    }
+  },
+  "centralReload": {
+    "authorization": "User explicitly approved ONLY erp-kb-mcp.service restart plus read-only public-profile smoke, connected unchanged live12, evidence/report writes. No code/config/proxy changes.",
+    "command": "sudo -n systemctl restart erp-kb-mcp.service",
+    "beforeMetadata": "MainPID=2880869\nExecMainStartTimestamp=Wed 2026-10-14 14:45:46 CEST\nExecMainStatus=0\nExecStart={ path=/usr/bin/node ; argv[]=/usr/bin/node /docker/openspg/scripts/erp_knowledge_mcp_http_bridge.mjs ; ignore_errors=no ; start_time=[Wed 2026-10-14 14:45:46 CEST] ; stop_time=[n/a] ; pid=2880869 ; code=(null) ; status=0/0 }\nWorkingDirectory=/docker/openspg\nUser=mcpbot\nId=erp-kb-mcp.service\nActiveState=active\nSubState=running\n",
+    "afterMetadata": "MainPID=3762440\nExecMainStartTimestamp=Thu 2026-10-15 22:09:49 CEST\nExecMainStatus=0\nExecStart={ path=/usr/bin/node ; argv[]=/usr/bin/node /docker/openspg/scripts/erp_knowledge_mcp_http_bridge.mjs ; ignore_errors=no ; start_time=[Thu 2026-10-15 22:09:49 CEST] ; stop_time=[n/a] ; pid=3762440 ; code=(null) ; status=0/0 }\nWorkingDirectory=/docker/openspg\nUser=mcpbot\nId=erp-kb-mcp.service\nActiveState=active\nSubState=running\n",
+    "verifiedAt": "2026-10-15T20:09:51.498Z",
+    "health": {
+      "ok": true,
+      "service": "erp-knowledge-assistant",
+      "version": "1.0.0",
+      "profile": "legacy",
+      "protocolVersion": "2025-03-26",
+      "transport": "http-bridge",
+      "mcpPath": "/mcp",
+      "legacySsePath": "/sse",
+      "sseDeprecated": true,
+      "sseDisabled": false,
+      "auth": "bearer",
+      "writeAuth": "separate_bearer",
+      "maxBodyBytes": 1048576,
+      "rateWindowMs": 60000,
+      "rateRead": 300,
+      "rateWrite": 90,
+      "maxSseClients": 50,
+      "sseClients": 0
+    },
+    "codeHashesBoundAtReload": true,
+    "dedicatedSemanticPidPreserved": "3750833"
+  },
+  "centralAttemptPreservation": {
+    "raw": {
+      "files": 964,
+      "beforeSha256": "630fc7bdef4f455605a8de9368710e10bb69f7601721288c805f533e6c705f7d",
+      "afterSha256": "630fc7bdef4f455605a8de9368710e10bb69f7601721288c805f533e6c705f7d",
+      "unchanged": true
+    },
+    "promoted": {
+      "files": 606,
+      "beforeSha256": "5e30614990bd4f08033d22835702259c1a2a8e36630e2242e0129e8694771bc7",
+      "afterSha256": "5e30614990bd4f08033d22835702259c1a2a8e36630e2242e0129e8694771bc7",
+      "unchanged": true
+    },
+    "registry": {
+      "files": 1,
+      "beforeSha256": "1591ffa4f2cc93b77e6c9cfd5f5a29e65a4f83cd055772f254f55d3e2027901e",
+      "afterSha256": "1591ffa4f2cc93b77e6c9cfd5f5a29e65a4f83cd055772f254f55d3e2027901e",
+      "unchanged": true
+    },
+    "csv": {
+      "files": 135,
+      "beforeSha256": "fb9c87300a5c67bbed3eb706515bcd8ec4e0abc139215f0792647515f69a013c",
+      "afterSha256": "fb9c87300a5c67bbed3eb706515bcd8ec4e0abc139215f0792647515f69a013c",
+      "unchanged": true
+    },
+    "policy": {
+      "files": 2,
+      "beforeSha256": "9cb6bf2eb023f187165aab94babf68a13d369df8b7648b430df0a744dd577b5c",
+      "afterSha256": "9cb6bf2eb023f187165aab94babf68a13d369df8b7648b430df0a744dd577b5c",
+      "unchanged": true
+    }
+  },
+  "documentationRevision": {
+    "id": "20261015T202836648Z-I1-M2",
+    "at": "2026-10-15T20:28:36.648Z",
+    "scope": "DOCUMENTATION ONLY: I1 recovery-runbook correction and M2 aggregate interval correction; no rollback/restart/runtime/config/source/index operation authorized or executed.",
+    "findingsAddressed": [
+      "I1",
+      "M2"
+    ],
+    "evidenceRoot": "/docker/openspg/backups/manual-repairs/owa-answer-quality-20261015/report-revisions/20261015T202836648Z-I1-M2",
+    "priorAttemptEvidenceManifestSha256": "15b29253b0155e5a802d7055072e87bb30f25a901d048c8e4cf013697fc0c8a0",
+    "perCallEvidenceChanged": false,
+    "scoreChanged": false
+  }
+}

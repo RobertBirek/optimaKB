@@ -82,10 +82,12 @@ export function parseCsvRecords(text) {
   return { columns: records[0]?.cells || [], records: records.slice(1), warnings: [] };
 }
 
-export function getSourceFields(columns, record, artifact = '') {
+export function getSourceFields(columns, record, artifact = '', requestContext = null) {
   const fields = Object.fromEntries(columns.map((name, index) =>
     [String(name).trim(), String(record.cells?.[index] ?? '')]));
-  const priorities = /business_description\.csv$/i.test(artifact)
+  const priorities = requestContext?.namespace === 'OWAOntology' && requestContext.context
+    ? ['content', 'description', 'summary', 'definitionPreview']
+    : /business_description\.csv$/i.test(artifact)
     ? ['description', 'content', 'summary']
     : /reference_document\.csv$/i.test(artifact)
       ? ['summary', 'content', 'description']
