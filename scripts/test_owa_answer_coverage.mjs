@@ -300,7 +300,12 @@ test('specific owned field UNKNOWN yields scoped enum notice before full evidenc
   assert.match(notes, /UNKNOWN/);
   assert.match(notes, /ontology_field\.csv/);
   const md = api.renderAnswerMarkdown(answer);
-  assert(md.indexOf(notes.split('\n')[0]) < md.indexOf('Dowody z lokalnej KB:'));
+  const first = answer.extracts[0];
+  const label = answer.sources.findIndex(source => source.key === first.sourceKey) + 1;
+  const header = `[S${label}] ${first.artifact}, linie ${first.line}–${first.endLine ?? first.line}:\n`;
+  assert(md.indexOf(header) >= 0, 'the actual owned unit header is visible');
+  assert(md.indexOf(notes.split('\n')[0]) >= 0 && md.indexOf(notes.split('\n')[0]) < md.indexOf(header));
+  for (const extract of answer.extracts) assert(md.includes(extract.text), 'retain every complete field assertion and qualification');
   assert.equal(answer.evidenceAssessment.status, 'insufficient_evidence');
 });
 

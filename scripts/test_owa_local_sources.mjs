@@ -92,7 +92,11 @@ test('URL-less exact local row yields a full extract and hash-backed citation', 
   assert.equal(extract.recordId, source.recordId);
   assert.deepEqual(extract.facets, ['fields']);
   const md = api.renderAnswerMarkdown(answer);
-  for (const value of [text, artifact('chunk'), 'L85-L102', 'LOCAL_1', hash('a'), ownerPath]) assert(md.includes(value));
+  for (const value of [text, artifact('chunk'), 'L85-L102', 'LOCAL_1']) assert(md.includes(value));
+  assert(md.includes(`[S1] ${artifact('chunk')}, linie 85–102:\n${text}`), 'the complete qualified unit has its physical citation');
+  assert(md.includes(`- [S1] ${source.title || 'LOCAL_1'} — ${kb}; ${artifact('chunk')} L85-L102; rekord LOCAL_1`));
+  assert.equal(extract.sourceKey, source.key);
+  assert.equal(source.owningPath, ownerPath, 'full ownership remains in public JSON alongside the hash');
   assert(!md.includes('URL: null'));
   assert(!md.includes('2099-01-01'));
   assert(!JSON.stringify(answer).includes('SHORT_UNQUALIFIED_PREVIEW'));
@@ -155,7 +159,11 @@ test('exact 4000 chars fit and 4001 chars omit whole units without a preview lea
   assert(!JSON.stringify(overflow).includes('SHORT_UNQUALIFIED_PREVIEW'));
   assert(!api.renderAnswerMarkdown(overflow).includes('SHORT_UNQUALIFIED_PREVIEW'));
   assert(!JSON.stringify(overflow).includes('w'.repeat(4001)));
-  assert.match(api.renderAnswerMarkdown(overflow), /answer_budget.*fields/);
+  const md = api.renderAnswerMarkdown(overflow);
+  assert.match(md, /Pominięcia: 1 jednostek \(answer_budget: 1\)/);
+  assert.match(md, /Brak pokrycia: fields\./);
+  assert.deepEqual(overflow.owaCoverage.missingFacets, ['fields']);
+  assert.equal(overflow.omissions[0].recordId, 'LOCAL_1');
 });
 
 test('actual selected units count once per text with combined facets, not body preview', () => {

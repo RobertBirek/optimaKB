@@ -594,7 +594,8 @@ export async function handleJsonRpcRequest(request, context = {}) {
           retrieval: result.structured?.retrieval,
           evidenceAssessment: result.structured?.evidenceAssessment,
           ...(result.structured?.owaCoverage ? { owaCoverage: result.structured.owaCoverage,
-            answerNotes: result.structured.answerNotes || [] } : {}),
+            answerNotes: result.structured.answerNotes || [],
+            extracts: result.structured.extracts || [], omissions: result.structured.omissions || [] } : {}),
           knowledge_status: result.structured?.evidenceAssessment?.status === 'insufficient_evidence'
             ? 'unknown' : legacyKnowledgeStatus(evidence, temporalWarning),
           validity: { valid_from: null, valid_to: null, as_of: args.as_of || null },

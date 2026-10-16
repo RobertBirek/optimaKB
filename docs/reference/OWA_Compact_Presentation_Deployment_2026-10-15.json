@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "status": "COMPLETE",
+  "taskDate": "2026-10-15",
+  "executedOn": "2026-10-16",
+  "deploymentReadbackCompletedAt": "2026-10-16T06:55:04.583Z",
+  "baseCommit": "38e314b720004e6454af0f3532bc0d50ac0928d6",
+  "reviewedTree": "95728a9b54ac3cdd79082fc6b665d18cf6147fbe",
+  "sourceWorktree": "/tmp/opencode/openspg-owa-compact-20261015",
+  "runtimeCheckout": "/docker/openspg",
+  "evidenceRoot": "backups/manual-repairs/owa-compact-presentation-20261015",
+  "integration": {
+    "method": "Six native apply_patch tool calls; exact reviewed runtime/helper/test bytes only",
+    "transferredScriptFiles": 11,
+    "backedUpOriginals": 6,
+    "verifiedNewFileAbsences": 5,
+    "exactSourceDestinationCandidateParity": true,
+    "runtimeDependencyModulesVerifiedReadableByMcpbot": 21,
+    "sourceHashProof": "source-hash-proof.json",
+    "nativeTransferReceipts": "native-transfer-receipts.json",
+    "offlineReports": "Both reviewed offline reports retained byte-exact under reviews/candidate-artifacts; not transferred to main"
+  },
+  "topology": {
+    "publicSemanticUrl": "https://optima.kag.taxbell.pl/mcp/erp-semantic-mcp",
+    "publicDispatcher": "erp-kb-mcp.service",
+    "publicDispatcherPort": 3400,
+    "publicHealthProfile": "legacy",
+    "dedicatedUnit": "erp-semantic-mcp.service",
+    "dedicatedPort": 3420,
+    "entrypoint": "/usr/bin/node /docker/openspg/scripts/erp_knowledge_mcp_http_bridge.mjs",
+    "verifiedBeforeAndAfter": true,
+    "tlsVerificationResult": 0
+  },
+  "restarts": [
+    {"order":1,"unit":"erp-kb-mcp.service","count":1,"oldPid":3762440,"newPid":4067830,"newStart":"2026-10-16T06:54:40Z","localHealthPassedAt":"2026-10-16T06:54:41.514Z","publicCompactReadbackPassedAt":"2026-10-16T06:54:45.469Z","activeState":"active","subState":"running","execMainStatus":0},
+    {"order":2,"unit":"erp-semantic-mcp.service","count":1,"oldPid":3750833,"newPid":4068095,"newStart":"2026-10-16T06:54:56Z","localHealthPassedAt":"2026-10-16T06:54:57.114Z","publicRecheckPassedAt":"2026-10-16T06:55:04.583Z","dedicatedLocalCompactReadback":true,"activeState":"active","subState":"running","execMainStatus":0}
+  ],
+  "readOnlyProfileManifestSmokes": {"passed":7,"profiles":["erp-semantic-mcp","optima-product-mcp","optima-technical-mcp","insert-gt-technical-mcp","legal-compliance-mcp","payroll-hr-mcp","accounting-tax-mcp"],"checks":"Public initialize server identity and exact tools/list against current profile manifests"},
+  "verification": {
+    "mainGateCommands":18,
+    "mainFocusedSuites":5,
+    "mainNumberedPasses":170,
+    "mainFailures":0,
+    "mainGateIncludes":"npm run check, module-map validation, syntax of all 11 transferred scripts, formatter/real-handler contract/independent guards/comparison/fallback suites",
+    "fixtureIsolation":"Closed synthetic/frozen inputs and existing guarded loaders; no production corpus fallback",
+    "retainedFinalCandidateGate":{"commands":29,"numberedPasses":510,"failures":0,"additionalAssertionSuites":["answer-focus","seven public profiles"]},
+    "retainedSealsRehashedAndDurablyCopied":[66,117,125,163],
+    "connectedLive12":{"PASS":12,"PARTIAL":0,"MISS":0,"wholeBodyReductionPercent":38.910903123860464,"allIndividualShorter":true}
+  },
+  "preservation": {
+    "mainIndexUnchanged":true,
+    "sourceIndexAndHeadUnchanged":true,
+    "preexistingGeneratedReportsPreserved":8,
+    "newApprovedPlanAndSpecPreserved":true,
+    "rawPromotedRegistryCsvAutomationPolicyFingerprintsUnchanged":true,
+    "supportedReadOnlyAutomationConfigAndJobActionStateUnchanged":true,
+    "unrelatedRunningServiceMetadataUnchanged":true,
+    "observedGeneratedReportDrift":[],
+    "initial1805PercentFailedAttemptRetainedImmutable":true,
+    "ordinaryCallTelemetryAllowed":true,
+    "zeroAuditWriteClaim":false,
+    "commitPushOrIndexWritePerformed":false,
+    "subdelegationPerformed":false
+  },
+  "recovery": {"runbook":"RECOVERY.md","originals":"originals/","candidate":"candidate/","inventory":"preflight.json.files","rollbackPerformed":false,"futureAuthorizationRequired":true,"reloadBothActuallyAffectedUnitsInOrder":["erp-kb-mcp.service","erp-semantic-mcp.service"]},
+  "evidence": {"preflight":"preflight.json","postflight":"postflight.json","sourceProof":"source-hash-proof.json","acceptance":"acceptance-verification.json","mainGates":"gates/commands.json","manualLiveReview":"live12/manual-review.json","finalSeal":"evidence-manifest.json","finalVerification":"final-verification.json","taskReport":"task-4-report.md"},
+  "concerns": [],
+  "boundary": "Presentation/source-fidelity acceptance; historical source claims do not constitute fresh ERP/MSSQL verification or graph execution. No corpus, graph, ERP, export/build, policy, timer, proxy, Docker or other-unit change was performed."
+}

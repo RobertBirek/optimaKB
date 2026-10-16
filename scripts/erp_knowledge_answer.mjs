@@ -24,6 +24,7 @@ import {
 import { parseOwaQuestion } from './lib/owa_query_context.mjs';
 import { assessOwaCoverage, reconcileOwaOmissions, selectOwaEvidence } from './lib/owa_evidence.mjs';
 import { describeLocalSource } from './lib/local_source_provenance.mjs';
+import { renderCompactOwaAnswer } from './lib/owa_answer_presentation.mjs';
 import {
   computeConfidenceScore,
   CONFIDENCE_LOW_THRESHOLD,
@@ -647,6 +648,7 @@ export function buildPragmaticAnswer(question, response, evidence, diagnostics =
 }
 
 export function renderAnswerMarkdown(answer) {
+  if (answer.owaCoverage) return renderCompactOwaAnswer(answer);
   const lines = [
     `Pytanie: ${answer.question}`,
     '',
