@@ -69,11 +69,11 @@ function sourcePhrases(origin) {
 export function buildSemanticCatalog(rows, allowed) {
   const catalog = { identities: [], fields: [], relations: [], workflows: [], symbols: [], references: new Map() };
   // Do not even inspect excluded row.fields (including when scope is empty).
-  const selected = rows.filter(row => allowed.has(row.namespace));
-  const identities = selected.filter(row => ['entity', 'concept', 'process'].includes(rowKind(row)) && row.fields.id);
-  for (const origin of identities) {
+  const selected = rows.filter(row => allowed.has(row.namespace)).map(origin => ({ origin, kind: rowKind(origin) }));
+  const identities = selected.filter(({ origin, kind }) => ['entity', 'concept', 'process'].includes(kind) && origin.fields.id);
+  for (const { origin, kind } of identities) {
     const f = origin.fields;
-    const identity = { id: f.id, namespace: origin.namespace, kind: rowKind(origin),
+    const identity = { id: f.id, namespace: origin.namespace, kind,
       name: f.canonicalName || f.workflowName || f.name || f.id, mainTable: f.mainTable,
       labels: identityLabels(f), phrases: sourcePhrases(origin), origin, locator: locator(origin),
       tables: f.mainTable ? [{name:f.mainTable,origin,locator:locator(origin)}] : [] };
@@ -84,8 +84,19 @@ export function buildSemanticCatalog(rows, allowed) {
     }
   }
   const owners = (origin, id) => catalog.references.get(refKey(origin.namespace, id)) || [];
-  for (const origin of selected) {
-    const f = origin.fields || {}, kind = rowKind(origin);
+  const sourcesByOwner = new Map();
+  for (const { origin, kind } of selected) {
+    const f = origin.fields || {};
+    // Preserve occurrence order and ambiguity, including duplicate identity rows.
+    // Keys are the actual request-local owner objects, never aliases or bare IDs.
+    if (kind === null && f.sourceDocumentRefId) {
+      const referenced = owners(origin, f.sourceDocumentRefId);
+      if (referenced.length === 1) {
+        const owner = referenced[0];
+        if (!sourcesByOwner.has(owner)) sourcesByOwner.set(owner, []);
+        sourcesByOwner.get(owner).push(origin);
+      }
+    }
     if (kind === 'field') for (const owner of owners(origin, f.entityRefId)) {
       catalog.fields.push({ id: f.id, name: f.fieldName || f.mssqlColumn || f.name,
         ownerId: owner.id, owner, fields: f, keyRole: f.keyRole || null,
@@ -107,9 +118,7 @@ export function buildSemanticCatalog(rows, allowed) {
   for (const owner of catalog.identities) {
     const identityOrigin = owner.origin, f = identityOrigin.fields;
     // Only literal, unique same-namespace references can contribute declarations.
-    const sources = [identityOrigin, ...selected.filter(row => rowKind(row) === null
-      && row.fields.sourceDocumentRefId && owners(row, row.fields.sourceDocumentRefId).length === 1
-      && owners(row, row.fields.sourceDocumentRefId)[0] === owner)];
+    const sources = [identityOrigin, ...(sourcesByOwner.get(owner) || [])];
     owner.phrases.push(...sources.slice(1).flatMap(sourcePhrases));
     const nameSymbols = [];
     let origin = identityOrigin;

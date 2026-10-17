@@ -1,4 +1,4 @@
-import { parseOwaQuestion, matchesOwaField, owaMetadataMentions } from './owa_query_context.mjs';
+import { parseOwaQuestion, matchesOwaField, owaMetadataMentions, createOwaMentionContext } from './owa_query_context.mjs';
 
 /**
  * @typedef {'primary'|'comparison'|'endpoint'|'auxiliary'} SubjectRole
@@ -94,7 +94,7 @@ function naturalCandidates(question, catalog) {
   })));
 }
 
-function nominalCompositions(question, catalog) {
+function nominalCompositions(question, catalog, metadataMentions) {
   const entities = catalog.identities.filter(o => o.kind === 'entity');
   const definitions = new Map(entities.map(o => [o, words(o.origin.fields.description || '').map(w => w.token)]));
   const frequency = new Map();
@@ -109,7 +109,7 @@ function nominalCompositions(question, catalog) {
     if (!match) continue;
     const head = headStem(fold(match[1])), objectLabel = match[2];
     const objects = entities.filter(o => o !== owner && o.namespace === owner.namespace && o.labels.some(l => !l.exact
-      && owaMetadataMentions(objectLabel, l.value, { inflect: true }).some(s => s.start === 0 && s.end === objectLabel.length)));
+      && metadataMentions(objectLabel, l.value, { inflect: true }).some(s => s.start === 0 && s.end === objectLabel.length)));
     for (const clause of clauses(question)) {
       const tokens = words(clause.text), heads = tokens.filter(w => headStem(w.token) === head);
       if (heads.length && objects.length) result.objectConstraints.push({ owner, start: clause.start, end: clause.end });
@@ -140,12 +140,12 @@ function mentionRole(question, mention, intent) {
 
 // The parser's unique spelling hints are not occurrences. Recover every bounded
 // occurrence, including source-declared fields classified as heuristic IDs.
-function fieldOccurrences(question, context, catalog) {
+function fieldOccurrences(question, context, catalog, metadataMentions = owaMetadataMentions) {
   const names = unique([...context.fieldNames, ...context.qualifiedIds.filter(name =>
     catalog.fields.some(f => matchesOwaField(name, f.fields, f.owner)))])
     .filter(name => !catalog.identities.some(owner => owner.labels.some(label => label.exact && label.value === name))
       && !catalog.symbols.some(symbol => fold(symbol.name) === fold(name)));
-  const occurrences = names.flatMap(value => owaMetadataMentions(question, value).map(span => ({ value, ...span })));
+  const occurrences = names.flatMap(value => metadataMentions(question, value).map(span => ({ value, ...span })));
   // A heuristic uppercase tail inside a qualified column cannot discard its
   // qualifier, even when the complete qualified request has no declared owner.
   return occurrences.filter(span => !occurrences.some(other => other.start <= span.start && other.end >= span.end
@@ -162,10 +162,11 @@ function fieldOccurrences(question, context, catalog) {
  */
 export function resolveSemanticSubjects(question, intent, catalog) {
   question = String(question ?? '');
+  const { mentions: metadataMentions } = createOwaMentionContext();
   const context = parseOwaQuestion(question, { symbols: catalog.symbols });
   const candidates = [], unresolved = [], ambiguities = [];
   const add = (owner, label, priority, origin = owner.origin, locator = owner.locator) => {
-    for (const span of owaMetadataMentions(question, label.value, { exact: label.exact,
+    for (const span of metadataMentions(question, label.value, { exact: label.exact,
       inflect: !label.exact && !['mainTable', 'field', 'symbol'].includes(label.kind) })) {
       candidates.push({ owner, ...label, ...span, priority, origin, locator });
     }
@@ -186,14 +187,14 @@ export function resolveSemanticSubjects(question, intent, catalog) {
     add(owner, { kind: 'sourceComposition', value: composition.value, exact: false, targetOrigin:composition.targetOrigin,
       targetIdentityOrigin:composition.targetIdentityOrigin }, 85, composition.origin, composition.locator);
   }
-  const nominal = nominalCompositions(question, catalog);
+  const nominal = nominalCompositions(question, catalog, metadataMentions);
   candidates.push(...nominal);
   candidates.splice(declaredCount, candidates.length-declaredCount, ...candidates.slice(declaredCount).filter(admitsComposition));
   const admittedNominal = nominal.filter(admitsComposition);
   const exactRequests = unique([...context.qualifiedIds,
     ...[...question.matchAll(/(?<![\p{L}\p{N}_.:-])(?:[\p{L}][\p{L}\p{N}_.-]*(?::[\p{L}\p{N}_-]+)+(?:[.:][\p{L}\p{N}_-]+)*|[A-Z][A-Z\d]+_[\p{L}\p{N}_]+)(?![\p{L}\p{N}_])/gu)]
       .map(m => m[0])])
-    .filter(value => owaMetadataMentions(question, value, { exact: true }).length)
+    .filter(value => metadataMentions(question, value, { exact: true }).length)
     .filter(value => candidates.some(c => c.exact && c.value === value)
       || !catalog.symbols.some(s => fold(s.name) === fold(value))
         && !catalog.fields.some(f => matchesOwaField(value, f.fields, f.owner)));
@@ -206,7 +207,7 @@ export function resolveSemanticSubjects(question, intent, catalog) {
   } else {
     for (const symbol of catalog.symbols) add(symbol.owner, { kind: 'symbol', value: symbol.name, exact: false }, 80, symbol.origin, symbol.locator);
     const namedCandidates = candidates.filter(c => !candidates.some(other => dominates(other, c))), segments = clauses(question);
-    for (const span of fieldOccurrences(question, context, catalog)) {
+    for (const span of fieldOccurrences(question, context, catalog, metadataMentions)) {
       const name = span.value;
       const clause = segments.find(c => span.start >= c.start && span.end <= c.end);
       const namesIn = segment => namedCandidates.filter(c => segment && c.start >= segment.start && c.end <= segment.end
@@ -276,7 +277,7 @@ export function resolveSemanticSubjects(question, intent, catalog) {
     const clause = clauses(question).find(c => match.start >= c.start && match.end <= c.end);
     if (actionScope && actionScope.owner !== match.owner && !match.exact && !['field', 'mainTable'].includes(match.kind)
         && !comparisonCue.test(fold(clause?.text)) && !/\b(?:opisz|pokaz|klucz\w*|identyfikator\w*|mapowani\w*|slownik\w*|enum)\b/.test(fold(clause?.text))
-        && actionScope.owner.phrases.some(p => owaMetadataMentions(p.text, match.value, { inflect: true }).length)) role = 'endpoint';
+        && actionScope.owner.phrases.some(p => metadataMentions(p.text, match.value, { inflect: true }).length)) role = 'endpoint';
     let subject = subjects.find(s => key(s) === key(match.owner));
     if (!subject) {
       subject = { id: match.owner.id, namespace: match.owner.namespace, kind: match.owner.kind,

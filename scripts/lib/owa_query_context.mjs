@@ -134,9 +134,34 @@ function wordPattern(word) {
   return `(?:${escape(stem)}(?:${endings.join('|')})${softened.map(form => `|${escape(form)}`).join('')})`;
 }
 
+// Read only the literal prefix shared by every branch of wordPattern's closed
+// grammar. Unknown future pattern shapes have no usable necessary condition.
+function requiredWordLiteral(word, pattern) {
+  const generated = /^\(\?:([a-z]+)\(\?:[a-z|]*\)((?:\|[a-z]+)*)\)$/.exec(pattern);
+  if (!generated) return pattern === escape(word) ? word : '';
+  let prefix = generated[1];
+  for (const alternative of generated[2].split('|').slice(1)) {
+    let length = 0;
+    while (length < prefix.length && prefix[length] === alternative[length]) length++;
+    prefix = prefix.slice(0, length);
+  }
+  return prefix;
+}
+
 function mentions(text, label, inflect = false, opaque = false) {
   if (!label) return [];
-  const pattern = inflect ? label.split(/\s+/).map(wordPattern).join('\\s+') : escape(label);
+  // Necessary negatives only: every potential match still passes the
+  // authoritative Unicode/opaque boundary grammar below.
+  if (!inflect && !text.includes(label)) return [];
+  let pattern;
+  if (inflect) {
+    const words = label.split(/\s+/), patterns = words.map(wordPattern);
+    if (words.some((word, i) => {
+      const literal = requiredWordLiteral(word, patterns[i]);
+      return literal && !text.includes(literal);
+    })) return [];
+    pattern = patterns.join('\\s+');
+  } else pattern = escape(label);
   const boundary = opaque ? '\\p{L}\\p{N}_.:-' : '\\p{L}\\p{N}_';
   // Terminal periods/colons delimit requests; .Child or :Child extends an ID.
   const end = opaque ? '(?![\\p{L}\\p{N}_-]|[.:][\\p{L}\\p{N}_.:-])' : `(?![${boundary}])`;
@@ -148,6 +173,34 @@ function mentions(text, label, inflect = false, opaque = false) {
 // Exact IDs preserve case; natural labels use the same conservative inflections.
 export function owaMetadataMentions(text, label, { inflect = false, exact = false } = {}) {
   return mentions(exact ? String(text) : normalize(text), exact ? String(label) : normalize(label), inflect, exact);
+}
+
+// Private resolver context: exact raw string tuples only, never ambient or shared
+// across requests. Admission stops at either cap; uncached calls keep full grammar.
+export function createOwaMentionContext({ maxEntries = 8192, maxCharacters = 4194304 } = {}) {
+  const entries = new Map();
+  const entryLimit = Math.min(8192, maxEntries), characterLimit = Math.min(4194304, maxCharacters);
+  let retained = 0;
+  return {
+    mentions(text, label, { inflect = false, exact = false } = {}) {
+      // Coercible objects can be stateful/reentrant; retain their original evaluation.
+      if (typeof text !== 'string' || typeof label !== 'string' || text.length + label.length > characterLimit) {
+        return owaMetadataMentions(text, label, { inflect, exact });
+      }
+      const key = JSON.stringify([text, label, Boolean(inflect), Boolean(exact)]);
+      let spans = entries.get(key);
+      if (!spans) {
+        spans = owaMetadataMentions(text, label, { inflect, exact });
+        const size = key.length + spans.length * 32;
+        if (entries.size < entryLimit && retained + size <= characterLimit) {
+          entries.set(key, spans);
+          retained += size;
+        }
+      }
+      return spans.map(span => ({ ...span }));
+    },
+    clear() { entries.clear(); retained = 0; },
+  };
 }
 
 function aliases(value) {

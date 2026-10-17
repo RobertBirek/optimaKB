@@ -1,0 +1,83 @@
+{
+  "status": "INDEPENDENTLY_ACCEPTED_FOR_BOUNDED_WORKLOAD",
+  "operationalReview": {
+    "path": "backups/manual-repairs/semantic-cpu-block-20261017/final-report-revision-20261017T133609Z/review/cpu-operational-review.md",
+    "sha256": "4a86f220fab5246dc5d01a7d3c853ca528666c83c5d13b98c5e614335e26ddee",
+    "specVerdict": "PASS_WITH_DOCUMENTED_REPLAY_METHOD_DEVIATION",
+    "qualityOperationalVerdict": "PASS_WITH_RESIDUAL_RISKS",
+    "currentCriticalOrImportantBlockers": 0,
+    "historicalAvailabilityI1": "CLOSED_ONLY_FOR_TESTED_4_ATTACHED_BURST_AND_32_PUBLIC_PROTOCOL_REPLAY",
+    "nativeAttachedBurstCalls": 4,
+    "directPublicMcpProtocolReplayCalls": 32,
+    "nativeAttachedReplayCalls": 0,
+    "replayMethodDeviation": "Accepted explicitly for this bounded operation: four native attached-tool calls plus 32 direct public authenticated MCP protocol calls, not 32 native attached-tool invocations. Equivalent public route/profile/configured authentication and full protocol/body parity support acceptance without fabricating attached-tool states.",
+    "closureLimits": "No sustained arbitrary throughput, nonterminating-job recovery, full simultaneous capacity of both pools or absence of all future socket errors is established. The historical socket-closing component is not retrospectively identified."
+  },
+  "reportRevision": {
+    "scope": "Documentation/private evidence only; no new requests, tests/load or service operations",
+    "evidenceRoot": "backups/manual-repairs/semantic-cpu-block-20261017/final-report-revision-20261017T133609Z",
+    "finalManifest": "final-manifest.json",
+    "coordinatorReceipt": "coordinator-metadata-receipt.json",
+    "coordinatorReceiptSha256": "d3f866556642ba5f9866e7849626d12096cdea3db732b4dcd3ea7d55777b2cc7",
+    "receiptProvenance": "Coordinator-supplied unscored metadata, not newly measured performance evidence",
+    "history": "All previous public versions and original seals archived byte-exact before update. The original 715 operation entries remain unchanged."
+  },
+  "evidenceAt": "2026-10-17T13:15:55.917Z",
+  "deploymentReport": "Semantic_CPU_Block_Deployment_2026-10-17.json",
+  "approvedTree": "716d9edf05fa476b17bc573e4998a5feebc82156",
+  "portableReleaseSha256": "abdd0723069a9396aa77419790b4eff3f6d6383ec8e590dfa4400c6ce34c2730",
+  "centralPid": 787565,
+  "dedicatedPid": 788778,
+  "nativeAttachedToolBurst": {
+    "success": 4,
+    "failures": 0,
+    "observedSocketErrors": 0,
+    "startedAt": "2026-10-17T13:07:36.200Z",
+    "finishedAt": "2026-10-17T13:07:43.517Z",
+    "serverMeasuredWallMs": 7317,
+    "timingBasis": "existing HTTP audit durationMs; attached renderer does not expose separate client timing",
+    "calls": [
+      {"id":"Q04","method":"erp_process.explain","asOf":"2026-10-15","limit":5,"correlation":"cpu-deploy-public-burst-Q04","serverMs":2573,"markdownSha256":"4f54659ff903611f0c34bc6fe9f6c2e109bb4cf366b18cd02ce18daaa17e1166"},
+      {"id":"Q03","method":"erp_entity.get","asOf":"2026-10-15","limit":5,"correlation":"cpu-deploy-public-burst-Q03","serverMs":4741,"markdownSha256":"5f2167361963f581c90b70045b199726bd1258628b4e9da673c1fed1fedcb6ce"},
+      {"id":"Q06","method":"erp_relation.list","asOf":"2026-10-15","limit":5,"correlation":"cpu-deploy-public-burst-Q06","serverMs":6993,"markdownSha256":"87a511909a1f761168442e6f4de8a0d0a2838f6329b66605cd0b29c7fdb1bcda"},
+      {"id":"Q10","method":"erp_concept.search","asOf":"2026-10-15","limit":5,"correlation":"cpu-deploy-public-burst-Q10","serverMs":4909,"markdownSha256":"c266bd49bcd672d5a60c7fb5854385b7814e358bf0faf89c94ab5d83a533a246"}
+    ],
+    "captureNote": "Full attached-tool Markdown was transcribed and verified byte-for-byte against accepted bodies after removing exactly one declared recorder terminal LF. Attached renderer exposes neither transport RPC IDs nor structured JSON. Native *.request.json case IDs are binding templates, not observed wire IDs; native-tool-boundary-addendum.json hashes actual attached-tool inputs separately. Full original32 MCP protocol replies below are distinct actual captures, not reconstructed native JSON."
+  },
+  "probes": {
+    "thresholdsMs":{"publicP95":1000,"publicMax":2000},
+    "periodsMs":{"publicHealth":750,"publicMetadata":2500,"localHealth":1000,"resourceSampling":100},
+    "idleBefore":{"health":{"count":13,"success":13,"p50":10.159,"p95":241.361,"max":241.361},"metadata":{"count":4,"success":4,"p50":14.833,"p95":144.601,"max":144.601}},
+    "burstActualActiveInterval":{"health":{"count":9,"success":9,"p50":10.743,"p95":26.235,"max":26.235},"metadata":{"count":3,"success":3,"p50":12.700,"p95":15.918,"max":15.918}},
+    "burstWholeObservationWindow":{"health":{"count":39,"success":39,"p50":10.660,"p95":35.000,"max":205.915},"metadata":{"count":12,"success":12,"p50":14.550,"p95":118.263,"max":118.263}},
+    "original32ObservationWindow":{"health":{"count":125,"success":125,"p50":9.883,"p95":18.258,"max":262.789},"metadata":{"count":38,"success":38,"p50":13.634,"p95":26.742,"max":163.028}},
+    "failures":0,
+    "jitterInterpretation":"Idle and active samples include network/TLS/process noise and small-sample variation. Lower active p95 is not interpreted as a CPU reduction ratio or latency guarantee."
+  },
+  "poolAndResources": {
+    "maxExecutorsPerProcess":2,"maxQueuedPerProcess":8,"observedBurstActive":2,"observedBurstQueued":2,"saturatedPublicQueue":false,"publicCrashOrMalformedTests":false,"fatalReason":null,
+    "burstSampledActive":{"intervalMs":7223,"centralCpuMs":16310,"dedicatedCpuMs":20,"centralRssMaxBytes":256626688,"dedicatedRssMaxBytes":145350656,"centralThreadsMax":21,"dedicatedThreadsMax":17},
+    "replayProbeWindow":{"durationMs":95927.587,"centralCpuMs":99730,"dedicatedCpuMs":250,"centralRssMaxBytes":247468032,"dedicatedRssMaxBytes":100552704},
+    "supplementalHttpReadbacksMs":{"dedicatedColdLocalQ01":3895.869,"dedicatedWarmLocalQ01":2776.909,"centralPublicQ01":2484.052,"dedicatedPublicQ01":2350.682},
+    "queueTimingCaveat":"Observed live occupancy proves queueing. Exact per-request queue/startup/handler decomposition is unavailable through the unchanged production bridge; the server durations include all three. Precise private fixture timings remain separately retained.",
+    "cpuInterpretation":"Isolation preserves transport responsiveness while CPU work continues; sampled process CPU is not per-worker CPU, allocation-only overhead or evidence of reduced total CPU/greater sustained throughput."
+  },
+  "original32": {
+    "status":"PASS","count":32,"passed":32,"classification":"compatibility replay, not a new held-out score",
+    "transport":"Actual public authenticated MCP protocol harness: initialize, initialized notification, tools/list and tools/call; no direct domain function, fake server, frozen runtime substitution or provider override",
+    "url":"https://optima.kag.taxbell.pl/mcp/erp-semantic-mcp",
+    "startedAt":"2026-10-17T13:10:03.618Z","finishedAt":"2026-10-17T13:11:27.105Z","elapsedMs":83487.61431217194,"maxCallMs":3027.7276520729065,
+    "dates":{"Q01-Q12":"2026-10-15","H01-H20":"2026-10-16"},"limit":5,"distinctCorrelations":32,"requestBytesMatchAccepted":true,
+    "wholeMarkdownParity":true,"wholeJsonParity":"only /result/structuredContent/evidence/<index>/observedAt may differ","physicalSourceAuditsEqual":true,"presentationCaps":{"sources":2,"sectionsPerSource":3,"extractCharacters":4000},
+    "frozenManifestSha256":"db11def874d29a1f78e99f91a1771bae1199170dc8d48a35bee9bfed662ef0ea",
+    "fullCaptures":"backups/manual-repairs/semantic-cpu-block-20261017/operation-20261017T123800Z/connected/parity32/",
+    "perRequestAndResponseAndSourceHashes":"final-evidence.json#/parity32/responses within the operation root; SHA256 c6e93891eab77b25d82fbf213a956f9ffe4b452ff4e12bc646375e70f9d82d94",
+    "wireRequestManifest":"connected-wire-request-manifest.json within the operation root; exact JSON.stringify(request) bodies, independently sealed in publication-seal.json",
+    "callTimesMs":{"Q01":2602.309,"Q02":2776.486,"Q03":2279.621,"Q04":2682.006,"Q05":2509.234,"Q06":2360.667,"Q07":2642.295,"Q08":2534.439,"Q09":2034.673,"Q10":3027.728,"Q11":2137.580,"Q12":1037.911,"H01":2475.332,"H02":2511.369,"H03":2184.545,"H04":2679.749,"H05":2822.476,"H06":2468.428,"H07":2219.332,"H08":2235.604,"H09":2434.500,"H10":3020.822,"H11":2664.153,"H12":2742.568,"H13":2788.654,"H14":2653.639,"H15":2815.959,"H16":2485.975,"H17":2067.137,"H18":2380.989,"H19":2672.542,"H20":1248.479}
+  },
+  "testAccounting":{"freshFocused":44,"retainedBroad":1066,"broadFreshRerun":false},
+  "new10":{"accessed":false,"retested":false,"retuned":false,"historicalScore":"2/5/3 unchanged"},
+  "historicalAvailabilityI1":"Independently CLOSED ONLY for the tested four attached SemanticKB burst calls and original32 direct public authenticated MCP protocol replay. No current Critical or Important blocker remains for this bounded acceptance. Historical failures remain valid and archived; no unrestricted availability guarantee is implied.",
+  "evidenceRoot":"backups/manual-repairs/semantic-cpu-block-20261017/operation-20261017T123800Z",
+  "residualRisks":["No execution/startup watchdog","Additional Node loader/V8/libuv/helper resources beyond executor slots","Prolonged semantic queue delays and stuck-slot exhaustion remain possible","Real shared telemetry concurrency not stress-tested","No sustained-load or total-CPU/throughput guarantee"]
+}

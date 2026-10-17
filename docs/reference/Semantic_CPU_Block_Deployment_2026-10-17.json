@@ -1,0 +1,73 @@
+{
+  "status": "DEPLOYED_INDEPENDENTLY_ACCEPTED_FOR_BOUNDED_WORKLOAD",
+  "operationalReview": {
+    "path": "backups/manual-repairs/semantic-cpu-block-20261017/final-report-revision-20261017T133609Z/review/cpu-operational-review.md",
+    "sha256": "4a86f220fab5246dc5d01a7d3c853ca528666c83c5d13b98c5e614335e26ddee",
+    "specVerdict": "PASS_WITH_DOCUMENTED_REPLAY_METHOD_DEVIATION",
+    "qualityOperationalVerdict": "PASS_WITH_RESIDUAL_RISKS",
+    "currentCriticalOrImportantBlockers": 0,
+    "scope": "Independent acceptance of the recorded finite deployment/availability experiment, not a new measurement or an unrestricted availability guarantee",
+    "historicalAvailabilityI1": "CLOSED_ONLY_FOR_TESTED_4_ATTACHED_BURST_AND_32_PUBLIC_PROTOCOL_REPLAY",
+    "nativeAttachedBurstCalls": 4,
+    "directPublicMcpProtocolReplayCalls": 32,
+    "nativeAttachedReplayCalls": 0,
+    "replayMethodDeviation": "Explicitly accepted on its bounded operational merits: the 32 direct public authenticated MCP protocol calls use the same public route/profile/configured auth boundary and retain complete protocol/body/source parity evidence; they are not 32 attached-tool states.",
+    "separateSourceI1": "Malformed-request pool poisoning was separately corrected and closed in the approved source review; it is not the historical HTTP availability I1."
+  },
+  "reportRevision": {
+    "scope": "Documentation/private evidence only; zero new runtime requests, load/tests or service actions",
+    "evidenceRoot": "backups/manual-repairs/semantic-cpu-block-20261017/final-report-revision-20261017T133609Z",
+    "finalManifest": "final-manifest.json",
+    "coordinatorReceipt": "coordinator-metadata-receipt.json",
+    "coordinatorReceiptSha256": "d3f866556642ba5f9866e7849626d12096cdea3db732b4dcd3ea7d55777b2cc7",
+    "receiptProvenance": "Coordinator-supplied, unscored metadata; not a fresh request or new performance proof",
+    "priorPublicationSeal": "The original 715-entry operation seal remains byte-exact and binds the previous publication version. This revision's final manifest binds the current reports and append-only source/durable report."
+  },
+  "evidenceAt": "2026-10-17T13:15:55.917Z",
+  "sourceWorktree": "/tmp/opencode/openspg-semantic-cpu-20261017",
+  "destination": "/docker/openspg",
+  "baseCommit": "f23796f4ea75b66b61163490d7fbb441f53be100",
+  "approvedTree": "716d9edf05fa476b17bc573e4998a5feebc82156",
+  "scope": "All 17 exact approved-tree paths; controller corrected the historical 16-file count. Only native apply_patch performed the production source transfer.",
+  "portableReleaseSha256": "abdd0723069a9396aa77419790b4eff3f6d6383ec8e590dfa4400c6ce34c2730",
+  "portableReleaseDefinition": "SHA256 of JSON.stringify of the ordered portableInventory below; independent of checkout root",
+  "portableInventory": [
+    {"path":"scripts/erp_knowledge_mcp_http_bridge.mjs","bytes":17358,"sha256":"718770329c7177ca66e8eaa8b28dc3c389db8d817959cb7738d2f6b0398ad4e5"},
+    {"path":"scripts/fixtures/semantic_catalog_pre_cpu.source.txt","bytes":14081,"sha256":"1044e9c75b491086703a2989054856aaa3840092cd767fc86dc5ca4af153f9c6"},
+    {"path":"scripts/lib/owa_query_context.mjs","bytes":17788,"sha256":"ff6ea144318c9183478fbdc43b36eb465981c5e3f2182ff4bbfa3154584a6eba"},
+    {"path":"scripts/lib/semantic_catalog.mjs","bytes":14466,"sha256":"a67c807ef62545e202efc54e77a932add40f66c9fa70b24528d0e262ad487cfb"},
+    {"path":"scripts/lib/semantic_isolation_fixture_host.mjs","bytes":9143,"sha256":"029ce70812ab2fc686de47152ddfbe98e28c5e232f3e90aec03893a85a0fe161"},
+    {"path":"scripts/lib/semantic_requirements.mjs","bytes":36409,"sha256":"40b03d6d811ff06155d481424070ccbfcf304cb20c81dfca4471cdd8ed8436ef"},
+    {"path":"scripts/lib/semantic_worker_entry.mjs","bytes":1353,"sha256":"4e73ce24526ef627cd9c955ee577e8e3a60db7b89ae34dc9e8a9b048b0aaebe6"},
+    {"path":"scripts/lib/semantic_worker_generation.mjs","bytes":3566,"sha256":"f7082d1546966ef6946b630b3d43ddc3d22326e22a7bc8266618ea5c16a165d0"},
+    {"path":"scripts/lib/semantic_worker_pool.mjs","bytes":5957,"sha256":"0b34d7bac67690f21f32a30372c49776570898ed8e664f9c81b6d1baaafabdd8"},
+    {"path":"scripts/test_owa_inflected_negative.mjs","bytes":4327,"sha256":"68f07b0444574a6480767aa40736394fa6102f2476f4171bf5d8bd0b251a3c32"},
+    {"path":"scripts/test_semantic_cpu_regressions.mjs","bytes":11303,"sha256":"0b21d29141264345fab4c2cf09954df6cd77deb854b106836f7132e7ad19c271"},
+    {"path":"scripts/test_semantic_http_isolation.mjs","bytes":20908,"sha256":"39e1d484e487379dc7a7b3e88efd18648f4a705066f29cf0f5070b4ede601e2f"},
+    {"path":"scripts/test_semantic_relation_qualifications.mjs","bytes":13000,"sha256":"96523f0baecd6a540b5054ae20640b0322d1e2ae131f4bf8850b78ea902f10e3"},
+    {"path":"scripts/test_semantic_span_reuse.mjs","bytes":6716,"sha256":"3208943e7b2954c85fa93a53531b90257030bbb383a6496e898734fd6c799752"},
+    {"path":"scripts/test_semantic_worker_generation.mjs","bytes":4447,"sha256":"a28d50449526e1835c2112521db1c7ba3ee29b28924ebd73f4e1dc5ed187a0ad"},
+    {"path":"scripts/test_semantic_worker_pool.mjs","bytes":12055,"sha256":"476d4b4ddf005df702b74963e29250e3e70a7bef61f4d65fb6caff1417655003"},
+    {"path":"scripts/test_semantic_worker_request_errors.mjs","bytes":8647,"sha256":"f29f8f0f1598392eabb6ef7769c12ad206275637d1bc048979c2b3bb5ff45928"}
+  ],
+  "generation": {
+    "destinationPathBoundId": "f96136454717ac8d70ba5c579f32b77ea1dbfbec46688388a99418b7fc6d856c",
+    "sourcePathBoundId": "6eee1a419e7895d7d62a9ee7de431625b405521fa44fe9dd23cd42469ffe89c1",
+    "files": 26,
+    "bytes": 459817,
+    "portableClosureVerified": true,
+    "mcpbotReadable": true,
+    "runtimeHandshake": "Successful actual worker results require a matching ready-generation handshake. Health does not expose the digest. Neither path-bound ID is a portable release hash."
+  },
+  "resourcePreflight": {"node":"v18.19.1","processors":12,"availableHostBytes":3701051392,"twoProcessFixtureBudgetBytes":693010432,"additionalReserveBytes":1073741824,"memoryMax":"infinity for both services and system.slice","memoryHigh":"infinity for both services and system.slice","tasksMaxPerService":28738,"pass":true},
+  "restarts": [
+    {"unit":"erp-kb-mcp.service","oldPid":576677,"newPid":787565,"start":"2026-10-17T13:04:45Z","order":1,"state":"active/running","execMainStatus":0},
+    {"unit":"erp-semantic-mcp.service","oldPid":577468,"newPid":788778,"start":"2026-10-17T13:06:24Z","order":2,"state":"active/running","execMainStatus":0}
+  ],
+  "gates": {"mainSyntax":"PASS","explicitMjsSyntaxChecks":16,"moduleMap":"PASS","focused":{"tests":44,"pass":44,"fail":0,"skip":0,"stdoutSha256":"adc0668e8351b7172bc4a850f4a074dba2a942bcf3e2e2dc485f228aad4fef1b"},"retainedBroadGate":{"tests":1066,"pass":1066,"fail":0,"skip":0,"freshRerun":false,"freshStaticBinding":{"currentFiles":67,"logHashes":30,"artifacts":156,"rawResponses":37}},"tlsVerify":0,"canonicalReadOnlyProfiles":7,"configuredAttachedProfiles":6,"centralBeforeDedicatedGate":"PASS","dedicatedLocalAndPublicReadbacks":"PASS"},
+  "preservation": {"rawFiles":966,"inboxFiles":664,"csvAndManifests":175,"policies":2,"unrelatedGeneratedReports":8,"allEqual":true,"bothIndexesPreserved":true,"mainIndexSha256":"e6afb860c8be9eac156940297c534a90646192ee56b0eb5e11c8485b8880256b","sourceIndexSha256":"8cb56cbe8973c2c1df31a37baa48cf100d5e8cbb111b4b2b4911e6df16eba294","unchangedOtherListenerPids":9,"productionAutoDraft":"1 in both services","productionProvider":"api in both services","readOnlyGuard":"allowAutoDraft:false remains forced; retained 151 checks/144 read-only calls/zero draft attempts, plus fresh actual-core request controls","ordinaryTelemetry":"allowed; not claimed unchanged","otherServiceOrConfigChanges":false,"stageCommitPushOrDelegation":false},
+  "history": "Initial BLOCKED public/private reports remain byte-exact in the operation history directory. The old availability failure and earlier review rejection remain historical; current source approval and this measured acceptance do not erase them.",
+  "rollback": {"executed":false,"verifiedOriginals":5,"verifiedNewFileAbsences":12,"verifiedRestoredClosureFiles":27,"nativePatchSha256":"4d4a781892c22d2ce407f8a69c7b458ec8c6d6858661283b5dd74089e3dc1ecf","proofSha256":"6d23ff9ef61e8901f4ab88b87bf08cadd4c518cb95a80e327790c4ea3aa83d33","futureAuthorizedOrder":"Hash-check every candidate path, restore exact originals/remove only matching additions through native apply_patch, verify old closure/mcpbot readability, reload BOTH central then dedicated and repeat health/TLS/profile/smoke gates"},
+  "evidence": {"root":"backups/manual-repairs/semantic-cpu-block-20261017/operation-20261017T123800Z","reviewSha256":"8b2f5e4ee44975d3c5cc46d682938720c2ef235e7a4ea230faa407f5b4a5f504","correctedBriefSha256":"a5fc2256c08396fa97f3b430d8e51f906515a3dc0702352531b971c2effb7b6f","finalEvidence":"final-evidence.json","finalEvidenceSha256":"c6e93891eab77b25d82fbf213a956f9ffe4b452ff4e12bc646375e70f9d82d94","measuredSeal":"measured-evidence-seal.json","measuredSealSha256":"e172cfd14c3d56c92bacd16d0957804ba53d126a2c9769d0c3543c95ba0d5f4c","publicationSeal":"publication-seal.json"},
+  "residualRisks": ["No execution/startup watchdog or indefinite-slot recovery guarantee","Per-process 2 executors/8 waiters do not bound all Node/helper threads, RSS or total CPU","Semantic queue delay persists; no sustained-load or full combined four-executor capacity claim","Concurrent real shared telemetry/provider/filesystem behavior remains a residual risk","Independent historical availability I1 closure applies only to the tested four attached calls and original32 public protocol replay; arbitrary throughput, stuck-job recovery and absence of all future socket errors are not established"]
+}

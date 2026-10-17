@@ -4,9 +4,15 @@ import http from 'http';
 import { randomUUID, timingSafeEqual } from 'crypto';
 import fs from 'fs';
 import path from 'path';
-import { formatLegacySseEndpoint, handleJsonRpcRequest, PROTOCOL_VERSION } from './lib/erp_knowledge_mcp_core.mjs';
 import { verifyApiKey } from './lib/mcp_registry.mjs';
-import { getMcpProfile, listMcpProfiles, MCP_PROFILE_VERSION } from './lib/erp_knowledge_mcp_profiles.mjs';
+import { captureSemanticGeneration, installSemanticGeneration } from './lib/semantic_worker_generation.mjs';
+import { createSemanticWorkerPool, isSemanticWorkerRequest } from './lib/semantic_worker_pool.mjs';
+
+const semanticGeneration = captureSemanticGeneration();
+installSemanticGeneration(semanticGeneration);
+const { formatLegacySseEndpoint, handleJsonRpcRequest, PROTOCOL_VERSION } = await import(semanticGeneration.coreUrl);
+const { getMcpProfile, listMcpProfiles, MCP_PROFILE_VERSION } = await import(semanticGeneration.profilesUrl);
+const semanticPool = createSemanticWorkerPool(semanticGeneration);
 
 const HOST = process.env.ERP_KB_HTTP_HOST || '127.0.0.1';
 const PORT = Number(process.env.ERP_KB_HTTP_PORT || 3400);
@@ -268,23 +274,37 @@ async function handleMcpPost(req, res, auditContext = null, requestProfile = PRO
   }
 
   let response;
+  const cancellation = new AbortController();
+  const onDisconnect = () => { if (!res.writableEnded) cancellation.abort(); };
+  res.on('close', onDisconnect);
+  req.on('aborted', onDisconnect);
+  if (res.destroyed || req.aborted) cancellation.abort();
   try {
     const requestNamespaces = requestProfile.id === PROFILE.id
       ? EFFECTIVE_NAMESPACES
       : new Set(requestProfile.namespaces || []);
-    response = await handleJsonRpcRequest(payload, {
+    const context = {
       writeAllowed: ['editorial', 'legacy'].includes(requestProfile.mode) && auth.writeAllowed,
       allowedNamespaces: requestNamespaces,
       profile: requestProfile,
       serverInfo: { name: requestProfile.serverName, version: MCP_PROFILE_VERSION },
-    });
+    };
+    response = isSemanticWorkerRequest(payload, context)
+      ? (await semanticPool.run(payload, context, { signal: cancellation.signal })).response
+      : await handleJsonRpcRequest(payload, context);
   } catch (error) {
-    return sendJson(res, 500, {
+    if (cancellation.signal.aborted || res.destroyed) return;
+    return sendJson(res, error.code === 'SEMANTIC_BUSY' || error.code === 'SEMANTIC_UNAVAILABLE' ? 503 : 500, {
       jsonrpc: '2.0',
       id: payload.id ?? null,
-      error: { code: -32603, message: error.message },
+      error: { code: error.code === 'SEMANTIC_BUSY' ? -32004 : -32603, message: error.message },
     });
+  } finally {
+    res.off('close', onDisconnect);
+    req.off('aborted', onDisconnect);
   }
+
+  if (cancellation.signal.aborted || res.destroyed) return;
 
   if (!response) {
     res.writeHead(202, { 'Content-Length': '0', ...SECURITY_HEADERS });
@@ -383,6 +403,7 @@ const server = http.createServer(async (req, res) => {
       rateWrite: RATE_LIMIT_WRITE,
       maxSseClients: MAX_SSE_CLIENTS,
       sseClients: sseClients.size,
+      semanticExecution: semanticPool.stats(),
     });
   }
 
@@ -413,6 +434,18 @@ const server = http.createServer(async (req, res) => {
 
 server.requestTimeout = REQUEST_TIMEOUT_MS;
 server.headersTimeout = HEADERS_TIMEOUT_MS;
+server.on('close', () => { void semanticPool.close(); });
+
+async function shutdown() {
+  for (const { res, timer } of sseClients.values()) { clearInterval(timer); res.end(); }
+  sseClients.clear();
+  const closed = new Promise(resolve => server.close(resolve));
+  await semanticPool.close();
+  server.closeAllConnections();
+  await closed;
+}
+process.once('SIGTERM', shutdown);
+process.once('SIGINT', shutdown);
 
 if (REQUIRE_AUTH_ON_PUBLIC_BIND && !isLoopbackHost(HOST) && !AUTH_TOKEN && !WRITE_AUTH_TOKEN) {
   throw new Error('Refusing to start MCP HTTP bridge on non-loopback host without ERP_KB_HTTP_TOKEN or ERP_KB_HTTP_WRITE_TOKEN.');

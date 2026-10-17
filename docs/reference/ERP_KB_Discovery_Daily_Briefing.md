@@ -1,8 +1,8 @@
 # ERP KB Discovery Daily Briefing
 
-Generated: `2026-10-15T10:01:20.362Z`
+Generated: `2026-10-17T10:04:33.868Z`
 
-- Pending candidates: `293`
+- Pending candidates: `299`
 - Corpus duplicates: `1`
 - Operator decisions: `146`
 - Quality alerts: `4`

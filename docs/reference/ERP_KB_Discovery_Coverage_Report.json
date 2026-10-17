@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T10:01:11.906Z",
+  "generatedAt": "2026-10-17T10:04:18.832Z",
   "overall": "PASS",
   "profileVersion": "discovery-profiles-v1",
   "dryRun": false,
@@ -9,17 +9,17 @@
   },
   "totals": {
     "queries": 16,
-    "activeQueries": 15,
-    "candidates": 469,
+    "activeQueries": 14,
+    "candidates": 475,
     "drafted": 138,
-    "pending": 293,
+    "pending": 299,
     "routed": 7,
     "rejected": 30,
     "duplicates": 1
   },
   "feedback": {
     "overall": {
-      "candidates": 469,
+      "candidates": 475,
       "reviewed": 146,
       "duplicates": 1,
       "accepted": 115,
@@ -124,7 +124,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaReference": {
-        "candidates": 38,
+        "candidates": 40,
         "reviewed": 11,
         "duplicates": 0,
         "accepted": 10,
@@ -137,7 +137,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaSchema": {
-        "candidates": 22,
+        "candidates": 23,
         "reviewed": 5,
         "duplicates": 0,
         "accepted": 0,
@@ -150,7 +150,7 @@
         "falseNegatives": 0
       },
       "ComarchOptimaSprint": {
-        "candidates": 35,
+        "candidates": 37,
         "reviewed": 7,
         "duplicates": 0,
         "accepted": 7,
@@ -189,7 +189,7 @@
         "falseNegatives": 0
       },
       "TaxbellPayrollHRReference": {
-        "candidates": 59,
+        "candidates": 60,
         "reviewed": 28,
         "duplicates": 0,
         "accepted": 25,
@@ -217,7 +217,7 @@
         "falseNegatives": 0
       },
       "official": {
-        "candidates": 300,
+        "candidates": 305,
         "reviewed": 98,
         "duplicates": 1,
         "accepted": 86,
@@ -230,7 +230,7 @@
         "falseNegatives": 0
       },
       "professional": {
-        "candidates": 138,
+        "candidates": 139,
         "reviewed": 33,
         "duplicates": 0,
         "accepted": 22,
@@ -258,7 +258,7 @@
     },
     "byAction": {
       "CANDIDATE_ONLY": {
-        "candidates": 234,
+        "candidates": 238,
         "reviewed": 55,
         "duplicates": 0,
         "accepted": 42,
@@ -284,7 +284,7 @@
         "falseNegatives": 0
       },
       "REJECT": {
-        "candidates": 73,
+        "candidates": 75,
         "reviewed": 17,
         "duplicates": 0,
         "accepted": 0,
@@ -1130,6 +1130,19 @@
         "falsePositives": 0,
         "falseNegatives": 0
       },
+      "generated_ComarchOptimaReference_b3882ab1c8": {
+        "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
       "generated_ComarchOptimaReference_c8dad6e313": {
         "candidates": 1,
         "reviewed": 0,
@@ -1223,6 +1236,19 @@
       },
       "generated_ComarchOptimaSchema_60d1db4c74": {
         "candidates": 2,
+        "reviewed": 0,
+        "duplicates": 0,
+        "accepted": 0,
+        "rejected": 0,
+        "holdsResolved": 0,
+        "evaluable": 0,
+        "agreed": 0,
+        "agreement": null,
+        "falsePositives": 0,
+        "falseNegatives": 0
+      },
+      "generated_ComarchOptimaSchema_82ba120f2c": {
+        "candidates": 1,
         "reviewed": 0,
         "duplicates": 0,
         "accepted": 0,
@@ -2158,7 +2184,7 @@
         "falseNegatives": 0
       },
       "seed_ComarchOptimaSprint": {
-        "candidates": 15,
+        "candidates": 17,
         "reviewed": 0,
         "duplicates": 0,
         "accepted": 0,
@@ -2197,7 +2223,7 @@
         "falseNegatives": 0
       },
       "seed_TaxbellPayrollHRReference": {
-        "candidates": 21,
+        "candidates": 22,
         "reviewed": 7,
         "duplicates": 0,
         "accepted": 6,
@@ -2360,19 +2386,19 @@
       "mode": "CANDIDATE_ONLY",
       "activeQueries": 2,
       "totalQueries": 2,
-      "candidates": 22,
+      "candidates": 23,
       "drafted": 0,
-      "pending": 17,
+      "pending": 18,
       "routed": 0,
       "rejected": 5,
       "duplicates": 0,
-      "lastCandidateAt": "2026-09-07T02:49:44.928Z"
+      "lastCandidateAt": "2026-10-16T02:47:10.473Z"
     },
     {
       "kbNamespace": "ComarchOptimaAdditionalFunctions",
       "kbName": "Comarch Optima Additional Functions",
       "mode": "CANDIDATE_ONLY",
-      "activeQueries": 2,
+      "activeQueries": 1,
       "totalQueries": 2,
       "candidates": 40,
       "drafted": 10,
@@ -2388,13 +2414,13 @@
       "mode": "CANDIDATE_ONLY",
       "activeQueries": 2,
       "totalQueries": 2,
-      "candidates": 35,
+      "candidates": 37,
       "drafted": 7,
-      "pending": 28,
+      "pending": 30,
       "routed": 0,
       "rejected": 0,
       "duplicates": 0,
-      "lastCandidateAt": "2026-10-15T02:47:41.955Z"
+      "lastCandidateAt": "2026-10-17T02:46:53.701Z"
     },
     {
       "kbNamespace": "ComarchOptimaReference",
@@ -2402,13 +2428,13 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 2,
       "totalQueries": 2,
-      "candidates": 38,
+      "candidates": 40,
       "drafted": 11,
-      "pending": 26,
+      "pending": 28,
       "routed": 0,
       "rejected": 1,
       "duplicates": 0,
-      "lastCandidateAt": "2026-10-09T02:47:18.031Z"
+      "lastCandidateAt": "2026-10-16T02:46:57.917Z"
     },
     {
       "kbNamespace": "ComarchOptimaPartnerTechnical",
@@ -2472,13 +2498,13 @@
       "mode": "DIRECT_DRAFT",
       "activeQueries": 1,
       "totalQueries": 1,
-      "candidates": 59,
+      "candidates": 60,
       "drafted": 30,
-      "pending": 26,
+      "pending": 27,
       "routed": 0,
       "rejected": 3,
       "duplicates": 0,
-      "lastCandidateAt": "2026-10-07T02:48:05.527Z"
+      "lastCandidateAt": "2026-10-16T02:46:32.762Z"
     },
     {
       "kbNamespace": "TaxbellAccountingVATReference",
@@ -2497,110 +2523,110 @@
   ],
   "recentRuns": [
     {
-      "id": "discovery_autodraft_2026-10-15T10-01-11-706Z_4ccae2bc",
+      "id": "discovery_autodraft_2026-10-17T10-04-18-508Z_9d5adc86",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-10-15T10:01:11.706Z",
-      "finishedAt": "2026-10-15T10:01:11.727Z",
+      "startedAt": "2026-10-17T10:04:18.508Z",
+      "finishedAt": "2026-10-17T10:04:18.551Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-10-15T04-01-19-801Z_3f0ceea9",
+      "id": "discovery_autodraft_2026-10-17T04-04-11-158Z_c3be547d",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-10-15T04:01:19.801Z",
-      "finishedAt": "2026-10-15T04:01:20.716Z",
+      "startedAt": "2026-10-17T04:04:11.158Z",
+      "finishedAt": "2026-10-17T04:04:11.194Z",
       "resultCount": 0,
-      "draftedCount": 1,
+      "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_daily_2026-10-15T02-47-13-559Z_5490c87f",
+      "id": "discovery_daily_2026-10-17T02-46-13-361Z_3e8c003e",
       "type": "daily",
       "ok": true,
-      "startedAt": "2026-10-15T02:47:13.559Z",
-      "finishedAt": "2026-10-15T02:48:21.941Z",
+      "startedAt": "2026-10-17T02:46:13.361Z",
+      "finishedAt": "2026-10-17T02:47:08.227Z",
       "resultCount": 45,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-10-14T22-04-24-970Z_6207ba48",
+      "id": "discovery_autodraft_2026-10-16T22-04-29-711Z_ee903fc5",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-10-14T22:04:24.970Z",
-      "finishedAt": "2026-10-14T22:04:24.988Z",
+      "startedAt": "2026-10-16T22:04:29.711Z",
+      "finishedAt": "2026-10-16T22:04:29.730Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-10-14T16-04-25-187Z_6531b56d",
+      "id": "discovery_autodraft_2026-10-16T16-04-19-187Z_2f02e34d",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-10-14T16:04:25.187Z",
-      "finishedAt": "2026-10-14T16:04:25.247Z",
+      "startedAt": "2026-10-16T16:04:19.187Z",
+      "finishedAt": "2026-10-16T16:04:19.203Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-10-14T10-01-25-094Z_19f1a4d0",
+      "id": "discovery_autodraft_2026-10-16T10-02-11-183Z_d8769829",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-10-14T10:01:25.094Z",
-      "finishedAt": "2026-10-14T10:01:25.115Z",
+      "startedAt": "2026-10-16T10:02:11.183Z",
+      "finishedAt": "2026-10-16T10:02:11.219Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-10-14T04-00-57-700Z_951b0d6a",
+      "id": "discovery_autodraft_2026-10-16T04-01-27-132Z_ccdce86e",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-10-14T04:00:57.700Z",
-      "finishedAt": "2026-10-14T04:00:57.729Z",
+      "startedAt": "2026-10-16T04:01:27.132Z",
+      "finishedAt": "2026-10-16T04:01:27.167Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_daily_2026-10-14T02-46-32-301Z_3888e08a",
+      "id": "discovery_daily_2026-10-16T02-45-56-736Z_dd029379",
       "type": "daily",
       "ok": true,
-      "startedAt": "2026-10-14T02:46:32.301Z",
-      "finishedAt": "2026-10-14T02:47:30.890Z",
+      "startedAt": "2026-10-16T02:45:56.737Z",
+      "finishedAt": "2026-10-16T02:47:10.513Z",
       "resultCount": 45,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-10-13T22-02-19-597Z_bf0abcbf",
+      "id": "discovery_autodraft_2026-10-15T22-04-19-745Z_fce56d42",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-10-13T22:02:19.597Z",
-      "finishedAt": "2026-10-13T22:02:19.652Z",
+      "startedAt": "2026-10-15T22:04:19.745Z",
+      "finishedAt": "2026-10-15T22:04:19.764Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",
       "errors": []
     },
     {
-      "id": "discovery_autodraft_2026-10-13T16-14-37-505Z_22277ec6",
+      "id": "discovery_autodraft_2026-10-15T16-04-26-852Z_9b259300",
       "type": "autodraft",
       "ok": true,
-      "startedAt": "2026-10-13T16:14:37.505Z",
-      "finishedAt": "2026-10-13T16:14:37.540Z",
+      "startedAt": "2026-10-15T16:04:26.852Z",
+      "finishedAt": "2026-10-15T16:04:26.886Z",
       "resultCount": 0,
       "draftedCount": 0,
       "error": "",

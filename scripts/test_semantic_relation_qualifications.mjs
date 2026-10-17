@@ -105,17 +105,21 @@ for(const reverse of [false,true])for(const variant of variants)test(`FR-I1 asse
 test('FR-I1 actual guarded MCP: paired qualification sources in both input orders',async t=>{
   const repo=fileURLToPath(new URL('../',import.meta.url));
   const original=validateSemanticBundle(path.join(repo,'.superpowers/sdd/semantic32-frozen-rggcvF'));
-  // Preserve the frozen fixture and exact module pinning while binding the
-  // separately tested read-only write boundary (the only other runtime edits).
-  const writeBoundaryHashes={
+  // Preserve the frozen fixture and exact module pinning. The read-only boundary
+  // and three CPU revisions have retained whole-JSON/source parity proof; these
+  // pins bind the tested candidate, not a relaxed latest-source allowance.
+  const candidateHashes={
     'scripts/erp_knowledge_answer.mjs':'52a5f8e525b18ac783919d3c0c4afff75f5277f7aec0c1d5275b57efbb7692c8',
     'scripts/lib/erp_knowledge_mcp_core.mjs':'bd6f00321d41b431a12cd2ed5ed3718428f6a898797a34ad1228a97bef844866',
+    'scripts/lib/owa_query_context.mjs':'ff6ea144318c9183478fbdc43b36eb465981c5e3f2182ff4bbfa3154584a6eba',
+    'scripts/lib/semantic_catalog.mjs':'a67c807ef62545e202efc54e77a932add40f66c9fa70b24528d0e262ad487cfb',
+    'scripts/lib/semantic_requirements.mjs':'40b03d6d811ff06155d481424070ccbfcf304cb20c81dfca4471cdd8ed8436ef',
   };
   const root=path.join(repo,'.superpowers/sdd/finalfix-qualification-virtual'),files=new Map(),directories=new Set([root]),modules={};
   for(const [file,bytes]of original.files)files.set(path.join(root,path.relative(original.root,file)),bytes);
   for(const file of MODULE_FILES){
     const bytes=fs.readFileSync(path.join(repo,file));modules[file]=bytes.toString();
-    if(file!=='scripts/lib/owa_evidence.mjs')assert.equal(sha256(bytes),writeBoundaryHashes[file]||original.manifest.files.find(f=>f.path===file).sha256);
+    if(file!=='scripts/lib/owa_evidence.mjs')assert.equal(sha256(bytes),candidateHashes[file]||original.manifest.files.find(f=>f.path===file).sha256);
   }
   for(const file of files.keys())for(let dir=path.dirname(file);dir.startsWith(root);dir=path.dirname(dir)){directories.add(dir);if(dir===root)break;}
   for(const file of files.keys())if(file.endsWith('.csv'))files.set(file,Buffer.from('id\n'));

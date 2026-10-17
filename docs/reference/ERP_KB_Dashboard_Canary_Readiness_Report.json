@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-14T23:21:17.343Z",
-  "overall": "APPROVED",
+  "generatedAt": "2026-10-16T23:18:45.570Z",
+  "overall": "BLOCKED",
   "gate": {
-    "eligible": true,
-    "approved": true,
+    "eligible": false,
+    "approved": false,
     "checks": {
-      "automationReady": true,
+      "automationReady": false,
       "samples": true,
       "accuracy": true,
       "falsePositives": true,
@@ -13,7 +13,9 @@
       "noActiveJobs": true,
       "noRollbackFailures": true
     },
-    "blockers": [],
+    "blockers": [
+      "Automation must be enabled and resumed."
+    ],
     "metrics": {
       "samples": 8,
       "decisions": 8,
@@ -26,11 +28,11 @@
       "minimumAccuracy": 0.95,
       "maximumFalsePositives": 0
     },
-    "approvedAt": "2026-10-12T12:57:05.544Z",
-    "approvedBy": "anonymous"
+    "approvedAt": "",
+    "approvedBy": ""
   },
   "learning": {
-    "generatedAt": "2026-10-14T23:21:17.337Z",
+    "generatedAt": "2026-10-16T23:18:45.566Z",
     "overall": {
       "reviewed": 8,
       "kbNamespaces": 1
