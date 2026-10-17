@@ -1,0 +1,81 @@
+{
+  "schemaVersion":1,
+  "status":"COMPLETE_MANUAL_REVIEW",
+  "date":"2026-10-16",
+  "baselineCommit":"a0f29559512ac88af68ac3df4cc4a81e70b30c54",
+  "questionBank":"docs/reference/OWA_SemanticKB_Holdout20Q_2026-10-16.json",
+  "questionBankSha256":"3ae42d67cba40608c84ce4f5ffad77ed5f7553fe1979a586e0b108904a79f936",
+  "method":"Source-guided preregistered holdout, not random sampling or external truth certification. Assistant manually reviewed all complete visible replies against the prewritten criteria and source references. No code/corpus/routing tuning or scored retries.",
+  "execution":{
+    "transport":"Actual connected SemanticKB MCP tools",
+    "as_of":"2026-10-16",
+    "limit":5,
+    "correlationPrefix":"owa-holdout20-20261016-",
+    "scoredCalls":20,
+    "successfulToolStates":20,
+    "scoredRetries":0,
+    "questionChanges":0,
+    "startedAt":"2026-10-16T07:37:18.167Z",
+    "completedAt":"2026-10-16T07:41:38.211Z",
+    "timeAggregation":"Minimum start and maximum end across all twenty completed tool states",
+    "backend":"All visible replies declare local artifacts and no graph/KAG execution",
+    "rawHttpEnvelopeCaptured":false,
+    "freshErpOrMssqlVerified":false
+  },
+  "summary":{"PASS":4,"PARTIAL":5,"MISS":11},
+  "routingObservation":{
+    "owaCompactReplies":8,
+    "businessSemanticsOnlyReplies":12,
+    "owaCompactScores":{"PASS":4,"PARTIAL":2,"MISS":2},
+    "businessSemanticsOnlyScores":{"PASS":0,"PARTIAL":3,"MISS":9},
+    "qualification":"Noncausal descriptive split from visible outputs. Compact OWA route is inferred from the current renderer/citations, not an unseen structured routing trace."
+  },
+  "scopeObservation":{
+    "explicitOwaOrQualifiedOwaIdentity":6,
+    "withoutExplicitOwaName":14,
+    "explicitScores":{"PASS":2,"PARTIAL":2,"MISS":2},
+    "withoutExplicitScores":{"PASS":2,"PARTIAL":3,"MISS":9},
+    "qualification":"These groups have different subject difficulty and are not a paired experiment. A route is not a correctness score."
+  },
+  "results":[
+    {"id":"H01","score":"MISS","presentation":"business_semantics_only","reason":"No price-variant identity or uniqueness rule. KPI and promotional-set snippets replace the requested distinction.","visibleEvidence":"business_description.csv L805-L815 describes promotional sets, not per-product price variants.","gap":"implicit_scope_and_subject_retrieval"},
+    {"id":"H02","score":"PARTIAL","presentation":"owa_compact","reason":"Correct price-to-product N:1/FK/CASCADE and partial MSSQL verification are shown, but the requested price PK TwC_TwCID is absent. Product Twr_TwrId is not a substitute for the price identity.","visibleEvidence":"chunk.csv L103-L141 rules/status and L142-L171 NALEZY_DO_TOWARU; notice explicitly lacks identifiers for Cena towaru.","gap":"subject_priority_and_facet_budget"},
+    {"id":"H03","score":"PASS","presentation":"owa_compact","reason":"Complete composite key, auxiliary-unit code and both conversion fields are visible and attributable. The unrelated unknown type enum remains qualified.","visibleEvidence":"chunk.csv L1407-L1432: TwJ_TwrTyp+TwJ_TwrFirma+TwJ_TwrNumer+TwJ_TwrLp; TwJ_JmZ; TwJ_PrzeliczM/TwJ_PrzeliczL.","gap":null},
+    {"id":"H04","score":"PARTIAL","presentation":"owa_compact","reason":"Shows product/unit logical relationship, but not the specific unit source's absence of formal FK/composite relation. Adds unasked workflow requirements; the requested guarantee limitation is not explained.","visibleEvidence":"chunk.csv L4152-L4167 shows Towar→JednostkaMiary LOGICAL_JOIN; the actual TwrJm source's L55-L73 limitation is omitted.","gap":"relation_intent_and_source_qualification"},
+    {"id":"H05","score":"PARTIAL","presentation":"business_semantics_only","reason":"Useful canonical distinction between Payment flow and Settlement allocation is returned. It does not fully define the requested receivable/payable Rozrachunek or attribute both requested entities.","visibleEvidence":"OWA_Order_to_Cash_v1.md L31 and L70: Payment registers flow, Settlement assigns it to a receivable.","gap":"implicit_scope_and_entity_semantics"},
+    {"id":"H06","score":"PASS","presentation":"owa_compact","reason":"Shows 0 neutral, 1 receipt, -1 outflow; positive amount and nonnegative settled amount, with source citations. No actual company balance lookup/execution claim.","visibleEvidence":"chunk.csv L3014-L3041; business_rule.csv L6 CK_BZd_Kierunek and L3 nonnegative settled system amount.","gap":null},
+    {"id":"H07","score":"PARTIAL","presentation":"business_semantics_only","reason":"Returns BZd_Kwota/BZd_KwotaRoz and generic settled/remaining concept, but omits BZd_KwotaSys/BZd_KwotaRozSys and their complete mapping.","visibleEvidence":"business_description.csv L652-L681; OWA_Order_to_Cash_v1.md L31.","gap":"implicit_scope_and_field_coverage"},
+    {"id":"H08","score":"MISS","presentation":"owa_compact","reason":"Does not invent a confirmed PK, but only says the requested field was not shown. It misses the source's specific tentative KsR_KsRId and unknown full schema/FKs; unrelated KPI evidence replaces the reference.","visibleEvidence":"Notice lacks identifiers, fields and KsR_KsRId; no Rozrachunek source extract is emitted.","gap":"field_owner_resolution_and_specific_unknown"},
+    {"id":"H09","score":"MISS","presentation":"business_semantics_only","reason":"No explanation of offsetting opposite receivables/payables without money flow. Contractor-list/KPI/O2C snippets do not answer compensation requirements.","visibleEvidence":"business_description.csv L716-L736,L844-L872 and canonical O2C L8,L12,L16.","gap":"implicit_scope_and_subject_retrieval"},
+    {"id":"H10","score":"PASS","presentation":"owa_compact","reason":"Complete compensation table supplies header→elements 1:N and header→posting 1:1 through KPN_DekID, without invented element-column names. Coverage diagnostics incorrectly complain, but the requested visible facts and citations are complete.","visibleEvidence":"chunk.csv L1806-L1838 generuje_dekret and zawiera_elementy; L1776-L1805 business definition/rules; posting source L490-L514.","gap":"nonblocking_false_negative_coverage"},
+    {"id":"H11","score":"PARTIAL","presentation":"business_semantics_only","reason":"Canonical source supports correction through a separate correction document rather than editing the original. Quantity/value changes and in-plus/in-minus possibilities are not returned.","visibleEvidence":"OWA_Order_to_Cash_v1.md L58: INVOICED→CORRECTED by correction, not editing the confirmed invoice.","gap":"implicit_scope_and_process_facet_coverage"},
+    {"id":"H12","score":"MISS","presentation":"business_semantics_only","reason":"No contrast between purchase and sales correction creation or their untested write operations. General KSeF and invoice metadata substitute a different topic.","visibleEvidence":"business_description.csv L777-L804 discusses KSeF editing; no FZKOR/FSKOR source qualification.","gap":"implicit_scope_and_multi_entity_process"},
+    {"id":"H13","score":"MISS","presentation":"owa_compact","reason":"Explicitly reports no coverage of PZ→PZKOR and emits no relevant extract, although the preread correction source documents that path and opposite stock movement. Does not fabricate execution, but fails the positive task.","visibleEvidence":"W pokazanych dowodach brak pokrycia całej żądanej ścieżki: PZ → PZKOR.","gap":"correction_identity_and_document_path_selection"},
+    {"id":"H14","score":"MISS","presentation":"business_semantics_only","reason":"No source/destination/total quantity effects or lack of external contractor for an internal transfer. General warehouse/KPI snippets are unrelated to the requested process.","visibleEvidence":"business_domain.csv warehouse label and O2C L26 reservation concept, no MM-specific facts.","gap":"implicit_scope_and_natural_process_names"},
+    {"id":"H15","score":"MISS","presentation":"business_semantics_only","reason":"Does not distinguish internal relocation from reversing supplier receipt. Neither requested process is explained from its source.","visibleEvidence":"O2C L55 cancellation and generic product/dashboard excerpts replace MM/PZKOR comparison.","gap":"implicit_scope_and_multi_entity_process"},
+    {"id":"H16","score":"MISS","presentation":"business_semantics_only","reason":"Does not find the RKUR source or acknowledge its automatic-versus-unknown generation conflict. Generic warnings do not resolve or explicitly retain this specific contradiction.","visibleEvidence":"KPI/manual-draft snippets and O2C correction concept; no RKUR-specific source text.","gap":"implicit_scope_and_source_conflict_retrieval"},
+    {"id":"H17","score":"MISS","presentation":"business_semantics_only","reason":"No invented numeric enum, but also no specific admission that TwC_Typ is UNKNOWN in the source. Unrelated numeric/KPI snippets do not answer the dictionary question.","visibleEvidence":"No TwC_Typ source extract or attributable unknown notice in the full answer.","gap":"implicit_field_scope_and_specific_unknown"},
+    {"id":"H18","score":"MISS","presentation":"business_semantics_only","reason":"No specific unknown-enum explanation for TwJ_TypJm. Other warehouse type labels and contractor information substitute unrelated fields.","visibleEvidence":"business_description.csv L652-L681 shows Mag_Typ, not TwJ_TypJm.","gap":"implicit_field_scope_and_specific_unknown"},
+    {"id":"H19","score":"MISS","presentation":"business_semantics_only","reason":"No actual clarification request or distinction of payment, compensation, workflow and accounting axes. The question's own alternatives receive no credit; no operation is falsely claimed.","visibleEvidence":"O2C L67 says live status comes from Optima API; it does not answer which operation/type is meant.","gap":"implicit_scope_and_ambiguity_handling"},
+    {"id":"H20","score":"PASS","presentation":"owa_compact","reason":"Specifically denies found evidence for the full fictional identity in searched local sources, refuses a substitute process and does not claim ERP-wide nonexistence.","visibleEvidence":"Nie znaleziono dowodów dla wszystkich żądanych identyfikatorów (OWAOntology.AutomatycznaKompensataKwantowa) w przeszukanych lokalnych źródłach.","gap":null}
+  ],
+  "findings":[
+    {"priority":1,"finding":"Natural SemanticKB questions often exclude OWA from useful retrieval.","cases":["H01","H05","H07","H09","H11","H12","H14","H15","H16","H17","H18","H19"],"qualification":"Observed BusinessSemantics-only answer paths; exact ranking changes are not implemented or experimentally proven by this holdout."},
+    {"priority":2,"finding":"Requested subject/facets can lose to linked product or unasked sections even on the OWA path.","cases":["H02","H04","H08","H13"],"qualification":"Specific facts exist in preread documents; generic insufficient-evidence notices are not adequate source-based unknown answers."},
+    {"priority":3,"finding":"Coverage can report missing relations/cardinality despite those facts being visible.","cases":["H10"],"qualification":"H10 is PASS by visible content, not by the coverage flag. A false-negative diagnostic is retained as a separate defect."},
+    {"priority":4,"finding":"Source corpus includes historical inconsistencies outside scored questions.","cases":["H06"],"qualification":"The displayed workflow_pattern row marks list_payments WRITE/WRITE_NOT_CALLED while its source table labels READ. No current capability check was performed; H06 did not ask about that mode, so its correct requested facts still pass."}
+  ],
+  "evidence":{
+    "root":"backups/manual-repairs/owa-holdout20-20261016",
+    "manifest":"manifest.json",
+    "manifestSha256":"99c4ebf89d0a69d5aa7d4e4df082afd991ee59a6bed79f9a5f653d117908c506",
+    "payloadFiles":42,
+    "totalCaptureFilesIncludingManifest":43,
+    "captures":"H01.md/json through H20.md/json; complete actual connected harness-visible output, not replays or selected excerpts",
+    "sourceFingerprints":"source-hashes.json; ten reference documents, five OWA CSVs, routing and BusinessSemantics/O2C artifacts",
+    "fingerprintTiming":"Archived after the twenty calls; fingerprints are not per-request backend attestations.",
+    "privacy":"Private root, owner mcpbot, directories0700/files0600; no raw HTTP or credential capture."
+  },
+  "recommendation":"Do not infer broad natural-language readiness from the old 12/12 benchmark. Prioritize SemanticKB intent/scope and metadata-driven entity/field/process selection, then subject/facet coverage. Retain these 20 as a failing regression set; later use a fresh held-out set to measure generalization. No export/rebuild is justified by this test alone.",
+  "workPerformed":"Twenty scored read-only knowledge-tool calls, manual review and report/evidence writes only. No source-code, routing, source corpus, registry, CSV, graph, ERP, policy or service changes. Ordinary tool telemetry is allowed. No commit or push."
+}

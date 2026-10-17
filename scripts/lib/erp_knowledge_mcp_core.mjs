@@ -5,6 +5,7 @@ import path from 'path';
 import { answerQuestion, renderAnswerMarkdown } from '../erp_knowledge_answer.mjs';
 import { buildResponse, classifyQuestion, listKnowledgeBases, loadRouting, renderMarkdown } from '../erp_knowledge_assistant.mjs';
 import { submitKnowledgeDraft } from './knowledge_inbox.mjs';
+import { semanticIntentForTool } from './semantic_request_intent.mjs';
 import {
   createExternalKnowledgeDraft,
   getExternalSearchStatus,
@@ -97,7 +98,7 @@ export function listTools() {
     ),
     readOnlyTool(
       'answer_question',
-      'Wyszukaj fragmenty lokalnych artefaktów KB z opisem backendu i braków dowodów. Nie uruchamia grafu KAG; confidence jest punktacją wyszukiwania. Może użyć skonfigurowanego wyszukiwania zewnętrznego i auto-draft.',
+      'Wyszukaj fragmenty lokalnych artefaktów KB z opisem backendu i braków dowodów. Nie uruchamia grafu KAG; confidence jest punktacją wyszukiwania. Może użyć skonfigurowanego wyszukiwania zewnętrznego.',
       {
         type: 'object',
         properties: {
@@ -307,7 +308,8 @@ function routeQuestionTool(question, allowedNamespaces) {
 }
 
 async function answerQuestionTool(question, allowedNamespaces, options = {}) {
-  const { answer } = await answerQuestion(question, allowedNamespaces, options);
+  // Every consumer is a read-only method, including when invoked by a writer.
+  const { answer } = await answerQuestion(question, allowedNamespaces, { ...options, allowAutoDraft: false });
   return {
     text: renderAnswerMarkdown(answer),
     structured: answer,
@@ -580,8 +582,10 @@ export async function handleJsonRpcRequest(request, context = {}) {
           },
         }) };
       }
+      const semanticIntent = semanticIntentForTool(name);
       const result = await answerQuestionTool(query, allowedNss,
-        name === 'optima_release.search' ? { intent: 'release' } : {});
+        name === 'optima_release.search' ? { intent: 'release' }
+          : semanticIntent ? { semanticIntent } : {});
       const temporalWarning = TEMPORAL_DOMAINS.has(domain);
       const evidence = result.structured?.evidence || result.structured?.kbsUsed || [];
       return { jsonrpc: '2.0', id, result: toolResultPayload({

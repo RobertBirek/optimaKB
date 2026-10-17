@@ -19,7 +19,7 @@ const sourceFingerprints = [];
 for (const file of MODULE_FILES) {
   modules[file] = fs.readFileSync(path.join(repo, file), 'utf8');
   sourceFingerprints.push({ path: file, sha256: sha256(modules[file]), bytes: Buffer.byteLength(modules[file]) });
-  if (!file.endsWith('/owa_answer_presentation.mjs')) {
+  if (baselineFiles.some(entry => entry.path === file)) {
     let old = fs.readFileSync(path.join(sealedCode, file), 'utf8');
     assert.equal(sha256(old), baselineFiles.find(entry => entry.path === file)?.sha256, 'sealed code fingerprint: ' + file);
     if (file === 'scripts/erp_knowledge_answer.mjs') {
@@ -102,6 +102,7 @@ const handler = await load('scripts/lib/erp_knowledge_mcp_core.mjs');
 const oldHandler = await load('legacy/scripts/lib/erp_knowledge_mcp_core.mjs');
 const { parseOwaQuestion } = await load('scripts/lib/owa_query_context.mjs');
 const { getMcpProfile } = await load('scripts/lib/erp_knowledge_mcp_profiles.mjs');
+const { semanticIntentForTool } = await load('scripts/lib/semantic_request_intent.mjs');
 const scope = new Set(['OWAOntology', 'ComarchOptimaBusinessSemantics']);
 const query = 'OWAOntology.SyntheticCard mapowanie pól `Ready_Flag`';
 const round = value => JSON.parse(JSON.stringify(value));
@@ -124,24 +125,29 @@ after(() => {
   else fs.rmSync(root, { recursive: true, force: true });
 });
 
-test('candidate inventory adds only the formatter and retains the static allowlist/baseline SHA', () => {
-  assert.deepEqual([...MODULE_FILES].sort(), [...baselineFiles.filter(f => f.path.startsWith('scripts/')).map(f => f.path), 'scripts/lib/owa_answer_presentation.mjs'].sort());
+test('candidate inventory adds formatter and explicit semantic closure, retaining static allowlist/baseline SHA', () => {
+  assert.deepEqual([...MODULE_FILES].sort(), [...baselineFiles.filter(f => f.path.startsWith('scripts/')).map(f => f.path),
+    'scripts/lib/owa_answer_presentation.mjs', ...['semantic_request_intent', 'semantic_catalog', 'semantic_requirements', 'semantic_evidence'].map(n => `scripts/lib/${n}.mjs`)].sort());
   assert.deepEqual([...STATIC_FILES].sort(), baselineFiles.filter(f => !f.path.startsWith('scripts/')).map(f => f.path).sort());
   assert.equal(BASELINE_SHA256, '4124f75b330142b6894637380e90589c78dec24362af721eedc45f57276221d2');
 });
 for (const tool of ['erp_concept.search', 'erp_entity.get', 'erp_process.explain', 'erp_relation.list']) {
-  test(`${tool}: additive public arrays and every old semantic field equal the sealed handler`, async () => {
+  test(`${tool}: public contract preserved with attributable semantic selection and complete visible facts`, async () => {
     const old = await dispatch(oldHandler, tool), result = await dispatch(handler, tool);
     assert(!old.error && !result.error);
     const structured = result.result.structuredContent, before = old.result.structuredContent;
     assert.equal(inspectResponse(old).units.length, 3, 'the actual old domain capture remains independently auditable');
-    for (const key of Object.keys(before).filter(k => k !== 'answer')) assert.deepEqual(structured[key], before[key], key);
-    const { answer } = await current.answerQuestion(query, scope);
+    const selected = new Set(['answer', 'evidence', 'sources', 'evidenceAssessment', 'owaCoverage', 'answerNotes', 'extracts', 'omissions']);
+    for (const key of Object.keys(before).filter(k => !selected.has(k))) assert.deepEqual(structured[key], before[key], key);
+    const { answer } = await current.answerQuestion(query, scope, { semanticIntent: semanticIntentForTool(tool) });
     assert(answer.extracts.length > 0 && answer.omissions.length > 0, 'exercise actual selected/omitted evidence');
     assert.deepEqual(structured.extracts, round(answer.extracts));
     assert.deepEqual(structured.omissions, round(answer.omissions));
     assert.equal(structured.answer, result.result.content.filter(p => p.type === 'text').map(p => p.text).join('\n'));
     assert(!JSON.stringify(result).includes('PRIVATE_CANDIDATE_ROW_SENTINEL'));
+    assert(structured.answer.includes('Ready_Flag: UNKNOWN — nie zgaduj wartości.'));
+    assert.equal(structured.owaCoverage.status, 'unknown');
+    assert(structured.owaCoverage.requirements.every(r => r.ownerId === 'synthetic-owner' && r.fieldName === 'Ready_Flag' && r.covered));
     for (const unit of structured.extracts) assert(structured.answer.includes(unit.text));
     assert.equal(inspectResponse(result).units.length, structured.extracts.length);
   });
@@ -175,12 +181,20 @@ test('independent audit accepts the actual full legacy renderer with public arra
 for (const [tool, question, profile, scope] of [
   ['erp_entity.get', 'Znaczenie semantyki biznesowej encji procesów i reguł', 'erp-semantic-mcp', new Set(['ComarchOptimaBusinessSemantics'])],
   ['optima_release.search', 'Optima 2026.2.1 dostępność aktualizacja nowości wydania', 'optima-product-mcp', new Set(['ComarchCommunityNews'])],
-]) test(`${tool}: non-OWA complete RPC and Markdown byte parity with sealed code`, async () => {
+]) test(`${tool}: non-OWA contract and complete source evidence; release retains sealed byte parity`, async () => {
   const old = await dispatch(oldHandler, tool, question, profile, scope);
   const result = await dispatch(handler, tool, question, profile, scope);
   assert(!result.error && result.result.structuredContent.evidence.length);
   assert(!Object.hasOwn(result.result.structuredContent, 'owaCoverage'));
-  assert.equal(JSON.stringify(result), JSON.stringify(old));
+  if (tool === 'optima_release.search') assert.equal(JSON.stringify(result), JSON.stringify(old));
+  else {
+    const body = result.result.structuredContent, before = old.result.structuredContent;
+    assert(body.answer.includes('Znaczenie semantyki biznesowej: definicje encji procesów i reguł. '.repeat(20).trim()));
+    assert(body.sources.some(s => s.kind === 'local_artifact'));
+    for (const key of ['sourceId', 'uri', 'locator', 'contentHash']) assert.equal(body.evidence[0][key], before.evidence[0][key]);
+    assert.equal(body.evidence[0].hits[0].snippet, '', 'no lossy second fact channel');
+    assert.deepEqual(body.retrieval, before.retrieval);
+  }
 });
 test('missing OWA evidence uses only the precise no-op learning writer and no runtime escape', async () => {
   const before = globalThis.owaBlockedLearningCalls || 0;
@@ -278,10 +292,18 @@ for (const [kind, question] of [
     }
     const oldRpc = await dispatch(oldHandler, 'erp_process.explain', question);
     const rpc = await dispatch(handler, 'erp_process.explain', question);
-    assert.equal(rpc.result.structuredContent.answer, markdown);
-    for (const key of Object.keys(oldRpc.result.structuredContent).filter(key => key !== 'answer'))
+    const semanticAnswer = (await current.answerQuestion(question, scope, { semanticIntent: 'process' })).answer;
+    const semanticMarkdown = current.renderAnswerMarkdown(semanticAnswer);
+    assert.equal(rpc.result.structuredContent.answer, semanticMarkdown);
+    for (const item of provider) for (const key of ['title', 'url', 'sourceType', 'publishedDate', 'snippet']) assert(semanticMarkdown.includes(item[key]), key);
+    for (const key of Object.keys(oldRpc.result.structuredContent).filter(key => !['answer', 'evidence', 'sources', 'evidenceAssessment', 'owaCoverage', 'answerNotes', 'extracts', 'omissions'].includes(key)))
       assert.deepEqual(rpc.result.structuredContent[key], oldRpc.result.structuredContent[key], key);
-    if (kind === 'non-OWA') assert.equal(JSON.stringify(rpc), JSON.stringify(oldRpc));
+    if (kind === 'non-OWA') {
+      const body = rpc.result.structuredContent, before = oldRpc.result.structuredContent;
+      assert(!body.owaCoverage);
+      assert(body.answer.includes('Znaczenie semantyki biznesowej: definicje encji procesów i reguł. '.repeat(20).trim()));
+      for (const key of ['sourceId', 'uri', 'locator', 'contentHash']) assert.equal(body.evidence[0][key], before.evidence[0][key]);
+    }
     assert.deepEqual(guard.violations, []);
     guard.writeOutput(`${kind}.json`, JSON.stringify({ question, answer: round(answer), before: round(before), oldMarkdown, markdown,
       oldRpc, rpc, providerCalls: globalThis.owaProviderCalls, fallbackEvents: globalThis.owaFallbackEvents,

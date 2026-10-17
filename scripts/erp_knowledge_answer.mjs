@@ -22,6 +22,10 @@ import {
   makeBodyPreview, parseCsvRecords, selectEvidence,
 } from './lib/knowledge_retrieval.mjs';
 import { parseOwaQuestion } from './lib/owa_query_context.mjs';
+import { semanticCandidateNamespaces } from './lib/semantic_request_intent.mjs';
+import { buildSemanticCatalog } from './lib/semantic_catalog.mjs';
+import { buildSemanticRequestPlan } from './lib/semantic_requirements.mjs';
+import { budgetSemanticUnits, semanticConceptUnits } from './lib/semantic_evidence.mjs';
 import { assessOwaCoverage, reconcileOwaOmissions, selectOwaEvidence } from './lib/owa_evidence.mjs';
 import { describeLocalSource } from './lib/local_source_provenance.mjs';
 import { renderCompactOwaAnswer } from './lib/owa_answer_presentation.mjs';
@@ -128,7 +132,8 @@ export function scanArtifact(relativePath, terms, focusHints = [], limit = 4, co
   const records = parsed ? parsed.records : raw.split('\n').map((text, index) => ({ text, line: index + 1, endLine: index + 1 }));
   const hits = [];
   const siblingHits = [];
-  const owaRows = requestContext?.namespace === 'OWAOntology' && requestContext.context && isCsv ? [] : null;
+  const owaRows = requestContext?.context && isCsv
+    && (requestContext.namespace === 'OWAOntology' || requestContext.context.semanticIntent) ? [] : null;
 
   for (const record of records) {
     const text = (record.cells ? record.cells.join(' | ') : record.text).replace(/\s+/g, ' ').trim();
@@ -136,11 +141,11 @@ export function scanArtifact(relativePath, terms, focusHints = [], limit = 4, co
     const normalized = normalizeText(text);
     const score = scoreLine(normalized, terms, focusHints);
     const body = isCsv ? getSourceFields(parsed.columns, record, relativePath, requestContext) : null;
-    if (owaRows) owaRows.push({ namespace: 'OWAOntology', artifact: relativePath,
+    if (owaRows) owaRows.push({ namespace: requestContext.namespace, artifact: relativePath,
       contentHash, observedAt, line: record.line, endLine: record.endLine,
       fields: body.fields, bodyField: body.bodyField, bodyText: body.bodyText,
       source: body.source, score, matchedTerms: terms.filter(term => containsTerm(normalized, term)) });
-    if (collectSiblings && !owaRows && body?.source.sourceUrl && body.source.owningPath) {
+    if (collectSiblings && requestContext?.namespace !== 'OWAOntology' && body?.source.sourceUrl && body.source.owningPath) {
       siblingHits.push({ line: record.line, endLine: record.endLine, score,
         bodyField: body.bodyField, bodyText: body.bodyText, source: body.source });
     }
@@ -202,6 +207,7 @@ export function gatherEvidence(response, terms, focusHints = [], allowedNamespac
   const evidence = [];
   const scannedSiblings = [];
   const scans = [];
+  const scanned = new Set();
   const groups = [
     { kb: response.primaryKb.name, artifacts: response.primaryKb.artifacts || [] },
     ...response.supportKbs.map((kb) => ({ kb: kb.name, artifacts: kb.artifacts || [] })),
@@ -210,7 +216,10 @@ export function gatherEvidence(response, terms, focusHints = [], allowedNamespac
   for (const group of groups) {
     if (allowedNamespaces && !allowedNamespaces.has(group.kb)) continue;
     for (const artifact of group.artifacts) {
-      const requestContext = context && group.kb === 'OWAOntology' ? { namespace: group.kb, context } : null;
+      const scanKey = JSON.stringify([group.kb, artifact]);
+      if (scanned.has(scanKey)) continue;
+      scanned.add(scanKey);
+      const requestContext = context && (group.kb === 'OWAOntology' || context.semanticIntent) ? { namespace: group.kb, context } : null;
       const result = scanArtifact(artifact, terms, focusHints, Math.max(3, focusHints.length), true, requestContext);
       scans.push({ kb: group.kb, result });
       if (result.siblingHits?.length) scannedSiblings.push({ kb: group.kb,
@@ -221,20 +230,50 @@ export function gatherEvidence(response, terms, focusHints = [], allowedNamespac
 
   // Index all permitted OWA metadata before selecting from any artifact. In
   // particular, an owned zero-score chunk cannot be recovered from lexical top-k.
+  let requestPlan = null;
+  if (context?.semanticIntent) {
+    const allowed = allowedNamespaces || new Set(groups.map(group => group.kb));
+    const catalog = buildSemanticCatalog(scans.flatMap(({ result }) => result.owaRows || []), allowed);
+    requestPlan = buildSemanticRequestPlan(context.question, context.semanticIntent, catalog);
+    Object.defineProperty(evidence, 'requestPlan', { value: requestPlan });
+    context = { ...context, documentSymbols: catalog.symbols.map(s => s.name) };
+  }
   const owaEnabled = context && groups.some(group => group.kb === 'OWAOntology'
     && (!allowedNamespaces || allowedNamespaces.has(group.kb)));
-  const owaSelection = owaEnabled ? selectOwaEvidence(context,
-    scans.flatMap(({ result }) => result.owaRows || [])) : null;
-  if (owaSelection) Object.defineProperty(evidence, 'owaSelection', { value: owaSelection });
-  const selectedRows = new Set(owaSelection?.candidates);
+  const planUsesOwa = requestPlan && (requestPlan.identityBarrier || requestPlan.subjects.some(s => s.namespace === 'OWAOntology')
+    || requestPlan.documentPaths.length || requestPlan.ambiguities.some(a => a.candidates.some(c => c.owner.namespace === 'OWAOntology')));
+  // Explicit status-axis clarification survives even incidental catalog matches.
+  // Merely allowing OWA is not a reason to activate its assessor.
+  const legacyClarification = requestPlan && context.explicitOwa && context.facets.includes('statusAmbiguity');
+  const rows = scans.flatMap(({ result }) => result.owaRows || []);
+  const semanticSelection = requestPlan && !legacyClarification ? selectOwaEvidence(context, rows, requestPlan) : null;
+  if (semanticSelection) Object.defineProperty(evidence, 'semanticSelection', { value: semanticSelection });
+  const selected = owaEnabled && (!requestPlan || planUsesOwa || legacyClarification)
+    ? semanticSelection || selectOwaEvidence(context, rows) : null;
+  if (selected) Object.defineProperty(evidence, 'owaSelection', { value: selected });
+  const selectedRows = new Set(selected?.candidates);
   for (const { kb, result } of scans) {
-    if (owaSelection && kb === 'OWAOntology') {
+    if (requestPlan && (!selected || kb !== 'OWAOntology')) {
+      const origins = new Set(requestPlan.subjects.filter(s => s.namespace === kb).map(s => s.origin));
+      // Declared Business concepts are valid subjects. Unrelated lexical hits
+      // cannot replace an unknown identity or matched OWA owner.
+      result.hits = requestPlan.identityBarrier ? [] : (result.owaRows || []).filter(row => origins.has(row)).map(row => {
+        const hit = { line: row.line, endLine: row.endLine, score: row.score, matchedTerms: row.matchedTerms,
+          recordId: row.fields.id || null, bodyField: row.bodyField, bodyText: row.bodyText, source: row.source,
+          ...makeBodyPreview(row.bodyText, terms, focusHints, normalizeText),
+        };
+        Object.defineProperty(hit, 'owa', { value: { ...(semanticSelection?.metadata.get(row)
+          || { ownerIds: [row.fields.id], units: semanticConceptUnits(row) }), row } });
+        return hit;
+      });
+    }
+    if (selected && kb === 'OWAOntology') {
       result.hits = (result.owaRows || []).filter(row => selectedRows.has(row)).map(row => {
         const hit = { line: row.line, endLine: row.endLine, score: row.score,
           matchedTerms: row.matchedTerms, recordId: row.fields.id || null,
           bodyField: row.bodyField, bodyText: row.bodyText, source: row.source,
           ...makeBodyPreview(row.bodyText, terms, focusHints, normalizeText) };
-        Object.defineProperty(hit, 'owa', { value: { ...owaSelection.metadata.get(row), row } });
+        Object.defineProperty(hit, 'owa', { value: { ...selected.metadata.get(row), row } });
         return hit;
       });
     }
@@ -262,7 +301,7 @@ export function gatherEvidence(response, terms, focusHints = [], allowedNamespac
   // Non-enumerable request-local candidates never enter the public response.
   for (const item of evidence) {
     Object.defineProperty(item, 'siblingArtifacts', { value: scannedSiblings });
-    if (owaSelection && item.kb === 'OWAOntology') Object.defineProperty(item, 'owaSelection', { value: owaSelection });
+    if (selected && item.kb === 'OWAOntology') Object.defineProperty(item, 'owaSelection', { value: selected });
   }
   return evidence;
 }
@@ -395,7 +434,7 @@ function hasExternalSourceBody(hit) {
     && !['technical_fields', 'definitionPreview'].includes(hit.bodyField)));
 }
 
-export function assembleSourceExtracts(question, evidence, allowedNamespaces = null, root = ROOT) {
+export function assembleSourceExtracts(question, evidence, allowedNamespaces = null, root = ROOT, selection = null) {
   const sources = [], extracts = [], omissions = [];
   const groups = new Map(), metadataCache = new Map(), selectedOwners = new Map();
   const permitted = allowedNamespaces || new Set(evidence.map(item => item.kb));
@@ -532,6 +571,10 @@ export function assembleSourceExtracts(question, evidence, allowedNamespaces = n
       omissions.push(omission);
     }
   }
+  if (selection?.requestPlan) {
+    const assess = units => assessOwaCoverage(selection.effectiveContext, selection, units, selection.requestPlan);
+    return { ...budgetSemanticUnits(ranked, assess, omit, selection.requestPlan), omissions };
+  }
   for (const [index, group] of ranked.entries()) {
     if (index >= 2) { omit(group, group.units, 'source_limit'); continue; }
     sources.push(group.source);
@@ -577,18 +620,19 @@ export function buildPragmaticAnswer(question, response, evidence, diagnostics =
   const routed = new Set([response.primaryKb.name, ...response.supportKbs.map(kb => kb.name)]);
   const permitted = new Set([...routed].filter(kb => !allowedNamespaces || allowedNamespaces.has(kb)));
   const parsedContext = parseOwaQuestion(question);
-  const owaEnabled = permitted.has('OWAOntology');
-  const selection = owaEnabled ? evidence.owaSelection : null;
+  const requestPlan = evidence.requestPlan;
+  const owaEnabled = permitted.has('OWAOntology') && (!requestPlan || Boolean(evidence.owaSelection));
+  const selection = evidence.semanticSelection || (owaEnabled ? evidence.owaSelection : null);
   const context = selection?.effectiveContext || parsedContext;
   // A partially resolved exact request cannot be answered by a different owner
   // or by generic support-KB evidence. Keep the original selection for coverage.
-  const usableEvidence = owaEnabled && context.qualifiedIds.length && selection?.missing ? [] : evidence;
+  const usableEvidence = requestPlan?.identityBarrier || owaEnabled && context.qualifiedIds.length && selection?.missing ? [] : evidence;
   const topEvidence = selectEvidence(usableEvidence.filter(item => permitted.has(item.kb)));
-  // Apply the actual source/unit budget to all Task 2 candidates, independently
+  // Apply the actual source/unit budget to all scoped candidates, independently
   // of the generic artifact preview cap. Legacy evidence retains that cap.
-  const presentationEvidence = [...topEvidence, ...usableEvidence.filter(item => item.kb === 'OWAOntology'
-    && permitted.has(item.kb) && item.hits.some(hit => hit.owa) && !topEvidence.includes(item))];
-  const presentation = assembleSourceExtracts(question, presentationEvidence, permitted);
+  const presentationEvidence = [...topEvidence, ...usableEvidence.filter(item => permitted.has(item.kb)
+    && item.hits.some(hit => hit.owa) && !topEvidence.includes(item))];
+  const presentation = assembleSourceExtracts(question, presentationEvidence, permitted, ROOT, selection);
   const requiredTerms = [...new Set([
     ...extractTerms(question).filter(term => DOCUMENT_CODES.has(term)),
     ...extractFocusHints(question),
@@ -599,7 +643,7 @@ export function buildPragmaticAnswer(question, response, evidence, diagnostics =
     namespace: presentation.sources.find(source => source.key === unit.sourceKey)?.namespace })), ...publicItems.flatMap(item => item.hits
     .filter(hit => !hasSourceBody(hit) && hit.snippet?.trim())
     .map(hit => ({ text: hit.snippet, namespace: item.kb, artifact: item.artifact, recordId: hit.recordId })))];
-  const coverage = owaEnabled ? assessOwaCoverage(context, selection, visibleUnits) : null;
+  const coverage = owaEnabled || selection?.requestPlan ? assessOwaCoverage(context, selection, visibleUnits) : null;
   if (coverage) presentation.omissions = reconcileOwaOmissions(context, selection, coverage, presentation.omissions);
   const visibleText = normalizeText(visibleUnits.map(unit => unit.text).join('\n'));
   const missingTerms = requiredTerms.filter(term => !containsTerm(visibleText, term));
@@ -629,7 +673,7 @@ export function buildPragmaticAnswer(question, response, evidence, diagnostics =
     },
     evidence: publicItems,
     ...presentation,
-    ...(coverage ? { owaCoverage: coverage, answerNotes: coverage.notices } : {}),
+    ...(coverage ? { ...(owaEnabled ? { owaCoverage: coverage } : {}), answerNotes: coverage.notices } : {}),
     externalEvidence: [],
     evidenceSource: topEvidence.length ? 'local' : 'none',
     freshnessNote: '',
@@ -769,13 +813,39 @@ Działanie:
 
 export async function answerQuestion(question, allowedNamespaces = null, options = {}) {
   const routing = loadRouting();
-  const classified = classifyQuestion(question, routing, allowedNamespaces, options);
-  const response = buildResponse(classified, routing, allowedNamespaces);
+  // Intersect scope before any artifact/metadata access. Release and callers
+  // without a recognized private intent retain their original route contract.
+  const semanticNamespaces = options.intent === 'release' ? []
+    : semanticCandidateNamespaces(options.semanticIntent, allowedNamespaces);
+  const candidateScope = semanticNamespaces.length ? new Set(semanticNamespaces) : allowedNamespaces;
+  const classified = classifyQuestion(question, routing, candidateScope, options);
+  const candidates = semanticNamespaces.length ? { ...classified,
+    supportKbs: [...new Set([...classified.supportKbs, ...semanticNamespaces])] } : classified;
+  const response = buildResponse(candidates, routing, candidateScope);
   const terms = extractTerms(question);
   const focusHints = extractFocusHints(question);
   const diagnostics = [];
-  const evidence = gatherEvidence(response, terms, focusHints, allowedNamespaces, diagnostics, parseOwaQuestion(question));
-  const answer = buildPragmaticAnswer(question, response, evidence, diagnostics, allowedNamespaces);
+  const context = parseOwaQuestion(question);
+  if (semanticNamespaces.length) Object.defineProperty(context, 'semanticIntent', { value: options.semanticIntent });
+  const evidence = gatherEvidence(response, terms, focusHints, candidateScope, diagnostics, context);
+  const answer = buildPragmaticAnswer(question, response, evidence, diagnostics, candidateScope);
+  if (semanticNamespaces.length) {
+    // Candidate KBs are scan inputs, not claims of used evidence. Keep the
+    // classified primary only when selected evidence actually uses it.
+    const used = [...new Set([
+      ...answer.extracts.map(unit => answer.sources.find(source => source.key === unit.sourceKey)?.namespace),
+      ...answer.evidence.filter(item => item.hits.some(hit => hit.snippet?.trim())).map(item => item.kb),
+    ].filter(Boolean))];
+    const primarySubjects = evidence.requestPlan?.subjects.filter(s => ['primary', 'comparison'].includes(s.role)).map(s => s.namespace) || [];
+    answer.primaryKb = primarySubjects.find(namespace => used.includes(namespace))
+      || (used.includes(response.primaryKb.name) ? response.primaryKb.name : used[0])
+      || primarySubjects[0] || response.primaryKb.name;
+    answer.supportKbs = used.filter(namespace => namespace !== answer.primaryKb);
+    const finalNamespaces = new Set([answer.primaryKb, ...answer.supportKbs]);
+    const finalArtifacts = new Set([response.primaryKb, ...response.supportKbs]
+      .filter(kb => finalNamespaces.has(kb.name)).flatMap(kb => kb.artifacts || []));
+    answer.recommendedArtifacts = answer.recommendedArtifacts.filter(artifact => finalArtifacts.has(artifact));
+  }
   const fallbackDecision = shouldUseExternalFallback({
     questionNormalized: classified.normalizedQuestion,
     evidence,
@@ -784,9 +854,9 @@ export async function answerQuestion(question, allowedNamespaces = null, options
   // Explicit, permitted OWA answers describe this local ontology, including its
   // missing/ambiguous boundaries. A provider cannot supply substitute claims.
   // Release and generic requests retain the existing fallback policy.
-  const localOwaAnswer = parseOwaQuestion(question).explicitOwa && Boolean(answer.owaCoverage)
-    && response.primaryKb.name === 'OWAOntology';
-  if (fallbackDecision.shouldFallback && !localOwaAnswer) {
+  const localOwaAnswer = Boolean(answer.owaCoverage) && (evidence.requestPlan?.identityBarrier
+    || parseOwaQuestion(question).explicitOwa);
+  if (fallbackDecision.shouldFallback && !localOwaAnswer && !evidence.requestPlan?.identityBarrier) {
     try {
       const external = await searchExternalSources({
         query: question,
@@ -811,7 +881,7 @@ export async function answerQuestion(question, allowedNamespaces = null, options
         answer.note = answer.evidence.length
           ? 'Ta odpowiedź łączy lokalne artefakty KB z zewnętrznie cytowanymi wynikami wyszukiwania live.'
           : 'Ta odpowiedź opiera się na zewnętrznie cytowanych wynikach wyszukiwania live, ponieważ lokalna KB nie dostarczyła wystarczająco mocnych dowodów.';
-        if (String(process.env.EXA_AUTO_DRAFT || '0') === '1') {
+        if (options.allowAutoDraft !== false && String(process.env.EXA_AUTO_DRAFT || '0') === '1') {
           const autoDraft = await createExternalKnowledgeDraft({
             kbName: response.primaryKb.name,
             kbNamespace: response.primaryKb.name,

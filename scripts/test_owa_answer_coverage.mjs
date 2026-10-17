@@ -87,6 +87,7 @@ register(`data:text/javascript,${encodeURIComponent(`export async function resol
 }`)}`, import.meta.url);
 
 const { parseOwaQuestion } = await import('./lib/owa_query_context.mjs');
+const { semanticIntentForTool } = await import('./lib/semantic_request_intent.mjs');
 const evidenceApi = await import('./lib/owa_evidence.mjs');
 const api = await import('./erp_knowledge_answer.mjs');
 const { handleJsonRpcRequest, listToolsForProfile } = await import('./lib/erp_knowledge_mcp_core.mjs');
@@ -279,7 +280,10 @@ test('offline integration: owner-attributed relation rows use explicitly declare
     facets: ['relations', 'cardinality'], namespace: kb, owa: { ownerIds: ['left-sample'] } };
   const result = evidenceApi.assessOwaCoverage(c, selection, [unit]);
   assert.equal(result.status, 'covered');
-  const bodyTables = input.map(row => ({ ...row, fields: { ...row.fields, mainTable: '', description: '' } }));
+  // The source end remains explicitly declared; a container ID cannot replace
+  // an unresolved explicit source table while testing the peer's declaration.
+  const bodyTables = input.map(row => ({ ...row, fields: { ...row.fields,
+    mainTable: row.fields.id === 'left-sample' ? row.fields.mainTable : '', description: '' } }));
   bodyTables.push({ namespace: kb, artifact: artifact('chunk'), fields: { id: 'owned-tables', sourceDocumentRefId: 'right-sample',
     content: '## Źródła danych\n- **Tabela główna**: `CDN.SampleRight`\n\n## Relacje\nRelacja próbna.' } });
   assert.equal(evidenceApi.assessOwaCoverage(c, evidenceApi.selectOwaEvidence(c, bodyTables), [unit]).status, 'covered');
@@ -788,7 +792,8 @@ for (const tool of semanticTools) test(`F1-R/F2-R serialized actual MCP ${tool}:
       assert.equal(result.knowledge_status, missing ? 'unknown' : 'partial');
       assert.equal(result.owaCoverage.status, missing ? 'partial' : 'covered');
       if (missing) {
-        assert(result.evidence.some(item => item.hits.some(hit => hit.snippet.includes('Other_Flag'))));
+        assert(!result.answer.includes('SlateOther'), 'unrelated support field cannot replace the requested owner/field');
+        assert(result.omissions.some(o => o.uncoveredRequirements.some(r => r.ownerId === 'slate-owner' && r.fieldName === 'Ready_Flag')));
         assert(result.owaCoverage.requirements.some(req => req.ownerId === 'slate-owner' && req.fieldName === 'Ready_Flag' && !req.covered));
         assert(result.answerNotes.some(note => note.includes('OWAOntology.SlateCard') && note.includes('Ready_Flag')));
         assert(result.answer.includes('brak pokrycia: fields'));
@@ -838,7 +843,7 @@ for (const tool of semanticTools) test(`actual Semantic tools/call ${tool}: insu
     const rpc = await call(tool, query);
     assert(!rpc.error, JSON.stringify(rpc.error));
     const result = rpc.result.structuredContent;
-    assert(result.owaCoverage, 'MCP additive coverage');
+    assert(result.owaCoverage, `MCP additive coverage: ${query}`);
     assert.deepEqual(result.answerNotes, result.owaCoverage.notices);
     assert.equal(result.correlation_id, 'task4-fixture');
     assert.deepEqual(result.validity, { valid_from: null, valid_to: null, as_of: '2026-10-15' });
@@ -848,7 +853,7 @@ for (const tool of semanticTools) test(`actual Semantic tools/call ${tool}: insu
     assert(result.warnings.length);
     assert(result.evidence.every(item => [kb, support].includes(item.kb)));
     assert(result.sources.length <= 2);
-    const { answer: full } = await api.answerQuestion(query, new Set([kb, support]));
+    const { answer: full } = await api.answerQuestion(query, new Set([kb, support]), { semanticIntent: semanticIntentForTool(tool) });
     assert.equal(result.answer, api.renderAnswerMarkdown(full));
     assert.deepEqual(result.sources, full.sources);
     assert.deepEqual(result.owaCoverage, full.owaCoverage);

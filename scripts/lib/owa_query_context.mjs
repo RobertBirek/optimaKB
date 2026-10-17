@@ -47,8 +47,12 @@ export function matchesOwaField(name, fields, owner) {
     && labels.some(label => normalize(label).split('.').at(-1) === column);
 }
 
-/** @returns {Context} */
-export function parseOwaQuestion(question) {
+/**
+ * @param {string} question
+ * @param {{symbols?: Array<{name: string}>}} [metadata] Already scoped catalog declarations.
+ * @returns {Context}
+ */
+export function parseOwaQuestion(question, { symbols = [] } = {}) {
   question = String(question ?? '');
   const normalizedQuestion = normalize(question);
   const tokens = unique(normalizedQuestion.match(/[\p{L}\p{N}_]+/gu) || []);
@@ -63,7 +67,9 @@ export function parseOwaQuestion(question) {
     const name = (match.slice(1).find(Boolean) || match[0]).trim();
     if (/^[\p{L}_][\p{L}\p{N}_.]*$/u.test(name) && !qualifiedIds.includes(name)) fieldMentions.push(name);
   }
-  const documentCodes = tokens.filter(token => DOCUMENT_CODES.has(token)).map(token => token.toUpperCase());
+  // Optional request-local declarations. Never mutate the shared legacy code set.
+  const declaredSymbols = new Set(symbols.map(symbol => normalize(symbol.name)).filter(Boolean));
+  const documentCodes = tokens.filter(token => DOCUMENT_CODES.has(token) || declaredSymbols.has(token)).map(token => token.toUpperCase());
   const facets = [];
   const facetPatterns = {
     overview: /\b(?:czym jest|co opisuje|opisz encj\w*)\b/,
@@ -90,7 +96,9 @@ export function parseOwaQuestion(question) {
   const generalStatus = /\b(?:stan\w*|status\w*)\b.*\bdokument\w*\b|\bdokument\w*\b.*\b(?:stan\w*|status\w*)\b/.test(normalizedQuestion);
   const statusAxis = /\b(?:platn\w*|ksiegow\w*|obieg\w*|magazyn\w*)\b/.test(normalizedQuestion);
   const unspecifiedType = /\b(?:nie poda\w*|bez|brak)\b[^.!?]*\btyp\w* dokument\w*/.test(normalizedQuestion);
-  if (generalStatus && (!statusAxis || unspecifiedType) && !documentCodes.length && !qualifiedIds.length) facets.push('statusAmbiguity');
+  const unspecifiedOperation = unspecifiedType && /\bdokument\w*\b/.test(normalizedQuestion)
+    && /\b(?:operacj\w*|zamkn\w*|(?:nie)?rozlicz\w*|zatwierdz\w*)\b/.test(normalizedQuestion);
+  if ((generalStatus && (!statusAxis || unspecifiedType) || unspecifiedOperation) && !documentCodes.length && !qualifiedIds.length) facets.push('statusAmbiguity');
   return { question, normalizedQuestion, explicitOwa: isExplicitOwaQuestion(question), tokens,
     qualifiedIds, fieldNames: unique(fieldMentions), documentCodes, documentPaths: owaDocumentPaths(question), facets };
 }
@@ -101,9 +109,15 @@ function wordPattern(word) {
   if (!/^[a-z]{5,}$/.test(word)) return escape(word);
   let stem = word, endings = [''];
   const softened = [];
-  if (/[nwl]y$/.test(word)) {
+  if (/[ck]i$/.test(word)) {
+    stem = word.slice(0, -1);
+    endings = ['i', 'iego', 'iemu', 'im', 'a', 'iej', 'ie', 'ich', 'imi'];
+  } else if (/[nwl][ye]$/.test(word)) {
     stem = word.slice(0, -1);
     endings = ['y', 'ego', 'emu', 'ym', 'a', 'ej', 'e', 'ych', 'ymi'];
+  } else if (/nie$/.test(word)) {
+    stem = word.slice(0, -2);
+    endings = ['ie', 'ia', 'iu', 'iem'];
   } else if (/owa$/.test(word)) {
     stem = word.slice(0, -1);
     endings = ['a', 'ej', 'e', 'ego', 'ym', 'ych', 'ymi'];
@@ -124,10 +138,16 @@ function mentions(text, label, inflect = false, opaque = false) {
   if (!label) return [];
   const pattern = inflect ? label.split(/\s+/).map(wordPattern).join('\\s+') : escape(label);
   const boundary = opaque ? '\\p{L}\\p{N}_.:-' : '\\p{L}\\p{N}_';
-  // A terminal sentence period is punctuation, while .Child extends an ID.
-  const end = opaque ? '(?![\\p{L}\\p{N}_:-]|\\.[\\p{L}\\p{N}_])' : `(?![${boundary}])`;
+  // Terminal periods/colons delimit requests; .Child or :Child extends an ID.
+  const end = opaque ? '(?![\\p{L}\\p{N}_-]|[.:][\\p{L}\\p{N}_.:-])' : `(?![${boundary}])`;
   return [...text.matchAll(new RegExp(`(?<![${boundary}])${pattern}${end}`, 'gu'))]
     .map(match => ({ start: match.index, end: match.index + match[0].length }));
+}
+
+// Share the bounded metadata-label grammar with request-local semantic catalogs.
+// Exact IDs preserve case; natural labels use the same conservative inflections.
+export function owaMetadataMentions(text, label, { inflect = false, exact = false } = {}) {
+  return mentions(exact ? String(text) : normalize(text), exact ? String(label) : normalize(label), inflect, exact);
 }
 
 function aliases(value) {

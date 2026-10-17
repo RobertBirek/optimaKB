@@ -29,6 +29,7 @@ export const MODULE_FILES = Object.freeze([
   'scripts/erp_knowledge_answer.mjs', 'scripts/erp_knowledge_assistant.mjs',
   ...['erp_knowledge_mcp_core', 'erp_knowledge_mcp_profiles', 'knowledge_retrieval',
      'owa_query_context', 'owa_evidence', 'owa_answer_presentation', 'local_source_provenance', 'learning',
+     'semantic_request_intent', 'semantic_catalog', 'semantic_requirements', 'semantic_evidence',
     'external_search', 'external_search_policy', 'knowledge_inbox', 'promoted_knowledge',
     'content_cleaner', 'provider_secrets', 'transient_retry', 'dashboard_automation',
     'dashboard_audit', 'feedback_learning', 'atomic_file'].map(n => `scripts/lib/${n}.mjs`),

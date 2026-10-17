@@ -41,7 +41,7 @@ const legacyRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'owa-legacy-renderer-')
 const oldRoot = process.env.ROOT;
 process.env.ROOT = legacyRoot;
 api.registerFrozenModules({ root: legacyRoot, modules: Object.fromEntries(api.MODULE_FILES
-  .filter(file => !file.endsWith('/owa_answer_presentation.mjs')).map(file => [file, readSealed('bundle/' + file).toString('utf8')])) });
+  .filter(file => sealedEntries.some(entry => entry.path === 'bundle/' + file)).map(file => [file, readSealed('bundle/' + file).toString('utf8')])) });
 const importGuard = api.installRuntimeGuard({ root: legacyRoot, output: legacyRoot, files: new Map(), directories: new Set([legacyRoot]) });
 let renderLegacyAnswer;
 try {

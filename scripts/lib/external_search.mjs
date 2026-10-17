@@ -75,6 +75,11 @@ function providerAvailability() {
 }
 
 export function getExternalSearchStatus() {
+  // An explicit opt-out must not discover credentials or inspect their file.
+  if (EXA_PROVIDER === 'disabled') return {
+    configuredProvider: EXA_PROVIDER, activeProvider: 'disabled',
+    apiConfigured: false, mcpConfigured: false, enabled: false,
+  };
   const availability = providerAvailability();
   const activeProvider = EXA_PROVIDER === 'api'
     ? (availability.api ? 'api' : 'disabled')

@@ -1,0 +1,2106 @@
+{
+  "schemaVersion": 4,
+  "actualDate": "2026-10-17",
+  "taskFileDate": "2026-10-16",
+  "candidateTree": "44af4cdf5f0c325fcf39b64ad9c7574d0253c64b",
+  "baseCommit": "a0f29559512ac88af68ac3df4cc4a81e70b30c54",
+  "evidenceRoot": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z",
+  "task5Complete": true,
+  "completionMeaning": "Planned deployment/evaluation/reporting complete with open findings; not concurrent-readiness approval, issue closure or general accuracy",
+  "executionCondition": "Only evaluator retrievals were serialized. Evaluator-issued health probes occurred between completed cases/banks; this does not establish an idle or monitoring-free host. Archived service metadata records a health oneshot overlapping N10; effects on latency and content are UNKNOWN and no score is attributed to load.",
+  "performanceLimit": {
+    "concurrentCapacityFixed": false,
+    "throughputReadyClaim": false,
+    "singleQ04DiagnosticMs": 14970.627956867218,
+    "diagnosticCentralCpuMs": 15730,
+    "concurrentHealthFailureMs": 13963.445807933807,
+    "firstBatchQ04SocketFailureMs": 41424,
+    "exactSocketCloser": "UNRESOLVED",
+    "sequentialPassingDoesNotFixConcurrency": true,
+    "concurrentReadiness": "NOT_APPROVED",
+    "openFinding": "I1"
+  },
+  "priorAttempts": [
+    {
+      "phase": "First connected32 attempt",
+      "condition": "Initial four retrieval calls concurrent",
+      "score": {
+        "original12": {
+          "PASS": 11,
+          "PARTIAL": 0,
+          "MISS": 1
+        },
+        "original20": {
+          "PASS": 20,
+          "PARTIAL": 0,
+          "MISS": 0
+        }
+      },
+      "error": "Q04 socket closed after41424ms",
+      "evidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/live32/responses-manifest.json",
+      "immutable": true
+    },
+    {
+      "phase": "Unscored exactQ04 diagnostic",
+      "condition": "One public Q04 request; concurrent health probe for diagnosis only",
+      "timeMs": 14970.627956867218,
+      "cpuMs": 15730,
+      "result": "HTTP200, exact frozen body, local-only; health probe stalled/failed",
+      "evidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/transport-diagnosis-20261017T071000Z/transport-diagnosis.json",
+      "changesFailedScore": false,
+      "immutable": true
+    },
+    {
+      "phase": "Authorized new sequential32 attempt",
+      "condition": "One evaluator retrieval in flight; evaluator health/metadata probes only between completed cases; no idle-host claim",
+      "startedAt": "2026-10-17T07:20:45.382Z",
+      "completedAt": "2026-10-17T07:28:57.353Z",
+      "score": {
+        "original12": {
+          "PASS": 12,
+          "PARTIAL": 0,
+          "MISS": 0
+        },
+        "original20": {
+          "PASS": 20,
+          "PARTIAL": 0,
+          "MISS": 0
+        }
+      },
+      "evidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/live32/capture-manifest.json"
+    },
+    {
+      "phase": "Independent original sealed10 on separately bound V1",
+      "condition": "One evaluator call per frozen query, sequential; authorized correlation-only change; scheduled health oneshot overlapped N10, causal effect UNKNOWN",
+      "startedAt": "2026-10-17T07:30:57.607Z",
+      "completedAt": "2026-10-17T07:35:09.743Z",
+      "score": {
+        "PASS": 2,
+        "PARTIAL": 5,
+        "MISS": 3
+      },
+      "evidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/holdout10/capture-manifest.json"
+    }
+  ],
+  "remainingMinor": "M4/Q10 unrequested workflow diagnostic retained; new10 retrieval gaps are separately reported",
+  "rawHttpEnvelopeCapturedForConnectedCalls": false,
+  "supplementalAnswerHttpCallsThisAttempt": 0,
+  "status": "INDEPENDENT_HOLDOUT_COMPLETE_WITH_GAPS_AND_OPEN_FINDINGS",
+  "session": "ses_eb99d446effeW01feTe4NUOT8M",
+  "correlationPrefix": "semantic-v1-seq10-20261017b-",
+  "cases": 10,
+  "completed": 10,
+  "oneInFlightVerified": true,
+  "oneAttemptPerCase": true,
+  "supplementalAnswerHttpCalls": 0,
+  "startedAt": "2026-10-17T07:30:57.607Z",
+  "completedAt": "2026-10-17T07:35:09.743Z",
+  "completionRule": "Maximum actual case end",
+  "rows": [
+    {
+      "id": "N01",
+      "bank": "holdout10",
+      "tool": "erp_entity.get",
+      "query": "W kartotece rachunków bankowych firmy czym różni się wewnętrzny identyfikator od akronimu i krótkiego symbolu? Które z tych oznaczeń opisano jako unikalne? Podaj źródło.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"Kartoteka rachunków firmy to CDN.BnkRachunki; BRa_BRaID jest jej wewnętrznym PK typu int IDENTITY.\",\"source\":\"bank\",\"lines\":[28,36]},{\"id\":\"F2\",\"fact\":\"BRa_Akronim to akronim varchar(20), UNIQUE; BRa_Symbol to krótki symbol varchar(5), UNIQUE. Nie są to numer rachunku ani jeden wspólny identyfikator.\",\"source\":\"bank\",\"lines\":[31,36]}]",
+      "request": {
+        "query": "W kartotece rachunków bankowych firmy czym różni się wewnętrzny identyfikator od akronimu i krótkiego symbolu? Które z tych oznaczeń opisano jako unikalne? Podaj źródło.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N01"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222257607,
+        "end": 1792222271695
+      },
+      "partId": "prt_148c55e0c001l5XrrGRLH1ocZ5",
+      "requestSha256": "dc257d31723290f864ed7532b610db053850fad016cf9b2139fdce203cb06cd9",
+      "stateSha256": "63ce7411354af1dbbb601a6e15cd510c84dddd8eb6e721e996cc16c416ce322b",
+      "visibleSha256": "a2d493abf28b0e9117d4070758e2c564ffee509d54528d17404d87e8862cc39d",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 3,
+          "S2": 1
+        },
+        "extractCharacters": 1161,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L2010-L2044",
+            "recordId": "OWA_CHUNK_KONTO_BANKOWE_3",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "fef7da714950fca9a7a39ea54d891d16c19ad5d088ffd5dba80c6ce1aad48f10"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "locator": "L171",
+            "recordId": "OWA_ENTITY_ENCJA_KONTO_BANKOWE",
+            "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+            "physicalRowSha256": "ca931664998f6fe55caf4c22401e0219f43c20e7674a34fc43096e452216466f"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 2010,
+            "endLine": 2044,
+            "locator": "L2010-L2044",
+            "text": "## Otwarte problemy\n1. `BRa_IBAN` jest `smallint` nie `varchar` — to flaga czy ID?\n2. Kolumny `BRa_CDC*` — znaczenie?\n3. `check_bank_account` używa NIP+account_number, nie BRa_BRaID — jak mapuje?",
+            "textSha256": "ef7a2e26a27db559e08051b70cbf2dff327ebcd927bf3216094f43790617f14d"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 2010,
+            "endLine": 2044,
+            "locator": "L2010-L2044",
+            "text": "## Metadane\n- Wykryte przez: `manual_analysis_mcp_mssql`\n- Data pozyskania: 2026-07-15\n- Tabela: `CDN.BnkRachunki` (ROW_COUNT=5)\n- PK: `BRa_BRaID` (IDENTITY)\n- FK: BnkNazwy, DokDefinicje, KartyKredytowe",
+            "textSha256": "43c447215bbfcce28b50aa97abf001c79761b653601731f4f2058fb9e498d79f"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 2010,
+            "endLine": 2044,
+            "locator": "L2010-L2044",
+            "text": "## Relacje ontologiczne\n- **NALEZY_DO_BANKU** (N:1) → `CDN.BnkNazwy` przez `BRa_BNaID → BNa_BNaId`\n- **MA_DOKUMENT_DOMYSLNY** (N:1) → `CDN.DokDefinicje` przez `BRa_DDfID → DDf_DDfID`\n- **POWIAZANA_Z_KARTA** (N:1) → `CDN.KartyKredytowe` przez `BRa_KKrID → KKr_KKrId`\n- **UZYWANA_PRZEZ_ZLECENIA** (1:N) → `CDN.BnkZdarzenia` [UNKNOWN pole]\n- **UZYWANA_PRZEZ_KONTRAHENTOW** (1:N) → `CDN.Kontrahenci.Knt_RachunekNr` [UNKNOWN powiązanie]",
+            "textSha256": "fadaa11932c593f5cd872d8cc395e4e6e4c4ceebffe7bd205971f33dc9c17cef"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "line": 171,
+            "endLine": 171,
+            "locator": "L171",
+            "text": "Konto bankowe (CDN.BnkRachunki) reprezentuje rachunek bankowy firmy. Zawiera numer rachunku (IBAN lub NRB), akronim, symbol, salda (BO i systemowe), limity kredytowe, oprocentowanie, kursy walut (mnożnik/licznik) oraz flagi SEPA i Split Payment. Konto jest powiązane z bankiem (CDN.BnkNazwy) i definicją dokumentu (CDN.DokDefinicje).",
+            "textSha256": "3eb4f941daa0a9b73ef2db051823b77dedd3e54a04ef3cdac6adc7c29b2be33e"
+          }
+        ],
+        "errors": []
+      },
+      "score": "PARTIAL",
+      "reason": "Visible BnkRachunki metadata identifies BRa_BRaID as IDENTITY PK and the overview mentions acronym/symbol, but neither BRa_Akronim/BRa_Symbol field mapping nor either UNIQUE assertion is displayed. F1 is useful; requested F2 is incomplete.",
+      "visibleEvidence": [
+        "N01.md:L16-L23",
+        "N01.md:L33-L34"
+      ],
+      "frozenSourceEvidence": [
+        "bank:L28-L36"
+      ],
+      "missing": [
+        "BRa_Akronim varchar(20), UNIQUE",
+        "BRa_Symbol varchar(5), UNIQUE and explicit distinction"
+      ],
+      "sealedOriginalParameters": {
+        "query": "W kartotece rachunków bankowych firmy czym różni się wewnętrzny identyfikator od akronimu i krótkiego symbolu? Które z tych oznaczeń opisano jako unikalne? Podaj źródło.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N01"
+      },
+      "criteria": {
+        "PASS": "Widoczne F1 i oba oznaczenia/unikalności F2, z atrybucją historycznego materiału.",
+        "PARTIAL": "Co najmniej jeden poprawny identyfikator lub rozróżnienie, ale brak drugiego oznaczenia, unikalności, PK lub źródła.",
+        "MISS": "Brak użytecznych identyfikatorów rachunku albo zastąpienie rachunku kontem księgowym, numerem banku czy kontrahenta; stosuj też globalne kryterium MISS."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "Kartoteka rachunków firmy to CDN.BnkRachunki; BRa_BRaID jest jej wewnętrznym PK typu int IDENTITY.",
+          "source": "bank",
+          "lines": [
+            28,
+            36
+          ]
+        },
+        {
+          "id": "F2",
+          "fact": "BRa_Akronim to akronim varchar(20), UNIQUE; BRa_Symbol to krótki symbol varchar(5), UNIQUE. Nie są to numer rachunku ani jeden wspólny identyfikator.",
+          "source": "bank",
+          "lines": [
+            31,
+            36
+          ]
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N02",
+      "bank": "holdout10",
+      "tool": "erp_entity.get",
+      "query": "Czy jeden artykuł może mieć kilka kodów kreskowych? Chcę też wiedzieć, czy zakaz powtórzeń dotyczy całej kartoteki, czy jednego artykułu, oraz jak wskazano kod domyślny i jednostkę opakowania. Oprzyj odpowiedź na materiale źródłowym.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"Jeden towar może mieć wiele kodów EAN w CDN.TwrEan.\",\"source\":\"barcode\",\"lines\":[14,15]},{\"id\":\"F2\",\"fact\":\"UNIQUE dotyczy pary TwE_TwrID i TwE_EAN, czyli unikalności w ramach towaru; materiał nie deklaruje globalnej unikalności samego TwE_EAN.\",\"source\":\"barcode\",\"lines\":[17,21]},{\"id\":\"F3\",\"fact\":\"TwE_Domyslny to flaga kodu domyślnego; TwE_JM określa jednostkę miary danego kodu. Nie dopisywać z tego formalnego FK do TwrJm.\",\"source\":\"barcode\",\"lines\":[20,21]},{\"id\":\"F4\",\"fact\":\"Brak FK do TwrJm i niepotwierdzone mapowanie TwE_JM pozostają ograniczeniem, jeśli odpowiedź omawia taką relację; pytanie nie wymaga dodatkowej tabeli jednostek.\",\"source\":\"barcode\",\"lines\":[54,56],\"conditional\":true}]",
+      "request": {
+        "query": "Czy jeden artykuł może mieć kilka kodów kreskowych? Chcę też wiedzieć, czy zakaz powtórzeń dotyczy całej kartoteki, czy jednego artykułu, oraz jak wskazano kod domyślny i jednostkę opakowania. Oprzyj odpowiedź na materiale źródłowym.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N02"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222280607,
+        "end": 1792222291123
+      },
+      "partId": "prt_148c5b66d00194TThFhBt0mPCg",
+      "requestSha256": "dde01db5d082d846b84aaff555052a4189658a0b2db3102d22c4012fe78742e4",
+      "stateSha256": "86f2f3a7a1d6598afa90cdf00c3079efdb846d04f14913a154985965ba619277",
+      "visibleSha256": "191e7da63fd92131f1fdd6e15c1bb0a279322e68d0180897a9e87decd1364b3c",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 3,
+          "S2": 1
+        },
+        "extractCharacters": 893,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L1716-L1759",
+            "recordId": "OWA_CHUNK_KOD_EAN_BARCODE_1",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "7179a846fac216defe54f4b1665fe21d783e02782f4180777cfc02b0af62f1d6"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "locator": "L168",
+            "recordId": "OWA_ENTITY_ENCJA_KOD_EAN_BARCODE",
+            "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+            "physicalRowSha256": "8818eb904cbff4a631de2f9b9497f38dbf9dd47e5d678cf6afd3bc42d66c8e2c"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 1716,
+            "endLine": 1759,
+            "locator": "L1716-L1759",
+            "text": "# Encyja: Kod EAN / Barcode\n\n## Źródła danych\n- **Tabela główna**: `CDN.TwrEan` (BASE TABLE, 1 wiersz w testowej)",
+            "textSha256": "a588b60f7a05fd47f255d840df84ff0fbb4da2c52c20fe0d61bba0a9c1bac32f"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 1716,
+            "endLine": 1759,
+            "locator": "L1716-L1759",
+            "text": "# Encyja: Kod EAN / Barcode\n\n## Opis biznesowy\nKod EAN (CDN.TwrEan) przechowuje kody kreskowe (barcodes) dla towarów. Jeden towar może mieć wiele kodów EAN. Istnieje również kod domyślny (`TwE_Domyslny`). Każdy kod EAN może być powiązany z jednostką miary (`TwE_JM`).",
+            "textSha256": "ffe54a6b2a29680674a59a5de2fb715d0aa2abb95f7c701f652ee0e06e62074e"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "line": 168,
+            "endLine": 168,
+            "locator": "L168",
+            "text": "Kod EAN (CDN.TwrEan) przechowuje kody kreskowe (barcodes) dla towarów. Jeden towar może mieć wiele kodów EAN. Istnieje również kod domyślny (`TwE_Domyslny`). Każdy kod EAN może być powiązany z jednostką miary (`TwE_JM`).",
+            "textSha256": "0ab89f37dd8e10368bae790993f2f2ac70d2fe2ac2be01c1db8ecb65cb10dc94"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 1716,
+            "endLine": 1759,
+            "locator": "L1716-L1759",
+            "text": "# Encyja: Kod EAN / Barcode\n\n## Reguły biznesowe\n- UNIQUE na (TwE_TwrID, TwE_EAN) — kod EAN jest unikalny w ramach towaru\n- FK do Towary z CASCADE — usunięcie towaru kasuje wszystkie jego EANy\n- `TwE_Domyslny` (tinyint) — flaga kodu domyślnego\n- `TwE_JM` określa jednostkę miary dla danego EAN",
+            "textSha256": "01309fb9ed1da9bc0a76291aef318351c602840018ecde77c60ea68dd6a6d5db"
+          }
+        ],
+        "errors": []
+      },
+      "score": "PASS",
+      "reason": "Visible EAN overview/rules supply multiple codes per item, per-item UNIQUE(TwE_TwrID,TwE_EAN), TwE_Domyslny and TwE_JM. No global EAN UNIQUE or TwrJm FK is invented. The extra ambiguity diagnostic is noise; it does not remove the requested facts.",
+      "visibleEvidence": [
+        "N02.md:L15-L32"
+      ],
+      "frozenSourceEvidence": [
+        "barcode:L14-L21",
+        "barcode:L54-L56 (conditional FK limit)"
+      ],
+      "missing": [],
+      "sealedOriginalParameters": {
+        "query": "Czy jeden artykuł może mieć kilka kodów kreskowych? Chcę też wiedzieć, czy zakaz powtórzeń dotyczy całej kartoteki, czy jednego artykułu, oraz jak wskazano kod domyślny i jednostkę opakowania. Oprzyj odpowiedź na materiale źródłowym.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N02"
+      },
+      "criteria": {
+        "PASS": "F1-F3 z atrybucją; zakres UNIQUE poprawny, bez wymyślonego globalnego zakazu i bez niepotwierdzonego FK (F4 warunkowe).",
+        "PARTIAL": "Użytecznie wyjaśniono wiele kodów lub przynajmniej jedną flagę, lecz pominięto zakres unikalności albo inną żądaną cechę/źródło.",
+        "MISS": "Brak faktów o kodach, utożsamienie ich z wariantami cen lub zapewnienie o globalnym UNIQUE/FK, którego źródło nie ustala; globalne MISS ma pierwszeństwo."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "Jeden towar może mieć wiele kodów EAN w CDN.TwrEan.",
+          "source": "barcode",
+          "lines": [
+            14,
+            15
+          ]
+        },
+        {
+          "id": "F2",
+          "fact": "UNIQUE dotyczy pary TwE_TwrID i TwE_EAN, czyli unikalności w ramach towaru; materiał nie deklaruje globalnej unikalności samego TwE_EAN.",
+          "source": "barcode",
+          "lines": [
+            17,
+            21
+          ]
+        },
+        {
+          "id": "F3",
+          "fact": "TwE_Domyslny to flaga kodu domyślnego; TwE_JM określa jednostkę miary danego kodu. Nie dopisywać z tego formalnego FK do TwrJm.",
+          "source": "barcode",
+          "lines": [
+            20,
+            21
+          ]
+        },
+        {
+          "id": "F4",
+          "fact": "Brak FK do TwrJm i niepotwierdzone mapowanie TwE_JM pozostają ograniczeniem, jeśli odpowiedź omawia taką relację; pytanie nie wymaga dodatkowej tabeli jednostek.",
+          "source": "barcode",
+          "lines": [
+            54,
+            56
+          ],
+          "conditional": true
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N03",
+      "bank": "holdout10",
+      "tool": "erp_entity.get",
+      "query": "Karta pracownika ma kod i oznaczenie archiwalne. Jak odróżnia je od stałego identyfikatora rekordu i gdzie dokumentacja lokuje imię oraz nazwisko? Wskaż odpowiednie pola i źródło, bez odczytywania danych żadnej osoby.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"CDN.PracKod: PRA_PraId to PK int IDENTITY; PRA_Kod jest naturalnym, unikalnym kodem pracownika varchar(20).\",\"source\":\"employee\",\"lines\":[18,23]},{\"id\":\"F2\",\"fact\":\"PRA_Archiwalny: 0=aktywny, 1=archiwalny; nie jest identyfikatorem.\",\"source\":\"employee\",\"lines\":[20,24]},{\"id\":\"F3\",\"fact\":\"Materiał karty pracownika wskazuje imię/nazwisko w PracEtaty, nie w PracKod; szczegółowe kolumny to PRE_Imie1 i PRE_Nazwisko.\",\"source\":\"employee\",\"lines\":[103,107],\"supportingSource\":{\"source\":\"employment\",\"lines\":[49,53]}}]",
+      "request": {
+        "query": "Karta pracownika ma kod i oznaczenie archiwalne. Jak odróżnia je od stałego identyfikatora rekordu i gdzie dokumentacja lokuje imię oraz nazwisko? Wskaż odpowiednie pola i źródło, bez odczytywania danych żadnej osoby.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N03"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222301372,
+        "end": 1792222315882
+      },
+      "partId": "prt_148c607f7001QyJXZlge1VhMGW",
+      "requestSha256": "d6cda03310851d677ea1c8c3ea88bae2566c1e60b4f0ee7b0ffdc0b0582bdaef",
+      "stateSha256": "efeb67cdb1c1f5e49f1f46990e88318cbcba2a485d6bf3b5be5670ed59c12a80",
+      "visibleSha256": "054d50bc57cb72b5a17f3409cc95a86cad6ebef783cc08fd7b7b18adbb18afa6",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 3,
+          "S2": 1
+        },
+        "extractCharacters": 1982,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L3278-L3296",
+            "recordId": "OWA_CHUNK_PRACOWNIK_KARTOTEKA_PRACOWNICZA_1",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "17dca592f4966fc9940072159f6635c2470bbe394e9d5d721f5e8aae46aa33dd"
+          },
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L3353-L3379",
+            "recordId": "OWA_CHUNK_PRACOWNIK_KARTOTEKA_PRACOWNICZA_6",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "9191939d532dddf4dab3fcb33960e2324ae7a30081ba1dfad04f706d28d4e3de"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "locator": "L330",
+            "recordId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+            "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+            "physicalRowSha256": "fb9b2aa82736a5ebc7a018a1fa74347027c26a3b7132cf1cf5962a3e847ab32c"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 3278,
+            "endLine": 3296,
+            "locator": "L3278-L3296",
+            "text": "# Encja: Pracownik (kartoteka pracownicza)\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `wysoki` (pełny schemat potwierdzony przez `mssql_describe_table`)\n- Identyfikator ontologiczny: `OWAOntology.Pracownik`\n- Aliasy: `PracKod`, `Employee`, `Pracownik`",
+            "textSha256": "345cb22e0122fe58c1ba1d115fb07be6626f80674a3facfa6cd7283f1e207d63"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 3278,
+            "endLine": 3296,
+            "locator": "L3278-L3296",
+            "text": "# Encja: Pracownik (kartoteka pracownicza)\n\n## Opis biznesowy\nEncja reprezentuje kartotekę pracowniczą w Comarch Optima. Każdy pracownik ma rekord w tabeli `CDN.PracKod` identyfikowany przez `PRA_PraId` (int, IDENTITY). Naturalnym kluczem jest `PRA_Kod` (varchar(20)). Pracownik może mieć wiele etatów (`CDN.PracEtaty`), umów cywilnoprawnych (`CDN.Umowy`), nieobecności (`CDN.PracNieobec`), danych kadrowych (`CDN.DaneKad`), danych płacowych (`CDN.DanePlac`), historii zatrudnienia (`CDN.HisZatrud`) oraz historii wykształcenia (`CDN.HisWyksztal`). Karta pracownika może być archiwalna (`PRA_Archiwalny`) i może podlegać hierarchii (`PRA_ParentId`, `PRA_Nadrzedny`).",
+            "textSha256": "2890ff8109288cd40b1ec2d80147636913b89e452a517bf099bdb33822613e47"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "line": 330,
+            "endLine": 330,
+            "locator": "L330",
+            "text": "Encja reprezentuje kartotekę pracowniczą w Comarch Optima. Każdy pracownik ma rekord w tabeli `CDN.PracKod` identyfikowany przez `PRA_PraId` (int, IDENTITY). Naturalnym kluczem jest `PRA_Kod` (varchar(20)). Pracownik może mieć wiele etatów (`CDN.PracEtaty`), umów cywilnoprawnych (`CDN.Umowy`), nieobecności (`CDN.PracNieobec`), danych kadrowych (`CDN.DaneKad`), danych płacowych (`CDN.DanePlac`), historii zatrudnienia (`CDN.HisZatrud`) oraz historii wykształcenia (`CDN.HisWyksztal`). Karta pracownika może być archiwalna (`PRA_Archiwalny`) i może podlegać hierarchii (`PRA_ParentId`, `PRA_Nadrzedny`).\n\nverificationStatus: częściowo-zweryfikowane\nconfidenceLevel: wysoki",
+            "textSha256": "77dc3617d43b541f52ee4e3c503a3592d49066a6600b70ab79ce3b65580dc85b"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 3353,
+            "endLine": 3379,
+            "locator": "L3353-L3379",
+            "text": "## Otwarte problemy i konflikty\n- `list_employees` zwróciło 0 rekordów w CDN_TEST — funkcjonalność potwierdzona, ale brak danych testowych\n- `PRA_HasloDoWydrukow` — niejasne czy w plain text czy hashowane\n- Nazwy osobowe (Nazwisko, Imię) znajdują się w `PracEtaty`, nie w `PracKod`\n- Endpointy WRITE nie zostały wywołane — nie zweryfikowano formatu payloadu",
+            "textSha256": "6c62896270752c74626b937f73180c9bd60ce108d64f629e6320b603f0ca0e1e"
+          }
+        ],
+        "errors": []
+      },
+      "score": "PARTIAL",
+      "reason": "Visible overview gives PRA_PraId/int IDENTITY, PRA_Kod and PRA_Archiwalny; the open problem correctly locates names in PracEtaty rather than PracKod. It omits PRA_Kod uniqueness and the 0=active/1=archived interpretation, so F1/F2 are incomplete despite correct F3.",
+      "visibleEvidence": [
+        "N03.md:L16-L19",
+        "N03.md:L24-L29"
+      ],
+      "frozenSourceEvidence": [
+        "employee:L18-L24",
+        "employee:L103-L107"
+      ],
+      "missing": [
+        "PRA_Kod UNIQUE",
+        "PRA_Archiwalny 0/1 meaning"
+      ],
+      "sealedOriginalParameters": {
+        "query": "Karta pracownika ma kod i oznaczenie archiwalne. Jak odróżnia je od stałego identyfikatora rekordu i gdzie dokumentacja lokuje imię oraz nazwisko? Wskaż odpowiednie pola i źródło, bez odczytywania danych żadnej osoby.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N03"
+      },
+      "criteria": {
+        "PASS": "F1-F3 i źródło; dla F3 wystarcza właściwa tabela PracEtaty, nazwy PRE_Imie1/PRE_Nazwisko nie są dodatkowym obowiązkiem.",
+        "PARTIAL": "Co najmniej jedno prawidłowe rozróżnienie identyfikatora/kodu/archiwalności, ale brak pozostałej części lub właściwego miejsca danych osobowych/atrybucji.",
+        "MISS": "Brak użytecznych faktów o pracowniku albo przypisanie imienia/nazwiska do PracKod wbrew źródłu, podmiana na personel lub ujawnienie rzeczywistych danych; globalne MISS ma pierwszeństwo."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "CDN.PracKod: PRA_PraId to PK int IDENTITY; PRA_Kod jest naturalnym, unikalnym kodem pracownika varchar(20).",
+          "source": "employee",
+          "lines": [
+            18,
+            23
+          ]
+        },
+        {
+          "id": "F2",
+          "fact": "PRA_Archiwalny: 0=aktywny, 1=archiwalny; nie jest identyfikatorem.",
+          "source": "employee",
+          "lines": [
+            20,
+            24
+          ]
+        },
+        {
+          "id": "F3",
+          "fact": "Materiał karty pracownika wskazuje imię/nazwisko w PracEtaty, nie w PracKod; szczegółowe kolumny to PRE_Imie1 i PRE_Nazwisko.",
+          "source": "employee",
+          "lines": [
+            103,
+            107
+          ],
+          "supportingSource": {
+            "source": "employment",
+            "lines": [
+              49,
+              53
+            ]
+          }
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N04",
+      "bank": "holdout10",
+      "tool": "erp_relation.list",
+      "query": "Dla środka trwałego potrzebuję jego własnego klucza oraz powiązań z grupą i pracownikiem, któremu go przypisano. Podaj kierunki, liczności i pola łączące. Zachowaj dokładnie wskazaną tabelę grupy, nawet jeśli jej etykieta w opisie jest myląca.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"Własny PK środka to CDN.Trwale.SrT_SrTID (int IDENTITY), nie numer inwentarzowy ani klucz pracownika.\",\"source\":\"asset\",\"lines\":[40,46]},{\"id\":\"F2\",\"fact\":\"SrodekTrwaly do grupy: N:1, FK, SrT_KatID -> Kat_KatID. Wiersz źródła dosłownie nazywa cel GrupaTowarowa (Kategorie), a mapowanie wskazuje Kategorie; nie wolno zamienić tego na tabelę Grupy.\",\"source\":\"asset\",\"lines\":[63,67],\"supportingSource\":{\"source\":\"asset\",\"lines\":[58,59]}},{\"id\":\"F3\",\"fact\":\"SrodekTrwaly do Pracownik: N:1, FK, SrT_PrcID -> PRA_PraId. Są to różne pola i właściciele niż powiązanie z kategorią.\",\"source\":\"asset\",\"lines\":[63,67]}]",
+      "request": {
+        "query": "Dla środka trwałego potrzebuję jego własnego klucza oraz powiązań z grupą i pracownikiem, któremu go przypisano. Podaj kierunki, liczności i pola łączące. Zachowaj dokładnie wskazaną tabelę grupy, nawet jeśli jej etykieta w opisie jest myląca.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N04"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222323147,
+        "end": 1792222346257
+      },
+      "partId": "prt_148c65c11001jLL1UOYm5n0ALQ",
+      "requestSha256": "fd3d99ede1d4bfc578c476c5563240adcb718da20a1ccb5fffb4cdacbbc0c75d",
+      "stateSha256": "7946ace645449623889cc5ac07ad11eb17d5933f8ab182fbd89931ab26226437",
+      "visibleSha256": "fcb542f9377e4c3a1211b4150446c848381080c6abe865779664a532c8e6b9af",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 3,
+          "S2": 1
+        },
+        "extractCharacters": 3940,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L3297-L3314",
+            "recordId": "OWA_CHUNK_PRACOWNIK_KARTOTEKA_PRACOWNICZA_2",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "dd887aa17d58e17a01e457f0dfa7e0cbfafbb486eb0508ee2f4d6ff9d3b1450d"
+          },
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L3380-L3388",
+            "recordId": "OWA_CHUNK_PRACOWNIK_KARTOTEKA_PRACOWNICZA_7",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "2a1387088bb4e36d08fd70fee43ff8829334860dea4cdfd3fcdfb7b2e1240334"
+          },
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L3353-L3379",
+            "recordId": "OWA_CHUNK_PRACOWNIK_KARTOTEKA_PRACOWNICZA_6",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "9191939d532dddf4dab3fcb33960e2324ae7a30081ba1dfad04f706d28d4e3de"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "locator": "L330",
+            "recordId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+            "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+            "physicalRowSha256": "fb9b2aa82736a5ebc7a018a1fa74347027c26a3b7132cf1cf5962a3e847ab32c"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 3297,
+            "endLine": 3314,
+            "locator": "L3297-L3314",
+            "text": "## Źródła danych\n| Rola źródła | Schemat | Tabela lub obiekt | Status | Dowód |\n|---|---|---|---|---|\n| Kartoteka główna | CDN | PracKod | **Potwierdzona** | `mssql_describe_table` → PK=PRA_PraId, 15 kolumn, 1 rekord |\n| Etaty | CDN | PracEtaty | **Potwierdzona** | `mssql_describe_table` → 120+ kolumn, FK PRE_PraId→PracKod |\n| Umowy cywilnoprawne | CDN | Umowy | **Potwierdzona** | `mssql_describe_table` → 96 kolumn, FK UMW_PraId→PracKod |\n| Nieobecności | CDN | PracNieobec | **Potwierdzona** | `mssql_describe_table` → 48 kolumn, FK PNB_PraId→PracKod |\n| Dane kadrowe | CDN | DaneKad | **Potwierdzona** | MSSQL `mssql_list_tables` |\n| Dane płacowe | CDN | DanePlac | **Potwierdzona** | MSSQL `mssql_list_tables` |\n| Historia zatrudnienia | CDN | HisZatrud | **Potwierdzona** | MSSQL `mssql_list_tables` |\n| Historia wykształcenia | CDN | HisWyksztal | **Potwierdzona** | MSSQL `mssql_list_tables` |\n\n## Identyfikatory\n| Typ | Pole | Znaczenie | Status | Dowód |\n|---|---|---|---|---|\n| PK | PRA_PraId | Unikalny identyfikator pracownika (int, IDENTITY) | **Potwierdzony** | MSSQL PK constraint `PRA_Primary` |\n| AK (naturalny) | PRA_Kod | Kod pracownika (varchar(20), UNIQUE) | **Potwierdzony** | Indeks `PRAKod` UNIQUE |\n| AK | PRA_ImportRowId | GUID importu (varchar(36), UNIQUE) | Potwierdzony | Indeks `PRAGUID` UNIQUE |",
+            "textSha256": "25cf0cc236741f5e8c9191196fe968a84819efc2f30a3f03e6444ff588cbb55e"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 3380,
+            "endLine": 3388,
+            "locator": "L3380-L3388",
+            "text": "## Walidacja\n- [x] Tabela główna potwierdzona w MSSQL: CDN.PracKod (15 kolumn)\n- [x] PK potwierdzony: PRA_PraId (int, IDENTITY)\n- [x] Klucz naturalny potwierdzony: PRA_Kod (varchar(20), UNIQUE)\n- [x] Tabele powiązane potwierdzone: PracEtaty, Umowy, PracNieobec\n- [x] Relacje FK potwierdzone: FK_UMWPraLink, FK_PNBPraLink, FK_DkNPodatnik, FK_DkNWspolwlasciciel\n- [x] Endpointy MCP READ zidentyfikowane (list_employees, list_personnel, get_employee_summary)\n- [x] Endpointy MCP WRITE zidentyfikowane (create_employee, hire_employee, add_employee_absence, check_absence_limit)\n- [ ] Endpointy WRITE do przetestowania",
+            "textSha256": "f0768006462736100ced99891f0587f0717cd00fef8c1f849d4cee8bc6ac5104"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 3353,
+            "endLine": 3379,
+            "locator": "L3353-L3379",
+            "text": "### Zapis (WRITE — NIE WYWOŁANO)\n| Narzędzie MCP | Opis |\n|---|---|\n| `create_employee` | Tworzy pracownika (code, last_name, first_name, position?, department?) |\n| `hire_employee` | Zatrudnia pracownika — tworzy kartę |\n| `add_employee_absence` | Dodaje nieobecność z walidacją limitu |\n| `check_absence_limit` | Sprawdza limit nieobecności |\n\n## Pochodzenie wiedzy\n| Typ źródła | Projekt lub narzędzie | Dokument | Zakres |\n|---|---|---|---|\n| MSSQL (CDN_TEST) | `mssql_describe_table` | CDN.PracKod (15 kolumn) | Pełny schemat tabeli |\n| MSSQL (CDN_TEST) | FK references | PRA_PraId | Potwierdzenie PK przez referencje FK |\n| MSSQL (CDN_TEST) | `mssql_describe_table` | CDN.PracEtaty, CDN.Umowy, CDN.PracNieobec | Tabele pokrewne |\n| OptimaMCP | Zestaw narzędzi | Moduł HR/Place | Endpointy odczytu/zapisu |\n\n## Otwarte problemy i konflikty\n- `list_employees` zwróciło 0 rekordów w CDN_TEST — funkcjonalność potwierdzona, ale brak danych testowych\n- `PRA_HasloDoWydrukow` — niejasne czy w plain text czy hashowane\n- Nazwy osobowe (Nazwisko, Imię) znajdują się w `PracEtaty`, nie w `PracKod`\n- Endpointy WRITE nie zostały wywołane — nie zweryfikowano formatu payloadu\n\n## Metadane\n- Ontologia: OWA\n- Namespace: OWAOntology\n- Źródło projektu: Comarch Optima ERP MSSQL Schema (KB 4)\n- Data ostatniej aktualizacji: 2026-07-15",
+            "textSha256": "c2554b1cba28f790d13d9220fadb72e5b93f92b5d7854f141651a2b54b9d1a23"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "line": 330,
+            "endLine": 330,
+            "locator": "L330",
+            "text": "Encja reprezentuje kartotekę pracowniczą w Comarch Optima. Każdy pracownik ma rekord w tabeli `CDN.PracKod` identyfikowany przez `PRA_PraId` (int, IDENTITY). Naturalnym kluczem jest `PRA_Kod` (varchar(20)). Pracownik może mieć wiele etatów (`CDN.PracEtaty`), umów cywilnoprawnych (`CDN.Umowy`), nieobecności (`CDN.PracNieobec`), danych kadrowych (`CDN.DaneKad`), danych płacowych (`CDN.DanePlac`), historii zatrudnienia (`CDN.HisZatrud`) oraz historii wykształcenia (`CDN.HisWyksztal`). Karta pracownika może być archiwalna (`PRA_Archiwalny`) i może podlegać hierarchii (`PRA_ParentId`, `PRA_Nadrzedny`).\n\nverificationStatus: częściowo-zweryfikowane\nconfidenceLevel: wysoki",
+            "textSha256": "77dc3617d43b541f52ee4e3c503a3592d49066a6600b70ab79ce3b65580dc85b"
+          }
+        ],
+        "errors": []
+      },
+      "score": "MISS",
+      "reason": "The actual local units describe Pracownik, not the requested fixed asset. No SrT_SrTID, SrT_KatID→Kategorie.Kat_KatID or SrT_PrcID→PRA_PraId relation is shown. External Enterprise HR/Altum/general column material cannot substitute the sealed Optima asset mapping and contains inventory-number identity descriptions. None of required F1-F3 is substantively answered.",
+      "visibleEvidence": [
+        "N04.md:L19-L84 (employee-owned local units)",
+        "N04.md:L86-L130 (external material and URLs)"
+      ],
+      "frozenSourceEvidence": [
+        "asset:L40-L46",
+        "asset:L58-L59",
+        "asset:L63-L67"
+      ],
+      "missing": [
+        "Own asset PK",
+        "Exact Kategorie mapping, not Grupy",
+        "Both requested N:1 FK joins with correct owners"
+      ],
+      "externalFallbackObserved": true,
+      "sourceSubstitutionNotCredited": true,
+      "sealedOriginalParameters": {
+        "query": "Dla środka trwałego potrzebuję jego własnego klucza oraz powiązań z grupą i pracownikiem, któremu go przypisano. Podaj kierunki, liczności i pola łączące. Zachowaj dokładnie wskazaną tabelę grupy, nawet jeśli jej etykieta w opisie jest myląca.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N04"
+      },
+      "criteria": {
+        "PASS": "F1-F3 z atrybucją oraz zachowaniem tabeli Kategorie i właściwych właścicieli; nie wymaga pełnej mapy ani osobnego PK obu celów.",
+        "PARTIAL": "Co najmniej jeden przydatny klucz lub poprawna relacja, lecz brak drugiego końca, N:1, JOIN, klucza środka lub źródła.",
+        "MISS": "Brak faktów o środku lub zamiana Kategorie na Grupy, SrT_KatID na pole pracownika, odwrócony JOIN albo wymyślony PK; globalne MISS ma pierwszeństwo."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "Własny PK środka to CDN.Trwale.SrT_SrTID (int IDENTITY), nie numer inwentarzowy ani klucz pracownika.",
+          "source": "asset",
+          "lines": [
+            40,
+            46
+          ]
+        },
+        {
+          "id": "F2",
+          "fact": "SrodekTrwaly do grupy: N:1, FK, SrT_KatID -> Kat_KatID. Wiersz źródła dosłownie nazywa cel GrupaTowarowa (Kategorie), a mapowanie wskazuje Kategorie; nie wolno zamienić tego na tabelę Grupy.",
+          "source": "asset",
+          "lines": [
+            63,
+            67
+          ],
+          "supportingSource": {
+            "source": "asset",
+            "lines": [
+              58,
+              59
+            ]
+          }
+        },
+        {
+          "id": "F3",
+          "fact": "SrodekTrwaly do Pracownik: N:1, FK, SrT_PrcID -> PRA_PraId. Są to różne pola i właściciele niż powiązanie z kategorią.",
+          "source": "asset",
+          "lines": [
+            63,
+            67
+          ]
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N05",
+      "bank": "holdout10",
+      "tool": "erp_entity.get",
+      "query": "Czy źródło ustala pełne znaczenie kodów PRE_ETARodzajZatrudnienia oraz PRE_TypPracownika? Potrzebuję ich słowników dla etatu; oddziel potwierdzony schemat od nierozszyfrowanych wartości.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"Materiał etatu identyfikuje CDN.PracEtaty i kolumnę PRE_ETARodzajZatrudnienia typu int jako rodzaj zatrudnienia; sam typ i etykieta nie ustalają słownika.\",\"source\":\"employment\",\"lines\":[49,59]},{\"id\":\"F2\",\"fact\":\"Oba pola PRE_ETARodzajZatrudnienia i PRE_TypPracownika są jawnie wymienione jako UNKNOWN: kody do rozszyfrowania. Brak potwierdzonej mapy wartości dla któregokolwiek z nich.\",\"source\":\"employment\",\"lines\":[85,88]},{\"id\":\"F3\",\"fact\":\"Status jest częściowo zweryfikowany; potwierdzenie struktury/PK nie zamyka otwartego zadania rozszyfrowania słowników.\",\"source\":\"employment\",\"lines\":[96,102],\"supportingSource\":{\"source\":\"employment\",\"lines\":[11,14]}}]",
+      "request": {
+        "query": "Czy źródło ustala pełne znaczenie kodów PRE_ETARodzajZatrudnienia oraz PRE_TypPracownika? Potrzebuję ich słowników dla etatu; oddziel potwierdzony schemat od nierozszyfrowanych wartości.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N05"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222362545,
+        "end": 1792222375119
+      },
+      "partId": "prt_148c6f618001onr8BVC0c6itfo",
+      "requestSha256": "fc01ec94cfbd8511badcd4dc4e99a6a446029c76171b8233da89987227c958cf",
+      "stateSha256": "c87fc156b930d55dee02b2a331f2d7b9fc4778965106397deabdf5ad69f3cbbc",
+      "visibleSha256": "62eb22e395054f1e77ac9b3f70252600f31f82a706d198904db328e5d4ee6171",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 0,
+        "perSource": {},
+        "extractCharacters": 0,
+        "sources": [],
+        "visibleUnits": [],
+        "errors": []
+      },
+      "score": "MISS",
+      "reason": "The response only says PRE_TypPracownika was not found and provides no attributable source units. It does not show the explicit source UNKNOWN for both PRE_ETARodzajZatrudnienia/PRE_TypPracownika or distinguish confirmed schema from undeciphered dictionaries. The document contains those exact open problems; local retrieval ignorance cannot pass this specific-unknown item.",
+      "visibleEvidence": [
+        "N05.md:L3-L11"
+      ],
+      "frozenSourceEvidence": [
+        "employment:L49-L59",
+        "employment:L85-L88",
+        "employment:L96-L102"
+      ],
+      "missing": [
+        "Both named source-backed UNKNOWN dictionaries",
+        "Schema-versus-code distinction and attribution"
+      ],
+      "sealedOriginalParameters": {
+        "query": "Czy źródło ustala pełne znaczenie kodów PRE_ETARodzajZatrudnienia oraz PRE_TypPracownika? Potrzebuję ich słowników dla etatu; oddziel potwierdzony schemat od nierozszyfrowanych wartości.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N05"
+      },
+      "criteria": {
+        "PASS": "Konkretny UNKNOWN dla obu nazw z atrybucją oraz wyraźne odróżnienie schematu od kodów; nie wymaga powtórzenia typu int.",
+        "PARTIAL": "Źródłowo rozpoznany brak tylko jednego słownika lub oba nazwane bez właściwego uzasadnienia/atrybucji, bez zmyślania kodów.",
+        "MISS": "Wymyślone kody dla choćby jednego pola, ogólne zastrzeżenie bez rozpoznania konkretnych braków, podmiana etatu na inną encję lub błędna pewność; globalne MISS ma pierwszeństwo."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "Materiał etatu identyfikuje CDN.PracEtaty i kolumnę PRE_ETARodzajZatrudnienia typu int jako rodzaj zatrudnienia; sam typ i etykieta nie ustalają słownika.",
+          "source": "employment",
+          "lines": [
+            49,
+            59
+          ]
+        },
+        {
+          "id": "F2",
+          "fact": "Oba pola PRE_ETARodzajZatrudnienia i PRE_TypPracownika są jawnie wymienione jako UNKNOWN: kody do rozszyfrowania. Brak potwierdzonej mapy wartości dla któregokolwiek z nich.",
+          "source": "employment",
+          "lines": [
+            85,
+            88
+          ]
+        },
+        {
+          "id": "F3",
+          "fact": "Status jest częściowo zweryfikowany; potwierdzenie struktury/PK nie zamyka otwartego zadania rozszyfrowania słowników.",
+          "source": "employment",
+          "lines": [
+            96,
+            102
+          ],
+          "supportingSource": {
+            "source": "employment",
+            "lines": [
+              11,
+              14
+            ]
+          }
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N06",
+      "bank": "holdout10",
+      "tool": "erp_relation.list",
+      "query": "Przy nieobecności chcę odróżnić pracownika nieobecnego, osobę zastępującą i poprzednią nieobecność, której okres jest kontynuowany. Jak opisano te trzy powiązania, ich kierunek, liczności i warunki połączenia? Które ma wzmiankę o kasowaniu kaskadowym, a czego nie należy z niej dopowiadać dla pozostałych?",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"Nieobecnosc -> Pracownik nieobecny N:1 przez PracNieobec.PNB_PraId = PracKod.PRA_PraId; FK_PNBPraLink ma opis CASCADE.\",\"source\":\"absence\",\"lines\":[69,72]},{\"id\":\"F2\",\"fact\":\"Nieobecnosc -> Pracownik zastępujący N:1 przez PracNieobec.PNB_Zastepca = PracKod.PRA_PraId; wiersz opisuje Referencja i FK_PNBZastepcaPraLink, nie dopisuje CASCADE.\",\"source\":\"absence\",\"lines\":[75,75]},{\"id\":\"F3\",\"fact\":\"Kontynuacja jest samopowiązaniem Nieobecnosc -> Nieobecnosc N:1: PracNieobec.PNB_ParentId = PracNieobec.PNB_PnbId. Źródło nazywa je hierarchią z dowodem indeks PNBParentId, nie udowodnionym FK CASCADE.\",\"source\":\"absence\",\"lines\":[77,77]}]",
+      "request": {
+        "query": "Przy nieobecności chcę odróżnić pracownika nieobecnego, osobę zastępującą i poprzednią nieobecność, której okres jest kontynuowany. Jak opisano te trzy powiązania, ich kierunek, liczności i warunki połączenia? Które ma wzmiankę o kasowaniu kaskadowym, a czego nie należy z niej dopowiadać dla pozostałych?",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N06"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222384582,
+        "end": 1792222399110
+      },
+      "partId": "prt_148c74b8e001YF6294IOLyX01Q",
+      "requestSha256": "08517d946a347b4935f92786a2509ac061f6fb51aac7740935ddf9adfd013f20",
+      "stateSha256": "2a6955d98d9fe200d2fded6c67f214a7b1b814e6969c5ffbd06b6af5a9b3806e",
+      "visibleSha256": "d8b8c39dbfd8b1c15c288ac40d9a4df509215bd17ae0c068e2d70e28945a76e1",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 2,
+          "S2": 1
+        },
+        "extractCharacters": 3156,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L2629-L2653",
+            "recordId": "OWA_CHUNK_NIEOBECNOSC_4",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "aff325515df3eeacc7eda167d8110b3a11f399546e891f32fd51c5969dc56e64"
+          },
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L2572-L2594",
+            "recordId": "OWA_CHUNK_NIEOBECNOSC_1",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "5b15de39cc91539fc3399fcad7490f4a4f52594c5e0bd8ee8ffb846042ccab11"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L3334-L3352",
+            "recordId": "OWA_CHUNK_PRACOWNIK_KARTOTEKA_PRACOWNICZA_5",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "31bf648be548db963b7927ab140a100e84aeb4fe81a31df516214c2a6648e871"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 2629,
+            "endLine": 2653,
+            "locator": "L2629-L2653",
+            "text": "## Relacje ontologiczne\n| Predykat | Encja źródłowa | Encja docelowa | Kardynalność | Typ relacji | Warunek JOIN | Status | Dowód |\n|---|---|---|---|---|---|---|---|\n| nalezydo_pracownika | Nieobecnosc | Pracownik | N:1 | FK | PracNieobec.PNB_PraId = PracKod.PRA_PraId | **Potwierdzona** | MSSQL FK FK_PNBPraLink (CASCADE) |\n| ma_typ_nieobecnosci | Nieobecnosc | TypNieobecnosci | N:1 | FK | PracNieobec.PNB_TnbId = TypNieobec.TNB_TnbId | **Potwierdzona** | MSSQL FK FK_PNBTnbLink |\n| ma_tytul_ubezpieczenia | Nieobecnosc | TytulUbezpieczenia | N:1 | FK | PracNieobec.PNB_TyuId = TytUbezp.TYU_TyuId | **Potwierdzona** | MSSQL FK FK_PNBTyuLink |\n| ma_zastepce | Nieobecnosc | Pracownik | N:1 | Referencja | PracNieobec.PNB_Zastepca = PracKod.PRA_PraId | **Potwierdzona** | MSSQL FK FK_PNBZastepcaPraLink |\n| dotyczy_czlonka_rodziny | Nieobecnosc | Rodzina | N:1 | FK | PracNieobec.PNB_RdzId = Rodzina.RDZ_RdzId | Potwierdzona | MSSQL FK FK_PNBRdzLink |\n| jest_kontynuacja | Nieobecnosc | Nieobecnosc | N:1 | Hierarchia | PracNieobec.PNB_ParentId = PracNieobec.PNB_PnbId | Potwierdzona | MSSQL indeks PNBParentId |",
+            "textSha256": "01129b6aa18557b4e8438f632b819be862e6e524af380f599d9cf773ea7e70d1"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 2572,
+            "endLine": 2594,
+            "locator": "L2572-L2594",
+            "text": "# Encja: Nieobecność\n\n## Reguły biznesowe\n- Każda nieobecność należy do jednego pracownika (`PNB_PraId` → `PracKod.PRA_PraId`, FK CASCADE)\n- `PNB_OkresOd` / `PNB_OkresDo` — daty okresu nieobecności\n- `PNB_DniPracy` / `PNB_DniKalend` — liczba dni (robocze/kalendarzowe)\n- `PNB_Calodzienna` / `PNB_Godz` — nieobecność całodzienna vs godzinowa\n- `PNB_WymiarL` / `PNB_WymiarM` — wymiar etatu w chwili nieobecności (licznik/mianownik)\n- `PNB_Rozliczona` = 1 gdy nieobecność została rozliczona na liście płac\n- `PNB_Seria` + `PNB_Numer` — numer dokumentu (np. zwolnienia lekarskiego)\n- `PNB_KodNieobecnosci` (nvarchar(4)) — kod nieobecności (np. \"C\" dla choroby)\n- `PNB_Przyczyna` — kod przyczyny (np. choroba, wypadek w pracy)\n- Hierarchia: `PNB_ParentId` dla kontynuacji (np. przedłużenie zwolnienia)\n- Zastępca: `PNB_Zastepca` → `PracKod.PRA_PraId`",
+            "textSha256": "0dabcf11d159e4c78f7983307f5166eafecf5b033e23d0bc44e963ae43b09b2a"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 3334,
+            "endLine": 3352,
+            "locator": "L3334-L3352",
+            "text": "## Relacje ontologiczne\n| Predykat | Encja źródłowa | Encja docelowa | Kardynalność | Typ relacji | Warunek JOIN | Status | Dowód |\n|---|---|---|---|---|---|---|---|\n| ma_etat | Pracownik | Etat (PracEtaty) | 1:N | Kompozycja | PracEtaty.PRE_PraId = PracKod.PRA_PraId | **Potwierdzona** | MSSQL FK |\n| ma_umowe | Pracownik | UmowaZlecenie (Umowy) | 1:N | Kompozycja | Umowy.UMW_PraId = PracKod.PRA_PraId | **Potwierdzona** | MSSQL FK FK_UMWPraLink |\n| ma_nieobecnosc | Pracownik | Nieobecnosc (PracNieobec) | 1:N | Kompozycja | PracNieobec.PNB_PraId = PracKod.PRA_PraId | **Potwierdzona** | MSSQL FK FK_PNBPraLink |\n| jest_podatnikiem | Pracownik | Deklaracja (DeklNag) | 1:N | Referencja | DeklNag.DkN_PraID = PracKod.PRA_PraId | **Potwierdzona** | MSSQL FK FK_DkNPodatnik |\n| jest_wspolwlascicielem | Pracownik | Deklaracja (DeklNag) | 1:N | Referencja | DeklNag.DkN_Pra2ID = PracKod.PRA_PraId | **Potwierdzona** | MSSQL FK FK_DkNWspolwlasciciel |\n| ma_dane_kadrowe | Pracownik | DaneKad | 1:1 | Kompozycja | DaneKad.PRA_PraId = PracKod.PRA_PraId | Potwierdzona | MSSQL |\n| ma_dane_placowe | Pracownik | DanePlac | 1:1 | Kompozycja | DanePlac.PRA_PraId = PracKod.PRA_PraId | Potwierdzona | MSSQL |",
+            "textSha256": "660a8e5d74251953012fdba20ed79d26c41875bff6a1da75f9f25f42fa8faf73"
+          }
+        ],
+        "errors": []
+      },
+      "score": "PASS",
+      "reason": "The complete visible absence relation table supplies all three N:1 roles and exact joins. CASCADE appears only on the absent employee FK; substitute is a reference without CASCADE and continuation is hierarchy supported by PNBParentId index. No index-to-formal-FK/CASCADE upgrade occurs; owned rules/source citations reinforce the distinctions.",
+      "visibleEvidence": [
+        "N06.md:L5-L14",
+        "N06.md:L16-L30"
+      ],
+      "frozenSourceEvidence": [
+        "absence:L69-L77"
+      ],
+      "missing": [],
+      "sealedOriginalParameters": {
+        "query": "Przy nieobecności chcę odróżnić pracownika nieobecnego, osobę zastępującą i poprzednią nieobecność, której okres jest kontynuowany. Jak opisano te trzy powiązania, ich kierunek, liczności i warunki połączenia? Które ma wzmiankę o kasowaniu kaskadowym, a czego nie należy z niej dopowiadać dla pozostałych?",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N06"
+      },
+      "criteria": {
+        "PASS": "Wszystkie trzy role, N:1 i warunki F1-F3 z atrybucją; CASCADE ograniczone do relacji opisanej tak w źródle, bez podnoszenia indeksu do FK.",
+        "PARTIAL": "Przynajmniej jedna poprawna i użyteczna relacja, ale brakuje innej, pełnego JOIN/liczności lub granicy dowodu/atrybucji.",
+        "MISS": "Zlanie nieobecnego z zastępcą, błędny koniec samopowiązania, wymyślony CASCADE dla wszystkich trzech albo formalny FK wywiedziony z indeksu; także globalne MISS."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "Nieobecnosc -> Pracownik nieobecny N:1 przez PracNieobec.PNB_PraId = PracKod.PRA_PraId; FK_PNBPraLink ma opis CASCADE.",
+          "source": "absence",
+          "lines": [
+            69,
+            72
+          ]
+        },
+        {
+          "id": "F2",
+          "fact": "Nieobecnosc -> Pracownik zastępujący N:1 przez PracNieobec.PNB_Zastepca = PracKod.PRA_PraId; wiersz opisuje Referencja i FK_PNBZastepcaPraLink, nie dopisuje CASCADE.",
+          "source": "absence",
+          "lines": [
+            75,
+            75
+          ]
+        },
+        {
+          "id": "F3",
+          "fact": "Kontynuacja jest samopowiązaniem Nieobecnosc -> Nieobecnosc N:1: PracNieobec.PNB_ParentId = PracNieobec.PNB_PnbId. Źródło nazywa je hierarchią z dowodem indeks PNBParentId, nie udowodnionym FK CASCADE.",
+          "source": "absence",
+          "lines": [
+            77,
+            77
+          ]
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N07",
+      "bank": "holdout10",
+      "tool": "erp_process.explain",
+      "query": "Czy zamknięcie listy płac oznacza to samo co jej zaksięgowanie? Wyjaśnij, jak zapisano każde z tych zdarzeń i jak rozpoznać okres, którego dotyczy lista. Chodzi o opis dokumentacji, bez wykonywania naliczenia ani zamknięcia.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"Zamknięcie i zaksięgowanie listy płac są odrębnymi cechami; LPL_Zamknieta to nullable datetime/data zamknięcia, obecna data oznacza zamkniętą listę.\",\"source\":\"payroll\",\"lines\":[18,25],\"supportingSource\":{\"source\":\"payroll\",\"lines\":[59,61]}},{\"id\":\"F2\",\"fact\":\"LPL_Zaksiegowana to tinyint/status 0/1; 1 oznacza listę zaksięgowaną w KH. Nie jest datą zamknięcia ani dowodem wypłaty pieniędzy.\",\"source\":\"payroll\",\"lines\":[24,25]},{\"id\":\"F3\",\"fact\":\"Okres listy wskazują LPL_Miesiac i LPL_Rok; LPL_DataOd/LPL_DataDo opisują początek i koniec okresu rozliczeniowego.\",\"source\":\"payroll\",\"lines\":[20,23]},{\"id\":\"F4\",\"fact\":\"Zidentyfikowane operacje payroll_calculate/payroll_close/payroll_correct są opisane w sekcji WRITE — NIE WYWOŁANO, więc opis nie dowodzi ich wykonania.\",\"source\":\"payroll\",\"lines\":[76,83],\"conditional\":true}]",
+      "request": {
+        "query": "Czy zamknięcie listy płac oznacza to samo co jej zaksięgowanie? Wyjaśnij, jak zapisano każde z tych zdarzeń i jak rozpoznać okres, którego dotyczy lista. Chodzi o opis dokumentacji, bez wykonywania naliczenia ani zamknięcia.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N07"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222407679,
+        "end": 1792222422877
+      },
+      "partId": "prt_148c7a70f001SeGEY7IOykXUKP",
+      "requestSha256": "40e60069855f3d860a4aa9d09b0eb80c587aea52219a5ec09014c0237878b9d9",
+      "stateSha256": "b5632ca6c7b568995907d72475177aba1388ca49d6b9a94d637c11efe9ff7e59",
+      "visibleSha256": "7e5fb60e0c55636576900e2f5f70379a83bc77bf262ad1511be1b6ffcd81f825",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 3,
+          "S2": 1
+        },
+        "extractCharacters": 3025,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L2444-L2467",
+            "recordId": "OWA_CHUNK_LISTA_PAC_4",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "e41699745fbfa60433950038850ba795ce2d4bcac0e19441a12e7a2efe28c45f"
+          },
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L2426-L2443",
+            "recordId": "OWA_CHUNK_LISTA_PAC_3",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "334290492975fa0ae3d5559899ea2ab252600d39e510f99959d2b20d5e47e630"
+          },
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L2389-L2409",
+            "recordId": "OWA_CHUNK_LISTA_PAC_1",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "7bcf3cab3c1150add7264ed5e5c1327b8a75274d17656f6ceb2305dea968a148"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "locator": "L264",
+            "recordId": "OWA_ENTITY_ENCJA_LISTA_PAC",
+            "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+            "physicalRowSha256": "cfe0caa9d153e855b614f5fc704996a2e6c437433bc833270fc5ed23640a64e7"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 2444,
+            "endLine": 2467,
+            "locator": "L2444-L2467",
+            "text": "## Endpointy OptimaMCP\n\n### Zapis (WRITE — NIE WYWOŁANO)\n| Narzędzie MCP | Opis |\n|---|---|\n| `payroll_calculate` | Kalkuluje płace |\n| `payroll_close` | Zamyka listę płac |\n| `payroll_correct` | Koryguje wypłatę |",
+            "textSha256": "ffa2e9d4e222115ee5a273a605d78162fca8b6742016627fb712c0cbde7f657e"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 2426,
+            "endLine": 2443,
+            "locator": "L2426-L2443",
+            "text": "## Kluczowe pola ListyPlac\n| # | Schemat | Tabela | Kolumna MSSQL | Typ SQL | Nullable | PK/FK | Opis biznesowy |\n|---:|---|---|---|---|---|---|---|\n| 1 | CDN | ListyPlac | LPL_LplId | int (IDENTITY) | N | PK | Identyfikator listy płac |\n| 2 | CDN | ListyPlac | LPL_Miesiac | smallint | N | | Miesiąc (1-12) |\n| 3 | CDN | ListyPlac | LPL_Rok | int | N | | Rok |\n| 4 | CDN | ListyPlac | LPL_DataOd | datetime | N | | Data początkowa okresu |\n| 5 | CDN | ListyPlac | LPL_DataDo | datetime | N | | Data końcowa okresu |\n| 6 | CDN | ListyPlac | LPL_DataDanych | datetime | Y | | Data graniczna danych |\n| 7 | CDN | ListyPlac | LPL_DataDok | datetime | N | | Data dokumentu |\n| 8 | CDN | ListyPlac | LPL_Nazwa | nvarchar(128) | N | | Nazwa listy |\n| 9 | CDN | ListyPlac | LPL_NumerPelny | nvarchar(30) | Y | AK | Pełny numer (COMPUTED) |\n| 10 | CDN | ListyPlac | LPL_Zamknieta | datetime | Y | | Data zamknięcia listy |\n| 11 | CDN | ListyPlac | LPL_Zaksiegowana | tinyint | N | | Status zaksięgowania (0/1) |\n| 12 | CDN | ListyPlac | LPL_Kategoria | int | N | | Kategoria listy |\n| 13 | CDN | ListyPlac | LPL_Tymczasowi | tinyint | N | | Lista dla tymczasowych (0/1) |\n| 14 | CDN | ListyPlac | LPL_Symbol | varchar(5) | N | | Symbol listy |\n| 15 | CDN | ListyPlac | LPL_DekId | int | Y | | ID deklaracji powiązanej |",
+            "textSha256": "d2e1c5ba28fbd6fcace4359088d03012cd9188f444f42668fce735462a961f93"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 2389,
+            "endLine": 2409,
+            "locator": "L2389-L2409",
+            "text": "# Encja: Lista płac\n\n## Opis biznesowy\nLista płac reprezentuje zbiorcze zestawienie wynagrodzeń pracowników za dany okres rozliczeniowy. Każda lista płac jest identyfikowana przez `LPL_LplId` i ma przypisany miesiąc (`LPL_Miesiac`) oraz rok (`LPL_Rok`). Lista płac może być zamknięta (`LPL_Zamknieta` — data zamknięcia) i może zostać zaksięgowana (`LPL_Zaksiegowana`). System wspiera różne kategorie list (`LPL_Kategoria`), w tym listy tymczasowe (`LPL_Tymczasowi`) i listy dla pracowników oddelegowanych (`LPL_Oddelegowani`). Numer listy jest generowany z funkcji `FN_NUMERPELNY`. Lista może mieć rodzica (`LPL_ParentId`) — np. korekta listy. Może być też powiązana z deklaracją (`LPL_DekId`) i deklaracją korygującą (`LPL_PreDekId`).",
+            "textSha256": "b20de7cf33d8da6db6de8b6ada915355c30c69b5140244463f9e7eea43b5b939"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "line": 264,
+            "endLine": 264,
+            "locator": "L264",
+            "text": "Lista płac reprezentuje zbiorcze zestawienie wynagrodzeń pracowników za dany okres rozliczeniowy. Każda lista płac jest identyfikowana przez `LPL_LplId` i ma przypisany miesiąc (`LPL_Miesiac`) oraz rok (`LPL_Rok`). Lista płac może być zamknięta (`LPL_Zamknieta` — data zamknięcia) i może zostać zaksięgowana (`LPL_Zaksiegowana`). System wspiera różne kategorie list (`LPL_Kategoria`), w tym listy tymczasowe (`LPL_Tymczasowi`) i listy dla pracowników oddelegowanych (`LPL_Oddelegowani`). Numer listy jest generowany z funkcji `FN_NUMERPELNY`. Lista może mieć rodzica (`LPL_ParentId`) — np. korekta listy. Może być też powiązana z deklaracją (`LPL_DekId`) i deklaracją korygującą (`LPL_PreDekId`).\n\nverificationStatus: częściowo-zweryfikowane\nconfidenceLevel: wysoki",
+            "textSha256": "63f87ba9886f1c102f67e16d11c56d74c1e04cb559fd2f9b1d92e89f560a3e11"
+          }
+        ],
+        "errors": []
+      },
+      "score": "PARTIAL",
+      "reason": "The full visible table distinguishes nullable datetime LPL_Zamknieta from tinyint LPL_Zaksiegowana/status0/1 and supplies month/year/date range; WRITE NOT CALLED is retained. However it does not explain the requested present-date closed condition versus flag1=posted in KH, nor clearly answer equivalence beyond listing the separate fields. Conservative PARTIAL for incomplete F1/F2 interpretation; period F3 and conditional F4 are present.",
+      "visibleEvidence": [
+        "N07.md:L13-L38",
+        "N07.md:L45-L51"
+      ],
+      "frozenSourceEvidence": [
+        "payroll:L18-L25",
+        "payroll:L59-L61",
+        "payroll:L76-L83"
+      ],
+      "missing": [
+        "Interpretation of non-null closure date",
+        "Interpretation of posted flag1 in KH and explicit event distinction"
+      ],
+      "judgementQualification": "Credit the visible field/type distinction; do not infer the omitted state-value rule from an unlabeled0/1 pair.",
+      "sealedOriginalParameters": {
+        "query": "Czy zamknięcie listy płac oznacza to samo co jej zaksięgowanie? Wyjaśnij, jak zapisano każde z tych zdarzeń i jak rozpoznać okres, którego dotyczy lista. Chodzi o opis dokumentacji, bez wykonywania naliczenia ani zamknięcia.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N07"
+      },
+      "criteria": {
+        "PASS": "F1-F3 z atrybucją i wyraźnym rozdzieleniem zdarzeń; F4 trzeba zachować, jeśli odpowiedź powołuje się na te operacje. Bez twierdzenia o wypłacie lub rzeczywistym wykonaniu.",
+        "PARTIAL": "Przynajmniej jedna poprawna cecha stanu lub okresu, lecz druga cecha/okres/atrybucja jest niepełna.",
+        "MISS": "Utożsamienie zamknięcia, zaksięgowania lub wypłaty, odwrócenie typu data/flaga albo ogłoszenie wykonania; brak użytecznych faktów też MISS."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "Zamknięcie i zaksięgowanie listy płac są odrębnymi cechami; LPL_Zamknieta to nullable datetime/data zamknięcia, obecna data oznacza zamkniętą listę.",
+          "source": "payroll",
+          "lines": [
+            18,
+            25
+          ],
+          "supportingSource": {
+            "source": "payroll",
+            "lines": [
+              59,
+              61
+            ]
+          }
+        },
+        {
+          "id": "F2",
+          "fact": "LPL_Zaksiegowana to tinyint/status 0/1; 1 oznacza listę zaksięgowaną w KH. Nie jest datą zamknięcia ani dowodem wypłaty pieniędzy.",
+          "source": "payroll",
+          "lines": [
+            24,
+            25
+          ]
+        },
+        {
+          "id": "F3",
+          "fact": "Okres listy wskazują LPL_Miesiac i LPL_Rok; LPL_DataOd/LPL_DataDo opisują początek i koniec okresu rozliczeniowego.",
+          "source": "payroll",
+          "lines": [
+            20,
+            23
+          ]
+        },
+        {
+          "id": "F4",
+          "fact": "Zidentyfikowane operacje payroll_calculate/payroll_close/payroll_correct są opisane w sekcji WRITE — NIE WYWOŁANO, więc opis nie dowodzi ich wykonania.",
+          "source": "payroll",
+          "lines": [
+            76,
+            83
+          ],
+          "conditional": true
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N08",
+      "bank": "holdout10",
+      "tool": "erp_entity.get",
+      "query": "Dziennik księgowy ma swój symbol. Czy taki symbol musi być niepowtarzalny w całej firmie, czy tylko we właściwym okresie obrachunkowym? Wskaż własny identyfikator dziennika i opisany skutek usunięcia jego okresu, podając źródło.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"CDN.Dzienniki ma własny PK Dzi_DziId int IDENTITY; Dzi_Symbol jest symbolem, nie zastępuje PK.\",\"source\":\"journal\",\"lines\":[39,44]},{\"id\":\"F2\",\"fact\":\"Unikalność symbolu jest w ramach okresu: indeks Dzi_OObId + Dzi_Symbol; nie jest zadeklarowana jako globalna w firmie.\",\"source\":\"journal\",\"lines\":[20,26]},{\"id\":\"F3\",\"fact\":\"Dziennik należy N:1 do okresu przez Dzienniki.Dzi_OObId = OkresyObrach.OOb_OObID; usunięcie okresu kasuje jego dzienniki CASCADE DELETE, nie odwrotnie.\",\"source\":\"journal\",\"lines\":[18,26],\"supportingSource\":{\"source\":\"journal\",\"lines\":[54,57]}}]",
+      "request": {
+        "query": "Dziennik księgowy ma swój symbol. Czy taki symbol musi być niepowtarzalny w całej firmie, czy tylko we właściwym okresie obrachunkowym? Wskaż własny identyfikator dziennika i opisany skutek usunięcia jego okresu, podając źródło.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N08"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222440115,
+        "end": 1792222454740
+      },
+      "partId": "prt_148c829a3001fxzSWgM61pBR8V",
+      "requestSha256": "21e9769a5cd6a5e96121b93732e19e95a1f7d8ed3b6e0ceca65078676d439a81",
+      "stateSha256": "f26f68d49c20dbac975ba032174913bc553c01f1e76e17e391e66d59ae094e58",
+      "visibleSha256": "d7c990aaab505c0adbdee29063a04e0cd1d3c3ddb636685a6d8ba04ef3852304",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 3,
+          "S2": 1
+        },
+        "extractCharacters": 1454,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L950-L985",
+            "recordId": "OWA_CHUNK_DZIENNIK_1",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "8968307ead1f64247ede75a089f85c7e65008ddbb0c682ec0e130d6fcb5263e8"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "locator": "L78",
+            "recordId": "OWA_ENTITY_ENCJA_DZIENNIK",
+            "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+            "physicalRowSha256": "2cc1a5f3ceebc63520857ea8082250c592d64022f590587652fc398ea0ffd3b8"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 950,
+            "endLine": 985,
+            "locator": "L950-L985",
+            "text": "# Encja: Dziennik\n\n## Status weryfikacji\n- Status: `częściowo-zweryfikowane`\n- Poziom pewności: `wysoki`\n- Identyfikator ontologiczny: `OWAOntology.Dziennik`\n- Aliasy: `Dzienniki`, `Journal`, `Book`",
+            "textSha256": "3f7b9104991fb11604c2affbc7e4bdad2e39891dfa325727416a1fab85aafa60"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 950,
+            "endLine": 985,
+            "locator": "L950-L985",
+            "text": "# Encja: Dziennik\n\n## Opis biznesowy\nDziennik w Comarch Optima to rejestr księgowy zawierający chronologicznie uporządkowane zapisy księgowe (dekrety). Każdy dziennik jest przypisany do okresu obrachunkowego (`CDN.OkresyObrach`) przez klucz obcy `Dzi_OObId`. Dziennik identyfikowany jest przez symbol (`Dzi_Symbol`) i nazwę (`Dzi_Nazwa`). Usunięcie okresu obrachunkowego powoduje kaskadowe usunięcie wszystkich jego dzienników (CASCADE DELETE).",
+            "textSha256": "33e9912a71c44073b76a9dbf6362abd47d1f2c5f800cc7f74ad6ad56e8924fac"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "line": 78,
+            "endLine": 78,
+            "locator": "L78",
+            "text": "Dziennik w Comarch Optima to rejestr księgowy zawierający chronologicznie uporządkowane zapisy księgowe (dekrety). Każdy dziennik jest przypisany do okresu obrachunkowego (`CDN.OkresyObrach`) przez klucz obcy `Dzi_OObId`. Dziennik identyfikowany jest przez symbol (`Dzi_Symbol`) i nazwę (`Dzi_Nazwa`). Usunięcie okresu obrachunkowego powoduje kaskadowe usunięcie wszystkich jego dzienników (CASCADE DELETE).\n\nverificationStatus: częściowo-zweryfikowane\nconfidenceLevel: wysoki",
+            "textSha256": "2f320080c01f390c0d11d000acf7ec52c53ed497c0ff4587b8d9325d25eaafc4"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 950,
+            "endLine": 985,
+            "locator": "L950-L985",
+            "text": "# Encja: Dziennik\n\n## Identyfikatory — Dzienniki\n| Typ | Pole | Znaczenie | Status |\n|---|---|---|---|\n| PK | Dzi_DziId | Unikalny identyfikator dziennika (int, IDENTITY) | Potwierdzony |\n| Naturalny | Dzi_Symbol | Symbol dziennika (varchar 20) | Potwierdzony |\n| FK | Dzi_OObId | FK do OkresyObrach.OOb_OObID (CASCADE) | Potwierdzony |",
+            "textSha256": "87cc1c6e4b26fbc435eb2351a2aaed799373d14da4d346d1bbc03b81dad4a65c"
+          }
+        ],
+        "errors": []
+      },
+      "score": "PARTIAL",
+      "reason": "Visible journal units give Dzi_DziId and correct period→journals CASCADE deletion direction. They omit the per-period unique symbol index Dzi_OObId+Dzi_Symbol, leaving the central local-versus-global uniqueness question unanswered. No wrong global guarantee is asserted.",
+      "visibleEvidence": [
+        "N08.md:L25-L31",
+        "N08.md:L38-L44"
+      ],
+      "frozenSourceEvidence": [
+        "journal:L18-L26",
+        "journal:L39-L44"
+      ],
+      "missing": [
+        "Symbol uniqueness within period, not globally"
+      ],
+      "sealedOriginalParameters": {
+        "query": "Dziennik księgowy ma swój symbol. Czy taki symbol musi być niepowtarzalny w całej firmie, czy tylko we właściwym okresie obrachunkowym? Wskaż własny identyfikator dziennika i opisany skutek usunięcia jego okresu, podając źródło.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N08"
+      },
+      "criteria": {
+        "PASS": "F1-F3 z atrybucją; dla F3 wystarcza poprawny kierunek skutku okres -> dzienniki, pełny JOIN/N:1 jest pomocniczy, nie dodatkowo wymagany.",
+        "PARTIAL": "Przynajmniej jedno użyteczne rozróżnienie PK/symbolu, zakresu unikalności lub skutku usunięcia, ale reszta albo źródło pominięte.",
+        "MISS": "Globalna unikalność symbolu bez podstawy, odwrócony skutek usunięcia, mylenie dziennika z pojedynczym dekretem albo brak materialnego faktu; także globalne MISS."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "CDN.Dzienniki ma własny PK Dzi_DziId int IDENTITY; Dzi_Symbol jest symbolem, nie zastępuje PK.",
+          "source": "journal",
+          "lines": [
+            39,
+            44
+          ]
+        },
+        {
+          "id": "F2",
+          "fact": "Unikalność symbolu jest w ramach okresu: indeks Dzi_OObId + Dzi_Symbol; nie jest zadeklarowana jako globalna w firmie.",
+          "source": "journal",
+          "lines": [
+            20,
+            26
+          ]
+        },
+        {
+          "id": "F3",
+          "fact": "Dziennik należy N:1 do okresu przez Dzienniki.Dzi_OObId = OkresyObrach.OOb_OObID; usunięcie okresu kasuje jego dzienniki CASCADE DELETE, nie odwrotnie.",
+          "source": "journal",
+          "lines": [
+            18,
+            26
+          ],
+          "supportingSource": {
+            "source": "journal",
+            "lines": [
+              54,
+              57
+            ]
+          }
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N09",
+      "bank": "holdout10",
+      "tool": "erp_entity.get",
+      "query": "Według materiału o walucie, czy trzyznakowe oznaczenie waluty na rachunku bankowym jest odwołaniem do osobnej kartoteki? Co faktycznie ustalono o przechowywaniu walut, a co pozostaje niewiadome przy dodawaniu waluty? Zachowaj historyczny zakres źródła.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"Historyczny materiał częściowo zweryfikowany opisuje brak dedykowanej CDN.Waluty w analizowanym schemacie; nie stanowi to dowodu aktualnego nieistnienia tabeli w każdym wdrożeniu.\",\"source\":\"currency\",\"lines\":[11,15]},{\"id\":\"F2\",\"fact\":\"Kod waluty varchar(3), ISO 4217 jest przechowywany inline, np. CDN.BnkRachunki.BRa_Waluta; materiał wyraźnie mówi pole inline, nie FK.\",\"source\":\"currency\",\"lines\":[28,37]},{\"id\":\"F3\",\"fact\":\"Miejsce zapisu danych create_currency pozostaje nieznane; storage po stronie API to tylko sugestia/prawdopodobieństwo, nie potwierdzony fakt. Pochodzenie listy list_currencies też jest otwarte.\",\"source\":\"currency\",\"lines\":[57,61],\"supportingSource\":{\"source\":\"currency\",\"lines\":[14,15]}}]",
+      "request": {
+        "query": "Według materiału o walucie, czy trzyznakowe oznaczenie waluty na rachunku bankowym jest odwołaniem do osobnej kartoteki? Co faktycznie ustalono o przechowywaniu walut, a co pozostaje niewiadome przy dodawaniu waluty? Zachowaj historyczny zakres źródła.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N09"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222465707,
+        "end": 1792222479420
+      },
+      "partId": "prt_148c88db9001PThp8x37o3ghH6",
+      "requestSha256": "a958ff4b3f0ec3ac9f640fa87b0daaf862dbca529641500ac87161fae3d24e66",
+      "stateSha256": "29b98667beb1a18a7aeac0b36ffa5b9ccf37120e4e57e0a42193a3ddcb13eea7",
+      "visibleSha256": "5453e9ee11e6742547277f7aab1252571fafebf3cb4b516a7957005a51e0e3cd",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 3,
+          "S2": 1
+        },
+        "extractCharacters": 1222,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L4331-L4365",
+            "recordId": "OWA_CHUNK_WALUTA_1",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "8b98caf8191368c0062047166222cbd3fcb92de6689c8a32794e3251caac7234"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "locator": "L505",
+            "recordId": "OWA_ENTITY_ENCJA_WALUTA",
+            "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+            "physicalRowSha256": "ef13225d570bfdcc94aaa1225f67c71bc79529b55aed0773773d28cf567192ac"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 4331,
+            "endLine": 4365,
+            "locator": "L4331-L4365",
+            "text": "# Encyja: Waluta\n\n## Relacje ontologiczne\n- **UZYWANA_PRZEZ_RACHUNEK** (1:N) → `CDN.BnkRachunki.BRa_Waluta` (pole inline)\n- **UZYWANA_PRZEZ_FORME_PLATNOSCI** (N:M) → `CDN.FormyPlatnWaluty`\n- **UZYWANA_PRZEZ_CENE** (1:N) → `CDN.TwrCeny` [UNKNOWN pole]\n- **PRZESZACOWANA** (1:N) → `CDN.PrzeszacWalutNag`",
+            "textSha256": "761e19449bdca04b78cf73844e292730442ac77868e850da8e6eda22f7f7435f"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 4331,
+            "endLine": 4365,
+            "locator": "L4331-L4365",
+            "text": "# Encyja: Waluta\n\n## Opis biznesowy\nWaluta w Optimie nie ma osobnej tabeli słownikowej. Kod waluty (PLN, EUR, USD, …) jest przechowywany inline w rekordach. Endpointy MCP (`list_currencies`, `create_currency`, `get_currency_rate`) sugerują istnienie API do zarządzania walutami, ale backing storage jest prawdopodobnie po stronie API, nie MSSQL.",
+            "textSha256": "54d008841ce5662a7c26e6ceb6bff603f15010097e8bf9d3b6b94f0712ea6e67"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "line": 505,
+            "endLine": 505,
+            "locator": "L505",
+            "text": "Waluta w Optimie nie ma osobnej tabeli słownikowej. Kod waluty (PLN, EUR, USD, …) jest przechowywany inline w rekordach. Endpointy MCP (`list_currencies`, `create_currency`, `get_currency_rate`) sugerują istnienie API do zarządzania walutami, ale backing storage jest prawdopodobnie po stronie API, nie MSSQL.",
+            "textSha256": "9fd81f0a56223f8396806658790a1335b5ae8eed211da2e9882f50430bc2a193"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 4331,
+            "endLine": 4365,
+            "locator": "L4331-L4365",
+            "text": "# Encyja: Waluta\n\n## Źródła danych\n- **Brak dedykowanej tabeli** — waluty inline w `CDN.BnkRachunki.BRa_Waluta (varchar(3))`\n- **eSklep**: `CDN.eSklepWaluty`\n- **Asocjacja**: `CDN.FormyPlatnWaluty`\n- **Przeszacowania**: `CDN.PrzeszacWalutNag`, `CDN.PrzeszacWalutElem`",
+            "textSha256": "d0d69cf01193d972e75acb4b8c3adc7e76dc69083c4396e7e4f0869b33d72d51"
+          }
+        ],
+        "errors": []
+      },
+      "score": "PARTIAL",
+      "reason": "Visible currency units support inline BRa_Waluta/varchar(3), source-claimed absence of a separate dictionary, and retain probability language for API-side storage plus historical disclaimer. They omit the concrete open questions about where create_currency writes and where list_currencies obtains its list, and do not expressly display the non-FK/ISO declaration. The probable-storage caveat is credited but does not fully supply required specific unresolved backing-store account.",
+      "visibleEvidence": [
+        "N09.md:L10-L22",
+        "N09.md:L25-L34"
+      ],
+      "frozenSourceEvidence": [
+        "currency:L11-L15",
+        "currency:L28-L37",
+        "currency:L57-L61"
+      ],
+      "missing": [
+        "Concrete unresolved create_currency/list_currencies backing-store questions",
+        "Explicit inline-not-FK qualification"
+      ],
+      "sealedOriginalParameters": {
+        "query": "Według materiału o walucie, czy trzyznakowe oznaczenie waluty na rachunku bankowym jest odwołaniem do osobnej kartoteki? Co faktycznie ustalono o przechowywaniu walut, a co pozostaje niewiadome przy dodawaniu waluty? Zachowaj historyczny zakres źródła.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N09"
+      },
+      "criteria": {
+        "PASS": "F1-F3 z atrybucją, historycznym/ograniczonym zakresem oraz konkretnym UNKNOWN backing store; bez pozornego sprawdzania dzisiejszej bazy lub capability.",
+        "PARTIAL": "Przynajmniej jeden przydatny fakt o inline kodzie lub konkretny brak storage, ale pominięta inna część albo ograniczenie/atrybucja.",
+        "MISS": "Wymyślony PK/FK do słownika walut, potwierdzony storage API bez dowodu, aktualne uniwersalne zapewnienie o braku tabeli albo brak odpowiedzi na źródłową walutę; globalne MISS ma pierwszeństwo."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "Historyczny materiał częściowo zweryfikowany opisuje brak dedykowanej CDN.Waluty w analizowanym schemacie; nie stanowi to dowodu aktualnego nieistnienia tabeli w każdym wdrożeniu.",
+          "source": "currency",
+          "lines": [
+            11,
+            15
+          ]
+        },
+        {
+          "id": "F2",
+          "fact": "Kod waluty varchar(3), ISO 4217 jest przechowywany inline, np. CDN.BnkRachunki.BRa_Waluta; materiał wyraźnie mówi pole inline, nie FK.",
+          "source": "currency",
+          "lines": [
+            28,
+            37
+          ]
+        },
+        {
+          "id": "F3",
+          "fact": "Miejsce zapisu danych create_currency pozostaje nieznane; storage po stronie API to tylko sugestia/prawdopodobieństwo, nie potwierdzony fakt. Pochodzenie listy list_currencies też jest otwarte.",
+          "source": "currency",
+          "lines": [
+            57,
+            61
+          ],
+          "supportingSource": {
+            "source": "currency",
+            "lines": [
+              14,
+              15
+            ]
+          }
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    },
+    {
+      "id": "N10",
+      "bank": "holdout10",
+      "tool": "erp_concept.search",
+      "query": "W opisie integracji mam tylko słowo „konto” i chcę ustalić, co identyfikuje taki rekord. Czy z samej tej nazwy wynika jedna kartoteka, czy trzeba doprecyzować? Wyjaśnij możliwe znaczenia na podstawie źródeł.",
+      "expected": "[{\"id\":\"F1\",\"fact\":\"Konto bankowe jest rachunkiem firmy, opisanym przez CDN.BnkRachunki; jego PK to BRa_BRaID.\",\"source\":\"bank\",\"lines\":[14,15],\"supportingSource\":{\"source\":\"bank\",\"lines\":[31,36]}},{\"id\":\"F2\",\"fact\":\"Konto księgowe jest elementem hierarchicznego planu kont w CDN.Konta, z PK Acc_AccId; nie jest tym samym co rachunek bankowy.\",\"source\":\"ledger\",\"lines\":[17,25],\"supportingSource\":{\"source\":\"ledger\",\"lines\":[43,47]}},{\"id\":\"F3\",\"fact\":\"Samo słowo konto nie wybiera między tymi dwoma udokumentowanymi znaczeniami. Potrzebne doprecyzowanie rodzaju konta albo jawne warunkowe przedstawienie obu interpretacji.\",\"source\":\"bank\",\"lines\":[14,15],\"supportingSource\":{\"source\":\"ledger\",\"lines\":[17,18]},\"evidenceType\":\"WNIOSEK z dwóch odrębnych definicji, nie dosłowna deklaracja źródła\"}]",
+      "request": {
+        "query": "W opisie integracji mam tylko słowo „konto” i chcę ustalić, co identyfikuje taki rekord. Czy z samej tej nazwy wynika jedna kartoteka, czy trzeba doprecyzować? Wyjaśnij możliwe znaczenia na podstawie źródeł.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-v1-seq10-20261017b-N10"
+      },
+      "status": "completed",
+      "error": null,
+      "time": {
+        "start": 1792222494954,
+        "end": 1792222509743
+      },
+      "partId": "prt_148c8fc21001vASxTGw49uL4YV",
+      "requestSha256": "8ff8e43963f10b2deb3e0007870b6df71779208cf150e983cb39f4a11f73d990",
+      "stateSha256": "a8d3ff3925204373da9448d0df552a54a0d6dfc99aec4d5161ee1db6c2a181c5",
+      "visibleSha256": "d8ea3574a743b3d7557e1d65efbeadfd8975fd3dadd30f4874a15982746cc1b5",
+      "audit": {
+        "auditBasis": "Actual complete harness Markdown; independent citation/physical CSV parser and visible unit boundaries; no connected structured JSON captured",
+        "compact": true,
+        "sourceCount": 2,
+        "perSource": {
+          "S1": 3,
+          "S2": 1
+        },
+        "extractCharacters": 2003,
+        "sources": [
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L1465-L1480",
+            "recordId": "OWA_CHUNK_JEDNOSTKA_MIARY_3",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "68c7730d14e925ee1ac77b02ff5e652240f0a5c4aa98748b0060e49e64140de7"
+          },
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L1407-L1432",
+            "recordId": "OWA_CHUNK_JEDNOSTKA_MIARY_1",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "b49cdd1238249a526344f0b392a15570d562ee304e95d2649094cc742c81361c"
+          },
+          {
+            "key": "S1",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "locator": "L1433-L1464",
+            "recordId": "OWA_CHUNK_JEDNOSTKA_MIARY_2",
+            "artifactSha256": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+            "physicalRowSha256": "b589e3ca6bb0abc56d62c24a4ff88898df41c4dc6df49b7c4b1f4d03a0c9bc2e"
+          },
+          {
+            "key": "S2",
+            "namespace": "OWAOntology",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "locator": "L164",
+            "recordId": "OWA_ENTITY_ENCJA_JEDNOSTKA_MIARY",
+            "artifactSha256": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+            "physicalRowSha256": "253b075bad481e8866211e117db2c7a2dd5aba547868b9a8999595ea97a1ca68"
+          }
+        ],
+        "visibleUnits": [
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 1465,
+            "endLine": 1480,
+            "locator": "L1465-L1480",
+            "text": "## Otwarte problemy\n1. Brak FK constraints — czy relacja do Towary jest gwarantowana na poziomie aplikacji?\n2. `TwJ_Kca*` — co to za referencja? (może Kaucje?)\n3. `TwJ_WyliczPrzySpr` — znaczenie flagi?\n4. Enum `TwJ_TypJm` nieznany.",
+            "textSha256": "ccaf66ac1dbf253fc34a8d308ca31848bf84a56f57e3b2c68e4f3b87aafa932e"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 1407,
+            "endLine": 1432,
+            "locator": "L1407-L1432",
+            "text": "# Encyja: Jednostka miary\n\n## Reguły biznesowe\n- PK composite: TwJ_TwrTyp + TwJ_TwrFirma + TwJ_TwrNumer + TwJ_TwrLp\n- `TwJ_JmZ` (nvarchar(8)) — kod jednostki pomocniczej\n- `TwJ_PrzeliczM` / `TwJ_PrzeliczL` — mnożnik/licznik przelicznika\n- `TwJ_Calkowita` (tinyint) — czy jednostka całkowita\n- `TwJ_EAN` (varchar(20)) — EAN dla jednostki (osobny indeks TwjEAN)\n- `TwJ_TypJm` (tinyint) — typ jednostki miary [UNKNOWN enum]",
+            "textSha256": "11af629c33fe1f1ecbd4a8939b1b398b0edde8d25126a3b72e7b9158defa2ae2"
+          },
+          {
+            "key": "S1",
+            "artifact": "exports/owa_ontology/v1/chunk.csv",
+            "line": 1433,
+            "endLine": 1464,
+            "locator": "L1433-L1464",
+            "text": "## Pola i mapowanie API↔MSSQL\n- `TwJ_TwrTyp`, `TwJ_TwrFirma`, `TwJ_TwrNumer`, `TwJ_TwrLp` (composite PK) — NOT EXPOSED BY MCP\n- `TwJ_JmZ` (nvarchar(8)) — `list_unit_mappings`\n- `TwJ_JmFormat` (tinyint) — NOT EXPOSED BY MCP\n- `TwJ_TypJm` (tinyint) — NOT EXPOSED BY MCP\n- `TwJ_Calkowita` (tinyint) — NOT EXPOSED BY MCP\n- `TwJ_PrzeliczM` (decimal(15,0)) — `list_unit_mappings`\n- `TwJ_PrzeliczL` (decimal(15,0)) — `list_unit_mappings`\n- `TwJ_Prog` (decimal(11,4)) — NOT EXPOSED BY MCP\n- `TwJ_Obowiazek` (tinyint) — NOT EXPOSED BY MCP\n- `TwJ_Waga` (decimal(7,3)) — NOT EXPOSED BY MCP\n- `TwJ_WJm` (nvarchar(5)) — NOT EXPOSED BY MCP\n- `TwJ_EAN` (varchar(20)) — NOT EXPOSED BY MCP\n- `TwJ_WyliczPrzySpr` (smallint) — NOT EXPOSED BY MCP\n- `TwJ_ObjetoscL`, `TwJ_ObjetoscM` (decimal(5,0)) — NOT EXPOSED BY MCP\n- `TwJ_WagaBrutto` (decimal(7,3)) — NOT EXPOSED BY MCP\n- `TwJ_WJmBrutto` (nvarchar(5)) — NOT EXPOSED BY MCP\n- `TwJ_KcaTyp`, `TwJ_KcaFirma`, `TwJ_KcaNumer`, `TwJ_KcaLp` — NOT EXPOSED BY MCP (referencja do kaucji? [UNKNOWN])",
+            "textSha256": "9701794a131df6a0dc7a829d95a7843decb76f4a94575a92257d08d4bb5695c9"
+          },
+          {
+            "key": "S2",
+            "artifact": "exports/owa_ontology/v1/ontology_entity.csv",
+            "line": 164,
+            "endLine": 164,
+            "locator": "L164",
+            "text": "Jednostka miary (CDN.TwrJm) definiuje przeliczniki jednostek dla towarów. Każdy rekord opisuje relację między jednostką podstawową a pomocniczą (`TwJ_JmZ`), wraz z przelicznikami (`TwJ_PrzeliczM`, `TwJ_PrzeliczL`) i wagą/objętością. Rekordy są identyfikowane przez composite key: (TwJ_TwrTyp, TwJ_TwrFirma, TwJ_TwrNumer, TwJ_TwrLp).",
+            "textSha256": "d8731315f186f4da875373161b5ae7ee8be7b18c8e57a6f9640452c9763e0eb8"
+          }
+        ],
+        "errors": []
+      },
+      "score": "MISS",
+      "reason": "The answer treats konto as an unrecognized field of Jednostka miary and returns unit-conversion material. It supplies neither source-backed bank-account nor ledger-account interpretation and no specific choice between them. Generic insufficient-evidence text does not meet the frozen genuine-ambiguity contract.",
+      "visibleEvidence": [
+        "N10.md:L3-L16",
+        "N10.md:L18-L55"
+      ],
+      "frozenSourceEvidence": [
+        "bank:L14-L15,L31-L36",
+        "ledger:L17-L25,L43-L47"
+      ],
+      "missing": [
+        "Bank-account interpretation",
+        "Ledger-account interpretation",
+        "Source-backed clarification between both meanings"
+      ],
+      "sealedOriginalParameters": {
+        "query": "W opisie integracji mam tylko słowo „konto” i chcę ustalić, co identyfikuje taki rekord. Czy z samej tej nazwy wynika jedna kartoteka, czy trzeba doprecyzować? Wyjaśnij możliwe znaczenia na podstawie źródeł.",
+        "as_of": "2026-10-16",
+        "limit": 5,
+        "correlation_id": "semantic-fresh-h10-20261016-qa7f3c-N10"
+      },
+      "criteria": {
+        "PASS": "Widoczne źródłowe rozróżnienie rachunku bankowego i konta planu kont oraz konkretne doprecyzowanie/warunkowe alternatywy F3. Nie wymaga podawania obu PK, jeśli odpowiedź właściwie najpierw prosi o wybór; podane PK muszą być poprawnie przypisane.",
+        "PARTIAL": "Rozpoznana niejednoznaczność z przynajmniej jedną źródłową definicją, ale brak drugiej interpretacji albo jej atrybucji.",
+        "MISS": "Jedna arbitralnie narzucona tożsamość bez doprecyzowania, zlanie obu kartotek, gołe ogólne nie wiem bez źródłowych znaczeń, lub mylenie właścicieli PK; także globalne MISS."
+      },
+      "expectedFacts": [
+        {
+          "id": "F1",
+          "fact": "Konto bankowe jest rachunkiem firmy, opisanym przez CDN.BnkRachunki; jego PK to BRa_BRaID.",
+          "source": "bank",
+          "lines": [
+            14,
+            15
+          ],
+          "supportingSource": {
+            "source": "bank",
+            "lines": [
+              31,
+              36
+            ]
+          }
+        },
+        {
+          "id": "F2",
+          "fact": "Konto księgowe jest elementem hierarchicznego planu kont w CDN.Konta, z PK Acc_AccId; nie jest tym samym co rachunek bankowy.",
+          "source": "ledger",
+          "lines": [
+            17,
+            25
+          ],
+          "supportingSource": {
+            "source": "ledger",
+            "lines": [
+              43,
+              47
+            ]
+          }
+        },
+        {
+          "id": "F3",
+          "fact": "Samo słowo konto nie wybiera między tymi dwoma udokumentowanymi znaczeniami. Potrzebne doprecyzowanie rodzaju konta albo jawne warunkowe przedstawienie obu interpretacji.",
+          "source": "bank",
+          "lines": [
+            14,
+            15
+          ],
+          "supportingSource": {
+            "source": "ledger",
+            "lines": [
+              17,
+              18
+            ]
+          },
+          "evidenceType": "WNIOSEK z dwóch odrębnych definicji, nie dosłowna deklaracja źródła"
+        }
+      ],
+      "correlationOnlyNormalizationAuthorizedByController": true
+    }
+  ],
+  "assessment": {
+    "status": "COMPLETE_UNTUNED_MANUAL_REVIEW",
+    "independentFreshVisibleReading": true,
+    "method": "Read every complete actual connected output against the original frozen global/per-question rubric and all10 source documents. Assess visible material facts and source qualification only; no credit from coverage, confidence, routing, equality, or hidden JSON. No retrieval/candidate/source/wording changes or retries.",
+    "score": {
+      "PASS": 2,
+      "PARTIAL": 5,
+      "MISS": 3
+    },
+    "grades": {
+      "N01": {
+        "score": "PARTIAL",
+        "reason": "Visible BnkRachunki metadata identifies BRa_BRaID as IDENTITY PK and the overview mentions acronym/symbol, but neither BRa_Akronim/BRa_Symbol field mapping nor either UNIQUE assertion is displayed. F1 is useful; requested F2 is incomplete.",
+        "visibleEvidence": [
+          "N01.md:L16-L23",
+          "N01.md:L33-L34"
+        ],
+        "frozenSourceEvidence": [
+          "bank:L28-L36"
+        ],
+        "missing": [
+          "BRa_Akronim varchar(20), UNIQUE",
+          "BRa_Symbol varchar(5), UNIQUE and explicit distinction"
+        ]
+      },
+      "N02": {
+        "score": "PASS",
+        "reason": "Visible EAN overview/rules supply multiple codes per item, per-item UNIQUE(TwE_TwrID,TwE_EAN), TwE_Domyslny and TwE_JM. No global EAN UNIQUE or TwrJm FK is invented. The extra ambiguity diagnostic is noise; it does not remove the requested facts.",
+        "visibleEvidence": [
+          "N02.md:L15-L32"
+        ],
+        "frozenSourceEvidence": [
+          "barcode:L14-L21",
+          "barcode:L54-L56 (conditional FK limit)"
+        ],
+        "missing": []
+      },
+      "N03": {
+        "score": "PARTIAL",
+        "reason": "Visible overview gives PRA_PraId/int IDENTITY, PRA_Kod and PRA_Archiwalny; the open problem correctly locates names in PracEtaty rather than PracKod. It omits PRA_Kod uniqueness and the 0=active/1=archived interpretation, so F1/F2 are incomplete despite correct F3.",
+        "visibleEvidence": [
+          "N03.md:L16-L19",
+          "N03.md:L24-L29"
+        ],
+        "frozenSourceEvidence": [
+          "employee:L18-L24",
+          "employee:L103-L107"
+        ],
+        "missing": [
+          "PRA_Kod UNIQUE",
+          "PRA_Archiwalny 0/1 meaning"
+        ]
+      },
+      "N04": {
+        "score": "MISS",
+        "reason": "The actual local units describe Pracownik, not the requested fixed asset. No SrT_SrTID, SrT_KatID→Kategorie.Kat_KatID or SrT_PrcID→PRA_PraId relation is shown. External Enterprise HR/Altum/general column material cannot substitute the sealed Optima asset mapping and contains inventory-number identity descriptions. None of required F1-F3 is substantively answered.",
+        "visibleEvidence": [
+          "N04.md:L19-L84 (employee-owned local units)",
+          "N04.md:L86-L130 (external material and URLs)"
+        ],
+        "frozenSourceEvidence": [
+          "asset:L40-L46",
+          "asset:L58-L59",
+          "asset:L63-L67"
+        ],
+        "missing": [
+          "Own asset PK",
+          "Exact Kategorie mapping, not Grupy",
+          "Both requested N:1 FK joins with correct owners"
+        ],
+        "externalFallbackObserved": true,
+        "sourceSubstitutionNotCredited": true
+      },
+      "N05": {
+        "score": "MISS",
+        "reason": "The response only says PRE_TypPracownika was not found and provides no attributable source units. It does not show the explicit source UNKNOWN for both PRE_ETARodzajZatrudnienia/PRE_TypPracownika or distinguish confirmed schema from undeciphered dictionaries. The document contains those exact open problems; local retrieval ignorance cannot pass this specific-unknown item.",
+        "visibleEvidence": [
+          "N05.md:L3-L11"
+        ],
+        "frozenSourceEvidence": [
+          "employment:L49-L59",
+          "employment:L85-L88",
+          "employment:L96-L102"
+        ],
+        "missing": [
+          "Both named source-backed UNKNOWN dictionaries",
+          "Schema-versus-code distinction and attribution"
+        ]
+      },
+      "N06": {
+        "score": "PASS",
+        "reason": "The complete visible absence relation table supplies all three N:1 roles and exact joins. CASCADE appears only on the absent employee FK; substitute is a reference without CASCADE and continuation is hierarchy supported by PNBParentId index. No index-to-formal-FK/CASCADE upgrade occurs; owned rules/source citations reinforce the distinctions.",
+        "visibleEvidence": [
+          "N06.md:L5-L14",
+          "N06.md:L16-L30"
+        ],
+        "frozenSourceEvidence": [
+          "absence:L69-L77"
+        ],
+        "missing": []
+      },
+      "N07": {
+        "score": "PARTIAL",
+        "reason": "The full visible table distinguishes nullable datetime LPL_Zamknieta from tinyint LPL_Zaksiegowana/status0/1 and supplies month/year/date range; WRITE NOT CALLED is retained. However it does not explain the requested present-date closed condition versus flag1=posted in KH, nor clearly answer equivalence beyond listing the separate fields. Conservative PARTIAL for incomplete F1/F2 interpretation; period F3 and conditional F4 are present.",
+        "visibleEvidence": [
+          "N07.md:L13-L38",
+          "N07.md:L45-L51"
+        ],
+        "frozenSourceEvidence": [
+          "payroll:L18-L25",
+          "payroll:L59-L61",
+          "payroll:L76-L83"
+        ],
+        "missing": [
+          "Interpretation of non-null closure date",
+          "Interpretation of posted flag1 in KH and explicit event distinction"
+        ],
+        "judgementQualification": "Credit the visible field/type distinction; do not infer the omitted state-value rule from an unlabeled0/1 pair."
+      },
+      "N08": {
+        "score": "PARTIAL",
+        "reason": "Visible journal units give Dzi_DziId and correct period→journals CASCADE deletion direction. They omit the per-period unique symbol index Dzi_OObId+Dzi_Symbol, leaving the central local-versus-global uniqueness question unanswered. No wrong global guarantee is asserted.",
+        "visibleEvidence": [
+          "N08.md:L25-L31",
+          "N08.md:L38-L44"
+        ],
+        "frozenSourceEvidence": [
+          "journal:L18-L26",
+          "journal:L39-L44"
+        ],
+        "missing": [
+          "Symbol uniqueness within period, not globally"
+        ]
+      },
+      "N09": {
+        "score": "PARTIAL",
+        "reason": "Visible currency units support inline BRa_Waluta/varchar(3), source-claimed absence of a separate dictionary, and retain probability language for API-side storage plus historical disclaimer. They omit the concrete open questions about where create_currency writes and where list_currencies obtains its list, and do not expressly display the non-FK/ISO declaration. The probable-storage caveat is credited but does not fully supply required specific unresolved backing-store account.",
+        "visibleEvidence": [
+          "N09.md:L10-L22",
+          "N09.md:L25-L34"
+        ],
+        "frozenSourceEvidence": [
+          "currency:L11-L15",
+          "currency:L28-L37",
+          "currency:L57-L61"
+        ],
+        "missing": [
+          "Concrete unresolved create_currency/list_currencies backing-store questions",
+          "Explicit inline-not-FK qualification"
+        ]
+      },
+      "N10": {
+        "score": "MISS",
+        "reason": "The answer treats konto as an unrecognized field of Jednostka miary and returns unit-conversion material. It supplies neither source-backed bank-account nor ledger-account interpretation and no specific choice between them. Generic insufficient-evidence text does not meet the frozen genuine-ambiguity contract.",
+        "visibleEvidence": [
+          "N10.md:L3-L16",
+          "N10.md:L18-L55"
+        ],
+        "frozenSourceEvidence": [
+          "bank:L14-L15,L31-L36",
+          "ledger:L17-L25,L43-L47"
+        ],
+        "missing": [
+          "Bank-account interpretation",
+          "Ledger-account interpretation",
+          "Source-backed clarification between both meanings"
+        ]
+      }
+    },
+    "bankUnchanged": true,
+    "sameEvaluationTuning": false,
+    "retries": 0,
+    "statisticalAccuracyClaim": false,
+    "sourceAttribution": "Original bank source aliases/line ranges above, sealed source copies in evidence/sources, actual rendered CSV record/locator hashes in capture-manifest.json."
+  },
+  "score": {
+    "PASS": 2,
+    "PARTIAL": 5,
+    "MISS": 3
+  },
+  "metrics": {
+    "summedCallMs": 147651,
+    "maxCallMs": 23110,
+    "medianCallMs": 14519,
+    "elapsedBankSpanMs": 252136,
+    "maxSources": 2,
+    "maxUnitsPerSource": 3,
+    "maxLocalExtractCharacters": 3940,
+    "maxVisibleReplyBytes": 10810
+  },
+  "evidenceDirectory": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/holdout10",
+  "scoredConnectedCalls": 10,
+  "successfulResponses": 10,
+  "bankSha256": "5d6d45891aa5855a2d17c3c4ddaf71ed90fca206456a2ac5fbfd6159e31f0529",
+  "bankBytes": 30635,
+  "originalBankCandidateTree": "abda0f59eba4b76edf621d3de1d51c8e0ba9b3d7",
+  "authorizedV1Tree": "44af4cdf5f0c325fcf39b64ad9c7574d0253c64b",
+  "bankChronology": {
+    "historicalV0Tree": "abda0f59eba4b76edf621d3de1d51c8e0ba9b3d7",
+    "bankCreatedAfterV0Freeze": true,
+    "originalBankSealedAtUtc": "2026-10-16T20:20:16.650322+00:00",
+    "blockedPreflightBeforeScoredEvaluation": true,
+    "writeGateV1ApprovedAfterBankSeal": true,
+    "authorizedV1Tree": "44af4cdf5f0c325fcf39b64ad9c7574d0253c64b",
+    "bankCreatedAfterV1Freeze": false,
+    "statement": "The bank was created after V0 freeze, before the authorization-only V1 write-gate revision. This separate binding follows V1 review/freeze; it does not retroactively change the original bank or claim a newly authored post-V1 holdout."
+  },
+  "separateV1Binding": {
+    "directory": "/tmp/opencode/semantic-intent-holdout10-20261016-qa7f3c/evaluation-binding-v1-44af4cdf-20261017",
+    "manifest": "/tmp/opencode/semantic-intent-holdout10-20261016-qa7f3c/evaluation-binding-v1-44af4cdf-20261017/binding-manifest.json",
+    "privateReceiptMarkdown": "receipt.md",
+    "privateReceiptJson": "receipt.json",
+    "proof": "binding-proof.py",
+    "staticSnapshotSha256": "27828ee4eeade09edbaae71cce356febc14024c82bac6d267b3ce129036738f2",
+    "initiallyVerifiedAtUtc": "2026-10-17T06:25:15.484403+00:00"
+  },
+  "originalSealSha256": "05a600be448d2426a1ab68d5b7b8ac2fc4df404edc71a67e1452b895a9349839",
+  "requestNormalization": "Only controller-authorized new correlation prefix; sealed tool/query/as_of/limit unchanged",
+  "originalBankUnmodified": true,
+  "noQuestionRewrites": true,
+  "noSourceOrRetrievalTuning": true,
+  "oneScoredCallPerQuestion": true,
+  "retries": 0,
+  "holdoutAllPass": false,
+  "statisticalAccuracyClaim": false,
+  "sourceFreeze": {
+    "root": "/docker/openspg",
+    "allowedReferenceRoot": "docs/reference/knowledge_inbox/promoted/OWAOntology/",
+    "allowedExportRoot": "exports/owa_ontology/v1/",
+    "sourceDocumentCount": 10,
+    "promotedInventoryFileCount": 268,
+    "promotedInventorySha256": "ddbfaf58024905d28ffd6a5e8261c749000fa110bb643de5f33a6db53cafc614",
+    "inventoryAlgorithm": "SHA256 of UTF-8 canonical JSON mapping relative path to byte SHA256; sorted keys, ensure_ascii=false, separators=(',',':'); all direct .md/.json files in the allowed promoted directory",
+    "exportFilesSha256": {
+      "exports/owa_ontology/v1/_manifest.json": "234b50b56db2f0753af0ca25268ed97d70e039f1ff7162636127d395db2bdec4",
+      "exports/owa_ontology/v1/chunk.csv": "6c8bc167db9c0009e5cb21c259ac191b81e8e721897487110a6946276fb7aca8",
+      "exports/owa_ontology/v1/ontology_entity.csv": "35af823973b1d0377365efbcc68f184a83cac787f12dfecf983fb31190239d16",
+      "exports/owa_ontology/v1/ontology_field.csv": "c0c17e8f0115f86b140e40a9e2cc02b1601bcca93f2d932e21736031d8aa6e17",
+      "exports/owa_ontology/v1/ontology_relation.csv": "c5dae43957d4391a16a443a5d025e53e49b7bdc0c8e4497eaa8a3c29c10849c1",
+      "exports/owa_ontology/v1/workflow_pattern.csv": "7e972157c738c8841836a9695be2cb281c743b95312759fe1f32ef2f4a08cc09"
+    },
+    "sourceLocators": "Physical 1-based Markdown lines including promoted wrapper. Export record is 1-based excluding header; exportLines are physical CSV lines. Expected facts come from Markdown; entity CSV locators prove static source-guidance coverage, not answer retrieval or current truth.",
+    "sources": {
+      "bank": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_c448c78a_encja-konto-bankowe.md",
+        "sha256": "5be92fe32da150dc475d96900b163069851845b54a7c49f52296d3fe92b375d5",
+        "exportEntityId": "OWA_ENTITY_ENCJA_KONTO_BANKOWE",
+        "exportRecord": 28,
+        "exportLines": [
+          171,
+          171
+        ]
+      },
+      "barcode": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_73d227b7_encja-kod-ean-barcode.md",
+        "sha256": "1efd396f0bec638bf42bede5a92d9455b53ac6215a72b1e065778affc9d4cd0f",
+        "exportEntityId": "OWA_ENTITY_ENCJA_KOD_EAN_BARCODE",
+        "exportRecord": 25,
+        "exportLines": [
+          168,
+          168
+        ]
+      },
+      "employee": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_bd71e430_encja-pracownik-kartoteka-pracownicza.md",
+        "sha256": "6a61b83340ea2fc51142c94fa51395326310a8f2ad7130a71f96534a6e5fc87d",
+        "exportEntityId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+        "exportRecord": 48,
+        "exportLines": [
+          330,
+          330
+        ]
+      },
+      "asset": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_27da1c01_encja-srodek-trwa-y-kartoteka-grupy-amortyzacja.md",
+        "sha256": "d6dc2d17384d9ede5d28369e5f793eb0910f317f9169f2b15e73bda87b624cba",
+        "exportEntityId": "OWA_ENTITY_ENCJA_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA",
+        "exportRecord": 60,
+        "exportLines": [
+          502,
+          502
+        ]
+      },
+      "employment": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_50e9fce6_encja-etat-zatrudnienie.md",
+        "sha256": "36c641141d47e9ed3aa7cbb8e35269424c18c79225cab264aacf750599f9c23c",
+        "exportEntityId": "OWA_ENTITY_ENCJA_ETAT_ZATRUDNIENIE",
+        "exportRecord": 14,
+        "exportLines": [
+          79,
+          79
+        ]
+      },
+      "absence": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_827c2fbf_encja-nieobecnosc.md",
+        "sha256": "423499f985557686b8be0a1ae6ff7959edf1474f1b8ea96237f657db2800b184",
+        "exportEntityId": "OWA_ENTITY_ENCJA_NIEOBECNOSC",
+        "exportRecord": 37,
+        "exportLines": [
+          266,
+          266
+        ]
+      },
+      "payroll": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_786b52cb_encja-lista-p-ac.md",
+        "sha256": "b81778d3abd583585f442d8c42afe65a8075d0cdea1f82710d0ef7a4c18e15c6",
+        "exportEntityId": "OWA_ENTITY_ENCJA_LISTA_PAC",
+        "exportRecord": 35,
+        "exportLines": [
+          264,
+          264
+        ]
+      },
+      "journal": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_cafbecc8_encja-dziennik.md",
+        "sha256": "dc5cafb0bb42ab8d4e5c03d27a9e09c1a546683800fb4274df565ee068676068",
+        "exportEntityId": "OWA_ENTITY_ENCJA_DZIENNIK",
+        "exportRecord": 13,
+        "exportLines": [
+          78,
+          78
+        ]
+      },
+      "currency": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_3df6d829_encja-waluta.md",
+        "sha256": "096f7e933ce4eda57530d964a8d302ea39c9af4a4a4ed4f7fa0c1a4df44e0555",
+        "exportEntityId": "OWA_ENTITY_ENCJA_WALUTA",
+        "exportRecord": 63,
+        "exportLines": [
+          505,
+          505
+        ]
+      },
+      "ledger": {
+        "path": "docs/reference/knowledge_inbox/promoted/OWAOntology/draft_2026-07-17_52936554_encja-konto-ksiegowe.md",
+        "sha256": "0f38999d57ae627e9cd8f60d6c6a867f711f71b5f761e8d2304c2750fa14116c",
+        "exportEntityId": "OWA_ENTITY_ENCJA_KONTO_KSIEGOWE",
+        "exportRecord": 29,
+        "exportLines": [
+          172,
+          172
+        ]
+      }
+    }
+  },
+  "criteria": {
+    "PASS": "All material requested facts are substantively visible with attributable supporting source evidence and retained source limitations. An unknown or ambiguity item passes only with the specific source-backed uncertainty or competing interpretations required below.",
+    "PARTIAL": "At least one useful requested material fact or specific source-backed limitation is visible, but another requested fact, endpoint, qualification, explanation, or attribution is incomplete. Mere relevance, a question echo, or generic insufficient-evidence language is not enough for a positive-fact item.",
+    "MISS": "No useful requested material fact; wrong subject/owner; unrelated substitution; invented enum or mapping; unsupported certainty resolving a documented unknown; claimed fresh verification/execution; missing specific ambiguity handling; or tool/transport error.",
+    "precedence": "A material contradiction of a frozen fact or forbidden unsupported certainty overrides partial factual overlap and scores MISS. Equivalent natural-language explanations are acceptable; no exact phrase matching is required.",
+    "sourceFidelity": "CONFIRMED and verified labels in the documents remain historical source assertions. Incomplete or tentative source statements must not be upgraded to live certification. Failure to retrieve a known cited fact cannot pass by claiming it does not exist."
+  },
+  "externalFallbackCases": [
+    "N04"
+  ],
+  "liveDraftOrRegistryDelta": false,
+  "reportLocatorErratum": {
+    "path": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/report-locator-erratum/erratum.json",
+    "onlyN10VisibleLineRangeCorrected": true,
+    "noScoreOrCriterionChange": true
+  },
+  "evaluationComplete": true,
+  "deploymentCompleted": true,
+  "reviewedState": {
+    "spec": "PASS_CONTROLLED_SEQUENTIAL_PROCEDURE",
+    "qualityOperational": "CONDITIONAL_ACCEPTANCE",
+    "evaluation": "COMPLETE_WITH_OPEN_FINDINGS",
+    "deployment": "COMPLETED_REVIEWED_V1",
+    "controlledSequential32": "PASS_12_PLUS_20",
+    "independentHoldout10": {
+      "PASS": 2,
+      "PARTIAL": 5,
+      "MISS": 3
+    },
+    "holdoutGradeDisagreements": 0,
+    "openImportant": 1,
+    "concurrentReadiness": "NOT_APPROVED",
+    "concurrencyFixed": false,
+    "generalAccuracyClaim": false,
+    "backgroundQualification": "Only evaluator retrievals were serialized. Evaluator-issued health probes occurred between completed cases/banks; this does not establish an idle or monitoring-free host. Archived service metadata records a health oneshot overlapping N10; effects on latency and content are UNKNOWN and no score is attributed to load."
+  },
+  "findings": [
+    {
+      "id": "I1",
+      "severity": "Important",
+      "status": "OPEN_UNCHANGED",
+      "subject": "CPU-bound central responsiveness loss, failed overlapping health and concurrent socket failure",
+      "exactSocketCloser": "UNRESOLVED",
+      "concurrentReadiness": "NOT_APPROVED",
+      "performanceRepairAuthorized": false
+    },
+    {
+      "id": "M4",
+      "severity": "Minor",
+      "status": "OPEN_UNCHANGED",
+      "subject": "Unrequested workflow diagnostic in Q10; PASS retained"
+    },
+    {
+      "id": "M5",
+      "severity": "Minor",
+      "status": "CURRENT_NARRATIVE_CLARIFIED_ONLY",
+      "subject": "Old recovery-state statements are historical. Current runbook is this revision; original independent verdict and sealed copies remain unchanged.",
+      "independentReReviewClaim": false
+    }
+  ],
+  "independentReviews": [
+    {
+      "kind": "operational",
+      "originalPath": "/tmp/opencode/openspg-semantic-intent-20261016/.superpowers/sdd/task-5-review.md",
+      "archivedPath": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z/independent-reviews/task-5-review.md",
+      "bytes": 29724,
+      "sha256": "b53ac630a403b5e10600727373746de568da4b465325e7c3c7383bd0b922b504"
+    },
+    {
+      "kind": "holdout10",
+      "originalPath": "/docker/openspg/.superpowers/sdd/holdout10-independent-review.md",
+      "archivedPath": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z/independent-reviews/holdout10-independent-review.md",
+      "bytes": 34361,
+      "sha256": "93a126993fda96f0b639c0b4dc68bd11743d9cb5d5814a16f9d2dc60b5469e02"
+    }
+  ],
+  "backgroundActivityQualification": {
+    "unit": "erp-kb-dashboard-llm-health.service",
+    "evidenceBasis": "Previously recorded service metadata only; no new service/journal/health inspection",
+    "archivedBeforeFile": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/holdout10/before.json",
+    "archivedBeforeSha256": "d32cb81e29a0f6f1a19b6315f8677a0d12647b833e213c6ab0a880ffa886cefe",
+    "archivedAfterFile": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/holdout10/after.json",
+    "archivedAfterSha256": "fac67682b1c8c7e0faf8442ea29afc768b9573372e80757f4b89eadcefd3f352",
+    "priorRecordedStartCEST": "Sat 2026-10-17 09:19:29 CEST",
+    "recordedStartUtc": "2026-10-17T07:34:49Z",
+    "recordedStopUtc": "2026-10-17T07:35:07Z",
+    "serviceTimestampResolution": "seconds",
+    "overlappedCase": "N10",
+    "caseStartUtc": "2026-10-17T07:34:54.954Z",
+    "caseEndUtc": "2026-10-17T07:35:09.743Z",
+    "caseStateSha256": "a8d3ff3925204373da9448d0df552a54a0d6dfc99aec4d5161ee1db6c2a181c5",
+    "overlapConfirmed": true,
+    "effectOnLatency": "UNKNOWN",
+    "effectOnContent": "UNKNOWN",
+    "triggerAttribution": "Not independently established by endpoint snapshots",
+    "semanticEndpointContact": "Not established by these snapshots",
+    "evaluationCondition": "Only evaluator retrievals were serialized. Evaluator-issued health probes occurred between completed cases/banks; this does not establish an idle or monitoring-free host. Archived service metadata records a health oneshot overlapping N10; effects on latency and content are UNKNOWN and no score is attributed to load.",
+    "gradeChange": false
+  },
+  "recoveryEvidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z/RECOVERY.md",
+  "currentRecoveryNarrative": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z/RECOVERY.md",
+  "historicalRecoveryNarratives": [
+    "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/RECOVERY.md",
+    "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/RECOVERY.md"
+  ],
+  "documentationRevision": {
+    "root": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z",
+    "at": "2026-10-17T08:03:28.307Z",
+    "scope": "DOC_EVIDENCE_ONLY",
+    "runtimeCheckedNow": false,
+    "scoredOrDiagnosticCallsAdded": 0,
+    "sourcePerCaseGradesBanksTimestampsChanged": false
+  }
+}

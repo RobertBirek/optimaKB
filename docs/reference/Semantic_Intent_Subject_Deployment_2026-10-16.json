@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 4,
+  "actualDate": "2026-10-17",
+  "taskFileDate": "2026-10-16",
+  "candidateTree": "44af4cdf5f0c325fcf39b64ad9c7574d0253c64b",
+  "baseCommit": "a0f29559512ac88af68ac3df4cc4a81e70b30c54",
+  "evidenceRoot": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z",
+  "task5Complete": true,
+  "completionMeaning": "Planned deployment/evaluation/reporting complete with open findings; not concurrent-readiness approval, issue closure or general accuracy",
+  "executionCondition": "Only evaluator retrievals were serialized. Evaluator-issued health probes occurred between completed cases/banks; this does not establish an idle or monitoring-free host. Archived service metadata records a health oneshot overlapping N10; effects on latency and content are UNKNOWN and no score is attributed to load.",
+  "performanceLimit": {
+    "concurrentCapacityFixed": false,
+    "throughputReadyClaim": false,
+    "singleQ04DiagnosticMs": 14970.627956867218,
+    "diagnosticCentralCpuMs": 15730,
+    "concurrentHealthFailureMs": 13963.445807933807,
+    "firstBatchQ04SocketFailureMs": 41424,
+    "exactSocketCloser": "UNRESOLVED",
+    "sequentialPassingDoesNotFixConcurrency": true,
+    "concurrentReadiness": "NOT_APPROVED",
+    "openFinding": "I1"
+  },
+  "priorAttempts": [
+    {
+      "phase": "First connected32 attempt",
+      "condition": "Initial four retrieval calls concurrent",
+      "score": {
+        "original12": {
+          "PASS": 11,
+          "PARTIAL": 0,
+          "MISS": 1
+        },
+        "original20": {
+          "PASS": 20,
+          "PARTIAL": 0,
+          "MISS": 0
+        }
+      },
+      "error": "Q04 socket closed after41424ms",
+      "evidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/live32/responses-manifest.json",
+      "immutable": true
+    },
+    {
+      "phase": "Unscored exactQ04 diagnostic",
+      "condition": "One public Q04 request; concurrent health probe for diagnosis only",
+      "timeMs": 14970.627956867218,
+      "cpuMs": 15730,
+      "result": "HTTP200, exact frozen body, local-only; health probe stalled/failed",
+      "evidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/transport-diagnosis-20261017T071000Z/transport-diagnosis.json",
+      "changesFailedScore": false,
+      "immutable": true
+    },
+    {
+      "phase": "Authorized new sequential32 attempt",
+      "condition": "One evaluator retrieval in flight; evaluator health/metadata probes only between completed cases; no idle-host claim",
+      "startedAt": "2026-10-17T07:20:45.382Z",
+      "completedAt": "2026-10-17T07:28:57.353Z",
+      "score": {
+        "original12": {
+          "PASS": 12,
+          "PARTIAL": 0,
+          "MISS": 0
+        },
+        "original20": {
+          "PASS": 20,
+          "PARTIAL": 0,
+          "MISS": 0
+        }
+      },
+      "evidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/live32/capture-manifest.json"
+    },
+    {
+      "phase": "Independent original sealed10 on separately bound V1",
+      "condition": "One evaluator call per frozen query, sequential; authorized correlation-only change; scheduled health oneshot overlapped N10, causal effect UNKNOWN",
+      "startedAt": "2026-10-17T07:30:57.607Z",
+      "completedAt": "2026-10-17T07:35:09.743Z",
+      "score": {
+        "PASS": 2,
+        "PARTIAL": 5,
+        "MISS": 3
+      },
+      "evidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/holdout10/capture-manifest.json"
+    }
+  ],
+  "remainingMinor": "M4/Q10 unrequested workflow diagnostic retained; new10 retrieval gaps are separately reported",
+  "rawHttpEnvelopeCapturedForConnectedCalls": false,
+  "supplementalAnswerHttpCallsThisAttempt": 0,
+  "status": "EVALUATION_COMPLETE_WITH_OPEN_FINDINGS",
+  "regressionAccepted": true,
+  "holdoutAllPass": false,
+  "live32": {
+    "split": {
+      "original12": {
+        "PASS": 12,
+        "PARTIAL": 0,
+        "MISS": 0
+      },
+      "original20": {
+        "PASS": 20,
+        "PARTIAL": 0,
+        "MISS": 0
+      }
+    },
+    "attempts": 32,
+    "completedAt": "2026-10-17T07:28:57.353Z",
+    "metrics": {
+      "summedCallMs": 281433,
+      "maxCallMs": 16454,
+      "medianCallMs": 7322,
+      "elapsedBankSpanMs": 491971,
+      "maxSources": 2,
+      "maxUnitsPerSource": 3,
+      "maxLocalExtractCharacters": 3911,
+      "maxVisibleReplyBytes": 6310
+    }
+  },
+  "new10": {
+    "score": {
+      "PASS": 2,
+      "PARTIAL": 5,
+      "MISS": 3
+    },
+    "attempts": 10,
+    "completedAt": "2026-10-17T07:35:09.743Z",
+    "metrics": {
+      "summedCallMs": 147651,
+      "maxCallMs": 23110,
+      "medianCallMs": 14519,
+      "elapsedBankSpanMs": 252136,
+      "maxSources": 2,
+      "maxUnitsPerSource": 3,
+      "maxLocalExtractCharacters": 3940,
+      "maxVisibleReplyBytes": 10810
+    }
+  },
+  "services": [
+    {
+      "unit": "erp-kb-mcp.service",
+      "metadata": "MainPID=576677\nExecMainStartTimestamp=Sat 2026-10-17 08:39:36 CEST\nExecMainStatus=0\nExecStart={ path=/usr/bin/node ; argv[]=/usr/bin/node /docker/openspg/scripts/erp_knowledge_mcp_http_bridge.mjs ; ignore_errors=no ; start_time=[Sat 2026-10-17 08:39:36 CEST] ; stop_time=[n/a] ; pid=576677 ; code=(null) ; status=0/0 }\nWorkingDirectory=/docker/openspg\nUser=mcpbot\nId=erp-kb-mcp.service\nActiveState=active\nSubState=running\nFragmentPath=/etc/systemd/system/erp-kb-mcp.service\n"
+    },
+    {
+      "unit": "erp-semantic-mcp.service",
+      "metadata": "MainPID=577468\nExecMainStartTimestamp=Sat 2026-10-17 08:40:06 CEST\nExecMainStatus=0\nExecStart={ path=/usr/bin/node ; argv[]=/usr/bin/node /docker/openspg/scripts/erp_knowledge_mcp_http_bridge.mjs ; ignore_errors=no ; start_time=[Sat 2026-10-17 08:40:06 CEST] ; stop_time=[n/a] ; pid=577468 ; code=(null) ; status=0/0 }\nWorkingDirectory=/docker/openspg\nUser=mcpbot\nId=erp-semantic-mcp.service\nActiveState=active\nSubState=running\nFragmentPath=/etc/systemd/system/erp-semantic-mcp.service\n"
+    }
+  ],
+  "newRestartsThisAttempt": 0,
+  "priorApprovedReloads": {
+    "central": {
+      "oldPid": 4067830,
+      "newPid": 576677
+    },
+    "dedicated": {
+      "oldPid": 4068095,
+      "newPid": 577468
+    },
+    "order": [
+      "central",
+      "dedicated"
+    ],
+    "healthTlsManifestEvidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z"
+  },
+  "codeAndIndexParity": true,
+  "policyBefore": [
+    {
+      "unit": "erp-kb-mcp.service",
+      "externalAutoDraftEnabled": true,
+      "externalProvider": "api",
+      "liveLearning": false,
+      "root": "/docker/openspg"
+    },
+    {
+      "unit": "erp-semantic-mcp.service",
+      "externalAutoDraftEnabled": true,
+      "externalProvider": "api",
+      "liveLearning": false,
+      "root": "/docker/openspg"
+    }
+  ],
+  "policyAfter": [
+    {
+      "unit": "erp-kb-mcp.service",
+      "externalAutoDraftEnabled": true,
+      "externalProvider": "api",
+      "liveLearning": false,
+      "root": "/docker/openspg"
+    },
+    {
+      "unit": "erp-semantic-mcp.service",
+      "externalAutoDraftEnabled": true,
+      "externalProvider": "api",
+      "liveLearning": false,
+      "root": "/docker/openspg"
+    }
+  ],
+  "readonlyGateProof": {
+    "deployedReview": "readonly-autodraft-review.md PASS",
+    "priorFreshFixtureReadonlyCalls": 144,
+    "priorFreshFixtureDraftAttempts": 0,
+    "actualN04LiveExternalFallback": true,
+    "rawInboxAndRegistryFingerprintsUnchanged": true,
+    "liveBranchAttemptsNotInstrumented": true,
+    "ordinaryTelemetryAllowed": true
+  },
+  "preservation": {
+    "raw": 966,
+    "promoted": 606,
+    "registry": 1,
+    "csvAndManifests": 175,
+    "policies": 2,
+    "installedUnits": 17,
+    "staticInputs": 34,
+    "prePostEqual": true,
+    "sourceSealInventory": {
+      "count": 268,
+      "sha256": "ddbfaf58024905d28ffd6a5e8261c749000fa110bb643de5f33a6db53cafc614"
+    },
+    "unrelatedFiles": [
+      {
+        "path": "docs/reference/ERP_KB_Dashboard_Canary_Readiness_Report.json",
+        "status": " M",
+        "bytes": 3508,
+        "sha256": "984c8cdc741c67d031338b3ace8bbee9bc2df3c5f8ee73e89b921dd8cb54f04c",
+        "afterSha256": "984c8cdc741c67d031338b3ace8bbee9bc2df3c5f8ee73e89b921dd8cb54f04c"
+      },
+      {
+        "path": "docs/reference/ERP_KB_Dashboard_Canary_Readiness_Report.md",
+        "status": " M",
+        "bytes": 379,
+        "sha256": "6d18470b4d1ce08fa69482590a5bc038d9d6a4451b31fe020fb00ed8b1b62cbd",
+        "afterSha256": "6d18470b4d1ce08fa69482590a5bc038d9d6a4451b31fe020fb00ed8b1b62cbd"
+      },
+      {
+        "path": "docs/reference/ERP_KB_Discovery_Coverage_Report.json",
+        "status": " M",
+        "bytes": 71174,
+        "sha256": "89e9ab7049611fc97d92a499eea2dc743b123478f089ca7dd2badc49bb83d618",
+        "afterSha256": "89e9ab7049611fc97d92a499eea2dc743b123478f089ca7dd2badc49bb83d618"
+      },
+      {
+        "path": "docs/reference/ERP_KB_Discovery_Coverage_Report.md",
+        "status": " M",
+        "bytes": 1066,
+        "sha256": "b16b3bd26e80e96087e225d7fae0e8d23ba2975d1375431dacfa0e6814d9692f",
+        "afterSha256": "b16b3bd26e80e96087e225d7fae0e8d23ba2975d1375431dacfa0e6814d9692f"
+      },
+      {
+        "path": "docs/reference/ERP_KB_Discovery_Daily_Briefing.json",
+        "status": " M",
+        "bytes": 12918,
+        "sha256": "19cb0f5beb536163c10bfaa67605517ecee8cf340e3dd7a5a3d0461372fee0de",
+        "afterSha256": "19cb0f5beb536163c10bfaa67605517ecee8cf340e3dd7a5a3d0461372fee0de"
+      },
+      {
+        "path": "docs/reference/ERP_KB_Discovery_Daily_Briefing.md",
+        "status": " M",
+        "bytes": 3473,
+        "sha256": "cbda757361aeb87513616cb49a4c278ea103de87f1ea887794a510b5e7afa99f",
+        "afterSha256": "cbda757361aeb87513616cb49a4c278ea103de87f1ea887794a510b5e7afa99f"
+      },
+      {
+        "path": "docs/reference/Optima_Reference_Duplicate_Cleanup_Report.json",
+        "status": " M",
+        "bytes": 238,
+        "sha256": "7f46bb2b684d800caabdb5d561a54d36496da2e92441a7c4fa734d561b4975b9",
+        "afterSha256": "7f46bb2b684d800caabdb5d561a54d36496da2e92441a7c4fa734d561b4975b9"
+      },
+      {
+        "path": "docs/reference/Optima_Reference_Duplicate_Cleanup_Report.md",
+        "status": " M",
+        "bytes": 214,
+        "sha256": "2dff44683bb4d3f33437627ba1facea7b831217ac548277c50190eafb6e91271",
+        "afterSha256": "2dff44683bb4d3f33437627ba1facea7b831217ac548277c50190eafb6e91271"
+      },
+      {
+        "path": "docs/reference/OWA_SemanticKB_Holdout20Q_2026-10-16.json",
+        "status": "??",
+        "bytes": 11919,
+        "sha256": "3ae42d67cba40608c84ce4f5ffad77ed5f7553fe1979a586e0b108904a79f936",
+        "afterSha256": "3ae42d67cba40608c84ce4f5ffad77ed5f7553fe1979a586e0b108904a79f936"
+      },
+      {
+        "path": "docs/reference/OWA_SemanticKB_Holdout20Q_2026-10-16.md",
+        "status": "??",
+        "bytes": 9530,
+        "sha256": "fbf6db8aac0de4d1c04ed8d399e53fc8a212b22502e9d724c4fbea1c26c5cdf2",
+        "afterSha256": "fbf6db8aac0de4d1c04ed8d399e53fc8a212b22502e9d724c4fbea1c26c5cdf2"
+      },
+      {
+        "path": "docs/reference/OWA_SemanticKB_Holdout20Q_Results_2026-10-16.json",
+        "status": "??",
+        "bytes": 12969,
+        "sha256": "d1bd7b0ac56f412998f2ef7b24bed3c4e838c782519610199f2f20f7e040b7a6",
+        "afterSha256": "d1bd7b0ac56f412998f2ef7b24bed3c4e838c782519610199f2f20f7e040b7a6"
+      },
+      {
+        "path": "docs/reference/Semantic_Intent_Subject_Holdout10Q_2026-10-16.json",
+        "status": "??",
+        "bytes": 30635,
+        "sha256": "5d6d45891aa5855a2d17c3c4ddaf71ed90fca206456a2ac5fbfd6159e31f0529",
+        "afterSha256": "5d6d45891aa5855a2d17c3c4ddaf71ed90fca206456a2ac5fbfd6159e31f0529"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-16-semantic-intent-subject-retrieval.md",
+        "status": "??",
+        "bytes": 31457,
+        "sha256": "8cda3cdba3f9e61aaeae7d837d99c09c3e516bc4830404af6b74411ebac40bd8",
+        "afterSha256": "8cda3cdba3f9e61aaeae7d837d99c09c3e516bc4830404af6b74411ebac40bd8"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-16-semantic-intent-subject-retrieval-design.md",
+        "status": "??",
+        "bytes": 16066,
+        "sha256": "9542054706898fb64b5b7461c03c4ec6eeab56f9b3691eb3e62c755c15dd7d05",
+        "afterSha256": "9542054706898fb64b5b7461c03c4ec6eeab56f9b3691eb3e62c755c15dd7d05"
+      }
+    ],
+    "unrelatedDrift": [],
+    "mainIndex": {
+      "head": "a0f29559512ac88af68ac3df4cc4a81e70b30c54",
+      "indexEntriesSha256": "97df31e9be458e30dc48fa728887a1a0d87360e4891a3e7493388b0fbd37cbdc",
+      "indexBytesSha256": "789a161c3a8d40c017a6aa38381d2d6ac577e1ce2bad867d12ea919c0d50f716"
+    },
+    "sourceIndex": {
+      "head": "a0f29559512ac88af68ac3df4cc4a81e70b30c54",
+      "indexEntriesSha256": "e114efd29c3ef1b5a2ce611d6d0a8950d95fff94e65aabcd67b59a083abfde64",
+      "indexBytesSha256": "e5895accd14b550dd3a16d3e23d3fbbba69a1190e908a17dc7b1d420acca1258"
+    },
+    "olderArchivesUnchanged": true
+  },
+  "testEvidence": {
+    "priorFocusedMainRunnerEntries": 59,
+    "priorInternalBoundaryControls": 151,
+    "retainedFullRunnerEntries": 1022,
+    "retainedCoveringRunnerEntries": 525,
+    "broadSuiteRerun": false,
+    "qualification": "Previously independently hash-revalidated gate logs remain source-bound; this continuation performs real connected evaluation, not a new full test run"
+  },
+  "recoveryEvidence": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z/RECOVERY.md",
+  "reportLocatorErratum": {
+    "path": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/report-locator-erratum/erratum.json",
+    "onlyN10VisibleLineRangeCorrected": true,
+    "noScoreOrCriterionChange": true
+  },
+  "evaluationComplete": true,
+  "deploymentCompleted": true,
+  "reviewedState": {
+    "spec": "PASS_CONTROLLED_SEQUENTIAL_PROCEDURE",
+    "qualityOperational": "CONDITIONAL_ACCEPTANCE",
+    "evaluation": "COMPLETE_WITH_OPEN_FINDINGS",
+    "deployment": "COMPLETED_REVIEWED_V1",
+    "controlledSequential32": "PASS_12_PLUS_20",
+    "independentHoldout10": {
+      "PASS": 2,
+      "PARTIAL": 5,
+      "MISS": 3
+    },
+    "holdoutGradeDisagreements": 0,
+    "openImportant": 1,
+    "concurrentReadiness": "NOT_APPROVED",
+    "concurrencyFixed": false,
+    "generalAccuracyClaim": false,
+    "backgroundQualification": "Only evaluator retrievals were serialized. Evaluator-issued health probes occurred between completed cases/banks; this does not establish an idle or monitoring-free host. Archived service metadata records a health oneshot overlapping N10; effects on latency and content are UNKNOWN and no score is attributed to load."
+  },
+  "findings": [
+    {
+      "id": "I1",
+      "severity": "Important",
+      "status": "OPEN_UNCHANGED",
+      "subject": "CPU-bound central responsiveness loss, failed overlapping health and concurrent socket failure",
+      "exactSocketCloser": "UNRESOLVED",
+      "concurrentReadiness": "NOT_APPROVED",
+      "performanceRepairAuthorized": false
+    },
+    {
+      "id": "M4",
+      "severity": "Minor",
+      "status": "OPEN_UNCHANGED",
+      "subject": "Unrequested workflow diagnostic in Q10; PASS retained"
+    },
+    {
+      "id": "M5",
+      "severity": "Minor",
+      "status": "CURRENT_NARRATIVE_CLARIFIED_ONLY",
+      "subject": "Old recovery-state statements are historical. Current runbook is this revision; original independent verdict and sealed copies remain unchanged.",
+      "independentReReviewClaim": false
+    }
+  ],
+  "independentReviews": [
+    {
+      "kind": "operational",
+      "originalPath": "/tmp/opencode/openspg-semantic-intent-20261016/.superpowers/sdd/task-5-review.md",
+      "archivedPath": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z/independent-reviews/task-5-review.md",
+      "bytes": 29724,
+      "sha256": "b53ac630a403b5e10600727373746de568da4b465325e7c3c7383bd0b922b504"
+    },
+    {
+      "kind": "holdout10",
+      "originalPath": "/docker/openspg/.superpowers/sdd/holdout10-independent-review.md",
+      "archivedPath": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z/independent-reviews/holdout10-independent-review.md",
+      "bytes": 34361,
+      "sha256": "93a126993fda96f0b639c0b4dc68bd11743d9cb5d5814a16f9d2dc60b5469e02"
+    }
+  ],
+  "backgroundActivityQualification": {
+    "unit": "erp-kb-dashboard-llm-health.service",
+    "evidenceBasis": "Previously recorded service metadata only; no new service/journal/health inspection",
+    "archivedBeforeFile": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/holdout10/before.json",
+    "archivedBeforeSha256": "d32cb81e29a0f6f1a19b6315f8677a0d12647b833e213c6ab0a880ffa886cefe",
+    "archivedAfterFile": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/holdout10/after.json",
+    "archivedAfterSha256": "fac67682b1c8c7e0faf8442ea29afc768b9573372e80757f4b89eadcefd3f352",
+    "priorRecordedStartCEST": "Sat 2026-10-17 09:19:29 CEST",
+    "recordedStartUtc": "2026-10-17T07:34:49Z",
+    "recordedStopUtc": "2026-10-17T07:35:07Z",
+    "serviceTimestampResolution": "seconds",
+    "overlappedCase": "N10",
+    "caseStartUtc": "2026-10-17T07:34:54.954Z",
+    "caseEndUtc": "2026-10-17T07:35:09.743Z",
+    "caseStateSha256": "a8d3ff3925204373da9448d0df552a54a0d6dfc99aec4d5161ee1db6c2a181c5",
+    "overlapConfirmed": true,
+    "effectOnLatency": "UNKNOWN",
+    "effectOnContent": "UNKNOWN",
+    "triggerAttribution": "Not independently established by endpoint snapshots",
+    "semanticEndpointContact": "Not established by these snapshots",
+    "evaluationCondition": "Only evaluator retrievals were serialized. Evaluator-issued health probes occurred between completed cases/banks; this does not establish an idle or monitoring-free host. Archived service metadata records a health oneshot overlapping N10; effects on latency and content are UNKNOWN and no score is attributed to load.",
+    "gradeChange": false
+  },
+  "currentRecoveryNarrative": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z/RECOVERY.md",
+  "historicalRecoveryNarratives": [
+    "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/RECOVERY.md",
+    "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/RECOVERY.md"
+  ],
+  "documentationRevision": {
+    "root": "/docker/openspg/backups/manual-repairs/semantic-intent-subject-20261016/v1-deployment-20261017T063200Z/sequential-attempt-20261017T071900Z/final-review-report-revision-20261017T080328288Z",
+    "at": "2026-10-17T08:03:28.307Z",
+    "scope": "DOC_EVIDENCE_ONLY",
+    "runtimeCheckedNow": false,
+    "scoredOrDiagnosticCallsAdded": 0,
+    "sourcePerCaseGradesBanksTimestampsChanged": false
+  }
+}
