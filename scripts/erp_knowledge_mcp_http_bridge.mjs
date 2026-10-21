@@ -7,12 +7,17 @@ import path from 'path';
 import { verifyApiKey } from './lib/mcp_registry.mjs';
 import { captureSemanticGeneration, installSemanticGeneration } from './lib/semantic_worker_generation.mjs';
 import { createSemanticWorkerPool, isSemanticWorkerRequest } from './lib/semantic_worker_pool.mjs';
+import { createPrivateRawHttpAdapter } from './lib/semantic_raw_http.mjs';
+import { readRawDeploymentBinding, rawDeploymentAuth } from './lib/semantic_raw_deployment.mjs';
 
 const semanticGeneration = captureSemanticGeneration();
 installSemanticGeneration(semanticGeneration);
 const { formatLegacySseEndpoint, handleJsonRpcRequest, PROTOCOL_VERSION } = await import(semanticGeneration.coreUrl);
 const { getMcpProfile, listMcpProfiles, MCP_PROFILE_VERSION } = await import(semanticGeneration.profilesUrl);
 const semanticPool = createSemanticWorkerPool(semanticGeneration);
+const rawOptions = process.env.ERP_KB_RAW_BINDING_FILE
+  ? readRawDeploymentBinding(process.env.ERP_KB_RAW_BINDING_FILE, semanticGeneration) : null;
+const rawPool = rawOptions ? createSemanticWorkerPool(semanticGeneration, rawOptions) : null;
 
 const HOST = process.env.ERP_KB_HTTP_HOST || '127.0.0.1';
 const PORT = Number(process.env.ERP_KB_HTTP_PORT || 3400);
@@ -25,6 +30,7 @@ const PROFILE_SERVER_INFO = { name: PROFILE.serverName, version: MCP_PROFILE_VER
 const PATH_PROFILES = new Map(listMcpProfiles()
   .filter((profile) => profile.mode === 'read-only')
   .map((profile) => [`${MCP_PATH}/${profile.id}`, getMcpProfile(profile.id)]));
+if (rawPool) PATH_PROFILES.set(`${MCP_PATH}/erp-semantic-evidence-poc`, getMcpProfile('erp-semantic-evidence-poc'));
 const SSE_KEEPALIVE_MS = Number(process.env.ERP_KB_HTTP_SSE_KEEPALIVE_MS || 15000);
 const LEGACY_SSE_PATH = process.env.ERP_KB_LEGACY_SSE_PATH || '/sse';
 const DISABLE_SSE = process.env.ERP_KB_HTTP_DISABLE_SSE === '1';
@@ -245,6 +251,11 @@ function readJsonBody(req) {
 }
 
 async function handleMcpPost(req, res, auditContext = null, requestProfile = PROFILE) {
+  if (requestProfile.id === 'erp-semantic-evidence-poc') {
+    return createPrivateRawHttpAdapter({
+      authenticate: req => rawDeploymentAuth(authContext(req), process.env.ERP_KB_RAW_ALLOW_READ_TOKEN === '1'), pool: rawPool,
+      allowedNamespaces: ALLOWED_NAMESPACES, maxBodyBytes: MAX_BODY_BYTES })(req, res);
+  }
   const auth = authContext(req);
   if (!auth.authorized) return unauthorized(res);
 
@@ -404,6 +415,7 @@ const server = http.createServer(async (req, res) => {
       maxSseClients: MAX_SSE_CLIENTS,
       sseClients: sseClients.size,
       semanticExecution: semanticPool.stats(),
+      rawExecution: rawPool ? { configured: true, ...rawPool.stats() } : { configured: false },
     });
   }
 
@@ -434,13 +446,13 @@ const server = http.createServer(async (req, res) => {
 
 server.requestTimeout = REQUEST_TIMEOUT_MS;
 server.headersTimeout = HEADERS_TIMEOUT_MS;
-server.on('close', () => { void semanticPool.close(); });
+server.on('close', () => { void semanticPool.close(); void rawPool?.close(); });
 
 async function shutdown() {
   for (const { res, timer } of sseClients.values()) { clearInterval(timer); res.end(); }
   sseClients.clear();
   const closed = new Promise(resolve => server.close(resolve));
-  await semanticPool.close();
+  await Promise.all([semanticPool.close(), rawPool?.close()]);
   server.closeAllConnections();
   await closed;
 }

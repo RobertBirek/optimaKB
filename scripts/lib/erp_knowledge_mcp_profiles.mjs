@@ -59,7 +59,11 @@ const profiles = {
 };
 
 export function getMcpProfile(id = 'legacy') {
-  const profile = profiles[id];
+  const profile = id === 'erp-semantic-evidence-poc' ? {
+    id, serverName: id, mode: 'read-only', namespaces: ['OWAOntology'],
+    scopes: ['kb.semantic.read'], port: null,
+    tools: ['erp_subject.discover', 'erp_evidence.get', 'list_knowledge_bases'],
+  } : profiles[id];
   if (!profile) throw new Error(`Unknown ERP KB MCP profile: ${id}`);
   return Object.freeze({ ...profile, tools: Object.freeze([...profile.tools]), namespaces: profile.namespaces ? Object.freeze([...profile.namespaces]) : null });
 }

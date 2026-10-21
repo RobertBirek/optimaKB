@@ -1,7 +1,7 @@
 // Acceptance infrastructure only. The original exact 12Q validator is unchanged.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASELINE, BASELINE_SHA256, STATIC_FILES, MODULE_FILES, readStatic, safeRelative, sha256,
+import { BASELINE, BASELINE_SHA256, STATIC_FILES, LEGACY_MODULE_FILES as MODULE_FILES, readStatic, safeRelative, sha256,
   validateClosure, inspectResponse } from './owa_offline_harness.mjs';
 
 export const HOLDOUT20 = 'docs/reference/OWA_SemanticKB_Holdout20Q_2026-10-16.json';

@@ -1,9 +1,14 @@
 import { parentPort, workerData } from 'node:worker_threads';
 import { performance } from 'node:perf_hooks';
-import { handleJsonRpcRequest } from './erp_knowledge_mcp_core.mjs';
 import { getMcpProfile } from './erp_knowledge_mcp_profiles.mjs';
 
-parentPort.on('message', async ({ jobId, request, context }) => {
+parentPort.on('message', async (job) => {
+  const { jobId, request, context } = job;
+  if (['erp_subject.discover', 'erp_evidence.get'].includes(request?.params?.name)) {
+    const { runRawWorkerJob } = await import('./semantic_raw_worker.mjs');
+    await runRawWorkerJob(job);
+    return;
+  }
   const start = performance.now();
   // Trusted context reconstruction is an executor/integrity boundary, not a
   // client request failure. Keep it outside the domain-call catch below.
@@ -12,6 +17,7 @@ parentPort.on('message', async ({ jobId, request, context }) => {
     serverInfo: context.serverInfo, writeAllowed: context.writeAllowed,
   };
   let response;
+  const { handleJsonRpcRequest } = await import('./erp_knowledge_mcp_core.mjs');
   try {
     response = await handleJsonRpcRequest(request, executionContext);
   } catch {
@@ -24,3 +30,4 @@ parentPort.on('message', async ({ jobId, request, context }) => {
   parentPort.postMessage({ type: 'result', jobId, response, handlerWallMs: performance.now() - start });
 });
 parentPort.postMessage({ type: 'ready', generation: workerData.generation.id });
+globalThis[Symbol.for('owa.raw.guard')]?.audit('ready');

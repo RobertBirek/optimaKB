@@ -11,7 +11,8 @@ import dns from 'node:dns';
 import dgram from 'node:dgram';
 import cp from 'node:child_process';
 import process from 'node:process';
-import { register, syncBuiltinESMExports } from 'node:module';
+import { register, syncBuiltinESMExports, isBuiltin } from 'node:module';
+import { SEMANTIC_CODE_FILES } from './semantic_worker_generation.mjs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 export const BASELINE = 'docs/reference/OWA_SemanticKB_12Q_2026-10-15.json';
@@ -25,7 +26,7 @@ export const STATIC_FILES = Object.freeze([
   ...['ontology_entity', 'ontology_field', 'ontology_relation', 'workflow_pattern', 'chunk'].map(n => `exports/owa_ontology/v1/${n}.csv`),
   ...['business_description', 'code_meaning', 'business_rule', 'business_domain'].map(n => `exports/optima_business_semantics/v1/${n}.csv`),
 ]);
-export const MODULE_FILES = Object.freeze([
+export const LEGACY_MODULE_FILES = Object.freeze([
   'scripts/erp_knowledge_answer.mjs', 'scripts/erp_knowledge_assistant.mjs',
   ...['erp_knowledge_mcp_core', 'erp_knowledge_mcp_profiles', 'knowledge_retrieval',
      'owa_query_context', 'owa_evidence', 'owa_answer_presentation', 'local_source_provenance', 'learning',
@@ -34,7 +35,7 @@ export const MODULE_FILES = Object.freeze([
     'content_cleaner', 'provider_secrets', 'transient_retry', 'dashboard_automation',
     'dashboard_audit', 'feedback_learning', 'atomic_file'].map(n => `scripts/lib/${n}.mjs`),
 ]);
-const BUILTINS = new Set(['fs', 'fs/promises', 'path', 'url', 'crypto', 'process', 'child_process']);
+export const MODULE_FILES = Object.freeze([...SEMANTIC_CODE_FILES]);
 export const sha256 = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 export function safeRelative(value) {
   if (typeof value !== 'string' || !value || path.isAbsolute(value) || value.includes('\\')
@@ -61,7 +62,7 @@ export function dependencies(source) {
 }
 export function validateClosure(modules) {
   for (const [file, source] of Object.entries(modules)) for (const specifier of dependencies(source)) {
-    if (BUILTINS.has(specifier.replace(/^node:/, ''))) continue;
+    if (isBuiltin(specifier)) continue;
     const target = specifier.startsWith('.') ? path.posix.normalize(path.posix.join(path.posix.dirname(file), specifier)) : '';
     if (!Object.hasOwn(modules, target)) throw new Error(`Unbound module dependency closure: ${file} -> ${specifier}`);
   }
@@ -70,9 +71,7 @@ export function validateBundle(root) {
   if (!root || !path.isAbsolute(root)) throw new Error('Require explicit --bundle absolute existing directory');
   const manifestBytes = readStatic(root, 'manifest.json');
   const manifest = JSON.parse(manifestBytes);
-  const expected = [...STATIC_FILES, ...MODULE_FILES].sort();
-  if (manifest.schemaVersion !== 1 || !Array.isArray(manifest.files)
-      || JSON.stringify(manifest.files.map(f => f.path).sort()) !== JSON.stringify(expected)) throw new Error('Invalid manifest inventory');
+  if (!validateLegacyManifestInventory(manifest)) throw new Error('Invalid manifest inventory');
   const files = new Map(), modules = {}, directories = new Set([root]);
   for (const entry of manifest.files) {
     safeRelative(entry.path);
@@ -83,7 +82,7 @@ export function validateBundle(root) {
     files.set(path.join(root, entry.path), bytes);
     let parent = path.dirname(path.join(root, entry.path));
     while (parent.startsWith(root)) { directories.add(parent); if (parent === root) break; parent = path.dirname(parent); }
-    if (MODULE_FILES.includes(entry.path)) modules[entry.path] = bytes.toString('utf8');
+    if (LEGACY_MODULE_FILES.includes(entry.path)) modules[entry.path] = bytes.toString('utf8');
   }
   // Reject unmanifested files/directories and symlinks, including output left in a bundle.
   const walk = dir => { for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -97,6 +96,23 @@ export function validateBundle(root) {
   const baseline = JSON.parse(files.get(path.join(root, BASELINE)));
   if (baseline.questions.length !== 12) throw new Error('Invalid baseline questions');
   return { root, manifest, manifestHash: sha256(manifestBytes), files, modules, directories, baseline };
+}
+
+export function validateLegacyManifestInventory(manifest) {
+  return manifest?.schemaVersion === 1 && Array.isArray(manifest.files)
+    && JSON.stringify(manifest.files.map(f=>f.path).sort()) === JSON.stringify([...STATIC_FILES,...LEGACY_MODULE_FILES].sort());
+}
+
+// Separate raw fixture admission. The five-file artifact is independently
+// source-recomputed; runtime bytes remain a distinct exact captured inventory.
+export async function validateRawBundle(trusted, code, generation, authorized) {
+  const {installRawCodeCapture} = await import('./semantic_raw_code.mjs');
+  const {verifyRawArtifact} = await import('./semantic_raw_verifier.mjs');
+  const capture=installRawCodeCapture(generation);
+  if(JSON.stringify(capture.runtime_files.map(f=>f.path).sort())!==JSON.stringify([...MODULE_FILES].sort())) throw Error('Invalid raw runtime inventory');
+  const result=verifyRawArtifact(trusted,code,authorized);
+  if(!result.valid)throw Error('Invalid raw artifact');
+  return {kind:'owa-raw-record-poc',snapshot_id:result.snapshot_id,runtime_files:capture.runtime_files};
 }
 
 export function inspectResponse(response) {
@@ -457,20 +473,21 @@ export function registerFrozenModules(bundle) {
   // Loader serves manifest-verified bytes from memory. Never next() for a file,
   // package, data URL or unknown builtin; even computed imports fail closed.
   register(`data:text/javascript,${encodeURIComponent(`
-    let sources, builtins;
-    export function initialize(data) { sources = data.sources; builtins = new Set(data.builtins); }
+    import { isBuiltin } from 'node:module';
+    let sources;
+    export function initialize(data) { sources = data.sources; }
     export async function resolve(specifier, context) {
       const builtin = specifier.replace(/^node:/, '');
-      if (builtins.has(builtin)) return { url: 'node:' + builtin, shortCircuit: true };
+      if (isBuiltin(specifier)) return { url: 'node:' + builtin, shortCircuit: true };
       let url; try { url = new URL(specifier, context.parentURL).href; } catch {}
       if (context.parentURL === ${JSON.stringify(answer)} && url === ${JSON.stringify(learning)}) url = ${JSON.stringify(stub)};
       if (!Object.hasOwn(sources, url)) throw new Error('Offline module closure: ' + specifier);
       return { url, shortCircuit: true };
     }
     export async function load(url, context, next) {
-      if (url.startsWith('node:') && builtins.has(url.slice(5))) return next(url, context);
+      if (isBuiltin(url)) return next(url, context);
       if (!Object.hasOwn(sources, url)) throw new Error('Offline module closure load');
       return { format: 'module', source: sources[url], shortCircuit: true };
     }
-  `)}`, import.meta.url, { data: { sources, builtins: [...BUILTINS] } });
+  `)}`, import.meta.url, { data: { sources } });
 }

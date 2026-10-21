@@ -6,13 +6,14 @@ import { answerQuestion, renderAnswerMarkdown } from '../erp_knowledge_answer.mj
 import { buildResponse, classifyQuestion, listKnowledgeBases, loadRouting, renderMarkdown } from '../erp_knowledge_assistant.mjs';
 import { submitKnowledgeDraft } from './knowledge_inbox.mjs';
 import { semanticIntentForTool } from './semantic_request_intent.mjs';
+import * as rawMcp from './semantic_raw_mcp.mjs';
 import {
   createExternalKnowledgeDraft,
   getExternalSearchStatus,
   searchExternalSources,
 } from './external_search.mjs';
 
-const routing = loadRouting();
+let routing;
 const ROOT = process.env.ROOT || '/docker/openspg';
 
 export const SERVER_INFO = { name: 'erp-knowledge-assistant', version: '1.1.0' };
@@ -39,9 +40,10 @@ function loadKbNameMap() {
   }
 }
 
-const KB_NAME_MAP = loadKbNameMap();
+let KB_NAME_MAP;
 
 function buildKbRegistry(allowedNamespaces = null) {
+  KB_NAME_MAP ||= loadKbNameMap();
   return Object.values(listKnowledgeBases(allowedNamespaces)).map((kb) => ({
     name: KB_NAME_MAP.get(kb.namespace) || kb.namespace,
     namespace: kb.namespace,
@@ -292,6 +294,7 @@ function domainTool(name, description) {
 }
 
 export function listToolsForProfile(profile = null) {
+  if (profile?.id === 'erp-semantic-evidence-poc') return rawMcp.privateRawTools();
   const all = new Map(listTools().map((tool) => [tool.name, tool]));
   for (const [name, description] of Object.entries(DOMAIN_TOOL_DESCRIPTIONS)) all.set(name, domainTool(name, description));
   if (!profile?.tools) return [...all.values()];
@@ -299,6 +302,7 @@ export function listToolsForProfile(profile = null) {
 }
 
 function routeQuestionTool(question, allowedNamespaces) {
+  routing ||= loadRouting();
   const classified = classifyQuestion(question, routing, allowedNamespaces);
   const response = buildResponse(classified, routing, allowedNamespaces);
   return {
@@ -478,6 +482,9 @@ function writeToolDenied(id, name) {
 }
 
 export async function handleJsonRpcRequest(request, context = {}) {
+  // Before generic namespace checks, default arguments, and legacy coercions.
+  if (['erp_subject.discover', 'erp_evidence.get'].includes(request?.params?.name)) return rawMcp.handleRawRpc(request, context);
+  if (context.profile?.id === 'erp-semantic-evidence-poc') return rawMcp.handleRawMetadata(request, context);
   const { id, method, params } = request || {};
 
   if (method === 'initialize') {
