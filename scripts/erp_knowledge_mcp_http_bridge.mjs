@@ -4,12 +4,14 @@ import http from 'http';
 import { randomUUID, timingSafeEqual } from 'crypto';
 import fs from 'fs';
 import path from 'path';
+import { createEntityGuideTextProxy, GUIDE_TEXT_PATH } from './lib/entity_guide_text_proxy.mjs';
 import { verifyApiKey } from './lib/mcp_registry.mjs';
 import { captureSemanticGeneration, installSemanticGeneration } from './lib/semantic_worker_generation.mjs';
 import { createSemanticWorkerPool, isSemanticWorkerRequest } from './lib/semantic_worker_pool.mjs';
 import { createPrivateRawHttpAdapter } from './lib/semantic_raw_http.mjs';
 import { readRawDeploymentBinding, rawDeploymentAuth } from './lib/semantic_raw_deployment.mjs';
 
+const entityGuideTextProxy = createEntityGuideTextProxy({ configPath: process.env.ERP_KB_ENTITY_GUIDE_PROXY_CONFIG || '' });
 const semanticGeneration = captureSemanticGeneration();
 installSemanticGeneration(semanticGeneration);
 const { formatLegacySseEndpoint, handleJsonRpcRequest, PROTOCOL_VERSION } = await import(semanticGeneration.coreUrl);
@@ -392,6 +394,12 @@ const server = http.createServer(async (req, res) => {
       message: `Too many requests. Retry after ${rate.retryAfter} seconds.`,
       retryAfter: rate.retryAfter,
     });
+  }
+
+  if (req.url === GUIDE_TEXT_PATH) {
+    auditContext.toolName = 'optima_entity_guide_text_read';
+    await entityGuideTextProxy(req, res);
+    return;
   }
 
   if (req.url === '/health') {

@@ -16,7 +16,7 @@ export const SEMANTIC_CODE_FILES = Object.freeze([
   ...['mcp_registry', 'semantic_worker_pool', 'semantic_worker_generation',
     'semantic_raw_contract', 'semantic_raw_csv', 'semantic_raw_code', 'semantic_raw_index', 'semantic_lexical_context',
     'semantic_raw_lookup', 'semantic_raw_artifact', 'semantic_raw_generation', 'semantic_raw_verifier',
-    'semantic_raw_mcp', 'semantic_raw_worker', 'semantic_raw_http', 'semantic_raw_deployment'].map(n => `scripts/lib/${n}.mjs`),
+    'semantic_raw_mcp', 'semantic_raw_worker', 'semantic_raw_http', 'semantic_raw_deployment', 'entity_guide_text_proxy'].map(n => `scripts/lib/${n}.mjs`),
 ]);
 
 const LOADER = `
