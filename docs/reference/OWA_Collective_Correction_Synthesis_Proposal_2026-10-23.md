@@ -1,12 +1,12 @@
-# Korekta zbiorcza FA: propozycja syntezy do zatwierdzenia
+# Korekta zbiorcza FA: synteza zatwierdzona redakcyjnie
 
-**Stan:** propozycja redakcyjna, bez zatwierdzenia wiedzy i bez promocji do KB. Data przygotowania: 23.10.2026.
+**Stan:** operator zatwierdził treść i sprzedażowy zakres encji 23.10.2026. Dokument nie stanowi promowanego rekordu KB. Data przygotowania: 23.10.2026.
 
 Przygotowano na podstawie [przeglądu źródeł](OWA_Collective_Correction_Source_Review_2026-10-23.md). Poniższa treść nie zmienia korpusu ani statusu dotychczasowych draftów. Oznaczenie „potwierdzone dokumentacją” dotyczy wskazanego źródła, nie testu zainstalowanego systemu.
 
-## Decyzja modelowania proponowana operatorowi
+## Zatwierdzona decyzja modelowania
 
-Zachować nazwę **Encja: Korekta zbiorcza FA** i identyfikator **OWAOntology.KorektaZbiorczaFA**, a tę encję ograniczyć do wariantu dla faktur sprzedaży (FS). To propozycja zakresu lokalnej ontologii. Oficjalna pomoc opisuje szerszy mechanizm korekty zbiorczej/rabatu dla FS oraz FZ; nazwa encji nie ogranicza funkcjonalności produktu do sprzedaży.
+Zachować nazwę **Encja: Korekta zbiorcza FA** i identyfikator **OWAOntology.KorektaZbiorczaFA**, a tę encję ograniczyć do wariantu dla faktur sprzedaży (FS). To zatwierdzony zakres lokalnej ontologii. Oficjalna pomoc opisuje szerszy mechanizm korekty zbiorczej/rabatu dla FS oraz FZ; nazwa encji nie ogranicza funkcjonalności produktu do sprzedaży.
 
 Nie dodawać ani nie zmieniać encji FZ w tym kroku. Zmiana nazwy, identyfikatora lub rozszerzenie obecnej encji na wspólny model FS/FZ wymaga osobnej decyzji.
 
@@ -105,6 +105,8 @@ Nie należy zostawiać nowej, różnej treści jako trzeciej promowanej rewizji 
 
 Przed przyszłą promocją trzeba przygotować format i proweniencję nowego rekordu oraz wskazać tryb zastąpienia poprzednich wersji; zwykła kopia tego dokumentu nie wystarcza. Pozostałe trzy grupy OWA wymagają własnego przeglądu. Nie zakładać, że zatwierdzenie tej treści oznacza zieloną bramkę, wdrożenie kodu, zgodę na build lub wznowienie automatu.
 
-## Zakres zatwierdzenia treści
+## Zapis zatwierdzenia treści
 
-Prośba do operatora dotyczy dwóch decyzji: akceptacji powyższej syntezy z jawnymi UNKNOWN oraz zachowania nazwy/identyfikatora encji dla wariantu sprzedażowego przy opisaniu szerszego mechanizmu FS/FZ. Dalsze czynności na korpusie, eksporcie, grafie i usługach wymagają osobnego polecenia.
+Operator odpowiedział „tak” na pytanie o zatwierdzenie treści oraz sprzedażowego zakresu encji. Zatwierdzenie z 23.10.2026 dotyczy propozycji z commita `e8a42fe826ab4e271e48a506375c0386a8c3cf0c`: syntezy z jawnymi UNKNOWN oraz zachowania nazwy/identyfikatora encji dla wariantu sprzedażowego przy opisaniu szerszego mechanizmu FS/FZ. Treść sekcji „Proponowana treść rekordu” i „Źródła i daty” pozostaje bez zmian względem zatwierdzonej propozycji.
+
+Zatwierdzenie redakcyjne nie jest promocją rekordu, zastąpieniem lub wycofaniem poprzednich wersji ani potwierdzeniem runtime/API/SQL. Dalsze czynności na korpusie, eksporcie, grafie i usługach wymagają osobnego polecenia. W tym kroku zapisano tylko decyzję w dokumentacji izolowanego checkoutu.
