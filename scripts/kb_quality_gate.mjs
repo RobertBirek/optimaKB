@@ -4,9 +4,10 @@ import fs from 'fs';
 import path from 'path';
 import process from 'process';
 import { execSync } from 'child_process';
-import { loadPromotedKnowledge, makePromotedId, TARGET_KBS } from './lib/promoted_knowledge.mjs';
+import { findRawDrafts, loadPromotedKnowledge, makePromotedId, TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { slug } from './lib/export_utils.mjs';
 import { writeFileAtomically } from './lib/atomic_file.mjs';
+import { assessOwaPromotedCoverage } from './lib/owa_promoted_coverage.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const OUT_JSON = process.env.KB_QUALITY_GATE_OUT_JSON || path.join(ROOT, 'docs/reference/KB_Quality_Gate_Report.json');
@@ -200,31 +201,9 @@ function duplicateSourceUrls(rows, namespace) {
     .map(([sourceUrl, count]) => ({ sourceUrl, count }));
 }
 
-function canonicalDraftsByTitle(drafts) {
-  const byTitleKey = new Map();
-  for (const draft of drafts) {
-    const key = String(draft.title || '').replace(/\r/g, '').trim().toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
-    const existing = byTitleKey.get(key);
-    const draftLen = String(draft.content || '').length;
-    const existingLen = existing ? String(existing.content || '').length : -1;
-    const draftAt = Date.parse(draft.createdAt || draft.promotedAt || '') || 0;
-    const existingAt = existing ? Date.parse(existing.createdAt || existing.promotedAt || '') || 0 : -1;
-    if (!existing || draftLen > existingLen || (draftLen === existingLen && draftAt > existingAt)) {
-      byTitleKey.set(key, draft);
-    }
-  }
-  return [...byTitleKey.values()];
-}
-
 function promotedDraftChunkMatches(namespace, chunkRows) {
   const promoted = loadPromotedKnowledge(namespace);
   if (!promoted.length) return { promotedCount: 0, missing: [] };
-  // export_owa_ontology.mjs intentionally consolidates multiple promoted
-  // revisions of the same conceptual entity into one canonical draft per
-  // title (keeping the longest/most-recent); superseded revisions never get
-  // their own chunk rows by design, so only the canonical drafts should be
-  // checked here.
-  const candidates = namespace === 'OWAOntology' ? canonicalDraftsByTitle(promoted) : promoted;
   const haystack = chunkRows.map((row) => [
     row.sourceUrl,
     row.sourcePath,
@@ -234,7 +213,7 @@ function promotedDraftChunkMatches(namespace, chunkRows) {
     row.content,
   ].join('\n')).join('\n');
   const haystackLower = haystack.toLowerCase();
-  const missing = candidates
+  const missing = promoted
     .filter((draft) => {
       const sluggedId = slug(draft.id).slice(0, 96);
       const schemaChunkId = namespace === 'ComarchOptimaSchema'
@@ -344,7 +323,23 @@ function assessNamespace(namespace) {
   }
 
   const chunkCsv = parseCsv(path.join(exportDir, 'chunk.csv'));
-  if (chunkCsv.exists) {
+  let owaPromotedCoverage;
+  if (namespace === 'OWAOntology') {
+    const promotedDrafts = loadPromotedKnowledge(namespace);
+    owaPromotedCoverage = assessOwaPromotedCoverage({
+      promotedDrafts,
+      rawDrafts: promotedDrafts.length ? findRawDrafts().filter((draft) => draft.kbNamespace === namespace) : [],
+      chunkRows: chunkCsv.rows,
+      root: ROOT,
+    });
+    const issueCounts = new Map();
+    for (const { kind } of owaPromotedCoverage.issues) {
+      issueCounts.set(kind, (issueCounts.get(kind) || 0) + 1);
+    }
+    for (const [kind, count] of issueCounts) {
+      errors.push(`OWA promoted coverage ${kind}: ${count}`);
+    }
+  } else if (chunkCsv.exists) {
     const promotedCoverage = promotedDraftChunkMatches(namespace, chunkCsv.rows);
     if (promotedCoverage.missing.length) {
       errors.push(`Promoted drafts without visible chunks: ${promotedCoverage.missing.length}`);
@@ -378,6 +373,7 @@ function assessNamespace(namespace) {
     generatedAt: manifest.generatedAt || '',
     errors,
     warnings,
+    ...(owaPromotedCoverage ? { promotedCoverage: owaPromotedCoverage } : {}),
     files,
     jobs: jobs.map((job) => ({
       id: job.id,
