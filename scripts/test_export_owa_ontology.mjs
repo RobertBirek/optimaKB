@@ -172,6 +172,7 @@ function refused(f, kind) {
     assert.ok(issue.reason.trim());
   }
   assert.deepEqual(inventory(f.exportDir), before, 'Refusal must preserve all output bytes/ownership/modes or directory absence');
+  return payload;
 }
 
 test('approved snapshots beat longer withdrawn raw and changed raw; schemas, full chunks and October provenance survive', () => {
@@ -243,6 +244,97 @@ test('missing raw/promoted Markdown does not replace approved snapshot content',
   assert.equal(result.status, 0, result.stderr);
   assert.deepEqual(readCsv(path.join(f.exportDir, 'chunk.csv')).rows.map((row) => row.content), [SYNTHESIS]);
 });
+
+for (const [name, variant] of [
+  ['CRLF', MAPPING_CONTENT.replaceAll('\n', '\r\n')],
+  ['spaces-tabs', MAPPING_CONTENT.replaceAll(' ', ' \t  ')],
+  ['CRLF-spaces-tabs', MAPPING_CONTENT.replaceAll(' ', ' \t  ').replaceAll('\n', '\r\n')],
+  ['indented-spaces-tabs', MAPPING_CONTENT.replace(/^## /gm, ' \t ## \t ')],
+]) {
+  test(`equivalent ${name} snapshot lexical winner preserves complete LF structured output and original hash`, () => {
+    const baseline = fixture(`equivalent-${name}-baseline`);
+    const changed = fixture(`equivalent-${name}-changed`);
+    for (const [f, winnerContent] of [[baseline, MAPPING_CONTENT], [changed, variant]]) {
+      f.add('mapping_z', 'Encja: Fixture', MAPPING_CONTENT);
+      f.add('mapping_a', 'Encja: Fixture', winnerContent);
+      f.saveRegistry();
+      const result = f.run();
+      assert.equal(result.status, 0, result.stderr);
+      assert.equal(result.stderr, '');
+      assert.equal(JSON.parse(result.stdout).selectedDraftCount, 2);
+    }
+    const expectedCounts = { 'ontology_entity.csv': 2, 'ontology_field.csv': 1, 'ontology_relation.csv': 1, 'workflow_pattern.csv': 1, 'chunk.csv': 4 };
+    const csvs = {};
+    for (const file of Object.keys(COLUMNS)) {
+      const lf = readCsv(path.join(baseline.exportDir, file));
+      csvs[file] = readCsv(path.join(changed.exportDir, file));
+      assert.equal(lf.rows.length, expectedCounts[file]);
+      assert.deepEqual(csvs[file], lf, `${file}: equivalent whitespace must not erase/change structured rows`);
+    }
+    const entity = csvs['ontology_entity.csv'].rows.find((row) => row.canonicalName === 'Fixture');
+    assert.equal(entity.description, 'Fixture\'s "quoted", Magazyn description.');
+    assert.equal(entity.mainTable, 'CDN.Fixture');
+    assert.equal(entity.mcpWriteTools, 'fixture_write');
+    assert.equal(csvs['ontology_field.csv'].rows[0].fieldName, 'FixtureId');
+    assert.equal(csvs['ontology_relation.csv'].rows[0].joinCondition, 'a.id=b.id');
+    assert.equal(csvs['workflow_pattern.csv'].rows[0].mcpTool, 'fixture_write');
+    assert.deepEqual(csvs['chunk.csv'].rows.filter((row) => row.sourceDocumentRefId === entity.id)
+      .map((row) => [row.id, row.sectionOrder, row.sourcePath, row.content]), [
+      ['OWA_CHUNK_FIXTURE_1', '1', `${OCTOBER}/mapping_a.md`, MAPPING],
+      ['OWA_CHUNK_FIXTURE_2', '2', `${OCTOBER}/mapping_a.md`, LONG],
+      ['OWA_CHUNK_FIXTURE_3', '3', `${OCTOBER}/mapping_a.md`, 'Final approved paragraph.'],
+    ]);
+    const manifest = JSON.parse(fs.readFileSync(path.join(changed.exportDir, '_manifest.json'), 'utf8'));
+    const selected = manifest.selectedDrafts.find((draft) => draft.entityId === entity.id);
+    assert.equal(selected.draftId, 'mapping_a');
+    assert.deepEqual(selected.equivalentDraftIds, ['mapping_a', 'mapping_z']);
+    assert.equal(selected.contentSha256, hash(variant), 'Hash must describe the original snapshot, not parser-normalized content');
+    assert.notEqual(selected.contentSha256, hash(MAPPING_CONTENT));
+    assert.equal(JSON.parse(fs.readFileSync(path.join(changed.root, PROMOTED, 'mapping_a.json'), 'utf8')).content, variant);
+  });
+}
+
+for (const existing of [true, false]) {
+  test(`generated ID collisions cross-entity refuse all colliding child rowsets with ${existing ? 'eight existing sentinels' : 'absent output'}`, () => {
+    const f = fixture(`cross-entity-${existing ? 'seeded' : 'absent'}`);
+    if (existing) seed(f);
+    // Full-title owners are distinct, but the unchanged canonical child naming
+    // intentionally generates collisions; the exporter must refuse, not rename.
+    f.add('prefixed', 'Encja: Fixture', MAPPING_CONTENT);
+    f.add('unprefixed', 'Fixture', MAPPING_CONTENT);
+    f.saveRegistry();
+    const payload = refused(f, 'duplicate_ids');
+    assert.deepEqual(payload.issues.map(({ kind, fileName, duplicateIds }) => ({ kind, fileName, duplicateIds })), [
+      { kind: 'duplicate_ids', fileName: 'ontology_field.csv', duplicateIds: ['OWA_FIELD_FIXTURE_FIXTUREID'] },
+      { kind: 'duplicate_ids', fileName: 'ontology_relation.csv', duplicateIds: ['OWA_REL_FIXTURE_BELONGS_TARGET'] },
+      { kind: 'duplicate_ids', fileName: 'workflow_pattern.csv', duplicateIds: ['OWA_WF_FIXTURE_FIXTURE_WRITE_0'] },
+      { kind: 'duplicate_ids', fileName: 'chunk.csv', duplicateIds: ['OWA_CHUNK_FIXTURE_1', 'OWA_CHUNK_FIXTURE_2', 'OWA_CHUNK_FIXTURE_3'] },
+    ]);
+    for (const issue of payload.issues) {
+      assert.ok(issue.reason.includes(issue.fileName));
+      for (const id of issue.duplicateIds) assert.ok(issue.reason.includes(id));
+    }
+  });
+
+  for (const identical of [true, false]) {
+    test(`generated ID collisions within one entity refuse ${identical ? 'identical' : 'different'} duplicate rows with ${existing ? 'eight existing sentinels' : 'absent output'}`, () => {
+      const f = fixture(`intra-entity-${identical ? 'identical' : 'different'}-${existing ? 'seeded' : 'absent'}`);
+      if (existing) seed(f);
+      const fieldRow = '| 1 | id | x | FixtureId | int | NO | PK | Field description | verified |';
+      const relationRow = '| belongs | x | Target | N:1 | synthetic | a.id=b.id | verified |';
+      const content = MAPPING_CONTENT
+        .replace(fieldRow, `${fieldRow}\n${identical ? fieldRow : fieldRow.replace('Field description', 'Different field description')}`)
+        .replace(relationRow, `${relationRow}\n${identical ? relationRow : relationRow.replace('a.id=b.id', 'different.id=b.id')}`);
+      f.add('duplicates', 'Encja: Fixture', content);
+      f.saveRegistry();
+      const payload = refused(f, 'duplicate_ids');
+      assert.deepEqual(payload.issues.map(({ fileName, duplicateIds }) => ({ fileName, duplicateIds })), [
+        { fileName: 'ontology_field.csv', duplicateIds: ['OWA_FIELD_FIXTURE_FIXTUREID'] },
+        { fileName: 'ontology_relation.csv', duplicateIds: ['OWA_REL_FIXTURE_BELONGS_TARGET'] },
+      ]);
+    });
+  }
+}
 
 test('large refusal diagnostics remain complete JSON for a slow stderr consumer', async () => {
   const f = fixture('large-refusal');

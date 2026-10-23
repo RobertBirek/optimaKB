@@ -124,7 +124,10 @@ function parseEndpointTools(content) {
 }
 
 function parseEntityDraft(draft) {
-  const content = draft.content;
+  // Match the splitter's whitespace/paragraph normalization without chunking
+  // parser input; retain the original snapshot for hashing and chunk generation.
+  const content = draft.content.replace(/\r/g, '').replace(/[ \t]+/g, ' ')
+    .split(/\n\s*\n/).map((part) => part.trim()).filter(Boolean).join('\n\n');
   const entityId = makeId('OWA_ENTITY', draft.title);
   const canonicalName = draft.title.replace(/^Encja:\s*/i, '');
   const verificationStatus = parseListValue(content, 'Status');
@@ -219,7 +222,7 @@ function parseEntityDraft(draft) {
       status: 'WRITE_NOT_CALLED',
       summary: truncate(`${canonicalName}: ${row.op || row.tool}${row.detail ? ` | ${row.detail}` : ''} -> ${row.tool}`.trim(), 1200),
     })),
-    chunks: splitDraftContent(content, 1800).map((chunk, index) => ({
+    chunks: splitDraftContent(draft.content, 1800).map((chunk, index) => ({
       id: makeId('OWA_CHUNK', `${canonicalName}_${index + 1}`),
       name: `${canonicalName} chunk ${index + 1}`,
       description: `Ontology chunk for ${canonicalName}`,
@@ -272,6 +275,29 @@ const fieldRows = parsed.flatMap((item) => item.fields);
 const relationRows = parsed.flatMap((item) => item.relations);
 const workflowRows = parsed.flatMap((item) => item.workflows);
 const chunkRows = parsed.flatMap((item) => item.chunks);
+
+// Distinct full-title owners can still share canonical child IDs. Check every
+// complete CSV rowset; collisions are errors, never a reason to rename/dedupe.
+const duplicateIssues = [];
+for (const [fileName, rows] of [
+  ['ontology_entity.csv', entityRows],
+  ['ontology_field.csv', fieldRows],
+  ['ontology_relation.csv', relationRows],
+  ['workflow_pattern.csv', workflowRows],
+  ['chunk.csv', chunkRows],
+]) {
+  const seen = new Set();
+  const duplicates = new Set();
+  for (const row of rows) {
+    if (seen.has(row.id)) duplicates.add(row.id);
+    seen.add(row.id);
+  }
+  if (!duplicates.size) continue;
+  const duplicateIds = [...duplicates].sort();
+  duplicateIssues.push({ kind: 'duplicate_ids', title: '', draftIds: [], fileName, duplicateIds,
+    reason: `${fileName} contains duplicate IDs: ${duplicateIds.join(', ')}` });
+}
+if (duplicateIssues.length) refuse(duplicateIssues);
 
 ensureDir(EXPORT_DIR);
 
