@@ -65,4 +65,14 @@ Both tasks implement the approved snapshot-only/fail-closed/provenance scope. Ta
 
 ## Execution handoff
 
-Preserve the user's previously chosen subagent work and independent reviews. Request review of this saved plan before implementation; then use subagent-driven-development, with isolated implementation and fresh reviewers. Current status: design contract approved; implementation not started.
+Preserve the user's previously chosen subagent work and independent reviews. Request review of this saved plan before implementation; then use subagent-driven-development, with isolated implementation and fresh reviewers.
+
+## Execution record
+
+Operator approved this plan before implementation. The detailed task steps above record the original requirements; execution status and evidence are summarized here and in the plan-specific SDD ledger.
+
+- [x] Task 1 steps 1–5: RED/GREEN selector, local commit `2456567`, independent spec/quality review PASS/Approved without findings.
+- [x] Task 2 steps 1–6: RED/GREEN CLI, local commit `c53ab1e`, final97 export/selector +49 quality tests, offline checks and real-corpus refusal trial. Independent task review PASS/Approved without findings.
+- [x] Task 2 step 7 / combined final review and closure: two Important integration findings resolved in `f2d6a1e`; both ADDRESSED on scoped re-review, no new Critical/Important issues. Final107 export/selector +49 quality tests PASS. No merge/push/deploy authorized or performed.
+
+Final-code trial: `/tmp/opencode/owa-final-fix-trial-20261023-x27bx0ac/`, exit2 for exactly FPF/PS/WZ; existing8 outputs, copied inputs and563 production paths unchanged. Final controller verification: `/tmp/opencode/owa-approved-export-verified-f9dretfb/`, required checks pass and fresh563-path metadata unchanged. Earlier evidence paths remain preserved as historical runs. Durable result report: `docs/reference/OWA_Approved_Export_Verification_2026-10-23.md`.
