@@ -2,8 +2,10 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { ensureDir, makeId, writeCsv, writeJson } from './lib/export_utils.mjs';
-import { findRawDrafts, splitDraftContent, truncate } from './lib/promoted_knowledge.mjs';
+import { findRawDrafts, loadPromotedKnowledge, loadRegistry, splitDraftContent, truncate } from './lib/promoted_knowledge.mjs';
+import { selectOwaExportDrafts } from './lib/owa_export_selection.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const EXPORT_DIR = path.join(ROOT, 'exports/owa_ontology/v1');
@@ -15,8 +17,8 @@ function normalize(value) {
   return String(value || '').replace(/\r/g, '').trim();
 }
 
-function titleDedupeKey(value) {
-  return normalize(value).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+function relativeSourcePath(value) {
+  return path.relative(path.resolve(ROOT), path.resolve(ROOT, value)).replaceAll(path.sep, '/');
 }
 
 function parseListValue(content, label) {
@@ -121,28 +123,8 @@ function parseEndpointTools(content) {
   });
 }
 
-function latestOntologyDrafts() {
-  const drafts = findRawDrafts().filter((draft) => draft.kbNamespace === TARGET_NAMESPACE);
-  const byTitle = new Map();
-  for (const draft of drafts) {
-    const key = titleDedupeKey(draft.title);
-    const existing = byTitle.get(key);
-    const draftLen = String(draft.content || '').length;
-    const existingLen = existing ? String(existing.content || '').length : -1;
-    const draftAt = Date.parse(draft.createdAt || '') || 0;
-    const existingAt = existing ? Date.parse(existing.createdAt || '') || 0 : -1;
-    if (!existing || draftLen > existingLen || (draftLen === existingLen && draftAt > existingAt)) {
-      byTitle.set(key, draft);
-    }
-  }
-  return [...byTitle.values()].sort((a, b) => a.title.localeCompare(b.title, 'pl'));
-}
-
 function parseEntityDraft(draft) {
-  const markdownFallback = draft.rawMarkdownPath && fs.existsSync(draft.rawMarkdownPath)
-    ? fs.readFileSync(draft.rawMarkdownPath, 'utf8')
-    : '';
-  const content = String(draft.content || markdownFallback || '');
+  const content = draft.content;
   const entityId = makeId('OWA_ENTITY', draft.title);
   const canonicalName = draft.title.replace(/^Encja:\s*/i, '');
   const verificationStatus = parseListValue(content, 'Status');
@@ -243,7 +225,7 @@ function parseEntityDraft(draft) {
       description: `Ontology chunk for ${canonicalName}`,
       semanticType: 'chunk',
       sourceDocumentRefId: entityId,
-      sourcePath: draft.rawMarkdownPath.replace(`${ROOT}/`, ''),
+      sourcePath: relativeSourcePath(draft.rawMarkdownPath),
       sectionHeading: canonicalName,
       sectionOrder: String(index + 1),
       content: chunk,
@@ -251,16 +233,47 @@ function parseEntityDraft(draft) {
   };
 }
 
-ensureDir(EXPORT_DIR);
+function refuse(issues) {
+  // Flush the complete diagnostic before exiting, including under pipe backpressure.
+  fs.writeFileSync(2, `${JSON.stringify({ ok: false, namespace: TARGET_NAMESPACE, issues }, null, 2)}\n`);
+  process.exit(2);
+}
 
-const drafts = latestOntologyDrafts();
-const parsed = drafts.map(parseEntityDraft);
+// Qualify the entire corpus and parse every selected snapshot before creating
+// the output directory or touching any prior staging/build evidence.
+let drafts, parsed, selectedDrafts, sourceRoots;
+try {
+  const selection = selectOwaExportDrafts({
+    promotedDrafts: loadPromotedKnowledge(TARGET_NAMESPACE),
+    registryEntries: loadRegistry().entries,
+    rawDrafts: findRawDrafts(),
+    root: ROOT,
+  });
+  if (selection.issues.length) refuse(selection.issues);
+  drafts = selection.drafts;
+  parsed = drafts.map(parseEntityDraft);
+  selectedDrafts = drafts.map((draft, index) => ({
+    draftId: draft.id,
+    equivalentDraftIds: draft.equivalentDraftIds,
+    entityId: parsed[index].entity.id,
+    promotedJsonPath: relativeSourcePath(draft.promotedJsonPath),
+    promotedMarkdownPath: relativeSourcePath(draft.promotedMarkdownPath),
+    rawJsonPath: relativeSourcePath(draft.sourceDraftPath),
+    rawMarkdownPath: relativeSourcePath(draft.rawMarkdownPath),
+    contentSha256: createHash('sha256').update(draft.content, 'utf8').digest('hex'),
+  }));
+  sourceRoots = [...new Set(selectedDrafts.map((draft) => path.posix.dirname(draft.rawJsonPath)))].sort();
+} catch (error) {
+  refuse([{ kind: 'input_error', title: '', draftIds: [], reason: `Cannot load or parse OWA export inputs: ${error.message}` }]);
+}
 
 const entityRows = parsed.map((item) => item.entity);
 const fieldRows = parsed.flatMap((item) => item.fields);
 const relationRows = parsed.flatMap((item) => item.relations);
 const workflowRows = parsed.flatMap((item) => item.workflows);
 const chunkRows = parsed.flatMap((item) => item.chunks);
+
+ensureDir(EXPORT_DIR);
 
 const files = [];
 files.push(writeCsv(EXPORT_DIR, 'ontology_entity.csv', ['id', 'name', 'description', 'semanticType', 'canonicalName', 'ontologyId', 'verificationStatus', 'confidenceLevel', 'businessDomain', 'mainTable', 'mcpReadTools', 'mcpWriteTools', 'aliases', 'summary'], entityRows));
@@ -282,9 +295,10 @@ fs.writeFileSync(README_PATH, [
 writeJson(MANIFEST_PATH, {
   generatedAt: new Date().toISOString(),
   namespace: TARGET_NAMESPACE,
-  sourceType: 'knowledge_inbox_drafts',
-  sourceRoots: ['downloads/knowledge_inbox/2026-07-15', 'downloads/knowledge_inbox/2026-07-17'],
+  sourceType: 'promoted_knowledge_snapshots',
+  sourceRoots,
   selectedDraftCount: drafts.length,
+  selectedDrafts,
   files: files.map(({ fileName, rowCount, columns }) => ({ fileName, rowCount, columns })),
 });
 
