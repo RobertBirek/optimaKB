@@ -116,3 +116,13 @@ Rulings:
 - Independent whole-branch review belongs to the controller after this handoff. Task 2 reports its own self-review only and dispatches no reviewer or subagent. No controller ledger/plan/recon edit.
 
 Outstanding: source advisory approval/supersession decisions, PS/FPF/WZ review, and current runtime/API/SQL verification remain separate work. The source advisory does not correct the corpus or turn the gate green. Any merge, push, corpus correction, rebuild, restart, deployment or automation-state change requires a separate request.
+
+## Controller closeout — independent review complete
+
+Task 1, Task 2 and final whole-branch reviews are complete: all approved, no Critical/Important/Minor findings. Final reviewed code/doc range is `ac0ed8d..ade1073`; final reviewer session `ses_e98563264ffeaXq8Ff90FGWevl`. Later closure edits only record completion, not implementation changes.
+
+The controller independently reran syntax checks, **49/49 OWA tests**, both BusinessSemantics assertion scripts, module-map validation and full-branch whitespace checks: all exit 0. Repeated real-input gate with both outputs redirected outside production returned expected exit **2**: OWA **63/67 covered**, **four ambiguous_versions**; BusinessSemantics **PASS**. All 555 enumerated file SHA256/uid/gid/mode values still matched before and after. Exact commands, exits and results: `/tmp/opencode/owa-quality-controller-final-3rclnv4a/summary.json`.
+
+Review boundaries retained: no live graph/builder/API/SQL/COM verification or business supersession decision; provenance is lexical supplied metadata, not physical Markdown availability/symlink/authenticity proof; exporter ranking and structured field/relation extraction are unchanged; non-mutation evidence is finite and time-bounded. These limits are not a green production gate or an authorization to integrate.
+
+Branch `fix/owa-quality-coverage-20261023` and its native isolated worktree are preserved. No merge, push, deployment, production report regeneration, corpus mutation, service operation or automation-state change was performed.
