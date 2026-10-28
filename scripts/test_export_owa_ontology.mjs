@@ -4,12 +4,11 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
-import { fileURLToPath } from 'node:url';
+import { copyOwaCodeForTests, fixtureOwaRelationPolicy } from './test_helpers/owa_relation_fixtures.mjs';
 
 // Offline only: retain fixtures and actual CLI output as reviewable evidence.
 const EVIDENCE = fs.mkdtempSync('/tmp/opencode/owa-export-cli-');
 console.log(`OWA export CLI evidence: ${EVIDENCE}`);
-const CLI = fileURLToPath(new URL('./export_owa_ontology.mjs', import.meta.url));
 const NS = 'OWAOntology';
 const PROMOTED = `docs/reference/knowledge_inbox/promoted/${NS}`;
 const REGISTRY = 'docs/reference/knowledge_inbox/registry.json';
@@ -65,7 +64,7 @@ Fixture's "quoted", Magazyn description.
 | 1 | id | x | FixtureId | int | NO | PK | Field description | verified |
 
 ## Relacje ontologiczne
-| Predykat | B | Cel | Krotność | Typ | JOIN | Status |
+| Predykat | Encja źródłowa | Encja docelowa | Kardynalność | Typ relacji | Warunek JOIN | Status |
 |---|---|---|---|---|---|---|
 | belongs | x | Target | N:1 | synthetic | a.id=b.id | verified |
 
@@ -87,6 +86,8 @@ function write(root, relative, value) {
 
 function fixture(name) {
   const root = fs.mkdtempSync(path.join(EVIDENCE, `${name}-`));
+  const codeRoot = path.join(root, 'private-code');
+  const { cliPath } = copyOwaCodeForTests(codeRoot, fixtureOwaRelationPolicy());
   const entries = [];
   function add(id, title, content, inbox = OCTOBER) {
     const rawJsonPath = `${inbox}/${id}.json`;
@@ -104,10 +105,10 @@ function fixture(name) {
   }
   add('approved_a', 'Encja: Korekta zbiorcza FA', SYNTHESIS);
   const f = {
-    root, entries, add, exportDir: path.join(root, 'exports/owa_ontology/v1'),
+    root, entries, add, codeRoot, cliPath, exportDir: path.join(root, 'exports/owa_ontology/v1'),
     saveRegistry() { write(root, REGISTRY, { entries }); },
     run() {
-      const result = spawnSync(process.execPath, [CLI], {
+      const result = spawnSync(process.execPath, [cliPath], {
         cwd: root, env: { ROOT: root, LANG: 'C.UTF-8' }, encoding: 'utf8', timeout: 10000,
       });
       write(root, 'cli.stdout', result.stdout || '');
@@ -151,7 +152,7 @@ function inventory(dir) {
 }
 
 function seed(f) {
-  for (const file of [...Object.keys(COLUMNS), 'README.md', '_manifest.json', 'build_owa_ontology_jobs_manifest.json']) {
+  for (const file of [...Object.keys(COLUMNS), 'README.md', '_manifest.json', 'relation_audit.json', 'build_owa_ontology_jobs_manifest.json']) {
     write(f.exportDir, file, `BASELINE SENTINEL ${file}\n`);
     fs.chmodSync(path.join(f.exportDir, file), 0o640);
   }
@@ -210,6 +211,7 @@ test('approved snapshots beat longer withdrawn raw and changed raw; schemas, ful
   assert.ok(csvs['workflow_pattern.csv'].rows.every((row) => row.sourceEntityRefId !== entity.id));
   assert.equal(csvs['ontology_field.csv'].rows[0].id, 'OWA_FIELD_FIXTURE_FIXTUREID');
   assert.equal(csvs['ontology_relation.csv'].rows[0].id, 'OWA_REL_FIXTURE_BELONGS_TARGET');
+  assert.equal(csvs['ontology_relation.csv'].rows[0].targetEntityRefId, '', 'Unapproved relation targets must never become graph FKs');
   assert.equal(csvs['workflow_pattern.csv'].rows[0].id, 'OWA_WF_FIXTURE_FIXTURE_WRITE_0');
   assert.equal(csvs['ontology_entity.csv'].rows.find((row) => row.canonicalName === 'Fixture').mainTable, 'CDN.Fixture');
   assert.deepEqual(csvs['chunk.csv'].rows.map((row) => [row.id, row.sourceDocumentRefId, row.sourcePath, row.sectionOrder, row.content]), [
@@ -225,6 +227,33 @@ test('approved snapshots beat longer withdrawn raw and changed raw; schemas, ful
   assert.deepEqual(manifest.sourceRoots, [JULY, OCTOBER]);
   assert.equal(manifest.selectedDraftCount, 2);
   assert.deepEqual(manifest.files, Object.entries(COLUMNS).map(([fileName, columns]) => ({ fileName, columns, rowCount: counts[fileName] })));
+  assert.equal(manifest.files.length, 5);
+  assert.ok(manifest.files.every((file) => file.fileName !== 'relation_audit.json'));
+  const auditBytes = fs.readFileSync(path.join(f.exportDir, 'relation_audit.json'));
+  const audit = JSON.parse(auditBytes);
+  assert.deepEqual(auditBytes, Buffer.from(`${JSON.stringify(audit, null, 2)}\n`));
+  const policyHash = hash(fs.readFileSync(path.join(f.codeRoot, 'scripts/lib/owa_relation_id_policy.json')));
+  assert.deepEqual(manifest.relationAudit, { schemaVersion: 1, fileName: 'relation_audit.json', rowCount: 1, sha256: hash(auditBytes), policySha256: policyHash });
+  assert.deepEqual(audit.policy, { schemaVersion: 1, sha256: policyHash, observedAt: '2026-10-28T00:00:00Z' });
+  assert.equal(audit.schemaVersion, 1);
+  assert.equal(audit.namespace, NS);
+  assert.equal(audit.rows.length, 1);
+  assert.deepEqual(audit.rows[0], {
+    id: 'OWA_REL_FIXTURE_BELONGS_TARGET', sourceEntityRefId: 'OWA_ENTITY_ENCJA_FIXTURE', predicate: 'belongs',
+    rawSourceLabel: 'x', rawTargetLabel: 'Target', legacyTargetRefId: 'OWA_ENTITY_TARGET',
+    targetResolution: { status: 'unresolved', resolvedRefId: '', reason: 'not_approved' },
+    idAssignment: { kind: 'preserved' }, draftId: 'fixture', equivalentDraftIds: ['fixture'],
+    source: { promotedJsonPath: `${PROMOTED}/fixture.json`, promotedMarkdownPath: `${PROMOTED}/fixture.md`,
+      rawJsonPath: `${JULY}/fixture.json`, rawMarkdownPath: `${JULY}/fixture.md`, contentSha256: hash(MAPPING_CONTENT),
+      lineBasis: 'snapshot.content', tableIndex: 1, headerLine: 21, rowLine: 23,
+      rawHeaders: [' Predykat ', ' Encja źródłowa ', ' Encja docelowa ', ' Kardynalność ', ' Typ relacji ', ' Warunek JOIN ', ' Status '],
+      rawCells: [' belongs ', ' x ', ' Target ', ' N:1 ', ' synthetic ', ' a.id=b.id ', ' verified '], evidence: '' },
+  });
+  assert.equal(payload.relationAuditRowCount, 1);
+  assert.equal(payload.unresolvedRelationCount, 1);
+  const firstAudit = Buffer.from(auditBytes);
+  assert.equal(f.run().status, 0);
+  assert.deepEqual(fs.readFileSync(path.join(f.exportDir, 'relation_audit.json')), firstAudit, 'Sidecar bytes must be reproducible');
   assert.deepEqual(payload.files, Object.entries(counts).map(([fileName, rowCount]) => ({ fileName, rowCount })));
   assert.deepEqual(manifest.selectedDrafts, [
     { draftId: 'fixture', equivalentDraftIds: ['fixture'], entityId: 'OWA_ENTITY_ENCJA_FIXTURE',
@@ -243,7 +272,130 @@ test('missing raw/promoted Markdown does not replace approved snapshot content',
   const result = f.run();
   assert.equal(result.status, 0, result.stderr);
   assert.deepEqual(readCsv(path.join(f.exportDir, 'chunk.csv')).rows.map((row) => row.content), [SYNTHESIS]);
+  const audit = JSON.parse(fs.readFileSync(path.join(f.exportDir, 'relation_audit.json')));
+  assert.deepEqual(audit.rows, [], 'Business synthesis without relations must not invent a relation');
 });
+
+// Literal versions of all six observed header layouts; expected columns do not
+// use the parser as their oracle. Snapshot text is retained exactly, including CRLF.
+for (const [name, headers, cells, relationType, joinCondition, status, evidence] of [
+  ['short-five', '| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |', '| P | Child | Target | N:1 | J |', '', 'J', '', ''],
+  ['entity-five', '| Predykat | Encja źródłowa | Encja docelowa | Kardynalność | Warunek JOIN |', '| P | Child | Target | N:1 | J |', '', 'J', '', ''],
+  ['type-status', '| Predykat | Encja źródłowa | Encja docelowa | Kardynalność | Typ relacji | Status |', '| P | Child | Target | N:1 | T | S |', 'T', '', 'S', ''],
+  ['type-status-evidence', '| Predykat | Encja źródłowa | Encja docelowa | Kardynalność | Typ relacji | Status | Dowód |', '| P | Child | Target | N:1 | T | S | E |', 'T', '', 'S', 'E'],
+  ['type-join-status', '| Predykat | Encja źródłowa | Encja docelowa | Kardynalność | Typ relacji | Warunek JOIN | Status |', '| P | Child | Target | N:1 | T | J | S |', 'T', 'J', 'S', ''],
+  ['all-eight', '| Predykat | Encja źródłowa | Encja docelowa | Kardynalność | Typ relacji | Warunek JOIN | Status | Dowód |', '| P | Child | Target | N:1 | T | J | S | E |', 'T', 'J', 'S', 'E'],
+]) {
+  test(`CLI maps ${name} from original snapshot and keeps child label separate from owner`, () => {
+    const f = fixture(`layout-${name}`);
+    const separator = `|${headers.slice(1, -1).split('|').map(() => '---').join('|')}|`;
+    const content = `# Encja: Fixture\r\n\r\n## Relacje ontologiczne\r\n${headers}\r\n${separator}\r\n${cells}\r\n`;
+    f.add('layout', 'Encja: Fixture', content);
+    f.saveRegistry();
+    assert.equal(f.run().status, 0);
+    const [row] = readCsv(path.join(f.exportDir, 'ontology_relation.csv')).rows;
+    assert.deepEqual(row, {
+      id: 'OWA_REL_LAYOUT_P_TARGET', name: 'P', description: joinCondition, semanticType: 'ontology_relation',
+      sourceEntityRefId: 'OWA_ENTITY_ENCJA_FIXTURE', targetEntityRefId: '', predicate: 'P', cardinality: 'N:1',
+      relationType, joinCondition, status, summary: joinCondition ? 'P J' : 'P',
+    });
+    const audit = JSON.parse(fs.readFileSync(path.join(f.exportDir, 'relation_audit.json')));
+    assert.equal(audit.rows.length, 1);
+    const [entry] = audit.rows;
+    assert.equal(entry.sourceEntityRefId, 'OWA_ENTITY_ENCJA_FIXTURE');
+    assert.equal(entry.rawSourceLabel, 'Child');
+    assert.equal(entry.rawTargetLabel, 'Target');
+    assert.equal(entry.legacyTargetRefId, 'OWA_ENTITY_TARGET');
+    assert.equal(entry.source.contentSha256, hash(content));
+    assert.equal(entry.source.headerLine, 4);
+    assert.equal(entry.source.rowLine, 6);
+    assert.equal(entry.source.evidence, evidence);
+    assert.equal(entry.source.lineBasis, 'snapshot.content');
+    assert.deepEqual(entry.source.rawHeaders, headers.slice(1, -1).split('|'));
+    assert.deepEqual(entry.source.rawCells, cells.slice(1, -1).split('|'));
+    assert.deepEqual(entry.targetResolution, { status: 'unresolved', resolvedRefId: '', reason: 'not_approved' });
+    assert.equal(JSON.parse(fs.readFileSync(path.join(f.root, PROMOTED, 'layout.json'))).content, content);
+  });
+}
+
+test('CLI records new IDs without generating a target FK', () => {
+  const f = fixture('new-id');
+  f.add('new', 'Encja: Fixture', MAPPING_CONTENT.replace('| belongs |', '| new |'));
+  f.saveRegistry();
+  assert.equal(f.run().status, 0);
+  const [row] = readCsv(path.join(f.exportDir, 'ontology_relation.csv')).rows;
+  assert.equal(row.id, 'OWA_REL_NEW');
+  assert.equal(row.targetEntityRefId, '');
+  const audit = JSON.parse(fs.readFileSync(path.join(f.exportDir, 'relation_audit.json')));
+  assert.deepEqual(audit.rows[0].idAssignment, { kind: 'new' });
+});
+
+test('CLI records an empty relation section without consuming a following nonrelation table', () => {
+  const f = fixture('empty-relation-section');
+  f.add('empty', 'Encja: Fixture', '# Fixture\n## Relacje ontologiczne\nNo approved technical relations.\n## Other\n| Unknown |\n|---|\n| Value |');
+  f.saveRegistry();
+  assert.equal(f.run().status, 0);
+  assert.deepEqual(readCsv(path.join(f.exportDir, 'ontology_relation.csv')).rows, []);
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(f.exportDir, 'relation_audit.json'))).rows, []);
+});
+
+for (const existing of [true, false]) {
+  for (const [name, malformed, gap] of [
+    ['both-frames', 'Q | Child | Other | 1:N | K', ''],
+    ['leading-after-blank', 'Q | Child | Other | 1:N | K |', '\n'],
+    ['both-after-blank', 'Q | Child | Other | 1:N | K', '\n'],
+  ]) {
+    for (const trailing of [false, true]) {
+      test(`I-1 CLI refuses ${trailing ? 'trailing' : 'sole'} ${name} before touching ${existing ? 'nine sentinels' : 'absent output'}`, () => {
+        const f = fixture(`I-1-${name}-${trailing}-${existing}`);
+        if (existing) seed(f);
+        const content = '# Encja: Fixture\n\n## Relacje ontologiczne\n'
+          + '| Predykat | Źródło | Cel | Kardynalność | Warunek JOIN |\n|---|---|---|---|---|\n'
+          + (trailing ? '| P | Child | Target | N:1 | J |\n' : '') + gap + malformed;
+        f.add('malformed', 'Encja: Fixture', content.replaceAll('\n', '\r\n'));
+        f.saveRegistry();
+        const payload = refused(f, 'invalid_table_row');
+        assert.equal(payload.issues.length, 1);
+        assert.equal(payload.issues[0].line, 6 + Number(trailing) + Number(Boolean(gap)));
+        assert.equal(JSON.parse(fs.readFileSync(path.join(f.root, PROMOTED, 'malformed.json'))).content,
+          content.replaceAll('\n', '\r\n'), 'Refusal must not repair the source');
+      });
+    }
+  }
+}
+
+for (const existing of [true, false]) {
+  for (const [name, kind, mutate] of [
+    ['unknown-key', 'owa_relation_key_missing', (f) => {
+      f.add('unknown', 'Encja: Fixture', MAPPING_CONTENT.replace('| belongs |', '| unknown |'));
+    }],
+    ['retired-key', 'owa_relation_retired', (f) => {
+      f.add('retired', 'Encja: Fixture', MAPPING_CONTENT.replace('| belongs |', '| retired |'));
+    }],
+    ['bad-table', 'unknown_header', (f) => {
+      f.add('bad-table', 'Encja: Fixture', MAPPING_CONTENT.replace('Warunek JOIN', 'JOIN'));
+    }],
+    ['missing-policy', 'owa_relation_policy_read_failed', (f) => {
+      fs.renameSync(path.join(f.codeRoot, 'scripts/lib/owa_relation_id_policy.json'), path.join(f.codeRoot, 'scripts/lib/retained-policy.json'));
+    }],
+    ['malformed-policy', 'owa_relation_policy_json_invalid', (f) => {
+      write(f.codeRoot, 'scripts/lib/owa_relation_id_policy.json', '{broken JSON');
+    }],
+    ['policy-id-collision', 'invalid_owa_relation_policy', (f) => {
+      const policy = fixtureOwaRelationPolicy();
+      policy.entries[1].id = 'OWA_REL_FIXTURE_BELONGS_TARGET';
+      write(f.codeRoot, 'scripts/lib/owa_relation_id_policy.json', policy);
+    }],
+  ]) {
+    test(`relation ${name} refuses before touching ${existing ? 'nine sentinels' : 'absent output'}`, () => {
+      const f = fixture(`relation-${name}-${existing}`);
+      if (existing) seed(f);
+      mutate(f);
+      f.saveRegistry();
+      refused(f, kind);
+    });
+  }
+}
 
 for (const [name, variant] of [
   ['CRLF', MAPPING_CONTENT.replaceAll('\n', '\r\n')],
@@ -290,23 +442,30 @@ for (const [name, variant] of [
     assert.deepEqual(selected.equivalentDraftIds, ['mapping_a', 'mapping_z']);
     assert.equal(selected.contentSha256, hash(variant), 'Hash must describe the original snapshot, not parser-normalized content');
     assert.notEqual(selected.contentSha256, hash(MAPPING_CONTENT));
+    const [audited] = JSON.parse(fs.readFileSync(path.join(changed.exportDir, 'relation_audit.json'))).rows;
+    assert.equal(audited.draftId, 'mapping_a');
+    assert.deepEqual(audited.equivalentDraftIds, ['mapping_a', 'mapping_z']);
+    assert.equal(audited.source.contentSha256, hash(variant));
+    assert.equal(audited.source.headerLine, 21);
+    assert.equal(audited.source.rowLine, 23);
+    assert.deepEqual(audited.source.rawHeaders, variant.split(/\r\n|\n/)[20].trim().slice(1, -1).split('|'));
+    assert.deepEqual(audited.source.rawCells, variant.split(/\r\n|\n/)[22].trim().slice(1, -1).split('|'));
     assert.equal(JSON.parse(fs.readFileSync(path.join(changed.root, PROMOTED, 'mapping_a.json'), 'utf8')).content, variant);
   });
 }
 
 for (const existing of [true, false]) {
-  test(`generated ID collisions cross-entity refuse all colliding child rowsets with ${existing ? 'eight existing sentinels' : 'absent output'}`, () => {
+  test(`generated ID collisions cross-entity refuse all colliding child rowsets with ${existing ? 'nine existing sentinels' : 'absent output'}`, () => {
     const f = fixture(`cross-entity-${existing ? 'seeded' : 'absent'}`);
     if (existing) seed(f);
-    // Full-title owners are distinct, but the unchanged canonical child naming
-    // intentionally generates collisions; the exporter must refuse, not rename.
+    // Field/workflow/chunk IDs still collide under canonical child naming.
+    // Relation IDs instead belong to distinct owner-qualified policy entries.
     f.add('prefixed', 'Encja: Fixture', MAPPING_CONTENT);
     f.add('unprefixed', 'Fixture', MAPPING_CONTENT);
     f.saveRegistry();
     const payload = refused(f, 'duplicate_ids');
     assert.deepEqual(payload.issues.map(({ kind, fileName, duplicateIds }) => ({ kind, fileName, duplicateIds })), [
       { kind: 'duplicate_ids', fileName: 'ontology_field.csv', duplicateIds: ['OWA_FIELD_FIXTURE_FIXTUREID'] },
-      { kind: 'duplicate_ids', fileName: 'ontology_relation.csv', duplicateIds: ['OWA_REL_FIXTURE_BELONGS_TARGET'] },
       { kind: 'duplicate_ids', fileName: 'workflow_pattern.csv', duplicateIds: ['OWA_WF_FIXTURE_FIXTURE_WRITE_0'] },
       { kind: 'duplicate_ids', fileName: 'chunk.csv', duplicateIds: ['OWA_CHUNK_FIXTURE_1', 'OWA_CHUNK_FIXTURE_2', 'OWA_CHUNK_FIXTURE_3'] },
     ]);
@@ -316,8 +475,17 @@ for (const existing of [true, false]) {
     }
   });
 
+  test(`later unknown relation refuses the whole corpus with ${existing ? 'nine sentinels' : 'absent output'}`, () => {
+    const f = fixture(`late-unknown-${existing}`);
+    if (existing) seed(f);
+    f.add('valid', 'Encja: Fixture', MAPPING_CONTENT);
+    f.add('later-unknown', 'Encja: ZZZ', MAPPING_CONTENT);
+    f.saveRegistry();
+    refused(f, 'owa_relation_key_missing');
+  });
+
   for (const identical of [true, false]) {
-    test(`generated ID collisions within one entity refuse ${identical ? 'identical' : 'different'} duplicate rows with ${existing ? 'eight existing sentinels' : 'absent output'}`, () => {
+    test(`generated ID collisions within one entity refuse ${identical ? 'identical' : 'different'} duplicate rows with ${existing ? 'nine existing sentinels' : 'absent output'}`, () => {
       const f = fixture(`intra-entity-${identical ? 'identical' : 'different'}-${existing ? 'seeded' : 'absent'}`);
       if (existing) seed(f);
       const fieldRow = '| 1 | id | x | FixtureId | int | NO | PK | Field description | verified |';
@@ -340,7 +508,7 @@ test('large refusal diagnostics remain complete JSON for a slow stderr consumer'
   const f = fixture('large-refusal');
   for (let i = 0; i < 1600; i += 1) f.add(`invalid_${i}`, `Encja: Invalid ${i}`, '');
   f.saveRegistry();
-  const child = spawn(process.execPath, [CLI], {
+  const child = spawn(process.execPath, [f.cliPath], {
     cwd: f.root, env: { ROOT: f.root, LANG: 'C.UTF-8' }, timeout: 10000,
   });
   let stdout = '', stderr = '';

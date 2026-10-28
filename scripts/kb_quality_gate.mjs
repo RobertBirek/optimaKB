@@ -4,10 +4,13 @@ import fs from 'fs';
 import path from 'path';
 import process from 'process';
 import { execSync } from 'child_process';
-import { findRawDrafts, loadPromotedKnowledge, makePromotedId, TARGET_KBS } from './lib/promoted_knowledge.mjs';
+import { findRawDrafts, loadPromotedKnowledge, loadRegistry, makePromotedId, TARGET_KBS } from './lib/promoted_knowledge.mjs';
 import { slug } from './lib/export_utils.mjs';
 import { writeFileAtomically } from './lib/atomic_file.mjs';
 import { assessOwaPromotedCoverage } from './lib/owa_promoted_coverage.mjs';
+import { selectOwaExportDrafts } from './lib/owa_export_selection.mjs';
+import { assessOwaRelationExport } from './lib/owa_relation_export.mjs';
+import { loadOwaRelationPolicy } from './lib/owa_relation_policy.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const OUT_JSON = process.env.KB_QUALITY_GATE_OUT_JSON || path.join(ROOT, 'docs/reference/KB_Quality_Gate_Report.json');
@@ -181,6 +184,62 @@ function parseCsv(filePath, maxRows = 100000) {
   return { exists: true, columns, rows };
 }
 
+// OWA relations must retain structural evidence until validation is complete.
+// Leave the legacy parser (including its non-OWA behavior) unchanged.
+function parseOwaRelationCsv(filePath) {
+  if (!fs.existsSync(filePath)) return { exists: false, columns: [], rows: [], issues: [] };
+  const expectedColumns = ['id', 'name', 'description', 'semanticType', 'sourceEntityRefId', 'targetEntityRefId',
+    'predicate', 'cardinality', 'relationType', 'joinCondition', 'status', 'summary'];
+  const raw = fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '');
+  const records = [];
+  let cells = [];
+  let cell = '';
+  let state = 'start';
+  const finishCell = () => { cells.push(cell); cell = ''; state = 'start'; };
+  const finishRecord = () => { finishCell(); records.push(cells); cells = []; };
+  const invalidQuoting = (reason) => ({ exists: true, columns: [], rows: [],
+    issues: [{ kind: 'relation_csv_invalid_quoting', reason }] });
+  for (let index = 0; index < raw.length; index += 1) {
+    const char = raw[index];
+    if (state === 'quoted') {
+      if (char === '"') state = 'closed';
+      else cell += char;
+      continue;
+    }
+    if (state === 'closed') {
+      if (char === '"') { cell += '"'; state = 'quoted'; continue; }
+      if (char !== ',' && char !== '\r' && char !== '\n') {
+        return invalidQuoting('Only a delimiter or record end may follow a closing quote.');
+      }
+    } else if (char === '"') {
+      if (state !== 'start') return invalidQuoting('A quote may only open at the start of a cell.');
+      state = 'quoted';
+      continue;
+    }
+    if (char === ',') finishCell();
+    else if (char === '\r' || char === '\n') {
+      finishRecord();
+      if (char === '\r' && raw[index + 1] === '\n') index += 1;
+    } else { cell += char; state = 'unquoted'; }
+  }
+  if (state === 'quoted') return invalidQuoting('The final quoted cell is unterminated.');
+  if (cells.length || cell.length || state !== 'start') finishRecord();
+
+  const columns = records.shift() || [];
+  const issues = [];
+  if (new Set(columns).size !== columns.length) {
+    issues.push({ kind: 'relation_csv_duplicate_header', reason: 'OWA relation CSV headers must be unique before row conversion.' });
+  } else if (columns.length !== expectedColumns.length || expectedColumns.some((column) => !columns.includes(column))) {
+    issues.push({ kind: 'relation_csv_schema_mismatch', reason: 'OWA relation CSV must contain exactly the approved named columns.' });
+  }
+  const badRecord = records.findIndex((record) => record.length !== columns.length);
+  if (badRecord !== -1) issues.push({ kind: 'relation_csv_arity_mismatch',
+    reason: `CSV record ${badRecord + 2} has ${records[badRecord].length} cells; expected ${columns.length}.` });
+  // No maxRows slicing, padding, duplicate-key overwrite or surplus-cell loss.
+  const rows = issues.length ? [] : records.map((record) => Object.fromEntries(columns.map((column, index) => [column, record[index]])));
+  return { exists: true, columns, rows, issues };
+}
+
 function duplicateSourceUrls(rows, namespace) {
   const counts = new Map();
   for (const row of rows) {
@@ -257,11 +316,24 @@ function assessNamespace(namespace) {
   const buildManifest = target.buildManifest ? readJsonIfExists(path.join(exportDir, target.buildManifest), {}) : {};
   const errors = [];
   const warnings = [];
+  const owaInputIssues = [];
+  const owaRelationCsv = namespace === 'OWAOntology' ? parseOwaRelationCsv(path.join(exportDir, 'ontology_relation.csv')) : undefined;
 
   if (!fs.existsSync(exportDir)) errors.push(`Missing export directory: ${target.exportDir}`);
 
-  const manifestFileEntries = Array.isArray(manifest.files) ? manifest.files : [];
+  const rawManifestFileEntries = Array.isArray(manifest.files) ? manifest.files : [];
+  const manifestFileEntries = namespace === 'OWAOntology'
+    ? rawManifestFileEntries.filter((entry) => entry && typeof entry === 'object' && !Array.isArray(entry))
+    : rawManifestFileEntries;
   const manifestFileNames = manifestFileEntries.map((file) => file.fileName);
+  if (namespace === 'OWAOntology' && (!Array.isArray(manifest.files)
+      || rawManifestFileEntries.length !== target.requiredFiles.length
+      || manifestFileEntries.length !== rawManifestFileEntries.length
+      || new Set(manifestFileNames).size !== target.requiredFiles.length
+      || target.requiredFiles.some((fileName) => !manifestFileNames.includes(fileName)))) {
+    owaInputIssues.push({ kind: 'invalid_manifest_csv_set',
+      reason: 'OWA manifest.files must contain exactly one entry for each of the five required CSV basenames, with no sidecar or other entries.' });
+  }
   const duplicateManifestFiles = [...new Set(
     manifestFileNames.filter((fileName, index) => manifestFileNames.indexOf(fileName) !== index),
   )];
@@ -271,7 +343,12 @@ function assessNamespace(namespace) {
 
   const manifestFiles = new Map(manifestFileEntries.map((file) => [file.fileName, file]));
   for (const manifestFile of manifestFileEntries) {
-    const parsed = parseCsv(path.join(exportDir, manifestFile.fileName));
+    if (namespace === 'OWAOntology' && !target.requiredFiles.includes(manifestFile.fileName)) {
+      errors.push('OWA relation audit invalid_csv_file: 1');
+      continue;
+    }
+    const parsed = owaRelationCsv && manifestFile.fileName === 'ontology_relation.csv'
+      ? owaRelationCsv : parseCsv(path.join(exportDir, manifestFile.fileName));
     if (!parsed.exists) {
       errors.push(`Manifest references missing CSV: ${manifestFile.fileName}`);
       continue;
@@ -293,7 +370,7 @@ function assessNamespace(namespace) {
   const files = [];
   for (const fileName of target.requiredFiles) {
     const csvPath = path.join(exportDir, fileName);
-    const parsed = parseCsv(csvPath);
+    const parsed = owaRelationCsv && fileName === 'ontology_relation.csv' ? owaRelationCsv : parseCsv(csvPath);
     const rowCount = manifestFiles.get(fileName)?.rowCount ?? parsed.rows.length;
     const fileReport = {
       fileName,
@@ -324,11 +401,14 @@ function assessNamespace(namespace) {
 
   const chunkCsv = parseCsv(path.join(exportDir, 'chunk.csv'));
   let owaPromotedCoverage;
+  let relationAudit;
   if (namespace === 'OWAOntology') {
     const promotedDrafts = loadPromotedKnowledge(namespace);
+    // No snapshots means no raw/registry discovery: an empty corpus fails closed.
+    const rawDrafts = promotedDrafts.length ? findRawDrafts() : [];
     owaPromotedCoverage = assessOwaPromotedCoverage({
       promotedDrafts,
-      rawDrafts: promotedDrafts.length ? findRawDrafts().filter((draft) => draft.kbNamespace === namespace) : [],
+      rawDrafts: rawDrafts.filter((draft) => draft.kbNamespace === namespace),
       chunkRows: chunkCsv.rows,
       root: ROOT,
     });
@@ -339,6 +419,47 @@ function assessNamespace(namespace) {
     for (const [kind, count] of issueCounts) {
       errors.push(`OWA promoted coverage ${kind}: ${count}`);
     }
+    const selection = selectOwaExportDrafts({ promotedDrafts, rawDrafts, root: ROOT,
+      registryEntries: promotedDrafts.length ? loadRegistry().entries : [] });
+    const relationIssues = [...owaInputIssues, ...owaRelationCsv.issues, ...selection.issues];
+    let auditBytes;
+    const descriptor = manifest.relationAudit;
+    // Never interpret manifest source paths or arbitrary sidecar names as files.
+    if (descriptor?.schemaVersion === 1 && descriptor.fileName === 'relation_audit.json') {
+      const auditPath = path.join(exportDir, 'relation_audit.json');
+      let fd;
+      try {
+        const stat = fs.lstatSync(auditPath);
+        if (!stat.isFile() || stat.isSymbolicLink()) {
+          relationIssues.push({ kind: 'unsafe_relation_audit_file', reason: 'The sidecar must be a regular file, never a symlink.' });
+        } else {
+          fd = fs.openSync(auditPath, fs.constants.O_RDONLY | fs.constants.O_NOFOLLOW);
+          if (!fs.fstatSync(fd).isFile()) throw new Error('Sidecar is not a regular file.');
+          auditBytes = fs.readFileSync(fd);
+        }
+      } catch (error) {
+        if (error.code !== 'ENOENT') relationIssues.push({ kind: 'unsafe_relation_audit_file', reason: error.message });
+      } finally {
+        if (fd !== undefined) fs.closeSync(fd);
+      }
+    }
+    try {
+      const { policy, sha256: policySha256 } = loadOwaRelationPolicy();
+      relationAudit = assessOwaRelationExport({ root: ROOT, manifest, auditBytes,
+        relationRows: owaRelationCsv.rows,
+        selectedDrafts: selection.drafts, policy, policySha256 });
+      // Selection issues already explain why reconstruction could not start.
+      if (selection.issues.length) relationAudit.issues = relationAudit.issues.filter((issue) => issue.kind !== 'empty_approved_corpus');
+    } catch (error) {
+      relationAudit = { rowCount: 0, unresolvedCount: 0, publicationReady: false, issues: [{
+        kind: error.kind || 'relation_audit_failed', reason: error.reason || error.message,
+      }], warnings: [] };
+    }
+    relationAudit.issues.unshift(...relationIssues);
+    const relationIssueCounts = new Map();
+    for (const { kind } of relationAudit.issues) relationIssueCounts.set(kind, (relationIssueCounts.get(kind) || 0) + 1);
+    for (const [kind, count] of relationIssueCounts) errors.push(`OWA relation audit ${kind}: ${count}`);
+    warnings.push(...relationAudit.warnings);
   } else if (chunkCsv.exists) {
     const promotedCoverage = promotedDraftChunkMatches(namespace, chunkCsv.rows);
     if (promotedCoverage.missing.length) {
@@ -374,6 +495,7 @@ function assessNamespace(namespace) {
     errors,
     warnings,
     ...(owaPromotedCoverage ? { promotedCoverage: owaPromotedCoverage } : {}),
+    ...(relationAudit ? { relationAudit } : {}),
     files,
     jobs: jobs.map((job) => ({
       id: job.id,

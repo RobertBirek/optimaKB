@@ -1,0 +1,1215 @@
+{
+  "schemaVersion": 1,
+  "namespace": "OWAOntology",
+  "database": "owaontology",
+  "observedAt": "2026-10-28T07:46:27.189876+00:00",
+  "sourceEvidence": [
+    {
+      "name": "owa-graph-read-20261028/checksums.json",
+      "sha256": "886c7166cc09eb02f783b363727c93ca4e36b860352c08fc4b8f7643b6f0e2d2"
+    },
+    {
+      "name": "owa-graph-read-20261028/relation-id-migration.json",
+      "sha256": "43de63cf22b16cb95e7d15199b9f84b579d0bd28613177386d89bac068a31783"
+    },
+    {
+      "name": "owa-graph-read-20261028/candidate21-results.json",
+      "sha256": "1a3b03c5505cf70dec3bd3b10d81f315590f35819710d2e5e9b1dfe977a208be"
+    },
+    {
+      "name": "owa-graph-read-20261028/comparison-convention.json",
+      "sha256": "a94f497e0e1494c82cbcb30d212856319165e59b1e89142fd64593aa65396576"
+    },
+    {
+      "name": "owa-graph-read-20261028/queries/relation-properties/stdout.csv",
+      "sha256": "647da1b48c9070521122240d914542dd5cbec8fba853155bcf296239a890de2f"
+    },
+    {
+      "name": "owa-graph-read-20261028/queries/relation-properties/receipt.json",
+      "sha256": "9f9b1a6121e90e72fe1f7cf50d59943a7ae2d991cf64fa6abe293b5a599eb38d"
+    },
+    {
+      "name": "owa-trial-export-20261026/ontology_relation.csv",
+      "sha256": "059ea2c20bb9fe0ba12ae7944710ee9a8e76c41464b677ffd720401240823a96"
+    }
+  ],
+  "reservedIds": [
+    "OWA_REL_DEKLARACJA_PIT_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_DEKLARACJA_PIT_DOTYCZY_PRACOWNIKA",
+    "OWA_REL_DEKLARACJA_PIT_JEST_KOREKTA",
+    "OWA_REL_DEKLARACJA_PIT_MA_ELEMENTY",
+    "OWA_REL_DEKLARACJA_PIT_MA_WIERSZE_TEKSTOWE",
+    "OWA_REL_DEKLARACJA_PIT_POWIAZANA_Z_LISTA_PLAC",
+    "OWA_REL_DEKLARACJA_ZUS_DEFINIOWANA_PRZEZ_POZYCJE",
+    "OWA_REL_DEKLARACJA_ZUS_DOTYCZY_PRACOWNIKA",
+    "OWA_REL_DEKLARACJA_ZUS_MA_ELEMENTY",
+    "OWA_REL_DEKLARACJA_ZUS_MA_WIERSZE_TEKSTOWE",
+    "OWA_REL_DEKRET_KSIEGOWY_KSIEGUJE_NA_KONCIE",
+    "OWA_REL_DEKRET_KSIEGOWY_NALEZY_DO_DZIENNIKA",
+    "OWA_REL_DEKRET_KSIEGOWY_POCHODZI_Z_DOKUMENTU",
+    "OWA_REL_DEKRET_KSIEGOWY_ZAWIERA_ELEMENTY",
+    "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_MA_ELEMENTY",
+    "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_ODWZOROWUJE",
+    "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_Z_DOKUMENTU",
+    "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_Z_OPERACJI_BANKOWEJ",
+    "OWA_REL_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY_JEST_DOKUMENTEM",
+    "OWA_REL_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY_MA_ZASOB",
+    "OWA_REL_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY_PRZECHOWUJE_TOWAR",
+    "OWA_REL_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW_MA_POZYCJE",
+    "OWA_REL_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW_PODLEGA_KSIEGOWANIU",
+    "OWA_REL_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ_MA_POZYCJE",
+    "OWA_REL_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ_PODLEGA_KSIEGOWANIU",
+    "OWA_REL_DZIENNIK_NALEZY_DO_OKRESU",
+    "OWA_REL_DZIENNIK_UZYWANY_PRZEZ_KOMPENSATY",
+    "OWA_REL_DZIENNIK_UZYWANY_PRZEZ_RK",
+    "OWA_REL_DZIENNIK_ZAWIERA_DEKRETY",
+    "OWA_REL_ETAT_ZATRUDNIENIE_MA_FORME_PLATNOSCI",
+    "OWA_REL_ETAT_ZATRUDNIENIE_NALEZYDO_PRACOWNIKA",
+    "OWA_REL_ETAT_ZATRUDNIENIE_PRZYPISANY_DO_DZIALU",
+    "OWA_REL_FAKTURA_PROFORMA_FPF_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_FAKTURA_PROFORMA_FPF_POPRZEDZA_ZALICZKE",
+    "OWA_REL_FAKTURA_PROFORMA_FPF_ZAWIERA_POZYCJE",
+    "OWA_REL_KASA_PRZYJMIE_KP_GENERUJE_ZDARZENIE",
+    "OWA_REL_KASA_PRZYJMIE_KP_KSIEGOWANA_NA",
+    "OWA_REL_KASA_PRZYJMIE_KP_WPACONA_PRZEZ",
+    "OWA_REL_KASA_WYDA_KW_GENERUJE_ZDARZENIE",
+    "OWA_REL_KASA_WYDA_KW_KSIEGOWANA_Z",
+    "OWA_REL_KASA_WYDA_KW_ROZLICZA_FAKTURE",
+    "OWA_REL_KASA_WYDA_KW_WYPACONA_DLA",
+    "OWA_REL_KOMPENSATA_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_KOMPENSATA_GENERUJE_DEKRET",
+    "OWA_REL_KOMPENSATA_KOMPENSUJE",
+    "OWA_REL_KOMPENSATA_ZAWIERA_ELEMENTY",
+    "OWA_REL_KONTAKT_CRM_DOTYCZY_OSOBY",
+    "OWA_REL_KONTAKT_CRM_DOTYCZY_PODMIOTU",
+    "OWA_REL_KONTAKT_CRM_MA_DEFINICJE",
+    "OWA_REL_KONTAKT_CRM_MA_DOKUMENTY",
+    "OWA_REL_KONTAKT_CRM_MA_NADRZEDNY",
+    "OWA_REL_KONTAKT_CRM_MA_UCZESTNIKOW",
+    "OWA_REL_KONTO_KSIEGOWE_MA_ANALITYKE",
+    "OWA_REL_KONTO_KSIEGOWE_MA_DEKRETY",
+    "OWA_REL_KONTO_KSIEGOWE_MA_ZAKAZ",
+    "OWA_REL_KONTO_KSIEGOWE_NALEZY_DO_PLANU",
+    "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_DOKUMENT_DLA",
+    "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_NALEZYDO_GRUPY",
+    "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_POSIADA_ATRYBUT",
+    "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_POSIADA_KARTE",
+    "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_POSIADA_OSOBE_KONTAKTOWA",
+    "OWA_REL_KOREKTA_ZBIORCZA_FA_GENERUJE_ROZRACHUNKI",
+    "OWA_REL_KOREKTA_ZBIORCZA_FA_KORYGUJE_DOKUMENTY",
+    "OWA_REL_KOREKTA_ZBIORCZA_FA_WPYWA_NA_VAT",
+    "OWA_REL_LISTA_PAC_JEST_KOREKTA",
+    "OWA_REL_LISTA_PAC_MA_FORME_PLATNOSCI",
+    "OWA_REL_LISTA_PAC_NALEZY_DO_DZIALU",
+    "OWA_REL_LISTA_PAC_NALEZY_DO_ZAKLADU",
+    "OWA_REL_LISTA_PAC_POWIAZANA_Z_DEKLARACJA",
+    "OWA_REL_NIEOBECNOSC_DOTYCZY_CZLONKA_RODZINY",
+    "OWA_REL_NIEOBECNOSC_JEST_KONTYNUACJA",
+    "OWA_REL_NIEOBECNOSC_MA_TYP_NIEOBECNOSCI",
+    "OWA_REL_NIEOBECNOSC_MA_TYTUL_UBEZPIECZENIA",
+    "OWA_REL_NIEOBECNOSC_MA_ZASTEPCE",
+    "OWA_REL_NIEOBECNOSC_NALEZYDO_PRACOWNIKA",
+    "OWA_REL_NOTA_ODSETKOWA_NO_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_NOTA_ODSETKOWA_NO_GENERUJE_DEKRET",
+    "OWA_REL_NOTA_ODSETKOWA_NO_UZYWA_FORMY_PLATNOSCI",
+    "OWA_REL_OKRES_OBRACHUNKOWY_POPRZEDZA",
+    "OWA_REL_OKRES_OBRACHUNKOWY_ZAWIERA_DEKRETY",
+    "OWA_REL_OKRES_OBRACHUNKOWY_ZAWIERA_DZIENNIKI",
+    "OWA_REL_PATNOSC_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_PATNOSC_PRZEZ_BANK",
+    "OWA_REL_PATNOSC_ROZLICZA",
+    "OWA_REL_PATNOSC_Z_RACHUNKU",
+    "OWA_REL_PLAN_KONT_PODLEGA_OGRANICZENIOM",
+    "OWA_REL_PLAN_KONT_UZYWANY_W_OKRESIE",
+    "OWA_REL_PLAN_KONT_ZAWIERA_KONTO",
+    "OWA_REL_PONAGLENIE_ZAPATY_PON_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_PONAGLENIE_ZAPATY_PON_DOTYCZY_ROZRACHUNKOW",
+    "OWA_REL_PONAGLENIE_ZAPATY_PON_WEDUG_SCHEMATU",
+    "OWA_REL_POTWIERDZENIE_SALDA_PS_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_POTWIERDZENIE_SALDA_PS_ZESTAWIA",
+    "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_JEST_PODATNIKIEM",
+    "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_JEST_WSPOLWLASCICIELEM",
+    "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_DANE_KADROWE",
+    "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_DANE_PLACOWE",
+    "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_ETAT",
+    "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_NIEOBECNOSC",
+    "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_UMOWE",
+    "OWA_REL_RAPORT_KASOWY_BANKOWY_RKB_DOTYCZY_RACHUNKU",
+    "OWA_REL_RAPORT_KASOWY_BANKOWY_RKB_GRUPUJE_ZDARZENIA",
+    "OWA_REL_RAPORT_KASOWY_BANKOWY_RKB_ZAWIERA_KP",
+    "OWA_REL_RAPORT_KASOWY_BANKOWY_RKB_ZAWIERA_KW",
+    "OWA_REL_REJESTR_VAT_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_REJESTR_VAT_GENERUJE_DEKRET",
+    "OWA_REL_REJESTR_VAT_POCHODZI_Z_DOKUMENTU",
+    "OWA_REL_REJESTR_VAT_ZAWIERA_LINIE",
+    "OWA_REL_ROZNICA_KURSOWA_RKUR_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_ROZNICA_KURSOWA_RKUR_DOTYCZY_ROZRACHUNKU",
+    "OWA_REL_ROZNICA_KURSOWA_RKUR_WYNIKA_Z_PLATNOSCI",
+    "OWA_REL_ROZRACHUNEK_DOTYCZY_KONTRAHENTA",
+    "OWA_REL_ROZRACHUNEK_KOMPENSOWANY_W",
+    "OWA_REL_ROZRACHUNEK_POCHODZI_Z_DOKUMENTU",
+    "OWA_REL_ROZRACHUNEK_ROZLICZANY_PRZEZ",
+    "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_MA_CZESCI",
+    "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_MA_HISTORIE",
+    "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_NALEZY_DO_GRUPY",
+    "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_POWIAZANY_Z_DOKUMENTEM",
+    "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_PRZYPISANY_DO",
+    "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_CENE",
+    "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_DOSTAWCE",
+    "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_EAN",
+    "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_ILOSCI",
+    "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_JEDNOSTKI",
+    "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_NALEZY_DO_GRUPY",
+    "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_NALEZY_DO_KATEGORII",
+    "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_POJAWIA_SIE_NA_POZYCJI",
+    "OWA_REL_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE_MA_DODATKI",
+    "OWA_REL_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE_MA_TYTUL_UBEZPIECZENIA",
+    "OWA_REL_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE_NALEZYDO_PRACOWNIKA",
+    "OWA_REL_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE_POWIAZANA_Z_LISTA_PLAC",
+    "OWA_REL_WORKFLOW_DOKUMENTU_DEFINIUJE_ETAP",
+    "OWA_REL_WORKFLOW_DOKUMENTU_MA_ETAPY",
+    "OWA_REL_WORKFLOW_DOKUMENTU_MA_HISTORIE",
+    "OWA_REL_WORKFLOW_DOKUMENTU_POCHODZI_Z",
+    "OWA_REL_WORKFLOW_DOKUMENTU_REALIZUJE_ETAP",
+    "OWA_REL_WYDANIE_ZEWNETRZNE_WZ_POPRZEDZA_FAKTURE",
+    "OWA_REL_WYDANIE_ZEWNETRZNE_WZ_REALIZUJE_ZAMOWIENIE",
+    "OWA_REL_WYDANIE_ZEWNETRZNE_WZ_WYDAJE_Z_MAGAZYNU",
+    "OWA_REL_WYDANIE_ZEWNETRZNE_WZ_ZAWIERA_TOWAR",
+    "OWA_REL_ZADANIE_CRM_NALEZY_DO_KONTAKTU",
+    "OWA_REL_ZADANIE_CRM_POWIAZANY_Z_DOKUMENTEM"
+  ],
+  "entries": [
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_PIT",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_DEKLARACJA_PIT_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_PIT",
+      "predicate": "dotyczy_pracownika",
+      "legacyTargetRefId": "OWA_ENTITY_PRACOWNIK",
+      "id": "OWA_REL_DEKLARACJA_PIT_DOTYCZY_PRACOWNIKA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_PIT",
+      "predicate": "jest_korekta",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLARACJA",
+      "id": "OWA_REL_DEKLARACJA_PIT_JEST_KOREKTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_PIT",
+      "predicate": "ma_elementy",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLELEM",
+      "id": "OWA_REL_DEKLARACJA_PIT_MA_ELEMENTY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_PIT",
+      "predicate": "ma_wiersze_tekstowe",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLSTR",
+      "id": "OWA_REL_DEKLARACJA_PIT_MA_WIERSZE_TEKSTOWE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_PIT",
+      "predicate": "powiazana_z_lista_plac",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLARACJA",
+      "id": "OWA_REL_DEKLARACJA_PIT_POWIAZANA_Z_LISTA_PLAC",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_ZUS",
+      "predicate": "definiowana_przez_pozycje",
+      "legacyTargetRefId": "OWA_ENTITY_POZDEKLZUS",
+      "id": "OWA_REL_DEKLARACJA_ZUS_DEFINIOWANA_PRZEZ_POZYCJE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_ZUS",
+      "predicate": "dotyczy_pracownika",
+      "legacyTargetRefId": "OWA_ENTITY_PRACOWNIK",
+      "id": "OWA_REL_DEKLARACJA_ZUS_DOTYCZY_PRACOWNIKA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_ZUS",
+      "predicate": "ma_elementy",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLELEM",
+      "id": "OWA_REL_DEKLARACJA_ZUS_MA_ELEMENTY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKLARACJA_ZUS",
+      "predicate": "ma_wiersze_tekstowe",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLSTR",
+      "id": "OWA_REL_DEKLARACJA_ZUS_MA_WIERSZE_TEKSTOWE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKRET_KSIEGOWY",
+      "predicate": "księguje_na_koncie",
+      "legacyTargetRefId": "OWA_ENTITY_KONTOKSIEGOWE",
+      "id": "OWA_REL_DEKRET_KSIEGOWY_KSIEGUJE_NA_KONCIE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKRET_KSIEGOWY",
+      "predicate": "należy_do_dziennika",
+      "legacyTargetRefId": "OWA_ENTITY_DZIENNIK",
+      "id": "OWA_REL_DEKRET_KSIEGOWY_NALEZY_DO_DZIENNIKA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKRET_KSIEGOWY",
+      "predicate": "pochodzi_z_dokumentu",
+      "legacyTargetRefId": "OWA_ENTITY_TRANAG",
+      "id": "OWA_REL_DEKRET_KSIEGOWY_POCHODZI_Z_DOKUMENTU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DEKRET_KSIEGOWY",
+      "predicate": "zawiera_elementy",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETELEM",
+      "id": "OWA_REL_DEKRET_KSIEGOWY_ZAWIERA_ELEMENTY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_KSIEGOWY_PK_BO_WB",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_KSIEGOWY_PK_BO_WB",
+      "predicate": "ma_elementy",
+      "legacyTargetRefId": "OWA_ENTITY_KSIDOKELEM",
+      "id": "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_MA_ELEMENTY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_KSIEGOWY_PK_BO_WB",
+      "predicate": "ma_elementy",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETYELEM",
+      "id": "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_MA_ELEMENTY_DEKRETYELEM",
+      "state": "new"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_KSIEGOWY_PK_BO_WB",
+      "predicate": "odwzorowuje",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETYELEM",
+      "id": "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_ODWZOROWUJE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_KSIEGOWY_PK_BO_WB",
+      "predicate": "z_dokumentu",
+      "legacyTargetRefId": "OWA_ENTITY_DOKUMENTHANDLOWY",
+      "id": "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_Z_DOKUMENTU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_KSIEGOWY_PK_BO_WB",
+      "predicate": "z_operacji_bankowej",
+      "legacyTargetRefId": "OWA_ENTITY_BNKZDARZENIA",
+      "id": "OWA_REL_DOKUMENT_KSIEGOWY_PK_BO_WB_Z_OPERACJI_BANKOWEJ",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY",
+      "predicate": "jest_dokumentem",
+      "legacyTargetRefId": "OWA_ENTITY_TRANAG",
+      "id": "OWA_REL_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY_JEST_DOKUMENTEM",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY",
+      "predicate": "ma_zasob",
+      "legacyTargetRefId": "OWA_ENTITY_TWRZASOB",
+      "id": "OWA_REL_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY_MA_ZASOB",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY",
+      "predicate": "przechowuje_towar",
+      "legacyTargetRefId": "OWA_ENTITY_TOWAR",
+      "id": "OWA_REL_DOKUMENT_MAGAZYNOWY_PZ_WZ_MAGAZYNY_PRZECHOWUJE_TOWAR",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW",
+      "predicate": "ma_pozycje",
+      "legacyTargetRefId": "OWA_ENTITY_TRAELEM",
+      "id": "OWA_REL_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW_MA_POZYCJE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW",
+      "predicate": "podlega_ksiegowaniu",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETYELEM",
+      "id": "OWA_REL_DOKUMENT_WEWNETRZNY_SPRZEDAZY_FAW_PODLEGA_KSIEGOWANIU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ",
+      "predicate": "ma_pozycje",
+      "legacyTargetRefId": "OWA_ENTITY_TRAELEM",
+      "id": "OWA_REL_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ_MA_POZYCJE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ",
+      "predicate": "podlega_ksiegowaniu",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETYELEM",
+      "id": "OWA_REL_DOKUMENT_WEWNETRZNY_ZAKUPU_FZWFZ_PODLEGA_KSIEGOWANIU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DZIENNIK",
+      "predicate": "należy_do_okresu",
+      "legacyTargetRefId": "OWA_ENTITY_OKRESOBRACHUNKOWY",
+      "id": "OWA_REL_DZIENNIK_NALEZY_DO_OKRESU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DZIENNIK",
+      "predicate": "uzywany_przez_kompensaty",
+      "legacyTargetRefId": "OWA_ENTITY_OKRESOBRACHUNKOWY",
+      "id": "OWA_REL_DZIENNIK_UZYWANY_PRZEZ_KOMPENSATY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DZIENNIK",
+      "predicate": "uzywany_przez_RK",
+      "legacyTargetRefId": "OWA_ENTITY_OKRESOBRACHUNKOWY",
+      "id": "OWA_REL_DZIENNIK_UZYWANY_PRZEZ_RK",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_DZIENNIK",
+      "predicate": "zawiera_dekrety",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETKSIEGOWY",
+      "id": "OWA_REL_DZIENNIK_ZAWIERA_DEKRETY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ETAT_ZATRUDNIENIE",
+      "predicate": "ma_forme_platnosci",
+      "legacyTargetRefId": "OWA_ENTITY_FORMAPLATNOSCI",
+      "id": "OWA_REL_ETAT_ZATRUDNIENIE_MA_FORME_PLATNOSCI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ETAT_ZATRUDNIENIE",
+      "predicate": "nalezydo_pracownika",
+      "legacyTargetRefId": "OWA_ENTITY_PRACOWNIK",
+      "id": "OWA_REL_ETAT_ZATRUDNIENIE_NALEZYDO_PRACOWNIKA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ETAT_ZATRUDNIENIE",
+      "predicate": "przypisany_do_dzialu",
+      "legacyTargetRefId": "OWA_ENTITY_DZIAL",
+      "id": "OWA_REL_ETAT_ZATRUDNIENIE_PRZYPISANY_DO_DZIALU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_FAKTURA_PROFORMA_FPF",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_FAKTURA_PROFORMA_FPF_DOTYCZY_KONTRAHENTA",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_FAKTURA_PROFORMA_FPF",
+      "predicate": "poprzedza_zaliczke",
+      "legacyTargetRefId": "OWA_ENTITY_FAKTURAZALICZKOWA",
+      "id": "OWA_REL_FAKTURA_PROFORMA_FPF_POPRZEDZA_ZALICZKE",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_FAKTURA_PROFORMA_FPF",
+      "predicate": "zawiera_pozycje",
+      "legacyTargetRefId": "OWA_ENTITY_TOWAR",
+      "id": "OWA_REL_FAKTURA_PROFORMA_FPF_ZAWIERA_POZYCJE",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KASA_PRZYJMIE_KP",
+      "predicate": "generuje_zdarzenie",
+      "legacyTargetRefId": "OWA_ENTITY_BNKZDARZENIA",
+      "id": "OWA_REL_KASA_PRZYJMIE_KP_GENERUJE_ZDARZENIE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KASA_PRZYJMIE_KP",
+      "predicate": "księgowana_na",
+      "legacyTargetRefId": "OWA_ENTITY_BNKRACHUNKI",
+      "id": "OWA_REL_KASA_PRZYJMIE_KP_KSIEGOWANA_NA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KASA_PRZYJMIE_KP",
+      "predicate": "wpłacona_przez",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_KASA_PRZYJMIE_KP_WPACONA_PRZEZ",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KASA_WYDA_KW",
+      "predicate": "generuje_zdarzenie",
+      "legacyTargetRefId": "OWA_ENTITY_BNKZDARZENIA",
+      "id": "OWA_REL_KASA_WYDA_KW_GENERUJE_ZDARZENIE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KASA_WYDA_KW",
+      "predicate": "księgowana_z",
+      "legacyTargetRefId": "OWA_ENTITY_BNKRACHUNKI",
+      "id": "OWA_REL_KASA_WYDA_KW_KSIEGOWANA_Z",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KASA_WYDA_KW",
+      "predicate": "rozlicza_fakturę",
+      "legacyTargetRefId": "OWA_ENTITY_FAKTURAZAKUPU",
+      "id": "OWA_REL_KASA_WYDA_KW_ROZLICZA_FAKTURE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KASA_WYDA_KW",
+      "predicate": "wypłacona_dla",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_KASA_WYDA_KW_WYPACONA_DLA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KOMPENSATA",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_KOMPENSATA_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KOMPENSATA",
+      "predicate": "generuje_dekret",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETKSIEGOWY",
+      "id": "OWA_REL_KOMPENSATA_GENERUJE_DEKRET",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KOMPENSATA",
+      "predicate": "kompensuje",
+      "legacyTargetRefId": "OWA_ENTITY_ROZRACHUNEK",
+      "id": "OWA_REL_KOMPENSATA_KOMPENSUJE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KOMPENSATA",
+      "predicate": "zawiera_elementy",
+      "legacyTargetRefId": "OWA_ENTITY_KOMPENSATAELEM",
+      "id": "OWA_REL_KOMPENSATA_ZAWIERA_ELEMENTY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTAKT_CRM",
+      "predicate": "dotyczy_osoby",
+      "legacyTargetRefId": "OWA_ENTITY_OSOBAKONTAKTOWA_KNTOSOBY",
+      "id": "OWA_REL_KONTAKT_CRM_DOTYCZY_OSOBY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTAKT_CRM",
+      "predicate": "dotyczy_podmiotu",
+      "legacyTargetRefId": "OWA_ENTITY_PODMIOTFIRMA",
+      "id": "OWA_REL_KONTAKT_CRM_DOTYCZY_PODMIOTU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTAKT_CRM",
+      "predicate": "ma_definicję",
+      "legacyTargetRefId": "OWA_ENTITY_DEFINICJADOKUMENTU_DOKDEFINICJE",
+      "id": "OWA_REL_KONTAKT_CRM_MA_DEFINICJE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTAKT_CRM",
+      "predicate": "ma_dokumenty",
+      "legacyTargetRefId": "OWA_ENTITY_DOKUMENTCRM_CRMDOKUMENTY",
+      "id": "OWA_REL_KONTAKT_CRM_MA_DOKUMENTY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTAKT_CRM",
+      "predicate": "ma_nadrzędny",
+      "legacyTargetRefId": "OWA_ENTITY_KONTAKTCRM",
+      "id": "OWA_REL_KONTAKT_CRM_MA_NADRZEDNY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTAKT_CRM",
+      "predicate": "ma_uczestników",
+      "legacyTargetRefId": "OWA_ENTITY_UCZESTNIKCRM_CRMUCZESTNICY",
+      "id": "OWA_REL_KONTAKT_CRM_MA_UCZESTNIKOW",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTO_KSIEGOWE",
+      "predicate": "ma_analityke",
+      "legacyTargetRefId": "OWA_ENTITY_KONTOANALITYCZNE",
+      "id": "OWA_REL_KONTO_KSIEGOWE_MA_ANALITYKE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTO_KSIEGOWE",
+      "predicate": "ma_dekrety",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETKONTA",
+      "id": "OWA_REL_KONTO_KSIEGOWE_MA_DEKRETY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTO_KSIEGOWE",
+      "predicate": "ma_zakaz",
+      "legacyTargetRefId": "OWA_ENTITY_KONTAZAKAZ",
+      "id": "OWA_REL_KONTO_KSIEGOWE_MA_ZAKAZ",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTO_KSIEGOWE",
+      "predicate": "należy_do_planu",
+      "legacyTargetRefId": "OWA_ENTITY_PLANKONT",
+      "id": "OWA_REL_KONTO_KSIEGOWE_NALEZY_DO_PLANU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+      "predicate": "dokument_dla",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_DOKUMENT_DLA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+      "predicate": "nalezydo_grupy",
+      "legacyTargetRefId": "OWA_ENTITY_KNTGRUPA",
+      "id": "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_NALEZYDO_GRUPY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+      "predicate": "posiada_atrybut",
+      "legacyTargetRefId": "OWA_ENTITY_KNTATRYBUT",
+      "id": "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_POSIADA_ATRYBUT",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+      "predicate": "posiada_karte",
+      "legacyTargetRefId": "OWA_ENTITY_KNTKARTA",
+      "id": "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_POSIADA_KARTE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KONTRAHENT_KARTOTEKA_KONTRAHENTOW",
+      "predicate": "posiada_osobe_kontaktowa",
+      "legacyTargetRefId": "OWA_ENTITY_KNTOSOBA",
+      "id": "OWA_REL_KONTRAHENT_KARTOTEKA_KONTRAHENTOW_POSIADA_OSOBE_KONTAKTOWA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KOREKTA_ZBIORCZA_FA",
+      "predicate": "generuje_rozrachunki",
+      "legacyTargetRefId": "OWA_ENTITY_ROZRACHUNEK",
+      "id": "OWA_REL_KOREKTA_ZBIORCZA_FA_GENERUJE_ROZRACHUNKI",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KOREKTA_ZBIORCZA_FA",
+      "predicate": "koryguje_dokumenty",
+      "legacyTargetRefId": "OWA_ENTITY_FAKTURASPRZEDAZY",
+      "id": "OWA_REL_KOREKTA_ZBIORCZA_FA_KORYGUJE_DOKUMENTY",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_KOREKTA_ZBIORCZA_FA",
+      "predicate": "wpływa_na_vat",
+      "legacyTargetRefId": "OWA_ENTITY_REJESTRVAT",
+      "id": "OWA_REL_KOREKTA_ZBIORCZA_FA_WPYWA_NA_VAT",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_LISTA_PAC",
+      "predicate": "jest_korekta",
+      "legacyTargetRefId": "OWA_ENTITY_LISTAPLAC",
+      "id": "OWA_REL_LISTA_PAC_JEST_KOREKTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_LISTA_PAC",
+      "predicate": "ma_forme_platnosci",
+      "legacyTargetRefId": "OWA_ENTITY_FORMAPLATNOSCI",
+      "id": "OWA_REL_LISTA_PAC_MA_FORME_PLATNOSCI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_LISTA_PAC",
+      "predicate": "nalezy_do_dzialu",
+      "legacyTargetRefId": "OWA_ENTITY_DZIAL",
+      "id": "OWA_REL_LISTA_PAC_NALEZY_DO_DZIALU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_LISTA_PAC",
+      "predicate": "nalezy_do_zakladu",
+      "legacyTargetRefId": "OWA_ENTITY_ZAKLAD",
+      "id": "OWA_REL_LISTA_PAC_NALEZY_DO_ZAKLADU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_LISTA_PAC",
+      "predicate": "powiazana_z_deklaracja",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLARACJA",
+      "id": "OWA_REL_LISTA_PAC_POWIAZANA_Z_DEKLARACJA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NIEOBECNOSC",
+      "predicate": "dotyczy_czlonka_rodziny",
+      "legacyTargetRefId": "OWA_ENTITY_RODZINA",
+      "id": "OWA_REL_NIEOBECNOSC_DOTYCZY_CZLONKA_RODZINY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NIEOBECNOSC",
+      "predicate": "jest_kontynuacja",
+      "legacyTargetRefId": "OWA_ENTITY_NIEOBECNOSC",
+      "id": "OWA_REL_NIEOBECNOSC_JEST_KONTYNUACJA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NIEOBECNOSC",
+      "predicate": "ma_typ_nieobecnosci",
+      "legacyTargetRefId": "OWA_ENTITY_TYPNIEOBECNOSCI",
+      "id": "OWA_REL_NIEOBECNOSC_MA_TYP_NIEOBECNOSCI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NIEOBECNOSC",
+      "predicate": "ma_tytul_ubezpieczenia",
+      "legacyTargetRefId": "OWA_ENTITY_TYTULUBEZPIECZENIA",
+      "id": "OWA_REL_NIEOBECNOSC_MA_TYTUL_UBEZPIECZENIA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NIEOBECNOSC",
+      "predicate": "ma_zastepce",
+      "legacyTargetRefId": "OWA_ENTITY_PRACOWNIK",
+      "id": "OWA_REL_NIEOBECNOSC_MA_ZASTEPCE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NIEOBECNOSC",
+      "predicate": "nalezydo_pracownika",
+      "legacyTargetRefId": "OWA_ENTITY_PRACOWNIK",
+      "id": "OWA_REL_NIEOBECNOSC_NALEZYDO_PRACOWNIKA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NOTA_ODSETKOWA_NO",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_NOTA_ODSETKOWA_NO_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NOTA_ODSETKOWA_NO",
+      "predicate": "generuje_dekret",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETKSIEGOWY",
+      "id": "OWA_REL_NOTA_ODSETKOWA_NO_GENERUJE_DEKRET",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_NOTA_ODSETKOWA_NO",
+      "predicate": "uzywa_formy_platnosci",
+      "legacyTargetRefId": "OWA_ENTITY_FORMAPLATNOSCI",
+      "id": "OWA_REL_NOTA_ODSETKOWA_NO_UZYWA_FORMY_PLATNOSCI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_OKRES_OBRACHUNKOWY",
+      "predicate": "poprzedza",
+      "legacyTargetRefId": "OWA_ENTITY_OKRESOBRACHUNKOWY",
+      "id": "OWA_REL_OKRES_OBRACHUNKOWY_POPRZEDZA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_OKRES_OBRACHUNKOWY",
+      "predicate": "zawiera_dekrety",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETKSIEGOWY",
+      "id": "OWA_REL_OKRES_OBRACHUNKOWY_ZAWIERA_DEKRETY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_OKRES_OBRACHUNKOWY",
+      "predicate": "zawiera_dzienniki",
+      "legacyTargetRefId": "OWA_ENTITY_DZIENNIK",
+      "id": "OWA_REL_OKRES_OBRACHUNKOWY_ZAWIERA_DZIENNIKI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PATNOSC",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_PATNOSC_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PATNOSC",
+      "predicate": "przez_bank",
+      "legacyTargetRefId": "OWA_ENTITY_BANK",
+      "id": "OWA_REL_PATNOSC_PRZEZ_BANK",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PATNOSC",
+      "predicate": "rozlicza",
+      "legacyTargetRefId": "OWA_ENTITY_ROZRACHUNEK",
+      "id": "OWA_REL_PATNOSC_ROZLICZA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PATNOSC",
+      "predicate": "z_rachunku",
+      "legacyTargetRefId": "OWA_ENTITY_RACHUNEKBANKOWY",
+      "id": "OWA_REL_PATNOSC_Z_RACHUNKU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PLAN_KONT",
+      "predicate": "podlega_ograniczeniom",
+      "legacyTargetRefId": "OWA_ENTITY_KONTAZAKAZ",
+      "id": "OWA_REL_PLAN_KONT_PODLEGA_OGRANICZENIOM",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PLAN_KONT",
+      "predicate": "uzywany_w_okresie",
+      "legacyTargetRefId": "OWA_ENTITY_OKRESOBRACHUNKOWY",
+      "id": "OWA_REL_PLAN_KONT_UZYWANY_W_OKRESIE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PLAN_KONT",
+      "predicate": "zawiera_konto",
+      "legacyTargetRefId": "OWA_ENTITY_KONTOKSIEGOWE",
+      "id": "OWA_REL_PLAN_KONT_ZAWIERA_KONTO",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PONAGLENIE_ZAPATY_PON",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_PONAGLENIE_ZAPATY_PON_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PONAGLENIE_ZAPATY_PON",
+      "predicate": "dotyczy_rozrachunkow",
+      "legacyTargetRefId": "OWA_ENTITY_ROZRACHUNEK",
+      "id": "OWA_REL_PONAGLENIE_ZAPATY_PON_DOTYCZY_ROZRACHUNKOW",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PONAGLENIE_ZAPATY_PON",
+      "predicate": "według_schematu",
+      "legacyTargetRefId": "OWA_ENTITY_SCHEMATWINDYKACJI",
+      "id": "OWA_REL_PONAGLENIE_ZAPATY_PON_WEDUG_SCHEMATU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_POTWIERDZENIE_SALDA_PS",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_POTWIERDZENIE_SALDA_PS_DOTYCZY_KONTRAHENTA",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_POTWIERDZENIE_SALDA_PS",
+      "predicate": "zestawia",
+      "legacyTargetRefId": "OWA_ENTITY_ROZRACHUNEK",
+      "id": "OWA_REL_POTWIERDZENIE_SALDA_PS_ZESTAWIA",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+      "predicate": "jest_podatnikiem",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLARACJA_DEKLNAG",
+      "id": "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_JEST_PODATNIKIEM",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+      "predicate": "jest_wspolwlascicielem",
+      "legacyTargetRefId": "OWA_ENTITY_DEKLARACJA_DEKLNAG",
+      "id": "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_JEST_WSPOLWLASCICIELEM",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+      "predicate": "ma_dane_kadrowe",
+      "legacyTargetRefId": "OWA_ENTITY_DANEKAD",
+      "id": "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_DANE_KADROWE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+      "predicate": "ma_dane_placowe",
+      "legacyTargetRefId": "OWA_ENTITY_DANEPLAC",
+      "id": "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_DANE_PLACOWE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+      "predicate": "ma_etat",
+      "legacyTargetRefId": "OWA_ENTITY_ETAT_PRACETATY",
+      "id": "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_ETAT",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+      "predicate": "ma_nieobecnosc",
+      "legacyTargetRefId": "OWA_ENTITY_NIEOBECNOSC_PRACNIEOBEC",
+      "id": "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_NIEOBECNOSC",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_PRACOWNIK_KARTOTEKA_PRACOWNICZA",
+      "predicate": "ma_umowe",
+      "legacyTargetRefId": "OWA_ENTITY_UMOWAZLECENIE_UMOWY",
+      "id": "OWA_REL_PRACOWNIK_KARTOTEKA_PRACOWNICZA_MA_UMOWE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_RAPORT_KASOWY_BANKOWY_RKB",
+      "predicate": "dotyczy_rachunku",
+      "legacyTargetRefId": "OWA_ENTITY_KONTOBANKOWE",
+      "id": "OWA_REL_RAPORT_KASOWY_BANKOWY_RKB_DOTYCZY_RACHUNKU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_RAPORT_KASOWY_BANKOWY_RKB",
+      "predicate": "grupuje_zdarzenia",
+      "legacyTargetRefId": "OWA_ENTITY_BNKZDARZENIA",
+      "id": "OWA_REL_RAPORT_KASOWY_BANKOWY_RKB_GRUPUJE_ZDARZENIA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_RAPORT_KASOWY_BANKOWY_RKB",
+      "predicate": "zawiera_KP",
+      "legacyTargetRefId": "OWA_ENTITY_KASAPRZYJMIE",
+      "id": "OWA_REL_RAPORT_KASOWY_BANKOWY_RKB_ZAWIERA_KP",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_RAPORT_KASOWY_BANKOWY_RKB",
+      "predicate": "zawiera_KW",
+      "legacyTargetRefId": "OWA_ENTITY_KASAWYDA",
+      "id": "OWA_REL_RAPORT_KASOWY_BANKOWY_RKB_ZAWIERA_KW",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_REJESTR_VAT",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_REJESTR_VAT_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_REJESTR_VAT",
+      "predicate": "generuje_dekret",
+      "legacyTargetRefId": "OWA_ENTITY_DEKRETKSIEGOWY",
+      "id": "OWA_REL_REJESTR_VAT_GENERUJE_DEKRET",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_REJESTR_VAT",
+      "predicate": "pochodzi_z_dokumentu",
+      "legacyTargetRefId": "OWA_ENTITY_TRANAG",
+      "id": "OWA_REL_REJESTR_VAT_POCHODZI_Z_DOKUMENTU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_REJESTR_VAT",
+      "predicate": "zawiera_linie",
+      "legacyTargetRefId": "OWA_ENTITY_VATELEM",
+      "id": "OWA_REL_REJESTR_VAT_ZAWIERA_LINIE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ROZNICA_KURSOWA_RKUR",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_ROZNICA_KURSOWA_RKUR_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ROZNICA_KURSOWA_RKUR",
+      "predicate": "dotyczy_rozrachunku",
+      "legacyTargetRefId": "OWA_ENTITY_ROZRACHUNEK",
+      "id": "OWA_REL_ROZNICA_KURSOWA_RKUR_DOTYCZY_ROZRACHUNKU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ROZNICA_KURSOWA_RKUR",
+      "predicate": "wynika_z_platnosci",
+      "legacyTargetRefId": "OWA_ENTITY_PLATNOSC",
+      "id": "OWA_REL_ROZNICA_KURSOWA_RKUR_WYNIKA_Z_PLATNOSCI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ROZRACHUNEK",
+      "predicate": "dotyczy_kontrahenta",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_ROZRACHUNEK_DOTYCZY_KONTRAHENTA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ROZRACHUNEK",
+      "predicate": "kompensowany_w",
+      "legacyTargetRefId": "OWA_ENTITY_KOMPENSATAELEM",
+      "id": "OWA_REL_ROZRACHUNEK_KOMPENSOWANY_W",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ROZRACHUNEK",
+      "predicate": "pochodzi_z_dokumentu",
+      "legacyTargetRefId": "OWA_ENTITY_TRANAG",
+      "id": "OWA_REL_ROZRACHUNEK_POCHODZI_Z_DOKUMENTU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ROZRACHUNEK",
+      "predicate": "rozliczany_przez",
+      "legacyTargetRefId": "OWA_ENTITY_BNKZDARZENIE",
+      "id": "OWA_REL_ROZRACHUNEK_ROZLICZANY_PRZEZ",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA",
+      "predicate": "ma_części",
+      "legacyTargetRefId": "OWA_ENTITY_TRWALECZESCI",
+      "id": "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_MA_CZESCI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA",
+      "predicate": "ma_historię",
+      "legacyTargetRefId": "OWA_ENTITY_TRWALEHIST",
+      "id": "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_MA_HISTORIE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA",
+      "predicate": "należy_do_grupy",
+      "legacyTargetRefId": "OWA_ENTITY_GRUPATOWAROWA_KATEGORIE",
+      "id": "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_NALEZY_DO_GRUPY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA",
+      "predicate": "powiązany_z_dokumentem",
+      "legacyTargetRefId": "OWA_ENTITY_DOKUMENTHANDLOWY",
+      "id": "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_POWIAZANY_Z_DOKUMENTEM",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA",
+      "predicate": "przypisany_do",
+      "legacyTargetRefId": "OWA_ENTITY_PRACOWNIK",
+      "id": "OWA_REL_SRODEK_TRWAY_KARTOTEKA_GRUPY_AMORTYZACJA_PRZYPISANY_DO",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+      "predicate": "`MA_CENE`",
+      "legacyTargetRefId": "OWA_ENTITY_CENATOWARU",
+      "id": "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_CENE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+      "predicate": "`MA_DOSTAWCE`",
+      "legacyTargetRefId": "OWA_ENTITY_KONTRAHENT",
+      "id": "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_DOSTAWCE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+      "predicate": "`MA_EAN`",
+      "legacyTargetRefId": "OWA_ENTITY_EAN",
+      "id": "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_EAN",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+      "predicate": "`MA_ILOSCI`",
+      "legacyTargetRefId": "OWA_ENTITY_ILOSCTOWARU",
+      "id": "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_ILOSCI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+      "predicate": "`MA_JEDNOSTKI`",
+      "legacyTargetRefId": "OWA_ENTITY_JEDNOSTKAMIARY",
+      "id": "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_MA_JEDNOSTKI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+      "predicate": "`NALEZY_DO_GRUPY`",
+      "legacyTargetRefId": "OWA_ENTITY_GRUPA",
+      "id": "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_NALEZY_DO_GRUPY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+      "predicate": "`NALEZY_DO_KATEGORII`",
+      "legacyTargetRefId": "OWA_ENTITY_KATEGORIA",
+      "id": "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_NALEZY_DO_KATEGORII",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_TOWAR_KARTOTEKA_TOWAROW_I_USUG",
+      "predicate": "`POJAWIA_SIE_NA_POZYCJI`",
+      "legacyTargetRefId": "OWA_ENTITY_POZYCJADOKUMENTU",
+      "id": "OWA_REL_TOWAR_KARTOTEKA_TOWAROW_I_USUG_POJAWIA_SIE_NA_POZYCJI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE",
+      "predicate": "ma_dodatki",
+      "legacyTargetRefId": "OWA_ENTITY_DODATKIUMOWY",
+      "id": "OWA_REL_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE_MA_DODATKI",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE",
+      "predicate": "ma_tytul_ubezpieczenia",
+      "legacyTargetRefId": "OWA_ENTITY_TYTULUBEZPIECZENIA",
+      "id": "OWA_REL_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE_MA_TYTUL_UBEZPIECZENIA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE",
+      "predicate": "nalezydo_pracownika",
+      "legacyTargetRefId": "OWA_ENTITY_PRACOWNIK",
+      "id": "OWA_REL_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE_NALEZYDO_PRACOWNIKA",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE",
+      "predicate": "powiazana_z_lista_plac",
+      "legacyTargetRefId": "OWA_ENTITY_LISTAPLAC",
+      "id": "OWA_REL_UMOWA_CYWILNOPRAWNA_UMOWA_ZLECENIE_POWIAZANA_Z_LISTA_PLAC",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WORKFLOW_DOKUMENTU",
+      "predicate": "definiuje_etap",
+      "legacyTargetRefId": "OWA_ENTITY_ETAPDOKUMENTU",
+      "id": "OWA_REL_WORKFLOW_DOKUMENTU_DEFINIUJE_ETAP",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WORKFLOW_DOKUMENTU",
+      "predicate": "ma_etapy",
+      "legacyTargetRefId": "OWA_ENTITY_ETAPPROCESU_DOKNAGPROCESETAPY",
+      "id": "OWA_REL_WORKFLOW_DOKUMENTU_MA_ETAPY",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WORKFLOW_DOKUMENTU",
+      "predicate": "ma_historię",
+      "legacyTargetRefId": "OWA_ENTITY_HISTORIAETAPU_DOKNAGETAPYHISTORIA",
+      "id": "OWA_REL_WORKFLOW_DOKUMENTU_MA_HISTORIE",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WORKFLOW_DOKUMENTU",
+      "predicate": "pochodzi_z",
+      "legacyTargetRefId": "OWA_ENTITY_DOKUMENTHANDLOWY",
+      "id": "OWA_REL_WORKFLOW_DOKUMENTU_POCHODZI_Z",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WORKFLOW_DOKUMENTU",
+      "predicate": "realizuje_etap",
+      "legacyTargetRefId": "OWA_ENTITY_ETAPDOKUMENTU_DOKNAGETAPY",
+      "id": "OWA_REL_WORKFLOW_DOKUMENTU_REALIZUJE_ETAP",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WYDANIE_ZEWNETRZNE_WZ",
+      "predicate": "poprzedza_fakture",
+      "legacyTargetRefId": "OWA_ENTITY_FAKTURASPRZEDAZY",
+      "id": "OWA_REL_WYDANIE_ZEWNETRZNE_WZ_POPRZEDZA_FAKTURE",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WYDANIE_ZEWNETRZNE_WZ",
+      "predicate": "realizuje_zamowienie",
+      "legacyTargetRefId": "OWA_ENTITY_REZERWACJAODBIORCY",
+      "id": "OWA_REL_WYDANIE_ZEWNETRZNE_WZ_REALIZUJE_ZAMOWIENIE",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WYDANIE_ZEWNETRZNE_WZ",
+      "predicate": "wydaje_z_magazynu",
+      "legacyTargetRefId": "OWA_ENTITY_MAGAZYN",
+      "id": "OWA_REL_WYDANIE_ZEWNETRZNE_WZ_WYDAJE_Z_MAGAZYNU",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_WYDANIE_ZEWNETRZNE_WZ",
+      "predicate": "zawiera_towar",
+      "legacyTargetRefId": "OWA_ENTITY_TOWAR",
+      "id": "OWA_REL_WYDANIE_ZEWNETRZNE_WZ_ZAWIERA_TOWAR",
+      "state": "retired"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ZADANIE_CRM",
+      "predicate": "należy_do_kontaktu",
+      "legacyTargetRefId": "OWA_ENTITY_KONTAKTCRM",
+      "id": "OWA_REL_ZADANIE_CRM_NALEZY_DO_KONTAKTU",
+      "state": "preserved"
+    },
+    {
+      "sourceEntityRefId": "OWA_ENTITY_ENCJA_ZADANIE_CRM",
+      "predicate": "powiązany_z_dokumentem",
+      "legacyTargetRefId": "OWA_ENTITY_DOKUMENTHANDLOWY",
+      "id": "OWA_REL_ZADANIE_CRM_POWIAZANY_Z_DOKUMENTEM",
+      "state": "preserved"
+    }
+  ]
+}

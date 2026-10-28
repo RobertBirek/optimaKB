@@ -6,6 +6,8 @@ import { createHash } from 'node:crypto';
 import { ensureDir, makeId, writeCsv, writeJson } from './lib/export_utils.mjs';
 import { findRawDrafts, loadPromotedKnowledge, loadRegistry, splitDraftContent, truncate } from './lib/promoted_knowledge.mjs';
 import { selectOwaExportDrafts } from './lib/owa_export_selection.mjs';
+import { buildOwaRelationRows } from './lib/owa_relation_export.mjs';
+import { loadOwaRelationPolicy } from './lib/owa_relation_policy.mjs';
 
 const ROOT = process.env.ROOT || '/docker/openspg';
 const EXPORT_DIR = path.join(ROOT, 'exports/owa_ontology/v1');
@@ -152,8 +154,6 @@ function parseEntityDraft(draft) {
 
   const fieldsSection = parseSection(content, 'Pola i mapowanie API ↔ MSSQL');
   const fieldRows = parseMarkdownTable(fieldsSection)[0]?.rows || [];
-  const relationSection = parseSection(content, 'Relacje ontologiczne');
-  const relationRows = parseMarkdownTable(relationSection)[0]?.rows || [];
   const workflowRows = [];
   for (const row of endpointRows) {
     const op = normalize(row.op).replace(/`/g, '');
@@ -195,20 +195,6 @@ function parseEntityDraft(draft) {
       mappingStatus: normalize(row[8] || row[9] || ''),
       summary: truncate(`${row[3] || ''} ${row[7] || ''}`.trim(), 1200),
     })),
-    relations: relationRows.map((row, index) => ({
-      id: makeId('OWA_REL', `${canonicalName}_${row[0] || index}_${row[2] || row[1] || index}`),
-      name: normalize(row[0] || `Relation ${index + 1}`),
-      description: normalize(row[5] || ''),
-      semanticType: 'ontology_relation',
-      sourceEntityRefId: entityId,
-      targetEntityRefId: makeId('OWA_ENTITY', row[2] || row[1] || `Target ${index + 1}`),
-      predicate: normalize(row[0] || ''),
-      cardinality: normalize(row[3] || ''),
-      relationType: normalize(row[4] || ''),
-      joinCondition: normalize(row[5] || ''),
-      status: normalize(row[6] || ''),
-      summary: truncate(`${row[0] || ''} ${row[5] || ''}`.trim(), 1200),
-    })),
     workflows: workflowRows.map((row, index) => ({
       id: makeId('OWA_WF', `${canonicalName}_${row.tool}_${index}`),
       name: row.op || row.tool,
@@ -244,8 +230,9 @@ function refuse(issues) {
 
 // Qualify the entire corpus and parse every selected snapshot before creating
 // the output directory or touching any prior staging/build evidence.
-let drafts, parsed, selectedDrafts, sourceRoots;
+let drafts, parsed, selectedDrafts, sourceRoots, relationExports, policy, policySha256;
 try {
+  ({ policy, sha256: policySha256 } = loadOwaRelationPolicy());
   const selection = selectOwaExportDrafts({
     promotedDrafts: loadPromotedKnowledge(TARGET_NAMESPACE),
     registryEntries: loadRegistry().entries,
@@ -255,6 +242,9 @@ try {
   if (selection.issues.length) refuse(selection.issues);
   drafts = selection.drafts;
   parsed = drafts.map(parseEntityDraft);
+  relationExports = drafts.map((draft, index) => buildOwaRelationRows({
+    draft, entityId: parsed[index].entity.id, root: ROOT, policy,
+  }));
   selectedDrafts = drafts.map((draft, index) => ({
     draftId: draft.id,
     equivalentDraftIds: draft.equivalentDraftIds,
@@ -267,12 +257,15 @@ try {
   }));
   sourceRoots = [...new Set(selectedDrafts.map((draft) => path.posix.dirname(draft.rawJsonPath)))].sort();
 } catch (error) {
-  refuse([{ kind: 'input_error', title: '', draftIds: [], reason: `Cannot load or parse OWA export inputs: ${error.message}` }]);
+  refuse([{ kind: error.kind || 'input_error', title: '', draftIds: [],
+    reason: error.reason || `Cannot load or parse OWA export inputs: ${error.message}`,
+    ...(error.line === undefined ? {} : { line: error.line }) }]);
 }
 
 const entityRows = parsed.map((item) => item.entity);
 const fieldRows = parsed.flatMap((item) => item.fields);
-const relationRows = parsed.flatMap((item) => item.relations);
+const relationRows = relationExports.flatMap((item) => item.rows);
+const auditRows = relationExports.flatMap((item) => item.auditRows);
 const workflowRows = parsed.flatMap((item) => item.workflows);
 const chunkRows = parsed.flatMap((item) => item.chunks);
 
@@ -299,6 +292,17 @@ for (const [fileName, rows] of [
 }
 if (duplicateIssues.length) refuse(duplicateIssues);
 
+const relationAuditBytes = `${JSON.stringify({
+  schemaVersion: 1,
+  namespace: TARGET_NAMESPACE,
+  policy: { schemaVersion: 1, sha256: policySha256, observedAt: policy.observedAt },
+  rows: auditRows,
+}, null, 2)}\n`;
+const relationAudit = {
+  schemaVersion: 1, fileName: 'relation_audit.json', rowCount: auditRows.length,
+  sha256: createHash('sha256').update(relationAuditBytes, 'utf8').digest('hex'), policySha256,
+};
+
 ensureDir(EXPORT_DIR);
 
 const files = [];
@@ -307,6 +311,7 @@ files.push(writeCsv(EXPORT_DIR, 'ontology_field.csv', ['id', 'name', 'descriptio
 files.push(writeCsv(EXPORT_DIR, 'ontology_relation.csv', ['id', 'name', 'description', 'semanticType', 'sourceEntityRefId', 'targetEntityRefId', 'predicate', 'cardinality', 'relationType', 'joinCondition', 'status', 'summary'], relationRows));
 files.push(writeCsv(EXPORT_DIR, 'workflow_pattern.csv', ['id', 'name', 'description', 'semanticType', 'workflowName', 'sourceEntityRefId', 'targetEntityRefId', 'mcpTool', 'mode', 'status', 'summary'], workflowRows));
 files.push(writeCsv(EXPORT_DIR, 'chunk.csv', ['id', 'name', 'description', 'semanticType', 'sourceDocumentRefId', 'sourcePath', 'sectionHeading', 'sectionOrder', 'content'], chunkRows));
+fs.writeFileSync(path.join(EXPORT_DIR, relationAudit.fileName), relationAuditBytes, 'utf8');
 
 fs.writeFileSync(README_PATH, [
   '# OWAOntology export',
@@ -325,7 +330,8 @@ writeJson(MANIFEST_PATH, {
   sourceRoots,
   selectedDraftCount: drafts.length,
   selectedDrafts,
+  relationAudit,
   files: files.map(({ fileName, rowCount, columns }) => ({ fileName, rowCount, columns })),
 });
 
-process.stdout.write(`${JSON.stringify({ ok: true, namespace: TARGET_NAMESPACE, exportDir: EXPORT_DIR, selectedDraftCount: drafts.length, files: files.map((f) => ({ fileName: f.fileName, rowCount: f.rowCount })) }, null, 2)}\n`);
+process.stdout.write(`${JSON.stringify({ ok: true, namespace: TARGET_NAMESPACE, exportDir: EXPORT_DIR, selectedDraftCount: drafts.length, relationAuditRowCount: auditRows.length, unresolvedRelationCount: auditRows.length, files: files.map((f) => ({ fileName: f.fileName, rowCount: f.rowCount })) }, null, 2)}\n`);
