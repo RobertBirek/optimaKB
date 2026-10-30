@@ -6,7 +6,7 @@ import crypto from 'crypto';
 import { loadPromotedKnowledge } from './lib/promoted_knowledge.mjs';
 import { ensureDir, writeCsv, slug, makeId } from './lib/export_utils.mjs';
 
-const ROOT = '/docker/openspg';
+const ROOT = process.env.ROOT || '/docker/openspg';
 const KB_NAME = 'ComarchBetterflyReference';
 const EXPORT_DIR = path.join(ROOT, 'exports/betterfly_reference/v1');
 const MANIFEST_PATH = path.join(EXPORT_DIR, '_manifest.json');
@@ -96,7 +96,8 @@ function extractUpdatedTime(html) {
 }
 
 function extractParagraphsFromHtml(html) {
-  const matches = [...String(html || '').matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)];
+  // Match the exact tag: SVG <path> must not consume navigation up to </p>.
+  const matches = [...String(html || '').matchAll(/<p(?:\s[^>]*)?>([\s\S]*?)<\/p\s*>/gi)];
   return matches
     .map((match) => stripHtml(match[1]))
     .filter(Boolean)
