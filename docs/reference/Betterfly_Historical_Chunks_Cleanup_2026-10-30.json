@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "database": "comarchbetterflyreference",
+  "namespace": "ComarchBetterflyReference",
+  "authorization": "Explicit user confirmation: tak, after the exact 19-node and single-property scope was presented.",
+  "approvedProposal": "docs/reference/Betterfly_Historical_Chunks_Audit_2026-10-30.json",
+  "approvedProposalSha256": "554639509b735c8eed5cd3c22ed797d79fb8f99c9567ebe8740ba501f7971724",
+  "startedAt": "2026-10-30T12:11:12.446415+00:00",
+  "finishedAt": "2026-10-30T12:11:14.520539+00:00",
+  "verifiedAt": "2026-10-30T12:12:43.185459+00:00",
+  "mutationConfirmed": true,
+  "dryRunPassed": true,
+  "guards": [
+    "Verified original snapshot checksum and exact approved allowlist.",
+    "Verified current export hashes and absence of approved IDs from the active export.",
+    "Locked selected nodes, document and held historical node; compared complete backed-up properties and element IDs before mutation.",
+    "Rejected incident relationships or named incoming references.",
+    "Used plain DELETE, not DETACH DELETE; all operations in one transaction."
+  ],
+  "deletedNodeIdsReference": "deleteCandidateIds in the unchanged approvedProposal JSON",
+  "deletedNodes": 19,
+  "deletedRelationships": 0,
+  "removedProperties": 1,
+  "propertyRemoval": {
+    "label": "ComarchBetterflyReference.ReferenceDocument",
+    "id": "BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_OBSLUGA_PROCEDURY_OSS",
+    "property": "versionHint",
+    "documentPreserved": true,
+    "allOtherPropertiesUnchanged": true
+  },
+  "preservedHistoricalId": "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_PRZEKSZTALCANIE_FAKTUR_ZALICZKOWYCH_7",
+  "preservedHistoricalNodeAllPropertiesUnchanged": true,
+  "verification": {
+    "totalChunksBefore": 561,
+    "totalChunksAfter": 542,
+    "approvedIdsRemaining": 0,
+    "currentChunksWithExactContent": 218,
+    "currentChunksWithComplete1536DimensionalVectorPairs": 218,
+    "referenceDocumentsWithCompleteCsvParity": 40,
+    "danglingReferencesInScannedFields": 0,
+    "liveExportsChanged": false,
+    "mcpHealthy": true,
+    "llmStatus": "PASS",
+    "automationPaused": true,
+    "shadowOnly": true,
+    "publicationApproved": false
+  },
+  "backup": {
+    "originalPath": "/tmp/opencode/betterfly-readonly-audit-vmb4prmw/selected-subgraph.json",
+    "operationCopy": "/tmp/opencode/betterfly-approved-cleanup-7ppu04vx/backup-before.json",
+    "sha256": "68e25937c6d8315309943a9c1d6e4412935f42266b1db1deb81d2e9d9a18d46b",
+    "checksumVerified": true,
+    "restoreTested": false
+  },
+  "privateOperationEvidence": "/tmp/opencode/betterfly-approved-cleanup-7ppu04vx",
+  "scopeLimits": "No other nodes/attributes, builds, service restarts, OWA changes or automation overrides were authorized or performed. Reference checks do not cover arbitrary prose or external consumers."
+}

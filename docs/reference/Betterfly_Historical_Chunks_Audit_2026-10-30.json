@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-30T11:46:00.346124+00:00",
+  "database": "comarchbetterflyreference",
+  "namespace": "ComarchBetterflyReference",
+  "readOnlyAudit": true,
+  "graphMutationExecuted": false,
+  "requiresExplicitOperatorApproval": true,
+  "summary": {
+    "auditedChunks": 20,
+    "footerOnlyCandidates": 17,
+    "technicalSpanCoveredCandidates": 2,
+    "heldChunks": 1,
+    "materializedIncidentRelationships": 0,
+    "declaredIncomingReferenceMatches": 0,
+    "referenceNodesInspected": 800
+  },
+  "deleteCandidateIds": [
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FAKTURA_PROFORMA_11",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FAKTURA_SPRZEDAZY_11",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FAKTURA_SPRZEDAZY_WERSJA_ARCHIWALNA_1_4_11",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FAKTURA_VAT_MARZA_4",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FAKTURA_VAT_MARZA_WERSJA_ARCHIWALNA_1_4_4",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FAKTURA_ZALICZKOWA_16",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FAKTURA_ZALICZKOWA_WERSJA_ARCHIWALNA_1_4_15",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FAKTURA_ZALICZKOWA_WERSJA_ARCHIWALNA_1_4_16",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FILTROWANIE_ZASOBOW_5",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_FORMY_PLATNOSCI_8",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_HISTORIA_ZMIAN_9",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_KONTRAHENCI_10",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_KOREKTY_11",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_KOREKTY_12",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_PLATNOSCI_8",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_PLATNOSCI_WERSJA_ARCHIWALNA_1_4_8",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_PRODUKTY_9",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_RACHUNKI_BANKOWE_8",
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_WYDRUKI_5"
+  ],
+  "holdIds": [
+    "BFCHUNK_BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_PRZEKSZTALCANIE_FAKTUR_ZALICZKOWYCH_7"
+  ],
+  "attributeRemovalCandidate": {
+    "label": "ComarchBetterflyReference.ReferenceDocument",
+    "id": "BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_OBSLUGA_PROCEDURY_OSS",
+    "property": "versionHint",
+    "observedValue": "unversioned; v1.7; v1.5",
+    "csvValue": ""
+  },
+  "backup": {
+    "path": "/tmp/opencode/betterfly-readonly-audit-vmb4prmw/selected-subgraph.json",
+    "sha256": "68e25937c6d8315309943a9c1d6e4412935f42266b1db1deb81d2e9d9a18d46b",
+    "selectedNodes": 21,
+    "relationships": 0,
+    "restoreTested": false
+  },
+  "requiredRechecks": [
+    "Recheck exact approved IDs, labels and backed-up content hashes.",
+    "Recheck no candidate ID has entered the current export.",
+    "Recheck no incident relationship or declared reference appeared; stop on change.",
+    "Recheck versionHint still equals the observed value before removing only that property.",
+    "Preserve all current chunks/documents, the held example and all nodes outside the explicit allowlist."
+  ]
+}

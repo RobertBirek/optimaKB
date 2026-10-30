@@ -29,9 +29,17 @@
 ## Remaining blockers / next write-enabled maintenance
 
 1. The next real scheduled refresh has not yet executed; permanent source rollout and a guarded resume test are verified, not a future network fetch against potentially changed upstream HTML.
-2. UPSERT does not clear an empty CSV property. `BFRD_HTTPS_POMOC_COMARCHBETTERFLY_PL_DOKUMENTACJA_API_OBSLUGA_PROCEDURY_OSS` retains a nonempty graph `versionHint` while the CSV field is empty. No attribute removal was authorized or performed. This is separate from the repaired document description; 40/40 descriptions and all supplied nonempty values match.
-3. The repaired export drops 20 historical chunk IDs and the graph still contains those 20. Builders UPSERT, not reconcile/delete. Obtain explicit bounded deletion approval before removing them; other historical nodes outside the repaired set require their own review.
+2. Resolved after separate approval: the unsupported `versionHint` property was removed from the OSS ReferenceDocument without deleting or otherwise changing that document. UPSERT's empty-value behavior itself was not changed.
+3. Resolved for the approved subset: audit found 19 removal candidates and one held historical technical example. After explicit user confirmation, exactly those 19 nodes were removed; the held example remains unchanged. Other historical nodes outside this allowlist still require their own review and approval.
 4. Resolve OWA relation targets against approved identity evidence; never invent FKs to turn WARN green. Its current export must not be published as ready.
 5. Final status: automation paused and shadow-only, publication not approved; LLM PASS and MCP health OK. No safety override or resume was performed. The historical Official Delta report stays FAIL because that run really failed; successful recovery is documented separately rather than rewriting history.
 
-Live changes: generated quality/weekly reports, two scoped scheduler stops, job 999's Chunk UPSERT, explicitly approved job 1000's ReferenceDocument UPSERT, scoped source/test fast-forward deployment, and supported Betterfly export/manifest regeneration. Other preexisting source edits, inbox decisions, public source snapshots, secrets and service files were preserved. No nodes or attributes were deleted, no automation override was applied and no services were restarted. No changes were pushed remotely.
+Live changes: generated quality/weekly reports, two scoped scheduler stops, job 999's Chunk UPSERT, explicitly approved job 1000's ReferenceDocument UPSERT, scoped source/test fast-forward deployment, supported Betterfly export/manifest regeneration, and subsequently approved deletion of exactly 19 audited nodes plus one property. Other preexisting source edits, inbox decisions, public source snapshots, secrets and service files were preserved. No automation override or service restart occurred. No changes were pushed remotely.
+
+## Approved cleanup closure
+
+At 2026-10-30 12:11 UTC, following explicit user confirmation, one guarded transaction deleted the 19 approved Chunk IDs and removed only `versionHint` from the selected OSS document. Plain DELETE was used; zero relationships were removed. A protected, checksum-verified snapshot contains all selected pre-operation properties/vectors.
+
+Post-check: Chunk count 561→542, approved IDs remaining zero, held historical example unchanged, 218/218 current chunks exact with complete 1536-dimensional vectors, and 40/40 ReferenceDocuments now match every CSV field under the storage normalization rules. Local exports unchanged; MCP healthy, LLM PASS and automation still paused/shadow-only/not publication-approved.
+
+Audit/allowlist and full closure: `Betterfly_Historical_Chunks_Audit_2026-10-30.md`, its immutable `.json`, and `Betterfly_Historical_Chunks_Cleanup_2026-10-30.json`. The held `DocumentException` / ErrorCode 5 example is not verified by current source HTML; preserve it pending a separate provenance/archival decision. This cleanup did not touch the 135 unresolved OWA targets or other out-of-export nodes.
