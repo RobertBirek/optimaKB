@@ -1,95 +1,89 @@
 ---
 name: openspg-daily-ops
-description: Daily operational triage for the OpenSPG ERP KB dashboard. Use when performing daily inspection, responding to autopilot alerts, reviewing discovery pipeline state, checking quality trends, or deciding whether to override automated decisions. Not for building KBs, configuring MCP, or creating content (use dedicated skills for those).
+description: Use when performing daily OpenSPG ERP KB inspection, reviewing quality or discovery trends, investigating autopilot alerts, latched automation pauses, stale reports, or assessing whether operator intervention is needed.
 ---
 
 # OpenSPG Daily Ops
 
-## Entry Point
+## Scope
 
-Open `http://10.10.254.42:3410/panel/` in your browser. The base path is `/panel`.
+Daily triage is **read-only**: observe, explain, recommend. Skills grant no additional permissions.
+Report generation is an operator action; resumes, overrides, approvals, builds, permission repairs and service changes require explicit operator authorization outside the inspection. A read-only delegated agent only reports these needs.
+Never start a second dashboard server, modify runtime files under `data/`, or run broad ownership repairs. Use dedicated KB/pipeline skills for authorized ingestion or builds.
 
-## Daily Checklist
+Dashboard: `http://10.10.254.42:3410/panel/`; persistent service, base path `/panel`.
+Start with live APIs; generated reports are dated evidence, not current health.
 
-### 1. Overview Page (`/#/overview`)
+## Daily checklist
 
-- **Quality gates**: All green? Any yellow/red indicators?
-- **KAG Readiness panel**: Check LLM, Tavily, Firecrawl, Exa, Auto-draft, Autopilot, Freeze, Learning, Alerts signals. A red signal means that capability is degraded.
-- **Autopilot summary**: Number of frozen KBs and domains.
+### 1. Overview and automation
 
-### 2. Autopilot State
+- Begin with `GET /panel/api/status`: top-level `.overall`, `.summary`, `.alerts`, `.reports`, `.automation` (not `.status`). Record `generatedAt` and report timestamps. Quality/freshness WARN needs explanation even when services answer.
+- In `.automation`, inspect `config.enabled`, `paused`, `pauseReason`, `pausedAt`, `shadowOnly`, `publicationApproved`, `allowedNamespaces`, plus `llmHealth` and `promotionGate`. A healthy LLM **does not automatically resume** a paused controller: this is the intentional latch covered by `llm_health_no_auto_resume`. Resuming and approving publication are separate decisions.
+- Provider `configured=true` means credentials exist, not that Tavily/Firecrawl/Exa passed a live check. A blocked canary is not an outage by itself.
+- Inspect action timestamps before calling failures new: historical FAIL entries are **not a fresh incident**. Quote queue counts with source and timestamp; the recent-job list may be capped.
+- Print a bounded projection, never the entire status or automation payload: `providerSecrets`, credential previews and unrelated job content are not needed.
 
-Navigate to **Automation** tab (`/#/automation`) and scroll to Autopilot Actions History. For each freeze:
+### 2. Autopilot and domain alerts
 
-- **KB freeze**: triggered when KB error rate > threshold (default 0.15) in last 20 jobs. Recovery: 48h after last error.
-- **Domain freeze**: triggered when domain error rate > threshold. Recovery: same 48h cooldown.
-- **Throttle**: per-job delay applied instead of freeze. Throttle reduces throughput during partial degradation.
+`GET /api/automation/autopilot` returns `.autopilot`: freeze counts, namespace/domain arrays, throttled boosts, recent actions and override keys. No freezes does not imply the controller is running.
 
-Decision matrix:
+Reference: `scripts/lib/dashboard_autopilot.mjs`.
 
-| Condition | Action |
+- KB freeze: `windowFpRate > 0.15`, or `reviewed >= 5` and `acceptanceRate < 0.25`; not a generic job-error rate.
+- Domain freeze: `noisePenalty > 0.5`. `high_noise_domain` alerts use this threshold too; compare `GET /api/automation/learning` penalties, discovery context and autopilot before recommending intervention. Conflicting values require source/time investigation, not silently choosing one.
+- A throttle is a recorded boost to the confidence threshold (`effectiveThreshold`), not a job sleep. Do not infer observed throughput or a domain boost's effect from its presence.
+- Recovery uses counters: KB required count 7, domain required count 14, plus quality checks. Constants are named days, but elapsed time alone does not prove successful evaluations or persisted counter progress. The summary does not expose counters; flag unavailable evidence rather than reading runtime files manually.
+- Default 48-hour operator override suppresses freeze/throttle evaluation; it is not a recovery cooldown. Override keys are `kb:<namespace>` or `domain:<hostname>`. Removing an override does not unfreeze an item (`removeOperatorOverride(nsOrDomain, type)` only removes the key).
+
+| Observation | Read-only action |
 |---|---|
-| All frozen items have `operatorOverride: true` | Nothing — operator already decided |
-| Freeze > 48h and recovery didn't fire | Check autopilot state file (`data/dashboard/learning/autopilot_state.json`), manual recovery via `removeOperatorOverride(kbName, namespace)` or `removeOperatorOverride(namespace, domain)` |
-| Throttled but no freeze | Monitor — throttle is normal graceful degradation |
-| New freeze since last check | Investigate root cause before overriding |
+| New freeze | Diagnose cause before recommending a scoped operator action |
+| Existing override | Preserve operator intent; report its key, do not guess expiry from summary |
+| Old freeze | Verify recovery evidence; age alone is not grounds for clearing state |
+| Throttle only | Monitor; review age/quality evidence without resetting it |
+| Alert and learning disagree | Report both values, endpoints and observation times |
 
-### 3. Discovery Pipeline
+### 3. Discovery and scheduler
 
-Navigate to **Sources** tab (`/#/sources`).
+`GET /api/discovery` wraps data in `.discovery`: `policy`, `semiAuto`, `queries`, `candidates`, `runs`, `report`, `briefing`, `coverage`, `qualityAlerts`.
 
-- **Pending candidates**: number of undiscovered candidates waiting for operator decision.
-- **Auto-draft log**: check `autoDraftLog` counter and last entries. Daily limit: 25. Systemd timer fires at 00/06/12/18 UTC.
-- **Query health table**: review queries with low yield. Suspended queries show `suspendedUntil` timestamps.
-- **Domain suggestions**: allowlist/blocklist suggestions from canary analysis. Approve via PATCH if confidence > 90%.
+- Check latest daily/autodraft run `ok`, `dryRun`, errors, candidate/draft counts and times. Successful zero-draft runs can mean no eligible candidates, not a broken timer. Discovery semi-auto and publication automation have separate gates.
+- Read active `semiAuto` blockers, per-KB thresholds, allowed namespaces and policy `semiAutoMaxPerRun`; the daily draft guard is currently 25 (UTC date). Verify limits against current policy/implementation instead of hardcoding all limits.
+- Review low-yield queries, `suspendedUntil` and unknown-domain suggestions. Confidence alone is not authorization to approve a domain.
+- Candidate arrays can be capped; pending counts use filters and report snapshots. Example: Overview 423 pending, report 426 pending, array length 500 are different observations, not interchangeable totals. Check scope/time/status before claiming a defect.
+- Inspect timer with `systemctl cat erp-kb-discovery-autodraft.timer` and `systemctl list-timers --all --no-pager`. Without a timezone suffix, `OnCalendar` uses the host's timezone. Current schedule `00,06,12,18:00:00` has `RandomizedDelaySec=300`; in `Europe/Warsaw` winter this is roughly 23/05/11/17 UTC, with DST changes in summer. Verify actual host timezone and last/next activation.
 
-### 4. Alerts & Trends
+### 4. Trends and weekly maintenance
 
-Navigate to **Trends** tab (`/#/trends`).
+- `GET /api/automation/trends?days=14` returns `.trends[namespace][]`. Confirm returned date range; trim to the intended interval if the deployment returns extra rows.
+- Actual fields: `fpRate`, `tunedBaseline`, `acceptanceRate`, `draftedCount`, `reviewedCount`. `null` means unknown, not zero or PASS; these rows do not contain `automationAccuracy` or `noisePenalty`.
+- Review anomalies from `.alerts` in `GET /api/automation/alerts`; these are distinct from overview and discovery alerts.
+- On Monday or when the weekly report is older than 7 days, flag it due. Check **Generated** in `docs/reference/ERP_KB_Quality_Weekly_Report.md` as well as mtime. A report refresh is not a KB refresh.
+- Authorized report generation: Reports tab, or admin `POST /panel/api/automation/report` with `X-ERP-KB-CSRF: 1`. Verify response and new report timestamp only after separate authorization.
 
-- **Anomaly banner**: red banner at top if anomalies are active.
-- **Trend charts**: 14-day quality metrics per KB. Look for sudden drops in `automationAccuracy` or spikes in `noisePenalty`.
-- **Weekly report**: if it's Monday or report is >7 days stale, generate via **Reports** tab (`/#/reports`) → "Generate weekly quality report".
-
-### 5. Weekly (day 7 of cycle)
-
-Only on dashboard weekly maintenance:
-
-1. **Generate quality report** via Reports tab.
-2. **Review `docs/reference/ERP_KB_Quality_Weekly_Report.md`** — does anything need operator intervention?
-3. **Check discovery policy**: `semiAutoEnabled` status, per-KB thresholds, canary confidence.
-4. **Clear stale autopilot state** if any freeze is >7 days old with no recovery — likely a stuck state.
-
-## API Quick Reference
+## Safe API example
 
 ```bash
-# Autopilot summary
-curl -s http://10.10.254.42:3410/panel/api/automation/autopilot
-
-# Active alerts
-curl -s http://10.10.254.42:3410/panel/api/automation/alerts
-
-# Trends (last 14 days)
-curl -s http://10.10.254.42:3410/panel/api/automation/trends?days=14
-
-# Generate weekly report (POST, requires CSRF)
-curl -s -X POST -H "X-ERP-KB-CSRF: 1" http://10.10.254.42:3410/panel/api/automation/report
-
-# Learning state
-curl -s http://10.10.254.42:3410/panel/api/automation/learning
-
-# Discovery state (includes .candidates, .semiAuto, .report, .qualityAlerts)
-curl -s http://10.10.254.42:3410/panel/api/discovery
+set -o pipefail
+curl -fsS --max-time 60 http://10.10.254.42:3410/panel/api/status |
+  jq '{generatedAt, overall, summary, alerts,
+    reports: [.reports[] | {key, overallStatus, json, markdown}],
+    automation: {config: (.automation.config | {enabled, paused, pauseReason,
+      pausedAt, shadowOnly, publicationApproved, allowedNamespaces}),
+      llmHealth: .automation.llmHealth,
+      promotionGate: .automation.promotionGate}}'
 ```
 
-## When to Escalate
+Use the same bounded HTTP timeout and projection pattern for other GETs (paths above are relative to `/panel`). HTTP errors, timeout, invalid JSON or missing fields mean **unknown**, not green. A single bounded retry of an idempotent GET is reasonable; report persistent failure. Never bypass authentication or expose tokens.
 
-- **Dashboard 500 errors**: check service logs `journalctl -u erp-kb-dashboard -n 50 --no-pager`
-- **MCP bridge down**: `curl http://10.10.254.42:3400/health` — if dead, restart via `sudo systemctl restart erp-kb-mcp-bridge`
-- **Build jobs stuck**: check OpenSPG job list directly — `GET /public/v1/builder/job/list?projectId=N&start=1`
-- **Disk or ownership issues**: `sudo chown -R mcpbot:mcpbot /docker/openspg/data/dashboard/ /docker/openspg/docs/reference/`
-- **Approve/build preflight fails with `openspg_cookie_file: FAIL ... EACCES`**: someone ran
-  `scripts/openspg_login.mjs` as root, which resets `/etc/erp-kb-openspg.cookie` to `root:root 0600`
-  (the dashboard runs as `mcpbot` and can no longer read it). Fix:
-  `chmod 644 /etc/erp-kb-openspg.cookie`. See
-  `docs/reference/OpenSPG_KB_Operational_Memory.md` → "Auth / cookie file permissions".
+## Escalation
+
+- Dashboard 5xx: read bounded service logs (`journalctl -u erp-kb-dashboard -n 50 --no-pager`), redact secrets.
+- MCP: read `http://10.10.254.42:3400/health`; report unavailability, do not restart.
+- Suspected stuck build: authorized read of `GET /public/v1/builder/job/list?projectId=N&start=1`; never use `start=0`.
+- EACCES: inspect only the affected file's owner/mode and service-user access, never cookie contents. Consult `docs/reference/OpenSPG_KB_Operational_Memory.md` sections **Auth / cookie file permissions**, **Knowledge inbox registry permissions**, **Schema helper export permissions**. Propose a least-privilege, single-path repair for operator approval.
+
+## Report contract
+
+Return: observation time; overall status and unknowns; top priorities with evidence/source dates; healthy capabilities with verification scope; proposed operator actions; changes actually made (**none** in read-only triage). Distinguish facts, suspected causes and historical evidence.
