@@ -10,6 +10,7 @@ import { automationLearningAdjustment, deriveAutomationLearningState, reroutePai
 import { loadProviderSecrets, maskProviderSecrets, saveProviderSecrets } from './provider_secrets.mjs';
 import {
   findRawDraftById,
+  findRawDrafts,
   loadRegistry,
   registryEntryFor,
   reroutePendingDraft,
@@ -926,15 +927,21 @@ export function automationSummary() {
     return acc;
   }, {});
   const registry = loadRegistry();
+  // Share one lazy snapshot across exception/reroute lookups in this request.
+  // Never retain it across summaries: inbox and registry decisions can change.
+  let rawDraftIds;
   const actionableDraft = (job) => {
     const entry = registryEntryFor(registry, job.draftId);
     if (entry?.status && entry.status !== 'pending') return false;
-    try {
-      findRawDraftById(job.draftId);
-      return true;
-    } catch {
-      return false;
+    if (rawDraftIds === undefined) {
+      try {
+        rawDraftIds = new Set(findRawDrafts().map((draft) => draft.id));
+      } catch {
+        // Preserve fail-closed behavior without retrying a broken inbox per job.
+        rawDraftIds = new Set();
+      }
     }
+    return rawDraftIds.has(job.draftId);
   };
   return {
     config,
