@@ -669,7 +669,7 @@ function canaryPriority(job, learningState) {
   return score;
 }
 
-export function automationCanaryQueue(jobs = listAutomationJobs(500), learningState = deriveAutomationLearningState(jobs)) {
+export function automationCanaryQueue(jobs = listAutomationJobs(500), learningState = deriveAutomationLearningState(jobs, { persist: false })) {
   return jobs
     .filter((job) => (
       job.mode === 'shadow'
@@ -693,7 +693,7 @@ export function refreshAutomationCanaryReport(options = {}) {
   const config = options.config || loadAutomationConfig();
   const jobs = options.jobs || listAutomationJobs(500);
   const health = options.health || loadAutomationLlmHealth();
-  const learning = options.learning || deriveAutomationLearningState(jobs);
+  const learning = options.learning || deriveAutomationLearningState(jobs, { persist: options.persist !== false });
   const gate = evaluateAutomationPromotionGate({ config, jobs, health });
   const queue = automationCanaryQueue(jobs, learning);
   const report = {
@@ -718,6 +718,7 @@ export function refreshAutomationCanaryReport(options = {}) {
       })),
     },
   };
+  if (options.persist === false) return report;
   const markdownPath = AUTOMATION_CANARY_REPORT_PATH.replace(/\.json$/, '.md');
   let existingReport = null;
   try {
@@ -917,9 +918,9 @@ export function automationSummary() {
   const allJobs = listAutomationJobs(500);
   const jobs = allJobs.slice(0, config.maxRecentJobs);
   const health = loadAutomationLlmHealth();
-  const learning = deriveAutomationLearningState(allJobs);
+  const learning = deriveAutomationLearningState(allJobs, { persist: false });
   const canaryQueue = automationCanaryQueue(allJobs, learning);
-  const canaryReport = refreshAutomationCanaryReport({ config, jobs: allJobs, health, learning });
+  const canaryReport = refreshAutomationCanaryReport({ config, jobs: allJobs, health, learning, persist: false });
   const counts = jobs.reduce((acc, job) => {
     acc[job.status] = (acc[job.status] || 0) + 1;
     return acc;

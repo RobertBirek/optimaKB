@@ -105,6 +105,7 @@ import {
   discoveryActionForAssessment,
   generateQualityReport,
   discoveryFeedbackSummary,
+  discoveryLearningSnapshot,
   discoverySemiAutoStatus,
   discoverySummary,
   loadDiscoveryPolicy,
@@ -846,7 +847,14 @@ function crontabStatus() {
 
 function reportSummary() {
   return Object.entries(REPORTS).map(([key, config]) => {
-    const json = config.jsonPath ? readJsonIfExists(config.jsonPath, null) : null;
+    let json = null;
+    try {
+      json = config.jsonPath ? readJsonIfExists(config.jsonPath, null) : null;
+    } catch (error) {
+      if (!(error instanceof SyntaxError)) throw error;
+      // A read must report a malformed artifact, never repair it on disk.
+      json = { overall: 'INVALID' };
+    }
     const report = {
       key,
       title: config.title,
@@ -1232,6 +1240,9 @@ function dashboardAlerts(payload) {
     alerts.push({ level: 'warn', message: `${payload.overall.pendingDrafts} draft(s) waiting for review` });
   }
   for (const report of payload.reports) {
+    if (report.overallStatus === 'INVALID') {
+      alerts.push({ level: 'bad', message: `Invalid JSON report: ${report.title}` });
+    }
     if (!report.json.exists && !report.markdown.exists) {
       alerts.push({ level: 'bad', message: `Missing report: ${report.title}` });
     }
@@ -2202,7 +2213,7 @@ async function handleAutomationConfig(req, res) {
 
 async function handleGetAutomationLearning(req, res) {
   try {
-    const discoveryState = readJsonAbsoluteIfExists(DISCOVERY_LEARNING_PATH, null);
+    const discoveryState = discoveryLearningSnapshot();
     const automationState = readJsonAbsoluteIfExists(AUTOMATION_LEARNING_PATH, null);
     const thresholds = {};
     if (automationState?.byKbNamespace) {

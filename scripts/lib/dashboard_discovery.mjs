@@ -623,7 +623,7 @@ function candidateAgeDays(candidate, now = new Date()) {
   return Number.isFinite(timestamp) ? Math.max(0, (now.getTime() - timestamp) / DAY_MS) : null;
 }
 
-export function discoveryCandidatePriority(candidate, candidates = listDiscoveryCandidates(5000), learningState = deriveDiscoveryLearningState(candidates)) {
+export function discoveryCandidatePriority(candidate, candidates = listDiscoveryCandidates(5000), learningState = discoveryLearningSnapshot(candidates)) {
   const confidence = Number(candidate.assessment?.confidence || 0);
   const kbPending = candidates.filter((item) => (
     item.kbNamespace === candidate.kbNamespace && isReviewableDiscoveryCandidate(item)
@@ -895,10 +895,9 @@ export function detectAnomalies() {
     const candidates = listDiscoveryCandidates(5000);
     const feedback = discoveryFeedbackSummary(candidates);
     const autoPath = path.join(ROOT, 'data/dashboard/learning/automation_learning_state.json');
-    const discPath = path.join(ROOT, 'data/dashboard/learning/discovery_learning_state.json');
-    let autoState = null, discState = null;
+    const discState = discoveryLearningSnapshot(candidates);
+    let autoState = null;
     try { autoState = JSON.parse(fs.readFileSync(autoPath, 'utf8')); } catch { /* optional state file */ }
-    try { discState = JSON.parse(fs.readFileSync(discPath, 'utf8')); } catch { /* optional state file */ }
 
     // FP rate spikes per KB
     if (autoState?.byKbNamespace) {
@@ -1734,12 +1733,41 @@ export function generateQualityReport() {
   return reportPath;
 }
 
+// Read metrics use the same bounded window as the pipeline, never the UI page.
+// Preserve explicit domain overrides without rewriting stored learning.
+export function discoveryLearningSnapshot(candidates = listDiscoveryCandidates(5000)) {
+  const learning = deriveDiscoveryLearningState(candidates, { persist: false });
+  let stored = {};
+  try {
+    stored = readJson(path.join(ROOT, 'data/dashboard/learning/discovery_learning_state.json'), {});
+  } catch (error) {
+    if (!(error instanceof SyntaxError)) throw error;
+    // Optional override storage must not block derivation or unrelated alerts.
+    // Leave the malformed artifact untouched for an explicit repair.
+  }
+  for (const [domain, stats] of Object.entries(stored?.byDomain || {})) {
+    if (stats?.operatorOverride == null) continue;
+    const current = Object.hasOwn(learning.byDomain, domain)
+      ? learning.byDomain[domain]
+      : {
+        reviewed: 0, accepted: 0, rejected: 0, duplicates: 0,
+        acceptanceRate: null, rejectRate: null, duplicateRate: 0,
+        scoreDelta: 0, reasons: [], noisePenalty: 0,
+      };
+    learning.byDomain = {
+      ...learning.byDomain,
+      [domain]: { ...current, operatorOverride: stats.operatorOverride },
+    };
+  }
+  return learning;
+}
+
 export function discoverySummary() {
   const policy = loadDiscoveryPolicy();
   const rawQueries = loadDiscoveryQueries().queries;
-  const rawCandidates = listDiscoveryCandidates(500);
-  const learning = deriveDiscoveryLearningState(rawCandidates);
-  const candidates = rawCandidates.map((candidate) => ({
+  const rawCandidates = listDiscoveryCandidates(5000);
+  const learning = discoveryLearningSnapshot(rawCandidates);
+  const candidates = rawCandidates.slice(0, 500).map((candidate) => ({
     ...candidate,
     priority: discoveryCandidatePriority(candidate, rawCandidates, learning),
     duplicateExplanation: duplicateExplanation(candidate),
